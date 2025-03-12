@@ -1,13 +1,25 @@
-[workflows]
-runButton = "Run"
 
-[[workflows.workflow]]
-name = "Run"
-author = 24083186
+run = "npm start"
+hidden = [".config", "package-lock.json"]
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "node index.js"
+[nix]
+channel = "stable-23_05"
+
+[env]
+PATH = "/home/runner/$REPL_SLUG/node_modules/.bin:/home/runner/.nix-profile/bin"
+
+[packager]
+language = "nodejs"
+  [packager.features]
+  packageSearch = true
+  guessImports = true
+  enabledForHosting = true
+
+[languages.javascript]
+pattern = "**/{*.js,*.jsx,*.ts,*.tsx}"
+  [languages.javascript.languageServer]
+  start = ["typescript-language-server", "--stdio"]
 
 [deployment]
-run = ["sh", "-c", "node index.js"]
+run = ["npm", "start"]
+deploymentTarget = "cloudrun"
