@@ -18,7 +18,6 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 
 const client = new MongoClient(uri, {
   tls: true,
-  tlsAllowInvalidCertificates: false,
   serverApi: ServerApiVersion.v1,
 });
 
