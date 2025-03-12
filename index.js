@@ -505,9 +505,17 @@ app.post("/contact", async (req, res) => {
 });
 
 // Start Server
-app.listen(PORT, "0.0.0.0", () => {
-  console.log(`Server is running on port ${PORT} and available at http://0.0.0.0:${PORT}`);
-  console.log(`Try accessing the app in your browser at: https://${process.env.REPL_SLUG}.${process.env.REPL_OWNER}.repl.co`);
+const server = app.listen(PORT, "0.0.0.0", () => {
+  console.log("=================================================");
+  console.log(`Server is running on port ${PORT}`);
+  console.log(`Local URL: http://0.0.0.0:${PORT}`);
+  console.log(`Replit URL: https://${process.env.REPL_SLUG}.${process.env.REPL_OWNER}.repl.co`);
+  console.log("=================================================");
+});
+
+// Add error handling for the server
+server.on('error', (error) => {
+  console.error('Server error:', error);
 });
 
 app.get('/city/:name', (req, res) => {
