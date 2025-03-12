@@ -16,12 +16,7 @@ const uri =
   "mongodb+srv://shahnawazkarimi2014:No0708156402@cluster0.y5o4d.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose
-  .connect(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    tls: true,
-    tlsCAFile: `${__dirname}/node_modules/mongodb/lib/certs/ca.pem`
-  })
+  .connect(uri)
   .then(() => console.log("Connected to MongoDB Atlas"))
   .catch((err) => console.error("Connection error:", err));
 
@@ -92,13 +87,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-      mongoUrl: uri,
-      mongoOptions: {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        tls: true,
-        tlsCAFile: `${__dirname}/node_modules/mongodb/lib/certs/ca.pem`
-      }
+      mongoUrl: uri
     }),
   }),
 );
