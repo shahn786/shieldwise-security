@@ -495,7 +495,7 @@ app.post("/contact", async (req, res) => {
 
 // Start Server
 app.listen(PORT, "0.0.0.0", () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT} and available at http://0.0.0.0:${PORT}`);
 });
 
 app.get('/city/:name', (req, res) => {

@@ -1,8 +1,8 @@
 
-{pkgs}: {
+{ pkgs }: {
   deps = [
-    pkgs.lsof
-    pkgs.uwhoisd
     pkgs.nodejs-18_x
+    pkgs.nodePackages.npm
+    pkgs.yarn
   ];
 }
