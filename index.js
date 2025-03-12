@@ -13,10 +13,14 @@ const PORT = process.env.PORT || 3000;
 
 // MongoDB Atlas Database Connection
 const uri =
-  "mongodb+srv://shahnawazkarimi2014:No0708156402@cluster0.y5o4d.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://shahnawazkarimi2014:No0708156402@cluster0.y5o4d.mongodb.net/?retryWrites=true&w=majority&tls=true";
 
 mongoose
-  .connect(uri)
+  .connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    minVersion: 'TLSv1.2'
+  })
   .then(() => console.log("Connected to MongoDB Atlas"))
   .catch((err) => console.error("Connection error:", err));
 
