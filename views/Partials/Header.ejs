@@ -1,0 +1,169 @@
+<!-- Navbar Header -->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-2 navbar-main">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img src="/img/logo.png" alt="ShieldWise Security" height="50">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+
+          <!-- Services Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-toggle="dropdown">Services</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="/services#armed-security">Armed Security</a>
+              <a class="dropdown-item" href="/services#unarmed-security">Unarmed Security</a>
+              <a class="dropdown-item" href="/services#fire-watch">Fire Watch</a>
+              <a class="dropdown-item" href="/services#mobile-patrol">Mobile Patrol</a>
+              <a class="dropdown-item" href="/services#executive-protection">Executive Protection</a>
+              <a class="dropdown-item" href="/services#event-security">Event Security</a>
+              <a class="dropdown-item" href="/services#commercial-security">Commercial Security</a>
+              <a class="dropdown-item" href="/services#construction-security">Construction Security</a>
+              <a class="dropdown-item" href="/services#educational-campus">School & Campus Security</a>
+            </div>
+          </li>
+
+          <!-- Service Areas Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="areasDropdown" role="button" data-toggle="dropdown">Service Areas</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="/los-angeles">Los Angeles</a>
+              <a class="dropdown-item" href="/orange-county">Orange County</a>
+              <a class="dropdown-item" href="/riverside-county">Riverside County</a>
+              <a class="dropdown-item" href="/san-bernardino">San Bernardino</a>
+              <a class="dropdown-item" href="/san-francisco">San Francisco</a>
+              <a class="dropdown-item" href="/san-diego">San Diego</a>
+              <a class="dropdown-item" href="/ventura">Ventura</a>
+              <a class="dropdown-item" href="/sacramento">Sacramento</a>
+              <a class="dropdown-item" href="/santa-clara">Santa Clara</a>
+              <a class="dropdown-item" href="/alameda">Alameda</a>
+              <a class="dropdown-item" href="/fresno">Fresno</a>
+              <a class="dropdown-item" href="/san-jose">San Jose</a>
+            </div>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="/career">Careers</a></li>
+        </ul>
+        <a href="/get-quote" class="btn btn-danger ml-3">Get a Quote</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+/* Enhanced Professional Header Styling */
+
+/* JS Script for Navbar scroll effect */
+document.addEventListener('DOMContentLoaded', function() {
+    var navbar = document.querySelector('.navbar-main');
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Initialize Bootstrap dropdowns
+    if (typeof jQuery !== 'undefined') {
+        jQuery('.dropdown-toggle').dropdown();
+        console.log("✅ jQuery Loaded - Dropdowns Active");
+    }
+});
+</style>
+
+<!-- jQuery and Bootstrap JS for Dropdown Functionality -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('.dropdown-toggle').dropdown();
+    console.log("✅ jQuery Loaded - Dropdowns Active");
+  });
+</script>
+
+<!-- JavaScript for Active Navigation Item & Smooth Scrolling -->
+<script>
+    $(document).ready(function() {
+        // Initialize Bootstrap dropdowns
+        $('.dropdown-toggle').dropdown();
+
+        // Add active class to current page in navigation
+        const currentLocation = window.location.pathname;
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        const menuToggle = document.getElementById('navbarNavDropdown'); // Updated ID
+
+        navLinks.forEach(link => {
+            const linkPath = link.getAttribute('href');
+            if (linkPath === '/' && currentLocation === '/') {
+                link.classList.add('active');
+                link.setAttribute('aria-current', 'page');
+            } else if (linkPath !== '/' && currentLocation.includes(linkPath)) {
+                link.classList.add('active');
+                link.setAttribute('aria-current', 'page');
+            }
+        });
+
+        // Close mobile menu when link is clicked
+        $('.navbar-nav .nav-link').on('click', function() {
+            if (window.innerWidth < 992) {
+                $('.navbar-collapse').collapse('hide');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        $('a[href^="#"]').on('click', function(e) {
+            if (this.hash !== "") {
+                e.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top - 100
+                }, 800, function(){
+                    window.location.hash = hash;
+                });
+            }
+        });
+    });
+</script>
+
+<!-- SEO-Optimized Schema Markup -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ShieldWise Security",
+    "url": "https://shieldwisesecurity.com",
+    "description": "ShieldWise Security offers professional security solutions, including mobile patrol, event security, and fire watch in California.",
+    "telephone": "+1-714-716-7430",
+    "email": "info@shieldwisesecurity.com",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Main St",
+        "addressLocality": "Los Angeles",
+        "addressRegion": "CA",
+        "postalCode": "92832",
+        "addressCountry": "US"
+    },
+    "serviceArea": {
+        "@type": "Place",
+        "name": "California"
+    },
+    "sameAs": [
+        "https://www.facebook.com/shieldwisesecurity",
+        "https://twitter.com/shieldwisesecurity",
+        "https://www.instagram.com/shieldwisesecurity",
+        "https://www.linkedin.com/company/shieldwisesecurity"
+    ]
+}
+</script>
+
+<link rel="stylesheet" href="/css/header-fix.css">
+<script src="/JS/header-fix.js" defer></script>

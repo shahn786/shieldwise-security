@@ -1,0 +1,20 @@
+const axios = require('axios');
+app.post('/get-quote', (req, res) => {
+  const recaptchaResponse = req.body['g-recaptcha-response'];
+  const secretKey = '6LfIU3QqAAAAAA8AqfIFzIw23hRgDfOQAyPHokNT'; 
+
+  axios.post(`https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaResponse}`)
+    .then(response => {
+      if (response.data.success) {
+        // reCAPTCHA verified successfully, proceed with form submission
+        console.log("Quote request received:", req.body);
+        res.send('Thank you for requesting a quote. We will get back to you soon.');
+      } else {
+        res.send('reCAPTCHA verification failed. Please try again.');
+      }
+    })
+    .catch(error => {
+      console.error("Error verifying reCAPTCHA:", error);
+      res.send('Error verifying reCAPTCHA. Please try again later.');
+    });
+});

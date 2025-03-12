@@ -1,0 +1,456 @@
+.navbar-main {
+  background: rgba(26, 26, 29, 0.95);
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.navbar-main.scrolled {
+  background: rgba(16, 16, 19, 0.98);
+  padding: 8px 0;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+  transform: translateY(-2px);
+}
+
+.navbar-logo {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+  transition: all 0.3s ease;
+}
+
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin-left: 10px;
+  background: linear-gradient(135deg, #ffffff 0%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Arial', sans-serif;
+}
+
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+}
+
+.navbar-toggler-icon {
+  width: 24px;
+  height: 17px;
+  background-image: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon:before,
+.navbar-toggler-icon:after,
+.navbar-toggler-icon span {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon:before {
+  top: 0;
+}
+
+.navbar-toggler-icon:after {
+  bottom: 0;
+}
+
+.navbar-toggler-icon span {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.navbar-toggler:hover .navbar-toggler-icon:before {
+  transform: translateY(-2px);
+}
+
+.navbar-toggler:hover .navbar-toggler-icon:after {
+  transform: translateY(2px);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon span {
+  transform: scale(0);
+}
+
+.navbar-nav .nav-item {
+  position: relative;
+  margin: 0 5px;
+}
+
+.navbar-nav .nav-link {
+  color: #f0f0f0 !important;
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 0.7rem 1.2rem !important;
+  transition: all 0.3s ease;
+  position: relative;
+  letter-spacing: 0.5px;
+  font-family: 'Arial', sans-serif;
+}
+
+.navbar-nav .nav-link:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #d4af37 !important;
+}
+
+.navbar-nav .nav-link:hover:before {
+  width: 80%;
+  left: 10%;
+}
+
+.navbar-nav .nav-link.active {
+  color: #d4af37 !important;
+  position: relative;
+}
+
+.navbar-nav .nav-link.active:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+/* Mega Menu Styling */
+.dropdown-menu {
+  background-color: rgba(28, 28, 32, 0.98);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  padding: 1rem 0;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  border-top: 2px solid #d4af37;
+}
+
+.dropdown-menu:before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #d4af37;
+}
+
+.dropdown-item {
+  color: #e0e0e0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 0.7rem 1.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(212, 175, 55, 0.15);
+  color: #d4af37;
+  transform: translateX(5px);
+}
+
+.dropdown-item:active {
+  background-color: rgba(212, 175, 55, 0.25);
+}
+
+/* Mega Menu Specific */
+.mega-menu {
+  width: 700px;
+  padding: 20px;
+}
+
+.mega-menu-content {
+  display: flex;
+}
+
+.mega-menu-column {
+  flex: 1;
+  padding: 0 15px;
+}
+
+.mega-menu-title {
+  color: #d4af37;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.btn-quote {
+  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+  color: white !important;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-quote:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.5s ease;
+}
+
+.btn-quote:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(211, 47, 47, 0.4);
+  color: white !important;
+}
+
+.btn-quote:hover:before {
+  left: 100%;
+}
+
+.btn-quote:active {
+  transform: translateY(1px);
+}
+
+/* Animation Classes */
+.animated {
+  animation-duration: 0.6s;
+  animation-fill-mode: both;
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+.faster {
+  animation-duration: 0.4s;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .navbar-collapse {
+      background: rgba(26, 26, 29, 0.97);
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      max-height: 80vh;
+      overflow-y: auto;
+  }
+
+  .navbar-nav .nav-item {
+      margin: 5px 0;
+  }
+
+  .dropdown-menu {
+      background-color: rgba(40, 40, 45, 0.4);
+      box-shadow: none;
+      border: none;
+      border-left: 2px solid #d4af37;
+      border-radius: 0;
+      margin-top: 0;
+      padding: 0 0 0 15px;
+  }
+
+  .dropdown-menu:before {
+      display: none;
+  }
+
+  .dropdown-item {
+      padding: 10px 15px;
+  }
+
+  .navbar-nav .nav-link:before {
+      display: none;
+  }
+
+  .logo-text {
+      font-size: 1.3rem;
+  }
+
+  .btn-quote {
+      margin-top: 10px;
+      width: 100%;
+      text-align: center;
+  }
+
+  .mega-menu {
+      width: 100%;
+      padding: 10px;
+  }
+
+  .mega-menu-content {
+      flex-direction: column;
+  }
+
+  .mega-menu-column {
+      margin-bottom: 20px;
+  }
+}
+
+/* Fix for dropdown menus in smaller screens */
+@media (max-width: 768px) {
+  /* Fix dropdown container */
+  .navbar-nav .nav-item.dropdown {
+    position: static !important;
+    width: 100%;
+  }
+  
+  /* Ensure dropdown toggle is clearly clickable */
+  .navbar-nav .dropdown-toggle {
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* Style dropdown menus */
+  .navbar-main .dropdown-menu {
+    position: static !important;
+    width: 100% !important;
+    background-color: #2c3034 !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-top: 0 !important;
+    float: none !important;
+    border-radius: 0 !important;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+    display: none; /* Start hidden */
+  }
+  
+  /* Open state for dropdown menus */
+  .navbar-main .dropdown-menu.show {
+    display: block !important;
+    max-height: 500px; /* Large enough to contain all items */
+    opacity: 1;
+    padding-left: 20px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    border-left: 3px solid #d4af37 !important;
+  }
+  
+  /* Dropdown items styling */
+  .navbar-main .dropdown-menu .dropdown-item {
+    color: rgba(255,255,255,.75) !important;
+    padding: 10px 15px !important;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    white-space: normal !important; /* Allow text wrapping */
+    display: block;
+    width: 100%;
+  }
+  
+  .navbar-main .dropdown-menu .dropdown-item:hover,
+  .navbar-main .dropdown-menu .dropdown-item:focus {
+    background-color: #343a40 !important;
+    color: #d4af37 !important;
+    transform: translateX(5px);
+  }
+  
+  /* Dropdown arrow styling */
+  .dropdown-toggle::after {
+    float: right;
+    margin-top: 10px;
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-left: 0.3em solid transparent;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Rotate arrow when expanded */
+  .dropdown-toggle[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+  }
+  
+  /* Add highlighting for active dropdown toggle */
+  .dropdown-toggle[aria-expanded="true"] {
+    background-color: rgba(212, 175, 55, 0.1);
+    color: #d4af37 !important;
+  }
+  
+  /* Ensure dropdown menus appear even in mobile view */
+  .navbar-collapse.show .dropdown-menu,
+  .navbar-collapse.collapsing .dropdown-menu {
+    display: none; /* Start closed - JS will handle opening */
+  }
+  
+  /* Keep parent link active while displaying children */
+  .dropdown.show > .nav-link {
+    color: #d4af37 !important;
+  }
+  
+  /* Force higher z-index for dropdown menus to ensure they appear above other content */
+  .dropdown-menu.show {
+    z-index: 1030 !important;
+  }
+}
