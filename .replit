@@ -23,3 +23,18 @@ pattern = "**/{*.js,*.jsx,*.ts,*.tsx}"
 [deployment]
 run = ["npm", "start"]
 deploymentTarget = "cloudrun"
+
+[workflows]
+runButton = "Run"
+
+[[workflows.workflow]]
+name = "Run"
+author = 24083186
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "node index.js"
+
+[[ports]]
+localPort = 3000
+externalPort = 80
