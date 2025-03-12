@@ -7,4 +7,7 @@ author = 24083186
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "node index.js"
+args = "bash -c 'export NVM_DIR=\"$HOME/.nvm\" && [ -s \"$NVM_DIR/nvm.sh\" ] && \\. \"$NVM_DIR/nvm.sh\" && node index.js'"
+
+[deployment]
+run = ["sh", "-c", "node index.js"]
