@@ -3,6 +3,6 @@
   deps = [
     pkgs.lsof
     pkgs.uwhoisd
-    pkgs.nodejs
-   ];
+    pkgs.nodejs-18_x
+  ];
 }
