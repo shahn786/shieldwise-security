@@ -16,14 +16,7 @@ const uri =
   "mongodb+srv://shahnawazkarimi2014:No0708156402@cluster0.y5o4d.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose
-  .connect(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    ssl: true,
-    tls: true,
-    tlsAllowInvalidCertificates: false,
-    tlsAllowInvalidHostnames: false
-  })
+  .connect(uri)
   .then(() => console.log("Connected to MongoDB Atlas"))
   .catch((err) => console.error("Connection error:", err));
 
@@ -631,7 +624,3 @@ app.get('/los-angeles/hawthorne', (req, res) => {
 app.get('/los-angeles/south-gate', (req, res) => {
     res.render('cities/south-gate', { title: 'South Gate' });
 });
-
-  
-
-
