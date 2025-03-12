@@ -7,4 +7,4 @@ author = 24083186
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "npm start"
+args = "node index.js"
