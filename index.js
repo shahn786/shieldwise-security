@@ -527,10 +527,7 @@ const startServer = (port) => {
 // Start server with initial port
 startServer(PORT);
 
-// Add error handling for the server
-server.on('error', (error) => {
-  console.error('Server error:', error);
-});
+// Server error handling is already configured in startServer function
 
 app.get('/city/:name', (req, res) => {
     const cityName = req.params.name.toLowerCase();
