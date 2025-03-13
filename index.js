@@ -15,10 +15,13 @@ const PORT = process.env.PORT || 3000;
 // MongoDB Atlas Database Connection
 const uri = "mongodb+srv://shahnawazkarimi2014:No0708156402@cluster0.y5o4d.mongodb.net/?retryWrites=true&w=majority";
 
-// Correct mongoose connection options:
+// Using updated MongoDB connection options
 mongoose
   .connect(uri, {
-    ssl: true,
+    // Only using standard, modern options
+    serverSelectionTimeoutMS: 5000, // Timeout after 5s instead of 30s
+    tls: true,
+    tlsAllowInvalidCertificates: true, // Only during development - not recommended for production
   })
   .then(() => console.log("✅ Connected to MongoDB Atlas"))
   .catch((err) => console.error("❌ MongoDB Connection error:", err));
@@ -496,14 +499,33 @@ app.post("/contact", async (req, res) => {
   }
 });
 
-// Start Server
-const server = app.listen(PORT, "0.0.0.0", () => {
-  console.log("=================================================");
-  console.log(`Server is running on port ${PORT}`);
-  console.log(`Local URL: http://0.0.0.0:${PORT}`);
-  console.log(`Replit URL: https://${process.env.REPL_SLUG}.${process.env.REPL_OWNER}.repl.co`);
-  console.log("=================================================");
-});
+// Function to start server on available port
+const startServer = (port) => {
+  try {
+    const server = app.listen(port, "0.0.0.0", () => {
+      console.log("=================================================");
+      console.log(`Server is running on port ${port}`);
+      console.log(`Local URL: http://0.0.0.0:${port}`);
+      console.log(`Replit URL: https://${process.env.REPL_SLUG}.${process.env.REPL_OWNER}.repl.co`);
+      console.log("=================================================");
+    });
+    
+    // Add error handling for the server
+    server.on('error', (error) => {
+      if (error.code === 'EADDRINUSE') {
+        console.log(`Port ${port} is already in use, trying ${port + 1}...`);
+        startServer(port + 1);
+      } else {
+        console.error('Server error:', error);
+      }
+    });
+  } catch (error) {
+    console.error('Failed to start server:', error);
+  }
+};
+
+// Start server with initial port
+startServer(PORT);
 
 // Add error handling for the server
 server.on('error', (error) => {
