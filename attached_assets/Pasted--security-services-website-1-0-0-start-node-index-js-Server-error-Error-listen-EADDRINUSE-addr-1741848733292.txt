@@ -1,0 +1,243 @@
+ security-services-website@1.0.0 start
+> node index.js
+
+Server error: Error: listen EADDRINUSE: address already in use 0.0.0.0:3000
+    at Server.setupListenHandle [as _listen2] (node:net:1740:16)
+    at listenInCluster (node:net:1788:12)
+    at doListen (node:net:1937:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3000
+}
+❌ MongoDB Connection error: MongoParseError: option sslvalidate is not supported
+    at parseOptions (/home/runner/workspace/node_modules/mongodb/lib/connection_string.js:278:15)
+    at new MongoClient (/home/runner/workspace/node_modules/mongodb/lib/mongo_client.js:52:61)
+    at NativeConnection.createClient (/home/runner/workspace/node_modules/mongoose/lib/drivers/node-mongodb-native/connection.js:328:14)
+    at NativeConnection.openUri (/home/runner/workspace/node_modules/mongoose/lib/connection.js:1071:34)
+    at Mongoose.connect (/home/runner/workspace/node_modules/mongoose/lib/mongoose.js:446:15)
+    at Object.<anonymous> (/home/runner/workspace/index.js:19:4)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12) {
+  errorLabelSet: Set(0) {}
+}
+
+> security-services-website@1.0.0 start
+> node index.js
+
+Server error: Error: listen EADDRINUSE: address already in use 0.0.0.0:3000
+    at Server.setupListenHandle [as _listen2] (node:net:1740:16)
+    at listenInCluster (node:net:1788:12)
+    at doListen (node:net:1937:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3000
+}
+❌ MongoDB Connection error: MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+    at _handleConnectionErrors (/home/runner/workspace/node_modules/mongoose/lib/connection.js:1165:11)
+    at NativeConnection.openUri (/home/runner/workspace/node_modules/mongoose/lib/connection.js:1096:11) {
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'cluster0-shard-00-01.y5o4d.mongodb.net:27017' => [ServerDescription],
+      'cluster0-shard-00-00.y5o4d.mongodb.net:27017' => [ServerDescription],
+      'cluster0-shard-00-02.y5o4d.mongodb.net:27017' => [ServerDescription]
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-ka0mhx-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined
+}
+/home/runner/workspace/node_modules/mongodb/lib/sdam/topology.js:321
+                const timeoutError = new error_1.MongoServerSelectionError(`Server selection timed out after ${timeout?.duration} ms`, this.description);
+                                     ^
+
+MongoServerSelectionError: C0C7A206B57F0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:ssl/record/rec_layer_s3.c:1586:SSL alert number 80
+
+    at Topology.selectServer (/home/runner/workspace/node_modules/mongodb/lib/sdam/topology.js:321:38)
+    at async Topology._connect (/home/runner/workspace/node_modules/mongodb/lib/sdam/topology.js:200:28)
+    at async Topology.connect (/home/runner/workspace/node_modules/mongodb/lib/sdam/topology.js:152:13)
+    at async topologyConnect (/home/runner/workspace/node_modules/mongodb/lib/mongo_client.js:233:17)
+    at async MongoClient._connect (/home/runner/workspace/node_modules/mongodb/lib/mongo_client.js:246:13)
+    at async MongoClient.connect (/home/runner/workspace/node_modules/mongodb/lib/mongo_client.js:171:13)
+    at async MongoClient.connect (/home/runner/workspace/node_modules/mongodb/lib/mongo_client.js:360:16) {
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'cluster0-shard-00-02.y5o4d.mongodb.net:27017' => ServerDescription {
+        address: 'cluster0-shard-00-02.y5o4d.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 105006964,
+        lastWriteDate: 0,
+        error: MongoNetworkError: C0C7A206B57F0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:ssl/record/rec_layer_s3.c:1586:SSL alert number 80
+        
+            at TLSSocket.<anonymous> (/home/runner/workspace/node_modules/mongodb/lib/cmap/connect.js:285:44)
+            at Object.onceWrapper (node:events:628:26)
+            at TLSSocket.emit (node:events:513:28)
+            at emitErrorNT (node:internal/streams/destroy:151:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+            at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+          errorLabelSet: Set(1) { 'ResetPool' },
+          beforeHandshake: false,
+          [cause]: [Error: C0C7A206B57F0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:ssl/record/rec_layer_s3.c:1586:SSL alert number 80
+          ] {
+            library: 'SSL routines',
+            reason: 'tlsv1 alert internal error',
+            code: 'ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR'
+          }
+        },
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'cluster0-shard-00-00.y5o4d.mongodb.net:27017' => ServerDescription {
+        address: 'cluster0-shard-00-00.y5o4d.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 105006980,
+        lastWriteDate: 0,
+        error: MongoNetworkError: C0C7A206B57F0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:ssl/record/rec_layer_s3.c:1586:SSL alert number 80
+        
+            at TLSSocket.<anonymous> (/home/runner/workspace/node_modules/mongodb/lib/cmap/connect.js:285:44)
+            at Object.onceWrapper (node:events:628:26)
+            at TLSSocket.emit (node:events:513:28)
+            at emitErrorNT (node:internal/streams/destroy:151:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+            at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+          errorLabelSet: Set(1) { 'ResetPool' },
+          beforeHandshake: false,
+          [cause]: [Error: C0C7A206B57F0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:ssl/record/rec_layer_s3.c:1586:SSL alert number 80
+          ] {
+            library: 'SSL routines',
+            reason: 'tlsv1 alert internal error',
+            code: 'ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR'
+          }
+        },
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'cluster0-shard-00-01.y5o4d.mongodb.net:27017' => ServerDescription {
+        address: 'cluster0-shard-00-01.y5o4d.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 105006968,
+        lastWriteDate: 0,
+        error: MongoNetworkError: C0C7A206B57F0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:ssl/record/rec_layer_s3.c:1586:SSL alert number 80
+        
+            at TLSSocket.<anonymous> (/home/runner/workspace/node_modules/mongodb/lib/cmap/connect.js:285:44)
+            at Object.onceWrapper (node:events:628:26)
+            at TLSSocket.emit (node:events:513:28)
+            at emitErrorNT (node:internal/streams/destroy:151:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+            at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+          errorLabelSet: Set(1) { 'ResetPool' },
+          beforeHandshake: false,
+          [cause]: [Error: C0C7A206B57F0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:ssl/record/rec_layer_s3.c:1586:SSL alert number 80
+          ] {
+            library: 'SSL routines',
+            reason: 'tlsv1 alert internal error',
+            code: 'ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR'
+          }
+        },
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-ka0mhx-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined,
+  [cause]: MongoNetworkError: C0C7A206B57F0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:ssl/record/rec_layer_s3.c:1586:SSL alert number 80
+  
+      at TLSSocket.<anonymous> (/home/runner/workspace/node_modules/mongodb/lib/cmap/connect.js:285:44)
+      at Object.onceWrapper (node:events:628:26)
+      at TLSSocket.emit (node:events:513:28)
+      at emitErrorNT (node:internal/streams/destroy:151:8)
+      at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+    errorLabelSet: Set(1) { 'ResetPool' },
+    beforeHandshake: false,
+    [cause]: [Error: C0C7A206B57F0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:ssl/record/rec_layer_s3.c:1586:SSL alert number 80
+    ] {
+      library: 'SSL routines',
+      reason: 'tlsv1 alert internal error',
+      code: 'ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR'
+    }
+  }
+}
+
+Node.js v18.16.0
