@@ -21,12 +21,27 @@ document.addEventListener("DOMContentLoaded", function() {
                 const targetId = this.getAttribute("href");
                 if (!targetId || targetId === "#") return; // Skip empty or # only links
                 
-                const targetSection = document.querySelector(targetId);
-                
-                if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                try {
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                } catch (error) {
+                    console.warn("Invalid selector:", targetId);
                 }
             });
+        });
+    }
+    
+    // CTA button scroll if it exists
+    const ctaButton = document.querySelector(".cta-button");
+    const servicesSection = document.getElementById("all-services-section");
+    
+    if (ctaButton && servicesSection) {
+        ctaButton.addEventListener("click", function(e) {
+            e.preventDefault();
+            servicesSection.scrollIntoView({ behavior: "smooth", block: "start" });
         });
     }
     
