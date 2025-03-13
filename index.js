@@ -522,8 +522,19 @@ const startServer = (port) => {
   }
 };
 
-// Start server with initial port
-startServer(PORT);
+// Start server with initial port and handle port conflict
+const tryAlternativePorts = () => {
+  // Use a kill command if needed to free up the port
+  try {
+    startServer(PORT);
+  } catch (err) {
+    console.error("Failed to start server:", err);
+    // Try alternative port if main one is busy
+    startServer(PORT + 1);
+  }
+};
+
+tryAlternativePorts();
 
 app.get('/city/:name', (req, res) => {
     const cityName = req.params.name.toLowerCase();

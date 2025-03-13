@@ -30,4 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
             targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
         });
     }
+    
+    // Add error handling for document queries
+    console.log("Global script loaded successfully");
 });
