@@ -1,3 +1,4 @@
+
 const express = require("express");
 const mongoose = require("mongoose");
 const session = require("express-session");
@@ -14,44 +15,10 @@ const PORT = process.env.PORT || 3000;
 // MongoDB Atlas Database Connection
 const uri = "mongodb+srv://shahnawazkarimi2014:No0708156402@cluster0.y5o4d.mongodb.net/?retryWrites=true&w=majority&tls=true";
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 3000;
-
-const uri = "mongodb+srv://<username>:<password>@cluster.mongodb.net/<dbname>?retryWrites=true&w=majority&tls=true";
-
-const client = new MongoClient(uri, {
-  tls: true,
-  serverApi: ServerApiVersion.v1,
-});
-
-// Define the function clearly:
-async function connectToMongoDB() {
-  try {
-    await client.connect();
-    console.log("✅ Connected successfully to MongoDB Atlas!");
-  } catch (err) {
-    console.error("❌ MongoDB Connection Error:", err);
-  }
-}
-
-// Call the function AFTER its definition:
-connectToMongoDB();
-
-// Start the Express server
-app.listen(port, () => {
-  console.log(`🚀 Server is running on port ${port}`);
-});
-
-
-connectToMongoDB();
-
-
 mongoose
   .connect(uri)
-  .then(() => console.log("Connected to MongoDB Atlas"))
-  .catch((err) => console.error("Connection error:", err));
+  .then(() => console.log("✅ Connected to MongoDB Atlas"))
+  .catch((err) => console.error("❌ Connection error:", err));
 
 // Define a User Model
 const userSchema = new mongoose.Schema({
