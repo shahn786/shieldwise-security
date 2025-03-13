@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (!targetId || targetId === "#") return; // Skip empty or # only links
                 
                 try {
-                    // Handle # correctly, removing it if it's at the start of targetId
-                    const selector = targetId.startsWith("#") ? targetId : `#${targetId}`;
+                    // Make sure we have a valid selector
+                    const selector = targetId; // Use the href value directly
                     const targetSection = document.querySelector(selector);
                     
                     if (targetSection) {

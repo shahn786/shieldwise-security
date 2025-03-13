@@ -15,17 +15,29 @@ const PORT = process.env.PORT || 3000;
 // MongoDB Atlas Database Connection
 const uri = "mongodb+srv://shahnawazkarimi2014:No0708156402@cluster0.y5o4d.mongodb.net/?retryWrites=true&w=majority";
 
-// Using direct connection options specifically for Replit's environment
+// Using simplified connection with Node.js driver options
 mongoose
   .connect(uri, {
     ssl: true,
     sslValidate: false,
-    connectTimeoutMS: 30000,
-    socketTimeoutMS: 30000,
     serverSelectionTimeoutMS: 30000,
+    tls: true,
+    tlsAllowInvalidCertificates: true,
+    tlsAllowInvalidHostnames: true,
+    tlsInsecure: true
   })
   .then(() => console.log("✅ Connected successfully to MongoDB Atlas"))
-  .catch((err) => console.error("❌ MongoDB Connection Error:", err));
+  .catch((err) => {
+    console.error("❌ MongoDB Connection Error:", err);
+    console.log("Attempting alternative connection method...");
+    
+    mongoose.connect(uri, { 
+      tlsCAFile: require('path').join(__dirname, 'ca-certificate.crt'), // MongoDB Atlas root certificate
+      serverApi: { version: '1', strict: true }
+    })
+    .then(() => console.log("✅ Connected successfully with alternative settings"))
+    .catch(fallbackErr => console.error("❌ Fallback connection failed:", fallbackErr));
+  });
 
 // Define a User Model
 const userSchema = new mongoose.Schema({
