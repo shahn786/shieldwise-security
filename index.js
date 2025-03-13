@@ -13,17 +13,16 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // MongoDB Atlas Database Connection
-const uri = "mongodb+srv://shahnawazkarimi2014:No0708156402@cluster0.y5o4d.mongodb.net/?retryWrites=true&w=majority&tls=true";
+const uri = "mongodb+srv://shahnawazkarimi2014:No0708156402@cluster0.y5o4d.mongodb.net/?retryWrites=true&w=majority";
 
-// Using updated MongoDB connection options for Replit environment
+// Using direct connection options specifically for Replit's environment
 mongoose
   .connect(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    tls: true,
-    tlsInsecure: true, // Required for Replit environment
-    serverSelectionTimeoutMS: 5000, // Timeout after 5s instead of 30s
-    heartbeatFrequencyMS: 10000, // Default is 10000
+    ssl: true,
+    sslValidate: false,
+    connectTimeoutMS: 30000,
+    socketTimeoutMS: 30000,
+    serverSelectionTimeoutMS: 30000,
   })
   .then(() => console.log("✅ Connected successfully to MongoDB Atlas"))
   .catch((err) => console.error("❌ MongoDB Connection Error:", err));

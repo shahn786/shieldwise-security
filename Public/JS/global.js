@@ -22,7 +22,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (!targetId || targetId === "#") return; // Skip empty or # only links
                 
                 try {
-                    const targetSection = document.querySelector(targetId);
+                    // Handle # correctly, removing it if it's at the start of targetId
+                    const selector = targetId.startsWith("#") ? targetId : `#${targetId}`;
+                    const targetSection = document.querySelector(selector);
                     
                     if (targetSection) {
                         targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
