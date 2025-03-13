@@ -1,0 +1,109 @@
+The main issue causing your code to fail is that you've accidentally duplicated and mixed together two separate MongoDB connection methods (MongoClient and mongoose) and you've also duplicated several variable definitions (uri, app, and imports).
+
+Here's exactly how to fix your index.js clearly and simply:
+
+🚩 Step 1: Clean up duplicated variables and imports
+Remove these duplicate lines:
+javascript
+Copy
+Edit
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
+
+const uri = "mongodb+srv://<username>:<password>@cluster.mongodb.net/<dbname>?retryWrites=true&w=majority&tls=true";
+
+const client = new MongoClient(uri, {
+  tls: true,
+  serverApi: ServerApiVersion.v1,
+});
+
+async function connectToMongoDB() {
+  try {
+    await client.connect();
+    console.log("✅ Connected successfully to MongoDB Atlas!");
+  } catch (err) {
+    console.error("❌ MongoDB Connection Error:", err);
+  }
+}
+
+connectToMongoDB();
+These lines are redundant, causing conflicts.
+
+🚩 Step 2: Keep your original mongoose setup (remove MongoClient completely)
+Only keep your original Mongoose connection clearly as below:
+javascript
+Copy
+Edit
+const uri = "mongodb+srv://shahnawazkarimi2014:No0708156402@cluster0.y5o4d.mongodb.net/?retryWrites=true&w=majority&tls=true";
+
+mongoose
+  .connect(uri)
+  .then(() => console.log("✅ Connected to MongoDB Atlas"))
+  .catch((err) => console.error("❌ Connection error:", err));
+Do NOT use both mongoose and MongoClient simultaneously—use one consistently (mongoose recommended since your schema/models use it).
+
+🚩 Step 3: Correct Session Setup
+Your current session setup is good. No changes needed here:
+
+javascript
+Copy
+Edit
+app.use(
+  session({
+    secret: "your-secret-key",
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({ mongoUrl: uri }),
+  }),
+);
+🚩 Step 4: Verify and ensure your server listens only once at the bottom
+Your current listening code is correct. Keep this at the bottom of your file (once only):
+
+javascript
+Copy
+Edit
+const server = app.listen(PORT, "0.0.0.0", () => {
+  console.log("=================================================");
+  console.log(`Server is running on port ${PORT}`);
+  console.log(`Local URL: http://0.0.0.0:${PORT}`);
+  console.log(`Replit URL: https://${process.env.REPL_SLUG}.${process.env.REPL_OWNER}.repl.co`);
+  console.log("=================================================");
+});
+✅ Corrected & Simplified index.js Setup:
+After cleanup, your MongoDB connection and imports should look exactly like this at the top:
+
+javascript
+Copy
+Edit
+const express = require("express");
+const mongoose = require("mongoose");
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
+const passport = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
+const bcrypt = require("bcrypt");
+const flash = require("connect-flash");
+const path = require("path");
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// MongoDB Atlas connection (mongoose only!)
+const uri = "mongodb+srv://shahnawazkarimi2014:No0708156402@cluster0.y5o4d.mongodb.net/?retryWrites=true&w=majority&tls=true";
+
+mongoose.connect(uri)
+  .then(() => console.log("✅ Connected to MongoDB Atlas"))
+  .catch((err) => console.error("❌ MongoDB Connection error:", err));
+Remove the entire MongoClient block from your current file.
+
+✅ Final Steps:
+After the cleanup:
+
+Save your cleaned-up index.js file.
+Restart the server in Replit:
+bash
+Copy
+Edit
+npm run start
