@@ -13,18 +13,16 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // MongoDB Atlas Database Connection
-const uri = "mongodb+srv://shahnawazkarimi2014:No0708156402@cluster0.y5o4d.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://shahnawazkarimi2014:No0708156402@cluster0.y5o4d.mongodb.net/?retryWrites=true&w=majority&tls=true";
 
 // Using updated MongoDB connection options
 mongoose
   .connect(uri, {
-    // Only using standard, modern options
-    serverSelectionTimeoutMS: 5000, // Timeout after 5s instead of 30s
     tls: true,
-    tlsAllowInvalidCertificates: true, // Only during development - not recommended for production
+    tlsAllowInvalidCertificates: true, // Temporary fix for Replit environments specifically
   })
-  .then(() => console.log("✅ Connected to MongoDB Atlas"))
-  .catch((err) => console.error("❌ MongoDB Connection error:", err));
+  .then(() => console.log("✅ Connected successfully to MongoDB Atlas"))
+  .catch((err) => console.error("❌ MongoDB Connection Error:", err));
 
 // Define a User Model
 const userSchema = new mongoose.Schema({
@@ -526,8 +524,6 @@ const startServer = (port) => {
 
 // Start server with initial port
 startServer(PORT);
-
-// Server error handling is already configured in startServer function
 
 app.get('/city/:name', (req, res) => {
     const cityName = req.params.name.toLowerCase();
