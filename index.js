@@ -13,14 +13,14 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // MongoDB Atlas Database Connection
-const uri = "mongodb+srv://shahnawazkarimi2014:No0708156402@cluster0.y5o4d.mongodb.net/?retryWrites=true&w=majority&ssl=true";
+const uri = "mongodb+srv://shahnawazkarimi2014:No0708156402@cluster0.y5o4d.mongodb.net/?retryWrites=true&w=majority";
 
+// Correct mongoose connection options:
 mongoose
   .connect(uri, {
     ssl: true,
-    sslValidate: false, // Consider changing to 'true' for production
   })
-  .then(() => console.log("✅ Connected to MongoDB Atlas (SSL)"))
+  .then(() => console.log("✅ Connected to MongoDB Atlas"))
   .catch((err) => console.error("❌ MongoDB Connection error:", err));
 
 // Define a User Model
