@@ -18,8 +18,10 @@ const uri = "mongodb+srv://shahnawazkarimi2014:No0708156402@cluster0.y5o4d.mongo
 
 mongoose.connect(uri, {
   serverSelectionTimeoutMS: 5000,
-  tlsAllowInvalidCertificates: false,
+  tls: true,
+  tlsInsecure: true,
   retryWrites: true,
+  useNewUrlParser: true
 })
 .then(() => console.log("✅ Connected successfully to MongoDB Atlas"))
 .catch((err) => console.error("❌ MongoDB Connection Error:", err));
