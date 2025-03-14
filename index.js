@@ -17,9 +17,9 @@ const PORT = process.env.PORT || 3000;
 const uri = "mongodb+srv://shahnawazkarimi2014:No0708156402@cluster0.y5o4d.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.connect(uri, {
-  tls: true,
-  tlsAllowInvalidCertificates: true, // ✅ This resolves Replit SSL issue
-  serverSelectionTimeoutMS: 30000,
+  serverSelectionTimeoutMS: 5000,
+  tlsAllowInvalidCertificates: false,
+  retryWrites: true,
 })
 .then(() => console.log("✅ Connected successfully to MongoDB Atlas"))
 .catch((err) => console.error("❌ MongoDB Connection Error:", err));
