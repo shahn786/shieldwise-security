@@ -13,25 +13,17 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // MongoDB Atlas Database Connection - Using a simpler connection string
+
 const uri = "mongodb+srv://shahnawazkarimi2014:No0708156402@cluster0.y5o4d.mongodb.net/?retryWrites=true&w=majority";
 
-// Connect with minimal options - MongoDB driver v6 compatible
-mongoose
-  .connect(uri)
-  .then(() => console.log("✅ Connected successfully to MongoDB Atlas"))
-  .catch((err) => {
-    console.error("❌ MongoDB Connection Error:", err);
-    console.log("🔄 Attempting to connect without SSL validation...");
-    
-    // Fallback connection with disabled SSL validation
-    mongoose.connect(uri, {
-      ssl: true,
-      sslValidate: false,
-      serverSelectionTimeoutMS: 30000,
-    })
-    .then(() => console.log("✅ Connected successfully to MongoDB Atlas (fallback)"))
-    .catch(fallbackErr => console.error("❌ MongoDB Fallback Connection Error:", fallbackErr));
-  });
+mongoose.connect(uri, {
+  tls: true,
+  tlsAllowInvalidCertificates: true, // ✅ This resolves Replit SSL issue
+  serverSelectionTimeoutMS: 30000,
+})
+.then(() => console.log("✅ Connected successfully to MongoDB Atlas"))
+.catch((err) => console.error("❌ MongoDB Connection Error:", err));
+
 
 // Define a User Model
 const userSchema = new mongoose.Schema({
