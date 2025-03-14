@@ -1,4 +1,3 @@
-
 const express = require("express");
 const mongoose = require("mongoose");
 const session = require("express-session");
@@ -94,7 +93,12 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-      mongoUrl: uri
+      mongoUrl: uri,
+      crypto: {
+        secret: 'squirrel'
+      },
+      ttl: 14 * 24 * 60 * 60,
+      autoRemove: 'native'
     }),
   }),
 );
@@ -510,7 +514,7 @@ const startServer = (port) => {
       console.log(`Replit URL: https://${process.env.REPL_SLUG}.${process.env.REPL_OWNER}.repl.co`);
       console.log("=================================================");
     });
-    
+
     // Add error handling for the server
     server.on('error', (error) => {
       if (error.code === 'EADDRINUSE') {
