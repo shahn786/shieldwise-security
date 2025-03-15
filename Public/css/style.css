@@ -398,12 +398,114 @@ body {
   }
 }
 
-/*     Some Of Our Security Services     */
-/* Container for Services Section */
+/*     Comprehensive Security Services     */
 .services-section {
-  padding: 120px 0;
-  background: linear-gradient(to bottom, #f8f9fa, #fff);
+  padding: 80px 0;
+  background-color: #f9f9f9;
   position: relative;
+}
+
+.services-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v20H0z' fill='%233498db' fill-opacity='0.03'/%3E%3C/svg%3E");
+  opacity: 0.4;
+}
+
+.section-title {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a2642;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #3498db;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.service-cards-container {
+  margin-top: 40px;
+}
+
+.service-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 30px 15px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: #333;
+  display: block;
+  height: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #3498db;
+}
+
+.service-icon {
+  background-color: rgba(52, 152, 219, 0.1);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  background-color: #3498db;
+}
+
+.service-icon i {
+  font-size: 30px;
+  color: #3498db;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon i {
+  color: #ffffff;
+}
+
+.service-card p {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+  color: #1a2642;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover p {
+  color: #3498db;
 }
 
 .services-section::before {
