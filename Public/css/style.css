@@ -469,9 +469,10 @@ body {
 
 /* Hover effect for Service Card */
 .service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-  border-color: rgba(211, 47, 47, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  border-color: rgba(211, 47, 47, 0.15);
+  background-color: #fafafa;
 }
 
 .service-card::after {
@@ -481,7 +482,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(211, 47, 47, 0.1) 0%, transparent 100%);
+  background: linear-gradient(135deg, rgba(211, 47, 47, 0.05) 0%, transparent 100%);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
