@@ -1,4 +1,3 @@
-
 /* Global Styles */
 :root {
     --primary-color: #222;
@@ -25,13 +24,16 @@ body {
 .video-container {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .video-container video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform: scale(1.1);
+    transition: transform 0.3s ease-out;
 }
 
 .hero-overlay {
@@ -282,14 +284,17 @@ body {
 /* Services Page Specific Styles */
 .video-container1 {
     position: relative;
-    height: 70vh;
+    height: 75vh;
     overflow: hidden;
+    width: 100%;
 }
 
 .video-container1 video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform: scale(1.1);
+    transition: transform 0.3s ease-out;
 }
 
 .trust-box1 {
@@ -328,21 +333,30 @@ body {
     .hero-title {
         font-size: 2.5rem;
     }
-    
+
     .hero-subtitle {
         font-size: 1.4rem;
     }
-    
+
     .why-choose-full-width {
         flex-direction: column;
     }
-    
+
     .section-title, .section-title1 {
         font-size: 2rem;
     }
-    
+
     .trust-box1, .services-box1 {
         padding: 20px;
+    }
+    .video-container,
+    .video-container1 {
+        height: 60vh;
+    }
+
+    .video-container video,
+    .video-container1 video {
+        transform: scale(1.15);
     }
 }
 
@@ -350,12 +364,21 @@ body {
     .hero-title {
         font-size: 2rem;
     }
-    
+
     .service-card {
         margin: 10px;
     }
-    
+
     .area-card {
         height: 150px;
+    }
+    .video-container,
+    .video-container1 {
+        height: 50vh;
+    }
+
+    .video-container video,
+    .video-container1 video {
+        transform: scale(1.2);
     }
 }
