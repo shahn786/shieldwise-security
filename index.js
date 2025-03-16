@@ -545,6 +545,80 @@ app.get('/los-angeles', (req, res) => {
 app.get('/orange-county', (req, res) => {
     res.render('cities/orange-county');
 });
+
+// Orange County Cities Routes
+app.get('/orange-county/anaheim', (req, res) => {
+    res.render('cities/orange-county/anaheim', { title: 'Anaheim' });
+});
+app.get('/orange-county/irvine', (req, res) => {
+    res.render('cities/orange-county/irvine', { title: 'Irvine' });
+});
+app.get('/orange-county/santa-ana', (req, res) => {
+    res.render('cities/orange-county/santa-ana', { title: 'Santa Ana' });
+});
+app.get('/orange-county/newport-beach', (req, res) => {
+    res.render('cities/orange-county/newport-beach', { title: 'Newport Beach' });
+});
+app.get('/orange-county/huntington-beach', (req, res) => {
+    res.render('cities/orange-county/huntington-beach', { title: 'Huntington Beach' });
+});
+app.get('/orange-county/garden-grove', (req, res) => {
+    res.render('cities/orange-county/garden-grove', { title: 'Garden Grove' });
+});
+app.get('/orange-county/fullerton', (req, res) => {
+    res.render('cities/orange-county/fullerton', { title: 'Fullerton' });
+});
+app.get('/orange-county/costa-mesa', (req, res) => {
+    res.render('cities/orange-county/costa-mesa', { title: 'Costa Mesa' });
+});
+app.get('/orange-county/laguna-beach', (req, res) => {
+    res.render('cities/orange-county/laguna-beach', { title: 'Laguna Beach' });
+});
+app.get('/orange-county/mission-viejo', (req, res) => {
+    res.render('cities/orange-county/mission-viejo', { title: 'Mission Viejo' });
+});
+app.get('/orange-county/tustin', (req, res) => {
+    res.render('cities/orange-county/tustin', { title: 'Tustin' });
+});
+app.get('/orange-county/lake-forest', (req, res) => {
+    res.render('cities/orange-county/lake-forest', { title: 'Lake Forest' });
+});
+app.get('/orange-county/westminster', (req, res) => {
+    res.render('cities/orange-county/westminster', { title: 'Westminster' });
+});
+app.get('/orange-county/cypress', (req, res) => {
+    res.render('cities/orange-county/cypress', { title: 'Cypress' });
+});
+app.get('/orange-county/aliso-viejo', (req, res) => {
+    res.render('cities/orange-county/aliso-viejo', { title: 'Aliso Viejo' });
+});
+app.get('/orange-county/laguna-niguel', (req, res) => {
+    res.render('cities/orange-county/laguna-niguel', { title: 'Laguna Niguel' });
+});
+app.get('/orange-county/orange', (req, res) => {
+    res.render('cities/orange-county/orange', { title: 'Orange' });
+});
+app.get('/orange-county/dana-point', (req, res) => {
+    res.render('cities/orange-county/dana-point', { title: 'Dana Point' });
+});
+app.get('/orange-county/san-clemente', (req, res) => {
+    res.render('cities/orange-county/san-clemente', { title: 'San Clemente' });
+});
+app.get('/orange-county/buena-park', (req, res) => {
+    res.render('cities/orange-county/buena-park', { title: 'Buena Park' });
+});
+app.get('/orange-county/fountain-valley', (req, res) => {
+    res.render('cities/orange-county/fountain-valley', { title: 'Fountain Valley' });
+});
+app.get('/orange-county/laguna-hills', (req, res) => {
+    res.render('cities/orange-county/laguna-hills', { title: 'Laguna Hills' });
+});
+app.get('/orange-county/yorba-linda', (req, res) => {
+    res.render('cities/orange-county/yorba-linda', { title: 'Yorba Linda' });
+});
+app.get('/orange-county/placentia', (req, res) => {
+    res.render('cities/orange-county/placentia', { title: 'Placentia' });
+});
 app.get('/san-francisco', (req, res) => {
     res.render('cities/san-francisco');
 });
