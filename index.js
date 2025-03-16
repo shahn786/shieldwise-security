@@ -548,16 +548,16 @@ app.get('/orange-county', (req, res) => {
 
 // Orange County Cities
 app.get('/orange-county/anaheim', (req, res) => {
-    res.render('cities/orange-county/anaheim', { title: 'Anaheim' });
+    res.render('cities/Irvine', { title: 'Anaheim' });
 });
 app.get('/orange-county/irvine', (req, res) => {
-    res.render('cities/orange-county/irvine', { title: 'Irvine' });
+    res.render('cities/Irvine', { title: 'Irvine' });
 });
 app.get('/orange-county/santa-ana', (req, res) => {
-    res.render('cities/orange-county/santa-ana', { title: 'Santa Ana' });
+    res.render('cities/santa-ana', { title: 'Santa Ana' });
 });
 app.get('/orange-county/newport-beach', (req, res) => {
-    res.render('cities/orange-county/newport-beach', { title: 'Newport Beach' });
+    res.render('cities/newport-beach', { title: 'Newport Beach' });
 });
 app.get('/orange-county/huntington-beach', (req, res) => {
     res.render('cities/orange-county/huntington-beach', { title: 'Huntington Beach' });
