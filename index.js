@@ -19,8 +19,7 @@ mongoose.connect(uri, {
   serverSelectionTimeoutMS: 5000,
   tls: true,
   tlsInsecure: true,
-  retryWrites: true,
-  useNewUrlParser: true
+  retryWrites: true
 })
 .then(() => console.log("✅ Connected successfully to MongoDB Atlas"))
 .catch((err) => console.error("❌ MongoDB Connection Error:", err));
