@@ -553,7 +553,7 @@ app.get('/orange-county/irvine', (req, res) => {
     res.render('cities/Irvine', { title: 'Irvine', cityName: 'Irvine' });
 });
 app.get('/orange-county/santa-ana', (req, res) => {
-    res.render('cities/santa-ana', { title: 'Santa Ana', cityName: 'Santa Ana' });
+    res.render('cities/orange-county/santa-ana', { title: 'Santa Ana', cityName: 'Santa Ana' });
 });
 app.get('/orange-county/newport-beach', (req, res) => {
     res.render('cities/newport-beach', { title: 'Newport Beach' });
