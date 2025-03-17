@@ -531,259 +531,77 @@ const startServer = (port) => {
 // Start the server directly
 startServer(PORT);
 
+// Generic route for city pages
 app.get('/city/:name', (req, res) => {
     const cityName = req.params.name.toLowerCase();
-    const cityFilePath = path.join(__dirname, 'views', 'cities', `${cityName}.ejs`);
-
-    res.render(`cities/${cityName}`, { city: cityName });
+    res.render(`cities/${cityName}`, { city: cityName, title: cityName });
 });
-// Example: Direct access to Los Angeles page
+
+// Main city routes
 app.get('/los-angeles', (req, res) => {
-    res.render('cities/los-angeles');
+    res.render('cities/los-angeles', { title: 'Los Angeles' });
 });
+
 app.get('/orange-county', (req, res) => {
-    res.render('cities/orange-county');
+    res.render('cities/orange-county', { title: 'Orange County' });
 });
 
-// Orange County Cities
-app.get('/orange-county/anaheim', (req, res) => {
-    res.render('cities/Irvine', { title: 'Anaheim', cityName: 'Anaheim' });
-});
-app.get('/orange-county/irvine', (req, res) => {
-    res.render('cities/Irvine', { title: 'Irvine', cityName: 'Irvine' });
-});
-app.get('/orange-county/santa-ana', (req, res) => {
-    res.render('cities/orange-county/santa-ana', { title: 'Santa Ana', cityName: 'Santa Ana' });
-});
-app.get('/orange-county/newport-beach', (req, res) => {
-    res.render('cities/newport-beach', { title: 'Newport Beach' });
-});
-app.get('/orange-county/huntington-beach', (req, res) => {
-    res.render('cities/orange-county/huntington-beach', { title: 'Huntington Beach' });
-});
-app.get('/orange-county/garden-grove', (req, res) => {
-    res.render('cities/orange-county/garden-grove', { title: 'Garden Grove' });
-});
-app.get('/orange-county/fullerton', (req, res) => {
-    res.render('cities/orange-county/fullerton', { title: 'Fullerton' });
-});
-app.get('/orange-county/costa-mesa', (req, res) => {
-    res.render('cities/orange-county/costa-mesa', { title: 'Costa Mesa' });
-});
-app.get('/orange-county/laguna-beach', (req, res) => {
-    res.render('cities/orange-county/laguna-beach', { title: 'Laguna Beach' });
-});
-app.get('/orange-county/mission-viejo', (req, res) => {
-    res.render('cities/orange-county/mission-viejo', { title: 'Mission Viejo' });
-});
-app.get('/orange-county/tustin', (req, res) => {
-    res.render('cities/orange-county/tustin', { title: 'Tustin' });
-});
-app.get('/orange-county/lake-forest', (req, res) => {
-    res.render('cities/orange-county/lake-forest', { title: 'Lake Forest' });
-});
-app.get('/orange-county/westminster', (req, res) => {
-    res.render('cities/orange-county/westminster', { title: 'Westminster' });
-});
-app.get('/orange-county/cypress', (req, res) => {
-    res.render('cities/orange-county/cypress', { title: 'Cypress' });
-});
-app.get('/orange-county/aliso-viejo', (req, res) => {
-    res.render('cities/orange-county/aliso-viejo', { title: 'Aliso Viejo' });
-});
-app.get('/orange-county/laguna-niguel', (req, res) => {
-    res.render('cities/orange-county/laguna-niguel', { title: 'Laguna Niguel' });
-});
-app.get('/orange-county/orange', (req, res) => {
-    res.render('cities/orange-county/orange', { title: 'Orange' });
-});
-
-// Orange County Additional Cities
-app.get('/orange-county/huntington-beach', (req, res) => {
-    res.render('cities/orange-county/huntington-beach', { title: 'Huntington Beach' });
-});
-app.get('/orange-county/garden-grove', (req, res) => {
-    res.render('cities/orange-county/garden-grove', { title: 'Garden Grove' });
-});
-app.get('/orange-county/fullerton', (req, res) => {
-    res.render('cities/orange-county/fullerton', { title: 'Fullerton' });
-});
-app.get('/orange-county/costa-mesa', (req, res) => {
-    res.render('cities/orange-county/costa-mesa', { title: 'Costa Mesa' });
-});
-app.get('/orange-county/laguna-beach', (req, res) => {
-    res.render('cities/orange-county/laguna-beach', { title: 'Laguna Beach' });
-});
-app.get('/orange-county/mission-viejo', (req, res) => {
-    res.render('cities/orange-county/mission-viejo', { title: 'Mission Viejo' });
-});
-app.get('/orange-county/tustin', (req, res) => {
-    res.render('cities/orange-county/tustin', { title: 'Tustin' });
-});
-app.get('/orange-county/lake-forest', (req, res) => {
-    res.render('cities/orange-county/lake-forest', { title: 'Lake Forest' });
-});
-app.get('/orange-county/westminster', (req, res) => {
-    res.render('cities/orange-county/westminster', { title: 'Westminster' });
-});
-app.get('/orange-county/cypress', (req, res) => {
-    res.render('cities/orange-county/cypress', { title: 'Cypress' });
-});
-app.get('/orange-county/aliso-viejo', (req, res) => {
-    res.render('cities/orange-county/aliso-viejo', { title: 'Aliso Viejo' });
-});
-app.get('/orange-county/laguna-niguel', (req, res) => {
-    res.render('cities/orange-county/laguna-niguel', { title: 'Laguna Niguel' });
-});
-app.get('/orange-county/dana-point', (req, res) => {
-    res.render('cities/orange-county/dana-point', { title: 'Dana Point' });
-});
-app.get('/orange-county/san-clemente', (req, res) => {
-    res.render('cities/orange-county/san-clemente', { title: 'San Clemente' });
-});
-app.get('/orange-county/buena-park', (req, res) => {
-    res.render('cities/orange-county/buena-park', { title: 'Buena Park' });
-});
-app.get('/orange-county/fountain-valley', (req, res) => {
-    res.render('cities/orange-county/fountain-valley', { title: 'Fountain Valley' });
-});
-app.get('/orange-county/laguna-hills', (req, res) => {
-    res.render('cities/orange-county/laguna-hills', { title: 'Laguna Hills' });
-});
-app.get('/orange-county/yorba-linda', (req, res) => {
-    res.render('cities/orange-county/yorba-linda', { title: 'Yorba Linda' });
-});
-app.get('/orange-county/dana-point', (req, res) => {
-    res.render('cities/orange-county/dana-point', { title: 'Dana Point' });
-});
-app.get('/orange-county/san-clemente', (req, res) => {
-    res.render('cities/orange-county/san-clemente', { title: 'San Clemente' });
-});
-app.get('/orange-county/buena-park', (req, res) => {
-    res.render('cities/orange-county/buena-park', { title: 'Buena Park' });
-});
-app.get('/orange-county/fountain-valley', (req, res) => {
-    res.render('cities/orange-county/fountain-valley', { title: 'Fountain Valley' });
-});
-app.get('/orange-county/laguna-hills', (req, res) => {
-    res.render('cities/orange-county/laguna-hills', { title: 'Laguna Hills' });
-});
-app.get('/orange-county/yorba-linda', (req, res) => {
-    res.render('cities/orange-county/yorba-linda', { title: 'Yorba Linda' });
-});
-app.get('/orange-county/placentia', (req, res) => {
-    res.render('cities/orange-county/placentia', { title: 'Placentia' });
-});
 app.get('/san-francisco', (req, res) => {
-    res.render('cities/san-francisco');
+    res.render('cities/san-francisco', { title: 'San Francisco' });
 });
+
 app.get('/san-diego', (req, res) => {
-    res.render('cities/san-diego'); // ✅ Correct spelling
+    res.render('cities/san-diego', { title: 'San Diego' });
 });
 
-// ✅ Route for Riverside County
 app.get('/riverside-county', (req, res) => {
-    res.render('cities/riverside-county'); // ✅ Correct spelling
+    res.render('cities/riverside-county', { title: 'Riverside County' });
 });
 
-// ✅ Route for San Bernardino County
-// ✅ Route for Riverside County
 app.get('/san-bernardino', (req, res) => {
-    res.render('cities/san-bernardino'); // ✅ Must match views/cities/san-bernardino.ejs
+    res.render('cities/san-bernardino', { title: 'San Bernardino' });
 });
 
-// ✅ Route for Downtown Los Angeles
-app.get('/los-angeles/downtown', (req, res) => {
-    res.render('cities/downtown-los-Angeles', { title: 'Downtown Los Angeles' });
+// Los Angeles area routes
+const losAngelesAreas = [
+    'downtown', 'hollywood', 'beverly-hills', 'santa-monica', 'pasadena',
+    'glendale', 'burbank', 'west-hollywood', 'long-beach', 'torrance',
+    'culver-city', 'malibu', 'san-fernando', 'van-nuys', 'inglewood',
+    'compton', 'palmdale', 'lancaster', 'pomona', 'whittier',
+    'el-monte', 'hawthorne', 'south-gate'
+];
+
+losAngelesAreas.forEach(area => {
+    const formattedArea = area.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    app.get(`/los-angeles/${area}`, (req, res) => {
+        // Special case for downtown-los-Angeles.ejs file
+        if (area === 'downtown') {
+            res.render('cities/downtown-los-Angeles', { title: `${formattedArea} Los Angeles` });
+        } else {
+            res.render(`cities/${area}`, { title: formattedArea });
+        }
+    });
 });
 
-// Routes for additional LA areas
-app.get('/los-angeles/hollywood', (req, res) => {
-    res.render('cities/hollywood', { title: 'Hollywood' });
-});
+// Orange County cities routes
+const orangeCountyCities = [
+    'anaheim', 'irvine', 'santa-ana', 'newport-beach', 'huntington-beach',
+    'garden-grove', 'fullerton', 'costa-mesa', 'laguna-beach', 'mission-viejo',
+    'tustin', 'lake-forest', 'westminster', 'cypress', 'aliso-viejo',
+    'laguna-niguel', 'orange', 'dana-point', 'san-clemente', 'buena-park',
+    'fountain-valley', 'laguna-hills', 'yorba-linda', 'placentia'
+];
 
-// ✅ Route for Beverly Hills Page
-app.get('/los-angeles/beverly-hills', (req, res) => {
-    res.render('cities/beverly-hills', { title: 'Beverly Hills' });
-});
-
-
-app.get('/los-angeles/santa-monica', (req, res) => {
-    res.render('cities/santa-monica', { title: 'Santa Monica' });
-});
-
-app.get('/los-angeles/pasadena', (req, res) => {
-    res.render('cities/pasadena', { title: 'Pasadena' });
-});
-
-app.get('/los-angeles/glendale', (req, res) => {
-    res.render('cities/glendale', { title: 'Glendale' });
-});
-
-app.get('/los-angeles/burbank', (req, res) => {
-    res.render('cities/burbank', { title: 'Burbank' });
-});
-
-app.get('/los-angeles/west-hollywood', (req, res) => {
-    res.render('cities/west-hollywood', { title: 'West Hollywood' });
-});
-
-app.get('/los-angeles/long-beach', (req, res) => {
-    res.render('cities/long-beach', { title: 'Long Beach' });
-});
-
-app.get('/los-angeles/torrance', (req, res) => {
-    res.render('cities/torrance', { title: 'Torrance' });
-});
-
-app.get('/los-angeles/culver-city', (req, res) => {
-    res.render('cities/culver-city', { title: 'Culver City' });
-});
-
-app.get('/los-angeles/malibu', (req, res) => {
-    res.render('cities/malibu', { title: 'Malibu' });
-});
-
-app.get('/los-angeles/san-fernando', (req, res) => {
-    res.render('cities/san-fernando', { title: 'San Fernando' });
-});
-
-app.get('/los-angeles/van-nuys', (req, res) => {
-    res.render('cities/van-nuys', { title: 'Van Nuys' });
-});
-
-app.get('/los-angeles/inglewood', (req, res) => {
-    res.render('cities/inglewood', { title: 'Inglewood' });
-});
-
-app.get('/los-angeles/compton', (req, res) => {
-    res.render('cities/compton', { title: 'Compton' });
-});
-
-app.get('/los-angeles/palmdale', (req, res) => {
-    res.render('cities/palmdale', { title: 'Palmdale' });
-});
-
-app.get('/los-angeles/lancaster', (req, res) => {
-    res.render('cities/lancaster', { title: 'Lancaster' });
-});
-
-app.get('/los-angeles/pomona', (req, res) => {
-    res.render('cities/pomona', { title: 'Pomona' });
-});
-
-app.get('/los-angeles/whittier', (req, res) => {
-    res.render('cities/whittier', { title: 'Whittier' });
-});
-
-app.get('/los-angeles/el-monte', (req, res) => {
-    res.render('cities/el-monte', { title: 'El Monte' });
-});
-
-app.get('/los-angeles/hawthorne', (req, res) => {
-    res.render('cities/hawthorne', { title: 'Hawthorne' });
-});
-
-app.get('/los-angeles/south-gate', (req, res) => {
-    res.render('cities/south-gate', { title: 'South Gate' });
+orangeCountyCities.forEach(city => {
+    const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    app.get(`/orange-county/${city}`, (req, res) => {
+        // Special cases for Anaheim and Irvine
+        if (city === 'anaheim') {
+            res.render('cities/Anaheim', { title: formattedCity, cityName: formattedCity });
+        } else if (city === 'irvine') {
+            res.render('cities/Irvine', { title: formattedCity, cityName: formattedCity });
+        } else {
+            res.render(`cities/orange-county/${city}`, { title: formattedCity, cityName: formattedCity });
+        }
+    });
 });
