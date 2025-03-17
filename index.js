@@ -596,10 +596,7 @@ orangeCountyCities.forEach(city => {
     // Format city name for display (e.g., 'santa-ana' becomes 'Santa Ana')
     const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
-    // Format city name for file path (e.g., 'santa-ana' becomes 'Santa-Ana')
-    const fileNameCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('-');
-
     app.get(`/orange-county/${city}`, (req, res) => {
-        res.render(`cities/${fileNameCity}`, { title: formattedCity, cityName: formattedCity });
+        res.render(`cities/orange-county/${city}`, { title: formattedCity, cityName: formattedCity });
     });
 });
