@@ -3042,3 +3042,79 @@
         font-size: 1rem;
     }
 }
+.badge {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.anaheim-areas-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.anaheim-areas-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.anaheim-areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.area-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.area-card:hover {
+    transform: translateY(-5px);
+}
+
+.area-card:first-child {
+    background-color: #dc3545;
+    color: white;
+}
+
+.area-card i {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: inherit;
+}
+
+.area-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.area-card p {
+    color: inherit;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+.section-description {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
