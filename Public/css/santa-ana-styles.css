@@ -1,0 +1,52 @@
+
+/* Santa Ana Page Specific Styling */
+.santa-ana-page {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Features Container */
+.santa-ana-features-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.santa-ana-feature-item {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.santa-ana-feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.santa-ana-feature-item h3 {
+    color: #2c5282;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.santa-ana-feature-item p {
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .santa-ana-features-container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    
+    .santa-ana-feature-item {
+        padding: 20px;
+    }
+}
