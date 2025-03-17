@@ -503,6 +503,8 @@ app.post("/contact", async (req, res) => {
   }
 });
 
+// About Route
+
 // Function to start server on available port
 const startServer = (port) => {
   try {
@@ -513,7 +515,6 @@ const startServer = (port) => {
       console.log(`Replit URL: https://${process.env.REPL_SLUG}.${process.env.REPL_OWNER}.repl.co`);
       console.log("=================================================");
     });
-
     // Add error handling for the server
     server.on('error', (error) => {
       if (error.code === 'EADDRINUSE') {
@@ -527,7 +528,6 @@ const startServer = (port) => {
     console.error('Failed to start server:', error);
   }
 };
-
 // Start the server directly
 startServer(PORT);
 
@@ -583,7 +583,7 @@ losAngelesAreas.forEach(area => {
     });
 });
 
-// Orange County cities routes
+// Orange County cities routes - all files at views/cities/[CityName].ejs
 const orangeCountyCities = [
     'anaheim', 'irvine', 'santa-ana', 'newport-beach', 'huntington-beach',
     'garden-grove', 'fullerton', 'costa-mesa', 'laguna-beach', 'mission-viejo',
@@ -593,15 +593,13 @@ const orangeCountyCities = [
 ];
 
 orangeCountyCities.forEach(city => {
+    // Format city name for display (e.g., 'santa-ana' becomes 'Santa Ana')
     const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+
+    // Format city name for file path (e.g., 'santa-ana' becomes 'Santa-Ana')
+    const fileNameCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('-');
+
     app.get(`/orange-county/${city}`, (req, res) => {
-        // Special cases for Anaheim and Irvine
-        if (city === 'anaheim') {
-            res.render('cities/Anaheim', { title: formattedCity, cityName: formattedCity });
-        } else if (city === 'irvine') {
-            res.render('cities/Irvine', { title: formattedCity, cityName: formattedCity });
-        } else {
-            res.render(`cities/orange-county/${city}`, { title: formattedCity, cityName: formattedCity });
-        }
+        res.render(`cities/${fileNameCity}`, { title: formattedCity, cityName: formattedCity });
     });
 });
