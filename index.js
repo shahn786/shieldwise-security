@@ -597,6 +597,6 @@ orangeCountyCities.forEach(city => {
     const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
     app.get(`/orange-county/${city}`, (req, res) => {
-        res.render(`cities/orange-county/${city}`, { title: formattedCity, cityName: formattedCity });
+        res.render(`cities/${city}`, { title: formattedCity, cityName: formattedCity });
     });
 });
