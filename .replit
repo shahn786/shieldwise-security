@@ -41,11 +41,7 @@ author = 24083186
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "killall node || true"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "npm start"
+args = "node index.js"
 
 [[ports]]
 localPort = 3000
