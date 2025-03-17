@@ -333,26 +333,75 @@
   background: linear-gradient(to right, var(--primary-color), var(--primary-dark));
 }
 
-.anaheim-features-container {
+.anaheim-areas-section {
+  padding: 80px 0;
+  background: #f9f9f9;
+}
+
+.anaheim-areas-container-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.anaheim-areas-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.anaheim-areas-subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.anaheim-areas-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  margin-top: 40px;
 }
 
-.anaheim-feature-item {
+.anaheim-area-item {
   background: white;
-  border-radius: var(--border-radius);
+  border-radius: 15px;
   padding: 40px 30px;
   text-align: center;
-  transition: var(--transition);
+  transition: all 0.3s ease;
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  position: relative;
-  overflow: hidden;
-  height: 100%;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.anaheim-area-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.anaheim-area-item.active {
+  border-top: 4px solid #d12028;
+}
+
+.area-icon {
+  font-size: 2.5rem;
+  color: #d12028;
+  margin-bottom: 20px;
+}
+
+.anaheim-area-item h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.anaheim-area-item p {
+  color: #666;
+  line-height: 1.6;
 }
 
 .anaheim-feature-item.in-view {
