@@ -48,7 +48,11 @@ async function optimizeImages() {
     console.log('Image optimization complete!');
   } catch (err) {
     console.error('Failed to process images:', err);
+    process.exit(1);
   }
 }
 
-optimizeImages().catch(console.error);
+optimizeImages().catch(err => {
+  console.error('Unhandled error:', err);
+  process.exit(1);
+});
