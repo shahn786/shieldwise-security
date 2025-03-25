@@ -12,7 +12,7 @@ body {
   background-color: #FBFBFB;
 }
 
-/* Video Container */
+/*      video secrion */
 .video-container {
   overflow: hidden;
   position: relative;
@@ -25,6 +25,9 @@ body {
   height: 100%; /* Make the video height fit within the container */
   object-fit: contain; /* Ensures the video fits within the container without cropping or zooming */
 }
+
+
+
 
 /* Services Section */
 .services-section1 {
