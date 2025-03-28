@@ -757,23 +757,50 @@
 }
 
 .anaheim-nearby-cities {
-  margin-top: 40px;
+  margin-top: 60px;
+  padding: 40px;
+  background: linear-gradient(135deg, #f5f0e1, #e8e0d0);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.anaheim-nearby-cities::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/img/map-pattern.png') repeat;
+  opacity: 0.05;
+  animation: subtle-shift 100s linear infinite;
 }
 
 .anaheim-nearby-cities h3 {
-  font-size: 1.6rem;
+  font-size: 2rem;
   color: var(--primary-color);
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
 }
 
 .cities-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
   list-style: none;
   padding: 0;
   margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes subtle-shift {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 1000px; }
 }
 
 .cities-list li {
@@ -782,23 +809,53 @@
 }
 
 .cities-list a {
-  display: inline-block;
-  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
   background: white;
   color: var(--primary-color);
-  border-radius: 30px;
+  border-radius: 15px;
   text-decoration: none;
-  font-weight: 500;
-  transition: var(--transition);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.cities-list a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--primary-color), var(--primary-dark));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.cities-list a span {
+  position: relative;
+  z-index: 2;
+  transition: color 0.4s ease;
 }
 
 .cities-list a:hover {
-  background: var(--primary-color);
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   text-decoration: none;
+}
+
+.cities-list a:hover::before {
+  opacity: 1;
+}
+
+.cities-list a:hover span {
+  color: white;
 }
 
 /* Testimonials Section */
@@ -1090,11 +1147,14 @@
   /* CTA Section */
   .anaheim-cta-section {
     padding: var(--section-padding);
-    background: linear-gradient(45deg, var(--primary-color), var(--primary-dark));
+    background: linear-gradient(135deg, #1a3c6e, #0a1f3d);
     color: white;
     text-align: center;
     position: relative;
     overflow: hidden;
+    background-image: url('/img/security-pattern.png');
+    background-blend-mode: overlay;
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.3);
   }
 
   .anaheim-cta-section::before {
