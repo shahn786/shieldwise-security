@@ -804,6 +804,7 @@
 .cities-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto) 1fr;
   gap: 15px;
   position: relative;
   z-index: 2;
