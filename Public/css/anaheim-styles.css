@@ -1044,7 +1044,7 @@
 /* FAQ Section */
 .anaheim-faq-section {
   padding: var(--section-padding);
-  background-color: #f9f9f9;
+  background: linear-gradient(135deg, #ecf0f1, #bdc3c7);
 }
 
 .anaheim-faq-container {
@@ -1147,14 +1147,14 @@
   /* CTA Section */
   .anaheim-cta-section {
     padding: var(--section-padding);
-    background: linear-gradient(135deg, #1a3c6e, #0a1f3d);
+    background: linear-gradient(135deg, #2c3e50, #34495e);
     color: white;
     text-align: center;
     position: relative;
     overflow: hidden;
     background-image: url('/img/security-pattern.png');
-    background-blend-mode: overlay;
-    box-shadow: inset 0 0 100px rgba(0,0,0,0.3);
+    background-blend-mode: soft-light;
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.4);
   }
 
   .anaheim-cta-section::before {
