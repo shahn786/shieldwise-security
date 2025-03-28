@@ -759,10 +759,10 @@
 
 .anaheim-nearby-cities {
   margin-top: 60px;
-  padding: 40px;
-  background: linear-gradient(135deg, #f5f0e1, #e8e0d0);
+  padding: 50px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
   position: relative;
   overflow: hidden;
 }
@@ -779,24 +779,121 @@
   animation: subtle-shift 100s linear infinite;
 }
 
-.anaheim-nearby-cities h3 {
-  font-size: 2rem;
-  color: var(--primary-color);
-  margin-bottom: 30px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  position: relative;
-}
-
-.cities-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 25px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.cities-header {
+  text-align: center;
+  margin-bottom: 40px;
   position: relative;
   z-index: 2;
+}
+
+.cities-header h3 {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cities-header p {
+  font-size: 1.1rem;
+  color: var(--text-medium);
+  margin: 0;
+}
+
+.cities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.city-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 20px;
+  background: white;
+  border-radius: 15px;
+  text-decoration: none;
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.city-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.city-link i {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.city-link span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.city-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.city-link:hover::before {
+  opacity: 1;
+}
+
+.city-link:hover i,
+.city-link:hover span {
+  color: white;
+}
+
+.city-link.main-link {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+}
+
+.city-link.main-link i,
+.city-link.main-link span {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .anaheim-nearby-cities {
+    padding: 30px 20px;
+  }
+  
+  .cities-header h3 {
+    font-size: 1.8rem;
+  }
+  
+  .cities-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .city-link {
+    padding: 20px 15px;
+  }
 }
 
 @keyframes subtle-shift {
