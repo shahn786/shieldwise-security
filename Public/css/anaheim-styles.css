@@ -421,6 +421,7 @@
   overflow: hidden;
   color: white;
   margin-bottom: 80px;
+  background: linear-gradient(135deg, #2980b9, #3498db);
 }
 
 .anaheim-banner-parallax {
