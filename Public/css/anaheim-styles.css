@@ -1189,6 +1189,7 @@
     font-weight: 700;
     margin-bottom: 20px;
     color: #000000;
+    text-shadow: none;
   }
 
   .anaheim-cta-content p {
@@ -1199,6 +1200,7 @@
     margin-left: auto;
     margin-right: auto;
     color: #000000;
+    text-shadow: none;
   }
 
   .anaheim-cta-buttons {
