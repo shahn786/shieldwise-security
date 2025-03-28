@@ -803,12 +803,15 @@
 
 .cities-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, auto) 1fr;
-  gap: 15px;
-  position: relative;
-  z-index: 2;
-  margin-top: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--bg-light);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .city-link {
@@ -886,15 +889,15 @@
   .anaheim-nearby-cities {
     padding: 30px 20px;
   }
-  
+
   .cities-header h3 {
     font-size: 1.8rem;
   }
-  
+
   .cities-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .city-link {
     padding: 20px 15px;
   }
@@ -1184,487 +1187,487 @@
   transform: translateY(0);
 }
 
-  .anaheim-faq-item:hover {
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+.anaheim-faq-item:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.faq-question {
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border-left: 5px solid transparent;
+  transition: var(--transition);
+}
+
+.faq-question:hover {
+  border-left-color: var(--primary-color);
+}
+
+.faq-question h3 {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  font-weight: 600;
+  margin: 0;
+}
+
+.faq-toggle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.faq-question:hover .faq-toggle {
+  transform: rotate(90deg);
+}
+
+.faq-toggle i {
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-toggle i.fa-minus {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 30px 25px;
+  display: none;
+}
+
+.faq-answer p {
+  font-size: 1.05rem;
+  color: var(--text-medium);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* CTA Section */
+.anaheim-cta-section {
+  padding: var(--section-padding);
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-image: url('/img/security-pattern.png');
+  background-blend-mode: soft-light;
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.4);
+}
+
+.anaheim-cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/img/security-pattern.png') repeat;
+  opacity: 0.05;
+  z-index: 1;
+}
+
+.anaheim-cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.anaheim-cta-content {
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 40px;
+  color: #333333;
+}
+
+.anaheim-cta-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333333;
+  text-shadow: none;
+}
+
+.anaheim-cta-content p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  text-shadow: none;
+}
+
+.anaheim-cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.anaheim-cta-call, .anaheim-cta-quote {
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.anaheim-cta-call {
+  background: white;
+  color: var(--primary-color);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.anaheim-cta-quote {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.anaheim-cta-call:hover, .anaheim-cta-quote:hover {
+  transform: translateY(-5px);
+  text-decoration: none;
+}
+
+.anaheim-cta-call:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  background: #f5f5f5;
+  color: var(--primary-dark);
+}
+
+.anaheim-cta-quote:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.anaheim-cta-call i, .anaheim-cta-quote i {
+  font-size: 1.1rem;
+}
+
+/* Badge Styling */
+.badge {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Area Cards */
+.area-card {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.area-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.area-card:first-child {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.area-card i {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: inherit;
+}
+
+.area-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.area-card p {
+  color: inherit;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.section-description {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Testimonial Slider Specific Styles */
+.anaheim-testimonials-slider {
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-navigation {
+  position: relative;
+  z-index: 5;
+}
+
+.anaheim-testimonial-item {
+  display: none;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.anaheim-testimonial-item.active {
+  display: block;
+  animation: fadeSlide 0.5s ease forwards;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .anaheim-features-container, 
+  .anaheim-services-grid,
+  .anaheim-areas-grid,
+  .anaheim-testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .anaheim-hero-content h1 {
+    font-size: 3rem;
   }
 
-  .faq-question {
-    padding: 25px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    border-left: 5px solid transparent;
-    transition: var(--transition);
-  }
-
-  .faq-question:hover {
-    border-left-color: var(--primary-color);
-  }
-
-  .faq-question h3 {
+  .anaheim-hero-content p {
     font-size: 1.2rem;
-    color: var(--text-dark);
-    font-weight: 600;
-    margin: 0;
   }
 
-  .faq-toggle {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    transition: transform 0.3s ease;
-  }
-
-  .faq-question:hover .faq-toggle {
-    transform: rotate(90deg);
-  }
-
-  .faq-toggle i {
-    font-size: 0.9rem;
-    transition: transform 0.3s ease;
-  }
-
-  .faq-toggle i.fa-minus {
-    transform: rotate(180deg);
-  }
-
-  .faq-answer {
-    padding: 0 30px 25px;
-    display: none;
-  }
-
-  .faq-answer p {
-    font-size: 1.05rem;
-    color: var(--text-medium);
-    line-height: 1.7;
-    margin: 0;
-  }
-
-  /* CTA Section */
-  .anaheim-cta-section {
-    padding: var(--section-padding);
-    background: linear-gradient(135deg, #2c3e50, #34495e);
-    color: white;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    background-image: url('/img/security-pattern.png');
-    background-blend-mode: soft-light;
-    box-shadow: inset 0 0 100px rgba(0,0,0,0.4);
-  }
-
-  .anaheim-cta-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('/img/security-pattern.png') repeat;
-    opacity: 0.05;
-    z-index: 1;
-  }
-
-  .anaheim-cta-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-    position: relative;
-    z-index: 2;
-  }
-
-  .anaheim-cta-content {
-    background-color: transparent;
-    border-radius: 20px;
-    padding: 40px;
-    color: #333333;
-  }
-
-  .anaheim-cta-content h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #333333;
-    text-shadow: none;
-  }
-
-  .anaheim-cta-content p {
-    font-size: 1.2rem;
-    line-height: 1.7;
-    margin-bottom: 40px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    color: #333333;
-    text-shadow: none;
-  }
-
-  .anaheim-cta-buttons {
-    display: flex;
+  .anaheim-highlight-box {
+    flex-direction: column;
     gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
   }
 
-  .anaheim-cta-call, .anaheim-cta-quote {
-    padding: 15px 30px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 50px;
-    transition: var(--transition);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .anaheim-cta-call {
-    background: white;
-    color: var(--primary-color);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  }
-
-  .anaheim-cta-quote {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-  }
-
-  .anaheim-cta-call:hover, .anaheim-cta-quote:hover {
-    transform: translateY(-5px);
-    text-decoration: none;
-  }
-
-  .anaheim-cta-call:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    background: #f5f5f5;
-    color: var(--primary-dark);
-  }
-
-  .anaheim-cta-quote:hover {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-  }
-
-  .anaheim-cta-call i, .anaheim-cta-quote i {
-    font-size: 1.1rem;
-  }
-
-  /* Badge Styling */
-  .badge {
-    background-color: var(--secondary-color);
-    color: white;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-    display: inline-block;
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-
-  /* Area Cards */
-  .area-card {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  .highlight-icon {
     text-align: center;
+    width: auto;
   }
 
-  .area-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  .anaheim-intro-section {
+    padding: 40px 30px;
   }
 
-  .area-card:first-child {
-    background-color: var(--secondary-color);
-    color: white;
+  .anaheim-banner-content h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .anaheim-hero {
+    height: 600px;
   }
 
-  .area-card i {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: inherit;
+  .anaheim-hero-content h1 {
+    font-size: 2.5rem;
   }
 
-  .area-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-    font-weight: 600;
-  }
-
-  .area-card p {
-    color: inherit;
-    opacity: 0.9;
-    line-height: 1.5;
-  }
-
-  .section-description {
-    max-width: 800px;
-    margin: 0 auto 40px;
-    color: #666;
+  .anaheim-hero-content p {
     font-size: 1.1rem;
-    line-height: 1.6;
   }
 
-  /* Testimonial Slider Specific Styles */
-  .anaheim-testimonials-slider {
-    overflow: hidden;
-    position: relative;
+  .anaheim-features-container, 
+  .anaheim-services-grid,
+  .anaheim-areas-grid {
+    grid-template-columns: 1fr;
   }
 
-  .slider-navigation {
-    position: relative;
-    z-index: 5;
+  .anaheim-intro-section {
+    padding: 30px 20px;
+  }
+
+  .anaheim-intro-section h1 {
+    font-size: 2rem;
+  }
+
+  .anaheim-banner-content h2 {
+    font-size: 2rem;
+  }
+
+  .anaheim-banner-content p {
+    font-size: 1.1rem;
+  }
+
+  .anaheim-cta-buttons,
+  .anaheim-banner-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .trust-badge {
+    width: 100%;
+  }
+
+  .anaheim-testimonials-grid {
+    height: auto;
   }
 
   .anaheim-testimonial-item {
-    display: none;
     position: relative;
-    top: 0;
-    left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .anaheim-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .anaheim-hero-content p {
+    font-size: 1rem;
+  }
+
+  .anaheim-cta-button, 
+  .anaheim-cta-button-alt,
+  .anaheim-banner-button,
+  .anaheim-banner-button-alt,
+  .anaheim-cta-call,
+  .anaheim-cta-quote {
     width: 100%;
   }
 
-  .anaheim-testimonial-item.active {
+  .anaheim-services-title,
+  .anaheim-areas-section h2,
+  .anaheim-faq-section h2,
+  .anaheim-testimonials-section h2,
+  .anaheim-cta-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .faq-question h3 {
+    font-size: 1rem;
+  }
+
+  .anaheim-feature-item,
+  .anaheim-service-item,
+  .anaheim-area-item,
+  .anaheim-testimonial-item {
+    padding: 25px 20px;
+  }
+
+  .anaheim-cta-content {
+    padding: 30px 20px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .anaheim-hero,
+  .anaheim-banner-section,
+  .anaheim-cta-section,
+  .anaheim-testimonials-section {
+    background: white;
+    color: black;
+    padding: 20px 0;
+    margin: 20px 0;
+  }
+
+  .anaheim-hero-overlay,
+  .anaheim-banner-parallax,
+  .anaheim-cta-section::before {
+    display: none;
+  }
+
+  .anaheim-hero-content,
+  .anaheim-banner-content {
+    color: black;
+  }
+
+  .anaheim-cta-buttons,
+  .anaheim-banner-buttons,
+  .slider-navigation {
+    display: none;
+  }
+
+  .anaheim-service-item,
+  .anaheim-feature-item,
+  .anaheim-area-item,
+  .anaheim-testimonial-item,
+  .anaheim-faq-item {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    page-break-inside: avoid;
+  }
+
+  .anaheim-testimonial-item {
     display: block;
-    animation: fadeSlide 0.5s ease forwards;
+    opacity: 1;
+    transform: none;
+    position: relative;
+    margin-bottom: 20px;
   }
 
-  @keyframes fadeSlide {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .faq-answer {
+    display: block;
   }
 
-  /* Responsive Design */
-  @media (max-width: 1200px) {
-    .anaheim-features-container, 
-    .anaheim-services-grid,
-    .anaheim-areas-grid,
-    .anaheim-testimonials-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .trust-badge,
+  .service-icon-wrapper,
+  .anaheim-feature-item i {
+    color: black;
+    background: white;
   }
+}
 
-  @media (max-width: 992px) {
-    .anaheim-hero-content h1 {
-      font-size: 3rem;
-    }
+/* Additional Enhancements */
+.cities-list:hover a:not(:hover) {
+  opacity: 0.7;
+}
 
-    .anaheim-hero-content p {
-      font-size: 1.2rem;
-    }
+.anaheim-feature-item:nth-child(even)::before {
+  background: var(--secondary-color);
+}
 
-    .anaheim-highlight-box {
-      flex-direction: column;
-      gap: 20px;
-    }
+.anaheim-service-item:hover img {
+  transform: scale(1.03);
+  transition: transform 0.5s ease;
+}
 
-    .highlight-icon {
-      text-align: center;
-      width: auto;
-    }
+.area-learn-more i {
+  transition: transform 0.3s ease;
+}
 
-    .anaheim-intro-section {
-      padding: 40px 30px;
-    }
+.area-learn-more:hover i {
+  transform: translateX(3px);
+}
 
-    .anaheim-banner-content h2 {
-      font-size: 2.2rem;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .anaheim-hero {
-      height: 600px;
-    }
-
-    .anaheim-hero-content h1 {
-      font-size: 2.5rem;
-    }
-
-    .anaheim-hero-content p {
-      font-size: 1.1rem;
-    }
-
-    .anaheim-features-container, 
-    .anaheim-services-grid,
-    .anaheim-areas-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .anaheim-intro-section {
-      padding: 30px 20px;
-    }
-
-    .anaheim-intro-section h1 {
-      font-size: 2rem;
-    }
-
-    .anaheim-banner-content h2 {
-      font-size: 2rem;
-    }
-
-    .anaheim-banner-content p {
-      font-size: 1.1rem;
-    }
-
-    .anaheim-cta-buttons,
-    .anaheim-banner-buttons {
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .trust-badge {
-      width: 100%;
-    }
-
-    .anaheim-testimonials-grid {
-      height: auto;
-    }
-
-    .anaheim-testimonial-item {
-      position: relative;
-    }
-  }
-
-  @media (max-width: 576px) {
-    .anaheim-hero-content h1 {
-      font-size: 2rem;
-    }
-
-    .anaheim-hero-content p {
-      font-size: 1rem;
-    }
-
-    .anaheim-cta-button, 
-    .anaheim-cta-button-alt,
-    .anaheim-banner-button,
-    .anaheim-banner-button-alt,
-    .anaheim-cta-call,
-    .anaheim-cta-quote {
-      width: 100%;
-    }
-
-    .anaheim-services-title,
-    .anaheim-areas-section h2,
-    .anaheim-faq-section h2,
-    .anaheim-testimonials-section h2,
-    .anaheim-cta-content h2 {
-      font-size: 1.8rem;
-    }
-
-    .faq-question h3 {
-      font-size: 1rem;
-    }
-
-    .anaheim-feature-item,
-    .anaheim-service-item,
-    .anaheim-area-item,
-    .anaheim-testimonial-item {
-      padding: 25px 20px;
-    }
-
-    .anaheim-cta-content {
-      padding: 30px 20px;
-    }
-  }
-
-  /* Print Styles */
-  @media print {
-    .anaheim-hero,
-    .anaheim-banner-section,
-    .anaheim-cta-section,
-    .anaheim-testimonials-section {
-      background: white;
-      color: black;
-      padding: 20px 0;
-      margin: 20px 0;
-    }
-
-    .anaheim-hero-overlay,
-    .anaheim-banner-parallax,
-    .anaheim-cta-section::before {
-      display: none;
-    }
-
-    .anaheim-hero-content,
-    .anaheim-banner-content {
-      color: black;
-    }
-
-    .anaheim-cta-buttons,
-    .anaheim-banner-buttons,
-    .slider-navigation {
-      display: none;
-    }
-
-    .anaheim-service-item,
-    .anaheim-feature-item,
-    .anaheim-area-item,
-    .anaheim-testimonial-item,
-    .anaheim-faq-item {
-      box-shadow: none;
-      border: 1px solid #ddd;
-      page-break-inside: avoid;
-    }
-
-    .anaheim-testimonial-item {
-      display: block;
-      opacity: 1;
-      transform: none;
-      position: relative;
-      margin-bottom: 20px;
-    }
-
-    .faq-answer {
-      display: block;
-    }
-
-    .trust-badge,
-    .service-icon-wrapper,
-    .anaheim-feature-item i {
-      color: black;
-      background: white;
-    }
-  }
-
-  /* Additional Enhancements */
-  .cities-list:hover a:not(:hover) {
-    opacity: 0.7;
-  }
-
-  .anaheim-feature-item:nth-child(even)::before {
-    background: var(--secondary-color);
-  }
-
-  .anaheim-service-item:hover img {
-    transform: scale(1.03);
-    transition: transform 0.5s ease;
-  }
-
-  .area-learn-more i {
-    transition: transform 0.3s ease;
-  }
-
-  .area-learn-more:hover i {
-    transform: translateX(3px);
-  }
-
-  .anaheim-faq-item:last-child {
-    margin-bottom: 0;
-  }
+.anaheim-faq-item:last-child {
+  margin-bottom: 0;
+}
