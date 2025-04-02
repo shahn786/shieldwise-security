@@ -941,25 +941,37 @@ html, body {
 
 .faq-section-container {
     max-width: 1400px;
-    height: 800px;
+    height: 700px;
     margin: 0 auto;
     padding: 0 30px;
     display: flex;
     align-items: stretch;
+    gap: 30px;
 }
 
 .faq-content {
     flex: 1;
-    padding-right: 30px;
-    height: 100%;
+    padding: 30px;
+    height: 700px;
     overflow-y: auto;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .faq-image-section {
     flex: 1;
-    display: flex;
-    align-items: center;
+    height: 700px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.faq-image-section img {
+    width: 100%;
     height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
 }
 
 .faq-image-section img {
