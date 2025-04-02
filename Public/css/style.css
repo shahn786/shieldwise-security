@@ -1,4 +1,4 @@
-/* Base reset styles */
+/* Base Reset */
 html, body {
   margin: 0;
   padding: 0;
@@ -10,7 +10,7 @@ html, body {
   scroll-behavior: smooth;
 }
 
-/* Enhanced video container */
+/* Hero Section Styles */
 .hero-section {
   position: relative;
   width: 100%;
@@ -20,51 +20,42 @@ html, body {
 .video-container {
   position: relative;
   width: 100%;
-  height: 90vh; /* 90% of viewport height */
-  overflow: hidden;
+  height: 90vh; /* Adjust viewport height as needed */
   background-color: #000; /* Fallback color */
+  overflow: hidden;
 }
 
 .video-container video {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Changed from 'cover' to 'contain' to show full video */
+  object-fit: contain;  /* Ensures the full video is visible without zooming in */
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
-  max-width: 100%;
 }
 
-/* Ensure video plays and is properly sized */
-#hero-video {
-  display: block;
-  min-height: 100%;
-  transform: scale(1); /* Ensure no zoom effect is applied */
-  max-height: 100vh; /* Prevent overflow */
-}
-
-/* New overlay for text visibility with less opacity */
+/* Overlay for text readability */
 .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)); /* Reduced opacity */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   z-index: 2;
 }
 
+/* Content Styling */
 .hero-content {
   max-width: 800px;
-  padding: 0 20px;
-  color: white;
-  background-color: rgba(0,0,0,0.4); /* Semi-transparent background for better text visibility */
   padding: 30px;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
   border-radius: 10px;
 }
 
@@ -72,14 +63,14 @@ html, body {
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Enhanced text shadow */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   animation: fadeInUp 1s ease-out forwards;
 }
 
 .hero-subtitle {
   font-size: 1.5rem;
   margin-bottom: 40px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Enhanced text shadow */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   animation: fadeInUp 1s ease-out 0.3s forwards;
   opacity: 0;
 }
@@ -93,15 +84,20 @@ html, body {
   opacity: 0;
 }
 
-.primary-button {
+/* Button Styles */
+.primary-button,
+.secondary-button {
   display: inline-block;
   padding: 15px 30px;
-  background-color: #003366;
-  color: white;
-  text-decoration: none;
   font-weight: 600;
   border-radius: 5px;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.primary-button {
+  background-color: #003366;
+  color: #fff;
   border: none;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -110,31 +106,21 @@ html, body {
   background-color: #004488;
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  color: white;
-  text-decoration: none;
 }
 
 .secondary-button {
-  display: inline-block;
-  padding: 15px 30px;
-  background-color: transparent;
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-  border: 2px solid white;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
 }
 
 .secondary-button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
+  background: rgba(255, 255, 255, 0.2);
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-  text-decoration: none;
 }
 
-/* Animations */
+/* Fade In Animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -146,7 +132,7 @@ html, body {
   }
 }
 
-/* Responsive adaptations enhanced for better visibility */
+/* Responsive Styles */
 @media (max-width: 992px) {
   .hero-title {
     font-size: 2.8rem;
@@ -154,10 +140,6 @@ html, body {
 
   .hero-subtitle {
     font-size: 1.3rem;
-  }
-
-  .video-container video {
-    object-position: center; /* Ensure video stays centered */
   }
 }
 
@@ -177,9 +159,7 @@ html, body {
 
   .hero-buttons {
     flex-direction: column;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+    gap: 15px;
   }
 
   .primary-button, .secondary-button {
@@ -188,15 +168,8 @@ html, body {
 
   .hero-content {
     padding: 20px;
-    width: 85%;
+    width: 90%;
     max-width: 500px;
-  }
-
-  /* Adjust video positioning for mobile */
-  .video-container video {
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
   }
 }
 
@@ -211,16 +184,15 @@ html, body {
 
   .hero-content {
     padding: 15px;
-    width: 90%;
+    width: 95%;
   }
 
-  /* Further adjust video for very small screens */
   .video-container {
     height: 70vh;
   }
 }
 
-/* Support for prefers-reduced-motion */
+/* Accessibility: Respect users' motion preferences */
 @media (prefers-reduced-motion: reduce) {
   .hero-title,
   .hero-subtitle,
@@ -228,28 +200,10 @@ html, body {
     animation: none;
     opacity: 1;
   }
-
-  .video-container video {
-    animation: none;
-  }
 }
 
 
-/* Trust Box */
-.trust-box1 {
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-  padding: 40px;
-  border-radius: 15px;
-  margin: 40px 0;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.trust-heading1 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-  color: #2c3e50;
-}
-
+/* Additional Enhancements */
 .trust-description1 {
   font-size: 1.1rem;
   line-height: 1.8;
