@@ -904,4 +904,78 @@ body, html {
     }
 
     .consultation-content h1 {
-        font-size:
+        font-size: 2.5rem;
+    }
+
+    .consultation-content h1::before,
+    .consultation-content h1::after {
+        font-size: 3.5rem;
+    }
+
+    .consultation-buttons {
+        flex-direction: column;
+    }
+
+    .consultation-buttons > * {
+        margin-bottom: 15px;
+    }
+
+    .phone-button {
+        font-size: 1.3rem;
+    }
+
+    .phone-button::after {
+        font-size: 1.1rem;
+    }
+
+    .services-section {
+        padding: 80px 5%;
+    }
+
+    .services-title {
+        font-size: 2.4rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .security-cities-sec {
+        padding: 80px 5%;
+    }
+
+    .security-cities-sec h2 {
+        font-size: 2.4rem;
+    }
+
+    .cities-container-sec {
+        flex-direction: column;
+    }
+
+    .city-sec {
+        margin-bottom: 15px;
+        min-width: 100%;
+        max-width: 300px;
+    }
+}
+
+
+/* Video Styles */
+.video-container1 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.video-container1 video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+}
