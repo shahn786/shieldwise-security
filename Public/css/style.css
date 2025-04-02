@@ -941,6 +941,7 @@ html, body {
 
 .faq-section-container {
     max-width: 1400px;
+    height: 800px;
     margin: 0 auto;
     padding: 0 30px;
     display: flex;
@@ -950,12 +951,15 @@ html, body {
 .faq-content {
     flex: 1;
     padding-right: 30px;
+    height: 100%;
+    overflow-y: auto;
 }
 
 .faq-image-section {
     flex: 1;
     display: flex;
     align-items: center;
+    height: 100%;
 }
 
 .faq-image-section img {
