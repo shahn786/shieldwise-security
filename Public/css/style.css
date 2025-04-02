@@ -985,14 +985,30 @@ html, body {
 }
 
 .faq-body {
-    padding: 20px;
+    padding: 25px;
     background: #fff;
-    color: #666;
+    color: #444;
     font-size: 1.05rem;
-    line-height: 1.6;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
+    line-height: 1.8;
+    border-top: 1px solid #eee;
+}
+
+.faq-body br {
+    margin-bottom: 8px;
+}
+
+.faq-header {
+    transition: background-color 0.3s ease;
+}
+
+.faq-header:hover {
+    background-color: #f8f9fa;
+}
+
+.faq-icon {
+    color: #d12028;
+    font-weight: bold;
+    margin-right: 15px;
 }
 
 .faq-header[aria-expanded="true"] + .faq-body {
