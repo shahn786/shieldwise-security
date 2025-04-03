@@ -652,6 +652,7 @@ a:hover {
 .related-areas {
     padding: 80px 20px;
     background-color: #f8f9fa;
+    margin-bottom: 3rem; /* Added margin-bottom */
 }
 
 .related-areas h2 {
@@ -960,4 +961,46 @@ a:hover {
     .downtown-guide .service-type h3 {
         font-size: 1.5rem;
     }
+}
+
+/* Emergency Response Section */
+.emergency-response {
+    padding: 80px 20px;
+    background-color: #fff;
+    margin-top: 3rem; /* Added margin-top */
+}
+
+.emergency-response h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+
+.emergency-response h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #d12028;
+    margin: 15px auto 40px;
+    border-radius: 2px;
+}
+
+/* Add more styles for the emergency-response section as needed */
+
+
+.py-5 {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+    margin-bottom: 3rem;
+}
+
+.py-4 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+    margin-top: 3rem;
 }
