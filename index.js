@@ -568,7 +568,10 @@ const losAngelesAreas = [
     'glendale', 'burbank', 'west-hollywood', 'long-beach', 'torrance',
     'culver-city', 'malibu', 'san-fernando', 'van-nuys', 'inglewood',
     'compton', 'palmdale', 'lancaster', 'pomona', 'whittier',
-    'el-monte', 'hawthorne', 'south-gate'
+    'el-monte', 'hawthorne', 'south-gate', 'arcadia', 'azusa',
+    'baldwin-park', 'bellflower', 'calabasas', 'carson', 'cypress',
+    'downey', 'gardena', 'hermosa-beach', 'huntington-park', 'la-mirada',
+    'manhattan-beach', 'norwalk', 'redondo-beach'
 ];
 
 losAngelesAreas.forEach(area => {
