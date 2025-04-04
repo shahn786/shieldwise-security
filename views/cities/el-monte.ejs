@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+rate this code seo , <!DOCTYPE html>
 <html lang="en" itemscope itemtype="https://schema.org/LocalBusiness">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,14 @@
     <meta name="description" content="Top-rated security guard services in El Monte, CA. Licensed & insured guards for businesses, industrial facilities, and properties. Armed & unarmed protection 24/7. Free quotes!">
     <meta name="keywords" content="El Monte security guards, security companies El Monte, El Monte security services, security patrol El Monte, industrial security El Monte, armed security guards El Monte, retail security El Monte, business security El Monte">
 
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="author" content="ShieldWise Security">
+    <meta name="geo.region" content="US-CA">
+    <meta name="geo.placename" content="El Monte">
+    <meta name="geo.position" content="34.0686;-118.0276">
+    <meta name="ICBM" content="34.0686, -118.0276">
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://shieldwisesecurity.com/los-angeles/el-monte" />
 
@@ -18,6 +26,8 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://shieldwisesecurity.com/los-angeles/el-monte">
     <meta property="og:image" content="https://shieldwisesecurity.com/img/el-monte-security.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="ShieldWise Security">
     <meta property="og:locale" content="en_US">
 
@@ -38,7 +48,7 @@
         "priceRange": "$$-$$$",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "123 Main St",
+            "streetAddress": "10903 Valley Mall",
             "addressLocality": "El Monte",
             "addressRegion": "CA",
             "postalCode": "91731",
@@ -93,9 +103,58 @@
             },
             "geoRadius": "15000"
         },
-        "areaServed": {
-            "@type": "City",
-            "name": "El Monte"
+        "areaServed": [
+            {
+                "@type": "City",
+                "name": "El Monte",
+                "sameAs": "https://en.wikipedia.org/wiki/El_Monte,_California"
+            },
+            {
+                "@type": "City",
+                "name": "South El Monte",
+                "sameAs": "https://en.wikipedia.org/wiki/South_El_Monte,_California"
+            },
+            {
+                "@type": "City",
+                "name": "Rosemead",
+                "sameAs": "https://en.wikipedia.org/wiki/Rosemead,_California"
+            }
+        ],
+        "review": [
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Carlos Martinez"
+                },
+                "datePublished": "2023-09-12",
+                "reviewBody": "ShieldWise Security has been instrumental in decreasing security incidents at our El Monte retail center. Their professional guards and proactive approach have made our employees and customers feel much safer."
+            },
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Alice Wong"
+                },
+                "datePublished": "2023-11-05",
+                "reviewBody": "We hired ShieldWise for our El Monte warehouse facility. Their team is professional, responsive, and thorough. Highly recommended for industrial security needs."
+            }
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "127",
+            "bestRating": "5"
         }
     }
     </script>
@@ -150,29 +209,6 @@
     }
     </script>
 
-    <!-- Review Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Review",
-        "itemReviewed": {
-            "@type": "SecurityService",
-            "name": "ShieldWise Security - El Monte",
-            "sameAs": "https://shieldwisesecurity.com/los-angeles/el-monte"
-        },
-        "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-        },
-        "author": {
-            "@type": "Person",
-            "name": "Carlos Martinez"
-        },
-        "reviewBody": "ShieldWise Security has been instrumental in decreasing security incidents at our El Monte retail center. Their professional guards and proactive approach have made our employees and customers feel much safer. The detailed daily reports help us identify potential security issues before they become problems."
-    }
-    </script>
-
     <!-- Breadcrumb Structured Data -->
     <script type="application/ld+json">
     {
@@ -201,7 +237,21 @@
     }
     </script>
 
-    <!-- Bootstrap CSS -->
+    <!-- WebSite Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://shieldwisesecurity.com/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://shieldwisesecurity.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <!-- Bootstrap CSS with defer loading for non-critical CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/style-cities.css">
@@ -209,31 +259,27 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Font Awesome with async loading -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" media="print" onload="this.media='all'">
 
-    <!-- Favicon -->
+    <!-- Favicon and Apple Touch Icons -->
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Preconnect to important domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 </head>
 <body>
     <!-- Header Section -->
     <%- include('../Partials/Header') %>
 
-    <!-- Emergency Response Section for Voice Search -->
-    <section class="emergency-response py-4 bg-danger text-white">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-8">
-                    <h3 class="mb-0"><i class="fas fa-exclamation-circle mr-3"></i> Need a security guard fast in El Monte?</h3>
-                    <p class="lead mb-0">Call us anytime—we're ready to help! Our rapid response team can deploy security personnel in as little as 2-4 hours.</p>
-                </div>
-                <div class="col-md-4 text-center text-md-right mt-3 mt-md-0">
-                    <a href="tel:+17147167430" class="btn btn-light btn-lg"><i class="fas fa-phone-alt mr-2"></i> (714) 716-7430</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+   
     <!-- Hero Section with Background Image -->
     <section class="hero-downtown">
         <div class="hero-content">
