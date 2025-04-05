@@ -586,6 +586,20 @@ losAngelesAreas.forEach(area => {
     });
 });
 
+// Riverside County cities routes
+const riversideCountyCities = [
+    'riverside', 'corona', 'moreno-valley', 'temecula', 'palm-springs',
+    'hemet', 'murrieta', 'perris', 'indio', 'coachella',
+    'cathedral-city', 'la-quinta'
+];
+
+riversideCountyCities.forEach(city => {
+    const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    app.get(`/riverside-county/${city}`, (req, res) => {
+        res.render(`cities/${city}`, { title: formattedCity });
+    });
+});
+
 // Orange County cities routes - all files at views/cities/[CityName].ejs
 const orangeCountyCities = [
     'anaheim', 'irvine', 'santa-ana', 'newport-beach', 'huntington-beach',
