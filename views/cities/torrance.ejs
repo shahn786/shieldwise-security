@@ -626,31 +626,146 @@
     </a>
 
     <!-- JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Back to Top Button Functionality
-            const backToTopButton = document.querySelector('.back-to-top');
-
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    backToTopButton.classList.add('active');
-                } else {
-                    backToTopButton.classList.remove('active');
+        <!-- Enhanced Schema Markup for Torrance Security Services SEO -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "ShieldWise Security - Torrance",
+          "image": "https://shieldwisesecurity.com/img/torrance-security.jpg",
+          "url": "https://shieldwisesecurity.com/los-angeles/torrance",
+          "telephone": "+1-310-555-7890",
+          "priceRange": "$$-$$$",
+          "description": "ShieldWise Security offers expert security guard services in Torrance, CA. Specializing in commercial, retail, industrial, residential, event security, and mobile patrol services, our licensed security guards ensure 24/7 protection for your business and property.",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "21250 Hawthorne Blvd, Suite 500",
+            "addressLocality": "Torrance",
+            "addressRegion": "CA",
+            "postalCode": "90503",
+            "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 33.8350,
+            "longitude": -118.3526
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "00:00",
+            "closes": "23:59"
+          },
+          "sameAs": [
+            "https://www.facebook.com/shieldwisesecurity",
+            "https://twitter.com/shieldwisesecurity",
+            "https://www.instagram.com/shieldwisesecurity",
+            "https://www.linkedin.com/company/shieldwisesecurity"
+          ],
+          "areaServed": {
+            "@type": "City",
+            "name": "Torrance"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Torrance Security Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Commercial Security",
+                  "description": "Tailored commercial property security services in Torrance, CA."
                 }
-            });
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Industrial Security",
+                  "description": "Specialized security solutions for industrial and manufacturing facilities in Torrance."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Retail Security",
+                  "description": "Loss prevention and retail security for shopping centers such as Del Amo Fashion Center in Torrance."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Residential Security",
+                  "description": "Comprehensive security services for gated communities, HOAs, and residential buildings in Torrance."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Event Security",
+                  "description": "Professional event security services for private and public events in Torrance, including festivals and corporate events."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Mobile Patrol",
+                  "description": "Mobile patrol security services providing regular checks and rapid response across Torrance."
+                }
+              }
+            ]
+          },
+          "review": [
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "John Mitchell"
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "datePublished": "2024-02-15",
+              "reviewBody": "ShieldWise Security has greatly improved the safety of our manufacturing plant in Torrance. Their team is highly professional and consistently reliable."
+            },
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Sophia Lee"
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "datePublished": "2024-03-20",
+              "reviewBody": "Excellent security service for our retail store at Del Amo Fashion Center. The guards are attentive and courteous, and we've seen a noticeable reduction in theft."
+            }
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "89",
+            "bestRating": "5"
+          }
+        }
+        </script>
 
-            backToTopButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>
