@@ -703,45 +703,169 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- JavaScript for Interactive Elements -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Back to Top Button Functionality
-            const backToTopButton = document.querySelector('.back-to-top');
-
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    backToTopButton.classList.add('active');
-                } else {
-                    backToTopButton.classList.remove('active');
+        <!-- Enhanced Schema Markup for SEO -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "What security services do you offer in Long Beach?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "We offer comprehensive security services in Long Beach, including commercial building security, retail security, event security, construction site security, residential building security, campus security, and parking lot security. Each service is tailored to meet the unique requirements of our Long Beach clients."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Are your security guards licensed and insured?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, all of our security guards are licensed, bonded, and insured as per California state regulations. They have completed extensive background checks and training, holding valid guard cards issued by the Bureau of Security and Investigative Services (BSIS)."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you provide armed security guards in Long Beach?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, we offer both armed and unarmed security guards in Long Beach. Our armed guards undergo specialized training and are assigned based on detailed security assessments tailored for each client or event."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How quickly can you deploy security guards in Long Beach?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "We can typically deploy security guards in Long Beach within 24-48 hours for regular service requests. For emergencies, we offer rapid deployment often within hours. Please contact us for immediate security needs."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you offer mobile patrol services in Long Beach?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, we provide mobile patrol services throughout Long Beach. Our patrol vehicles are highly visible, GPS-tracked, and deliver regular security checks to properties that do not require a permanent guard but benefit from routine surveillance."
+                    }
                 }
-            });
+            ]
+        }
+        </script>
 
-            backToTopButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-
-            // Lazy load images for better performance
-            if ('loading' in HTMLImageElement.prototype) {
-                const images = document.querySelectorAll('img[loading="lazy"]');
-                images.forEach(img => {
-                    img.src = img.dataset.src;
-                });
-            } else {
-                // Fallback for browsers that don't support lazy loading
-                const script = document.createElement('script');
-                script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
-                document.body.appendChild(script);
+        <!-- Local Business Schema Markup -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "ShieldWise Security - Long Beach",
+            "image": "/img/long-beach-security.jpg",
+            "url": "https://shieldwisesecurity.com/long-beach",
+            "telephone": "+1-562-555-7890",
+            "priceRange": "$$-$$$",
+            "description": "Expert security guard services in Long Beach. ShieldWise Security protects businesses, campuses, residential properties, and events with fully licensed, trained guards available 24/7.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "500 Ocean Blvd, Suite 350",
+                "addressLocality": "Long Beach",
+                "addressRegion": "CA",
+                "postalCode": "90802",
+                "addressCountry": "US"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 33.7666,
+                "longitude": -118.1926
+            },
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                ],
+                "opens": "00:00",
+                "closes": "23:59"
+            },
+            "sameAs": [
+                "https://www.facebook.com/shieldwisesecurity",
+                "https://twitter.com/shieldwisesecurity",
+                "https://www.instagram.com/shieldwisesecurity",
+                "https://www.linkedin.com/company/shieldwisesecurity"
+            ],
+            "areaServed": {
+                "@type": "City",
+                "name": "Long Beach"
+            },
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Security Services",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Commercial Building Security",
+                            "description": "Security services tailored for commercial properties in Long Beach."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Event Security",
+                            "description": "Professional event security solutions in Long Beach."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Campus Security",
+                            "description": "Dedicated campus security services for educational institutions in Long Beach."
+                        }
+                    }
+                ]
             }
-        });
-    </script>
-</body>
-</html>
+        }
+        </script>
+
+        <!-- Service Schema Markup -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Security Service",
+            "provider": {
+                "@type": "LocalBusiness",
+                "name": "ShieldWise Security",
+                "url": "https://shieldwisesecurity.com"
+            },
+            "areaServed": {
+                "@type": "City",
+                "name": "Long Beach",
+                "containedInPlace": {
+                    "@type": "State",
+                    "name": "California"
+                }
+            },
+            "serviceOutput": "Enhanced security and protection for Long Beach businesses, events, and properties",
+            "offers": {
+                "@type": "Offer",
+                "price": "30.00",
+                "priceCurrency": "USD",
+                "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "price": "30.00",
+                    "priceCurrency": "USD",
+                    "unitText": "Hour"
+                },
+                "availability": "https://schema.org/InStock"
+            },
+            "termsOfService": "https://shieldwisesecurity.com/terms"
+        }
+        </script>
