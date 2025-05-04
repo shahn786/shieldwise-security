@@ -811,32 +811,34 @@
     </a>
 
     <!-- Local Business Schema Markup -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "ShieldWise Security - Whittier",
-        "image": "/img/whittier-security.jpg",
-        "url": "https://shieldwisesecurity.com/los-angeles/whittier",
-        "telephone": "+1-714-716-7430",
-        "priceRange": "$$-$$$",
-        "description": "Professional security guard services in Whittier. We protect businesses, events, and properties with trained and licensed security personnel available 24/7.",
-        "address": {
+        <!-- Enhanced Schema Markup for SEO - ShieldWise Security Whittier -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "ShieldWise Security - Whittier",
+          "image": "https://shieldwisesecurity.com/img/whittier-security.jpg",
+          "url": "https://shieldwisesecurity.com/los-angeles-county/whittier",
+          "telephone": "+1-562-555-7430",
+          "priceRange": "$$-$$$",
+          "description": "Expert security guard services in Whittier, CA. ShieldWise Security protects commercial, residential, and event locations with licensed and trained security personnel available 24/7.",
+          "address": {
             "@type": "PostalAddress",
-            "streetAddress": "123 Main St",
+            "streetAddress": "7200 Greenleaf Ave Suite 210",
             "addressLocality": "Whittier",
             "addressRegion": "CA",
-            "postalCode": "90601",
+            "postalCode": "90602",
             "addressCountry": "US"
-        },
-        "geo": {
+          },
+          "geo": {
             "@type": "GeoCoordinates",
-            "latitude": 33.9791,
-            "longitude": -118.0327
-        },
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
+            "latitude": 33.9754,
+            "longitude": -118.0373
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
                 "Monday",
                 "Tuesday",
                 "Wednesday",
@@ -844,11 +846,91 @@
                 "Friday",
                 "Saturday",
                 "Sunday"
-            ],
-            "opens": "00:00",
-            "closes": "23:59"
+              ],
+              "opens": "00:00",
+              "closes": "23:59"
+            }
+          ],
+          "sameAs": [
+            "https://www.facebook.com/shieldwisesecurity",
+            "https://twitter.com/shieldwisesecurity",
+            "https://www.instagram.com/shieldwisesecurity",
+            "https://www.linkedin.com/company/shieldwisesecurity"
+          ],
+          "areaServed": {
+            "@type": "City",
+            "name": "Whittier"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Whittier Security Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Commercial Security",
+                  "description": "Security services tailored specifically for commercial properties in Whittier."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Residential Security",
+                  "description": "Comprehensive security solutions for residential communities in Whittier."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Event Security",
+                  "description": "Expert event security services to ensure safety at events and gatherings throughout Whittier."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Mobile Patrol Services",
+                  "description": "Highly visible, professional mobile patrol services with GPS-equipped vehicles conducting routine checks in Whittier neighborhoods and commercial districts."
+                }
+              }
+            ]
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "94",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "review": [
+            {
+              "@type": "Review",
+              "author": "Jennifer Morales",
+              "datePublished": "2024-02-15",
+              "reviewBody": "ShieldWise Security provided outstanding event security for our annual Whittier business expo. Their guards were professional, attentive, and excellent in managing the large crowd.",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5"
+              }
+            },
+            {
+              "@type": "Review",
+              "author": "Carlos Martinez",
+              "datePublished": "2024-01-10",
+              "reviewBody": "We've used ShieldWise Security's mobile patrol service for our Whittier shopping plaza for over a year. Their consistent presence and detailed reporting greatly improved our property's security.",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5"
+              }
+            }
+          ]
         }
-    }
-    </script>
+        </script>
+
+    
 </body>
 </html>

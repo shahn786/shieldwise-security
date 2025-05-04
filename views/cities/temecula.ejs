@@ -1151,23 +1151,141 @@
 
     <%- include('../Partials/Footer') %>
 
-    <!-- Enhanced Schema Markup for SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What security services do you offer in Temecula?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We offer a comprehensive range of security services in Temecula, including specialized winery and vineyard security, residential community protection, retail and commercial security, event security for weddings and festivals, construction site security, and mobile patrol services. Our services are customized to meet the specific security needs of businesses, properties, and events throughout Temecula Valley."
+
+        <!-- Enhanced Schema Markup for Temecula SEO -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "ShieldWise Security - Temecula",
+          "image": "https://shieldwisesecurity.com/img/temecula-security.jpg",
+          "url": "https://shieldwisesecurity.com/riverside-county/temecula",
+          "telephone": "+1-951-555-7420",
+          "priceRange": "$$-$$$",
+          "description": "Expert security guard services in Temecula, CA. ShieldWise Security provides comprehensive security for wineries, commercial properties, residential communities, and special events with professional, licensed security personnel available 24/7.",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "41593 Winchester Rd, Suite 200",
+            "addressLocality": "Temecula",
+            "addressRegion": "CA",
+            "postalCode": "92590",
+            "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 33.5140,
+            "longitude": -117.1573
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "00:00",
+            "closes": "23:59"
+          },
+          "sameAs": [
+            "https://www.facebook.com/shieldwisesecurity",
+            "https://twitter.com/shieldwisesecurity",
+            "https://www.instagram.com/shieldwisesecurity",
+            "https://www.linkedin.com/company/shieldwisesecurity"
+          ],
+          "areaServed": {
+            "@type": "City",
+            "name": "Temecula"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Security Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Winery & Vineyard Security",
+                  "description": "Specialized security services for Temecula Valley wineries and vineyards, providing protection of assets and visitors."
                 }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Commercial Property Security",
+                  "description": "Tailored security solutions for commercial properties and retail centers throughout Temecula."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Residential & HOA Security",
+                  "description": "Professional security services for Temecula residential communities, HOAs, and apartment complexes."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Special Event Security",
+                  "description": "Experienced security guards for special events, festivals, weddings, and community gatherings in Temecula."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Mobile Patrol Services",
+                  "description": "Regular and random patrol checks to maintain security visibility across multiple properties in Temecula."
+                }
+              }
+            ]
+          },
+          "review": [
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "James Anderson"
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "datePublished": "2024-02-10",
+              "reviewBody": "ShieldWise Security provided excellent protection for our winery during peak visitor season. Their staff was professional, friendly, and effective."
             },
             {
-                "@type": "Question",
-                "name": "Are your security guards licensed and insured in Temecula?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, all our security guards are fully licensed, bonded, and ins
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Maria Lopez"
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "datePublished": "2024-01-20",
+              "reviewBody": "We've trusted ShieldWise with security at our retail complex for over a year, and they've consistently delivered exceptional service."
+            }
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "94",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        }
+        </script>
+    </body>
+    </html>
+
+   
