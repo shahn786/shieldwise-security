@@ -330,7 +330,48 @@ app.get("/career", isAuthenticated, (req, res) => {
 
 // Services Page
 app.get("/services", (req, res) => {
-  res.render("services"); //
+  res.render("services");
+});
+
+// Service-specific routes
+app.get("/services/mobile-patrol", (req, res) => {
+  res.render("services", { scrollTo: "mobile-patrol" });
+});
+
+app.get("/services/event-security", (req, res) => {
+  res.render("services", { scrollTo: "event-security" });
+});
+
+app.get("/services/apartment-security", (req, res) => {
+  res.render("services", { scrollTo: "apartment-security" });
+});
+
+app.get("/services/fire-watch", (req, res) => {
+  res.render("services", { scrollTo: "fire-watch" });
+});
+
+app.get("/services/armed-security", (req, res) => {
+  res.render("services", { scrollTo: "armed-security" });
+});
+
+app.get("/services/unarmed-security", (req, res) => {
+  res.render("services", { scrollTo: "unarmed-security" });
+});
+
+app.get("/services/commercial-security", (req, res) => {
+  res.render("services", { scrollTo: "commercial-security" });
+});
+
+app.get("/services/construction-security", (req, res) => {
+  res.render("services", { scrollTo: "construction-security" });
+});
+
+app.get("/services/retail-security", (req, res) => {
+  res.render("services", { scrollTo: "shopping-centers" });
+});
+
+app.get("/services/hospital-security", (req, res) => {
+  res.render("services", { scrollTo: "hospital-security" });
 });
 
 // servicde area
