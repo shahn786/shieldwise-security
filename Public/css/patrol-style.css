@@ -276,23 +276,24 @@
 .location-item {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  padding: 0.5rem 0;
+  gap: 1rem;
+  padding: 0.8rem 0;
   transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.location-item:last-child {
+  border-bottom: none;
 }
 
 .location-item:hover {
   transform: translateX(10px);
 }
 
-.location-item i {
-  color: #ffd166;
-  font-size: 1rem;
-}
-
 .location-item span {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   color: rgba(255,255,255,0.9);
+  font-weight: 500;
 }
 
 .coverage-actions {
