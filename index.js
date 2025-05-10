@@ -333,6 +333,11 @@ app.get("/services", (req, res) => {
   res.render("services"); //
 });
 
+// Patrol Page
+app.get("/patrol", (req, res) => {
+  res.render("patrol");
+});
+
 // servicde area
 app.get("/service-areas", (req, res) => {
   res.render("service-areas");
