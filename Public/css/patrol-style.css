@@ -106,17 +106,172 @@
   color: var(--primary-color);
 }
 
-/* CTA Section */
-.cta-section {
+/* Service Areas CTA Section */
+.service-areas-cta {
   padding: 5rem 0;
   background: linear-gradient(135deg, var(--primary-color), #0a1f3d);
   color: white;
+  position: relative;
+}
+
+.service-areas-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../img/pattern.png');
+  opacity: 0.05;
+  pointer-events: none;
 }
 
 .cta-content {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: white;
+  font-weight: 700;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+}
+
+.emergency-contact {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 3rem;
+  backdrop-filter: blur(5px);
+}
+
+.emergency-contact h3 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.phone-link {
+  display: inline-block;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+  margin: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.phone-link:hover {
+  color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+.availability {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+}
+
+.service-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin: 3rem 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.area-column h4 {
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.area-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.area-column li {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.area-column li i {
+  color: var(--accent-color);
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.cta-buttons {
+  margin-top: 3rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin: 0 1rem;
+}
+
+.btn-primary {
+  background: var(--secondary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #b71c1c;
+  transform: translateY(-3px);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .service-areas-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .cta-content h2 {
+    font-size: 2rem;
+  }
+
+  .phone-link {
+    font-size: 1.5rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn {
+    margin: 0;
+  }
 }
 
 .cta-title {
