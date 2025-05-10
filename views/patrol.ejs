@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US" itemscope itemtype="http://schema.org/WebPage">
 <head>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/css/style.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -471,7 +477,14 @@
 <body>
     <!-- Your website content goes here -->
 
-    <!-- Additional tracking scripts should be added at the end of body -->
+    <!-- Bootstrap and jQuery Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="/JS/header-fix.js"></script>
+    
+    <!-- Additional tracking scripts -->
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script>
@@ -488,7 +501,148 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
+    /* Base styles */
     :root {
+      --primary-color: #1a3c6e;
+      --secondary-color: #d32f2f;
+      --text-color: #333;
+      --light-bg: #f8f9fa;
+      --white: #fff;
+      --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      --border-radius: 8px;
+      --transition: all 0.3s ease;
+    }
+
+    /* Global styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.7;
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
+
+    /* Hero section enhancements */
+    .hero {
+      min-height: 600px;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      padding: 100px 0;
+      margin-top: 76px;
+    }
+
+    .hero__overlay {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: var(--border-radius);
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .hero__tagline {
+      font-size: 1.5rem;
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    /* Button styling */
+    .btn {
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+    }
+
+    .btn-primary:hover {
+      background-color: #b71c1c;
+      border-color: #b71c1c;
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background-color: white;
+      color: var(--primary-color);
+      transform: translateY(-3px);
+    }
+
+    /* Section styling */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 50px;
+      text-align: center;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background-color: var(--secondary-color);
+      border-radius: 2px;
+    }
+
+    /* Stats section */
+    .stat-item {
+      text-align: center;
+      padding: 30px;
+      background: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+    }
+
+    .stat-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--secondary-color);
+      margin-bottom: 10px;
+    }
+
+    /* Form styling */
+    .form-group label {
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .form-control {
+      padding: 12px;
+      border-radius: var(--border-radius);
+      border: 1px solid #ddd;
+    }
+
+    .form-control:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 0.2rem rgba(26, 60, 110, 0.25);
+    }
       --primary-color: #1a3c6e;
       --secondary-color: #e63946;
       --accent-color: #ffd166;
