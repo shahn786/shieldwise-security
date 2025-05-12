@@ -105,7 +105,8 @@ app.use(
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("Public"));
+// Serve static files from the Public directory
+app.use(express.static(path.join(__dirname, "Public")));
 app.set("view engine", "ejs");
 app.set("views", "./views");
 app.set("views", path.join(__dirname, "views"));
