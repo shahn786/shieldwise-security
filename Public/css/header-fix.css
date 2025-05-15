@@ -298,8 +298,27 @@
     overflow: hidden;
     opacity: 0;
     transition: all 0.3s ease-in-out;
-    display: block;
+    display: none;
     visibility: hidden;
+  }
+
+  .dropdown-menu.show {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: static !important;
+    width: 100% !important;
+    transform: none !important;
+    margin-top: 0 !important;
+    z-index: 1000 !important;
+    max-height: none !important;
+  }
+  
+  /* For services and service area dropdowns specifically */
+  .nav-item.dropdown .dropdown-menu.show {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 8px 0 !important;
   }
   
   .navbar-main .dropdown-menu.show {
