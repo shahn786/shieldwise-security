@@ -1,20 +1,23 @@
 .navbar-main {
-  background: rgba(26, 26, 29, 0.95);
-  transition: all 0.4s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-  padding: 10px 0;
+  background: rgba(20, 20, 24, 0.97);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  padding: 12px 0;
   z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .navbar-main.scrolled {
-  background: rgba(16, 16, 19, 0.98);
+  background: rgba(16, 16, 20, 0.98);
   padding: 8px 0;
+  backdrop-filter: blur(10px);
 }
 
 .navbar-brand {
   display: flex;
   align-items: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 8px 0;
 }
 
 .navbar-brand:hover {
@@ -22,14 +25,15 @@
 }
 
 .navbar-logo {
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
   transition: all 0.3s ease;
+  height: 50px;
 }
 
 .logo-text {
   font-size: 2rem;
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
   margin-left: 15px;
   font-family: 'Arial', sans-serif;
   text-transform: uppercase;
@@ -52,11 +56,6 @@
   opacity: 0.7;
 }
 
-.navbar-brand {
-  padding: 8px 0;
-  transition: all 0.3s ease;
-}
-
 .navbar-brand:hover .logo-text {
   background: linear-gradient(135deg, #d4af37 0%, #ffffff 50%, #d4af37 100%);
   -webkit-background-clip: text;
@@ -68,10 +67,12 @@
   background: transparent;
   padding: 0.5rem;
   transition: all 0.3s ease;
+  margin-right: 5px;
 }
 
 .navbar-toggler:focus {
   outline: none;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25);
 }
 
 .navbar-toggler-icon {
@@ -92,7 +93,7 @@
   background: #fff;
   position: absolute;
   left: 0;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navbar-toggler-icon:before {
@@ -128,6 +129,10 @@
   transform: scale(0);
 }
 
+.navbar-nav {
+  margin-left: auto;
+}
+
 .navbar-nav .nav-item {
   position: relative;
   margin: 0 5px;
@@ -135,7 +140,7 @@
 
 .navbar-nav .nav-link {
   color: #f0f0f0 !important;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 600;
   padding: 0.7rem 1.2rem !important;
   transition: all 0.3s ease;
@@ -157,6 +162,7 @@
 
 .navbar-nav .nav-link:hover {
   color: #d4af37 !important;
+  transform: translateY(-1px);
 }
 
 .navbar-nav .nav-link:hover:before {
@@ -179,16 +185,16 @@
   background: linear-gradient(90deg, transparent, #d4af37, transparent);
 }
 
-/* Mega Menu Styling */
 .dropdown-menu {
   background-color: rgba(28, 28, 32, 0.98);
   border: none;
   border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   padding: 1rem 0;
   margin-top: 15px;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-top: 2px solid #d4af37;
+  backdrop-filter: blur(10px);
 }
 
 .dropdown-menu:before {
@@ -222,154 +228,37 @@
   background-color: rgba(212, 175, 55, 0.25);
 }
 
-/* Mega Menu Specific */
-.mega-menu {
-  width: 700px;
-  padding: 20px;
-}
-
-.mega-menu-content {
-  display: flex;
-}
-
-.mega-menu-column {
-  flex: 1;
-  padding: 0 15px;
-}
-
-.mega-menu-title {
-  color: #d4af37;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-}
-
-.btn-quote {
-  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
-  color: white !important;
-  font-weight: 600;
-  padding: 12px 24px;
-  border-radius: 30px;
-  font-size: 1.05rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
-  border: none;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-quote:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: all 0.5s ease;
-}
-
-.btn-quote:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 7px 20px rgba(211, 47, 47, 0.4);
-  color: white !important;
-}
-
-.btn-quote:hover:before {
-  left: 100%;
-}
-
-.btn-quote:active {
-  transform: translateY(1px);
-}
-
-/* Animation Classes */
-.animated {
-  animation-duration: 0.6s;
-  animation-fill-mode: both;
-}
-
-.fadeIn {
-  animation-name: fadeIn;
-}
-
-.faster {
-  animation-duration: 0.4s;
-}
-
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-      transform: translateY(10px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
-/* Responsive Adjustments */
 @media (max-width: 992px) {
   .navbar-collapse {
-      background: rgba(26, 26, 29, 0.97);
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-      max-height: 80vh;
-      overflow-y: auto;
+    background: rgba(26, 26, 29, 0.98);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    max-height: 80vh;
+    overflow-y: auto;
+    backdrop-filter: blur(10px);
   }
 
   .navbar-nav .nav-item {
-      margin: 5px 0;
+    margin: 5px 0;
   }
 
   .dropdown-menu {
-      background-color: rgba(40, 40, 45, 0.4);
-      box-shadow: none;
-      border: none;
-      border-left: 2px solid #d4af37;
-      border-radius: 0;
-      margin-top: 0;
-      padding: 0 0 0 15px;
+    background-color: rgba(40, 40, 45, 0.4);
+    box-shadow: none;
+    border: none;
+    border-left: 2px solid #d4af37;
+    border-radius: 0;
+    margin-top: 0;
+    padding: 0 0 0 15px;
   }
 
   .dropdown-menu:before {
-      display: none;
-  }
-
-  .dropdown-item {
-      padding: 10px 15px;
-  }
-
-  .navbar-nav .nav-link:before {
-      display: none;
+    display: none;
   }
 
   .logo-text {
-      font-size: 1.3rem;
-  }
-
-  .btn-quote {
-      margin-top: 10px;
-      width: 100%;
-      text-align: center;
-  }
-
-  .mega-menu {
-      width: 100%;
-      padding: 10px;
-  }
-
-  .mega-menu-content {
-      flex-direction: column;
-  }
-
-  .mega-menu-column {
-      margin-bottom: 20px;
+    font-size: 1.5rem;
   }
 }
 
