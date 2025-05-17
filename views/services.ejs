@@ -56,51 +56,420 @@
                 }
 
                 /* Improved styling for the content below */
-                .services-section1 {
-                  padding-top: 40px;
+                /* Base Styles */
+                .premium-security-services {
+                    padding: 80px 0;
+                    background-color: #ffffff;
+                    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+                    color: #333333;
+                    line-height: 1.6;
                 }
 
-                .section-title1 {
-                  font-size: 2.8rem;
-                  text-align: center;
-                  margin-bottom: 30px;
-                  color: #333;
-                  font-weight: 800;
+                .premium-container {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 0 20px;
                 }
 
-                .trust-box1 {
-                  background: linear-gradient(135deg, #f9f9f9, #f0f0f0);
-                  padding: 40px;
-                  border-radius: 10px;
-                  margin-bottom: 40px;
-                  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-                  text-align: center;
+                /* Main Title */
+                .premium-title {
+                    font-size: 2.8rem;
+                    text-align: center;
+                    margin-bottom: 40px;
+                    color: #1a3c6e;
+                    font-weight: 800;
+                    position: relative;
+                    padding-bottom: 15px;
+                    letter-spacing: -0.02em;
                 }
 
-                .trust-heading1 {
-                  color: #BDB395;
-                  font-size: 2rem;
-                  margin-bottom: 20px;
-                  font-weight: 700;
+                .premium-title::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 80px;
+                    height: 3px;
+                    background-color: #bf9e5b;
                 }
 
-                .trust-description1 {
-                  font-size: 1.1rem;
-                  line-height: 1.8;
-                  color: #555;
-                  max-width: 90%;
-                  margin: 0 auto;
+                /* Trust Banner */
+                .trust-banner {
+                    background: linear-gradient(135deg, #1a3c6e 0%, #0d2b54 100%);
+                    border-radius: 12px;
+                    padding: 50px;
+                    margin-bottom: 60px;
+                    box-shadow: 0 15px 30px rgba(26, 60, 110, 0.2);
+                    color: #ffffff;
+                    position: relative;
+                    overflow: hidden;
                 }
 
-                /* Responsive adjustments */
+                .trust-banner::before {
+                    content: '';
+                    position: absolute;
+                    top: -30px;
+                    right: -30px;
+                    width: 200px;
+                    height: 200px;
+                    background: rgba(255, 255, 255, 0.05);
+                    border-radius: 50%;
+                }
+
+                .trust-content {
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .trust-headline {
+                    font-size: 2.2rem;
+                    margin-bottom: 20px;
+                    font-weight: 700;
+                    color: #ffffff;
+                }
+
+                .trust-message {
+                    font-size: 1.15rem;
+                    line-height: 1.8;
+                    color: rgba(255, 255, 255, 0.9);
+                    max-width: 85%;
+                    margin-bottom: 30px;
+                }
+
+                .trust-message strong {
+                    color: #bf9e5b;
+                    font-weight: 600;
+                }
+
+                .trust-badges {
+                    display: flex;
+                    gap: 30px;
+                    margin-top: 20px;
+                }
+
+                .badge {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                }
+
+                .badge-icon {
+                    width: 36px;
+                    height: 36px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    border-radius: 50%;
+                    padding: 8px;
+                }
+
+                .badge-icon svg {
+                    width: 20px;
+                    height: 20px;
+                    color: #bf9e5b;
+                }
+
+                .badge-text {
+                    font-size: 1rem;
+                    font-weight: 600;
+                    color: #ffffff;
+                }
+
+                /* Services Overview */
+                .services-overview {
+                    margin-bottom: 60px;
+                }
+
+                .services-heading-wrapper {
+                    text-align: center;
+                    margin-bottom: 40px;
+                    position: relative;
+                }
+
+                .services-heading {
+                    font-size: 2rem;
+                    color: #1a3c6e;
+                    font-weight: 700;
+                    margin-bottom: 15px;
+                    max-width: 800px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+                .heading-accent {
+                    width: 60px;
+                    height: 3px;
+                    background-color: #bf9e5b;
+                    margin: 0 auto;
+                }
+
+                .services-content {
+                    display: flex;
+                    gap: 40px;
+                    margin-bottom: 30px;
+                }
+
+                .services-image {
+                    flex: 0 0 35%;
+                    position: relative;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+                }
+
+                .services-image img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                    transition: transform 0.5s ease;
+                }
+
+                .services-image:hover img {
+                    transform: scale(1.05);
+                }
+
+                .image-overlay {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: linear-gradient(to top, rgba(26, 60, 110, 0.9), rgba(26, 60, 110, 0.7), transparent);
+                    padding: 40px 20px 20px;
+                    text-align: center;
+                }
+
+                .overlay-text {
+                    color: #ffffff;
+                    font-size: 0.9rem;
+                    font-weight: 700;
+                    letter-spacing: 2px;
+                }
+
+                .content-columns {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
+                }
+
+                .content-column h3 {
+                    font-size: 1.5rem;
+                    color: #1a3c6e;
+                    font-weight: 600;
+                    margin-bottom: 15px;
+                    position: relative;
+                    padding-left: 15px;
+                }
+
+                .content-column h3::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 8px;
+                    width: 5px;
+                    height: 20px;
+                    background-color: #bf9e5b;
+                    border-radius: 3px;
+                }
+
+                .content-column p {
+                    font-size: 1.05rem;
+                    color: #555555;
+                    margin-bottom: 20px;
+                    line-height: 1.8;
+                }
+
+                .content-column p:last-child {
+                    margin-bottom: 0;
+                }
+
+                .content-column p strong {
+                    color: #1a3c6e;
+                    font-weight: 600;
+                }
+
+                /* Service Highlights */
+                .service-highlights {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 20px;
+                    margin-bottom: 60px;
+                }
+
+                .highlight-card {
+                    background-color: #f9f9f9;
+                    padding: 30px;
+                    border-radius: 12px;
+                    text-align: center;
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    height: 100%;
+                }
+
+                .highlight-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+                }
+
+                .highlight-icon {
+                    width: 60px;
+                    height: 60px;
+                    background-color: rgba(26, 60, 110, 0.1);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 auto 20px;
+                }
+
+                .highlight-icon svg {
+                    width: 30px;
+                    height: 30px;
+                    color: #1a3c6e;
+                }
+
+                .highlight-card h3 {
+                    font-size: 1.25rem;
+                    color: #1a3c6e;
+                    font-weight: 600;
+                    margin-bottom: 15px;
+                }
+
+                .highlight-card p {
+                    font-size: 0.95rem;
+                    color: #666666;
+                    line-height: 1.6;
+                }
+
+                /* CTA */
+                .security-cta {
+                    background: linear-gradient(135deg, #bf9e5b 0%, #ddc288 100%);
+                    border-radius: 12px;
+                    padding: 50px;
+                    text-align: center;
+                    color: #ffffff;
+                    box-shadow: 0 15px 30px rgba(191, 158, 91, 0.2);
+                }
+
+                .security-cta p {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    margin-bottom: 25px;
+                    color: #ffffff;
+                    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                }
+
+                .cta-button {
+                    display: inline-block;
+                    background-color: #ffffff;
+                    color: #bf9e5b;
+                    text-decoration: none;
+                    font-weight: 700;
+                    padding: 16px 36px;
+                    border-radius: 50px;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                    font-size: 1.1rem;
+                }
+
+                .cta-button:hover {
+                    background-color: #1a3c6e;
+                    color: #ffffff;
+                    transform: translateY(-3px);
+                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+                }
+
+                /* Responsive Design */
+                @media (max-width: 1100px) {
+                    .trust-message {
+                        max-width: 100%;
+                    }
+
+                    .services-content {
+                        flex-direction: column;
+                    }
+
+                    .services-image {
+                        flex: 0 0 100%;
+                        max-height: 400px;
+                    }
+
+                    .service-highlights {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+
                 @media (max-width: 768px) {
-                  .video-container1 {
-                    padding: 20px 0;
-                  }
+                    .premium-security-services {
+                        padding: 60px 0;
+                    }
 
-                  .video-container1 video {
-                    max-width: 98%;
-                  }
+                    .premium-title {
+                        font-size: 2.2rem;
+                    }
+
+                    .trust-banner {
+                        padding: 40px 30px;
+                    }
+
+                    .trust-headline {
+                        font-size: 1.8rem;
+                    }
+
+                    .trust-badges {
+                        flex-direction: column;
+                        gap: 15px;
+                    }
+
+                    .services-heading {
+                        font-size: 1.6rem;
+                    }
+
+                    .content-column h3 {
+                        font-size: 1.3rem;
+                    }
+
+                    .security-cta p {
+                        font-size: 1.3rem;
+                    }
+                }
+
+                @media (max-width: 576px) {
+                    .premium-security-services {
+                        padding: 40px 0;
+                    }
+
+                    .premium-title {
+                        font-size: 1.8rem;
+                    }
+
+                    .trust-headline {
+                        font-size: 1.5rem;
+                    }
+
+                    .trust-message {
+                        font-size: 1rem;
+                    }
+
+                    .service-highlights {
+                        grid-template-columns: 1fr;
+                    }
+
+                    .security-cta {
+                        padding: 30px 20px;
+                    }
+
+                    .security-cta p {
+                        font-size: 1.2rem;
+                    }
+
+                    .cta-button {
+                        width: 100%;
+                        padding: 14px 20px;
+                    }
                 }
             </style>
 
@@ -246,38 +615,90 @@
                             Your browser does not support the video tag.
                         </video>
                     </div>
-                    <div class="services-section1">
-                        <h1 class="section-title1">California's Premier Security Guard Services</h1>
 
-                        <div class="trust-box1">
-                            <h2 class="trust-heading1">Your Trusted Security Partner</h2>
-                            <p class="trust-description1">
-                                Count on ShieldWise Security for all your security needs. We provide professional security services for events and ongoing business requirements throughout California.
-                                With our team of well-trained, qualified, and fully certified security professionals, we meet and exceed all industry standards while delivering exceptional service tailored to your specific requirements.
-                            </p>
-                        </div>
 
-                        <div class="services-box1">
-                            <h2 class="services-heading-box1">Top Security Professionals in California for Your Protection</h2>
-                            <div class="services-content-box1">
-                                <p class="services-intro-box1">
-                                    At ShieldWise Security, we take pride in providing California with elite security professionals. Our commitment to excellence begins with a rigorous selection process, ensuring that all our security personnel are properly state-registered, fully licensed by California authorities, and thoroughly vetted through comprehensive interviews, background screenings, and drug testing protocols.
-                                </p>
 
-                                <p class="services-details-box1">
-                                    We focus on recruiting exceptional individuals and investing extensively in their professional development. Our comprehensive training programs equip our team with the skills and knowledge necessary to effectively navigate real-world security scenarios. Beyond technical training, we work to refine our officers' natural instincts and abilities, developing confident and highly competent security professionals ready to serve your needs.
-                                </p>
+                    <!-- Premium California Security Services Section -->
+                    <section class="premium-security-services" itemscope itemtype="https://schema.org/SecurityService">
+                        <div class="premium-container">
+                            <!-- Main Headline -->
+                            <h1 class="premium-title" itemprop="name">California's Premier Security Guard Services</h1>
 
-                                <p class="services-details-box1">
-                                    Professionalism is paramount at ShieldWise Security. Our guards maintain a distinguished appearance with proper identification and professional attire that reflects our commitment to excellence. We adhere strictly to regulatory compliance, meticulously following client-specific requirements, internal policies, and detailed client instructions to ensure seamless security operations.
-                                </p>
-
-                                <p class="services-conclusion-box1">
-                                    This dedication to excellence, combined with our guaranteed response times and provision of all necessary equipment and resources, establishes ShieldWise Security as the gold standard for premium security services throughout California.
-                                </p>
+                            <!-- Trust Banner -->
+                            <div class="trust-banner">
+                                <div class="trust-content">
+                                    <h2 class="trust-headline">Your Trusted Security Partner Since 2009</h2>
+                                    <p class="trust-message" itemprop="description">
+                                        Count on ShieldWise Security for all your protection needs across California. We provide professional <strong>armed and unarmed security guards</strong> for events, businesses, and residential communities throughout Los Angeles, San Francisco, San Diego, and Sacramento.
+                                    </p>
+                                    <div class="trust-badges">
+                                        <div class="badge">
+                                            <span class="badge-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                            </span>
+                                            <span class="badge-text">Licensed & Insured</span>
+                                        </div>
+                                        <div class="badge">
+                                            <span class="badge-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                            </span>
+                                            <span class="badge-text">24/7 Availability</span>
+                                        </div>
+                                        <div class="badge">
+                                            <span class="badge-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                            </span>
+                                            <span class="badge-text">100% Satisfaction</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
 
+
+                        
+
+                            <!-- Services Overview -->
+                            <div class="services-overview">
+                                <div class="services-heading-wrapper">
+                                    <h2 class="services-heading">Elite Security Professionals Protecting California's Businesses & Communities</h2>
+                                    <div class="heading-accent"></div>
+                                </div>
+
+                                <div class="services-content">
+                                    <div class="services-image">
+                                        <img src="/img/services page .png" alt="Professional Security Guard in California" loading="lazy" itemprop="image">
+                                        <div class="image-overlay">
+                                            <div class="overlay-text">STATE LICENSED GUARDS</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="content-columns">
+                                        <div class="content-column">
+                                            <h3 class="column-title">Superior Selection & Training</h3>
+                                            <p>
+                                                At ShieldWise Security, we pride ourselves on providing California with the industry's finest <strong>security patrol officers</strong>. Our rigorous selection process ensures every guard is properly state-registered, fully licensed, and thoroughly vetted through comprehensive background screenings. Our <strong>mobile patrol services</strong> are staffed by professionals you can trust with your most valuable assets.
+                                            </p>
+                                            <p>
+                                                Beyond recruitment, we invest extensively in professional development with advanced training programs for both our <strong>armed security guards</strong> and <strong>unarmed security guards</strong>. Our comprehensive curriculum equips our team to effectively handle real-world security scenarios with confidence and expertise.
+                                            </p>
+                                        </div>
+
+                                        <div class="content-column">
+                                            <h3 class="column-title">Commitment to Excellence</h3>
+                                            <p>
+                                                Professionalism defines ShieldWise Security. Our guards maintain a distinguished appearance with proper identification that reflects our commitment to excellence. We adhere strictly to regulatory compliance while providing tailored <strong>commercial security services</strong>, <strong>residential security services</strong>, and <strong>event security services</strong> throughout California.
+                                            </p>
+                                            <p>
+                                                From high-value asset protection to <strong>construction site security</strong>, our guaranteed response times and comprehensive security solutions establish ShieldWise as California's gold standard for premium security services. Our presence in Los Angeles, San Francisco, San Diego, and Sacramento ensures consistent protection wherever you need us.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                    </section>
+                   
 
            
                     
@@ -464,6 +885,14 @@
             </div>
         </div>
     </main>
+
+                    <!-- Call-to-Action -->
+                        <div class="security-cta">
+                            <p>Experience California's most trusted security protection service</p>
+                            <a href="/contact" class="cta-button">Request a Free Security Assessment</a>
+                        </div>
+                    </div>
+                    
 
     <%- include('Partials/Footer') %>
 
