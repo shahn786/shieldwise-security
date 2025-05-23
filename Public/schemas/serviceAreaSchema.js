@@ -1174,14 +1174,7 @@ const implementationStrategy = {
   ]
 };
 
-module.exports = {
-  serviceAreaSchema,
-  localLandingPageSchemas,
-  serviceTypeSchemas,
-  coverageStats,
-  seoEnhancements,
-  implementationStrategy
-};: "Response Time",
+module.exports = JSON.stringify(serviceAreaSchema);: "Response Time",
       "value": "1-4 hours emergency response"
     },
     {

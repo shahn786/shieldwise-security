@@ -1186,9 +1186,4 @@ const implementationNotes = {
   ]
 };
 
-module.exports = {
-  organizationSchema,
-  richSnippetOptimization,
-  seoKeywords,
-  implementationNotes
-};
+module.exports = JSON.stringify(organizationSchema);

@@ -107,6 +107,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // Serve static files from the Public directory
 app.use(express.static(path.join(__dirname, "Public")));
+app.use('/schemas', express.static('Public/schemas'));
 app.set("view engine", "ejs");
 app.set("views", "./views");
 app.set("views", path.join(__dirname, "views"));
@@ -483,12 +484,12 @@ app.post("/contact", async (req, res) => {
     // });
 
     // res.render("contact", {
-    //   success: true,
-    //   name: "",
-    //   email: "",
-    //   contact_number: "",
-    //   best_time: "",
-    //   message: "",
+    //   success: false,
+    //   name,
+    //   email,
+    //   contact_number,
+    //   best_time,
+    //   message,
     // });
   } catch (error) {
     return res.status(400).json({

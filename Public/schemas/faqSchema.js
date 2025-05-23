@@ -789,4 +789,4 @@ const organizationSchema = {
     "addressCountry": "US"
   },
 
-module.exports = faqSchema;
+module.exports = JSON.stringify(faqSchema);
