@@ -332,7 +332,7 @@ app.get("/career", isAuthenticated, (req, res) => {
 
 // Services Page
 app.get("/services", (req, res) => {
-  res.render("services"); //
+  res.render("services", { title: "Professional Security Services | ShieldWise Security" });
 });
 
 // Patrol Page
