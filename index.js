@@ -350,6 +350,11 @@ app.get("/services/fire-watch", (req, res) => {
   res.render("services/fire-watch");
 });
 
+// Hospital Security Page
+app.get("/services/hospital-security", (req, res) => {
+  res.render("services/hospital-security");
+});
+
 // Patrol Page
 app.get("/patrol", (req, res) => {
   res.render("patrol");
