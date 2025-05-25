@@ -355,6 +355,11 @@ app.get("/services/hospital-security", (req, res) => {
   res.render("services/hospital-security");
 });
 
+// Hotel Security Page
+app.get("/services/hotel-security", (req, res) => {
+  res.render("services/hotel-security");
+});
+
 // Patrol Page
 app.get("/patrol", (req, res) => {
   res.render("patrol");
