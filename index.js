@@ -380,6 +380,11 @@ app.get("/services/educational-campus-security", (req, res) => {
   res.render("services/educational-campus-security");
 });
 
+// Armed Security Page
+app.get("/services/armed-security", (req, res) => {
+  res.render("services/armed-security");
+});
+
 // Patrol Page
 app.get("/patrol", (req, res) => {
   res.render("patrol");
