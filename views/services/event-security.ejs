@@ -7,6 +7,92 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
+        /* Event Types Section Styles */
+        .event-types-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-secondary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .event-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .event-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .event-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .event-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
         :root {
             --primary-color: #1a3c6e;
             --secondary-color: #bf9e5b;
@@ -165,6 +251,19 @@
                 <p class="hero-subtitle">Ensuring the safety and success of your events with comprehensive security solutions</p>
             </div>
         </section>
+
+        <!-- Premier Overview Section -->
+        <div style="background-color:#ffffff; padding:60px; border-radius:14px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color:#1c1c1c; max-width:960px; margin:60px auto;
+            box-shadow:0 10px 30px rgba(0,0,0,0.1); border:1px solid #e0e0e0;">
+            <h1 style="font-size:38px; margin-bottom:28px; color:#152f45;">
+                Premier Event Security Services for Unmatched Peace of Mind
+            </h1>
+            <p style="font-size:20px; line-height:1.8; margin-bottom:0;">
+                At <strong>ShieldWise Security</strong>, we set the gold standard in <strong>event security services</strong> by integrating industry-leading expertise with cutting-edge technology. From comprehensive <strong>risk assessments</strong> and strategic <strong>crowd management</strong> at large conventions and music festivals to personalized <strong>VIP protection</strong> and 24/7 <strong>emergency response protocols</strong>, our approach is both proactive and adaptable. We deploy advanced <strong>anti-drone systems</strong>, AI-powered facial recognition, and real-time surveillance to safeguard every perimeter, while our seamless <strong>access control management</strong> and mobile credential solutions ensure only authorized individuals gain entry. Whether you're hosting a high-profile gala, a civic ceremony, or a luxury hotel event, our custom security plans deliver unparalleled reliability—so you can focus on creating memorable experiences without compromise.
+            </p>
+        </div>
 
         <!-- Services Overview -->
         <section class="py-5">
