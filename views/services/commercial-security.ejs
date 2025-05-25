@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commercial Security Services | ShieldWise Security</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a3c6e;
+            --secondary-color: #bf9e5b;
+            --text-color: #333333;
+            --light-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(26, 60, 110, 0.9), rgba(26, 60, 110, 0.9)), url('/img/commercial-security.png');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), #0d2b54);
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .btn-custom {
+            background: var(--secondary-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-custom:hover {
+            background: #a88b4a;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+    <%- include('../Partials/Header') %>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="hero-title">Commercial Security Services</h1>
+                <p class="lead">Professional security solutions for businesses and commercial properties</p>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="service-card">
+                            <h2 class="mb-4">Comprehensive Commercial Security Solutions</h2>
+                            <p>At ShieldWise Security, we understand that protecting your business assets, employees, and customers requires a sophisticated and tailored security approach. Our commercial security services provide comprehensive protection for retail stores, office buildings, industrial facilities, and commercial properties of all sizes.</p>
+                            
+                            <h3 class="mt-4">Our Commercial Security Services Include:</h3>
+                            <ul class="feature-list">
+                                <li>24/7 Property Surveillance</li>
+                                <li>Access Control Management</li>
+                                <li>Loss Prevention Services</li>
+                                <li>Emergency Response Planning</li>
+                                <li>Employee Safety Programs</li>
+                                <li>CCTV Monitoring</li>
+                                <li>Mobile Patrol Services</li>
+                                <li>Facility Lock-up/Unlock Services</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics -->
+                <div class="row mt-5">
+                    <div class="col-md-4">
+                        <div class="stat-card">
+                            <div class="stat-number">500+</div>
+                            <div>Commercial Properties Protected</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stat-card">
+                            <div class="stat-number">24/7</div>
+                            <div>Security Coverage</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stat-card">
+                            <div class="stat-number">15+</div>
+                            <div>Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonials -->
+                <div class="row mt-5">
+                    <div class="col-md-6">
+                        <div class="testimonial">
+                            <p class="mb-3">"ShieldWise's commercial security team has significantly improved our property's safety. Their professional approach and attention to detail are outstanding."</p>
+                            <strong>- Michael Thompson</strong><br>
+                            <small>Property Manager, Pacific Business Center</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="testimonial">
+                            <p class="mb-3">"We've seen a dramatic reduction in security incidents since partnering with ShieldWise. Their team is responsive and highly professional."</p>
+                            <strong>- Jennifer Martinez</strong><br>
+                            <small>Operations Director, Retail Solutions Inc.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="mb-4">Secure Your Commercial Property Today</h2>
+                <p class="mb-4">Contact us for a customized commercial security solution</p>
+                <a href="/get-quote" class="btn btn-custom">Get a Free Quote</a>
+            </div>
+        </section>
+    </main>
+
+    <%- include('../Partials/Footer') %>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

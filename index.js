@@ -360,6 +360,11 @@ app.get("/services/hotel-security", (req, res) => {
   res.render("services/hotel-security");
 });
 
+// Commercial Security Page
+app.get("/services/commercial-security", (req, res) => {
+  res.render("services/commercial-security");
+});
+
 // Patrol Page
 app.get("/patrol", (req, res) => {
   res.render("patrol");
