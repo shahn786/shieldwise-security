@@ -375,6 +375,11 @@ app.get("/services/shopping-center-security", (req, res) => {
   res.render("services/shopping-center-security");
 });
 
+// Educational Campus Security Page
+app.get("/services/educational-campus-security", (req, res) => {
+  res.render("services/educational-campus-security");
+});
+
 // Patrol Page
 app.get("/patrol", (req, res) => {
   res.render("patrol");
