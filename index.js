@@ -385,6 +385,11 @@ app.get("/services/armed-security", (req, res) => {
   res.render("services/armed-security");
 });
 
+// Unarmed Security Page
+app.get("/services/unarmed-security", (req, res) => {
+  res.render("services/unarmed-security");
+});
+
 // Patrol Page
 app.get("/patrol", (req, res) => {
   res.render("patrol");
