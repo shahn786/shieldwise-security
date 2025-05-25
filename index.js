@@ -390,6 +390,11 @@ app.get("/services/unarmed-security", (req, res) => {
   res.render("services/unarmed-security");
 });
 
+// Executive Protection Page
+app.get("/services/executive-protection", (req, res) => {
+  res.render("services/executive-protection");
+});
+
 // Patrol Page
 app.get("/patrol", (req, res) => {
   res.render("patrol");
