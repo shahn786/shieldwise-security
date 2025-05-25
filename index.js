@@ -370,6 +370,11 @@ app.get("/services/commercial-security", (req, res) => {
   res.render("services/commercial-security");
 });
 
+// Shopping Center Security Page
+app.get("/services/shopping-center-security", (req, res) => {
+  res.render("services/shopping-center-security");
+});
+
 // Patrol Page
 app.get("/patrol", (req, res) => {
   res.render("patrol");

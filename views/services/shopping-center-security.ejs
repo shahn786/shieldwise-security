@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Center Security Services | ShieldWise Security</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a3c6e;
+            --secondary-color: #bf9e5b;
+            --text-color: #333333;
+            --light-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(26, 60, 110, 0.9), rgba(26, 60, 110, 0.9)), url('/img/shoppingsecurity.webp');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), #0d2b54);
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .btn-custom {
+            background: var(--secondary-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-custom:hover {
+            background: #a88b4a;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+    <%- include('../Partials/Header') %>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="hero-title">Shopping Center Security Services</h1>
+                <p class="lead">Professional security solutions for retail centers and shopping malls</p>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="service-card">
+                            <h2 class="mb-4">Comprehensive Shopping Center Security Solutions</h2>
+                            <p>At ShieldWise Security, we understand the unique security challenges faced by shopping centers and retail establishments. Our specialized security services ensure the safety of shoppers, staff, and property while maintaining a welcoming atmosphere for your customers.</p>
+                            
+                            <h3 class="mt-4">Our Shopping Center Security Services Include:</h3>
+                            <ul class="feature-list">
+                                <li>Retail Loss Prevention</li>
+                                <li>Parking Lot Security Patrols</li>
+                                <li>Access Control Management</li>
+                                <li>CCTV Monitoring</li>
+                                <li>Emergency Response Protocol</li>
+                                <li>Crowd Management</li>
+                                <li>After-Hours Security</li>
+                                <li>Special Event Security Coverage</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics -->
+                <div class="row mt-5">
+                    <div class="col-md-4">
+                        <div class="stat-card">
+                            <div class="stat-number">200+</div>
+                            <div>Shopping Centers Protected</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stat-card">
+                            <div class="stat-number">24/7</div>
+                            <div>Security Coverage</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stat-card">
+                            <div class="stat-number">15+</div>
+                            <div>Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonials -->
+                <div class="row mt-5">
+                    <div class="col-md-6">
+                        <div class="testimonial">
+                            <p class="mb-3">"ShieldWise's security team has significantly improved the safety at our shopping center. Their professional approach and customer service are outstanding."</p>
+                            <strong>- Robert Chen</strong><br>
+                            <small>Mall Operations Director, Pacific Shopping Center</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="testimonial">
+                            <p class="mb-3">"Since partnering with ShieldWise, we've seen a dramatic reduction in security incidents. Their team's responsiveness is exceptional."</p>
+                            <strong>- Sarah Thompson</strong><br>
+                            <small>Property Manager, Retail Solutions Inc.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="mb-4">Secure Your Shopping Center Today</h2>
+                <p class="mb-4">Contact us for a customized shopping center security solution</p>
+                <a href="/get-quote" class="btn btn-custom">Get a Free Quote</a>
+            </div>
+        </section>
+    </main>
+
+    <%- include('../Partials/Footer') %>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
