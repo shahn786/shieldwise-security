@@ -340,6 +340,11 @@ app.get("/services/event-security", (req, res) => {
   res.render("services/event-security");
 });
 
+// Apartment Security Page
+app.get("/services/apartment-security", (req, res) => {
+  res.render("services/apartment-security");
+});
+
 // Patrol Page
 app.get("/patrol", (req, res) => {
   res.render("patrol");
