@@ -345,6 +345,11 @@ app.get("/services/apartment-security", (req, res) => {
   res.render("services/apartment-security");
 });
 
+// Fire Watch Security Page
+app.get("/services/fire-watch", (req, res) => {
+  res.render("services/fire-watch");
+});
+
 // Patrol Page
 app.get("/patrol", (req, res) => {
   res.render("patrol");
