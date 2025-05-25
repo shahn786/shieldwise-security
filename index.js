@@ -395,6 +395,11 @@ app.get("/services/executive-protection", (req, res) => {
   res.render("services/executive-protection");
 });
 
+// Special Event Security Page
+app.get("/services/special-event-security", (req, res) => {
+  res.render("services/special-event-security");
+});
+
 // Patrol Page
 app.get("/patrol", (req, res) => {
   res.render("patrol");
