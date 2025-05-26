@@ -8,11 +8,218 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
+        /* Executive Protection Section Styles */
+        .executive-features-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .executive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .executive-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .executive-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-secondary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .executive-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .executive-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .executive-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .executive-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .executive-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .security-process-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .process-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .benefits-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .benefit-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .benefit-content p {
+            color: #666;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        .threat-assessment-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .assessment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .assessment-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .assessment-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .assessment-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #1a3c6e, #2d5a96);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            color: white;
+        }
+
         :root {
             --primary-color: #1a3c6e;
             --secondary-color: #bf9e5b;
             --text-color: #333333;
             --light-bg: #f8f9fa;
+            --gradient-secondary: linear-gradient(135deg, #bf9e5b, #d4b570);
         }
 
         body {
@@ -37,6 +244,13 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
+        .hero-subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
         .service-card {
             background: white;
             border-radius: 15px;
@@ -48,6 +262,19 @@
 
         .service-card:hover {
             transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .feature-list {
@@ -92,26 +319,50 @@
             transform: translateY(-2px);
         }
 
+        .stats-section {
+            padding: 60px 0;
+            background: var(--light-bg);
+        }
+
         .stat-card {
             text-align: center;
             padding: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary-color);
+            margin-bottom: 10px;
         }
 
-        .testimonial {
+        .testimonial-card {
             background: white;
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 15px;
             margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .client-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .executive-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -122,71 +373,359 @@
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
-                <h1 class="hero-title">Executive Protection Services</h1>
-                <p class="lead">Elite security solutions for high-profile individuals and executives</p>
+                <h1 class="hero-title">Elite Executive Protection Services</h1>
+                <p class="hero-subtitle">Comprehensive personal security solutions for C-suite executives and high-net-worth individuals</p>
             </div>
         </section>
 
-        <!-- Main Content -->
+        <!-- Premier Overview Section -->
+        <div style="background-color:#ffffff; padding:60px; border-radius:14px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color:#1c1c1c; max-width:960px; margin:60px auto;
+            box-shadow:0 10px 30px rgba(0,0,0,0.1); border:1px solid #e0e0e0;">
+            <h1 style="font-size:38px; margin-bottom:28px; color:#152f45;">
+                Elite Executive Protection Division - Unparalleled Personal Security Excellence
+            </h1>
+            <p style="font-size:20px; line-height:1.8; margin-bottom:0; transition: all 0.3s ease; cursor: default;" 
+               onmouseover="this.style.color='#152f45'; this.style.transform='scale(1.02)'; this.style.textShadow='0 2px 8px rgba(0,0,0,0.1)'" 
+               onmouseout="this.style.color='#1c1c1c'; this.style.transform='scale(1)'; this.style.textShadow='none'">
+                <strong>ShieldWise Security's</strong> executive protection division offers customized personal security solutions for C-suite executives and high-net-worth individuals, combining discreet <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">close-protection details</strong> with proactive threat intelligence and continuous risk monitoring. Our specialized teams—available armed or unarmed—provide <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">VIP bodyguard services</strong>, secure transportation, and around-the-clock protection at corporate events, private engagements, and international travel itineraries. These offerings are reinforced by comprehensive <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">threat assessments</strong>, seamless coordination with local law enforcement, and strategic intelligence gathering to anticipate and defuse potential dangers. By leveraging integrated <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">surveillance networks</strong>, mobile command centers, and rapid-response protocols, we uphold stringent safety standards and operational discretion at all times. You can trust ShieldWise Security to safeguard your leadership and assets with unparalleled professionalism, empowering you to focus on your mission with complete peace of mind.
+            </p>
+        </div>
+
+        <!-- Executive Protection Features Section -->
+        <section id="features" class="executive-features-section">
+            <div class="container">
+                <h2 class="section-title">Comprehensive Executive Protection Solutions</h2>
+                <p class="section-subtitle">Advanced security strategies designed for high-profile individuals and executives</p>
+                
+                <div class="executive-grid">
+                    <div class="executive-card">
+                        <div class="executive-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3 class="executive-title">Close Protection Details</h3>
+                        <p class="executive-description">Highly trained bodyguards providing discreet personal protection with advanced tactical training and situational awareness.</p>
+                    </div>
+                    
+                    <div class="executive-card">
+                        <div class="executive-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3 class="executive-title">Secure Transportation</h3>
+                        <p class="executive-description">Armored vehicle services, route planning, advance reconnaissance, and counter-surveillance driving techniques.</p>
+                    </div>
+                    
+                    <div class="executive-card">
+                        <div class="executive-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3 class="executive-title">Threat Intelligence</h3>
+                        <p class="executive-description">Proactive threat assessment, background investigations, and continuous monitoring of potential security risks.</p>
+                    </div>
+                    
+                    <div class="executive-card">
+                        <div class="executive-icon">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <h3 class="executive-title">Travel Security</h3>
+                        <p class="executive-description">International travel protection, advance team deployment, and coordination with global security partners.</p>
+                    </div>
+                    
+                    <div class="executive-card">
+                        <div class="executive-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="executive-title">Residential Security</h3>
+                        <p class="executive-description">Estate protection, family security details, and comprehensive home security assessments and upgrades.</p>
+                    </div>
+                    
+                    <div class="executive-card">
+                        <div class="executive-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3 class="executive-title">Event Security</h3>
+                        <p class="executive-description">VIP protection at corporate events, galas, conferences, and private functions with crowd management.</p>
+                    </div>
+                    
+                    <div class="executive-card">
+                        <div class="executive-icon">
+                            <i class="fas fa-satellite-dish"></i>
+                        </div>
+                        <h3 class="executive-title">Surveillance Networks</h3>
+                        <p class="executive-description">Integrated surveillance systems, counter-surveillance operations, and real-time monitoring capabilities.</p>
+                    </div>
+                    
+                    <div class="executive-card">
+                        <div class="executive-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="executive-title">24/7 Command Center</h3>
+                        <p class="executive-description">Round-the-clock monitoring, emergency response coordination, and global communication networks.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Threat Assessment Section -->
+        <section class="threat-assessment-section">
+            <div class="container">
+                <h2 class="section-title">Advanced Threat Assessment Capabilities</h2>
+                <p class="section-subtitle">Comprehensive risk analysis and mitigation strategies</p>
+                
+                <div class="assessment-grid">
+                    <div class="assessment-card">
+                        <div class="assessment-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 15px;">Risk Analysis</h3>
+                        <p>Detailed threat profiling and vulnerability assessments</p>
+                    </div>
+                    
+                    <div class="assessment-card">
+                        <div class="assessment-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 15px;">Intelligence Gathering</h3>
+                        <p>Open source intelligence and background investigations</p>
+                    </div>
+                    
+                    <div class="assessment-card">
+                        <div class="assessment-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 15px;">Counter-Surveillance</h3>
+                        <p>Detection and neutralization of surveillance threats</p>
+                    </div>
+                    
+                    <div class="assessment-card">
+                        <div class="assessment-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 15px;">Real-Time Monitoring</h3>
+                        <p>Continuous threat level assessment and updates</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Process Section -->
+        <section class="security-process-section">
+            <div class="container">
+                <h2 class="section-title">Our Executive Protection Process</h2>
+                <p class="section-subtitle">A systematic approach to high-level personal security</p>
+                
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">1</div>
+                            <h3 class="process-title">Security Assessment</h3>
+                            <p>Comprehensive evaluation of threats, vulnerabilities, and protection requirements for the principal.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">2</div>
+                            <h3 class="process-title">Protection Strategy</h3>
+                            <p>Development of customized security protocols, team deployment, and contingency planning.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">3</div>
+                            <h3 class="process-title">Team Deployment</h3>
+                            <p>Assignment of specialized protection agents, advance teams, and support personnel.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">4</div>
+                            <h3 class="process-title">Continuous Monitoring</h3>
+                            <p>Ongoing threat assessment, security adjustments, and 24/7 protection coverage.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <div class="container">
+                <h2 class="section-title">Why Choose ShieldWise Executive Protection</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Elite Protection Specialists</h4>
+                                <p>Former military, law enforcement, and intelligence professionals with extensive executive protection training.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-eye-slash"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Discreet Operations</h4>
+                                <p>Low-profile protection that maintains your privacy while ensuring maximum security coverage.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Global Coverage</h4>
+                                <p>International protection services with local partnerships and intelligence networks worldwide.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Advanced Technology</h4>
+                                <p>State-of-the-art surveillance, communication, and tracking systems for enhanced protection.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Law Enforcement Coordination</h4>
+                                <p>Seamless collaboration with local, federal, and international law enforcement agencies.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>24/7 Availability</h4>
+                                <p>Round-the-clock protection services with immediate emergency response capabilities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Overview -->
         <section class="py-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 mx-auto">
+                    <div class="col-md-4">
                         <div class="service-card">
-                            <h2 class="mb-4">Premium Executive Protection Solutions</h2>
-                            <p>At ShieldWise Security, we provide sophisticated executive protection services tailored to high-profile individuals, corporate executives, and VIPs. Our elite security personnel are extensively trained in executive protection protocols, threat assessment, and discrete security operations.</p>
-                            
-                            <h3 class="mt-4">Our Executive Protection Services Include:</h3>
+                            <i class="fas fa-user-secret service-icon"></i>
+                            <h3 class="service-title">VIP Close Protection</h3>
                             <ul class="feature-list">
-                                <li>Personal Security Details</li>
-                                <li>Advance Team Operations</li>
-                                <li>Secure Transportation Services</li>
-                                <li>Travel Security Planning</li>
-                                <li>Residential Security Teams</li>
-                                <li>Event Security Coverage</li>
-                                <li>Risk & Threat Assessment</li>
-                                <li>24/7 Protection Available</li>
+                                <li>Personal Bodyguard Services</li>
+                                <li>Advance Security Planning</li>
+                                <li>Route Reconnaissance</li>
+                                <li>Emergency Evacuation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="fas fa-route service-icon"></i>
+                            <h3 class="service-title">Secure Transportation</h3>
+                            <ul class="feature-list">
+                                <li>Armored Vehicle Service</li>
+                                <li>Counter-Surveillance Driving</li>
+                                <li>Route Security Analysis</li>
+                                <li>Mobile Command Centers</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="fas fa-brain service-icon"></i>
+                            <h3 class="service-title">Intelligence Services</h3>
+                            <ul class="feature-list">
+                                <li>Threat Assessment</li>
+                                <li>Background Investigations</li>
+                                <li>Risk Mitigation Planning</li>
+                                <li>Security Briefings</li>
                             </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Statistics -->
-                <div class="row mt-5">
-                    <div class="col-md-4">
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
                         <div class="stat-card">
-                            <div class="stat-number">100+</div>
-                            <div>Elite Protection Agents</div>
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Protected Executives</div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Mission Success Rate</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
                         <div class="stat-card">
                             <div class="stat-number">24/7</div>
-                            <div>Global Coverage</div>
+                            <div class="stat-label">Global Coverage</div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="stat-card">
                             <div class="stat-number">15+</div>
-                            <div>Years Experience</div>
+                            <div class="stat-label">Years Experience</div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Testimonials -->
-                <div class="row mt-5">
-                    <div class="col-md-6">
-                        <div class="testimonial">
-                            <p class="mb-3">"ShieldWise's executive protection team provides exceptional service. Their professionalism and attention to detail are unmatched."</p>
-                            <strong>- David Anderson</strong><br>
-                            <small>CEO, Global Enterprises</small>
+        <!-- Testimonials -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5 service-title">What Our Clients Say</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/james.png" alt="Client" class="client-image">
+                            <h4>David Anderson</h4>
+                            <p class="text-muted">Fortune 500 CEO</p>
+                            <p>"ShieldWise's executive protection team provides exceptional service. Their professionalism and attention to detail are unmatched in the industry."</p>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="testimonial">
-                            <p class="mb-3">"The level of security and discretion provided by ShieldWise's executive protection team is outstanding. They're the best in the business."</p>
-                            <strong>- Sarah Chen</strong><br>
-                            <small>International Business Executive</small>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/samanta.png" alt="Client" class="client-image">
+                            <h4>Sarah Chen</h4>
+                            <p class="text-muted">International Business Executive</p>
+                            <p>"The level of security and discretion provided by ShieldWise's executive protection team is outstanding. They're the best in the business."</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/shahn1.png" alt="Client" class="client-image">
+                            <h4>Robert Martinez</h4>
+                            <p class="text-muted">High-Net-Worth Individual</p>
+                            <p>"Complete peace of mind for my family and business operations. ShieldWise delivers world-class executive protection services."</p>
                         </div>
                     </div>
                 </div>
@@ -196,9 +735,9 @@
         <!-- CTA Section -->
         <section class="cta-section">
             <div class="container">
-                <h2 class="mb-4">Ready to Enhance Your Security?</h2>
+                <h2 class="mb-4">Ready to Enhance Your Executive Security?</h2>
                 <p class="mb-4">Contact us for a confidential consultation about your executive protection needs</p>
-                <a href="/get-quote" class="btn btn-custom">Get a Free Quote</a>
+                <a href="/get-quote" class="btn btn-custom">Get a Confidential Assessment</a>
             </div>
         </section>
     </main>
@@ -207,5 +746,83 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.executive-card, .service-card, .process-step, .benefit-item, .assessment-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Counter Animation for Statistics
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : element.textContent.includes('%') ? '%' : '');
+            }, 20);
+        }
+
+        // Trigger counter animation when in view
+        const statObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const value = parseInt(statNumber.textContent);
+                    animateCounter(statNumber, value);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-card').forEach(el => {
+            statObserver.observe(el);
+        });
+
+        // Add hover effect to cards
+        document.querySelectorAll('.executive-card, .service-card, .process-step, .assessment-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
 </body>
 </html>
