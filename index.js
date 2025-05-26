@@ -405,11 +405,6 @@ app.get("/services/special-event-security", (req, res) => {
   res.render("services/special-event-security");
 });
 
-// Mobile Patrol Security Page
-app.get("/services/mobile-patrol-security", (req, res) => {
-  res.render("services/patrol");
-});
-
 // Patrol Page
 app.get("/patrol", (req, res) => {
   res.render("patrol");
