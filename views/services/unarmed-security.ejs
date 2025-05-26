@@ -8,11 +8,225 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
+        /* Unarmed Security Section Styles */
+        .unarmed-features-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .unarmed-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .unarmed-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .unarmed-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-secondary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .unarmed-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .unarmed-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .unarmed-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .unarmed-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .unarmed-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .security-process-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .process-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .benefits-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .benefit-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .benefit-content p {
+            color: #666;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        .comparison-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .comparison-card {
+            background: var(--light-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .comparison-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .industries-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .industry-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px 25px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .industry-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .industry-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
         :root {
             --primary-color: #1a3c6e;
             --secondary-color: #bf9e5b;
             --text-color: #333333;
             --light-bg: #f8f9fa;
+            --gradient-secondary: linear-gradient(135deg, #bf9e5b, #d4b570);
         }
 
         body {
@@ -37,6 +251,13 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
+        .hero-subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
         .service-card {
             background: white;
             border-radius: 15px;
@@ -48,6 +269,19 @@
 
         .service-card:hover {
             transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .feature-list {
@@ -92,26 +326,50 @@
             transform: translateY(-2px);
         }
 
+        .stats-section {
+            padding: 60px 0;
+            background: var(--light-bg);
+        }
+
         .stat-card {
             text-align: center;
             padding: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary-color);
+            margin-bottom: 10px;
         }
 
-        .testimonial {
+        .testimonial-card {
             background: white;
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 15px;
             margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .client-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .unarmed-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -122,71 +380,392 @@
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
-                <h1 class="hero-title">Unarmed Security Services</h1>
-                <p class="lead">Professional security solutions for protection and peace of mind</p>
+                <h1 class="hero-title">Professional Unarmed Security Services</h1>
+                <p class="hero-subtitle">Strategic and approachable security solutions providing effective deterrence and peace of mind</p>
             </div>
         </section>
 
-        <!-- Main Content -->
-        <section class="py-5">
+        <!-- Premier Overview Section -->
+        <div style="background-color:#ffffff; padding:60px; border-radius:14px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color:#1c1c1c; max-width:960px; margin:60px auto;
+            box-shadow:0 10px 30px rgba(0,0,0,0.1); border:1px solid #e0e0e0;">
+            <h1 style="font-size:38px; margin-bottom:28px; color:#152f45;">
+                Premier Unarmed Security Services for Strategic Protection
+            </h1>
+            <p style="font-size:20px; line-height:1.8; margin-bottom:0; transition: all 0.3s ease; cursor: default;" 
+               onmouseover="this.style.color='#152f45'; this.style.transform='scale(1.02)'; this.style.textShadow='0 2px 8px rgba(0,0,0,0.1)'" 
+               onmouseout="this.style.color='#1c1c1c'; this.style.transform='scale(1)'; this.style.textShadow='none'">
+                Unarmed security services offer a <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">strategic and approachable solution</strong> for safeguarding various establishments, providing a non-intimidating presence that effectively deters potential threats. These services are particularly advantageous in environments where a visible security presence is essential, yet the use of firearms is unnecessary. Professionally trained unarmed security officers are equipped to handle a range of responsibilities, including <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">access control, surveillance monitoring, and emergency response coordination</strong>. Their presence helps maintain order and ensures the safety of personnel and visitors. Additionally, unarmed guards are skilled in <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">de-escalation techniques</strong>, effectively managing situations without the need for physical confrontation. By integrating unarmed security services, organizations can foster a secure environment that promotes safety and peace of mind for all individuals on the premises.
+            </p>
+        </div>
+
+        <!-- Unarmed Security Features Section -->
+        <section id="features" class="unarmed-features-section">
             <div class="container">
+                <h2 class="section-title">Comprehensive Unarmed Security Features</h2>
+                <p class="section-subtitle">Professional security solutions without the complexities of armed personnel</p>
+                
+                <div class="unarmed-grid">
+                    <div class="unarmed-card">
+                        <div class="unarmed-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="unarmed-title">Surveillance & Monitoring</h3>
+                        <p class="unarmed-description">Professional monitoring of premises using CCTV systems, regular patrols, and real-time threat assessment to maintain security awareness.</p>
+                    </div>
+                    
+                    <div class="unarmed-card">
+                        <div class="unarmed-icon">
+                            <i class="fas fa-door-open"></i>
+                        </div>
+                        <h3 class="unarmed-title">Access Control Management</h3>
+                        <p class="unarmed-description">Controlling entry and exit points, visitor verification, ID checking, and ensuring only authorized personnel access restricted areas.</p>
+                    </div>
+                    
+                    <div class="unarmed-card">
+                        <div class="unarmed-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="unarmed-title">Customer Service Excellence</h3>
+                        <p class="unarmed-description">Friendly, professional interaction with visitors, providing assistance and information while maintaining security protocols.</p>
+                    </div>
+                    
+                    <div class="unarmed-card">
+                        <div class="unarmed-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3 class="unarmed-title">Emergency Response</h3>
+                        <p class="unarmed-description">Rapid response to incidents, coordination with emergency services, evacuation procedures, and crisis management protocols.</p>
+                    </div>
+                    
+                    <div class="unarmed-card">
+                        <div class="unarmed-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 class="unarmed-title">De-escalation Techniques</h3>
+                        <p class="unarmed-description">Advanced conflict resolution skills to manage tense situations peacefully, reducing the need for physical intervention.</p>
+                    </div>
+                    
+                    <div class="unarmed-card">
+                        <div class="unarmed-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3 class="unarmed-title">Incident Documentation</h3>
+                        <p class="unarmed-description">Detailed reporting of all security incidents, maintaining accurate logs, and providing comprehensive documentation for management.</p>
+                    </div>
+                    
+                    <div class="unarmed-card">
+                        <div class="unarmed-icon">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <h3 class="unarmed-title">Mobile Patrol Services</h3>
+                        <p class="unarmed-description">Regular foot and vehicle patrols of designated areas, perimeter checks, and proactive security presence throughout the facility.</p>
+                    </div>
+                    
+                    <div class="unarmed-card">
+                        <div class="unarmed-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="unarmed-title">Loss Prevention</h3>
+                        <p class="unarmed-description">Theft deterrence through visible presence, monitoring suspicious activities, and implementing security protocols to prevent losses.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industries Served Section -->
+        <section class="industries-section">
+            <div class="container">
+                <h2 class="section-title">Industries We Serve</h2>
+                <p class="section-subtitle">Tailored unarmed security solutions for various sectors</p>
+                
                 <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <div class="service-card">
-                            <h2 class="mb-4">Professional Unarmed Security Solutions</h2>
-                            <p>At ShieldWise Security, we provide highly trained, professional unarmed security officers for a wide range of security needs. Our security personnel are thoroughly screened, licensed, and trained in security protocols, customer service, and emergency response procedures.</p>
-                            
-                            <h3 class="mt-4">Our Unarmed Security Services Include:</h3>
+                    <div class="col-md-3">
+                        <div class="industry-card">
+                            <i class="fas fa-store industry-icon"></i>
+                            <h4>Retail Stores</h4>
+                            <p>Loss prevention, customer assistance, and maintaining a safe shopping environment.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="industry-card">
+                            <i class="fas fa-building industry-icon"></i>
+                            <h4>Office Buildings</h4>
+                            <p>Reception services, access control, and professional security presence for corporate environments.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="industry-card">
+                            <i class="fas fa-graduation-cap industry-icon"></i>
+                            <h4>Educational Institutions</h4>
+                            <p>Campus security, student safety, and maintaining peaceful learning environments.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="industry-card">
+                            <i class="fas fa-hospital industry-icon"></i>
+                            <h4>Healthcare Facilities</h4>
+                            <p>Patient protection, visitor management, and maintaining calm, secure healthcare environments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Process Section -->
+        <section class="security-process-section">
+            <div class="container">
+                <h2 class="section-title">Our Unarmed Security Process</h2>
+                <p class="section-subtitle">A systematic approach to professional security services</p>
+                
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">1</div>
+                            <h3 class="process-title">Security Assessment</h3>
+                            <p>Comprehensive evaluation of your facility's security needs, risk factors, and operational requirements.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">2</div>
+                            <h3 class="process-title">Officer Selection</h3>
+                            <p>Careful selection of trained, licensed security officers who match your specific environment and needs.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">3</div>
+                            <h3 class="process-title">Custom Training</h3>
+                            <p>Site-specific training on your policies, procedures, and unique security requirements for optimal performance.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">4</div>
+                            <h3 class="process-title">Ongoing Support</h3>
+                            <p>Continuous supervision, performance monitoring, and service adjustments to maintain excellence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <div class="container">
+                <h2 class="section-title">Advantages of Unarmed Security Services</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Cost-Effective Solution</h4>
+                                <p>Lower costs compared to armed security while maintaining professional protection and deterrence capabilities.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Non-Intimidating Presence</h4>
+                                <p>Approachable security officers who provide protection without creating an intimidating atmosphere for visitors and staff.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Reduced Liability</h4>
+                                <p>Lower insurance costs and reduced legal liability associated with firearms on the premises.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Flexible Service Options</h4>
+                                <p>Customizable security solutions that can be tailored to meet specific operational needs and schedules.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Enhanced Communication</h4>
+                                <p>Officers trained in customer service and communication skills to interact positively with the public.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Quick Deployment</h4>
+                                <p>Faster implementation and deployment compared to armed security services with simplified licensing requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Section -->
+        <section class="comparison-section">
+            <div class="container">
+                <h2 class="section-title">Unarmed vs Armed Security: Making the Right Choice</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="comparison-card">
+                            <h3 class="comparison-title">When to Choose Unarmed Security</h3>
                             <ul class="feature-list">
-                                <li>Access Control & Visitor Management</li>
-                                <li>Foot & Vehicle Patrols</li>
-                                <li>Loss Prevention Services</li>
-                                <li>CCTV Monitoring</li>
-                                <li>Emergency Response Coordination</li>
-                                <li>Incident Reporting & Documentation</li>
-                                <li>Customer Service-Oriented Security</li>
-                                <li>Mobile Patrol Options</li>
+                                <li>Low to moderate risk environments</li>
+                                <li>Public-facing businesses requiring customer service</li>
+                                <li>Educational institutions and healthcare facilities</li>
+                                <li>Retail environments focused on loss prevention</li>
+                                <li>Corporate offices and professional buildings</li>
+                                <li>Events requiring crowd management</li>
+                                <li>Budget-conscious security solutions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="comparison-card">
+                            <h3 class="comparison-title">Key Advantages</h3>
+                            <ul class="feature-list">
+                                <li>Lower operational costs</li>
+                                <li>Reduced insurance premiums</li>
+                                <li>Faster officer deployment</li>
+                                <li>Enhanced public relations</li>
+                                <li>Focus on de-escalation and prevention</li>
+                                <li>Versatile service applications</li>
+                                <li>Professional customer interaction</li>
                             </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Statistics -->
-                <div class="row mt-5">
+        <!-- Services Overview -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
                     <div class="col-md-4">
-                        <div class="stat-card">
-                            <div class="stat-number">1000+</div>
-                            <div>Security Officers</div>
+                        <div class="service-card">
+                            <i class="fas fa-shield-alt service-icon"></i>
+                            <h3 class="service-title">General Security Services</h3>
+                            <ul class="feature-list">
+                                <li>Lobby Reception Services</li>
+                                <li>Access Point Monitoring</li>
+                                <li>Visitor Management</li>
+                                <li>Patrol Services</li>
+                            </ul>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="stat-card">
-                            <div class="stat-number">24/7</div>
-                            <div>Security Coverage</div>
+                        <div class="service-card">
+                            <i class="fas fa-video service-icon"></i>
+                            <h3 class="service-title">Surveillance & Monitoring</h3>
+                            <ul class="feature-list">
+                                <li>CCTV System Operation</li>
+                                <li>Real-time Monitoring</li>
+                                <li>Incident Detection</li>
+                                <li>Security Reporting</li>
+                            </ul>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="stat-card">
-                            <div class="stat-number">15+</div>
-                            <div>Years Experience</div>
+                        <div class="service-card">
+                            <i class="fas fa-users service-icon"></i>
+                            <h3 class="service-title">Customer Service Security</h3>
+                            <ul class="feature-list">
+                                <li>Friendly Reception Services</li>
+                                <li>Information Assistance</li>
+                                <li>Crowd Management</li>
+                                <li>Event Security</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Testimonials -->
-                <div class="row mt-5">
-                    <div class="col-md-6">
-                        <div class="testimonial">
-                            <p class="mb-3">"ShieldWise's unarmed security team has been exceptional in maintaining security at our retail locations. Their professionalism and attention to detail are outstanding."</p>
-                            <strong>- Sarah Johnson</strong><br>
-                            <small>Retail Operations Manager</small>
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number">1000+</div>
+                            <div class="stat-label">Trained Officers</div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="testimonial">
-                            <p class="mb-3">"We've been impressed with the quality of service provided by ShieldWise's security officers. They're always professional, alert, and courteous."</p>
-                            <strong>- Michael Chen</strong><br>
-                            <small>Property Manager</small>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number">99%</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Available Coverage</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5 service-title">What Our Clients Say</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/james.png" alt="Client" class="client-image">
+                            <h4>Sarah Johnson</h4>
+                            <p class="text-muted">Retail Operations Manager</p>
+                            <p>"ShieldWise's unarmed security team has been exceptional in maintaining security at our retail locations. Their professionalism and customer service approach are outstanding."</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/samanta.png" alt="Client" class="client-image">
+                            <h4>Michael Chen</h4>
+                            <p class="text-muted">Property Manager</p>
+                            <p>"We've been impressed with the quality of service provided by ShieldWise's unarmed officers. They're always professional, alert, and courteous with our tenants."</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/shahn1.png" alt="Client" class="client-image">
+                            <h4>Dr. Emily Rodriguez</h4>
+                            <p class="text-muted">Healthcare Administrator</p>
+                            <p>"The unarmed security services have created a safe, welcoming environment for our patients and staff. Their de-escalation skills are particularly valuable."</p>
                         </div>
                     </div>
                 </div>
@@ -196,9 +775,9 @@
         <!-- CTA Section -->
         <section class="cta-section">
             <div class="container">
-                <h2 class="mb-4">Ready to Enhance Your Security?</h2>
-                <p class="mb-4">Contact us for a customized unarmed security solution</p>
-                <a href="/get-quote" class="btn btn-custom">Get a Free Quote</a>
+                <h2 class="mb-4">Ready to Enhance Your Security with Professional Unarmed Services?</h2>
+                <p class="mb-4">Contact us for a customized unarmed security solution tailored to your specific needs</p>
+                <a href="/get-quote" class="btn btn-custom">Get a Free Security Consultation</a>
             </div>
         </section>
     </main>
@@ -207,5 +786,83 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.unarmed-card, .service-card, .process-step, .benefit-item, .industry-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Counter Animation for Statistics
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : element.textContent.includes('%') ? '%' : '');
+            }, 20);
+        }
+
+        // Trigger counter animation when in view
+        const statObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const value = parseInt(statNumber.textContent);
+                    animateCounter(statNumber, value);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-card').forEach(el => {
+            statObserver.observe(el);
+        });
+
+        // Add hover effect to cards
+        document.querySelectorAll('.unarmed-card, .service-card, .process-step, .industry-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
 </body>
 </html>
