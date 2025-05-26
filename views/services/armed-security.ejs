@@ -8,11 +8,180 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
+        /* Armed Security Section Styles */
+        .armed-features-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .armed-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .armed-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .armed-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-secondary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .armed-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .armed-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .armed-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .armed-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .armed-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .security-process-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .process-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .benefits-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .benefit-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .benefit-content p {
+            color: #666;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
         :root {
             --primary-color: #1a3c6e;
             --secondary-color: #bf9e5b;
             --text-color: #333333;
             --light-bg: #f8f9fa;
+            --gradient-secondary: linear-gradient(135deg, #bf9e5b, #d4b570);
         }
 
         body {
@@ -37,6 +206,13 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
+        .hero-subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
         .service-card {
             background: white;
             border-radius: 15px;
@@ -48,6 +224,19 @@
 
         .service-card:hover {
             transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .feature-list {
@@ -92,26 +281,50 @@
             transform: translateY(-2px);
         }
 
+        .stats-section {
+            padding: 60px 0;
+            background: var(--light-bg);
+        }
+
         .stat-card {
             text-align: center;
             padding: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary-color);
+            margin-bottom: 10px;
         }
 
-        .testimonial {
+        .testimonial-card {
             background: white;
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 15px;
             margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .client-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .armed-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -122,71 +335,318 @@
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
-                <h1 class="hero-title">Armed Security Services</h1>
-                <p class="lead">Professional armed security solutions for high-risk environments and valuable assets</p>
+                <h1 class="hero-title">Professional Armed Security Services</h1>
+                <p class="hero-subtitle">Elite armed protection for high-risk environments and executive protection needs</p>
             </div>
         </section>
 
-        <!-- Main Content -->
+        <!-- Premier Overview Section -->
+        <div style="background-color:#ffffff; padding:60px; border-radius:14px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color:#1c1c1c; max-width:960px; margin:60px auto;
+            box-shadow:0 10px 30px rgba(0,0,0,0.1); border:1px solid #e0e0e0;">
+            <h1 style="font-size:38px; margin-bottom:28px; color:#152f45;">
+                Premier Armed Security Services for Maximum Protection
+            </h1>
+            <p style="font-size:20px; line-height:1.8; margin-bottom:0; transition: all 0.3s ease; cursor: default;" 
+               onmouseover="this.style.color='#152f45'; this.style.transform='scale(1.02)'; this.style.textShadow='0 2px 8px rgba(0,0,0,0.1)'" 
+               onmouseout="this.style.color='#1c1c1c'; this.style.transform='scale(1)'; this.style.textShadow='none'">
+                At <strong>ShieldWise Security</strong>, our armed security services are engineered to deliver unparalleled protection across diverse environments, from corporate facilities to high-profile events. We staff <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">licensed armed security guards</strong> who enforce strict access control systems—including electronic key fobs and biometric smart locks—to ensure only authorized personnel enter sensitive areas. Our team provides <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">24/7 security services</strong> and rapid-response mobile patrol units, expertly trained to deter threats and manage incidents before they escalate. Specializing in <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">armed executive protection</strong>, we safeguard executives, VIPs, and high-net-worth individuals with discreet yet highly visible security details backed by proactive risk assessments and robust emergency response protocols. Our comprehensive <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">residential security guard</strong> and commercial security solutions integrate real-time CCTV installation and monitoring, fortified perimeter defenses, and detailed incident reporting to maintain a secure environment around the clock. Whether you need fortified security at construction sites or specialized <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">armed security in Los Angeles</strong>, our expert personnel and advanced technology work in concert to provide peace of mind and uncompromising safety for our clients. Trust ShieldWise Security for professional, reliable armed security services that exceed industry standards and deliver exceptional value.
+            </p>
+        </div>
+
+        <!-- Armed Security Features Section -->
+        <section id="features" class="armed-features-section">
+            <div class="container">
+                <h2 class="section-title">Comprehensive Armed Security Features</h2>
+                <p class="section-subtitle">Elite protection services with licensed armed professionals</p>
+                
+                <div class="armed-grid">
+                    <div class="armed-card">
+                        <div class="armed-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3 class="armed-title">Licensed Armed Guards</h3>
+                        <p class="armed-description">Highly trained, licensed armed security personnel with extensive backgrounds in law enforcement and military service.</p>
+                    </div>
+                    
+                    <div class="armed-card">
+                        <div class="armed-icon">
+                            <i class="fas fa-crosshairs"></i>
+                        </div>
+                        <h3 class="armed-title">Threat Assessment & Response</h3>
+                        <p class="armed-description">Proactive threat identification and rapid response protocols to neutralize risks before they escalate into incidents.</p>
+                    </div>
+                    
+                    <div class="armed-card">
+                        <div class="armed-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 class="armed-title">Corporate Facility Protection</h3>
+                        <p class="armed-description">Comprehensive security for corporate headquarters, sensitive facilities, and high-value asset protection.</p>
+                    </div>
+                    
+                    <div class="armed-card">
+                        <div class="armed-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3 class="armed-title">Executive Protection</h3>
+                        <p class="armed-description">Discreet yet visible protection for executives, VIPs, and high-net-worth individuals with customized security details.</p>
+                    </div>
+                    
+                    <div class="armed-card">
+                        <div class="armed-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="armed-title">24/7 Armed Surveillance</h3>
+                        <p class="armed-description">Round-the-clock armed security presence with advanced surveillance systems and real-time monitoring capabilities.</p>
+                    </div>
+                    
+                    <div class="armed-card">
+                        <div class="armed-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3 class="armed-title">Mobile Armed Patrols</h3>
+                        <p class="armed-description">Rapid-response armed patrol units providing mobile security coverage and emergency response capabilities.</p>
+                    </div>
+                    
+                    <div class="armed-card">
+                        <div class="armed-icon">
+                            <i class="fas fa-hard-hat"></i>
+                        </div>
+                        <h3 class="armed-title">Construction Site Security</h3>
+                        <p class="armed-description">Armed protection for construction sites, equipment security, and theft prevention in high-risk areas.</p>
+                    </div>
+                    
+                    <div class="armed-card">
+                        <div class="armed-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3 class="armed-title">Incident Management</h3>
+                        <p class="armed-description">Professional incident response, detailed reporting, and coordination with law enforcement agencies when necessary.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Process Section -->
+        <section class="security-process-section">
+            <div class="container">
+                <h2 class="section-title">Our Armed Security Process</h2>
+                <p class="section-subtitle">A systematic approach to elite armed protection</p>
+                
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">1</div>
+                            <h3 class="process-title">Risk Assessment</h3>
+                            <p>Comprehensive threat analysis and vulnerability assessment to identify potential security risks and develop targeted protection strategies.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">2</div>
+                            <h3 class="process-title">Custom Security Plan</h3>
+                            <p>Development of tailored armed security protocols specific to your threat level, environment, and protection requirements.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">3</div>
+                            <h3 class="process-title">Deployment</h3>
+                            <p>Strategic deployment of licensed armed security personnel with specialized training and equipment for your specific needs.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">4</div>
+                            <h3 class="process-title">Ongoing Protection</h3>
+                            <p>Continuous armed security coverage with regular assessments, updates, and adaptations to evolving threat landscapes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <div class="container">
+                <h2 class="section-title">Why Choose ShieldWise for Armed Security</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Licensed & Certified</h4>
+                                <p>All armed security personnel are fully licensed, certified, and undergo continuous training to maintain the highest standards.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Elite Training Standards</h4>
+                                <p>Military and law enforcement backgrounds with specialized training in threat assessment and emergency response.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Rapid Response Time</h4>
+                                <p>Immediate response capabilities with strategically positioned armed units for emergency situations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Maximum Deterrent Effect</h4>
+                                <p>Visible armed presence provides the highest level of deterrence against criminal activity and security threats.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Professional Discretion</h4>
+                                <p>Maintaining professionalism and discretion while providing visible security presence for sensitive environments.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>24/7 Command Center</h4>
+                                <p>Dedicated command center with direct communication to armed units and emergency services coordination.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Overview -->
         <section class="py-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 mx-auto">
+                    <div class="col-md-4">
                         <div class="service-card">
-                            <h2 class="mb-4">Professional Armed Security Solutions</h2>
-                            <p>At ShieldWise Security, we provide highly trained, BSIS-licensed armed security officers for situations requiring enhanced security measures. Our armed security personnel are extensively trained in firearms handling, threat assessment, and emergency response protocols.</p>
-                            
-                            <h3 class="mt-4">Our Armed Security Services Include:</h3>
+                            <i class="fas fa-user-tie service-icon"></i>
+                            <h3 class="service-title">VIP & Executive Protection</h3>
                             <ul class="feature-list">
-                                <li>BSIS Licensed Armed Officers</li>
-                                <li>Ex-Military/Law Enforcement Personnel</li>
-                                <li>High-Value Asset Protection</li>
-                                <li>Executive Protection Services</li>
-                                <li>Bank & Financial Institution Security</li>
-                                <li>Cannabis Dispensary Security</li>
-                                <li>High-Risk Facility Protection</li>
-                                <li>Emergency Response Capabilities</li>
+                                <li>Close Protection Details</li>
+                                <li>Secure Transportation</li>
+                                <li>Event Security</li>
+                                <li>Threat Intelligence</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="fas fa-industry service-icon"></i>
+                            <h3 class="service-title">High-Risk Facilities</h3>
+                            <ul class="feature-list">
+                                <li>Critical Infrastructure</li>
+                                <li>Government Buildings</li>
+                                <li>Financial Institutions</li>
+                                <li>Healthcare Facilities</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="fas fa-route service-icon"></i>
+                            <h3 class="service-title">Armed Response Services</h3>
+                            <ul class="feature-list">
+                                <li>Emergency Response</li>
+                                <li>Alarm Response</li>
+                                <li>Incident Investigation</li>
+                                <li>Law Enforcement Liaison</li>
                             </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Statistics -->
-                <div class="row mt-5">
-                    <div class="col-md-4">
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
                         <div class="stat-card">
-                            <div class="stat-number">500+</div>
-                            <div>Armed Officers</div>
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">Armed Guards</div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Licensed Personnel</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
                         <div class="stat-card">
                             <div class="stat-number">24/7</div>
-                            <div>Security Coverage</div>
+                            <div class="stat-label">Armed Response</div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="stat-card">
                             <div class="stat-number">15+</div>
-                            <div>Years Experience</div>
+                            <div class="stat-label">Years Experience</div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Testimonials -->
-                <div class="row mt-5">
-                    <div class="col-md-6">
-                        <div class="testimonial">
-                            <p class="mb-3">"ShieldWise's armed security team provides exceptional protection for our financial institution. Their professionalism and vigilance are outstanding."</p>
-                            <strong>- James Wilson</strong><br>
-                            <small>Security Director, Pacific Financial Group</small>
+        <!-- Testimonials -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5 service-title">What Our Armed Security Clients Say</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/james.png" alt="Client" class="client-image">
+                            <h4>David Thompson</h4>
+                            <p class="text-muted">CEO, Tech Corporation</p>
+                            <p>"ShieldWise's armed security team provides unmatched protection for our executive team. Their professionalism and expertise are exceptional."</p>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="testimonial">
-                            <p class="mb-3">"We've trusted ShieldWise with our high-value asset protection for years. Their armed officers are highly trained and always professional."</p>
-                            <strong>- Robert Chen</strong><br>
-                            <small>Operations Manager, Secure Transit Solutions</small>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/samanta.png" alt="Client" class="client-image">
+                            <h4>Rebecca Martinez</h4>
+                            <p class="text-muted">Security Director</p>
+                            <p>"The armed security services exceeded our expectations. Their rapid response and professional handling of incidents is outstanding."</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/shahn1.png" alt="Client" class="client-image">
+                            <h4>Michael Chen</h4>
+                            <p class="text-muted">Facility Manager</p>
+                            <p>"Professional, highly trained, and reliable. ShieldWise's armed guards provide the security level our high-risk facility requires."</p>
                         </div>
                     </div>
                 </div>
@@ -196,9 +656,9 @@
         <!-- CTA Section -->
         <section class="cta-section">
             <div class="container">
-                <h2 class="mb-4">Ready to Enhance Your Security?</h2>
-                <p class="mb-4">Contact us for a customized armed security solution</p>
-                <a href="/get-quote" class="btn btn-custom">Get a Free Quote</a>
+                <h2 class="mb-4">Need Elite Armed Security Protection?</h2>
+                <p class="mb-4">Contact us for a customized armed security solution tailored to your high-risk protection needs</p>
+                <a href="/get-quote" class="btn btn-custom">Get a Free Security Assessment</a>
             </div>
         </section>
     </main>
@@ -207,5 +667,83 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.armed-card, .service-card, .process-step, .benefit-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Counter Animation for Statistics
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : element.textContent.includes('%') ? '%' : '');
+            }, 20);
+        }
+
+        // Trigger counter animation when in view
+        const statObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const value = parseInt(statNumber.textContent);
+                    animateCounter(statNumber, value);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-card').forEach(el => {
+            statObserver.observe(el);
+        });
+
+        // Add hover effect to cards
+        document.querySelectorAll('.armed-card, .service-card, .process-step').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
 </body>
 </html>
