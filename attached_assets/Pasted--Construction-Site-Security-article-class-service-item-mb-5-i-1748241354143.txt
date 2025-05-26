@@ -1,0 +1,23 @@
+<!-- Construction Site Security -->
+                            <article class="service-item mb-5" id="construction-security-services">
+                <div class="row align-items-center">
+                                <div class="col-lg-6 order-lg-2">
+                                    <h2 class="service-title">Construction Site Security Services</h2>
+                                    <p class="service-description">
+                                        Our <strong>Construction Security Services</strong> protect your valuable equipment, materials, and site from theft and vandalism. We provide 24/7 monitoring, access control, and comprehensive security to ensure your project stays on schedule and within budget.
+                                    </p>
+                                    <ul class="service-features">
+                                        <li>Site perimeter monitoring and access control</li>
+                                        <li>Equipment and materials protection</li>
+                                        <li>After-hours surveillance</li>
+                                        <li>Visitor and contractor management</li>
+                                    </ul>
+                                    <a href="/services/construction-security" class="btn btn-primary service-link" title="Learn more about our Construction Site Security Services">Explore Construction Security</a>
+                                </div>
+                                <div class="col-lg-6 order-lg-1 text-center">
+                                    <figure class="service-image-container">
+                                        <img src="/img/constructionsecurity.webp" alt="Security officer checking construction site at night with flashlight" title="Construction Site Security Services" width="600" height="400" loading="lazy" class="img-fluid service-image">
+                                        <figcaption>24/7 Construction Site Protection and Monitoring</figcaption>
+                                    </figure>
+                                </div>
+                            </article>
