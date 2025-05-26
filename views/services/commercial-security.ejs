@@ -8,11 +8,227 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
+        /* Commercial Security Section Styles */
+        .commercial-features-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .commercial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .commercial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .commercial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-secondary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .commercial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .commercial-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .commercial-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .commercial-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .commercial-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .security-process-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .process-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .benefits-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .benefit-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .benefit-content p {
+            color: #666;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        .industries-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .industry-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+            height: 100%;
+        }
+
+        .industry-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .industry-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .industry-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
         :root {
             --primary-color: #1a3c6e;
             --secondary-color: #bf9e5b;
             --text-color: #333333;
             --light-bg: #f8f9fa;
+            --gradient-secondary: linear-gradient(135deg, #bf9e5b, #d4b570);
         }
 
         body {
@@ -37,6 +253,13 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
+        .hero-subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
         .service-card {
             background: white;
             border-radius: 15px;
@@ -48,6 +271,19 @@
 
         .service-card:hover {
             transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .feature-list {
@@ -92,26 +328,50 @@
             transform: translateY(-2px);
         }
 
+        .stats-section {
+            padding: 60px 0;
+            background: var(--light-bg);
+        }
+
         .stat-card {
             text-align: center;
             padding: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary-color);
+            margin-bottom: 10px;
         }
 
-        .testimonial {
+        .testimonial-card {
             background: white;
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 15px;
             margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .client-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .commercial-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -122,71 +382,365 @@
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
-                <h1 class="hero-title">Commercial Security Services</h1>
-                <p class="lead">Professional security solutions for businesses and commercial properties</p>
+                <h1 class="hero-title">Professional Commercial Security Services</h1>
+                <p class="hero-subtitle">Protecting businesses with comprehensive security solutions tailored to commercial environments</p>
             </div>
         </section>
 
-        <!-- Main Content -->
+        <!-- Premier Overview Section -->
+        <div style="background-color:#ffffff; padding:60px; border-radius:14px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color:#1c1c1c; max-width:960px; margin:60px auto;
+            box-shadow:0 10px 30px rgba(0,0,0,0.1); border:1px solid #e0e0e0;">
+            <h1 style="font-size:38px; margin-bottom:28px; color:#152f45;">
+                Premier Commercial Security Services for Complete Business Protection
+            </h1>
+            <p style="font-size:20px; line-height:1.8; margin-bottom:0; transition: all 0.3s ease; cursor: default;" 
+               onmouseover="this.style.color='#152f45'; this.style.transform='scale(1.02)'; this.style.textShadow='0 2px 8px rgba(0,0,0,0.1)'" 
+               onmouseout="this.style.color='#1c1c1c'; this.style.transform='scale(1)'; this.style.textShadow='none'">
+                <strong>ShieldWise Security</strong> offers comprehensive commercial security services that protect your business assets and employees with customized <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">security guard services</strong>, proactive mobile patrols, and advanced access control systems. Our licensed security professionals provide <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">24/7 on-site monitoring</strong> and expert CCTV installation to deter unauthorized activity and ensure real-time incident response. We specialize in strategic <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">patrol services</strong> and rapid alarm response, leveraging cutting-edge surveillance technology and thorough security audits to minimize risk and safeguard your premises. With a focus on <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">retail security</strong> and corporate facility protection, we integrate seamless entry management through biometric smart locks and electronic credential solutions. Our commercial security packages are tailored for enterprises of all sizes—including office complexes, retail centers, and industrial sites—delivering peace of mind through disciplined protocols and detailed reporting. Partner with <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">ShieldWise Security</strong> for industry-leading expertise, local coverage, and a commitment to uphold the highest standards of safety and professionalism.
+            </p>
+        </div>
+
+        <!-- Commercial Security Features Section -->
+        <section id="features" class="commercial-features-section">
+            <div class="container">
+                <h2 class="section-title">Comprehensive Commercial Security Solutions</h2>
+                <p class="section-subtitle">Advanced security services designed specifically for business environments</p>
+                
+                <div class="commercial-grid">
+                    <div class="commercial-card">
+                        <div class="commercial-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 class="commercial-title">Office Building Security</h3>
+                        <p class="commercial-description">Professional security officers for corporate headquarters, multi-tenant buildings, and business complexes with access control and visitor management.</p>
+                    </div>
+                    
+                    <div class="commercial-card">
+                        <div class="commercial-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h3 class="commercial-title">Retail Security Services</h3>
+                        <p class="commercial-description">Loss prevention specialists, theft deterrence, customer safety, and inventory protection for retail stores and shopping centers.</p>
+                    </div>
+                    
+                    <div class="commercial-card">
+                        <div class="commercial-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h3 class="commercial-title">Industrial Facility Protection</h3>
+                        <p class="commercial-description">Specialized security for manufacturing plants, warehouses, distribution centers, and industrial complexes with equipment protection.</p>
+                    </div>
+                    
+                    <div class="commercial-card">
+                        <div class="commercial-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 class="commercial-title">24/7 CCTV Monitoring</h3>
+                        <p class="commercial-description">State-of-the-art surveillance systems with real-time monitoring, incident detection, and comprehensive video analytics.</p>
+                    </div>
+                    
+                    <div class="commercial-card">
+                        <div class="commercial-icon">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <h3 class="commercial-title">Access Control Systems</h3>
+                        <p class="commercial-description">Advanced entry management with key cards, biometric systems, visitor tracking, and employee access monitoring.</p>
+                    </div>
+                    
+                    <div class="commercial-card">
+                        <div class="commercial-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3 class="commercial-title">Mobile Patrol Services</h3>
+                        <p class="commercial-description">Regular security patrols for large commercial properties, parking areas, and multi-location businesses with detailed reporting.</p>
+                    </div>
+                    
+                    <div class="commercial-card">
+                        <div class="commercial-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <h3 class="commercial-title">Alarm Response Services</h3>
+                        <p class="commercial-description">Rapid response to security alarms, fire alerts, and emergency situations with immediate assessment and coordination.</p>
+                    </div>
+                    
+                    <div class="commercial-card">
+                        <div class="commercial-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h3 class="commercial-title">Security Audits & Risk Assessment</h3>
+                        <p class="commercial-description">Comprehensive security evaluations, vulnerability assessments, and customized security plan development for your business.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industries We Serve Section -->
+        <section class="industries-section">
+            <div class="container">
+                <h2 class="section-title">Industries We Protect</h2>
+                <p class="section-subtitle">Specialized security solutions for diverse business sectors</p>
+                
+                <div class="row">
+                    <div class="col-md-3 mb-4">
+                        <div class="industry-card">
+                            <div class="industry-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <h3 class="industry-title">Retail & Shopping Centers</h3>
+                            <p>Loss prevention, customer safety, and theft deterrence for retail environments.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="industry-card">
+                            <div class="industry-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h3 class="industry-title">Corporate Offices</h3>
+                            <p>Executive protection, access control, and workplace security for business headquarters.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="industry-card">
+                            <div class="industry-icon">
+                                <i class="fas fa-warehouse"></i>
+                            </div>
+                            <h3 class="industry-title">Warehouses & Distribution</h3>
+                            <p>Inventory protection, logistics security, and facility monitoring for distribution centers.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="industry-card">
+                            <div class="industry-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h3 class="industry-title">Restaurants & Hospitality</h3>
+                            <p>Customer safety, cash handling security, and premises protection for hospitality venues.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Process Section -->
+        <section class="security-process-section">
+            <div class="container">
+                <h2 class="section-title">Our Commercial Security Process</h2>
+                <p class="section-subtitle">A systematic approach to business security</p>
+                
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">1</div>
+                            <h3 class="process-title">Business Assessment</h3>
+                            <p>Comprehensive evaluation of your commercial property's security needs, vulnerabilities, and operational requirements.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">2</div>
+                            <h3 class="process-title">Custom Security Strategy</h3>
+                            <p>Development of tailored security protocols specific to your industry, business model, and risk factors.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">3</div>
+                            <h3 class="process-title">Deployment & Integration</h3>
+                            <p>Implementation of security personnel, technology systems, and integration with existing business operations.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">4</div>
+                            <h3 class="process-title">Continuous Monitoring</h3>
+                            <p>Ongoing security coverage with regular reviews, performance analysis, and adjustments to optimize protection.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <div class="container">
+                <h2 class="section-title">Why Choose ShieldWise for Commercial Security</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Industry Expertise</h4>
+                                <p>Deep understanding of commercial security challenges with specialized solutions for different business sectors.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>24/7 Security Coverage</h4>
+                                <p>Round-the-clock protection with professional security personnel and monitoring systems ensuring constant vigilance.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Customizable Solutions</h4>
+                                <p>Flexible security packages that adapt to your business needs, budget, and operational requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Cost-Effective Protection</h4>
+                                <p>Competitive pricing with proven ROI through reduced losses, insurance savings, and enhanced business continuity.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Business Enhancement</h4>
+                                <p>Professional security presence improves customer confidence, employee safety, and overall business reputation.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Dedicated Support</h4>
+                                <p>24/7 emergency response capabilities with direct communication channels for immediate assistance and coordination.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Overview -->
         <section class="py-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 mx-auto">
+                    <div class="col-md-4">
                         <div class="service-card">
-                            <h2 class="mb-4">Comprehensive Commercial Security Solutions</h2>
-                            <p>At ShieldWise Security, we understand that protecting your business assets, employees, and customers requires a sophisticated and tailored security approach. Our commercial security services provide comprehensive protection for retail stores, office buildings, industrial facilities, and commercial properties of all sizes.</p>
-                            
-                            <h3 class="mt-4">Our Commercial Security Services Include:</h3>
+                            <i class="fas fa-user-shield service-icon"></i>
+                            <h3 class="service-title">On-Site Security Guards</h3>
                             <ul class="feature-list">
-                                <li>24/7 Property Surveillance</li>
+                                <li>Licensed Security Officers</li>
+                                <li>Reception & Lobby Services</li>
                                 <li>Access Control Management</li>
-                                <li>Loss Prevention Services</li>
-                                <li>Emergency Response Planning</li>
-                                <li>Employee Safety Programs</li>
-                                <li>CCTV Monitoring</li>
-                                <li>Mobile Patrol Services</li>
-                                <li>Facility Lock-up/Unlock Services</li>
+                                <li>Incident Response & Reporting</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="fas fa-shield-virus service-icon"></i>
+                            <h3 class="service-title">Loss Prevention</h3>
+                            <ul class="feature-list">
+                                <li>Theft Deterrence Programs</li>
+                                <li>Inventory Protection</li>
+                                <li>Employee Screening</li>
+                                <li>Retail Security Audits</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="fas fa-route service-icon"></i>
+                            <h3 class="service-title">Technology Integration</h3>
+                            <ul class="feature-list">
+                                <li>CCTV System Installation</li>
+                                <li>Access Control Integration</li>
+                                <li>Alarm System Monitoring</li>
+                                <li>Security Technology Consulting</li>
                             </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Statistics -->
-                <div class="row mt-5">
-                    <div class="col-md-4">
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
                         <div class="stat-card">
                             <div class="stat-number">500+</div>
-                            <div>Commercial Properties Protected</div>
+                            <div class="stat-label">Businesses Protected</div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Crime Reduction Rate</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
                         <div class="stat-card">
                             <div class="stat-number">24/7</div>
-                            <div>Security Coverage</div>
+                            <div class="stat-label">Security Coverage</div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="stat-card">
                             <div class="stat-number">15+</div>
-                            <div>Years Experience</div>
+                            <div class="stat-label">Years Experience</div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Testimonials -->
-                <div class="row mt-5">
-                    <div class="col-md-6">
-                        <div class="testimonial">
-                            <p class="mb-3">"ShieldWise's commercial security team has significantly improved our property's safety. Their professional approach and attention to detail are outstanding."</p>
-                            <strong>- Michael Thompson</strong><br>
-                            <small>Property Manager, Pacific Business Center</small>
+        <!-- Testimonials -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5 service-title">What Business Owners Say</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/james.png" alt="Client" class="client-image">
+                            <h4>Michael Thompson</h4>
+                            <p class="text-muted">Retail Manager</p>
+                            <p>"ShieldWise's commercial security team has significantly reduced theft at our store locations. Their professional approach is outstanding."</p>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="testimonial">
-                            <p class="mb-3">"We've seen a dramatic reduction in security incidents since partnering with ShieldWise. Their team is responsive and highly professional."</p>
-                            <strong>- Jennifer Martinez</strong><br>
-                            <small>Operations Director, Retail Solutions Inc.</small>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/samanta.png" alt="Client" class="client-image">
+                            <h4>Jennifer Martinez</h4>
+                            <p class="text-muted">Operations Director</p>
+                            <p>"Excellent security services for our office complex. The guards are professional and the technology integration is seamless."</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/shahn1.png" alt="Client" class="client-image">
+                            <h4>Robert Chen</h4>
+                            <p class="text-muted">Facility Manager</p>
+                            <p>"Their mobile patrol services and 24/7 monitoring have given us complete peace of mind for our industrial facility."</p>
                         </div>
                     </div>
                 </div>
@@ -196,9 +750,9 @@
         <!-- CTA Section -->
         <section class="cta-section">
             <div class="container">
-                <h2 class="mb-4">Secure Your Commercial Property Today</h2>
-                <p class="mb-4">Contact us for a customized commercial security solution</p>
-                <a href="/get-quote" class="btn btn-custom">Get a Free Quote</a>
+                <h2 class="mb-4">Secure Your Business Today</h2>
+                <p class="mb-4">Contact us for a customized commercial security solution that protects your assets and employees</p>
+                <a href="/get-quote" class="btn btn-custom">Get a Free Security Assessment</a>
             </div>
         </section>
     </main>
@@ -207,5 +761,83 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.commercial-card, .service-card, .process-step, .benefit-item, .industry-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Counter Animation for Statistics
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : element.textContent.includes('%') ? '%' : '');
+            }, 20);
+        }
+
+        // Trigger counter animation when in view
+        const statObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const value = parseInt(statNumber.textContent);
+                    animateCounter(statNumber, value);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-card').forEach(el => {
+            statObserver.observe(el);
+        });
+
+        // Add hover effect to cards
+        document.querySelectorAll('.commercial-card, .service-card, .process-step, .industry-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
 </body>
 </html>
