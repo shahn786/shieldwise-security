@@ -209,3 +209,936 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Campus Security Services | ShieldWise Security</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Campus Security Section Styles */
+        .campus-features-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .campus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .campus-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .campus-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-secondary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .campus-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .campus-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .campus-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .campus-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .campus-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .security-process-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .process-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .benefits-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .benefit-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .benefit-content p {
+            color: #666;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        .campus-types-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .campus-type-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+            height: 100%;
+        }
+
+        .campus-type-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .campus-type-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .campus-type-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .emergency-protocols-section {
+            padding: 80px 0;
+            background: #f0f4f8;
+        }
+
+        .protocol-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+
+        .protocol-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .protocol-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        :root {
+            --primary-color: #1a3c6e;
+            --secondary-color: #bf9e5b;
+            --text-color: #333333;
+            --light-bg: #f8f9fa;
+            --gradient-secondary: linear-gradient(135deg, #bf9e5b, #d4b570);
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(26, 60, 110, 0.9), rgba(26, 60, 110, 0.9)), url('/img/schoolsecurity.webp');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), #0d2b54);
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .btn-custom {
+            background: var(--secondary-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-custom:hover {
+            background: #a88b4a;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .stats-section {
+            padding: 60px 0;
+            background: var(--light-bg);
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .client-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .campus-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <%- include('../Partials/Header') %>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="hero-title">Educational Campus Security Services</h1>
+                <p class="hero-subtitle">Comprehensive security solutions for colleges, universities, and educational institutions ensuring safe learning environments</p>
+            </div>
+        </section>
+
+        <!-- Premier Overview Section -->
+        <div style="background-color:#ffffff; padding:60px; border-radius:14px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color:#1c1c1c; max-width:960px; margin:60px auto;
+            box-shadow:0 10px 30px rgba(0,0,0,0.1); border:1px solid #e0e0e0;">
+            <h1 style="font-size:38px; margin-bottom:28px; color:#152f45;">
+                Advanced Educational Campus Security for Safe Learning Environments
+            </h1>
+            <p style="font-size:20px; line-height:1.8; margin-bottom:0; transition: all 0.3s ease; cursor: default;" 
+               onmouseover="this.style.color='#152f45'; this.style.transform='scale(1.02)'; this.style.textShadow='0 2px 8px rgba(0,0,0,0.1)'" 
+               onmouseout="this.style.color='#1c1c1c'; this.style.transform='scale(1)'; this.style.textShadow='none'">
+                <strong>ShieldWise Security</strong> understands that educational institutions require specialized, technology-enhanced security frameworks that seamlessly blend robust on-site presence with intelligent systems designed to protect students, faculty, staff, and facilities. In response to evolving safety concerns and campus security challenges, we've developed comprehensive security solutions that provide <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">flexible, rapid-deployment capabilities</strong> that scale with your institution's unique needs and growth patterns. Our certified security professionals—including both armed and unarmed officers—conduct systematic foot and vehicle patrols throughout campus grounds, maintaining order and proactively deterring potential incidents before they can escalate. We enhance these human security measures with state-of-the-art <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">biometric and mobile-credential access controls</strong>, ensuring that only authorized individuals gain entry to academic buildings, dormitories, and sensitive areas. Our comprehensive approach includes round-the-clock video surveillance systems, advanced perimeter alarm networks, and detailed risk assessments that form the foundation of our proactive campus defense strategy. Every security officer meets stringent professional standards and undergoes specialized training in educational environments, while our <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">24/7 emergency response procedures</strong> are fully aligned with federal Clery Act requirements and state educational safety regulations. Through strategically scheduled security patrols, well-illuminated common areas, and ongoing crisis-management training programs, we help foster a secure yet welcoming campus atmosphere where students can focus on learning, faculty can teach effectively, and staff can work without safety concerns.
+            </p>
+        </div>
+
+        <!-- Campus Security Features Section -->
+        <section id="features" class="campus-features-section">
+            <div class="container">
+                <h2 class="section-title">Comprehensive Campus Security Solutions</h2>
+                <p class="section-subtitle">Advanced security services designed specifically for educational environments</p>
+                
+                <div class="campus-grid">
+                    <div class="campus-card">
+                        <div class="campus-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="campus-title">Campus Patrol Services</h3>
+                        <p class="campus-description">Dedicated foot and vehicle patrols covering all campus areas including dormitories, academic buildings, parking lots, and common areas.</p>
+                    </div>
+                    
+                    <div class="campus-card">
+                        <div class="campus-icon">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <h3 class="campus-title">Access Control Systems</h3>
+                        <p class="campus-description">Biometric and mobile-credential systems for secure building access, visitor management, and restricted area protection.</p>
+                    </div>
+                    
+                    <div class="campus-card">
+                        <div class="campus-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 class="campus-title">24/7 Video Surveillance</h3>
+                        <p class="campus-description">Comprehensive CCTV monitoring of all campus areas with real-time threat detection and incident response capabilities.</p>
+                    </div>
+                    
+                    <div class="campus-card">
+                        <div class="campus-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3 class="campus-title">Emergency Response</h3>
+                        <p class="campus-description">Rapid crisis response protocols aligned with Clery Act requirements and coordinated with local law enforcement and emergency services.</p>
+                    </div>
+                    
+                    <div class="campus-card">
+                        <div class="campus-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="campus-title">Dormitory Security</h3>
+                        <p class="campus-description">Specialized residential security for student housing including key card systems, visitor verification, and after-hours monitoring.</p>
+                    </div>
+                    
+                    <div class="campus-card">
+                        <div class="campus-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3 class="campus-title">Event Security</h3>
+                        <p class="campus-description">Professional security for campus events including graduations, sporting events, conferences, and special celebrations.</p>
+                    </div>
+                    
+                    <div class="campus-card">
+                        <div class="campus-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3 class="campus-title">Parking & Transportation</h3>
+                        <p class="campus-description">Security coverage for parking areas, shuttle services, and transportation hubs to ensure student and staff safety.</p>
+                    </div>
+                    
+                    <div class="campus-card">
+                        <div class="campus-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3 class="campus-title">Compliance & Reporting</h3>
+                        <p class="campus-description">Detailed incident documentation and reporting to meet federal and state educational security requirements and institutional policies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Campus Types Section -->
+        <section class="campus-types-section">
+            <div class="container">
+                <h2 class="section-title">Educational Institutions We Serve</h2>
+                <p class="section-subtitle">Tailored security solutions for all types of educational environments</p>
+                
+                <div class="row">
+                    <div class="col-md-3 mb-4">
+                        <div class="campus-type-card">
+                            <div class="campus-type-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <h3 class="campus-type-title">Universities</h3>
+                            <p>Large research universities and multi-campus institutions requiring comprehensive security coverage and specialized protocols.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="campus-type-card">
+                            <div class="campus-type-icon">
+                                <i class="fas fa-school"></i>
+                            </div>
+                            <h3 class="campus-type-title">Colleges</h3>
+                            <p>Community colleges, liberal arts colleges, and technical schools with focused security needs and community integration.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="campus-type-card">
+                            <div class="campus-type-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <h3 class="campus-type-title">Graduate Schools</h3>
+                            <p>Professional schools, medical campuses, and graduate research facilities requiring specialized access control and security measures.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="campus-type-card">
+                            <div class="campus-type-icon">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <h3 class="campus-type-title">Online Campuses</h3>
+                            <p>Hybrid and online education facilities, testing centers, and satellite campuses with unique security requirements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Protocols Section -->
+        <section class="emergency-protocols-section">
+            <div class="container">
+                <h2 class="section-title">Campus Emergency Response Protocols</h2>
+                <p class="section-subtitle">Comprehensive emergency management and crisis response procedures</p>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="protocol-card">
+                            <div class="protocol-icon">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 10px;">Active Threat Response</h4>
+                            <p>Immediate lockdown procedures, evacuation protocols, and coordination with law enforcement for active threat situations.</p>
+                        </div>
+                        
+                        <div class="protocol-card">
+                            <div class="protocol-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 10px;">Fire & Natural Disasters</h4>
+                            <p>Comprehensive evacuation plans, emergency shelter procedures, and disaster recovery coordination with campus officials.</p>
+                        </div>
+                        
+                        <div class="protocol-card">
+                            <div class="protocol-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 10px;">Medical Emergencies</h4>
+                            <p>First aid response, EMS coordination, and campus health services integration for medical emergencies and incidents.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="protocol-card">
+                            <div class="protocol-icon">
+                                <i class="fas fa-broadcast-tower"></i>
+                            </div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 10px;">Mass Communication</h4>
+                            <p>Emergency alert systems, campus-wide notifications, and coordinated communication with students, staff, and families.</p>
+                        </div>
+                        
+                        <div class="protocol-card">
+                            <div class="protocol-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 10px;">Behavioral Incidents</h4>
+                            <p>De-escalation techniques, mental health crisis response, and coordination with campus counseling services.</p>
+                        </div>
+                        
+                        <div class="protocol-card">
+                            <div class="protocol-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 10px;">Clery Act Compliance</h4>
+                            <p>Mandatory reporting procedures, crime statistics documentation, and federal compliance for campus safety requirements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Process Section -->
+        <section class="security-process-section">
+            <div class="container">
+                <h2 class="section-title">Our Campus Security Implementation Process</h2>
+                <p class="section-subtitle">A systematic approach to educational institution security</p>
+                
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">1</div>
+                            <h3 class="process-title">Campus Assessment</h3>
+                            <p>Comprehensive evaluation of campus layout, security vulnerabilities, student population, and institutional specific risks and requirements.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">2</div>
+                            <h3 class="process-title">Custom Security Plan</h3>
+                            <p>Development of tailored security protocols specific to your institution's needs, regulatory requirements, and campus culture.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">3</div>
+                            <h3 class="process-title">Training & Deployment</h3>
+                            <p>Specialized training for security personnel in educational environments followed by seamless integration with campus operations.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">4</div>
+                            <h3 class="process-title">Ongoing Monitoring</h3>
+                            <p>Continuous security coverage with regular assessments, updates, and adjustments to maintain optimal protection levels.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <div class="container">
+                <h2 class="section-title">Why Choose ShieldWise for Campus Security</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Educational Security Expertise</h4>
+                                <p>Specialized training in campus environments, student interaction protocols, and educational institution regulations and requirements.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Clery Act Compliance</h4>
+                                <p>Full compliance with federal campus safety reporting requirements, crime statistics documentation, and regulatory standards.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>24/7 Campus Coverage</h4>
+                                <p>Round-the-clock security presence with specialized night patrol services for dormitories and campus facilities.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Student-Focused Approach</h4>
+                                <p>Security services designed to protect while maintaining an open, welcoming campus environment conducive to learning.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Advanced Technology Integration</h4>
+                                <p>State-of-the-art security systems including biometric access, mobile credentials, and AI-powered surveillance monitoring.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Crisis Response Coordination</h4>
+                                <p>Immediate emergency response with seamless coordination between campus officials, law enforcement, and emergency services.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Overview -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="fas fa-shield-alt service-icon"></i>
+                            <h3 class="service-title">Campus Patrol & Monitoring</h3>
+                            <ul class="feature-list">
+                                <li>24/7 Campus Patrol Services</li>
+                                <li>Building Access Monitoring</li>
+                                <li>Dormitory Security Coverage</li>
+                                <li>Emergency Response Coordination</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="fas fa-users service-icon"></i>
+                            <h3 class="service-title">Student & Staff Protection</h3>
+                            <ul class="feature-list">
+                                <li>Personal Safety Escorts</li>
+                                <li>Crisis Intervention Support</li>
+                                <li>Visitor Management Systems</li>
+                                <li>Special Event Security</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="fas fa-cog service-icon"></i>
+                            <h3 class="service-title">Technology & Compliance</h3>
+                            <ul class="feature-list">
+                                <li>Access Control Systems</li>
+                                <li>CCTV Surveillance Networks</li>
+                                <li>Clery Act Compliance</li>
+                                <li>Incident Documentation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Campuses Secured</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Clery Compliance</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Emergency Response</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5 service-title">What Campus Officials Say</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/james.png" alt="Client" class="client-image">
+                            <h4>Dr. Patricia Williams</h4>
+                            <p class="text-muted">Campus Safety Director</p>
+                            <p>"ShieldWise's campus security team understands the unique challenges of educational environments. Their officers are professional yet approachable."</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/samanta.png" alt="Client" class="client-image">
+                            <h4>Mark Rodriguez</h4>
+                            <p class="text-muted">University Administrator</p>
+                            <p>"Excellent emergency response capabilities and seamless coordination with our campus operations. Students and parents feel much more secure."</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/shahn1.png" alt="Client" class="client-image">
+                            <h4>Jennifer Chen</h4>
+                            <p class="text-muted">Dean of Students</p>
+                            <p>"Their technology integration and Clery Act compliance support has been invaluable. Professional service that enhances our campus community."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="mb-4">Secure Your Educational Institution Today</h2>
+                <p class="mb-4">Contact us for a comprehensive campus security assessment and customized protection plan</p>
+                <a href="/get-quote" class="btn btn-custom">Get a Free Campus Security Assessment</a>
+            </div>
+        </section>
+    </main>
+
+    <%- include('../Partials/Footer') %>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.campus-card, .service-card, .process-step, .benefit-item, .campus-type-card, .protocol-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Counter Animation for Statistics
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : element.textContent.includes('%') ? '%' : '');
+            }, 20);
+        }
+
+        // Trigger counter animation when in view
+        const statObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const value = parseInt(statNumber.textContent);
+                    animateCounter(statNumber, value);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-card').forEach(el => {
+            statObserver.observe(el);
+        });
+
+        // Add hover effect to cards
+        document.querySelectorAll('.campus-card, .service-card, .process-step, .campus-type-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
