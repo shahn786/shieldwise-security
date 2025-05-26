@@ -46,24 +46,39 @@
 
 .social-media a {
   display: inline-block;
-  width: 36px;
-  height: 36px;
-  background-color: rgba(255, 255, 255, 0.1);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.15);
   color: #ffffff;
   border-radius: 50%;
   text-align: center;
-  line-height: 36px;
-  margin-right: 10px;
+  line-height: 40px;
+  margin-right: 12px;
   transition: all 0.3s ease;
+  border: 2px solid transparent;
 }
 
 .social-media a:hover {
   background-color: #3498db;
   transform: translateY(-3px);
+  border-color: #ffffff;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
 }
 
 .social-media i {
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Certification Info Styling */
+.certification-info {
+  margin-top: 20px;
+}
+
+.certification-info p {
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 /* Lists Styling */
@@ -234,8 +249,8 @@
           <nav class="social-media">
             <a href="https://www.facebook.com/shieldwisesecurity" aria-label="Follow ShieldWise Security on Facebook" rel="noopener noreferrer" target="_blank" itemprop="sameAs"><i class="fab fa-facebook-f"></i></a>
             <a href="https://twitter.com/shieldwisesecurity" aria-label="Follow ShieldWise Security on Twitter" rel="noopener noreferrer" target="_blank" itemprop="sameAs"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/shieldwisesecurity" aria-label="Follow ShieldWise Security on Instagram" rel="noopener noreferrer" target="_blank" itemprop="sameAs"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/shieldwisesecurity" aria-label="Follow ShieldWise Security on LinkedIn" rel="noopener noreferrer" target="_blank" itemprop="sameAs"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/shieldwisesecurity/" aria-label="Follow ShieldWise Security on Instagram" rel="noopener noreferrer" target="_blank" itemprop="sameAs"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/shieldwisesecurity/" aria-label="Follow ShieldWise Security on LinkedIn" rel="noopener noreferrer" target="_blank" itemprop="sameAs"><i class="fab fa-linkedin-in"></i></a>
             <a href="https://www.youtube.com/channel/shieldwisesecurity" aria-label="Subscribe to ShieldWise Security on YouTube" rel="noopener noreferrer" target="_blank" itemprop="sameAs"><i class="fab fa-youtube"></i></a>
           </nav>
 
@@ -243,7 +258,12 @@
             <img src="/img/asis1.avif" alt="ASIS Certified Security Company">
             <img src="/img/bsis.png" alt="BSIS Licensed Security Guards in California">
           </div>
-          <p><strong>PPO License #: <span itemprop="license">123456</span></strong></p>
+          
+          <div class="certification-info">
+            <p><strong>ASIS Certified Security Company</strong></p>
+            <p><strong>BSIS Licensed Security Guards in California</strong></p>
+            <p><strong>PPO License #: <span itemprop="license">123456</span></strong></p>
+          </div>
           
         </div>
       </div>
