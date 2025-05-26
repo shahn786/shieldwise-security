@@ -8,11 +8,180 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
+        /* Shopping Center Security Section Styles */
+        .shopping-features-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .shopping-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .shopping-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shopping-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-secondary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .shopping-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .shopping-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .shopping-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .shopping-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .shopping-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .security-process-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .process-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .benefits-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .benefit-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .benefit-content p {
+            color: #666;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
         :root {
             --primary-color: #1a3c6e;
             --secondary-color: #bf9e5b;
             --text-color: #333333;
             --light-bg: #f8f9fa;
+            --gradient-secondary: linear-gradient(135deg, #bf9e5b, #d4b570);
         }
 
         body {
@@ -37,6 +206,13 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
+        .hero-subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
         .service-card {
             background: white;
             border-radius: 15px;
@@ -48,6 +224,19 @@
 
         .service-card:hover {
             transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .feature-list {
@@ -92,26 +281,50 @@
             transform: translateY(-2px);
         }
 
+        .stats-section {
+            padding: 60px 0;
+            background: var(--light-bg);
+        }
+
         .stat-card {
             text-align: center;
             padding: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary-color);
+            margin-bottom: 10px;
         }
 
-        .testimonial {
+        .testimonial-card {
             background: white;
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 15px;
             margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .client-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .shopping-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -122,71 +335,318 @@
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
-                <h1 class="hero-title">Shopping Center Security Services</h1>
-                <p class="lead">Professional security solutions for retail centers and shopping malls</p>
+                <h1 class="hero-title">Professional Shopping Center Security Services</h1>
+                <p class="hero-subtitle">Comprehensive security solutions tailored for retail establishments, ensuring safety for shoppers, staff, and tenants</p>
             </div>
         </section>
 
-        <!-- Main Content -->
+        <!-- Premier Overview Section -->
+        <div style="background-color:#ffffff; padding:60px; border-radius:14px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color:#1c1c1c; max-width:960px; margin:60px auto;
+            box-shadow:0 10px 30px rgba(0,0,0,0.1); border:1px solid #e0e0e0;">
+            <h1 style="font-size:38px; margin-bottom:28px; color:#152f45;">
+                Premier Shopping Center Security Services for Complete Retail Protection
+            </h1>
+            <p style="font-size:20px; line-height:1.8; margin-bottom:0; transition: all 0.3s ease; cursor: default;" 
+               onmouseover="this.style.color='#152f45'; this.style.transform='scale(1.02)'; this.style.textShadow='0 2px 8px rgba(0,0,0,0.1)'" 
+               onmouseout="this.style.color='#1c1c1c'; this.style.transform='scale(1)'; this.style.textShadow='none'">
+                <strong>ShieldWise Security</strong> offers specialized shopping center security services tailored to meet the unique needs of retail establishments, ensuring the safety and well-being of shoppers, staff, and tenants. Our services include <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">24/7 on-site security personnel</strong> trained to handle the specific challenges of shopping center settings. Our team conducts regular patrols, monitors access points, and responds promptly to incidents, ensuring a constant presence that deters potential threats. Advanced <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">access control systems</strong> are implemented to restrict unauthorized entry, safeguarding sensitive areas such as storage rooms, administrative offices, and event spaces. Our <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">surveillance solutions</strong> encompass strategically placed cameras and monitoring systems that provide real-time oversight of shopping center premises. These systems not only enhance security but also assist in incident investigation and provide valuable evidence when necessary. <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">Visitor management protocols</strong> are enforced to ensure that only authorized individuals have access to restricted areas. This includes verifying identification, issuing visitor badges, and escorting visitors as needed, all of which contribute to a controlled and secure environment. Our security officers are trained in <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">emergency response procedures</strong>, including handling active shooter situations, fire evacuations, and medical emergencies. By integrating physical and digital security strategies, ShieldWise Security provides a holistic approach to shopping center security, ensuring a secure environment that supports the delivery of exceptional customer experiences.
+            </p>
+        </div>
+
+        <!-- Shopping Center Security Features Section -->
+        <section id="features" class="shopping-features-section">
+            <div class="container">
+                <h2 class="section-title">Comprehensive Shopping Center Security Features</h2>
+                <p class="section-subtitle">Advanced security solutions designed specifically for retail establishments and shopping complexes</p>
+                
+                <div class="shopping-grid">
+                    <div class="shopping-card">
+                        <div class="shopping-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h3 class="shopping-title">Retail Loss Prevention</h3>
+                        <p class="shopping-description">Specialized anti-theft strategies, shoplifting deterrence, inventory protection, and coordinated response with store management teams.</p>
+                    </div>
+                    
+                    <div class="shopping-card">
+                        <div class="shopping-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3 class="shopping-title">Parking Lot Security</h3>
+                        <p class="shopping-description">Comprehensive surveillance and patrol of parking areas, vehicle protection, customer safety escorts, and theft prevention measures.</p>
+                    </div>
+                    
+                    <div class="shopping-card">
+                        <div class="shopping-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="shopping-title">Crowd Management</h3>
+                        <p class="shopping-description">Expert handling of high-traffic periods, special events, holiday rushes, and emergency evacuation procedures for large crowds.</p>
+                    </div>
+                    
+                    <div class="shopping-card">
+                        <div class="shopping-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 class="shopping-title">24/7 CCTV Monitoring</h3>
+                        <p class="shopping-description">Real-time surveillance of all common areas, entrances, corridors, food courts, and critical zones with advanced monitoring technology.</p>
+                    </div>
+                    
+                    <div class="shopping-card">
+                        <div class="shopping-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="shopping-title">Access Control Management</h3>
+                        <p class="shopping-description">Restricted area security, tenant access management, delivery coordination, and after-hours entry control systems.</p>
+                    </div>
+                    
+                    <div class="shopping-card">
+                        <div class="shopping-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3 class="shopping-title">Emergency Response</h3>
+                        <p class="shopping-description">Rapid response protocols for medical emergencies, security incidents, fire situations, and coordination with local emergency services.</p>
+                    </div>
+                    
+                    <div class="shopping-card">
+                        <div class="shopping-icon">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <h3 class="shopping-title">Tenant & Visitor Management</h3>
+                        <p class="shopping-description">Comprehensive visitor screening, contractor management, delivery coordination, and tenant security support services.</p>
+                    </div>
+                    
+                    <div class="shopping-card">
+                        <div class="shopping-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3 class="shopping-title">Special Event Security</h3>
+                        <p class="shopping-description">Customized security for promotional events, seasonal celebrations, grand openings, and high-profile retail activities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Process Section -->
+        <section class="security-process-section">
+            <div class="container">
+                <h2 class="section-title">Our Shopping Center Security Process</h2>
+                <p class="section-subtitle">A systematic approach to retail security excellence</p>
+                
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">1</div>
+                            <h3 class="process-title">Comprehensive Assessment</h3>
+                            <p>Detailed evaluation of your shopping center's layout, tenant mix, traffic patterns, and specific security vulnerabilities.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">2</div>
+                            <h3 class="process-title">Customized Security Plan</h3>
+                            <p>Development of tailored security protocols specific to retail environments, tenant needs, and customer safety requirements.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">3</div>
+                            <h3 class="process-title">Strategic Implementation</h3>
+                            <p>Deployment of trained retail security personnel, installation of surveillance systems, and integration with existing operations.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">4</div>
+                            <h3 class="process-title">Continuous Monitoring</h3>
+                            <p>Ongoing security coverage with regular assessments, performance reviews, and adjustments to maintain optimal protection.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <div class="container">
+                <h2 class="section-title">Why Choose ShieldWise for Shopping Center Security</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Retail Security Expertise</h4>
+                                <p>Specialized knowledge in retail security challenges, loss prevention strategies, and customer-focused security approaches.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>24/7 Security Coverage</h4>
+                                <p>Round-the-clock protection during operating hours and after-hours security to protect against break-ins and vandalism.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Enhanced Property Value</h4>
+                                <p>Professional security presence increases tenant retention, attracts quality retailers, and improves overall property value.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-smile"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Customer Confidence</h4>
+                                <p>Visible security presence creates a safe shopping environment, encouraging customer visits and extended shopping times.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Retail-Trained Personnel</h4>
+                                <p>Security officers specifically trained in retail environments, customer service, and de-escalation techniques.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Tenant Relationship Management</h4>
+                                <p>Collaborative approach with tenants, providing security support while maintaining positive business relationships.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Overview -->
         <section class="py-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 mx-auto">
+                    <div class="col-md-4">
                         <div class="service-card">
-                            <h2 class="mb-4">Comprehensive Shopping Center Security Solutions</h2>
-                            <p>At ShieldWise Security, we understand the unique security challenges faced by shopping centers and retail establishments. Our specialized security services ensure the safety of shoppers, staff, and property while maintaining a welcoming atmosphere for your customers.</p>
-                            
-                            <h3 class="mt-4">Our Shopping Center Security Services Include:</h3>
+                            <i class="fas fa-building service-icon"></i>
+                            <h3 class="service-title">Mall & Center Security</h3>
                             <ul class="feature-list">
-                                <li>Retail Loss Prevention</li>
-                                <li>Parking Lot Security Patrols</li>
-                                <li>Access Control Management</li>
-                                <li>CCTV Monitoring</li>
-                                <li>Emergency Response Protocol</li>
-                                <li>Crowd Management</li>
-                                <li>After-Hours Security</li>
-                                <li>Special Event Security Coverage</li>
+                                <li>Common Area Monitoring</li>
+                                <li>Food Court Security</li>
+                                <li>Restroom Area Patrols</li>
+                                <li>Maintenance Area Access</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="fas fa-truck service-icon"></i>
+                            <h3 class="service-title">Loading Dock & Delivery</h3>
+                            <ul class="feature-list">
+                                <li>Delivery Verification</li>
+                                <li>Loading Dock Security</li>
+                                <li>Vendor Management</li>
+                                <li>Inventory Protection</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="fas fa-route service-icon"></i>
+                            <h3 class="service-title">Mobile Patrol Services</h3>
+                            <ul class="feature-list">
+                                <li>Perimeter Security Checks</li>
+                                <li>Parking Lot Inspections</li>
+                                <li>External Area Monitoring</li>
+                                <li>Incident Response</li>
                             </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Statistics -->
-                <div class="row mt-5">
-                    <div class="col-md-4">
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
                         <div class="stat-card">
-                            <div class="stat-number">200+</div>
-                            <div>Shopping Centers Protected</div>
+                            <div class="stat-number">150+</div>
+                            <div class="stat-label">Shopping Centers Secured</div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number">96%</div>
+                            <div class="stat-label">Tenant Satisfaction</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
                         <div class="stat-card">
                             <div class="stat-number">24/7</div>
-                            <div>Security Coverage</div>
+                            <div class="stat-label">Security Coverage</div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="stat-card">
                             <div class="stat-number">15+</div>
-                            <div>Years Experience</div>
+                            <div class="stat-label">Years Experience</div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Testimonials -->
-                <div class="row mt-5">
-                    <div class="col-md-6">
-                        <div class="testimonial">
-                            <p class="mb-3">"ShieldWise's security team has significantly improved the safety at our shopping center. Their professional approach and customer service are outstanding."</p>
-                            <strong>- Robert Chen</strong><br>
-                            <small>Mall Operations Director, Pacific Shopping Center</small>
+        <!-- Testimonials -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5 service-title">What Property Managers & Tenants Say</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/james.png" alt="Client" class="client-image">
+                            <h4>Robert Chen</h4>
+                            <p class="text-muted">Mall Operations Director</p>
+                            <p>"ShieldWise's security team has significantly improved the safety at our shopping center. Their professional approach and customer service are outstanding."</p>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="testimonial">
-                            <p class="mb-3">"Since partnering with ShieldWise, we've seen a dramatic reduction in security incidents. Their team's responsiveness is exceptional."</p>
-                            <strong>- Sarah Thompson</strong><br>
-                            <small>Property Manager, Retail Solutions Inc.</small>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/samanta.png" alt="Client" class="client-image">
+                            <h4>Sarah Thompson</h4>
+                            <p class="text-muted">Property Manager</p>
+                            <p>"Since partnering with ShieldWise, we've seen a dramatic reduction in security incidents. Their team's responsiveness is exceptional."</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/shahn1.png" alt="Client" class="client-image">
+                            <h4>Lisa Martinez</h4>
+                            <p class="text-muted">Retail Store Manager</p>
+                            <p>"The security presence has made our customers feel safer and has helped reduce theft incidents significantly. Highly professional service."</p>
                         </div>
                     </div>
                 </div>
@@ -197,8 +657,8 @@
         <section class="cta-section">
             <div class="container">
                 <h2 class="mb-4">Secure Your Shopping Center Today</h2>
-                <p class="mb-4">Contact us for a customized shopping center security solution</p>
-                <a href="/get-quote" class="btn btn-custom">Get a Free Quote</a>
+                <p class="mb-4">Contact us for a customized shopping center security solution that protects your investment and enhances customer experience</p>
+                <a href="/get-quote" class="btn btn-custom">Get a Free Security Assessment</a>
             </div>
         </section>
     </main>
@@ -207,5 +667,83 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.shopping-card, .service-card, .process-step, .benefit-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Counter Animation for Statistics
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : element.textContent.includes('%') ? '%' : '');
+            }, 20);
+        }
+
+        // Trigger counter animation when in view
+        const statObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const value = parseInt(statNumber.textContent);
+                    animateCounter(statNumber, value);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-card').forEach(el => {
+            statObserver.observe(el);
+        });
+
+        // Add hover effect to cards
+        document.querySelectorAll('.shopping-card, .service-card, .process-step').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
 </body>
 </html>
