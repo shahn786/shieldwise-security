@@ -8,11 +8,180 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
+        /* Hospital Security Section Styles */
+        .hospital-features-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .hospital-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .hospital-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hospital-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-secondary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .hospital-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .hospital-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .hospital-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .hospital-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .hospital-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .security-process-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .process-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .benefits-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .benefit-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .benefit-content p {
+            color: #666;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
         :root {
             --primary-color: #1a3c6e;
             --secondary-color: #bf9e5b;
             --text-color: #333333;
             --light-bg: #f8f9fa;
+            --gradient-secondary: linear-gradient(135deg, #bf9e5b, #d4b570);
         }
 
         body {
@@ -37,6 +206,13 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
+        .hero-subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
         .service-card {
             background: white;
             border-radius: 15px;
@@ -48,6 +224,19 @@
 
         .service-card:hover {
             transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .feature-list {
@@ -92,26 +281,50 @@
             transform: translateY(-2px);
         }
 
+        .stats-section {
+            padding: 60px 0;
+            background: var(--light-bg);
+        }
+
         .stat-card {
             text-align: center;
             padding: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary-color);
+            margin-bottom: 10px;
         }
 
-        .testimonial {
+        .testimonial-card {
             background: white;
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 15px;
             margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .client-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hospital-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -122,71 +335,317 @@
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
-                <h1 class="hero-title">Hospital Security Services</h1>
-                <p class="lead">Professional healthcare facility security solutions ensuring safety 24/7</p>
+                <h1 class="hero-title">Professional Hospital Security Services</h1>
+                <p class="hero-subtitle">Comprehensive healthcare facility security ensuring patient safety and HIPAA compliance</p>
             </div>
         </section>
 
-        <!-- Main Content -->
+        <!-- Premier Overview Section -->
+        <div style="background-color:#ffffff; padding:60px; border-radius:14px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color:#1c1c1c; max-width:960px; margin:60px auto;
+            box-shadow:0 10px 30px rgba(0,0,0,0.1); border:1px solid #e0e0e0;">
+            <h1 style="font-size:38px; margin-bottom:28px; color:#152f45;">
+                Premier Hospital Security Services for Healthcare Excellence
+            </h1>
+            <p style="font-size:20px; line-height:1.8; margin-bottom:0; transition: all 0.3s ease; cursor: default;" 
+               onmouseover="this.style.color='#152f45'; this.style.transform='scale(1.02)'; this.style.textShadow='0 2px 8px rgba(0,0,0,0.1)'" 
+               onmouseout="this.style.color='#1c1c1c'; this.style.transform='scale(1)'; this.style.textShadow='none'">
+                <strong>ShieldWise Security</strong> provides comprehensive hospital security services tailored to meet the unique needs of healthcare facilities. Our services are designed to ensure the safety and well-being of patients, staff, and visitors, while maintaining a secure environment conducive to quality healthcare delivery. We offer <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">24/7 on-site security personnel</strong> trained to handle the specific challenges of healthcare settings, conducting regular patrols, monitoring access points, and responding promptly to incidents. Our advanced <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">access control systems</strong> restrict unauthorized entry to sensitive areas such as emergency rooms, intensive care units, and administrative offices. Strategic surveillance solutions provide real-time oversight while our <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">visitor management protocols</strong> ensure only authorized individuals access restricted areas. By integrating physical and digital security strategies, including <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">HIPAA-compliant cybersecurity services</strong>, we provide a holistic approach to hospital security that supports the delivery of high-quality care.
+            </p>
+        </div>
+
+        <!-- Hospital Security Features Section -->
+        <section id="features" class="hospital-features-section">
+            <div class="container">
+                <h2 class="section-title">Comprehensive Hospital Security Features</h2>
+                <p class="section-subtitle">Advanced security solutions designed specifically for healthcare environments</p>
+                
+                <div class="hospital-grid">
+                    <div class="hospital-card">
+                        <div class="hospital-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h3 class="hospital-title">Emergency Department Security</h3>
+                        <p class="hospital-description">Specialized security for high-stress areas with trained personnel who understand medical emergencies and de-escalation techniques.</p>
+                    </div>
+                    
+                    <div class="hospital-card">
+                        <div class="hospital-icon">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <h3 class="hospital-title">ICU & Critical Care Protection</h3>
+                        <p class="hospital-description">Restricted access monitoring for intensive care units, ensuring only authorized medical staff and approved visitors enter sensitive areas.</p>
+                    </div>
+                    
+                    <div class="hospital-card">
+                        <div class="hospital-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h3 class="hospital-title">Visitor Management System</h3>
+                        <p class="hospital-description">Comprehensive visitor screening, badge issuance, and escort services to maintain controlled access throughout the facility.</p>
+                    </div>
+                    
+                    <div class="hospital-card">
+                        <div class="hospital-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3 class="hospital-title">HIPAA-Compliant Security</h3>
+                        <p class="hospital-description">Advanced cybersecurity protocols protecting electronic health information with data encryption and secure access controls.</p>
+                    </div>
+                    
+                    <div class="hospital-card">
+                        <div class="hospital-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3 class="hospital-title">Emergency Response Training</h3>
+                        <p class="hospital-description">Security officers trained in active shooter protocols, fire evacuations, and medical emergency procedures for swift response.</p>
+                    </div>
+                    
+                    <div class="hospital-card">
+                        <div class="hospital-icon">
+                            <i class="fas fa-pills"></i>
+                        </div>
+                        <h3 class="hospital-title">Pharmacy & Medical Supply Security</h3>
+                        <p class="hospital-description">Specialized protection for pharmaceutical storage areas and medical equipment to prevent theft and ensure regulatory compliance.</p>
+                    </div>
+                    
+                    <div class="hospital-card">
+                        <div class="hospital-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h3 class="hospital-title">24/7 Surveillance Monitoring</h3>
+                        <p class="hospital-description">Strategic camera placement and real-time monitoring systems providing comprehensive coverage while respecting patient privacy.</p>
+                    </div>
+                    
+                    <div class="hospital-card">
+                        <div class="hospital-icon">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <h3 class="hospital-title">Maternity & Pediatric Security</h3>
+                        <p class="hospital-description">Enhanced security protocols for maternity wards and pediatric units including infant protection systems and specialized access controls.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Process Section -->
+        <section class="security-process-section">
+            <div class="container">
+                <h2 class="section-title">Our Hospital Security Implementation Process</h2>
+                <p class="section-subtitle">A systematic approach to healthcare facility security</p>
+                
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">1</div>
+                            <h3 class="process-title">Healthcare Risk Assessment</h3>
+                            <p>Comprehensive evaluation of your hospital's unique security vulnerabilities, patient flow patterns, and regulatory requirements.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">2</div>
+                            <h3 class="process-title">Custom Security Design</h3>
+                            <p>Development of tailored security protocols specific to healthcare environments, including HIPAA compliance and emergency procedures.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">3</div>
+                            <h3 class="process-title">Staff Training & Deployment</h3>
+                            <p>Specialized training for healthcare security personnel on medical protocols, patient interactions, and emergency response procedures.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">4</div>
+                            <h3 class="process-title">Continuous Monitoring</h3>
+                            <p>Ongoing security coverage with regular audits, compliance reviews, and adjustments to maintain optimal protection levels.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <div class="container">
+                <h2 class="section-title">Why Choose ShieldWise for Hospital Security</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Healthcare-Specialized Training</h4>
+                                <p>Security personnel trained specifically in healthcare environments, medical protocols, and patient interaction best practices.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Regulatory Compliance</h4>
+                                <p>Full HIPAA compliance with additional adherence to healthcare safety regulations and accreditation standards.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Medical Emergency Response</h4>
+                                <p>Officers trained to assist during medical emergencies while maintaining security protocols and patient dignity.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Patient & Family Focused</h4>
+                                <p>Compassionate security approach that considers the emotional state of patients and families during difficult times.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Advanced Cybersecurity</h4>
+                                <p>Comprehensive protection of electronic health records and medical systems against cyber threats and data breaches.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>24/7 Coverage</h4>
+                                <p>Round-the-clock security presence ensuring continuous protection during all shifts and emergency situations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Overview -->
         <section class="py-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 mx-auto">
+                    <div class="col-md-4">
                         <div class="service-card">
-                            <h2 class="mb-4">Comprehensive Hospital Security Solutions</h2>
-                            <p>At ShieldWise Security, we understand the unique security challenges faced by healthcare facilities. Our specialized hospital security services ensure the safety of patients, staff, visitors, and valuable medical assets while maintaining a welcoming and professional environment.</p>
-                            
-                            <h3 class="mt-4">Our Hospital Security Services Include:</h3>
+                            <i class="fas fa-door-open service-icon"></i>
+                            <h3 class="service-title">Access Control & Monitoring</h3>
                             <ul class="feature-list">
-                                <li>24/7 Hospital Entrance Security</li>
-                                <li>Emergency Department Security</li>
-                                <li>Patient Floor Patrols</li>
-                                <li>Visitor Management Systems</li>
-                                <li>Parking Structure Security</li>
-                                <li>Medical Supply Protection</li>
-                                <li>De-escalation Services</li>
-                                <li>Emergency Response Coordination</li>
+                                <li>Electronic Badge Systems</li>
+                                <li>Biometric Access Control</li>
+                                <li>Visitor Authentication</li>
+                                <li>Restricted Area Management</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="fas fa-ambulance service-icon"></i>
+                            <h3 class="service-title">Emergency Response Services</h3>
+                            <ul class="feature-list">
+                                <li>Code Team Assistance</li>
+                                <li>Fire Evacuation Support</li>
+                                <li>Active Threat Response</li>
+                                <li>Medical Emergency Aid</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="fas fa-shield-alt service-icon"></i>
+                            <h3 class="service-title">Comprehensive Protection</h3>
+                            <ul class="feature-list">
+                                <li>Perimeter Security</li>
+                                <li>Parking Area Patrols</li>
+                                <li>Asset Protection</li>
+                                <li>Incident Documentation</li>
                             </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Statistics -->
-                <div class="row mt-5">
-                    <div class="col-md-4">
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Hospitals Secured</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
                         <div class="stat-card">
                             <div class="stat-number">100%</div>
-                            <div>HIPAA Compliant</div>
+                            <div class="stat-label">HIPAA Compliant</div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="stat-card">
                             <div class="stat-number">24/7</div>
-                            <div>Security Coverage</div>
+                            <div class="stat-label">Security Coverage</div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="stat-card">
                             <div class="stat-number">15+</div>
-                            <div>Years Experience</div>
+                            <div class="stat-label">Years Experience</div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Testimonials -->
-                <div class="row mt-5">
-                    <div class="col-md-6">
-                        <div class="testimonial">
-                            <p class="mb-3">"ShieldWise's hospital security team has significantly improved our facility's safety. Their professional approach and understanding of healthcare security needs are outstanding."</p>
-                            <strong>- Dr. Sarah Johnson</strong><br>
-                            <small>Chief of Staff, Metropolitan Medical Center</small>
+        <!-- Testimonials -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5 service-title">What Healthcare Professionals Say</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/james.png" alt="Client" class="client-image">
+                            <h4>Dr. Sarah Williams</h4>
+                            <p class="text-muted">Chief Medical Officer</p>
+                            <p>"ShieldWise's understanding of healthcare security is exceptional. They've significantly improved our facility's safety while maintaining patient care standards."</p>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="testimonial">
-                            <p class="mb-3">"The level of training and professionalism shown by ShieldWise's security officers has made a real difference in our emergency department's safety."</p>
-                            <strong>- Michael Chen</strong><br>
-                            <small>Emergency Department Director, Pacific Health Hospital</small>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/samanta.png" alt="Client" class="client-image">
+                            <h4>Michael Thompson</h4>
+                            <p class="text-muted">Hospital Administrator</p>
+                            <p>"Their HIPAA-compliant security solutions and emergency response training have been invaluable for our hospital operations."</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/shahn1.png" alt="Client" class="client-image">
+                            <h4>Lisa Rodriguez</h4>
+                            <p class="text-muted">Director of Nursing</p>
+                            <p>"The security team's professionalism and understanding of patient needs creates a safer environment for everyone."</p>
                         </div>
                     </div>
                 </div>
@@ -197,8 +656,8 @@
         <section class="cta-section">
             <div class="container">
                 <h2 class="mb-4">Secure Your Healthcare Facility Today</h2>
-                <p class="mb-4">Contact us for a customized hospital security solution</p>
-                <a href="/get-quote" class="btn btn-custom">Get a Free Quote</a>
+                <p class="mb-4">Contact us for a customized hospital security solution that ensures patient safety and regulatory compliance</p>
+                <a href="/get-quote" class="btn btn-custom">Get a Free Security Assessment</a>
             </div>
         </section>
     </main>
@@ -207,5 +666,83 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.hospital-card, .service-card, .process-step, .benefit-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Counter Animation for Statistics
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : element.textContent.includes('%') ? '%' : '');
+            }, 20);
+        }
+
+        // Trigger counter animation when in view
+        const statObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const value = parseInt(statNumber.textContent);
+                    animateCounter(statNumber, value);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-card').forEach(el => {
+            statObserver.observe(el);
+        });
+
+        // Add hover effect to cards
+        document.querySelectorAll('.hospital-card, .service-card, .process-step').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
 </body>
 </html>
