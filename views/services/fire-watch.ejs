@@ -8,11 +8,180 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
+        /* Fire Watch Section Styles */
+        .firewatch-features-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .firewatch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .firewatch-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .firewatch-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-secondary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .firewatch-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .firewatch-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .firewatch-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .firewatch-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .firewatch-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .compliance-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .compliance-step {
+            text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .compliance-step:hover {
+            transform: translateY(-5px);
+        }
+
+        .compliance-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .compliance-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .emergency-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .emergency-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .emergency-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .emergency-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .emergency-content p {
+            color: #666;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
         :root {
             --primary-color: #1a3c6e;
             --secondary-color: #bf9e5b;
             --text-color: #333333;
             --light-bg: #f8f9fa;
+            --gradient-secondary: linear-gradient(135deg, #bf9e5b, #d4b570);
         }
 
         body {
@@ -37,6 +206,13 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
+        .hero-subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
         .service-card {
             background: white;
             border-radius: 15px;
@@ -48,6 +224,19 @@
 
         .service-card:hover {
             transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .feature-list {
@@ -92,26 +281,81 @@
             transform: translateY(-2px);
         }
 
+        .stats-section {
+            padding: 60px 0;
+            background: var(--light-bg);
+        }
+
         .stat-card {
             text-align: center;
             padding: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary-color);
+            margin-bottom: 10px;
         }
 
-        .testimonial {
+        .testimonial-card {
             background: white;
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 15px;
             margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .client-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .equipment-section {
+            padding: 80px 0;
+            background: #fafafa;
+        }
+
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .equipment-item {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .equipment-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .equipment-item i {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .firewatch-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -122,69 +366,357 @@
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
-                <h1 class="hero-title">Fire Watch Security Services</h1>
-                <p class="lead">Professional fire watch services ensuring 24/7 safety compliance</p>
+                <h1 class="hero-title">Professional Fire Watch Security Services</h1>
+                <p class="hero-subtitle">24/7 fire watch protection ensuring complete compliance and safety during system outages</p>
             </div>
         </section>
 
-        <!-- Main Content -->
+        <!-- Premier Overview Section -->
+        <div style="background-color:#ffffff; padding:60px; border-radius:14px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color:#1c1c1c; max-width:960px; margin:60px auto;
+            box-shadow:0 10px 30px rgba(0,0,0,0.1); border:1px solid #e0e0e0;">
+            <h1 style="font-size:38px; margin-bottom:28px; color:#152f45;">
+                Premier Fire Watch Security Services for Complete Safety Compliance
+            </h1>
+            <p style="font-size:20px; line-height:1.8; margin-bottom:0; transition: all 0.3s ease; cursor: default;" 
+               onmouseover="this.style.color='#152f45'; this.style.transform='scale(1.02)'; this.style.textShadow='0 2px 8px rgba(0,0,0,0.1)'" 
+               onmouseout="this.style.color='#1c1c1c'; this.style.transform='scale(1)'; this.style.textShadow='none'">
+                <strong>ShieldWise Security</strong> delivers nonstop fire watch protection through fully licensed and bonded guards stationed on-site around the clock, proactively identifying risks during any system outages to keep your property compliant and secure. Our teams carry out comprehensive <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">fire hazard assessments</strong> and conduct methodical inspections, logging every finding in real time so issues are documented and addressed without delay. We deploy agile mobile patrol units equipped with advanced communications gear and high-visibility uniforms, ensuring perimeter zones and critical equipment receive constant attention and safeguarding. Detailed <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">activity logs and incident reports</strong> provide full transparency, helping you satisfy both municipal codes and insurance requirements with clear, auditable records. When urgent intervention is needed, our rapid-response squads are dispatched immediately, offering flexible short-term fire watch coverage to stabilize conditions and prevent damage. Serving residential communities, commercial properties, and expansive construction sites alike, our customized <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">fire watch guard services</strong> integrate CCTV surveillance and continuous monitoring to deliver unmatched peace of mind and compliance assurance.
+            </p>
+        </div>
+
+        <!-- Fire Watch Features Section -->
+        <section id="features" class="firewatch-features-section">
+            <div class="container">
+                <h2 class="section-title">Comprehensive Fire Watch Protection Services</h2>
+                <p class="section-subtitle">Advanced fire safety solutions designed for critical protection</p>
+                
+                <div class="firewatch-grid">
+                    <div class="firewatch-card">
+                        <div class="firewatch-icon">
+                            <i class="fas fa-fire-extinguisher"></i>
+                        </div>
+                        <h3 class="firewatch-title">24/7 Fire Watch Patrols</h3>
+                        <p class="firewatch-description">Continuous on-site monitoring with licensed guards conducting regular patrols to identify and prevent fire hazards during system outages.</p>
+                    </div>
+                    
+                    <div class="firewatch-card">
+                        <div class="firewatch-icon">
+                            <i class="fas fa-hard-hat"></i>
+                        </div>
+                        <h3 class="firewatch-title">Construction Site Fire Watch</h3>
+                        <p class="firewatch-description">Specialized protection for construction sites during vulnerable phases, hot work operations, and when fire suppression systems are offline.</p>
+                    </div>
+                    
+                    <div class="firewatch-card">
+                        <div class="firewatch-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="firewatch-title">Hot Work Supervision</h3>
+                        <p class="firewatch-description">Expert supervision during welding, cutting, grinding, and other hot work operations with immediate fire suppression capabilities.</p>
+                    </div>
+                    
+                    <div class="firewatch-card">
+                        <div class="firewatch-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3 class="firewatch-title">Emergency Response</h3>
+                        <p class="firewatch-description">Rapid fire incident response with immediate notification protocols and coordination with local fire departments.</p>
+                    </div>
+                    
+                    <div class="firewatch-card">
+                        <div class="firewatch-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="firewatch-title">System Impairment Coverage</h3>
+                        <p class="firewatch-description">Complete protection during sprinkler system maintenance, fire alarm repairs, or other fire protection system outages.</p>
+                    </div>
+                    
+                    <div class="firewatch-card">
+                        <div class="firewatch-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3 class="firewatch-title">Detailed Documentation</h3>
+                        <p class="firewatch-description">Comprehensive activity logs, incident reports, and compliance documentation for insurance and regulatory requirements.</p>
+                    </div>
+                    
+                    <div class="firewatch-card">
+                        <div class="firewatch-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="firewatch-title">Mobile Patrol Units</h3>
+                        <p class="firewatch-description">Advanced mobile units with communication equipment and fire suppression tools for perimeter and equipment monitoring.</p>
+                    </div>
+                    
+                    <div class="firewatch-card">
+                        <div class="firewatch-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="firewatch-title">Code Compliance Assurance</h3>
+                        <p class="firewatch-description">Expert knowledge of local fire codes and regulations ensuring your property maintains full compliance during outages.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compliance Process Section -->
+        <section class="compliance-section">
+            <div class="container">
+                <h2 class="section-title">Our Fire Watch Compliance Process</h2>
+                <p class="section-subtitle">Systematic approach to fire safety and code compliance</p>
+                
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="compliance-step">
+                            <div class="compliance-number">1</div>
+                            <h3 class="compliance-title">Risk Assessment</h3>
+                            <p>Comprehensive evaluation of fire hazards, system status, and regulatory requirements specific to your property.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="compliance-step">
+                            <div class="compliance-number">2</div>
+                            <h3 class="compliance-title">Deployment Planning</h3>
+                            <p>Strategic positioning of fire watch personnel and equipment based on property layout and risk factors.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="compliance-step">
+                            <div class="compliance-number">3</div>
+                            <h3 class="compliance-title">Active Monitoring</h3>
+                            <p>Continuous surveillance with regular patrols, hazard identification, and real-time documentation of all activities.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="compliance-step">
+                            <div class="compliance-number">4</div>
+                            <h3 class="compliance-title">Compliance Reporting</h3>
+                            <p>Detailed reports and documentation ensuring regulatory compliance and providing audit trails for authorities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Response Section -->
+        <section class="emergency-section">
+            <div class="container">
+                <h2 class="section-title">Emergency Response Capabilities</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="emergency-item">
+                            <div class="emergency-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="emergency-content">
+                                <h4>Immediate Deployment</h4>
+                                <p>Rapid response teams available 24/7 with 1-2 hour deployment for emergency fire watch coverage throughout California.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="emergency-item">
+                            <div class="emergency-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="emergency-content">
+                                <h4>Certified Fire Watch Guards</h4>
+                                <p>OSHA-trained personnel with specialized fire watch certifications and extensive knowledge of fire safety protocols.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="emergency-item">
+                            <div class="emergency-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <div class="emergency-content">
+                                <h4>Fully Equipped Units</h4>
+                                <p>Mobile units with fire extinguishers, communication devices, safety equipment, and emergency response tools.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="emergency-item">
+                            <div class="emergency-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="emergency-content">
+                                <h4>Fire Department Coordination</h4>
+                                <p>Established relationships with local fire departments ensuring seamless emergency response and communication.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="emergency-item">
+                            <div class="emergency-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="emergency-content">
+                                <h4>Insurance Compliance</h4>
+                                <p>Documentation and reporting that meets insurance company requirements and helps maintain coverage during outages.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="emergency-item">
+                            <div class="emergency-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="emergency-content">
+                                <h4>Flexible Coverage Options</h4>
+                                <p>Short-term and long-term fire watch services with customizable schedules to meet specific operational needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Equipment Section -->
+        <section class="equipment-section">
+            <div class="container">
+                <h2 class="section-title">Fire Watch Equipment & Technology</h2>
+                <p class="section-subtitle">State-of-the-art tools for comprehensive fire protection</p>
+                
+                <div class="equipment-grid">
+                    <div class="equipment-item">
+                        <i class="fas fa-fire-extinguisher"></i>
+                        <h4>Fire Extinguishers</h4>
+                        <p>Multiple types of portable fire suppression equipment for various fire classes</p>
+                    </div>
+                    <div class="equipment-item">
+                        <i class="fas fa-radio"></i>
+                        <h4>Communication Systems</h4>
+                        <p>Two-way radios and emergency communication devices for instant response coordination</p>
+                    </div>
+                    <div class="equipment-item">
+                        <i class="fas fa-thermometer-half"></i>
+                        <h4>Temperature Monitoring</h4>
+                        <p>Thermal detection equipment to identify heat sources and potential fire hazards</p>
+                    </div>
+                    <div class="equipment-item">
+                        <i class="fas fa-video"></i>
+                        <h4>CCTV Integration</h4>
+                        <p>Surveillance cameras for remote monitoring and incident documentation</p>
+                    </div>
+                    <div class="equipment-item">
+                        <i class="fas fa-eye"></i>
+                        <h4>High-Visibility Gear</h4>
+                        <p>Professional uniforms and safety equipment ensuring guard visibility and identification</p>
+                    </div>
+                    <div class="equipment-item">
+                        <i class="fas fa-tablet-alt"></i>
+                        <h4>Digital Logging</h4>
+                        <p>Electronic documentation systems for real-time activity and incident reporting</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Overview -->
         <section class="py-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 mx-auto">
+                    <div class="col-md-4">
                         <div class="service-card">
-                            <h2 class="mb-4">Comprehensive Fire Watch Solutions</h2>
-                            <p>At ShieldWise Security, we provide professional fire watch services to protect your property when fire protection systems are impaired or during construction. Our trained fire watch officers ensure compliance with local fire codes and maintain continuous surveillance to prevent fire-related incidents.</p>
-                            
-                            <h3 class="mt-4">Our Fire Watch Services Include:</h3>
+                            <i class="fas fa-building service-icon"></i>
+                            <h3 class="service-title">Commercial Fire Watch</h3>
                             <ul class="feature-list">
-                                <li>24/7 Fire Watch Patrols</li>
-                                <li>Construction Site Fire Watch</li>
-                                <li>Hot Work Fire Watch</li>
-                                <li>Emergency Response Planning</li>
-                                <li>Fire System Impairment Coverage</li>
-                                <li>Detailed Activity Logging</li>
+                                <li>Office Building Coverage</li>
+                                <li>Retail Center Protection</li>
+                                <li>Warehouse Monitoring</li>
+                                <li>Industrial Site Safety</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="fas fa-home service-icon"></i>
+                            <h3 class="service-title">Residential Fire Watch</h3>
+                            <ul class="feature-list">
+                                <li>Apartment Complex Coverage</li>
+                                <li>HOA Community Protection</li>
+                                <li>Senior Living Facilities</li>
+                                <li>Multi-Family Properties</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="fas fa-hammer service-icon"></i>
+                            <h3 class="service-title">Construction Fire Watch</h3>
+                            <ul class="feature-list">
+                                <li>Active Construction Sites</li>
+                                <li>Renovation Projects</li>
+                                <li>Hot Work Operations</li>
+                                <li>Demolition Activities</li>
                             </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Statistics -->
-                <div class="row mt-5">
-                    <div class="col-md-4">
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Fire Watch Assignments</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
                         <div class="stat-card">
                             <div class="stat-number">100%</div>
-                            <div>Code Compliance</div>
+                            <div class="stat-label">Code Compliance</div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="stat-card">
                             <div class="stat-number">24/7</div>
-                            <div>Emergency Response</div>
+                            <div class="stat-label">Emergency Response</div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="stat-card">
                             <div class="stat-number">15+</div>
-                            <div>Years Experience</div>
+                            <div class="stat-label">Years Experience</div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Testimonials -->
-                <div class="row mt-5">
-                    <div class="col-md-6">
-                        <div class="testimonial">
-                            <p class="mb-3">"ShieldWise's fire watch team provided excellent service during our sprinkler system maintenance. Their professionalism and attention to detail were outstanding."</p>
-                            <strong>- Robert Chen</strong><br>
-                            <small>Facility Manager, Pacific Plaza</small>
+        <!-- Testimonials -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5 service-title">What Fire Safety Professionals Say</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/james.png" alt="Client" class="client-image">
+                            <h4>Robert Chen</h4>
+                            <p class="text-muted">Facility Manager</p>
+                            <p>"ShieldWise's fire watch team provided excellent service during our sprinkler system maintenance. Their professionalism and attention to detail were outstanding."</p>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="testimonial">
-                            <p class="mb-3">"We rely on ShieldWise for all our construction site fire watch needs. Their team's knowledge of fire safety regulations is impressive."</p>
-                            <strong>- Maria Rodriguez</strong><br>
-                            <small>Project Manager, BuildRight Construction</small>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/samanta.png" alt="Client" class="client-image">
+                            <h4>Maria Rodriguez</h4>
+                            <p class="text-muted">Project Manager</p>
+                            <p>"We rely on ShieldWise for all our construction site fire watch needs. Their team's knowledge of fire safety regulations is impressive."</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/shahn1.png" alt="Client" class="client-image">
+                            <h4>David Thompson</h4>
+                            <p class="text-muted">Property Manager</p>
+                            <p>"Professional, reliable, and thorough fire watch services. They helped us maintain compliance during our fire system upgrades."</p>
                         </div>
                     </div>
                 </div>
@@ -194,9 +726,9 @@
         <!-- CTA Section -->
         <section class="cta-section">
             <div class="container">
-                <h2 class="mb-4">Need Fire Watch Services?</h2>
-                <p class="mb-4">Contact us for immediate fire watch coverage and compliance solutions</p>
-                <a href="/get-quote" class="btn btn-custom">Get a Free Quote</a>
+                <h2 class="mb-4">Need Immediate Fire Watch Coverage?</h2>
+                <p class="mb-4">Contact us for rapid deployment fire watch services and compliance solutions</p>
+                <a href="/get-quote" class="btn btn-custom">Get Emergency Fire Watch Quote</a>
             </div>
         </section>
     </main>
@@ -205,5 +737,83 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.firewatch-card, .service-card, .compliance-step, .emergency-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Counter Animation for Statistics
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : element.textContent.includes('%') ? '%' : '');
+            }, 20);
+        }
+
+        // Trigger counter animation when in view
+        const statObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const value = parseInt(statNumber.textContent);
+                    animateCounter(statNumber, value);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-card').forEach(el => {
+            statObserver.observe(el);
+        });
+
+        // Add hover effect to cards
+        document.querySelectorAll('.firewatch-card, .service-card, .compliance-step').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
 </body>
 </html>
