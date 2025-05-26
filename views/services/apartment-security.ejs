@@ -8,11 +8,180 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
+        /* Apartment Security Section Styles */
+        .apartment-features-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .apartment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .apartment-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .apartment-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-secondary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .apartment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .apartment-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .apartment-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .apartment-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .apartment-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .security-process-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .process-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .benefits-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .benefit-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .benefit-content p {
+            color: #666;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
         :root {
             --primary-color: #1a3c6e;
             --secondary-color: #bf9e5b;
             --text-color: #333333;
             --light-bg: #f8f9fa;
+            --gradient-secondary: linear-gradient(135deg, #bf9e5b, #d4b570);
         }
 
         body {
@@ -37,6 +206,13 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
+        .hero-subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
         .service-card {
             background: white;
             border-radius: 15px;
@@ -48,6 +224,19 @@
 
         .service-card:hover {
             transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .feature-list {
@@ -92,26 +281,50 @@
             transform: translateY(-2px);
         }
 
+        .stats-section {
+            padding: 60px 0;
+            background: var(--light-bg);
+        }
+
         .stat-card {
             text-align: center;
             padding: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary-color);
+            margin-bottom: 10px;
         }
 
-        .testimonial {
+        .testimonial-card {
             background: white;
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 15px;
             margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .client-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .apartment-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -123,68 +336,310 @@
         <section class="hero-section">
             <div class="container">
                 <h1 class="hero-title">Professional Apartment Security Services</h1>
-                <p class="lead">Protecting residential communities with comprehensive security solutions</p>
+                <p class="hero-subtitle">Protecting residential communities with comprehensive security solutions tailored to modern apartment living</p>
             </div>
         </section>
 
-        <!-- Main Content -->
+        <!-- Premier Overview Section -->
+        <div style="background-color:#ffffff; padding:60px; border-radius:14px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color:#1c1c1c; max-width:960px; margin:60px auto;
+            box-shadow:0 10px 30px rgba(0,0,0,0.1); border:1px solid #e0e0e0;">
+            <h1 style="font-size:38px; margin-bottom:28px; color:#152f45;">
+                Premier Apartment Security Services for Complete Residential Protection
+            </h1>
+            <p style="font-size:20px; line-height:1.8; margin-bottom:0;">
+                At <strong>ShieldWise Security</strong>, we understand that apartment security requires a delicate balance between maintaining a welcoming atmosphere while ensuring resident safety. Our comprehensive <strong>apartment security services</strong> are designed to provide peace of mind to both property managers and residents. We deploy advanced <strong>access control systems</strong>, 24/7 <strong>surveillance monitoring</strong>, and professional security personnel trained specifically for residential environments. From <strong>perimeter protection</strong> and <strong>visitor management</strong> to emergency response protocols and community safety programs, our tailored approach ensures your apartment complex becomes a secure haven where residents can live confidently. Whether you manage luxury high-rises, affordable housing communities, or mixed-use developments, our proven security solutions adapt to your unique needs while maintaining the friendly, residential atmosphere your tenants expect.
+            </p>
+        </div>
+
+        <!-- Apartment Security Features Section -->
+        <section id="features" class="apartment-features-section">
+            <div class="container">
+                <h2 class="section-title">Comprehensive Apartment Security Features</h2>
+                <p class="section-subtitle">Advanced security solutions designed specifically for residential communities</p>
+                
+                <div class="apartment-grid">
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <h3 class="apartment-title">Access Control Systems</h3>
+                        <p class="apartment-description">Smart key card systems, intercom management, visitor verification, and secure entry protocols for all building access points.</p>
+                    </div>
+                    
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 class="apartment-title">24/7 CCTV Monitoring</h3>
+                        <p class="apartment-description">Comprehensive surveillance coverage of lobbies, hallways, parking areas, and common spaces with real-time monitoring.</p>
+                    </div>
+                    
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="apartment-title">On-Site Security Personnel</h3>
+                        <p class="apartment-description">Professional security guards stationed at your property to provide immediate response and maintain visible security presence.</p>
+                    </div>
+                    
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3 class="apartment-title">Parking Area Security</h3>
+                        <p class="apartment-description">Dedicated surveillance and patrol of parking garages, guest parking, and vehicle security to prevent theft and vandalism.</p>
+                    </div>
+                    
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3 class="apartment-title">Emergency Response</h3>
+                        <p class="apartment-description">Rapid response protocols for medical emergencies, security incidents, and coordination with local law enforcement.</p>
+                    </div>
+                    
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="apartment-title">Visitor Management</h3>
+                        <p class="apartment-description">Comprehensive visitor screening, guest registration, delivery coordination, and contractor access management.</p>
+                    </div>
+                    
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="apartment-title">Mobile Patrol Services</h3>
+                        <p class="apartment-description">Regular security patrols of property perimeter, common areas, and surrounding neighborhood for enhanced protection.</p>
+                    </div>
+                    
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h3 class="apartment-title">Incident Reporting</h3>
+                        <p class="apartment-description">Detailed incident documentation, security logs, and regular reporting to property management and residents.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Process Section -->
+        <section class="security-process-section">
+            <div class="container">
+                <h2 class="section-title">Our Apartment Security Process</h2>
+                <p class="section-subtitle">A systematic approach to residential security</p>
+                
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">1</div>
+                            <h3 class="process-title">Property Assessment</h3>
+                            <p>Comprehensive evaluation of your apartment complex's security needs, vulnerabilities, and resident requirements.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">2</div>
+                            <h3 class="process-title">Custom Security Plan</h3>
+                            <p>Development of tailored security protocols specific to your property layout, resident demographics, and risk factors.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">3</div>
+                            <h3 class="process-title">Implementation</h3>
+                            <p>Deployment of security personnel, installation of systems, and integration with existing property management protocols.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">4</div>
+                            <h3 class="process-title">Ongoing Monitoring</h3>
+                            <p>Continuous security coverage with regular reviews, updates, and adjustments to maintain optimal protection levels.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <div class="container">
+                <h2 class="section-title">Why Choose ShieldWise for Apartment Security</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>24/7 Security Coverage</h4>
+                                <p>Round-the-clock protection with professional security personnel and monitoring systems ensuring constant vigilance.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Trained Residential Specialists</h4>
+                                <p>Security guards specifically trained in residential protocols, customer service, and community relations.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Cost-Effective Solutions</h4>
+                                <p>Competitive pricing with flexible service packages that fit your budget and security requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Resident Satisfaction</h4>
+                                <p>Enhanced quality of life for residents through improved safety, peace of mind, and community atmosphere.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Property Value Enhancement</h4>
+                                <p>Professional security services increase property desirability and can positively impact rental rates and occupancy.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>24/7 Emergency Support</h4>
+                                <p>Immediate response capabilities for emergencies with direct coordination with local emergency services.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Overview -->
         <section class="py-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 mx-auto">
+                    <div class="col-md-4">
                         <div class="service-card">
-                            <h2 class="mb-4">Complete Apartment Security Solutions</h2>
-                            <p>At ShieldWise Security, we understand that apartment security requires a delicate balance between maintaining a welcoming atmosphere while ensuring resident safety. Our comprehensive apartment security services are designed to provide peace of mind to both property managers and residents.</p>
-                            
-                            <h3 class="mt-4">Our Security Services Include:</h3>
+                            <i class="fas fa-building service-icon"></i>
+                            <h3 class="service-title">Lobby & Common Area Security</h3>
                             <ul class="feature-list">
-                                <li>24/7 Security Personnel Coverage</li>
-                                <li>Access Control Management</li>
-                                <li>CCTV Monitoring</li>
-                                <li>Parking Area Surveillance</li>
-                                <li>Emergency Response</li>
-                                <li>Resident Assistance</li>
+                                <li>Lobby Reception Services</li>
+                                <li>Common Area Monitoring</li>
+                                <li>Mailroom Security</li>
+                                <li>Amenity Area Protection</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="fas fa-lock service-icon"></i>
+                            <h3 class="service-title">Access Control Management</h3>
+                            <ul class="feature-list">
+                                <li>Electronic Key Systems</li>
+                                <li>Visitor Authentication</li>
+                                <li>Contractor Management</li>
+                                <li>After-Hours Access Control</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="fas fa-route service-icon"></i>
+                            <h3 class="service-title">Patrol Services</h3>
+                            <ul class="feature-list">
+                                <li>Property Perimeter Patrols</li>
+                                <li>Parking Area Inspections</li>
+                                <li>Security Rounds</li>
+                                <li>Incident Response</li>
                             </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Statistics -->
-                <div class="row mt-5">
-                    <div class="col-md-4">
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">Apartments Secured</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
                         <div class="stat-card">
                             <div class="stat-number">98%</div>
-                            <div>Client Satisfaction</div>
+                            <div class="stat-label">Resident Satisfaction</div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="stat-card">
                             <div class="stat-number">24/7</div>
-                            <div>Security Coverage</div>
+                            <div class="stat-label">Security Coverage</div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="stat-card">
                             <div class="stat-number">15+</div>
-                            <div>Years Experience</div>
+                            <div class="stat-label">Years Experience</div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Testimonials -->
-                <div class="row mt-5">
-                    <div class="col-md-6">
-                        <div class="testimonial">
-                            <p class="mb-3">"ShieldWise Security has transformed our apartment complex's security. Their professional guards and modern security protocols have significantly improved resident satisfaction."</p>
-                            <strong>- Sarah Johnson</strong><br>
-                            <small>Property Manager, The Residences at Park Place</small>
+        <!-- Testimonials -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5 service-title">What Property Managers & Residents Say</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/james.png" alt="Client" class="client-image">
+                            <h4>Sarah Johnson</h4>
+                            <p class="text-muted">Property Manager</p>
+                            <p>"ShieldWise transformed our apartment complex's security. Resident satisfaction has increased significantly since their implementation."</p>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="testimonial">
-                            <p class="mb-3">"The level of professionalism and attention to detail from ShieldWise's security team is outstanding. They've created a safe environment for all our residents."</p>
-                            <strong>- Michael Chen</strong><br>
-                            <small>Building Manager, Metropolitan Apartments</small>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/samanta.png" alt="Client" class="client-image">
+                            <h4>Michael Chen</h4>
+                            <p class="text-muted">Building Manager</p>
+                            <p>"Professional, courteous security staff who understand the residential environment. Our residents feel much safer."</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/shahn1.png" alt="Client" class="client-image">
+                            <h4>Emily Rodriguez</h4>
+                            <p class="text-muted">Resident Council President</p>
+                            <p>"The security team is friendly yet professional. They've created a secure environment while maintaining our community feel."</p>
                         </div>
                     </div>
                 </div>
@@ -195,8 +650,8 @@
         <section class="cta-section">
             <div class="container">
                 <h2 class="mb-4">Secure Your Residential Property Today</h2>
-                <p class="mb-4">Contact us for a customized security solution that fits your needs</p>
-                <a href="/get-quote" class="btn btn-custom">Get a Free Quote</a>
+                <p class="mb-4">Contact us for a customized apartment security solution that fits your community's needs</p>
+                <a href="/get-quote" class="btn btn-custom">Get a Free Security Assessment</a>
             </div>
         </section>
     </main>
@@ -205,5 +660,83 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.apartment-card, .service-card, .process-step, .benefit-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Counter Animation for Statistics
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : element.textContent.includes('%') ? '%' : '');
+            }, 20);
+        }
+
+        // Trigger counter animation when in view
+        const statObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const value = parseInt(statNumber.textContent);
+                    animateCounter(statNumber, value);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-card').forEach(el => {
+            statObserver.observe(el);
+        });
+
+        // Add hover effect to cards
+        document.querySelectorAll('.apartment-card, .service-card, .process-step').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
 </body>
 </html>
