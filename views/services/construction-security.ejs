@@ -1,214 +1,3 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Construction Site Security Services | ShieldWise Security</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #1a3c6e;
-            --secondary-color: #bf9e5b;
-            --text-color: #333333;
-            --light-bg: #f8f9fa;
-        }
-
-        body {
-            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        .hero-section {
-            background: linear-gradient(rgba(26, 60, 110, 0.9), rgba(26, 60, 110, 0.9)), url('/img/constructionsecurity.webp');
-            background-size: cover;
-            background-position: center;
-            padding: 150px 0;
-            color: white;
-            text-align: center;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .service-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            margin: 20px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .feature-list li {
-            padding: 10px 0;
-            padding-left: 30px;
-            position: relative;
-        }
-
-        .feature-list li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--secondary-color);
-            font-weight: bold;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary-color), #0d2b54);
-            padding: 80px 0;
-            color: white;
-            text-align: center;
-        }
-
-        .btn-custom {
-            background: var(--secondary-color);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-        }
-
-        .btn-custom:hover {
-            background: #a88b4a;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        .testimonial {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-    </style>
-</head>
-<body>
-    <%- include('../Partials/Header') %>
-
-    <main>
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="container">
-                <h1 class="hero-title">Construction Site Security Services</h1>
-                <p class="lead">Protecting your construction sites, equipment, and materials 24/7</p>
-            </div>
-        </section>
-
-        <!-- Main Content -->
-        <section class="py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <div class="service-card">
-                            <h2 class="mb-4">Comprehensive Construction Site Security Solutions</h2>
-                            <p>At ShieldWise Security, we understand the unique security challenges faced by construction sites. Our specialized security services ensure the protection of your valuable equipment, materials, and work progress against theft, vandalism, and unauthorized access.</p>
-                            
-                            <h3 class="mt-4">Our Construction Security Services Include:</h3>
-                            <ul class="feature-list">
-                                <li>24/7 Site Surveillance</li>
-                                <li>Access Control Management</li>
-                                <li>Equipment and Material Protection</li>
-                                <li>Mobile Patrol Services</li>
-                                <li>Construction Site Risk Assessment</li>
-                                <li>CCTV Monitoring</li>
-                                <li>Emergency Response Protocol</li>
-                                <li>Site Entry/Exit Monitoring</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Statistics -->
-                <div class="row mt-5">
-                    <div class="col-md-4">
-                        <div class="stat-card">
-                            <div class="stat-number">300+</div>
-                            <div>Construction Sites Protected</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="stat-card">
-                            <div class="stat-number">24/7</div>
-                            <div>Security Coverage</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="stat-card">
-                            <div class="stat-number">15+</div>
-                            <div>Years Experience</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonials -->
-                <div class="row mt-5">
-                    <div class="col-md-6">
-                        <div class="testimonial">
-                            <p class="mb-3">"ShieldWise's construction site security team has significantly reduced theft incidents at our sites. Their professional approach and vigilance are outstanding."</p>
-                            <strong>- David Anderson</strong><br>
-                            <small>Project Manager, Anderson Construction Inc.</small>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="testimonial">
-                            <p class="mb-3">"We've seen a dramatic improvement in site security since partnering with ShieldWise. Their team's responsiveness and attention to detail are exceptional."</p>
-                            <strong>- Maria Rodriguez</strong><br>
-                            <small>Operations Director, BuildRight Development</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="cta-section">
-            <div class="container">
-                <h2 class="mb-4">Secure Your Construction Site Today</h2>
-                <p class="mb-4">Contact us for a customized construction security solution</p>
-                <a href="/get-quote" class="btn btn-custom">Get a Free Quote</a>
-            </div>
-        </section>
-    </main>
-
-    <%- include('../Partials/Footer') %>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -621,7 +410,7 @@
             <div class="container">
                 <h2 class="section-title">Comprehensive Construction Site Security Solutions</h2>
                 <p class="section-subtitle">Advanced security services designed specifically for construction environments</p>
-                
+
                 <div class="construction-grid">
                     <div class="construction-card">
                         <div class="construction-icon">
@@ -630,7 +419,7 @@
                         <h3 class="construction-title">24/7 On-Site Security</h3>
                         <p class="construction-description">Dedicated security guards stationed at your construction site providing continuous protection and immediate response to security incidents.</p>
                     </div>
-                    
+
                     <div class="construction-card">
                         <div class="construction-icon">
                             <i class="fas fa-tools"></i>
@@ -638,7 +427,7 @@
                         <h3 class="construction-title">Equipment Protection</h3>
                         <p class="construction-description">Specialized protection for heavy machinery, tools, and construction materials with advanced monitoring and theft prevention systems.</p>
                     </div>
-                    
+
                     <div class="construction-card">
                         <div class="construction-icon">
                             <i class="fas fa-car"></i>
@@ -646,7 +435,7 @@
                         <h3 class="construction-title">Mobile Patrol Services</h3>
                         <p class="construction-description">Regular vehicle and foot patrols covering your entire construction site perimeter with detailed checkpoint monitoring and reporting.</p>
                     </div>
-                    
+
                     <div class="construction-card">
                         <div class="construction-icon">
                             <i class="fas fa-key"></i>
@@ -654,7 +443,7 @@
                         <h3 class="construction-title">Access Control Management</h3>
                         <p class="construction-description">Strict entry point management with visitor verification, contractor credentialing, and authorized personnel tracking systems.</p>
                     </div>
-                    
+
                     <div class="construction-card">
                         <div class="construction-icon">
                             <i class="fas fa-video"></i>
@@ -662,7 +451,7 @@
                         <h3 class="construction-title">CCTV Surveillance</h3>
                         <p class="construction-description">High-definition camera systems with 24/7 monitoring, night vision capabilities, and real-time incident detection and recording.</p>
                     </div>
-                    
+
                     <div class="construction-card">
                         <div class="construction-icon">
                             <i class="fas fa-shield-alt"></i>
@@ -670,7 +459,7 @@
                         <h3 class="construction-title">Perimeter Security</h3>
                         <p class="construction-description">Comprehensive site boundary protection with temporary fencing management, lighting coordination, and intrusion detection systems.</p>
                     </div>
-                    
+
                     <div class="construction-card">
                         <div class="construction-icon">
                             <i class="fas fa-fire"></i>
@@ -678,7 +467,7 @@
                         <h3 class="construction-title">Fire Watch Services</h3>
                         <p class="construction-description">Hot work monitoring, fire safety compliance, and emergency response protocols for construction activities involving welding and cutting.</p>
                     </div>
-                    
+
                     <div class="construction-card">
                         <div class="construction-icon">
                             <i class="fas fa-clipboard-check"></i>
@@ -695,7 +484,7 @@
             <div class="container">
                 <h2 class="section-title">Construction Projects We Secure</h2>
                 <p class="section-subtitle">Specialized security solutions for all types of construction projects</p>
-                
+
                 <div class="row">
                     <div class="col-md-3 mb-4">
                         <div class="project-card">
@@ -742,7 +531,7 @@
             <div class="container">
                 <h2 class="section-title">Our Construction Security Process</h2>
                 <p class="section-subtitle">A systematic approach to construction site protection</p>
-                
+
                 <div class="row">
                     <div class="col-md-3">
                         <div class="process-step">
@@ -791,7 +580,7 @@
                                 <p>Round-the-clock protection with professional security personnel ensuring constant site surveillance and protection.</p>
                             </div>
                         </div>
-                        
+
                         <div class="benefit-item">
                             <div class="benefit-icon">
                                 <i class="fas fa-graduation-cap"></i>
@@ -801,7 +590,7 @@
                                 <p>Security professionals specifically trained in construction site protocols, safety regulations, and industry requirements.</p>
                             </div>
                         </div>
-                        
+
                         <div class="benefit-item">
                             <div class="benefit-icon">
                                 <i class="fas fa-dollar-sign"></i>
@@ -822,7 +611,7 @@
                                 <p>Proven track record of preventing equipment theft, material loss, and site vandalism through proactive security measures.</p>
                             </div>
                         </div>
-                        
+
                         <div class="benefit-item">
                             <div class="benefit-icon">
                                 <i class="fas fa-chart-line"></i>
@@ -832,7 +621,7 @@
                                 <p>Security measures that prevent delays caused by theft, vandalism, or unauthorized access, keeping projects on schedule.</p>
                             </div>
                         </div>
-                        
+
                         <div class="benefit-item">
                             <div class="benefit-icon">
                                 <i class="fas fa-phone-alt"></i>
