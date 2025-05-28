@@ -1,0 +1,37 @@
+Please go to the views/services folder and thoroughly improve the SEO meta tags and structured data in the <head> section of every file. Ensure that each file has a perfectly optimized SEO setup that meets or exceeds current best practices, including:
+
+Unique, keyword-rich, and compelling <title> tags tailored for each service page
+
+Descriptive and engaging <meta name="description"> tags with relevant keywords and call-to-actions
+
+Proper use of <meta name="viewport">, charset, and compatibility tags for mobile and browser support
+
+Carefully chosen and relevant <meta name="keywords"> tags (optional but optimized)
+
+Semantic meta tags related to the page’s subject, classification, and AI search intent for enhanced indexing
+
+Comprehensive Open Graph and Twitter Card meta tags with images, alt texts, and dimensions for rich social sharing
+
+Correct canonical and hreflang tags to avoid duplicate content and support multi-language (if applicable)
+
+Structured Data (JSON-LD) schemas for LocalBusiness, Service, FAQPage, BreadcrumbList, WebSite, and ServiceArea where applicable, fully filled out with real data
+
+Geo tags and local business contact information for strong local SEO signals
+
+Mobile web app meta tags for enhanced user experience on iOS and Android devices
+
+Favicons and manifest links for full cross-device branding support
+
+Performance optimization meta tags like preconnect, preload, dns-prefetch for fonts, CSS, and key assets
+
+Security meta headers (CSP, X-Frame-Options, etc.) for better site security
+
+Removal of any duplicate or conflicting meta tags
+
+Replace any placeholder verification tags with real ones or clearly comment for future updates
+
+Ensure all images referenced in meta tags have descriptive alt attributes
+
+Confirm the <head> is clean, valid HTML, and free from errors or redundancies
+
+The goal is to make each service page SEO 10/10 perfect, so no further SEO improvement would be necessary. Follow the latest Google SEO guidelines, Core Web Vitals, and semantic SEO best practices.
