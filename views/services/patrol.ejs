@@ -1,0 +1,766 @@
+
+<!DOCTYPE html>
+<html lang="en-US" itemscope itemtype="https://schema.org/WebPage">
+<head>
+  <!-- CRITICAL CSS INLINE -->
+  <style>
+    /* Critical above-the-fold styles - Enhanced */
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Inter',sans-serif;margin:0;padding:0;line-height:1.6;color:#333;scroll-behavior:smooth}
+    .nav{background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);box-shadow:0 2px 20px rgba(0,0,0,0.1);position:sticky;top:0;z-index:1000;padding:1rem 0;transition:all 0.3s ease}
+    .nav-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 2rem}
+    .logo{font-size:1.5rem;font-weight:700;color:#1a3c6e;text-decoration:none}
+    .nav-menu{display:flex;list-style:none;margin:0;padding:0;gap:2rem}
+    .nav-menu a{text-decoration:none;color:#333;font-weight:500;transition:color 0.3s ease}
+    .nav-menu a:hover{color:#1a3c6e}
+    .cta-button{background:linear-gradient(135deg,#1a3c6e,#2d5aa0);color:white;padding:0.75rem 1.5rem;border-radius:50px;text-decoration:none;font-weight:600;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(26,60,110,0.3)}
+    .cta-button:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(26,60,110,0.4)}
+    .hero{background:linear-gradient(135deg,#1a3c6e 0%,#2d5aa0 100%);color:white;padding:100px 20px;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('/img/patrol-vehicle.webp') center/cover;opacity:0.1;z-index:1}
+    .hero-content{position:relative;z-index:2;max-width:800px;margin:0 auto}
+    .hero h1{font-size:clamp(2.5rem,5vw,4rem);margin:0 0 1.5rem;font-weight:800;line-height:1.2;text-shadow:0 2px 4px rgba(0,0,0,0.3)}
+    .hero p{font-size:clamp(1.1rem,2.5vw,1.4rem);margin:0 0 2rem;opacity:0.95;max-width:600px;margin-left:auto;margin-right:auto}
+    .hero-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem}
+    .btn-primary{background:linear-gradient(135deg,#ff6b35,#f7931e);color:white;padding:1rem 2rem;border-radius:50px;text-decoration:none;font-weight:700;font-size:1.1rem;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(255,107,53,0.3)}
+    .btn-primary:hover{transform:translateY(-3px);box-shadow:0 6px 25px rgba(255,107,53,0.4)}
+    .btn-secondary{background:rgba(255,255,255,0.1);color:white;padding:1rem 2rem;border:2px solid rgba(255,255,255,0.3);border-radius:50px;text-decoration:none;font-weight:600;font-size:1.1rem;backdrop-filter:blur(10px);transition:all 0.3s ease}
+    .btn-secondary:hover{background:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.5)}
+    .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;max-width:1200px;margin:4rem auto 0;padding:0 2rem}
+    .feature-card{background:rgba(255,255,255,0.1);padding:2rem;border-radius:20px;text-align:center;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.2);transition:all 0.3s ease}
+    .feature-card:hover{transform:translateY(-5px);background:rgba(255,255,255,0.15)}
+    .feature-icon{font-size:3rem;margin-bottom:1rem;color:#ff6b35}
+    .loading{position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;display:flex;justify-content:center;align-items:center;z-index:9999;opacity:1;transition:opacity 0.5s ease}
+    .loading.fade-out{opacity:0;pointer-events:none}
+    .spinner{width:50px;height:50px;border:3px solid #f3f3f3;border-top:3px solid #1a3c6e;border-radius:50%;animation:spin 1s linear infinite}
+    @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+    @media(max-width:768px){.nav-container{padding:0 1rem}.hero{padding:80px 20px}.features-grid{grid-template-columns:1fr;padding:0 1rem}}
+  </style>
+
+  <!-- ENHANCED PERFORMANCE OPTIMIZATION -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="/img/mobilesecurity.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="/img/patrol-vehicle.webp" fetchpriority="high">
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" type="font/woff2" crossorigin>
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <!-- ENHANCED FAVICONS -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1a3c6e">
+  <meta name="msapplication-TileColor" content="#1a3c6e">
+
+  <!-- OPTIMIZED CSS LOADING -->
+  <link rel="preload" href="/css/patrol-style.css?v=2.1" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/patrol-style.css?v=2.1"></noscript>
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"></noscript>
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous"></noscript>
+
+  <!-- ENHANCED SEO META -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Mobile Patrol Security Services California | #1 Vehicle Patrol Response | ShieldWise Security</title>
+  <meta name="description" content="California's #1 Mobile Patrol Security Services. GPS-tracked vehicles, 24/7 rapid response, licensed guards. Serving Los Angeles, Orange County, San Diego. Free consultation! Call (714) 716-7430.">
+  <meta name="keywords" content="mobile patrol security California, vehicle patrol services, GPS tracked patrol, 24/7 security patrol, licensed patrol guards, Los Angeles mobile patrol, Orange County patrol security, San Diego vehicle patrol, rapid response patrol, ShieldWise Security">
+
+  <!-- ADVANCED SEO META -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1, max-translation-length:-1">
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="ShieldWise Security">
+  <meta name="publisher" content="ShieldWise Security">
+  <meta name="language" content="en-US">
+  <meta name="revisit-after" content="1 day">
+  <meta name="rating" content="general">
+  <meta name="distribution" content="global">
+
+  <!-- AI & ENTITY OPTIMIZATION -->
+  <meta name="ai-search-intent" content="Find best mobile patrol security and vehicle patrol services near me in California with GPS tracking and rapid response">
+  <meta name="ai-search-entity" content="ShieldWise Security Mobile Patrol Services California">
+  <meta name="entity-type" content="LocalBusiness,SecurityService,MobilePatrolService">
+  <meta name="primary-entity" content="ShieldWise Security">
+  <meta name="service-area" content="California, Los Angeles, Orange County, San Diego, Riverside, San Bernardino">
+
+  <!-- ENHANCED GEO & LOCAL META -->
+  <meta name="geo.region" content="US-CA">
+  <meta name="geo.placename" content="California, Los Angeles, Orange County, San Diego">
+  <meta name="geo.position" content="33.870292;-117.924318">
+  <meta name="ICBM" content="33.870292, -117.924318">
+
+  <!-- CANONICAL & ALTERNATES -->
+  <link rel="canonical" href="https://shieldwisesecurity.com/services/patrol">
+  <link rel="alternate" hreflang="en-US" href="https://shieldwisesecurity.com/services/patrol">
+  <link rel="alternate" hreflang="es-US" href="https://shieldwisesecurity.com/es/services/patrol">
+  <link rel="alternate" hreflang="x-default" href="https://shieldwisesecurity.com/services/patrol">
+
+  <!-- ENHANCED OPEN GRAPH -->
+  <meta property="og:title" content="Mobile Patrol Security Services California | Vehicle Patrol Experts | ShieldWise">
+  <meta property="og:site_name" content="ShieldWise Security">
+  <meta property="og:description" content="California's premier mobile patrol security with 24/7 GPS-tracked vehicles, rapid response, and licensed guards. Serving LA, OC, San Diego. Free consultation!">
+  <meta property="og:type" content="business.business">
+  <meta property="og:url" content="https://shieldwisesecurity.com/services/patrol">
+  <meta property="og:image" content="https://shieldwisesecurity.com/img/mobilesecurity.webp">
+  <meta property="og:image:secure_url" content="https://shieldwisesecurity.com/img/mobilesecurity.webp">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ShieldWise Security mobile patrol vehicle providing security services in California">
+  <meta property="og:locale" content="en_US">
+
+  <!-- ENHANCED TWITTER CARD -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@shieldwisesecurity">
+  <meta name="twitter:creator" content="@shieldwisesecurity">
+  <meta name="twitter:title" content="Mobile Patrol Security | California | ShieldWise Security">
+  <meta name="twitter:description" content="Top-rated mobile patrol security with GPS tracking and rapid response. Serving all Southern California. Get your free quote today!">
+  <meta name="twitter:image" content="https://shieldwisesecurity.com/img/mobilesecurity.webp">
+  <meta name="twitter:image:alt" content="Professional mobile patrol security services in California">
+
+  <!-- ENHANCED SECURITY HEADERS -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://www.googletagmanager.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com; frame-src 'self' https://www.youtube.com https://www.google.com; worker-src 'self' blob:;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+  <!-- STRUCTURED DATA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["LocalBusiness", "SecurityService", "Service"],
+        "@id": "https://shieldwisesecurity.com/#organization",
+        "name": "ShieldWise Security",
+        "alternateName": ["ShieldWise Patrol", "Mobile Patrol Security", "Vehicle Patrol California"],
+        "legalName": "ShieldWise Security Services LLC",
+        "url": "https://shieldwisesecurity.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://shieldwisesecurity.com/img/logo.webp",
+          "width": 600,
+          "height": 200,
+          "caption": "ShieldWise Security Logo"
+        },
+        "description": "ShieldWise Security is California's premier mobile patrol security company, providing 24/7 vehicle patrol services, rapid incident response, GPS-tracked vehicles, and licensed security guards across Southern California including Los Angeles, Orange County, and San Diego.",
+        "slogan": "Your Safety, Our Priority - 24/7 Mobile Patrol Protection",
+        "telephone": "+1-714-716-7430",
+        "email": "info@shieldwisesecurity.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "220 Soco Dr",
+          "addressLocality": "Fullerton",
+          "addressRegion": "CA",
+          "postalCode": "92832",
+          "addressCountry": "US"
+        },
+        "geo": { 
+          "@type": "GeoCoordinates", 
+          "latitude": 33.870292, 
+          "longitude": -117.924318
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "00:00",
+          "closes": "23:59",
+          "description": "24/7 Emergency Response Available"
+        },
+        "priceRange": "$$",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "247",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Los Angeles", "addressRegion": "CA" },
+          { "@type": "City", "name": "San Diego", "addressRegion": "CA" },
+          { "@type": "City", "name": "Anaheim", "addressRegion": "CA" },
+          { "@type": "City", "name": "Fullerton", "addressRegion": "CA" },
+          { "@type": "City", "name": "Irvine", "addressRegion": "CA" }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Mobile Patrol Security Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "24/7 Mobile Patrol",
+              "description": "Round-the-clock vehicle patrol security services",
+              "price": "Contact for quote",
+              "priceCurrency": "USD"
+            },
+            {
+              "@type": "Offer",
+              "name": "GPS Vehicle Tracking",
+              "description": "Real-time tracking and patrol verification",
+              "price": "Included",
+              "priceCurrency": "USD"
+            },
+            {
+              "@type": "Offer",
+              "name": "Emergency Response",
+              "description": "Rapid incident response within 15 minutes",
+              "price": "Contact for quote",
+              "priceCurrency": "USD"
+            }
+          ]
+        },
+        "sameAs": [
+          "https://www.facebook.com/shieldwisesecurity",
+          "https://twitter.com/shieldwisesecurity",
+          "https://www.instagram.com/shieldwisesecurity/",
+          "https://www.linkedin.com/company/shieldwisesecurity/"
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Mobile Patrol Security Services",
+        "provider": {
+          "@id": "https://shieldwisesecurity.com/#organization"
+        },
+        "description": "Professional mobile patrol security services with GPS-tracked vehicles, providing 24/7 protection for businesses and properties across California.",
+        "serviceType": "Mobile Patrol Security",
+        "areaServed": [
+          { "@type": "State", "name": "California" },
+          { "@type": "City", "name": "Los Angeles" },
+          { "@type": "City", "name": "Orange County" },
+          { "@type": "City", "name": "San Diego" }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Mobile Patrol Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "Property Security Patrols",
+              "description": "Regular property checks and security monitoring"
+            },
+            {
+              "@type": "Offer",
+              "name": "Emergency Response",
+              "description": "Rapid response to security incidents and alarms"
+            },
+            {
+              "@type": "Offer",
+              "name": "GPS Tracking & Reporting",
+              "description": "Real-time vehicle tracking with detailed reports"
+            }
+          ]
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- LOADING SCREEN -->
+  <div class="loading" id="loading">
+    <div class="spinner"></div>
+  </div>
+
+  <%- include('../Partials/Header') %>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero" role="banner">
+      <div class="hero-content">
+        <h1>California's #1 Mobile Patrol Security Services</h1>
+        <p>Professional vehicle patrol services with GPS-tracked units, rapid emergency response, and licensed security guards. Protecting businesses and communities across Los Angeles, Orange County, and San Diego 24/7.</p>
+        <div class="hero-buttons">
+          <a href="/get-quote" class="btn-primary" aria-label="Get free security quote">
+            <i class="fas fa-shield-check" aria-hidden="true"></i>
+            Get Free Quote
+          </a>
+          <a href="tel:+1-714-716-7430" class="btn-secondary" aria-label="Call for emergency response">
+            <i class="fas fa-phone-alt" aria-hidden="true"></i>
+            Emergency: (714) 716-7430
+          </a>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-car" aria-hidden="true"></i>
+            </div>
+            <h3>GPS-Tracked Patrols</h3>
+            <p>Real-time vehicle tracking and detailed patrol reports</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-clock" aria-hidden="true"></i>
+            </div>
+            <h3>15-Min Response</h3>
+            <p>Rapid emergency response within 15 minutes or less</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-certificate" aria-hidden="true"></i>
+            </div>
+            <h3>Licensed Guards</h3>
+            <p>BSIS certified and fully insured security professionals</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-headset" aria-hidden="true"></i>
+            </div>
+            <h3>24/7 Support</h3>
+            <p>Round-the-clock dispatch and customer service</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Premier Overview Section -->
+    <div style="background-color:#ffffff; padding:60px; border-radius:14px;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color:#1c1c1c; max-width:960px; margin:60px auto;
+        box-shadow:0 10px 30px rgba(0,0,0,0.1); border:1px solid #e0e0e0;">
+        <h1 style="font-size:38px; margin-bottom:28px; color:#152f45;">
+            Premier Mobile Patrol Security Services for Complete Property Protection
+        </h1>
+        <p style="font-size:20px; line-height:1.8; margin-bottom:0; transition: all 0.3s ease; cursor: default;" 
+           onmouseover="this.style.color='#152f45'; this.style.transform='scale(1.02)'; this.style.textShadow='0 2px 8px rgba(0,0,0,0.1)'" 
+           onmouseout="this.style.color='#1c1c1c'; this.style.transform='scale(1)'; this.style.textShadow='none'">
+            <strong>ShieldWise Security</strong> offers specialized mobile patrol security services designed to provide comprehensive protection for businesses and properties throughout California. Our services include <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+            onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">24/7 GPS-tracked patrol vehicles</strong> operated by licensed security professionals who provide visible deterrence and rapid response capabilities. Our advanced <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+            onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">real-time tracking systems</strong> ensure complete accountability and transparency with detailed patrol logs, timestamps, and photographic evidence of all security checks. We implement customized <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+            onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">patrol routes and schedules</strong> tailored to each client's specific security needs and operational requirements. Our mobile patrol officers are extensively trained in <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+            onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">emergency response procedures</strong>, including alarm response, incident investigation, and coordination with local law enforcement when necessary. Additionally, we provide <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
+            onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">comprehensive reporting</strong> through our client portal, allowing real-time access to patrol activities and security updates. By combining cutting-edge technology with professional expertise, ShieldWise Security delivers reliable mobile patrol services that protect your assets while providing peace of mind.
+        </p>
+    </div>
+
+    <!-- Mobile Patrol Features Section -->
+    <section id="features" class="hotel-features-section">
+        <div class="container">
+            <h2 class="section-title">Comprehensive Mobile Patrol Security Features</h2>
+            <p class="section-subtitle">Advanced mobile security solutions designed for maximum protection and accountability</p>
+
+            <div class="hotel-grid">
+                <div class="hotel-card">
+                    <div class="hotel-icon">
+                        <i class="fas fa-satellite-dish"></i>
+                    </div>
+                    <h3 class="hotel-title">GPS Vehicle Tracking</h3>
+                    <p class="hotel-description">Advanced GPS tracking technology provides real-time location monitoring and comprehensive patrol verification for complete transparency.</p>
+                </div>
+
+                <div class="hotel-card">
+                    <div class="hotel-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3 class="hotel-title">Custom Patrol Routes</h3>
+                    <p class="hotel-description">Tailored patrol routes designed specifically for your property layout with optimized timing and comprehensive coverage areas.</p>
+                </div>
+
+                <div class="hotel-card">
+                    <div class="hotel-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3 class="hotel-title">Emergency Response</h3>
+                    <p class="hotel-description">Immediate dispatch to security incidents, alarm activations, and emergency situations with direct law enforcement coordination.</p>
+                </div>
+
+                <div class="hotel-card">
+                    <div class="hotel-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="hotel-title">Property Security Checks</h3>
+                    <p class="hotel-description">Comprehensive property inspections including perimeter checks, access point verification, and vulnerability assessments.</p>
+                </div>
+
+                <div class="hotel-card">
+                    <div class="hotel-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="hotel-title">Flexible Scheduling</h3>
+                    <p class="hotel-description">Customizable patrol schedules including 24/7 coverage, overnight security, weekend patrols, and holiday protection services.</p>
+                </div>
+
+                <div class="hotel-card">
+                    <div class="hotel-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 class="hotel-title">Detailed Reporting</h3>
+                    <p class="hotel-description">Comprehensive patrol reports with photos, timestamps, GPS coordinates, and detailed observations accessible through client portal.</p>
+                </div>
+
+                <div class="hotel-card">
+                    <div class="hotel-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3 class="hotel-title">Alarm Response</h3>
+                    <p class="hotel-description">Rapid response to security system activations with immediate investigation and appropriate escalation procedures.</p>
+                </div>
+
+                <div class="hotel-card">
+                    <div class="hotel-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3 class="hotel-title">Incident Documentation</h3>
+                    <p class="hotel-description">Professional documentation of security incidents with photographic evidence and detailed written reports for insurance claims.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Process Section -->
+    <section class="security-process-section">
+        <div class="container">
+            <h2 class="section-title">Our Mobile Patrol Security Process</h2>
+            <p class="section-subtitle">A systematic approach to professional mobile patrol security</p>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="process-step">
+                        <div class="process-number">1</div>
+                        <h3 class="process-title">Security Assessment</h3>
+                        <p>Comprehensive evaluation of your property's security needs, vulnerabilities, and optimal patrol requirements for maximum protection.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="process-step">
+                        <div class="process-number">2</div>
+                        <h3 class="process-title">Custom Patrol Plan</h3>
+                        <p>Development of tailored patrol routes, schedules, and protocols specific to your property layout and security objectives.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="process-step">
+                        <div class="process-number">3</div>
+                        <h3 class="process-title">Implementation</h3>
+                        <p>Deployment of GPS-tracked patrol vehicles with licensed security officers and integration with existing security systems.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="process-step">
+                        <div class="process-number">4</div>
+                        <h3 class="process-title">Ongoing Monitoring</h3>
+                        <p>Continuous security coverage with real-time tracking, detailed reporting, and regular service reviews for optimal effectiveness.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">Why Choose ShieldWise for Mobile Patrol Security</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>GPS Tracking Technology</h4>
+                            <p>Advanced GPS systems provide real-time location tracking, route verification, and comprehensive patrol accountability.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Licensed Security Professionals</h4>
+                            <p>BSIS certified patrol officers with extensive training in security protocols, emergency response, and customer service.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Rapid Response Times</h4>
+                            <p>Emergency response within 15 minutes or less with direct communication to local law enforcement when needed.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Comprehensive Reporting</h4>
+                            <p>Detailed patrol logs with timestamps, photos, and GPS coordinates accessible through our secure client portal.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Customizable Services</h4>
+                            <p>Flexible patrol schedules and routes tailored to your specific security needs and operational requirements.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Cost-Effective Protection</h4>
+                            <p>Professional security coverage at a fraction of the cost of on-site guards while maintaining high-quality protection.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-car service-icon"></i>
+                        <h3 class="service-title">Vehicle Patrol Services</h3>
+                        <ul class="feature-list">
+                            <li>24/7 Mobile Patrol Coverage</li>
+                            <li>GPS-Tracked Patrol Vehicles</li>
+                            <li>Licensed Security Officers</li>
+                            <li>Real-Time Location Monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-shield-alt service-icon"></i>
+                        <h3 class="service-title">Property Protection</h3>
+                        <ul class="feature-list">
+                            <li>Perimeter Security Checks</li>
+                            <li>Access Point Monitoring</li>
+                            <li>Vulnerability Assessments</li>
+                            <li>Incident Prevention</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-phone-alt service-icon"></i>
+                        <h3 class="service-title">Emergency Response</h3>
+                        <ul class="feature-list">
+                            <li>Alarm Response Services</li>
+                            <li>Incident Investigation</li>
+                            <li>Law Enforcement Coordination</li>
+                            <li>Emergency Communication</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Properties Protected</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">Minute Response</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Coverage Available</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">GPS Tracked</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 service-title">What Property Managers Say</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <img src="/img/james.png" alt="Client" class="client-image">
+                        <h4>David Martinez</h4>
+                        <p class="text-muted">Property Manager</p>
+                        <p>"ShieldWise's mobile patrol service has significantly reduced security incidents at our commercial complex. Their GPS tracking gives us complete transparency."</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <img src="/img/samanta.png" alt="Client" class="client-image">
+                        <h4>Lisa Thompson</h4>
+                        <p class="text-muted">Facility Director</p>
+                        <p>"The detailed reports and rapid response times have exceeded our expectations. Professional service that we can always count on."</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <img src="/img/shahn1.png" alt="Client" class="client-image">
+                        <h4>Mark Johnson</h4>
+                        <p class="text-muted">Security Coordinator</p>
+                        <p>"Cost-effective solution that provides excellent coverage. The GPS tracking and reporting features are outstanding for our security needs."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="mb-4">Secure Your Property Today</h2>
+            <p class="mb-4">Contact us for a customized mobile patrol security solution that protects your assets 24/7</p>
+            <a href="/get-quote" class="btn btn-custom">Get a Free Security Assessment</a>
+        </div>
+    </section>
+  </main>
+
+  <%- include('../Partials/Footer') %>
+
+  <!-- EXTERNAL SCRIPTS -->
+  <script defer src="/js/main.js?v=2.1"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  
+  <!-- ENHANCED INITIALIZATION SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Remove loading screen
+      const loading = document.getElementById('loading');
+      setTimeout(() => {
+        loading.classList.add('fade-out');
+        setTimeout(() => {
+          loading.style.display = 'none';
+          loading.remove();
+        }, 500);
+      }, 1000);
+
+      // Intersection Observer for Animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      // Observe elements
+      document.querySelectorAll('.hotel-card, .service-card, .process-step, .benefit-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.6s ease';
+        observer.observe(el);
+      });
+
+      // Counter Animation for Statistics
+      function animateCounter(element, target) {
+        let current = 0;
+        const increment = target / 100;
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          const suffix = element.textContent.includes('%') ? '%' : element.textContent.includes('/') ? '' : element.textContent.includes('+') ? '+' : '';
+          element.textContent = Math.floor(current) + suffix;
+        }, 20);
+      }
+
+      // Trigger counter animation when in view
+      const statObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+            entry.target.classList.add('animated');
+            const statNumber = entry.target.querySelector('.stat-number');
+            const textContent = statNumber.textContent;
+            let value = parseInt(textContent);
+            if (textContent === '24/7') {
+              value = 24;
+            } else if (textContent === '100%') {
+              value = 100;
+            }
+            if (!isNaN(value)) {
+              animateCounter(statNumber, value);
+            }
+          }
+        });
+      }, { threshold: 0.5 });
+
+      document.querySelectorAll('.stat-card').forEach(el => {
+        statObserver.observe(el);
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Analytics events
+      if (typeof gtag !== 'undefined') {
+        // Track CTA clicks
+        document.querySelectorAll('.btn-primary, .cta-button, .btn-custom').forEach(btn => {
+          btn.addEventListener('click', () => {
+            gtag('event', 'cta_click', {
+              event_category: 'engagement',
+              event_label: btn.textContent.trim()
+            });
+          });
+        });
+
+        // Track phone clicks
+        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+          link.addEventListener('click', () => {
+            gtag('event', 'phone_click', {
+              event_category: 'contact',
+              event_label: 'phone_call'
+            });
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
