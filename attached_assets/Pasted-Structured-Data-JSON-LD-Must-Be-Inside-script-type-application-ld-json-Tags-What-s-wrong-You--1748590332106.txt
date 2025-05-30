@@ -1,0 +1,157 @@
+Structured Data (JSON-LD) Must Be Inside <script type="application/ld+json"> Tags
+What’s wrong:
+You have raw JSON-LD structured data objects directly in your <head>, not inside <script type="application/ld+json"> tags. For example:
+
+js
+Copy
+Edit
+// schema-organization.js
+{
+  "@context": "https://schema.org",
+  ...
+}
+But this is just plain JSON—not JavaScript, not HTML, and not a valid <script> tag.
+Search engines will ignore this (or even throw errors in the Search Console).
+
+How to fix:
+Every JSON-LD block must be inside a <script type="application/ld+json"> ... </script> tag.
+You cannot just paste JSON directly into your HTML!
+
+2. You Are Pasting Multiple JSON Objects, Separated by Comments (Not Allowed in JSON)
+What’s wrong:
+You have things like:
+
+js
+Copy
+Edit
+// schema-organization.js
+{ ... }
+ // schema-services.js
+{ ... }
+ // schema-faq.js
+{ ... }
+This is not valid JavaScript and not valid JSON-LD, because:
+
+Comments // ... are not allowed in JSON.
+
+Each block must be its own <script type="application/ld+json"> ... </script> or be combined as an array under "@graph" in a single script.
+
+3. Where Should You Place the <script type="application/ld+json"> Tags?
+Put each schema (organization, services, FAQ, breadcrumb, article, webpage, website, etc.) inside its own <script type="application/ld+json"> tag, right before the closing </head>.
+
+DO NOT include any comments (// ...) inside JSON-LD scripts.
+
+4. Example: How to Fix This
+Original (Incorrect):
+
+html
+Copy
+Edit
+// schema-organization.js
+{
+  "@context": "https://schema.org",
+  "@graph": [ ... ]
+}
+Correct (FIXED):
+
+html
+Copy
+Edit
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [ ... ]
+}
+</script>
+Repeat this for each block (schema-organization, schema-services, schema-faq, etc).
+
+5. Do Not Mix XML (Sitemap) in the <head> Section
+At the very end of your code, you have what looks like a sitemap in XML format (<?xml ...><urlset ...>).
+
+This is NOT valid in the HTML <head> section.
+Sitemaps are separate files (e.g., sitemap.xml) on your server, not embedded in your HTML.
+Remove this entire XML block from your HTML.
+
+6. How to Fix Your HEAD (Quick Example):
+Below is how your <head> section should look regarding structured data:
+
+html
+Copy
+Edit
+<!-- ...your existing meta tags, CSS, JS links, etc. ... -->
+
+<!-- Structured Data: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["LocalBusiness", "SecurityService", "Service"],
+      "@id": "https://shieldwisesecurity.com/#organization",
+      ...
+      "sameAs": [
+        "https://www.facebook.com/shieldwisesecurity",
+        "https://twitter.com/shieldwisesecurity",
+        ...
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- Structured Data: Services -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      ...
+    }
+  ]
+}
+</script>
+
+<!-- Structured Data: FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    ...
+  ]
+}
+</script>
+
+<!-- etc. for other schemas (breadcrumb, article, webpage, website) -->
+
+<!-- Do NOT include sitemap XML here -->
+7. Summary Table: What to Change
+Issue	What’s Wrong	How to Fix
+JSON-LD not in script	Raw JSON/JS in head	Wrap each block with <script type="application/ld+json"> ... </script>
+Comments in JSON	// ... in JSON	Remove all comments inside JSON-LD
+Multiple blocks	Multiple JSONs pasted	Each needs its own <script type="application/ld+json"> or combine under "@graph"
+XML sitemap in head	<urlset> ... </urlset> in HTML	Remove, use as standalone sitemap.xml file
+
+8. Bonus: Script Loading
+If you want to load JSON-LD dynamically, you may use <script src="..."> for JS, but structured data MUST be inline JSON-LD, not JS files.
+
+Next Steps for You
+Go through your <head> and wrap each JSON-LD schema block in its own <script type="application/ld+json"> ... </script> tag.
+
+Remove any // comments and any XML (sitemap) markup.
+
+Validate your page with Google's Rich Results Test to check for schema errors after fixing.
+
+If You Want Me to Generate a "FIXED" HEAD for You
+Let me know, and I’ll paste your current schemas properly formatted and ready to copy-paste into your site, with all the above corrections applied!
+
+TL;DR:
+
+Wrap every JSON-LD schema in <script type="application/ld+json"> ... </script>.
+
+Remove comments and XML from your HTML head.
+
+Each schema goes in its own script block (or combine in one "@graph" array if you prefer).
+
+Validate after updating!
