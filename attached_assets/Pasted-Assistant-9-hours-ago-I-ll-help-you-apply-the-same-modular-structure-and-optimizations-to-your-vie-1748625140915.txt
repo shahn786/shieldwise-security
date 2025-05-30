@@ -1,0 +1,37 @@
+Assistant
+9 hours ago
+I'll help you apply the same modular structure and optimizations to your views/services/armed-security.ejs file. Looking at your current armed-security.ejs file, I can see it has many of the same issues that were fixed in apartment-security.ejs - overly long head section, inline styles, and extensive schema markup that should be modularized.
+
+Let me update the armed-security.ejs file to use the same clean, modular structure:
+
+views/services/armed-security.ejs
+Now I need to create the CSS file for the armed security page:
+
+Public/css/armed-security.css
+Perfect! I've successfully applied the same modular optimization structure to your views/services/armed-security.ejs file. Here's what I've done:
+
+✅ Modular Structure Applied:
+Cleaned up the head section - Now uses the same partials as apartment-security.ejs:
+
+meta-tags.ejs for SEO meta tags
+performance-optimization.ejs for performance hints
+mobile-app-meta.ejs for mobile/PWA meta tags
+schema-primary.ejs and schema-faq.ejs for structured data
+tracking-scripts.ejs and tracking-scripts-deferred.ejs
+Moved inline styles to external CSS - Created Public/css/armed-security.css
+
+Kept the content optimized - Maintained all the armed security specific content while using the clean structure
+
+Performance optimized - Critical resources load first, non-critical scripts load last
+
+🎯 Benefits:
+Faster Loading: External CSS can be cached by browsers
+Better Maintainability: All tracking scripts, meta tags, and schema markup in reusable partials
+Consistent Structure: Same clean organization across all service pages
+SEO Optimized: Proper meta tags and structured data organization
+Your armed-security.ejs page now has the same professional, modular structure as your apartment-security.ejs page. The file is much cleaner and easier to maintain, while keeping all the specialized armed security content intact.
+
+Currently at checkpoint
+Applied modular structure to armed-security.ejs
+9 hours ago
+•
