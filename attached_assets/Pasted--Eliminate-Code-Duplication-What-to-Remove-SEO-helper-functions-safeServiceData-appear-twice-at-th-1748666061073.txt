@@ -1,0 +1,321 @@
+ Eliminate Code Duplication
+What to Remove
+SEO helper functions & safeServiceData appear twice at the top of your partial. Keep only one copy.
+
+Tracking scripts block (GTM, GA4, Facebook Pixel, LinkedIn, Hotjar) is defined in full two times. Choose one location—usually in tracking-scripts.ejs—and remove the duplicate.
+
+Performance‐optimization hints (preconnect, preload, prefetch, etc.) are also duplicated. Keep them in a single partial (e.g. performance-optimization.ejs) and delete the extra.
+
+How to Refactor
+Move your three helper functions (truncateTitle, truncateDescription, generateDynamicKeywords) plus the safeServiceData object into exactly one file—let’s call it meta-tags-base.ejs.
+
+In meta-tags-service.ejs, simply do:
+
+ejs
+Copy
+Edit
+<% include('../Partials/meta-tags-base') %>
+and then generate your service‐specific title/description/keywords from that single definition.
+
+In apartment.ejs, remove the second block of duplicated helpers and the duplicate “Performance Optimization” block.
+
+2. Verify & Wire Up Missing Partials
+Your apartment.ejs is including three files that you haven’t shown:
+
+ejs
+Copy
+Edit
+<%- include('../Partials/Header') %>
+<%- include('../Partials/Footer') %>
+<%- include('../Partials/tracking-scripts-deferred') %>
+Make sure:
+
+Partials/Header.ejs exists and contains your site’s <header> markup (logo, navigation, etc.).
+
+Partials/Footer.ejs exists and has your site’s footer code (contact info, copyright, etc.).
+
+Partials/tracking-scripts-deferred.ejs exists and should hold any analytics scripts you want to load at the end of <body> (for deferring).
+
+If any one of those files is missing, you’ll get an EJS error (“Cannot find partial…”). Create blank stubs or move the corresponding markup into them:
+
+Header.ejs → main navigation + logo
+
+Footer.ejs → site footer + any closing tags
+
+tracking-scripts-deferred.ejs → deferred analytics (e.g., some bits of Facebook Pixel or LinkedIn insights that you only want to load after the page is interactive).
+
+3. Improve Accessibility
+a. Add a Skip‐Link
+Place this right after your <body> tag (before your header):
+
+html
+Copy
+Edit
+<a href="#main-content" class="skip-link" style="position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden;">
+  Skip to main content
+</a>
+Then give your main content area an id="main-content" so keyboard users can jump straight past the header/nav.
+
+b. ARIA Attributes & Focus Styles
+Wherever you have interactive elements—especially your “Get a Free Security Assessment” button—add an appropriate aria-label. For example:
+
+html
+Copy
+Edit
+<button aria-label="Request a free security assessment" onclick="trackConsultationRequest()">
+  Get a Free Security Assessment
+</button>
+If you have any collapsible accordions or tab controls, make sure they use role="button", aria-expanded, and aria-controls properly.
+
+Ensure your color contrasts meet AA standards (WCAG). For example, any text in a gold color (#bf9e5b) on white should be at least 4.5:1. You can run the hex values through a contrast checker (e.g., WebAIM Contrast Checker).
+
+4. Organize Code into Partials
+Your file structure suggests that you want each of these concerns in its own partial:
+
+meta-tags-base.ejs
+
+Contains the shared helper functions + safeServiceData object.
+
+Possibly rename to meta-tags-base.ejs (instead of repeating those functions in two places).
+
+meta-tags-service.ejs
+
+After including meta-tags-base.ejs, it builds:
+
+<title>
+
+<meta name="description">
+
+<meta name="keywords">
+
+All of your OpenGraph tags (OG:*).
+
+All of your Twitter tags (twitter:*).
+
+“AI‐search” meta tags.
+
+Geographic, author, publisher, rating, distribution, revisit‐after, etc.
+
+performance-optimization.ejs
+
+Contains your <link rel="preconnect">, <link rel="preload">, <link rel="dns-prefetch">, <link rel="prefetch">, <link rel="modulepreload">.
+
+Also the inlined critical CSS at the top of <head>.
+
+mobile-app-meta.ejs
+
+Holds your Apple‐touch icons, <meta name="apple-mobile-web-app-capable">, manifest link, tile image, theme color, etc.
+
+schema-primary.ejs
+
+Main JSON-LD for “SecurityService” + possible “Organization” or “LocalBusiness” snippet.
+
+schema-service.ejs
+
+Service‐specific JSON-LD (@type: "Service", areaServed array, OfferCatalog, etc.).
+
+schema-faq-service.ejs
+
+FAQPage JSON‐LD or individual Question/Answer objects.
+
+tracking-scripts.ejs
+
+Early loading analytics (e.g., GTM container snippet, GA4 base script, Facebook Pixel base snippet).
+
+tracking-scripts-deferred.ejs
+
+Any additional tracking scripts you want to load at the very end of <body> (e.g., Clarity, Hotjar, or deferred LinkedIn Insight).
+
+Once each block of code lives in exactly one partial, your apartment.ejs can be razor‐thin:
+
+ejs
+Copy
+Edit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../Partials/meta-tags-service', serviceData) %>
+  <%- include('../Partials/performance-optimization') %>
+  <%- include('../Partials/mobile-app-meta') %>
+
+  <!-- CSS Dependencies -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link href="/css/apartment-security.css" rel="stylesheet">
+
+  <%- include('../Partials/schema-primary') %>
+  <%- include('../Partials/schema-service', serviceData) %>
+  <%- include('../Partials/schema-faq-service', serviceData) %>
+  <%- include('../Partials/tracking-scripts', serviceData) %>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <%- include('../Partials/Header') %>
+
+  <main id="main-content">
+    <!-- All your hero, features, process, benefits, stats, testimonials, CTA, etc. -->
+  </main>
+
+  <%- include('../Partials/Footer') %>
+  <%- include('../Partials/tracking-scripts-deferred', serviceData) %>
+
+  <!-- Defer any nonessential vendor JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" defer></script>
+  <!-- Custom page scripts (animations, counters) -->
+  <script>
+    // Counter animation with IntersectionObserver fallback
+    function animateCounter(element, target) {
+      let current = 0;
+      const increment = target / 100;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : element.textContent.includes('%') ? '%' : '');
+      }, 20);
+    }
+    const statObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+            entry.target.classList.add('animated');
+            const statNumber = entry.target.querySelector('.stat-number');
+            const value = parseInt(statNumber.textContent);
+            animateCounter(statNumber, value);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    document.querySelectorAll('.stat-card').forEach((el) => statObserver.observe(el));
+
+    // IntersectionObserver fallback
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('.apartment-card, .service-card, .process-step, .benefit-item').forEach((el) => {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      });
+      document.querySelectorAll('.stat-number').forEach((num) => {
+        num.textContent = num.textContent.replace(/[^0-9]/g, '');
+      });
+    } else {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px',
+      };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+      document.querySelectorAll('.apartment-card, .service-card, .process-step, .benefit-item').forEach((el) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.6s ease';
+        observer.observe(el);
+      });
+    }
+  </script>
+</body>
+</html>
+Above, note how you only include each partial once. The helper functions and critical CSS only exist in their designated partials.
+
+5. Provide the Required serviceData to Your Route
+In your Express (or whatever server you’re using), you need to pass exactly the fields your EJS expects. For example:
+
+js
+Copy
+Edit
+app.get('/services/apartment-security', (req, res) => {
+  const serviceData = {
+    serviceTitle:       'Apartment Security Services',
+    serviceDescription: 'Professional security services for apartment complexes and residential communities',
+    serviceKeywords:    'apartment security, residential security, building security',
+    serviceImage:       'apartment-security.webp',
+    serviceUrl:         'apartment-security',
+    serviceType:        'apartment',
+    serviceBenefit:     'resident peace of mind and safety',
+    propertyType:       'apartment complex',
+    priceRange:         { low: 35, mid: 55, high: 85 },
+    serviceAltName:     'Residential Community Security',
+    serviceOutput:      'Enhanced resident safety and property protection',
+    audienceType:       'Property Managers and Residential Communities'
+  };
+  res.render('Services/apartment', { serviceData });
+});
+Do not forget any required property—if serviceKeywords or priceRange is missing, your <meta> or JSON-LD will fall back to the defaults defined in safeServiceData, which may not match this page.
+
+6. Improve Accessibility (Recap)
+Skip Link
+
+Add <a href="#main-content" class="skip-link">Skip to main content</a>.
+
+ARIA Labels
+
+Any buttons/links that rely solely on icons or generic text (“Get Quote,” “Call Now,” etc.) should use aria-label to clarify purpose.
+
+Focus States
+
+Ensure your site’s CSS does not remove default focus outlines. If you override them, provide a strong custom outline for keyboard users.
+
+Color Contrast
+
+Check gold (#bf9e5b) on white; check dark blue (#1a3c64) on white. Both should be ≥ 4.5:1.
+
+7. JavaScript Error Handling & Fallbacks
+IntersectionObserver Fallback
+
+If IntersectionObserver is not supported, immediately set .apartment-card, .service-card, etc. to full opacity so nothing remains hidden.
+
+Counter Animation
+
+In your animateCounter(), if target is NaN or undefined, bail out early (if (!target || isNaN(target)) return;).
+
+Deferred Script Loading
+
+You’ve already changed <script src="…jquery…" defer></script> and <script src="…bootstrap.bundle…" defer></script>. That ensures those large vendor libraries don’t block initial render.
+
+8. CSS Checklist
+/css/apartment-security.css must define:
+
+.hero-section (background image, text styling)
+
+.apartment-grid & .apartment-card (flex/grid layout, margins, padding)
+
+.process-step, .benefit-item, .service-card, .stat-card, .testimonial-card, .cta-section
+
+Skip‐link styles so that when it’s focused, it appears at the top of the viewport.
+
+9. Putting It All Together
+By removing every duplicated block and moving functionality into its own partial:
+
+Maintenance becomes trivial—if you need to tweak <meta property="og:site_name">, you edit only one file (meta-tags-service.ejs).
+
+Page Weight is minimized—no more repeated <link rel="preconnect"> or duplicate JS.
+
+Accessibility improvements (skip link + ARIA labels) ensure your site is keyboard‐friendly and screen‐reader‐ friendly.
+
+Performance Hints live in performance-optimization.ejs so you can update preloads/prefetches without hunting through a thousand lines.
+
+Tracking Scripts are split into “early” (tracking-scripts.ejs) and “deferred” (tracking-scripts-deferred.ejs), so you can control exactly when each analytics tool fires.
+
+Final Answer
+Yes. If you follow precisely:
+
+Remove duplicates (helper functions, performance hints, tracking scripts).
+
+Implement all referenced partials (Header, Footer, tracking-scripts-deferred, etc.).
+
+Add accessibility fixes (skip link, ARIA labels, color‐contrast).
+
+Refactor code so each concern lives in exactly one EJS partial.
+
+Pass the correct serviceData object from your route.
+
+Defer non‐critical JS and add IntersectionObserver fallbacks.

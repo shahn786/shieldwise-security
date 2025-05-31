@@ -1,0 +1,99 @@
+To implement the suggested changes in your project, you'll need to create several new partial files and refactor your existing partials accordingly. Here's how to proceed:
+
+1. Create new partial files
+meta-tags-base.ejs: Contains the shared helper functions and safeServiceData object.
+
+<% 
+const safeServiceData = {
+  serviceTitle: 'Default Title',
+  serviceDescription: 'Default Description',
+  serviceKeywords: 'keyword1, keyword2',
+  serviceImage: 'default-image.webp'
+};
+function truncateTitle(title) {
+  return title.length > 60 ? title.substring(0, 57) + '...' : title;
+}
+function truncateDescription(description) {
+  return description.length > 160 ? description.substring(0, 157) + '...' : description;
+}
+function generateDynamicKeywords(keywords) {
+  return keywords.split(',').map(k => k.trim()).join(', ');
+}
+%>
+Update your existing partials:
+
+meta-tags-service.ejs: Update to include meta-tags-base.ejs.
+
+<%- include('../Partials/meta-tags-base') %>
+<title><%= truncateTitle(serviceData.serviceTitle) %></title>
+<meta name="description" content="<%= truncateDescription(serviceData.serviceDescription) %>">
+<meta name="keywords" content="<%= generateDynamicKeywords(serviceData.serviceKeywords) %>">
+performance-optimization.ejs: Ensure it contains optimization hints only once.
+
+tracking-scripts.ejs and tracking-scripts-deferred.ejs: Consolidate your analytics scripts.
+
+2. Update your existing apartment-security.ejs file
+Here's how your updated apartment-security.ejs might look after implementing the changes:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../Partials/meta-tags-service', serviceData) %>
+    <%- include('../Partials/performance-optimization') %>
+    <%- include('../Partials/mobile-app-meta') %>
+    <!-- Essential CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="/css/apartment-security.css" rel="stylesheet">
+    <%- include('../Partials/schema-primary') %>
+    <%- include('../Partials/schema-service', serviceData) %>
+    <%- include('../Partials/schema-faq-service', serviceData) %>
+    <%- include('../Partials/tracking-scripts') %>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <%- include('../Partials/Header') %>
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="hero-title speakable-intro">Professional Apartment Security Services</h1>
+                <p class="hero-subtitle speakable-intro">Protecting residential communities with comprehensive security solutions tailored to modern apartment living</p>
+            </div>
+        </section>
+        <!-- Additional content... -->
+    </main>
+    <%- include('../Partials/Footer') %>
+    <%- include('../Partials/tracking-scripts-deferred') %>
+    <!-- Defer any nonessential vendor JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" defer></script>
+    <!-- Custom script here... -->
+</body>
+</html>
+3. Create/verify the existence of other required partials
+Ensure that the following partials exist and contain the respective required code:
+
+Header.ejs: Markup for your site’s header (logo, navigation, etc.).
+Footer.ejs: Contains footer code (contact info, copyright, etc.).
+tracking-scripts-deferred.ejs: Holds deferred analytics scripts.
+4. Accessibility Improvements
+Add the skip link and ARIA labels wherever necessary. For instance:
+
+<button aria-label="Request a free security assessment" onclick="trackConsultationRequest()">Get a Free Security Assessment</button>
+5. Provide the required serviceData in your server route
+Ensure your route definition properly sets up serviceData for the apartment-security service.
+
+app.get('/services/apartment-security', (req, res) => {
+  const serviceData = {
+    serviceTitle: 'Apartment Security Services',
+    serviceDescription: 'Professional security services for apartment complexes and residential communities',
+    serviceKeywords: 'apartment security, residential security',
+    serviceImage: 'apartment-security.webp',
+    serviceUrl: 'apartment-security',
+    serviceType: 'apartment',
+    priceRange: { low: 35, mid: 55, high: 85 }
+  };
+  res.render('services/apartment-security', { serviceData });
+});
+By following these steps, you will effectively eliminate code duplication, improve organization, and enhance accessibility in your project.
