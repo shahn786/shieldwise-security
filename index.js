@@ -156,9 +156,33 @@ app.use((req, res, next) => {
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Routes
+// Apartment Security Service Route
+app.get('/services/apartment-security', (req, res) => {
+  res.render('services/apartment-security', { 
+    serviceData: {
+      serviceType: 'apartment',
+      serviceTitle: 'Professional Apartment Security Services',
+      serviceDescription: 'Premium apartment security with licensed BSIS guards providing 24/7 protection for residential communities throughout California.',
+      serviceKeywords: 'apartment security services, residential security guards, apartment complex security, gated community security, 24/7 apartment security patrol, licensed apartment security guards, residential security California',
+      serviceImage: 'apartment-security-guards-california.jpg',
+      serviceUrl: 'apartment-security',
+      serviceBenefit: 'reduced crime and 24/7 peace of mind',
+      propertyType: 'apartment complex',
+      priceRange: { low: 45, mid: 65, high: 90 },
+      serviceAltName: 'Apartment Guard Services',
+      serviceOutput: 'Safety and protection for your residents',
+      audienceType: 'Property Managers, HOAs, Apartment Owners',
+      relatedProperty: 'gated communities and HOAs',
+      specializedServices: 'gatehouse staffing, resident verification systems, amenity monitoring, community patrols, parking enforcement, package management',
+      industryType: 'HOA',
+      clientType: 'resident',
+      managerType: 'property managers',
+      assessmentSpecifics: 'landscaping review, amenity area security, parking lot vulnerability assessment'
+    }
+  });
+});
 
-// Home Route
+// Routes
 app.get("/", (req, res) => res.render("index"));
 
 // Register Route
@@ -340,10 +364,7 @@ app.get("/services/event-security", (req, res) => {
   res.render("services/event-security");
 });
 
-// Apartment Security Page
-app.get("/services/apartment-security", (req, res) => {
-  res.render("services/apartment-security");
-});
+
 
 // Fire Watch Security Page
 app.get("/services/fire-watch", (req, res) => {
