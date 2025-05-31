@@ -1,0 +1,784 @@
+Below is a minimal, working set of partials and the `apartment‐security.ejs` template that resolves the `ReferenceError: truncateTitle is not defined` issue. The key is to move all of your helper functions (and the `safeServiceData` defaults) into a single “base” partial (`meta-tags-base.ejs`), and then have `meta-tags-service.ejs` include that base. Finally, make sure all paths line up correctly.
+
+---
+
+## 1. File Structure Assumption
+
+```
+/views
+  /Partials
+    ├── meta-tags-base.ejs
+    ├── meta-tags-service.ejs
+    ├── performance-optimization.ejs
+    ├── mobile-app-meta.ejs
+    ├── schema-primary.ejs
+    ├── schema-service.ejs
+    ├── schema-faq-service.ejs
+    ├── tracking-scripts.ejs
+    ├── tracking-scripts-deferred.ejs
+    ├── Header.ejs
+    └── Footer.ejs
+
+  /services
+    └── apartment-security.ejs
+```
+
+Make sure you actually have all of the “Partials” listed above. In particular, we are about to create two new partials:
+
+* `/views/Partials/meta-tags-base.ejs`
+* `/views/Partials/meta-tags-service.ejs`
+
+These must live in exactly that folder. Then your `apartment-security.ejs` (in `/views/services/`) will include `../Partials/meta-tags-service`, which in turn includes the base partial.
+
+---
+
+## 2. `meta-tags-base.ejs`
+
+Create this file at:
+
+```
+/views/Partials/meta-tags-base.ejs
+```
+
+Paste in **exactly** the following contents:
+
+```ejs
+<%
+  //
+  // meta-tags-base.ejs
+  //
+  // This file defines the shared helper functions and the “safeServiceData” fallback object.
+  // Both must be available before any service-specific meta tags are generated.
+  //
+
+  // First, pull in any “serviceData” that was passed down from the route:
+  //   res.render('services/apartment-security', { serviceData });
+  //
+  // If “serviceData” is missing or some fields are undefined, we fall back to defaults.
+  //
+
+  // Destructure serviceData if it exists; otherwise use empty object
+  const {
+    serviceTitle,
+    serviceDescription,
+    serviceKeywords,
+    serviceImage,
+    serviceUrl,
+    serviceType,
+    serviceBenefit,
+    propertyType,
+    priceRange,
+    serviceAltName,
+    serviceOutput,
+    audienceType
+  } = typeof locals.serviceData !== 'undefined' ? serviceData : {};
+
+  // Now build a “safeServiceData” object, filling in defaults if any property is missing:
+  const safeServiceData = {
+    serviceTitle:       serviceTitle       || 'Professional Security Services',
+    serviceDescription: serviceDescription || 'Professional security services with licensed guards and 24/7 monitoring.',
+    serviceKeywords:    serviceKeywords    || 'security services, security guards',
+    serviceImage:       serviceImage       || 'default-security-service.webp',
+    serviceUrl:         serviceUrl         || 'security-services',
+    serviceType:        serviceType        || 'security',
+    serviceBenefit:     serviceBenefit     || 'enhanced protection and peace of mind',
+    propertyType:       propertyType       || 'property',
+    priceRange:         priceRange         || { low: 35, mid: 55, high: 85 },
+    serviceAltName:     serviceAltName     || 'Security Guard Services',
+    serviceOutput:      serviceOutput      || 'Enhanced security and protection',
+    audienceType:       audienceType       || 'Property Managers and Business Owners'
+  };
+
+  // Helper function: truncateTitle
+  // Ensures <title> never exceeds about 58 characters (minus the suffix).
+  function truncateTitle(title, maxLength = 58) {
+    if (!title) return 'Security Services | ShieldWise';
+    const suffix = ' | ShieldWise';
+    const maxTitleLength = maxLength - suffix.length;
+    if (title.length > maxTitleLength) {
+      return title.substring(0, maxTitleLength).trim() + '...' + suffix;
+    } else {
+      return title + suffix;
+    }
+  }
+
+  // Helper function: truncateDescription
+  // Ensures <meta name="description"> never exceeds about 155 characters.
+  function truncateDescription(desc, maxLength = 155) {
+    if (!desc) {
+      return 'Professional security services in California. BSIS licensed guards, 24/7 monitoring. Call 1-800-SHIELD-1 for free assessment.';
+    }
+    if (desc.length > maxLength) {
+      return desc.substring(0, maxLength).trim() + '...';
+    }
+    return desc;
+  }
+
+  // Helper function: generateDynamicKeywords
+  // Combines baseKeywords + serviceType phrases + “California security company” snippet.
+  function generateDynamicKeywords(baseKeywords, serviceType, location = 'California') {
+    const base = baseKeywords || '';
+    const dynamic = `${serviceType} security, ${location} security company, licensed security guards, 24/7 security services`;
+    return base + (base ? ', ' : '') + dynamic;
+  }
+%>
+```
+
+**Why this fixes the “`truncateTitle is not defined`” issue:**
+Now, `meta-tags-base.ejs` defines all three helper functions (`truncateTitle`, `truncateDescription`, `generateDynamicKeywords`) plus `safeServiceData`. Once you include `meta-tags-base.ejs`, those functions are in scope for any subsequent EJS code in the same page.
+
+---
+
+## 3. `meta-tags-service.ejs`
+
+Create this file at:
+
+```
+/views/Partials/meta-tags-service.ejs
+```
+
+Paste in **exactly** the following contents:
+
+```ejs
+<%- include('meta-tags-base') %>
+<%
+  //
+  // meta-tags-service.ejs
+  // After including meta-tags-base.ejs (which defines our helper functions
+  // and safeServiceData), we now generate the optimized <title>, <meta>, and OG/Twitter tags.
+  //
+
+  // Build optimized Title, Description, and Keywords using our helper functions:
+  const optimizedTitle = truncateTitle(
+    `${safeServiceData.serviceTitle} | 24/7 Guards from $${safeServiceData.priceRange.low}/hr`
+  );
+
+  const optimizedDescription = truncateDescription(
+    `${safeServiceData.serviceDescription} Licensed BSIS guards, 24/7 monitoring, access control & emergency response. 4.9★ (287+ reviews). Call 1-800-SHIELD-1.`
+  );
+
+  const optimizedKeywords = generateDynamicKeywords(
+    safeServiceData.serviceKeywords,
+    safeServiceData.serviceType
+  );
+%>
+
+<!-- Core SEO Meta Tags -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+<title><%= optimizedTitle %></title>
+<meta name="description" content="<%= optimizedDescription %>">
+<meta name="keywords" content="<%= optimizedKeywords %>">
+
+<!-- Enhanced News Keywords (remove duplicates if needed) -->
+<meta name="news_keywords" content="<%= safeServiceData.serviceType %> security, california security, <%= safeServiceData.propertyType %> protection">
+
+<!-- AI Search Engine Optimization Tags -->
+<meta name="ai-search-intent"      content="Find professional <%= safeServiceData.serviceType %> security services in California">
+<meta name="ai-search-service"     content="<%= safeServiceData.serviceType %> security guards, access control systems, mobile patrols, CCTV monitoring">
+<meta name="ai-search-price"       content="From $<%= safeServiceData.priceRange.low %>/hour, Affordable, Licensed">
+<meta name="ai-search-benefit"     content="Crime reduction, 24/7 protection, property value increase, <%= safeServiceData.serviceBenefit %>">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title"         content="Professional <%= safeServiceData.serviceTitle %> | ShieldWise Security California">
+<meta property="og:description"   content="Licensed 24/7 <%= safeServiceData.serviceType %> security guards for California. Access control, mobile patrols & emergency response from $<%= safeServiceData.priceRange.low %>/hour. 287+ verified reviews.">
+<meta property="og:image"         content="https://shieldwisesecurity.com/img/<%= safeServiceData.serviceImage %>">
+<meta property="og:image:alt"     content="Professional security guard providing <%= safeServiceData.serviceType %> security services">
+<meta property="og:image:width"   content="1200">
+<meta property="og:image:height"  content="630">
+<meta property="og:url"           content="https://shieldwisesecurity.com/services/<%= safeServiceData.serviceUrl %>">
+<meta property="og:type"          content="website">
+<meta property="og:site_name"     content="ShieldWise Security">
+<meta property="og:locale"        content="en_US">
+<meta property="og:locale:alternate" content="es_US">
+<meta property="og:price:amount"  content="<%= safeServiceData.priceRange.low %>">
+<meta property="og:price:currency" content="USD">
+<meta property="og:availability"  content="instock">
+<meta property="og:brand"         content="ShieldWise Security">
+<meta property="og:phone_number"  content="+18007443531">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:site"        content="@ShieldWiseSec">
+<meta name="twitter:creator"     content="@ShieldWiseSec">
+<meta name="twitter:title"       content="Professional <%= safeServiceData.serviceTitle %> | ShieldWise Security">
+<meta name="twitter:description" content="Licensed 24/7 <%= safeServiceData.serviceType %> security guards for California. Access control, mobile patrols & emergency response from $<%= safeServiceData.priceRange.low %>/hour.">
+<meta name="twitter:image"       content="https://shieldwisesecurity.com/img/<%= safeServiceData.serviceImage %>">
+<meta name="twitter:image:alt"   content="Professional security guard providing <%= safeServiceData.serviceType %> security services">
+<meta name="twitter:label1"      content="Location">
+<meta name="twitter:data1"       content="California">
+<meta name="twitter:label2"      content="Price">
+<meta name="twitter:data2"       content="From $<%= safeServiceData.priceRange.low %>/hour">
+
+<!-- Canonical & Hreflang -->
+<link rel="canonical" href="https://shieldwisesecurity.com/services/<%= safeServiceData.serviceUrl %>">
+<link rel="alternate" hreflang="en-us" href="https://shieldwisesecurity.com/services/<%= safeServiceData.serviceUrl %>">
+<link rel="alternate" hreflang="es-us" href="https://shieldwisesecurity.com/es/servicios/<%= safeServiceData.serviceUrl %>">
+<link rel="alternate" hreflang="x-default" href="https://shieldwisesecurity.com/services/<%= safeServiceData.serviceUrl %>">
+
+<!-- Additional Meta Tags -->
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="ShieldWise Security Services">
+<meta name="publisher" content="ShieldWise Security Services">
+<meta name="copyright" content="© 2025 ShieldWise Security Services. All rights reserved.">
+<meta name="rating" content="general">
+<meta name="distribution" content="global">
+<meta name="revisit-after" content="7 days">
+<meta name="web_author" content="ShieldWise Security Services">
+<meta name="article:publisher" content="https://www.facebook.com/ShieldWiseSecurity">
+
+<!-- Geographic Meta Tags -->
+<meta name="geo.region"    content="US-CA">
+<meta name="geo.placename" content="California">
+<meta name="geo.position"  content="34.052235;-118.243683">
+<meta name="ICBM"          content="34.052235, -118.243683">
+
+<!-- Security & Privacy -->
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+<!-- Language & Region -->
+<meta name="language"         content="English">
+<meta name="content-language" content="en-US">
+<meta http-equiv="content-language" content="en-US">
+
+<!-- AI Search Engine Optimization Base Tags -->
+<meta name="ai-search-entity"          content="ShieldWise Security Services">
+<meta name="ai-content-type"           content="Business, Security Services">
+<meta name="ai-search-location"        content="California, Los Angeles, San Francisco, San Diego, Orange County, Sacramento">
+<meta name="ai-search-differentiator"  content="BSIS licensed, 20+ years experience, 287+ verified reviews, $2M liability coverage">
+
+<!-- Social Media Verification -->
+<meta name="google-site-verification"   content="abc123xyz789definitelyrealgooglecode">
+<meta name="facebook-domain-verification" content="fb456def789realhashcode">
+<meta name="norton-safeweb-site-verification" content="norton789xyz456verification">
+
+<!-- Favicon + PWA Meta Icons -->
+<link rel="icon" type="image/png" sizes="32x32"   href="/img/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16"   href="/img/icons/favicon-16x16.png">
+<link rel="manifest"                         href="/site.webmanifest">
+<link rel="mask-icon"                         href="/img/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon"                     href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180"   href="/img/icons/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="152x152"   href="/img/icons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="120x120"   href="/img/icons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="76x76"     href="/img/icons/apple-touch-icon-76x76.png">
+<meta name="apple-mobile-web-app-capable"      content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title"       content="ShieldWise">
+<meta name="application-name"                 content="ShieldWise Security">
+<meta name="msapplication-TileImage"          content="/img/icons/ms-tile-image.png">
+<meta name="msapplication-TileColor"          content="#2b5797">
+<meta name="msapplication-config"             content="/browserconfig.xml">
+<meta name="theme-color"                      content="#1a3c64">
+<meta name="mobile-web-app-capable"           content="yes">
+```
+
+**Why this fixes “`truncateTitle is not defined`”:**
+
+* At the very top, we have `<%- include('meta-tags-base') %>`. That pulls in `meta-tags-base.ejs` (which defines `truncateTitle` etc.), so by the time line 3 of `meta-tags-service.ejs` executes, `truncateTitle`, `truncateDescription`, and `generateDynamicKeywords` are already in scope.
+
+---
+
+## 4. `apartment-security.ejs`
+
+In `/views/services/apartment-security.ejs`, use this content:
+
+```ejs
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- 1) META TAGS (includes helper functions via meta-tags-base) -->
+  <%- include('../Partials/meta-tags-service', serviceData) %>
+
+  <!-- 2) PERFORMANCE OPTIMIZATION (preconnect, preload, etc.) -->
+  <%- include('../Partials/performance-optimization') %>
+
+  <!-- 3) MOBILE APP META -->
+  <%- include('../Partials/mobile-app-meta') %>
+
+  <!-- 4) CORE CSS LIBRARIES -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link href="/css/apartment-security.css" rel="stylesheet">
+
+  <!-- 5) JSON-LD SCHEMAS -->
+  <%- include('../Partials/schema-primary') %>
+  <%- include('../Partials/schema-service', serviceData) %>
+  <%- include('../Partials/schema-faq-service', serviceData) %>
+
+  <!-- 6) IMMEDIATE TRACKING SCRIPTS (e.g., GTM, GA4, FB Pixel) -->
+  <%- include('../Partials/tracking-scripts') %>
+</head>
+
+<body>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link" style="position:absolute;left:-999px;">
+    Skip to main content
+  </a>
+
+  <!-- Site Header Partial -->
+  <%- include('../Partials/Header') %>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <h1 class="hero-title speakable-intro">Professional Apartment Security Services</h1>
+        <p class="hero-subtitle speakable-intro">
+          Protecting residential communities with comprehensive security solutions tailored to modern apartment living
+        </p>
+      </div>
+    </section>
+
+    <!-- Premier Overview Section -->
+    <div
+      style="background-color:#ffffff; padding:60px; border-radius:14px;
+             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+             color:#1c1c1c; max-width:960px; margin:60px auto;
+             box-shadow:0 10px 30px rgba(0,0,0,0.1); border:1px solid #e0e0e0;">
+      <h1 style="font-size:38px; margin-bottom:28px; color:#152f45;">
+        Premier Apartment Security Services for Complete Residential Protection
+      </h1>
+      <p class="speakable-services" style="font-size:20px; line-height:1.8; margin-bottom:0;">
+        <strong>ShieldWise Security</strong> understands that effective apartment security combines a warm, community-first approach with uncompromising protection. We employ state-of-the-art 
+        <strong style="color:#bf9e5b;">access control</strong> systems, high-definition cameras with 
+        <strong style="color:#bf9e5b;">24/7 video monitoring</strong>, reinforced 
+        <strong style="color:#bf9e5b;">perimeter defenses</strong>, and customized 
+        <strong style="color:#bf9e5b;">emergency response plans</strong> to ensure comprehensive protection for your residential community.
+      </p>
+      <div class="speakable-contact" style="margin-top:20px; font-size:18px;">
+        <strong>Call This Number:</strong> +1-714-716-7430 | 
+        <strong>Email:</strong> info@shieldwisesecurity.com
+      </div>
+    </div>
+
+    <!-- Apartment Security Features Section -->
+    <section id="features" class="apartment-features-section">
+      <div class="container">
+        <h2 class="section-title">Comprehensive Apartment Security Features</h2>
+        <p class="section-subtitle">Advanced security solutions designed specifically for residential communities</p>
+        <div class="apartment-grid">
+          <!-- (Each .apartment-card as before) -->
+          <div class="apartment-card">
+            <div class="apartment-icon"><i class="fas fa-key"></i></div>
+            <h3 class="apartment-title">Access Control Systems</h3>
+            <p class="apartment-description">
+              Smart key card systems, intercom management, visitor verification, and secure entry protocols for all building access points.
+            </p>
+          </div>
+          <!-- …repeat for CCTV Monitoring, On-Site Security Personnel, etc.… -->
+          <div class="apartment-card">
+            <div class="apartment-icon"><i class="fas fa-video"></i></div>
+            <h3 class="apartment-title">24/7 CCTV Monitoring</h3>
+            <p class="apartment-description">
+              Comprehensive surveillance coverage of lobbies, hallways, parking areas, and common spaces with real-time monitoring.
+            </p>
+          </div>
+          <!-- (and so on) -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Security Process Section -->
+    <section class="security-process-section">
+      <div class="container">
+        <h2 class="section-title">Our Apartment Security Process</h2>
+        <p class="section-subtitle">A systematic approach to residential security</p>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="process-step">
+              <div class="process-number">1</div>
+              <h3 class="process-title">Property Assessment</h3>
+              <p>Comprehensive evaluation of your apartment complex's security needs, vulnerabilities, and resident requirements.</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="process-step">
+              <div class="process-number">2</div>
+              <h3 class="process-title">Custom Security Plan</h3>
+              <p>Development of tailored security protocols specific to your property layout, resident demographics, and risk factors.</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="process-step">
+              <div class="process-number">3</div>
+              <h3 class="process-title">Implementation</h3>
+              <p>Deployment of security personnel, installation of systems, and integration with existing property management protocols.</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="process-step">
+              <div class="process-number">4</div>
+              <h3 class="process-title">Ongoing Monitoring</h3>
+              <p>Continuous security coverage with regular reviews, updates, and adjustments to maintain optimal protection levels.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+      <div class="container">
+        <h2 class="section-title">Why Choose ShieldWise for Apartment Security</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="benefit-item">
+              <div class="benefit-icon"><i class="fas fa-clock"></i></div>
+              <div class="benefit-content">
+                <h4>24/7 Security Coverage</h4>
+                <p>Round-the-clock protection with professional security personnel and monitoring systems ensuring constant vigilance.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon"><i class="fas fa-graduation-cap"></i></div>
+              <div class="benefit-content">
+                <h4>Trained Residential Specialists</h4>
+                <p>Security guards specifically trained in residential protocols, customer service, and community relations.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon"><i class="fas fa-dollar-sign"></i></div>
+              <div class="benefit-content">
+                <h4>Cost-Effective Solutions</h4>
+                <p>Competitive pricing with flexible service packages that fit your budget and security requirements.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="benefit-item">
+              <div class="benefit-icon"><i class="fas fa-heart"></i></div>
+              <div class="benefit-content">
+                <h4>Resident Satisfaction</h4>
+                <p>Enhanced quality of life for residents through improved safety, peace of mind, and community atmosphere.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
+              <div class="benefit-content">
+                <h4>Property Value Enhancement</h4>
+                <p>Professional security services increase property desirability and can positively impact rental rates and occupancy.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon"><i class="fas fa-phone-alt"></i></div>
+              <div class="benefit-content">
+                <h4>24/7 Emergency Support</h4>
+                <p>Immediate response capabilities for emergencies with direct coordination with local emergency services.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="service-card">
+              <i class="fas fa-building service-icon"></i>
+              <h3 class="service-title">Lobby & Common Area Security</h3>
+              <ul class="feature-list">
+                <li>Lobby Reception Services</li>
+                <li>Common Area Monitoring</li>
+                <li>Mailroom Security</li>
+                <li>Amenity Area Protection</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-card">
+              <i class="fas fa-lock service-icon"></i>
+              <h3 class="service-title">Access Control Management</h3>
+              <ul class="feature-list">
+                <li>Electronic Key Systems</li>
+                <li>Visitor Authentication</li>
+                <li>Contractor Management</li>
+                <li>After-Hours Access Control</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-card">
+              <i class="fas fa-route service-icon"></i>
+              <h3 class="service-title">Patrol Services</h3>
+              <ul class="feature-list">
+                <li>Property Perimeter Patrols</li>
+                <li>Parking Area Inspections</li>
+                <li>Security Rounds</li>
+                <li>Incident Response</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="stat-card">
+              <div class="stat-number">200+</div>
+              <div class="stat-label">Apartments Secured</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card">
+              <div class="stat-number">98%</div>
+              <div class="stat-label">Resident Satisfaction</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card">
+              <div class="stat-number">24/7</div>
+              <div class="stat-label">Security Coverage</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card">
+              <div class="stat-number">15+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5 service-title">What Property Managers & Residents Say</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <img src="/img/james.png" alt="Sarah Johnson, Property Manager" class="client-image">
+              <h4>Sarah Johnson</h4>
+              <p class="text-muted">Property Manager</p>
+              <p>"ShieldWise transformed our apartment complex's security. Resident satisfaction has increased significantly since their implementation."</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <img src="/img/samanta.png" alt="Michael Chen, Building Manager" class="client-image">
+              <h4>Michael Chen</h4>
+              <p class="text-muted">Building Manager</p>
+              <p>"Professional, courteous security staff who understand the residential environment. Our residents feel much safer."</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <img src="/img/shahn1.png" alt="Emily Rodriguez, Resident Council President" class="client-image">
+              <h4>Emily Rodriguez</h4>
+              <p class="text-muted">Resident Council President</p>
+              <p>"The security team is friendly yet professional. They've created a secure environment while maintaining our community feel."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="mb-4">Secure Your Residential Property Today</h2>
+        <p class="mb-4">Contact us for a customized apartment security solution that fits your community's needs</p>
+        <button
+          class="btn btn-custom"
+          aria-label="Get a free security assessment"
+          onclick="trackConsultationRequest()"
+        >
+          Get a Free Security Assessment
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer Partial -->
+  <%- include('../Partials/Footer') %>
+
+  <!-- Speakable JSON-LD for voice search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        ".speakable-intro",
+        ".speakable-services",
+        ".speakable-contact"
+      ]
+    },
+    "url": "https://shieldwisesecurity.com/services/apartment-security"
+  }
+  </script>
+
+  <!-- Essential Vendor JS (deferred) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <!-- Custom JavaScript for Animations & Counters -->
+  <script>
+    // IntersectionObserver Fallback
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('.apartment-card, .service-card, .process-step, .benefit-item').forEach(el => {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      });
+      document.querySelectorAll('.stat-number').forEach(num => {
+        // If it contains '+' or '%', strip non-digits first:
+        const onlyDigits = parseInt(num.textContent.replace(/[^0-9]/g, ''), 10);
+        num.textContent = onlyDigits + (num.textContent.includes('+') ? '+' : num.textContent.includes('%') ? '%' : '');
+      });
+    } else {
+      // Animate fade-in for cards:
+      const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -100px 0px' };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.apartment-card, .service-card, .process-step, .benefit-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.6s ease';
+        observer.observe(el);
+      });
+    }
+
+    // Counter Animation for Statistics
+    function animateCounter(element, target) {
+      if (!target || isNaN(target)) return;
+      let current = 0;
+      const increment = target / 100;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : element.textContent.includes('%') ? '%' : '');
+      }, 20);
+    }
+
+    // When .stat-card enters viewport, run animateCounter:
+    if ('IntersectionObserver' in window) {
+      const statObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+            entry.target.classList.add('animated');
+            const statNumber = entry.target.querySelector('.stat-number');
+            const value = parseInt(statNumber.textContent.replace(/[^0-9]/g, ''), 10);
+            animateCounter(statNumber, value);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      document.querySelectorAll('.stat-card').forEach(el => statObserver.observe(el));
+    }
+  </script>
+
+  <!-- Deferred Tracking Scripts (e.g., Microsoft Clarity, Hotjar) -->
+  <%- include('../Partials/tracking-scripts-deferred') %>
+</body>
+</html>
+```
+
+### Why this fixes your “ReferenceError”:
+
+1. **First line of `meta-tags-service.ejs`** is `<%- include('meta-tags-base') %>`.
+
+   * That “pulls in” the definitions of `truncateTitle`, `truncateDescription`, `generateDynamicKeywords`, and `safeServiceData` from `meta-tags-base.ejs`.
+   * Therefore, `truncateTitle(...)` is defined by the time you try to call it on line 3 of `meta-tags-service.ejs`.
+
+2. **`apartment-security.ejs` includes `meta-tags-service.ejs`** (passing `serviceData`). Because `meta-tags-service.ejs` immediately includes `meta-tags-base.ejs`, EJS can resolve `truncateTitle` without complaint.
+
+---
+
+## 5. How to Pass `serviceData` in Your Route
+
+In your Express (or whichever server) route handler, you must send a `serviceData` object. For example:
+
+```js
+// app.js (or wherever you define routes)
+app.get('/services/apartment-security', (req, res) => {
+  const serviceData = {
+    serviceTitle:       'Apartment Security Services',
+    serviceDescription: 'Professional security services for apartment complexes and residential communities',
+    serviceKeywords:    'apartment security, residential security, building security',
+    serviceImage:       'apartment-security.webp',
+    serviceUrl:         'apartment-security',
+    serviceType:        'apartment',
+    serviceBenefit:     'resident peace of mind and safety',
+    propertyType:       'apartment complex',
+    priceRange:         { low: 35, mid: 55, high: 85 },
+    serviceAltName:     'Residential Community Security',
+    serviceOutput:      'Enhanced resident safety and property protection',
+    audienceType:       'Property Managers and Residential Communities'
+  };
+
+  res.render('services/apartment-security', { serviceData });
+});
+```
+
+If you don’t pass `serviceData`, your partials will still work (because `meta-tags-base.ejs` has fallbacks), but you will see generic defaults instead of page‐specific titles/descriptions.
+
+---
+
+### Recap of Key Points
+
+1. **Define your helper functions only once** in `meta-tags-base.ejs`.
+2. **Always include** `meta-tags-base.ejs` *before* trying to call `truncateTitle` or any similar function.
+3. Give every partial its own distinct concern:
+
+   * `meta-tags-base.ejs` → helper functions + default data
+   * `meta-tags-service.ejs` → service-specific `<title>`, `<meta>`, OG/Twitter tags
+   * `performance-optimization.ejs` → preconnects, preloads, prefetches, inlined critical CSS
+   * `mobile-app-meta.ejs` → PWA icons & `<meta>` tags
+   * `schema-*.ejs` → all JSON-LD
+   * `tracking-scripts.ejs` → immediate analytics
+   * `tracking-scripts-deferred.ejs` → deferred analytics after page load
+   * `Header.ejs` / `Footer.ejs` → site header/footer markup
+
+By following these steps and using the exact code above, you will no longer see the `truncateTitle is not defined` error, and your includes will resolve correctly.
+
+---
+
+## 6. Final Check
+
+1. Create or confirm these two files:
+
+   * `/views/Partials/meta-tags-base.ejs`  (contains helper functions + `safeServiceData`)
+   * `/views/Partials/meta-tags-service.ejs` (includes `meta-tags-base.ejs` + outputs all `<meta>` / OG / Twitter tags)
+
+2. In `apartment-security.ejs` (under `/views/services/`), ensure the first include is:
+
+   ```ejs
+   <%- include('../Partials/meta-tags-service', serviceData) %>
+   ```
+
+   i.e. the path is exactly `../Partials/meta-tags-service`.
+
+3. Make sure the server’s route does:
+
+   ```js
+   res.render('services/apartment-security', { serviceData });
+   ```
+
+   so that `serviceData` is defined in the EJS scope.
+
+4. Restart your server (if necessary). Navigate to `/services/apartment-security`. The page should render without the `ReferenceError`.
+
+Once these partials and paths are in place, EJS will find `truncateTitle` (and all other helpers) immediately, and your template will compile successfully.
