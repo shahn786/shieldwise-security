@@ -1,0 +1,156 @@
+This error is occurring because the `truncateTitle` function isn't defined in your meta-tags-service.ejs file when it's being called. The error happens because your partials structure isn't properly passing or defining the necessary functions.
+
+Here's how to fix this issue:
+
+## The Problem:
+
+1. Your meta-tags-service.ejs includes meta-tags-base.ejs
+2. meta-tags-service.ejs is trying to use the `truncateTitle` function
+3. However, this function isn't available because:
+   - Either it's supposed to be defined in meta-tags-base.ejs but isn't
+   - Or it needs to be defined directly in meta-tags-service.ejs
+
+## The Solution:
+
+### Option 1: Move function definitions to meta-tags-base.ejs
+
+```ejs
+<!-- meta-tags-base.ejs -->
+<%
+// SEO Optimization Functions
+function truncateTitle(title, maxLength = 58) {
+  if (!title) return 'Security Services | ShieldWise';
+  const suffix = ' | ShieldWise';
+  const maxTitleLength = maxLength - suffix.length;
+  return title.length > maxTitleLength ? title.substring(0, maxTitleLength).trim() + '...' + suffix : title + suffix;
+}
+
+function truncateDescription(desc, maxLength = 155) {
+  if (!desc) return 'Professional security services in California. BSIS licensed guards, 24/7 monitoring. Call 1-800-SHIELD-1 for free assessment.';
+  return desc.length > maxLength ? desc.substring(0, maxLength).trim() + '...' : desc;
+}
+
+function generateDynamicKeywords(baseKeywords, serviceType, location = 'California') {
+  const base = baseKeywords || '';
+  const dynamic = `${serviceType} security, ${location} security company, licensed security guards, 24/7 security services`;
+  return base + (base ? ', ' : '') + dynamic;
+}
+%>
+
+<!-- Rest of meta-tags-base.ejs content -->
+```
+
+### Option 2: Define the functions in meta-tags-service.ejs
+
+```ejs
+<!-- meta-tags-service.ejs -->
+<%- include('meta-tags-base') %>
+<%
+// SEO Optimization Functions
+function truncateTitle(title, maxLength = 58) {
+  if (!title) return 'Security Services | ShieldWise';
+  const suffix = ' | ShieldWise';
+  const maxTitleLength = maxLength - suffix.length;
+  return title.length > maxTitleLength ? title.substring(0, maxTitleLength).trim() + '...' + suffix : title + suffix;
+}
+
+function truncateDescription(desc, maxLength = 155) {
+  if (!desc) return 'Professional security services in California. BSIS licensed guards, 24/7 monitoring. Call 1-800-SHIELD-1 for free assessment.';
+  return desc.length > maxLength ? desc.substring(0, maxLength).trim() + '...' : desc;
+}
+
+function generateDynamicKeywords(baseKeywords, serviceType, location = 'California') {
+  const base = baseKeywords || '';
+  const dynamic = `${serviceType} security, ${location} security company, licensed security guards, 24/7 security services`;
+  return base + (base ? ', ' : '') + dynamic;
+}
+
+// Set fallback values
+const safeServiceData = {
+  serviceTitle: serviceTitle || 'Professional Security Services',
+  serviceDescription: serviceDescription || 'Professional security services with licensed guards and 24/7 monitoring.',
+  serviceKeywords: serviceKeywords || 'security services, security guards',
+  serviceImage: serviceImage || 'default-security-service.webp',
+  serviceUrl: serviceUrl || 'security-services',
+  serviceType: serviceType || 'security',
+  serviceBenefit: serviceBenefit || 'enhanced protection and peace of mind',
+  propertyType: propertyType || 'property',
+  priceRange: priceRange || { low: 35, mid: 55, high: 85 },
+  serviceAltName: serviceAltName || 'Security Guard Services',
+  serviceOutput: serviceOutput || 'Enhanced security and protection',
+  audienceType: audienceType || 'Property Managers and Business Owners'
+};
+
+// Generate optimized content
+const optimizedTitle = truncateTitle(`${safeServiceData.serviceTitle} | 24/7 Guards from $${safeServiceData.priceRange.low}/hr`);
+const optimizedDescription = truncateDescription(`${safeServiceData.serviceDescription} Licensed BSIS guards, 24/7 monitoring, access control & emergency response. 4.9★ (287+ reviews). Call 1-800-SHIELD-1.`);
+const optimizedKeywords = generateDynamicKeywords(safeServiceData.serviceKeywords, safeServiceData.serviceType);
+%>
+
+<!-- Rest of meta-tags-service.ejs content -->
+```
+
+### Option 3: Properly pass the service data object and make sure it has all required properties
+
+Ensure you're correctly passing the `serviceData` object when you render the template:
+
+```javascript
+// In your route file (e.g., routes/services.js)
+router.get('/apartment-security', (req, res) => {
+  const serviceData = {
+    serviceTitle: 'Apartment Security Services',
+    serviceDescription: 'Professional security services for apartment complexes and residential communities.',
+    serviceKeywords: 'apartment security, residential security, building security',
+    serviceImage: 'apartment-security.webp',
+    serviceUrl: 'apartment-security',
+    serviceType: 'apartment',
+    serviceBenefit: 'resident peace of mind and safety',
+    propertyType: 'apartment complex',
+    priceRange: { low: 35, mid: 55, high: 85 },
+    serviceAltName: 'Residential Community Security',
+    serviceOutput: 'Enhanced resident safety and property protection',
+    audienceType: 'Property Managers and Residential Communities'
+  };
+  
+  res.render('services/apartment-security', { serviceData });
+});
+```
+
+## Check Your Folder Structure
+
+Make sure your directory structure matches your include paths:
+
+```
+views/
+├── Partials/
+│   ├── meta-tags-base.ejs
+│   ├── meta-tags-service.ejs
+│   ├── performance-optimization.ejs
+│   ├── mobile-app-meta.ejs
+│   ├── Header.ejs
+│   └── Footer.ejs
+└── services/
+    └── apartment-security.ejs
+```
+
+## Fix Your Include Statements
+
+In apartment-security.ejs, make sure you're properly passing the data:
+
+```ejs
+<%- include('../Partials/meta-tags-service', serviceData) %>
+```
+
+You might need to change this to:
+
+```ejs
+<%- include('../Partials/meta-tags-service', { 
+  serviceTitle: serviceData.serviceTitle, 
+  serviceDescription: serviceData.serviceDescription,
+  // ... include all other properties explicitly
+}) %>
+```
+
+This way, all the variables are available directly in the included template without having to extract them from `serviceData`.
+
+The key issue is that the functions defined in one template aren't automatically available in included templates. You need to either define them in each template where they're needed or create a shared helper module that's included everywhere.
