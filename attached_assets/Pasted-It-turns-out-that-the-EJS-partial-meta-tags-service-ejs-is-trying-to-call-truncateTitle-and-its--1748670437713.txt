@@ -1,0 +1,392 @@
+It turns out that the EJS partial meta-tags-service.ejs is trying to call truncateTitle(…) (and its friends) before those functions have actually been defined. In other words, by the time EJS “enters” meta-tags-service.ejs, it doesn’t yet know what truncateTitle is—that's why you see:
+
+vbnet
+Copy
+Edit
+ReferenceError: …/meta-tags-service.ejs:  
+const optimizedTitle = truncateTitle(…)  
+                    ^  
+truncateTitle is not defined
+Below is a step-by-step restructuring that will eliminate that error. The main idea is:
+
+Extract all of your helper functions (truncateTitle, truncateDescription, generateDynamicKeywords, plus the safeServiceData logic) into a separate file—let’s call it meta-helpers.ejs.
+
+Have meta-tags-service.ejs begin by including meta-helpers.ejs so that, when EJS gets to meta-tags-service.ejs, the helper functions are already in scope.
+
+Make sure the include(…) paths are correct relative to where each file lives.
+
+(Optionally) Add a route in your Express code so that you actually render services/apartment-security.ejs when you hit /services/apartment-security.
+
+Below is a minimal example of how your file layout might end up looking, as well as the contents of each EJS partial. Adjust the paths if your directories are named differently, but the pattern will be the same.
+
+1. Directory structure
+Assume a folder structure like this:
+
+pgsql
+Copy
+Edit
+/views
+  /Partials
+    meta-helpers.ejs
+    meta-tags-service.ejs
+    performance-optimization.ejs
+    mobile-app-meta.ejs
+    Header.ejs
+    Footer.ejs
+    schema-primary.ejs
+    schema-service.ejs
+    schema-faq-service.ejs
+    tracking-scripts.ejs
+    tracking-scripts-deferred.ejs
+  /services
+    apartment-security.ejs
+app.js  (or whatever your main Express server file is)
+We’ll show what goes in each of these:
+
+2. /views/Partials/meta-helpers.ejs
+Put all of the helper‐function definitions and the safeServiceData‐building logic in here. This file will be included at the very top of meta-tags-service.ejs.
+
+ejs
+Copy
+Edit
+<%
+// ────────────────────────────────────────────────────────────────────────────────
+// meta-helpers.ejs
+// ──
+// This file defines:
+//    • truncateTitle(…)
+//    • truncateDescription(…)
+//    • generateDynamicKeywords(…)
+//    • The "safeServiceData" object (filling in defaults if serviceData is missing).
+// ────────────────────────────────────────────────────────────────────────────────
+
+// Helper function: truncateTitle
+function truncateTitle(title, maxLength = 58) {
+  if (!title) return 'Security Services | ShieldWise';
+  const suffix = ' | ShieldWise';
+  const maxTitleLength = maxLength - suffix.length;
+  if (title.length > maxTitleLength) {
+    return title.substring(0, maxTitleLength).trim() + '...' + suffix;
+  } else {
+    return title + suffix;
+  }
+}
+
+// Helper function: truncateDescription
+function truncateDescription(desc, maxLength = 155) {
+  if (!desc) {
+    return 'Professional security services in California. BSIS licensed guards, 24/7 monitoring. Call 1-800-SHIELD-1 for free assessment.';
+  }
+  if (desc.length > maxLength) {
+    return desc.substring(0, maxLength).trim() + '...';
+  }
+  return desc;
+}
+
+// Helper function: generateDynamicKeywords
+function generateDynamicKeywords(baseKeywords, serviceType, location = 'California') {
+  const base = baseKeywords || '';
+  const dynamic = `${serviceType} security, ${location} security company, licensed security guards, 24/7 security services`;
+  return base + (base ? ', ' : '') + dynamic;
+}
+
+// Destructure serviceData if it exists; otherwise use an empty object
+const {
+  serviceTitle,
+  serviceDescription,
+  serviceKeywords,
+  serviceImage,
+  serviceUrl,
+  serviceType,
+  serviceBenefit,
+  propertyType,
+  priceRange,
+  serviceAltName,
+  serviceOutput,
+  audienceType
+} = typeof locals.serviceData !== 'undefined' ? serviceData : {};
+
+// Build a "safeServiceData" object, filling in defaults if any property is missing:
+const safeServiceData = {
+  serviceTitle:       serviceTitle       || 'Professional Security Services',
+  serviceDescription: serviceDescription || 'Professional security services with licensed guards and 24/7 monitoring.',
+  serviceKeywords:    serviceKeywords    || 'security services, security guards',
+  serviceImage:       serviceImage       || 'default-security-service.webp',
+  serviceUrl:         serviceUrl         || 'security-services',
+  serviceType:        serviceType        || 'security',
+  serviceBenefit:     serviceBenefit     || 'enhanced protection and peace of mind',
+  propertyType:       propertyType       || 'property',
+  priceRange:         priceRange         || { low: 35, mid: 55, high: 85 },
+  serviceAltName:     serviceAltName     || 'Security Guard Services',
+  serviceOutput:      serviceOutput      || 'Enhanced security and protection',
+  audienceType:       audienceType       || 'Property Managers and Business Owners'
+};
+%>
+What this does:
+
+Defines truncateTitle, truncateDescription, generateDynamicKeywords.
+
+Unpacks locals.serviceData (if it was passed in from your Express route) into individual variables.
+
+Builds a single safeServiceData object with sensible defaults if any field was missing.
+
+3. /views/Partials/meta-tags-service.ejs
+As soon as EJS enters this partial, we need those helper functions in scope. So the very first line is:
+
+ejs
+Copy
+Edit
+<%- include('meta-helpers') %>
+After that, we can safely call truncateTitle(…), etc., because they’ve already been defined by meta-helpers.ejs.
+
+ejs
+Copy
+Edit
+<%- include('meta-helpers') %>
+<%
+// ────────────────────────────────────────────────────────────────────────────────
+// meta-tags-service.ejs
+// ──
+// This partial builds all of your <head> meta tags (SEO, Open Graph, Twitter, etc.),
+// using the helper functions from meta-helpers.ejs.
+// ────────────────────────────────────────────────────────────────────────────────
+
+// Build optimized Title, Description, and Keywords using our helper functions:
+const optimizedTitle = truncateTitle(
+  `${safeServiceData.serviceTitle} | 24/7 Guards from $${safeServiceData.priceRange.low}/hr`
+);
+
+const optimizedDescription = truncateDescription(
+  `${safeServiceData.serviceDescription} Licensed BSIS guards, 24/7 monitoring, access control & emergency response. 4.9★ (287+ reviews). Call 1-800-SHIELD-1.`
+);
+
+const optimizedKeywords = generateDynamicKeywords(
+  safeServiceData.serviceKeywords,
+  safeServiceData.serviceType
+);
+%>
+
+<!-- Core SEO Meta Tags -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+<title><%= optimizedTitle %></title>
+<meta name="description" content="<%= optimizedDescription %>">
+<meta name="keywords" content="<%= optimizedKeywords %>">
+
+<!-- Enhanced News Keywords -->
+<meta name="news_keywords" content="<%= safeServiceData.serviceType %> security, california security, <%= safeServiceData.propertyType %> protection">
+
+<!-- AI-Search-Engine-Optimization Tags -->
+<meta name="ai-search-intent" content="Find professional <%= safeServiceData.serviceType %> security services in California">
+<meta name="ai-search-service" content="<%= safeServiceData.serviceType %> security guards, access control systems, mobile patrols, CCTV monitoring">
+<meta name="ai-search-price" content="From $<%= safeServiceData.priceRange.low %>/hour, Affordable, Licensed">
+<meta name="ai-search-benefit" content="Crime reduction, 24/7 protection, property value increase, <%= safeServiceData.serviceBenefit %>">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Professional <%= safeServiceData.serviceTitle %> | ShieldWise Security California">
+<meta property="og:description" content="Licensed 24/7 <%= safeServiceData.serviceType %> security guards for California. Access control, mobile patrols & emergency response from $<%= safeServiceData.priceRange.low %>/hour. 287+ verified reviews.">
+<meta property="og:image" content="https://shieldwisesecurity.com/img/<%= safeServiceData.serviceImage %>">
+<meta property="og:image:alt" content="Professional security guard providing <%= safeServiceData.serviceType %> security services">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://shieldwisesecurity.com/services/<%= safeServiceData.serviceUrl %>">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ShieldWise Security">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_US">
+<meta property="og:price:amount" content="<%= safeServiceData.priceRange.low %>">
+<meta property="og:price:currency" content="USD">
+<meta property="og:availability" content="instock">
+<meta property="og:brand" content="ShieldWise Security">
+<meta property="og:phone_number" content="+18007433531">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@ShieldWiseSec">
+<meta name="twitter:creator" content="@ShieldWiseSec">
+<meta name="twitter:title" content="Professional <%= safeServiceData.serviceTitle %> | ShieldWise Security">
+<meta name="twitter:description" content="Licensed 24/7 <%= safeServiceData.serviceType %> security guards for California. Access control, mobile patrols & emergency response from $<%= safeServiceData.priceRange.low %>/hour.">
+<meta name="twitter:image" content="https://shieldwisesecurity.com/img/<%= safeServiceData.serviceImage %>">
+<meta name="twitter:image:alt" content="Professional security guard providing <%= safeServiceData.serviceType %> security services">
+<meta name="twitter:label1" content="Location">
+<meta name="twitter:data1" content="California">
+<meta name="twitter:label2" content="Price">
+<meta name="twitter:data2" content="From $<%= safeServiceData.priceRange.low %>/hour">
+
+<!-- Canonical + Hreflang -->
+<link rel="canonical" href="https://shieldwisesecurity.com/services/<%= safeServiceData.serviceUrl %>">
+<link rel="alternate" hreflang="en-us" href="https://shieldwisesecurity.com/services/<%= safeServiceData.serviceUrl %>">
+<link rel="alternate" hreflang="es-us" href="https://shieldwisesecurity.com/es/servicios/<%= safeServiceData.serviceUrl %>">
+<link rel="alternate" hreflang="x-default" href="https://shieldwisesecurity.com/services/<%= safeServiceData.serviceUrl %>">
+
+<!-- (…Then all of your extra meta tags—geographic, social‐verification, PWA icons, etc.… ) -->
+Why this works:
+As soon as EJS reads meta-tags-service.ejs, the very first thing it does is include('meta-helpers').
+
+That “pulls in” all of the helper functions and the safeServiceData‐building code, so that by the time the next lines execute, EJS already knows what truncateTitle and safeServiceData mean.
+
+Now meta-tags-service.ejs can safely call truncateTitle(…), truncateDescription(…), generateDynamicKeywords(…), etc., without a ReferenceError.
+
+4. /views/services/apartment-security.ejs
+In your “services” folder, you’ll render the <head> by including meta-tags-service.ejs (passing along serviceData as locals). Make sure you pass serviceData into the view when you call res.render(…) in your Express route. For example:
+
+ejs
+Copy
+Edit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Include all of the meta tags & helper logic -->
+  <%- include('../Partials/meta-tags-service', { serviceData: serviceData }) %>
+  <%- include('../Partials/performance-optimization') %>
+  <%- include('../Partials/mobile-app-meta') %>
+
+  <!-- Essential CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link href="/css/apartment-security.css" rel="stylesheet">
+
+  <!-- JSON-LD & schema partials: -->
+  <%- include('../Partials/schema-primary') %>
+  <%- include('../Partials/schema-service', { serviceData: serviceData }) %>
+  <%- include('../Partials/schema-faq-service', { serviceData: serviceData }) %>
+  <%- include('../Partials/tracking-scripts') %>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <%- include('../Partials/Header') %>
+
+  <main id="main-content">
+    <!-- …the rest of your apartment‐security page content… -->
+    <section class="hero-section">
+      <div class="container">
+        <h1 class="hero-title speakable-intro">Professional Apartment Security Services</h1>
+        <p class="hero-subtitle speakable-intro">Protecting residential communities with comprehensive security solutions tailored to modern apartment living</p>
+      </div>
+    </section>
+    <!-- …etc.… -->
+  </main>
+
+  <%- include('../Partials/Footer') %>
+
+  <!-- (Any scripts at bottom of body, etc.) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" defer></script>
+  <%- include('../Partials/tracking-scripts-deferred') %>
+</body>
+</html>
+Key points:
+We call
+
+ejs
+Copy
+Edit
+<%- include('../Partials/meta-tags-service', { serviceData: serviceData }) %>
+Notice that we explicitly pass { serviceData: serviceData } as the second argument to include(…) so that inside meta-tags-service.ejs, locals.serviceData is the object you sent from Express.
+
+Because meta-tags-service.ejs does include('meta-helpers') at its top, the helper functions will be in scope, and you won’t get a ReferenceError.
+
+5. Express route in app.js (or your server file)
+You mentioned “in js file i don’t have any code related to apartment.ejs.” In order to render /views/services/apartment-security.ejs, you need a matching route in Express. For example, in app.js or server.js:
+
+js
+Copy
+Edit
+const express = require('express');
+const app = express();
+
+// Set your view engine to EJS (if you haven’t already):
+app.set('view engine', 'ejs');
+
+// …other middleware, static folders, etc…
+
+// Sample data object for “serviceData” (you might build this from your DB or just hard-code it temporarily)
+const exampleServiceData = {
+  serviceTitle: 'Apartment Security Services',
+  serviceDescription: 'Comprehensive residential security with on-site guards, CCTV, and mobile patrols.',
+  serviceKeywords: 'apartment security, residential security, on-site guards',
+  serviceImage: 'apartment-security.webp',
+  serviceUrl: 'apartment-security',
+  serviceType: 'apartment',
+  serviceBenefit: 'peace of mind for your tenants',
+  propertyType: 'apartment complex',
+  priceRange: { low: 45, mid: 65, high: 95 },
+  serviceAltName: 'Residential Apartment Security',
+  serviceOutput: 'Safe & Secure Apartment Community',
+  audienceType: 'Property Managers and Homeowners Associations'
+};
+
+// Add a route that renders your “apartment-security” view
+app.get('/services/apartment-security', (req, res) => {
+  // Pass our exampleServiceData (or come up with real data) into the template
+  res.render('services/apartment-security', { serviceData: exampleServiceData });
+});
+
+// If you want a generic “/services” overview page:
+app.get('/services', (req, res) => {
+  res.render('services', { /* maybe some generic data… */ });
+});
+
+app.listen(3000, () => {
+  console.log('Server is running on http://localhost:3000');
+});
+What this does:
+
+When you visit http://localhost:3000/services/apartment-security, Express will call res.render('services/apartment-security', { serviceData: exampleServiceData }).
+
+Because we passed { serviceData: … }, inside /views/services/apartment-security.ejs, locals.serviceData is available. Then the partial <%- include('../Partials/meta-tags-service', { serviceData: serviceData }) %> will see that serviceData object, pass it down, and meta-helpers.ejs (which is included inside meta-tags-service.ejs) will build safeServiceData from it.
+
+Finally, truncateTitle is already defined (because meta-helpers.ejs was included first), so optimizedTitle = truncateTitle(…) runs without error.
+
+6. Checklist for “no more ReferenceError”
+Make sure you named the file exactly meta-helpers.ejs (lowercase “m”) inside /views/Partials.
+
+In meta-tags-service.ejs, the very first line must be
+
+ejs
+Copy
+Edit
+<%- include('meta-helpers') %>
+(Note: since meta-tags-service.ejs lives in /views/Partials/, include('meta-helpers') will look for /views/Partials/meta-helpers.ejs.)
+
+Do not define helper functions a second time anywhere else; keep them only in meta-helpers.ejs.
+
+When you include meta-tags-service.ejs from your page (e.g. /views/services/apartment-security.ejs), be sure to pass { serviceData: serviceData } so that locals.serviceData is defined.
+
+Finally, start up your server and hit /services/apartment-security. You should no longer see “truncateTitle is not defined,” because by the time EJS sees const optimizedTitle = truncateTitle(…), that function already exists.
+
+Recap: “What changed from your original code?”
+You moved all helper‐function definitions (truncateTitle, truncateDescription, generateDynamicKeywords, plus safeServiceData logic) into one file: /views/Partials/meta-helpers.ejs.
+
+You put a single <%- include('meta-helpers') %> at the very top of /views/Partials/meta-tags-service.ejs.
+
+You adjusted your Express route so that res.render('services/apartment-security', { serviceData: … }) actually passes a serviceData object into your template.
+
+You made sure that the include path in apartment-security.ejs is:
+
+ejs
+Copy
+Edit
+<%- include('../Partials/meta-tags-service', { serviceData: serviceData }) %>
+so that the partial has the proper relative path.
+
+After these changes, EJS will find truncateTitle (and all your other helper functions) before it tries to invoke them, and your ReferenceError will disappear.
+
+That’s it. Once you have that structure in place, the order of operations is:
+
+EJS enters apartment-security.ejs.
+
+It sees <%- include('../Partials/meta-tags-service', { serviceData: serviceData }) %>.
+
+Inside meta-tags-service.ejs, at line 1 it does <%- include('meta-helpers') %>.
+
+That “pulls in” meta-helpers.ejs, so now truncateTitle is defined.
+
+Back in meta-tags-service.ejs, it calls truncateTitle(…) → no error.
+
+EJS spits out all of your <meta …> tags.
+
+Then apartment-security.ejs continues rendering the rest of the page (CSS links, <body>, etc.).
