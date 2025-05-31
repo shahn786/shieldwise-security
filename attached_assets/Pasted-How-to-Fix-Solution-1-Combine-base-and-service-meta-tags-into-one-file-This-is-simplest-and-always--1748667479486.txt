@@ -1,0 +1,97 @@
+How to Fix
+Solution 1: Combine base and service meta-tags into one file
+This is simplest and always works, but if you want to keep things DRY and modular, see Solution 2.
+
+Solution 2: Use EJS partials as pure JS, not just templates
+To use helper functions across partials, you have two options:
+
+A. Move your helper functions to a separate .js file, then require/import it in your route and pass it to EJS context
+Example:
+
+helpers/metaHelpers.js
+
+js
+Copy
+Edit
+// helpers/metaHelpers.js
+module.exports = {
+  truncateTitle: function (title, maxLength = 58) {
+    // ... your code
+  },
+  truncateDescription: function (desc, maxLength = 155) {
+    // ... your code
+  },
+  generateDynamicKeywords: function (baseKeywords, serviceType, location = 'California') {
+    // ... your code
+  }
+};
+In your route:
+
+js
+Copy
+Edit
+const metaHelpers = require('../helpers/metaHelpers');
+// ...
+res.render('services/apartment-security', {
+  serviceData,
+  metaHelpers // Pass helpers to EJS
+});
+In your EJS:
+
+ejs
+Copy
+Edit
+<% const { truncateTitle, truncateDescription, generateDynamicKeywords } = metaHelpers; %>
+Now you can use these helpers anywhere in your template and partials.
+
+B. Include the helper function code at the top of meta-tags-service.ejs (quickest hack)
+Just copy/paste your helper functions at the top of meta-tags-service.ejs so they’re available there, or use the EJS "include as code" trick (see below).
+
+C. Use EJS’s “include as code”
+Instead of rendering the partial, execute it as code:
+
+ejs
+Copy
+Edit
+<% include('meta-tags-base') %>
+NOT
+
+ejs
+Copy
+Edit
+<%- include('meta-tags-base') %>
+<% include ... %> just runs the code, does not output the result.
+
+<%- include ... %> renders the output.
+
+So, at the top of meta-tags-service.ejs, change:
+
+ejs
+Copy
+Edit
+<%- include('meta-tags-base') %>
+to
+
+ejs
+Copy
+Edit
+<% include('meta-tags-base') %>
+Summary Table
+Fix	What to change	How
+Quickest fix	Use <% include('meta-tags-base') %>	Functions will be defined in the scope
+Best practice	Move helpers to JS and pass as locals	Functions are reusable everywhere
+
+What you should do now
+Open /views/Partials/meta-tags-service.ejs
+
+Replace
+<%- include('meta-tags-base') %>
+with
+<% include('meta-tags-base') %>
+
+Save and rerun your app.
+
+Extra Note
+If your helpers are large, consider the JS helper approach for maintainability and to avoid code duplication.
+
+If you still get errors, make sure the helper functions are not inside another block scope, and aren’t being overwritten.
