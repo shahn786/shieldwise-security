@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-
-    <%- include('../Partials/meta-tags') %>
+    <%- include('../Partials/meta-tags-service', serviceData) %>
     <%- include('../Partials/performance-optimization') %>
     <%- include('../Partials/mobile-app-meta') %>
 
@@ -14,9 +11,11 @@
     <link href="/css/apartment-security.css" rel="stylesheet">
 
     <%- include('../Partials/schema-primary') %>
-    <%- include('../Partials/schema-faq') %>
+    <%- include('../Partials/schema-service', serviceData) %>
+    <%- include('../Partials/schema-faq-service', serviceData) %>
     <%- include('../Partials/tracking-scripts') %>
 </head>
+        
 <body>
     <%- include('../Partials/Header') %>
 
@@ -350,6 +349,24 @@
     </main>
 
     <%- include('../Partials/Footer') %>
+        <!-- Structured Data for Voice Search -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [
+              ".speakable-intro",
+              ".speakable-services",
+              ".speakable-contact"
+            ]
+          },
+          "url": "https://shieldwisesecurity.com/services/apartment-security"
+        }
+        </script>
+
+        
 
     <!-- Essential Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -424,8 +441,36 @@
             statObserver.observe(el);
         });
     </script>
+        <%
+        const serviceData = {
+            serviceType: 'apartment',
+            serviceTitle: 'California Apartment Security Services',
+            serviceDescription: 'Trusted apartment security services throughout California.',
+            serviceKeywords: 'apartment security services, residential security guards, apartment complex security, gated community security, 24/7 apartment security patrol, licensed apartment security guards, residential security California',
+            serviceImage: 'apartment-security-guards-california.jpg',
+            serviceUrl: 'apartment-security',
+            serviceBenefit: 'tenant safety and retention',
+            serviceAltName: 'Residential Security Services',
+            serviceOutput: 'Enhanced security and reduced crime in apartment complexes',
+            audienceType: 'Property Managers, HOAs, Apartment Owners',
+            propertyType: 'apartment complex',
+            relatedProperty: 'gated communities and HOAs',
+            specializedServices: 'gatehouse staffing, resident verification systems, amenity monitoring, community patrols, parking enforcement, package management',
+            industryType: 'HOA',
+            clientType: 'resident',
+            managerType: 'property managers',
+            assessmentSpecifics: 'landscaping review, amenity area security, parking lot vulnerability assessment',
+            priceRange: {
+                low: '35',
+                mid: '45',
+                high: '75'
+            }
+        };
+        %>
+
 
     <!-- Deferred Tracking Scripts -->
     <%- include('../Partials/tracking-scripts-deferred') %>
+        
 </body>
 </html>

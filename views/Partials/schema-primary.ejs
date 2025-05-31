@@ -1,44 +1,26 @@
+<!-- Primary Organization & Business Schemas -->
 
 <!-- Main Business Schema -->
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SecurityService",
-  "name": "ShieldWise Security Services",
-  "url": "https://shieldwisesecurity.com",
-  "logo": "https://shieldwisesecurity.com/img/logo.png",
-  "image": "https://shieldwisesecurity.com/img/apartment-security-guards-california.jpg",
-  "description": "Professional 24/7 apartment security services throughout California. BSIS-licensed guards, access control systems, mobile patrols, and emergency response for residential properties.",
-  "slogan": "Protecting Residential Communities Since 2005",
-  "priceRange": "$35-$75/hour",
-  "telephone": "+18007443531",
-  "email": "info@shieldwisesecurity.com",
-  "foundingDate": "2005-04-15",
-  "currenciesAccepted": "USD",
-  "paymentAccepted": "Credit Card, Debit Card, Check, Wire Transfer",
-  "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
-  "areaServed": [
-    { "@type": "State", "name": "California" },
-    { "@type": "City", "name": "Los Angeles" },
-    { "@type": "City", "name": "San Francisco" },
-    { "@type": "City", "name": "San Diego" },
-    { "@type": "City", "name": "Orange County" },
-    { "@type": "City", "name": "Sacramento" }
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "123 Security Boulevard",
-    "addressLocality": "Los Angeles",
-    "addressRegion": "CA",
-    "postalCode": "90001",
-    "addressCountry": "US"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "287",
-    "bestRating": "5",
-    "worstRating": "1"
-  }
-}
+{"@context":"https://schema.org","@type":"SecurityService","name":"ShieldWise Security Services","url":"https://shieldwisesecurity.com","logo":"https://shieldwisesecurity.com/img/logo.png","image":"https://shieldwisesecurity.com/img/shieldwise-security-headquarters.jpg","description":"Professional 24/7 security services throughout California. BSIS-licensed guards, access control systems, mobile patrols, and emergency response for residential and commercial properties.","slogan":"Protecting California Communities Since 2005","priceRange":"$35-$95/hour","telephone":"+18007443531","email":"info@shieldwisesecurity.com","foundingDate":"2005-04-15","currenciesAccepted":"USD","paymentAccepted":"Credit Card, Debit Card, Check, Wire Transfer, ACH","openingHours":"Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59","areaServed":[{"@type":"State","name":"California"},{"@type":"City","name":"Los Angeles"},{"@type":"City","name":"San Francisco"},{"@type":"City","name":"San Diego"},{"@type":"City","name":"Sacramento"},{"@type":"City","name":"Orange County"}],"address":{"@type":"PostalAddress","streetAddress":"123 Security Boulevard","addressLocality":"Los Angeles","addressRegion":"CA","postalCode":"90001","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"287","bestRating":"5","worstRating":"1"},"sameAs":["https://www.facebook.com/ShieldWiseSecurity","https://twitter.com/ShieldWiseSec","https://www.linkedin.com/company/shieldwise-security","https://www.instagram.com/shieldwisesecurity"],"hasCredential":["California Bureau of Security and Investigative Services (BSIS) License #12345","National Association of Security Companies Certification"]}
+</script>
+
+<!-- Organization Schema -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"ShieldWise Security Services","legalName":"ShieldWise Security Services Inc.","url":"https://shieldwisesecurity.com","logo":"https://shieldwisesecurity.com/img/logo.png","foundingDate":"2005-04-15","founders":[{"@type":"Person","name":"John Shield","jobTitle":"CEO & Founder"}],"address":{"@type":"PostalAddress","streetAddress":"123 Security Boulevard","addressLocality":"Los Angeles","addressRegion":"CA","postalCode":"90001","addressCountry":"US"},"contactPoint":[{"@type":"ContactPoint","telephone":"+18007443531","contactType":"customer service","areaServed":"California","availableLanguage":["English","Spanish"]},{"@type":"ContactPoint","telephone":"+18007443533","contactType":"emergencies","areaServed":"California","availableLanguage":["English","Spanish"]}],"numberOfEmployees":{"@type":"QuantitativeValue","value":350}}
+</script>
+
+<!-- LocalBusiness Schema -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"ShieldWise Security Services - Los Angeles HQ","image":"https://shieldwisesecurity.com/img/los-angeles-office.jpg","url":"https://shieldwisesecurity.com/locations/los-angeles","telephone":"+12134567890","email":"losangeles@shieldwisesecurity.com","priceRange":"$$$","address":{"@type":"PostalAddress","streetAddress":"123 Security Boulevard","addressLocality":"Los Angeles","addressRegion":"CA","postalCode":"90001","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":34.052235,"longitude":-118.243683},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"}}
+</script>
+
+<!-- BreadcrumbList Schema -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shieldwisesecurity.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://shieldwisesecurity.com/services/"}]}
+</script>
+
+<!-- WebSite Schema -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"ShieldWise Security Services","url":"https://shieldwisesecurity.com","potentialAction":{"@type":"SearchAction","target":"https://shieldwisesecurity.com/search?q={search_term_string}","query-input":"required name=search_term_string"},"sameAs":["https://www.facebook.com/ShieldWiseSecurity","https://twitter.com/ShieldWiseSec","https://www.linkedin.com/company/shieldwise-security"]}
 </script>

@@ -1,0 +1,89 @@
+<!-- Dynamic FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does <%= serviceType %> security service include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our comprehensive <%= serviceType %> security services include 24/7 on-site security guards, access control systems, CCTV monitoring, mobile patrols, visitor management, emergency response, and detailed incident reporting. We create customized security plans based on your <%= propertyType %>'s specific needs and vulnerabilities. All services are backed by our 100% satisfaction guarantee."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do <%= serviceType %> security guards cost in California?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<%= serviceType.charAt(0).toUpperCase() + serviceType.slice(1) %> security guard services in California typically range from $<%= priceRange.low %>-<%= priceRange.high %> per hour depending on the level of service, location, and specific requirements. Basic unarmed guards start at $<%= priceRange.low %>/hour, while armed guards or specialized security personnel range from $<%= priceRange.mid %>-<%= priceRange.high %>/hour. We offer customized quotes based on your <%= propertyType %>'s needs, with discounts available for long-term contracts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are your <%= serviceType %> security guards licensed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all our security guards are licensed by the California Bureau of Security and Investigative Services (BSIS) and undergo comprehensive training specific to <%= serviceType %> security protocols. Our guards receive over 80 hours of initial training, plus monthly continuing education. All guards are background-checked, drug-tested, and fully insured with $2 million liability coverage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can you deploy security guards to my <%= propertyType %>?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We can deploy security guards to your <%= propertyType %> within 24 hours for emergency situations. For standard service contracts, we typically complete property assessment, create a security plan, and deploy guards within 2-5 business days. Our rapid response team is available 24/7 for immediate security concerns."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes ShieldWise better than other <%= serviceType %> security companies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ShieldWise Security stands out with our 20+ years of specialized <%= serviceType %> security experience, 4.9-star rating from 287+ verified reviews, proprietary threat assessment methodology, custom security plans, and cutting-edge technology integration. Unlike competitors, all our guards are full-time employees (not contractors), receive extensive training specific to <%= serviceType %> settings, and are supported by our 24/7 command center."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide security services for <%= relatedProperty %>?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we provide comprehensive security services specifically designed for <%= relatedProperty %> throughout California. Our services include <%= specializedServices %>, and customized security protocols that align with <%= industryType %> regulations and guidelines."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas of California do you serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ShieldWise Security provides <%= serviceType %> security services throughout California, with primary service areas including Los Angeles County, Orange County, San Diego County, San Francisco Bay Area, Sacramento, and Inland Empire. We have regional offices in Los Angeles, San Francisco, and San Diego to ensure prompt service and local expertise."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you integrate with our existing security systems?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our security solutions are designed to integrate seamlessly with your existing systems. Whether you have legacy access control, CCTV cameras, or alarm systems, our technical team can integrate with most major manufacturers and platforms. We provide a comprehensive assessment of your current systems and recommend integration strategies that maximize your security investment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you measure the effectiveness of your <%= serviceType %> security services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We implement comprehensive performance metrics including incident reduction rates, response times, <%= clientType %> satisfaction surveys, and regular security audits. Our proprietary security dashboard provides <%= managerType %> with real-time data on security activities, incidents, and trends. We conduct quarterly performance reviews with all clients to ensure security objectives are being met and to adjust strategies as needed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer security assessment for <%= propertyType %>?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we offer comprehensive security assessments for <%= propertyType %> of all sizes. Our assessment includes access point analysis, lighting evaluation, <%= assessmentSpecifics %>, existing technology evaluation, and <%= clientType %> security survey. Following the assessment, we provide a detailed report with prioritized recommendations and implementation options."
+      }
+    }
+  ]
+}
+</script>

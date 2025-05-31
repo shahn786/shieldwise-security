@@ -1,0 +1,90 @@
+<%
+// SEO Optimization Functions
+function truncateTitle(title, maxLength = 58) {
+  if (!title) return 'Security Services | ShieldWise';
+  const suffix = ' | ShieldWise';
+  const maxTitleLength = maxLength - suffix.length;
+  return title.length > maxTitleLength ? title.substring(0, maxTitleLength).trim() + '...' + suffix : title + suffix;
+}
+
+function truncateDescription(desc, maxLength = 155) {
+  if (!desc) return 'Professional security services in California. BSIS licensed guards, 24/7 monitoring. Call 1-800-SHIELD-1 for free assessment.';
+  return desc.length > maxLength ? desc.substring(0, maxLength).trim() + '...' : desc;
+}
+
+function generateDynamicKeywords(baseKeywords, serviceType, location = 'California') {
+  const base = baseKeywords || '';
+  const dynamic = `${serviceType} security, ${location} security company, licensed security guards, 24/7 security services`;
+  return base + (base ? ', ' : '') + dynamic;
+}
+
+// Set fallback values
+const safeServiceData = {
+  serviceTitle: serviceTitle || 'Professional Security Services',
+  serviceDescription: serviceDescription || 'Professional security services with licensed guards and 24/7 monitoring.',
+  serviceKeywords: serviceKeywords || 'security services, security guards',
+  serviceImage: serviceImage || 'default-security-service.webp',
+  serviceUrl: serviceUrl || 'security-services',
+  serviceType: serviceType || 'security',
+  serviceBenefit: serviceBenefit || 'enhanced protection and peace of mind',
+  propertyType: propertyType || 'property',
+  priceRange: priceRange || { low: 35, mid: 55, high: 85 },
+  serviceAltName: serviceAltName || 'Security Guard Services',
+  serviceOutput: serviceOutput || 'Enhanced security and protection',
+  audienceType: audienceType || 'Property Managers and Business Owners'
+};
+
+// Generate optimized content
+const optimizedTitle = truncateTitle(`${safeServiceData.serviceTitle} | 24/7 Guards from $${safeServiceData.priceRange.low}/hr`);
+const optimizedDescription = truncateDescription(`${safeServiceData.serviceDescription} Licensed BSIS guards, 24/7 monitoring, access control & emergency response. 4.9★ (287+ reviews). Call 1-800-SHIELD-1.`);
+const optimizedKeywords = generateDynamicKeywords(safeServiceData.serviceKeywords, safeServiceData.serviceType);
+%>
+
+<!-- Service-Specific Meta Tags -->
+<!-- Core SEO Meta Tags -->
+<title><%= optimizedTitle %></title>
+<meta name="description" content="<%= optimizedDescription %>">
+<meta name="keywords" content="<%= optimizedKeywords %>">
+
+<!-- Enhanced News Keywords -->
+<meta name="news_keywords" content="<%= safeServiceData.serviceType %> security, california security, <%= safeServiceData.propertyType %> protection">
+
+<!-- AI Search Engine Optimization Tags -->
+<meta name="ai-search-intent" content="Find professional <%= safeServiceData.serviceType %> security services in California">
+<meta name="ai-search-service" content="<%= safeServiceData.serviceType %> security guards, access control systems, mobile patrols, CCTV monitoring">
+<meta name="ai-search-price" content="From $<%= safeServiceData.priceRange.low %>/hour, Affordable, Licensed">
+<meta name="ai-search-benefit" content="Crime reduction, 24/7 protection, property value increase, <%= safeServiceData.serviceBenefit %>">
+
+<!-- Enhanced Open Graph Meta Tags -->
+<meta property="og:title" content="Professional <%= safeServiceData.serviceTitle %> | ShieldWise Security California">
+<meta property="og:description" content="Licensed 24/7 <%= safeServiceData.serviceType %> security guards for California. Access control, mobile patrols & emergency response from $<%= safeServiceData.priceRange.low %>/hour. 287+ verified reviews.">
+<meta property="og:image" content="https://shieldwisesecurity.com/img/<%= safeServiceData.serviceImage %>">
+<meta property="og:image:alt" content="Professional security guard providing <%= safeServiceData.serviceType %> security services">
+<meta property="og:url" content="https://shieldwisesecurity.com/services/<%= safeServiceData.serviceUrl %>">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ShieldWise Security">
+<meta property="og:locale" content="en_US">
+<meta property="og:price:amount" content="<%= safeServiceData.priceRange.low %>">
+<meta property="og:price:currency" content="USD">
+<meta property="og:availability" content="instock">
+<meta property="og:brand" content="ShieldWise Security">
+<meta property="og:phone_number" content="+18007443531">
+
+<!-- Enhanced Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@ShieldWiseSec">
+<meta name="twitter:creator" content="@ShieldWiseSec">
+<meta name="twitter:title" content="Professional <%= safeServiceData.serviceTitle %> | ShieldWise Security">
+<meta name="twitter:description" content="Licensed 24/7 <%= safeServiceData.serviceType %> security guards for California. Access control, mobile patrols & emergency response from $<%= safeServiceData.priceRange.low %>/hour.">
+<meta name="twitter:image" content="https://shieldwisesecurity.com/img/<%= safeServiceData.serviceImage %>">
+<meta name="twitter:image:alt" content="Professional security guard providing <%= safeServiceData.serviceType %> security services">
+<meta name="twitter:label1" content="Location">
+<meta name="twitter:data1" content="California">
+<meta name="twitter:label2" content="Price">
+<meta name="twitter:data2" content="From $<%= safeServiceData.priceRange.low %>/hour">
+
+<!-- SINGLE SOURCE OF TRUTH: Canonical URL & Hreflang -->
+<link rel="canonical" href="https://shieldwisesecurity.com/services/<%= safeServiceData.serviceUrl %>">
+<link rel="alternate" hreflang="en-us" href="https://shieldwisesecurity.com/services/<%= safeServiceData.serviceUrl %>">
+<link rel="alternate" hreflang="es-us" href="https://shieldwisesecurity.com/es/servicios/<%= safeServiceData.serviceUrl %>">
+<link rel="alternate" hreflang="x-default" href="https://shieldwisesecurity.com/services/<%= safeServiceData.serviceUrl %>">

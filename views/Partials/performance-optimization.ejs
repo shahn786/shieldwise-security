@@ -1,22 +1,40 @@
+<!-- Enhanced Performance Optimization -->
 
-<!-- Canonical URL -->
-<link rel="canonical" href="https://shieldwisesecurity.com/services/apartment-security">
-
-<!-- Hreflang Tags for Language/Region Variants -->
-<link rel="alternate" hreflang="en-us" href="https://shieldwisesecurity.com/services/apartment-security">
-<link rel="alternate" hreflang="es-us" href="https://shieldwisesecurity.com/es/servicios/seguridad-de-apartamentos">
-<link rel="alternate" hreflang="x-default" href="https://shieldwisesecurity.com/services/apartment-security">
-
-<!-- Preconnect to Important Resources -->
+<!-- Critical Resource Preconnections -->
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
 <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
-<!-- Performance Optimization -->
+<!-- Critical Resource Preloading -->
 <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/img/hero-apartment-security.webp" as="image" fetchpriority="high">
+<link rel="preload" href="/img/hero-<%= serviceType || 'security' %>-service.webp" as="image" fetchpriority="high">
 <link rel="preload" href="/css/critical-path.css" as="style">
+<link rel="preload" href="/css/<%= serviceType || 'apartment' %>-security.css" as="style">
+
+<!-- DNS Prefetching for External Resources -->
 <link rel="dns-prefetch" href="https://www.google.com">
 <link rel="dns-prefetch" href="https://maps.googleapis.com">
+<link rel="dns-prefetch" href="https://connect.facebook.net">
+<link rel="dns-prefetch" href="https://www.linkedin.com">
+
+<!-- Strategic Resource Prefetching -->
+<link rel="prefetch" href="/services/commercial-security">
+<link rel="prefetch" href="/services/armed-security">
+<link rel="prefetch" href="/services/mobile-patrol">
+<link rel="prefetch" href="/img/guard-team.webp">
+
+<!-- Resource Hints for Better Performance -->
+<link rel="modulepreload" href="/js/critical.js">
+<link rel="preload" href="/api/security-assessment" as="fetch" crossorigin="anonymous">
+
+<!-- Early Hints for Critical CSS -->
+<style>
+/* Critical above-the-fold CSS inlined */
+.hero-section{background-color:#1a3c64;min-height:60vh}
+.navbar{background-color:#fff;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+.btn-primary{background-color:#2b5797;border-color:#2b5797}
+.loading-placeholder{background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);animation:loading 1.5s infinite}
+@keyframes loading{0%{background-position:-200px 0}100%{background-position:calc(200px + 100%) 0}}
+</style>
