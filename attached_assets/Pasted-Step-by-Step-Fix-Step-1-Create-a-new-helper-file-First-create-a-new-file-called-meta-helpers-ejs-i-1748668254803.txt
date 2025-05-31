@@ -1,11 +1,13 @@
+Step-by-Step Fix
+Step 1: Create a new helper file
+First, create a new file called meta-helpers.ejs in your Partials directory:
 
-<%
-/**
- * Helper functions for meta tags
- */
+Navigate to /home/runner/workspace/views/Partials/
+Create a new file named meta-helpers.ejs
+Copy and paste this exact code into the file:
 
+ejs<%
 // Helper function: truncateTitle
-// Ensures <title> never exceeds about 58 characters (minus the suffix).
 function truncateTitle(title, maxLength = 58) {
   if (!title) return 'Security Services | ShieldWise';
   const suffix = ' | ShieldWise';
@@ -18,7 +20,6 @@ function truncateTitle(title, maxLength = 58) {
 }
 
 // Helper function: truncateDescription
-// Ensures <meta name="description"> never exceeds about 155 characters.
 function truncateDescription(desc, maxLength = 155) {
   if (!desc) {
     return 'Professional security services in California. BSIS licensed guards, 24/7 monitoring. Call 1-800-SHIELD-1 for free assessment.';
@@ -30,13 +31,19 @@ function truncateDescription(desc, maxLength = 155) {
 }
 
 // Helper function: generateDynamicKeywords
-// Combines baseKeywords + serviceType phrases + "California security company" snippet.
 function generateDynamicKeywords(baseKeywords, serviceType, location = 'California') {
   const base = baseKeywords || '';
   const dynamic = `${serviceType} security, ${location} security company, licensed security guards, 24/7 security services`;
   return base + (base ? ', ' : '') + dynamic;
 }
+%>
+Step 2: Modify meta-tags-base.ejs
 
+Open /home/runner/workspace/views/Partials/meta-tags-base.ejs
+Replace its entire content with:
+
+ejs<%- include('meta-helpers') %>
+<%
   // First, pull in any "serviceData" that was passed down from the route:
   //   res.render('services/apartment-security', { serviceData });
   //
@@ -75,3 +82,51 @@ function generateDynamicKeywords(baseKeywords, serviceType, location = 'Californ
     audienceType:       audienceType       || 'Property Managers and Business Owners'
   };
 %>
+Step 3: Modify meta-tags-service.ejs
+
+Open /home/runner/workspace/views/Partials/meta-tags-service.ejs
+Replace the beginning of the file (the first few lines) with:
+
+ejs<%- include('meta-helpers') %>
+<%- include('meta-tags-base') %>
+<%
+  //
+  // meta-tags-service.ejs
+  // After including meta-tags-base.ejs (which defines our helper functions
+  // and safeServiceData), we now generate the optimized <title>, <meta>, and OG/Twitter tags.
+  //
+
+  // Build optimized Title, Description, and Keywords using our helper functions:
+  const optimizedTitle = truncateTitle(
+    `${safeServiceData.serviceTitle} | 24/7 Guards from $${safeServiceData.priceRange.low}/hr`
+  );
+
+  const optimizedDescription = truncateDescription(
+    `${safeServiceData.serviceDescription} Licensed BSIS guards, 24/7 monitoring, access control & emergency response. 4.9★ (287+ reviews). Call 1-800-SHIELD-1.`
+  );
+
+  const optimizedKeywords = generateDynamicKeywords(
+    safeServiceData.serviceKeywords,
+    safeServiceData.serviceType
+  );
+%>
+Alternative Direct Fix (if you can't create a new file)
+If you're unable to create a new file for any reason, you can use this direct fix:
+
+Open /home/runner/workspace/views/services/apartment-security.ejs
+Change line 5 from:
+ejs<%- include('../Partials/meta-tags-service', serviceData) %>
+to:
+ejs<%- include('../Partials/meta-tags-base', serviceData) %>
+<%- include('../Partials/meta-tags-service', serviceData) %>
+
+
+This ensures both files are included in the correct order, making the helper functions available in both contexts.
+Verification
+After making these changes, run your application again. The error "truncateTitle is not defined" should be resolved because:
+
+We've created a separate file with all helper functions
+We're including this file in both templates that need to use these functions
+The functions are now in scope where they're being called
+
+The issue was that meta-tags-service.ejs was trying to use functions defined in meta-tags-base.ejs, but those functions weren't accessible in the scope of meta-tags-service.ejs. By creating a separate helper file and including it in both templates, we've fixed this scope issue.RetryClaude can make mistakes. Please double-check responses.
