@@ -1,3 +1,4 @@
+
 <%
 // views/Partials/meta-helpers.ejs
 // This file MUST exist and contain these helper functions
@@ -46,7 +47,7 @@ const {
   serviceAltName,
   serviceOutput,
   audienceType
-} = typeof locals.serviceData !== 'undefined' ? locals.serviceData : {};
+} = typeof locals !== 'undefined' && typeof locals.serviceData !== 'undefined' ? locals.serviceData : {};
 
 // Now build a "safeServiceData" object, filling in defaults if any property is missing:
 const safeServiceData = {

@@ -179,6 +179,26 @@ app.get('/services/apartment-security', (req, res) => {
 // Routes
 app.get("/", (req, res) => res.render("index"));
 
+// Apartment Security Service Route
+app.get('/services/apartment-security', (req, res) => {
+    const serviceData = {
+        serviceTitle: 'Apartment Security Services',
+        serviceDescription: 'Comprehensive residential security with on-site guards, CCTV monitoring, access control, and mobile patrols for apartment complexes and residential communities.',
+        serviceKeywords: 'apartment security, residential security, on-site guards, CCTV monitoring, access control',
+        serviceImage: 'apartmentsecurity.webp',
+        serviceUrl: 'apartment-security',
+        serviceType: 'apartment',
+        serviceBenefit: 'peace of mind for residents and property managers',
+        propertyType: 'apartment complex',
+        priceRange: { low: 45, mid: 65, high: 95 },
+        serviceAltName: 'Residential Apartment Security Services',
+        serviceOutput: 'Safe & Secure Apartment Community',
+        audienceType: 'Property Managers and Homeowners Associations'
+    };
+
+    res.render('services/apartment-security', { serviceData: serviceData });
+});
+
 // Register Route
 app.get("/register", (req, res) => {
   const loggedIn = req.isAuthenticated ? req.isAuthenticated() : false;
