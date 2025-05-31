@@ -87,3 +87,50 @@
   ]
 }
 </script>
+<%
+// Extract serviceData for FAQ schema
+const faqServiceData = typeof locals.serviceData !== 'undefined' ? serviceData : {};
+const serviceTypeForFAQ = faqServiceData.serviceType || 'security';
+%>
+
+<!-- FAQ Schema for Service -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much do <%= serviceTypeForFAQ %> security services cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our <%= serviceTypeForFAQ %> security services start at $<%= (faqServiceData.priceRange && faqServiceData.priceRange.low) ? faqServiceData.priceRange.low : '35' %> per hour. Pricing varies based on service type, location, and duration. Contact us for a free customized quote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are your security guards licensed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all our security guards are BSIS (Bureau of Security and Investigative Services) licensed in California. We ensure all personnel meet state requirements and undergo continuous training."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide 24/7 <%= serviceTypeForFAQ %> security services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we provide 24/7 <%= serviceTypeForFAQ %> security services throughout California. Our teams are available around the clock for immediate response and ongoing protection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas do you serve for <%= serviceTypeForFAQ %> security?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We provide <%= serviceTypeForFAQ %> security services throughout California, including Los Angeles, San Francisco, San Diego, Orange County, Sacramento, and surrounding areas."
+      }
+    }
+  ]
+}
+</script>

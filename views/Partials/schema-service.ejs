@@ -281,3 +281,46 @@
   }
 }
 </script>
+<%
+// Extract serviceData for schema
+const schemaServiceData = typeof locals.serviceData !== 'undefined' ? serviceData : {};
+%>
+
+<!-- Service-Specific Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "<%= schemaServiceData.serviceTitle || 'Professional Security Services' %>",
+  "description": "<%= schemaServiceData.serviceDescription || 'Professional security services with licensed guards and 24/7 monitoring.' %>",
+  "provider": {
+    "@type": "Organization",
+    "name": "ShieldWise Security Services",
+    "url": "https://shieldwisesecurity.com"
+  },
+  "serviceType": "<%= schemaServiceData.serviceType || 'security' %> security services",
+  "areaServed": {
+    "@type": "State",
+    "name": "California"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "<%= schemaServiceData.serviceType || 'Security' %> Service Packages",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Basic <%= schemaServiceData.serviceType || 'Security' %> Package"
+        },
+        "price": "<%= (schemaServiceData.priceRange && schemaServiceData.priceRange.low) ? schemaServiceData.priceRange.low : '35' %>",
+        "priceCurrency": "USD"
+      }
+    ]
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "<%= schemaServiceData.audienceType || 'Property Managers and Business Owners' %>"
+  }
+}
+</script>

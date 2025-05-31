@@ -38,3 +38,31 @@
 .loading-placeholder{background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);animation:loading 1.5s infinite}
 @keyframes loading{0%{background-position:-200px 0}100%{background-position:calc(200px + 100%) 0}}
 </style>
+<!-- DNS Prefetch for External Resources -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//stackpath.bootstrapcdn.com">
+<link rel="dns-prefetch" href="//code.jquery.com">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+
+<!-- Preconnect to Critical External Domains -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+<!-- Preload Critical CSS -->
+<link rel="preload" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></noscript>
+
+<!-- Critical CSS Inline -->
+<style>
+.hero-section{background:linear-gradient(135deg,#1a3c64 0%,#2d5a87 100%);color:#fff;padding:100px 0;text-align:center}
+.hero-title{font-size:3rem;font-weight:700;margin-bottom:20px}
+.hero-subtitle{font-size:1.2rem;margin-bottom:0}
+.skip-link{position:absolute;top:-40px;left:6px;background:#000;color:#fff;padding:8px;text-decoration:none;transition:top 0.3s}
+.skip-link:focus{top:6px}
+</style>
+
+<!-- Resource Hints -->
+<link rel="prefetch" href="/css/apartment-security.css">
+<link rel="prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
