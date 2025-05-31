@@ -1,4 +1,3 @@
-
 <%
 // Helper function: truncateTitle
 function truncateTitle(title, maxLength = 58) {
@@ -30,91 +29,40 @@ function generateDynamicKeywords(baseKeywords, serviceType, location = 'Californ
   return base + (base ? ', ' : '') + dynamic;
 }
 
-// Unpack locals.serviceData (if any)
-const {
-  serviceTitle,
-  serviceDescription,
-  serviceKeywords,
-  serviceImage,
-  serviceUrl,
-  serviceType,
-  serviceBenefit,
-  propertyType,
-  priceRange,
-  serviceAltName,
-  serviceOutput,
-  audienceType
-} = typeof locals !== 'undefined' && typeof locals.serviceData !== 'undefined' ? locals.serviceData : {};
-
-// Build `safeServiceData` with defaults
-const safeServiceData = {
-  serviceTitle:       serviceTitle       || 'Professional Security Services',
-  serviceDescription: serviceDescription || 'Professional security services with licensed guards and 24/7 monitoring.',
-  serviceKeywords:    serviceKeywords    || 'security services, security guards',
-  serviceImage:       serviceImage       || 'default-security-service.webp',
-  serviceUrl:         serviceUrl         || 'security-services',
-  serviceType:        serviceType        || 'security',
-  serviceBenefit:     serviceBenefit     || 'enhanced protection and peace of mind',
-  propertyType:       propertyType       || 'property',
-  priceRange:         priceRange         || { low: 35, mid: 55, high: 85 },
-  serviceAltName:     serviceAltName     || 'Security Guard Services',
-  serviceOutput:      serviceOutput      || 'Enhanced security and protection',
-  audienceType:       audienceType       || 'Property Managers and Business Owners'
-};
-%>
-<%
-// Extract serviceData from locals or use empty object as fallback
-const {
-  serviceTitle = 'Security Services',
-  serviceDescription = 'Professional security services in California',
-  serviceKeywords = 'security services, security guards, California',
-  serviceImage = 'default-security.webp',
-  serviceUrl = 'security-services',
-  serviceType = 'security',
-  serviceBenefit = 'peace of mind and protection',
-  propertyType = 'property',
-  priceRange = { low: 35, mid: 55, high: 85 },
-  serviceAltName = 'Professional Security Services',
-  serviceOutput = 'Safe & Secure Environment',
-  audienceType = 'Business Owners and Property Managers'
-} = typeof locals.serviceData !== 'undefined' ? locals.serviceData : {};
-
-// Create safe service data object
-const safeServiceData = {
-  serviceTitle,
-  serviceDescription,
-  serviceKeywords,
-  serviceImage,
-  serviceUrl,
-  serviceType,
-  serviceBenefit,
-  propertyType,
-  priceRange,
-  serviceAltName,
-  serviceOutput,
-  audienceType
-};
-
-// SEO Helper Functions
-function truncateTitle(title, maxLength = 60) {
-  if (!title) return 'ShieldWise Security Services California';
-  return title.length > maxLength ? title.substring(0, maxLength - 3) + '...' : title;
-}
-
-function truncateDescription(description, maxLength = 160) {
-  if (!description) return 'Professional security guard services throughout California. Licensed, bonded, and insured security solutions for businesses and properties.';
-  return description.length > maxLength ? description.substring(0, maxLength - 3) + '...' : description;
-}
-
-function generateDynamicKeywords(baseKeywords, serviceType) {
-  const locationKeywords = 'California, Los Angeles, Orange County, San Diego, San Francisco, Sacramento, Riverside';
-  const serviceKeywords = `${serviceType} security, security guards, security services, 24/7 security`;
-  return `${baseKeywords}, ${serviceKeywords}, ${locationKeywords}`;
-}
-
+// Helper function: generateSchemaDescription
 function generateSchemaDescription(serviceData) {
   return `Professional ${serviceData.serviceType} security services in California. ${serviceData.serviceDescription} Starting from $${serviceData.priceRange.low}/hour.`;
 }
 
-// Make functions and data available globally in this template scope
+// Extract serviceData from locals or use defaults
+const {
+  serviceTitle = 'Professional Security Services',
+  serviceDescription = 'Professional security services with licensed guards and 24/7 monitoring.',
+  serviceKeywords = 'security services, security guards',
+  serviceImage = 'default-security-service.webp',
+  serviceUrl = 'security-services',
+  serviceType = 'security',
+  serviceBenefit = 'enhanced protection and peace of mind',
+  propertyType = 'property',
+  priceRange = { low: 35, mid: 55, high: 85 },
+  serviceAltName = 'Security Guard Services',
+  serviceOutput = 'Enhanced security and protection',
+  audienceType = 'Property Managers and Business Owners'
+} = typeof locals !== 'undefined' && typeof locals.serviceData !== 'undefined' ? locals.serviceData : {};
+
+// Build `safeServiceData` with the extracted values
+const safeServiceData = {
+  serviceTitle,
+  serviceDescription,
+  serviceKeywords,
+  serviceImage,
+  serviceUrl,
+  serviceType,
+  serviceBenefit,
+  propertyType,
+  priceRange,
+  serviceAltName,
+  serviceOutput,
+  audienceType
+};
 %>
