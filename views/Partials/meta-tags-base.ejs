@@ -1,3 +1,41 @@
+
+<% 
+// SEO Optimization Functions - SINGLE SOURCE OF TRUTH
+function truncateTitle(title, maxLength = 58) {
+  if (!title) return 'Security Services | ShieldWise';
+  const suffix = ' | ShieldWise';
+  const maxTitleLength = maxLength - suffix.length;
+  return title.length > maxTitleLength ? title.substring(0, maxTitleLength).trim() + '...' + suffix : title + suffix;
+}
+
+function truncateDescription(desc, maxLength = 155) {
+  if (!desc) return 'Professional security services in California. BSIS licensed guards, 24/7 monitoring. Call 1-800-SHIELD-1 for free assessment.';
+  return desc.length > maxLength ? desc.substring(0, maxLength).trim() + '...' : desc;
+}
+
+function generateDynamicKeywords(baseKeywords, serviceType, location = 'California') {
+  const base = baseKeywords || '';
+  const dynamic = `${serviceType} security, ${location} security company, licensed security guards, 24/7 security services`;
+  return base + (base ? ', ' : '') + dynamic;
+}
+
+// Set fallback values - SINGLE SOURCE OF TRUTH
+const safeServiceData = {
+  serviceTitle: serviceTitle || 'Professional Security Services',
+  serviceDescription: serviceDescription || 'Professional security services with licensed guards and 24/7 monitoring.',
+  serviceKeywords: serviceKeywords || 'security services, security guards',
+  serviceImage: serviceImage || 'default-security-service.webp',
+  serviceUrl: serviceUrl || 'security-services',
+  serviceType: serviceType || 'security',
+  serviceBenefit: serviceBenefit || 'enhanced protection and peace of mind',
+  propertyType: propertyType || 'property',
+  priceRange: priceRange || { low: 35, mid: 55, high: 85 },
+  serviceAltName: serviceAltName || 'Security Guard Services',
+  serviceOutput: serviceOutput || 'Enhanced security and protection',
+  audienceType: audienceType || 'Property Managers and Business Owners'
+};
+%>
+
 <!-- Base Meta Tags - Shared Across All Pages -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -42,29 +80,11 @@
 <meta name="facebook-domain-verification" content="fb456def789realhashcode">
 <meta name="norton-safeweb-site-verification" content="norton789xyz456verification">
 
-<!-- Mobile App Meta Tags -->
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="apple-mobile-web-app-title" content="ShieldWise">
-<link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/img/icons/apple-touch-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/img/icons/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/img/icons/apple-touch-icon-76x76.png">
-<meta name="application-name" content="ShieldWise Security">
-
-<!-- Microsoft Tile & Windows Meta -->
-<meta name="msapplication-TileImage" content="/img/icons/ms-tile-image.png">
-<meta name="msapplication-TileColor" content="#2b5797">
-<meta name="msapplication-config" content="/browserconfig.xml">
-<meta name="theme-color" content="#1a3c64">
-
 <!-- Favicon Package -->
 <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/img/icons/safari-pinned-tab.svg" color="#5bbad5">
 <link rel="shortcut icon" href="/favicon.ico">
 
 <!-- PWA Meta Tags -->
 <meta name="mobile-web-app-capable" content="yes">
-<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#1a3c64">

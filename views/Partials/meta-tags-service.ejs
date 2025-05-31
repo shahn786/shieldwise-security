@@ -1,40 +1,7 @@
+<%- include('../Partials/meta-tags-base') %>
+
 <%
-// SEO Optimization Functions
-function truncateTitle(title, maxLength = 58) {
-  if (!title) return 'Security Services | ShieldWise';
-  const suffix = ' | ShieldWise';
-  const maxTitleLength = maxLength - suffix.length;
-  return title.length > maxTitleLength ? title.substring(0, maxTitleLength).trim() + '...' + suffix : title + suffix;
-}
-
-function truncateDescription(desc, maxLength = 155) {
-  if (!desc) return 'Professional security services in California. BSIS licensed guards, 24/7 monitoring. Call 1-800-SHIELD-1 for free assessment.';
-  return desc.length > maxLength ? desc.substring(0, maxLength).trim() + '...' : desc;
-}
-
-function generateDynamicKeywords(baseKeywords, serviceType, location = 'California') {
-  const base = baseKeywords || '';
-  const dynamic = `${serviceType} security, ${location} security company, licensed security guards, 24/7 security services`;
-  return base + (base ? ', ' : '') + dynamic;
-}
-
-// Set fallback values
-const safeServiceData = {
-  serviceTitle: serviceTitle || 'Professional Security Services',
-  serviceDescription: serviceDescription || 'Professional security services with licensed guards and 24/7 monitoring.',
-  serviceKeywords: serviceKeywords || 'security services, security guards',
-  serviceImage: serviceImage || 'default-security-service.webp',
-  serviceUrl: serviceUrl || 'security-services',
-  serviceType: serviceType || 'security',
-  serviceBenefit: serviceBenefit || 'enhanced protection and peace of mind',
-  propertyType: propertyType || 'property',
-  priceRange: priceRange || { low: 35, mid: 55, high: 85 },
-  serviceAltName: serviceAltName || 'Security Guard Services',
-  serviceOutput: serviceOutput || 'Enhanced security and protection',
-  audienceType: audienceType || 'Property Managers and Business Owners'
-};
-
-// Generate optimized content
+// Generate optimized content using shared functions
 const optimizedTitle = truncateTitle(`${safeServiceData.serviceTitle} | 24/7 Guards from $${safeServiceData.priceRange.low}/hr`);
 const optimizedDescription = truncateDescription(`${safeServiceData.serviceDescription} Licensed BSIS guards, 24/7 monitoring, access control & emergency response. 4.9★ (287+ reviews). Call 1-800-SHIELD-1.`);
 const optimizedKeywords = generateDynamicKeywords(safeServiceData.serviceKeywords, safeServiceData.serviceType);

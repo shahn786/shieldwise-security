@@ -156,30 +156,23 @@ app.use((req, res, next) => {
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Apartment Security Service Route
+// Service routes
 app.get('/services/apartment-security', (req, res) => {
-  res.render('services/apartment-security', { 
-    serviceData: {
-      serviceType: 'apartment',
-      serviceTitle: 'Professional Apartment Security Services',
-      serviceDescription: 'Premium apartment security with licensed BSIS guards providing 24/7 protection for residential communities throughout California.',
-      serviceKeywords: 'apartment security services, residential security guards, apartment complex security, gated community security, 24/7 apartment security patrol, licensed apartment security guards, residential security California',
-      serviceImage: 'apartment-security-guards-california.jpg',
-      serviceUrl: 'apartment-security',
-      serviceBenefit: 'reduced crime and 24/7 peace of mind',
-      propertyType: 'apartment complex',
-      priceRange: { low: 45, mid: 65, high: 90 },
-      serviceAltName: 'Apartment Guard Services',
-      serviceOutput: 'Safety and protection for your residents',
-      audienceType: 'Property Managers, HOAs, Apartment Owners',
-      relatedProperty: 'gated communities and HOAs',
-      specializedServices: 'gatehouse staffing, resident verification systems, amenity monitoring, community patrols, parking enforcement, package management',
-      industryType: 'HOA',
-      clientType: 'resident',
-      managerType: 'property managers',
-      assessmentSpecifics: 'landscaping review, amenity area security, parking lot vulnerability assessment'
-    }
-  });
+    const serviceData = {
+        serviceTitle: 'Apartment Security Services',
+        serviceDescription: 'Professional security services for apartment complexes and residential communities with 24/7 monitoring and licensed guards',
+        serviceKeywords: 'apartment security, residential security, building security',
+        serviceImage: 'apartmentsecurity.webp',
+        serviceUrl: 'apartment-security',
+        serviceType: 'apartment',
+        serviceBenefit: 'enhanced residential protection and community safety',
+        propertyType: 'residential',
+        priceRange: { low: 35, mid: 55, high: 85 },
+        serviceAltName: 'Residential Security Services',
+        serviceOutput: 'Safe and secure residential community',
+        audienceType: 'Property Managers and Residents'
+    };
+    res.render('services/apartment-security', { serviceData });
 });
 
 // Routes
