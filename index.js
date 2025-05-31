@@ -156,23 +156,26 @@ app.use((req, res, next) => {
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Service routes
+// Apartment Security Service Route
 app.get('/services/apartment-security', (req, res) => {
-    const serviceData = {
-        serviceTitle: 'Apartment Security Services',
-        serviceDescription: 'Professional security services for apartment complexes and residential communities with 24/7 monitoring and licensed guards',
-        serviceKeywords: 'apartment security, residential security, building security',
-        serviceImage: 'apartmentsecurity.webp',
-        serviceUrl: 'apartment-security',
-        serviceType: 'apartment',
-        serviceBenefit: 'enhanced residential protection and community safety',
-        propertyType: 'residential',
-        priceRange: { low: 35, mid: 55, high: 85 },
-        serviceAltName: 'Residential Security Services',
-        serviceOutput: 'Safe and secure residential community',
-        audienceType: 'Property Managers and Residents'
-    };
-    res.render('services/apartment-security', { serviceData });
+  const metaHelpers = require('./helpers/metaHelpers');
+
+  const serviceData = {
+    serviceTitle: 'Professional Apartment Security Services',
+    serviceDescription: 'Comprehensive apartment security services with 24/7 guards, access control, CCTV monitoring, and emergency response for residential communities.',
+    serviceKeywords: 'apartment security, residential security guards, access control systems, 24/7 security monitoring, property protection',
+    serviceImage: 'apartmentsecurity.webp',
+    serviceUrl: 'apartment-security',
+    serviceType: 'apartment',
+    serviceBenefit: 'enhanced residential safety and peace of mind',
+    propertyType: 'apartment complex',
+    priceRange: { low: 35, mid: 55, high: 85 },
+    serviceAltName: 'Residential Security Services',
+    serviceOutput: 'Complete apartment complex protection',
+    audienceType: 'Property Managers and Residents'
+  };
+
+  res.render('services/apartment-security', { serviceData, metaHelpers });
 });
 
 // Routes

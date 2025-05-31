@@ -1,11 +1,39 @@
 
-<% include('meta-tags-base') %>
-<%
-  //
-  // meta-tags-service.ejs
-  // After including meta-tags-base.ejs (which defines our helper functions
-  // and safeServiceData), we now generate the optimized <title>, <meta>, and OG/Twitter tags.
-  //
+
+<% 
+  // Destructure the passed helpers and serviceData
+  const { truncateTitle, truncateDescription, generateDynamicKeywords } = metaHelpers;
+  
+  // Create safe serviceData with defaults
+  const {
+    serviceTitle,
+    serviceDescription,
+    serviceKeywords,
+    serviceImage,
+    serviceUrl,
+    serviceType,
+    serviceBenefit,
+    propertyType,
+    priceRange,
+    serviceAltName,
+    serviceOutput,
+    audienceType
+  } = typeof locals.serviceData !== 'undefined' ? serviceData : {};
+
+  const safeServiceData = {
+    serviceTitle:       serviceTitle       || 'Professional Security Services',
+    serviceDescription: serviceDescription || 'Professional security services with licensed guards and 24/7 monitoring.',
+    serviceKeywords:    serviceKeywords    || 'security services, security guards',
+    serviceImage:       serviceImage       || 'default-security-service.webp',
+    serviceUrl:         serviceUrl         || 'security-services',
+    serviceType:        serviceType        || 'security',
+    serviceBenefit:     serviceBenefit     || 'enhanced protection and peace of mind',
+    propertyType:       propertyType       || 'property',
+    priceRange:         priceRange         || { low: 35, mid: 55, high: 85 },
+    serviceAltName:     serviceAltName     || 'Security Guard Services',
+    serviceOutput:      serviceOutput      || 'Enhanced security and protection',
+    audienceType:       audienceType       || 'Property Managers and Business Owners'
+  };
 
   // Build optimized Title, Description, and Keywords using our helper functions:
   const optimizedTitle = truncateTitle(
@@ -134,3 +162,4 @@
 <meta name="msapplication-config" content="/browserconfig.xml">
 <meta name="theme-color" content="#1a3c64">
 <meta name="mobile-web-app-capable" content="yes">
+
