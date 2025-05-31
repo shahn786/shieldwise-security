@@ -1,0 +1,39 @@
+
+<%
+/**
+ * Helper functions for meta tags
+ */
+
+// Helper function: truncateTitle
+// Ensures <title> never exceeds about 58 characters (minus the suffix).
+function truncateTitle(title, maxLength = 58) {
+  if (!title) return 'Security Services | ShieldWise';
+  const suffix = ' | ShieldWise';
+  const maxTitleLength = maxLength - suffix.length;
+  if (title.length > maxTitleLength) {
+    return title.substring(0, maxTitleLength).trim() + '...' + suffix;
+  } else {
+    return title + suffix;
+  }
+}
+
+// Helper function: truncateDescription
+// Ensures <meta name="description"> never exceeds about 155 characters.
+function truncateDescription(desc, maxLength = 155) {
+  if (!desc) {
+    return 'Professional security services in California. BSIS licensed guards, 24/7 monitoring. Call 1-800-SHIELD-1 for free assessment.';
+  }
+  if (desc.length > maxLength) {
+    return desc.substring(0, maxLength).trim() + '...';
+  }
+  return desc;
+}
+
+// Helper function: generateDynamicKeywords
+// Combines baseKeywords + serviceType phrases + "California security company" snippet.
+function generateDynamicKeywords(baseKeywords, serviceType, location = 'California') {
+  const base = baseKeywords || '';
+  const dynamic = `${serviceType} security, ${location} security company, licensed security guards, 24/7 security services`;
+  return base + (base ? ', ' : '') + dynamic;
+}
+%>

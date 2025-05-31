@@ -158,8 +158,6 @@ app.use(passport.session());
 
 // Apartment Security Service Route
 app.get('/services/apartment-security', (req, res) => {
-  const metaHelpers = require('./helpers/metaHelpers');
-
   const serviceData = {
     serviceTitle: 'Professional Apartment Security Services',
     serviceDescription: 'Comprehensive apartment security services with 24/7 guards, access control, CCTV monitoring, and emergency response for residential communities.',
@@ -175,7 +173,7 @@ app.get('/services/apartment-security', (req, res) => {
     audienceType: 'Property Managers and Residents'
   };
 
-  res.render('services/apartment-security', { serviceData, metaHelpers });
+  res.render('services/apartment-security', { serviceData });
 });
 
 // Routes

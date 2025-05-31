@@ -1,3 +1,4 @@
+<%- include('meta-tags-base') %>
 <!-- Enhanced Performance Optimization -->
 
 <!-- Critical Resource Preconnections -->
@@ -9,9 +10,9 @@
 
 <!-- Critical Resource Preloading -->
 <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/img/hero-<%= serviceType || 'security' %>-service.webp" as="image" fetchpriority="high">
+<link rel="preload" href="/img/hero-<%= safeServiceData.serviceType || 'security' %>-service.webp" as="image" fetchpriority="high">
 <link rel="preload" href="/css/critical-path.css" as="style">
-<link rel="preload" href="/css/<%= serviceType || 'apartment' %>-security.css" as="style">
+<link rel="preload" href="/css/<%= safeServiceData.serviceType || 'apartment' %>-security.css" as="style">
 
 <!-- DNS Prefetching for External Resources -->
 <link rel="dns-prefetch" href="https://www.google.com">

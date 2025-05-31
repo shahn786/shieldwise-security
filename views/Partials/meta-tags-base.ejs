@@ -1,0 +1,41 @@
+
+<%- include('meta-helpers') %>
+<%
+  // First, pull in any "serviceData" that was passed down from the route:
+  //   res.render('services/apartment-security', { serviceData });
+  //
+  // If "serviceData" is missing or some fields are undefined, we fall back to defaults.
+  //
+
+  // Destructure serviceData if it exists; otherwise use empty object
+  const {
+    serviceTitle,
+    serviceDescription,
+    serviceKeywords,
+    serviceImage,
+    serviceUrl,
+    serviceType,
+    serviceBenefit,
+    propertyType,
+    priceRange,
+    serviceAltName,
+    serviceOutput,
+    audienceType
+  } = typeof locals.serviceData !== 'undefined' ? serviceData : {};
+
+  // Now build a "safeServiceData" object, filling in defaults if any property is missing:
+  const safeServiceData = {
+    serviceTitle:       serviceTitle       || 'Professional Security Services',
+    serviceDescription: serviceDescription || 'Professional security services with licensed guards and 24/7 monitoring.',
+    serviceKeywords:    serviceKeywords    || 'security services, security guards',
+    serviceImage:       serviceImage       || 'default-security-service.webp',
+    serviceUrl:         serviceUrl         || 'security-services',
+    serviceType:        serviceType        || 'security',
+    serviceBenefit:     serviceBenefit     || 'enhanced protection and peace of mind',
+    propertyType:       propertyType       || 'property',
+    priceRange:         priceRange         || { low: 35, mid: 55, high: 85 },
+    serviceAltName:     serviceAltName     || 'Security Guard Services',
+    serviceOutput:      serviceOutput      || 'Enhanced security and protection',
+    audienceType:       audienceType       || 'Property Managers and Business Owners'
+  };
+%>
