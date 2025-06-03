@@ -1,0 +1,83 @@
+What’s Happening?
+Your partial file /views/Partials/meta-tags-service.ejs tries to use a helper function called truncateTitle, but it isn’t defined anywhere in the scope before it’s used.
+EJS does not share variables or functions between includes by default. Each file (partial) gets its own local scope unless you explicitly pass variables/functions in.
+
+How to Fix
+You have two common options:
+Option 1: Define the Helpers in a Base Partial and Include It
+Create a file: /views/Partials/meta-tags-base.ejs
+(or whatever you want to call it, as long as it holds all shared helper functions and fallback variables)
+
+ejs
+Copy
+Edit
+<%
+// Helper functions
+function truncateTitle(title, maxLength = 58) {
+  if (!title) return 'Security Services | ShieldWise';
+  const suffix = ' | ShieldWise';
+  const maxTitleLength = maxLength - suffix.length;
+  return title.length > maxTitleLength ? title.substring(0, maxTitleLength).trim() + '...' + suffix : title + suffix;
+}
+function truncateDescription(desc, maxLength = 155) {
+  if (!desc) return 'Professional security services in California. BSIS licensed guards, 24/7 monitoring. Call 1-800-SHIELD-1 for free assessment.';
+  return desc.length > maxLength ? desc.substring(0, maxLength).trim() + '...' : desc;
+}
+// ... any other helpers
+// Safe fallback for serviceData (adjust as needed)
+const {
+  serviceTitle, serviceDescription, serviceKeywords, serviceImage,
+  serviceUrl, serviceType, serviceBenefit, propertyType, priceRange,
+  serviceAltName, serviceOutput, audienceType
+} = typeof locals.serviceData !== 'undefined' ? serviceData : {};
+const safeServiceData = {
+  serviceTitle:       serviceTitle       || 'Professional Security Services',
+  serviceDescription: serviceDescription || 'Professional security services with licensed guards and 24/7 monitoring.',
+  priceRange:         priceRange         || { low: 25, high: 100 }
+  // ...add other safe defaults as needed
+};
+%>
+Include the base partial at the top of EVERY partial that needs those helpers:
+
+In /views/Partials/meta-tags-service.ejs:
+
+ejs
+Copy
+Edit
+<%- include('../Partials/meta-tags-base') %>
+<%
+  // Now these helpers and safeServiceData are available!
+  const optimizedTitle = truncateTitle(
+    `${safeServiceData.serviceTitle} | 24/7 Guards from $${safeServiceData.priceRange.low}/hr`
+  );
+%>
+<!-- ... -->
+In your main template, include the service meta partial:
+
+ejs
+Copy
+Edit
+<%- include('../Partials/meta-tags-service', serviceData) %>
+(You can still pass serviceData if you want.)
+
+Option 2: Define the Helpers at the Top of Every Partial (Not Recommended for DRY)
+Just paste your helper functions at the top of every file that needs them. But this is not DRY (“Don’t Repeat Yourself”), so use Option 1 for cleaner code.
+
+Summary / What to Change
+Define your helper functions and safeServiceData object ONCE in a shared partial.
+
+Always include that base partial before any partial that uses those helpers.
+
+EJS doesn’t “see” functions/vars from other includes unless you explicitly include the file.
+
+Your Fix:
+Create /views/Partials/meta-tags-base.ejs with your helpers,
+then at the top of /views/Partials/meta-tags-service.ejs, add:
+
+ejs
+Copy
+Edit
+<%- include('../Partials/meta-tags-base') %>
+Now you will not get the "truncateTitle is not defined" error!
+
+If you want, paste your exact current /views/Partials/meta-tags-service.ejs file here, and I’ll rewrite it for you using this fix.
