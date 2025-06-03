@@ -1,26 +1,26 @@
 
-<%- include('../Partials/meta-helpers', { serviceData: serviceData }) %>
+<%- include('../partials/meta-helpers', { serviceData: serviceData }) %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('../Partials/meta-tags-service') %>
-    <%- include('../Partials/performance-optimization') %>
-    <%- include('../Partials/mobile-app-meta') %>
+    <%- include('../partials/meta-tags-service') %>
+    <%- include('../partials/performance-optimization') %>
+    <%- include('../partials/mobile-app-meta') %>
 
     <!-- Essential CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link href="/css/apartment-security.css" rel="stylesheet">
 
-    <%- include('../Partials/schema-primary') %>
-    <%- include('../Partials/schema-service', serviceData) %>
-    <%- include('../Partials/schema-faq-service', serviceData) %>
-    <%- include('../Partials/tracking-scripts') %>
+    <%- include('../partials/schema-primary') %>
+    <%- include('../partials/schema-service', serviceData) %>
+    <%- include('../partials/schema-faq-service', serviceData) %>
+    <%- include('../partials/tracking-scripts') %>
 </head>
         
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <%- include('../Partials/Header') %>
+    <%- include('../partials/Header') %>
 
     <main id="main-content">
         <!-- Hero Section -->
@@ -351,7 +351,7 @@
         </section>
     </main>
 
-    <%- include('../Partials/Footer') %>
+    <%- include('../partials/Footer') %>
 
     <!-- Structured Data for Voice Search -->
     <script type="application/ld+json">
@@ -457,7 +457,7 @@
     </script>
 
     <!-- Deferred Tracking Scripts -->
-    <%- include('../Partials/tracking-scripts-deferred') %>
+    <%- include('../partials/tracking-scripts-deferred') %>
         
 </body>
 </html>
