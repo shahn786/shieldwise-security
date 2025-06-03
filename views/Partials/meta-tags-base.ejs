@@ -1,0 +1,37 @@
+
+<%
+// Helper functions
+function truncateTitle(title, maxLength = 58) {
+  if (!title) return 'Security Services | ShieldWise';
+  const suffix = ' | ShieldWise';
+  const maxTitleLength = maxLength - suffix.length;
+  return title.length > maxTitleLength ? title.substring(0, maxTitleLength).trim() + '...' + suffix : title + suffix;
+}
+
+function truncateDescription(desc, maxLength = 155) {
+  if (!desc) return 'Professional security services in California. BSIS licensed guards, 24/7 monitoring. Call 1-800-SHIELD-1 for free assessment.';
+  return desc.length > maxLength ? desc.substring(0, maxLength).trim() + '...' : desc;
+}
+
+// Safe fallback for serviceData
+const {
+  serviceTitle, serviceDescription, serviceKeywords, serviceImage,
+  serviceUrl, serviceType, serviceBenefit, propertyType, priceRange,
+  serviceAltName, serviceOutput, audienceType
+} = typeof locals.serviceData !== 'undefined' ? serviceData : {};
+
+const safeServiceData = {
+  serviceTitle:       serviceTitle       || 'Professional Security Services',
+  serviceDescription: serviceDescription || 'Professional security services with licensed guards and 24/7 monitoring.',
+  serviceKeywords:    serviceKeywords    || 'security services, licensed guards, 24/7 monitoring',
+  serviceImage:       serviceImage       || 'security-services.webp',
+  serviceUrl:         serviceUrl         || 'security-services',
+  serviceType:        serviceType        || 'security',
+  serviceBenefit:     serviceBenefit     || 'enhanced safety and protection',
+  propertyType:       propertyType       || 'business',
+  priceRange:         priceRange         || { low: 25, high: 100 },
+  serviceAltName:     serviceAltName     || 'Security Services',
+  serviceOutput:      serviceOutput      || 'Professional Security Solutions',
+  audienceType:       audienceType       || 'Business Owners'
+};
+%>

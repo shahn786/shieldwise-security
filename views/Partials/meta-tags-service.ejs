@@ -1,4 +1,3 @@
-
 <%
 // Build optimized Title, Description, and Keywords using our helper functions:
 const optimizedTitle = truncateTitle(
@@ -127,3 +126,8 @@ const optimizedKeywords = generateDynamicKeywords(
 <meta name="msapplication-config" content="/browserconfig.xml">
 <meta name="theme-color" content="#1a3c64">
 <meta name="mobile-web-app-capable" content="yes">
+
+<%- include('../Partials/meta-tags-base') %>
+<%
+// Now these helpers and safeServiceData are available!
+function truncateTitle(title, maxLength = 58) {
