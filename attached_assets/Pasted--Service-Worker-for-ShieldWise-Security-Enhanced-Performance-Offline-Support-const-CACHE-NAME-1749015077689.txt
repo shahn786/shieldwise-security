@@ -1,0 +1,290 @@
+// Service Worker for ShieldWise Security - Enhanced Performance & Offline Support
+const CACHE_NAME = 'shieldwise-security-v2025.1';
+const OFFLINE_URL = '/offline.html';
+
+// Resources to cache for optimal performance
+const CACHE_URLS = [
+  '/',
+  '/services/',
+  '/services/apartment-security',
+  '/services/commercial-security',
+  '/services/mobile-patrol',
+  '/get-quote',
+  '/contact',
+  '/css/critical-path.css',
+  '/css/apartment-security.css',
+  '/js/critical.js',
+  '/fonts/inter-var.woff2',
+  '/img/logo.png',
+  '/img/hero-security-service.webp',
+  '/manifest.json',
+  OFFLINE_URL
+];
+
+// Install event - cache critical resources
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache => {
+        console.log('SW: Caching critical resources');
+        return cache.addAll(CACHE_URLS);
+      })
+      .then(() => {
+        console.log('SW: Installation complete');
+        return self.skipWaiting();
+      })
+      .catch(error => {
+        console.error('SW: Installation failed', error);
+      })
+  );
+});
+
+// Activate event - cleanup old caches
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys()
+      .then(cacheNames => {
+        return Promise.all(
+          cacheNames.map(cacheName => {
+            if (cacheName !== CACHE_NAME) {
+              console.log('SW: Deleting old cache', cacheName);
+              return caches.delete(cacheName);
+            }
+          })
+        );
+      })
+      .then(() => {
+        console.log('SW: Activation complete');
+        return self.clients.claim();
+      })
+  );
+});
+
+// Fetch event - implement caching strategies
+self.addEventListener('fetch', event => {
+  // Skip non-GET requests
+  if (event.request.method !== 'GET') return;
+  
+  // Skip cross-origin requests
+  if (!event.request.url.startsWith(self.location.origin)) return;
+
+  event.respondWith(
+    caches.match(event.request)
+      .then(response => {
+        // Return cached version if available
+        if (response) {
+          console.log('SW: Serving from cache', event.request.url);
+          return response;
+        }
+
+        // Network first for HTML pages
+        if (event.request.destination === 'document') {
+          return fetch(event.request)
+            .then(response => {
+              // Cache successful responses
+              if (response.status === 200) {
+                const responseClone = response.clone();
+                caches.open(CACHE_NAME)
+                  .then(cache => {
+                    cache.put(event.request, responseClone);
+                  });
+              }
+              return response;
+            })
+            .catch(() => {
+              // Return offline page for navigation requests
+              return caches.match(OFFLINE_URL);
+            });
+        }
+
+        // Cache first for static assets
+        return fetch(event.request)
+          .then(response => {
+            // Cache successful responses for static assets
+            if (response.status === 200 && (
+              event.request.destination === 'style' ||
+              event.request.destination === 'script' ||
+              event.request.destination === 'image' ||
+              event.request.destination === 'font'
+            )) {
+              const responseClone = response.clone();
+              caches.open(CACHE_NAME)
+                .then(cache => {
+                  cache.put(event.request, responseClone);
+                });
+            }
+            return response;
+          })
+          .catch(() => {
+            // Return cached version or default for failed requests
+            return caches.match(event.request);
+          });
+      })
+  );
+});
+
+// Background sync for form submissions
+self.addEventListener('sync', event => {
+  if (event.tag === 'quote-request') {
+    event.waitUntil(
+      handleQuoteSync()
+    );
+  }
+});
+
+// Handle quote form sync when back online
+async function handleQuoteSync() {
+  try {
+    const requests = await getStoredRequests();
+    for (const request of requests) {
+      await fetch('/api/quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(request)
+      });
+    }
+    await clearStoredRequests();
+    console.log('SW: Quote requests synced successfully');
+  } catch (error) {
+    console.error('SW: Quote sync failed', error);
+  }
+}
+
+// Push notifications for security alerts
+self.addEventListener('push', event => {
+  const options = {
+    body: event.data ? event.data.text() : 'Security alert notification',
+    icon: '/img/icons/icon-192x192.png',
+    badge: '/img/icons/badge-72x72.png',
+    vibrate: [200, 100, 200],
+    data: {
+      url: '/alerts'
+    },
+    actions: [
+      {
+        action: 'view',
+        title: 'View Alert',
+        icon: '/img/icons/view-icon.png'
+      },
+      {
+        action: 'dismiss',
+        title: 'Dismiss',
+        icon: '/img/icons/dismiss-icon.png'
+      }
+    ]
+  };
+
+  event.waitUntil(
+    self.registration.showNotification('ShieldWise Security Alert', options)
+  );
+});
+
+// Handle notification clicks
+self.addEventListener('notificationclick', event => {
+  event.notification.close();
+
+  if (event.action === 'view') {
+    event.waitUntil(
+      clients.openWindow(event.notification.data.url)
+    );
+  }
+});
+
+// Handle messages from main thread
+self.addEventListener('message', event => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+  
+  if (event.data && event.data.type === 'CACHE_UPDATE') {
+    event.waitUntil(
+      updateCache(event.data.urls)
+    );
+  }
+});
+
+// Update cache with new URLs
+async function updateCache(urls) {
+  const cache = await caches.open(CACHE_NAME);
+  return cache.addAll(urls);
+}
+
+// Store quote requests for offline sync
+async function storeQuoteRequest(data) {
+  const db = await openDB();
+  const tx = db.transaction(['quotes'], 'readwrite');
+  await tx.objectStore('quotes').add(data);
+}
+
+// Get stored quote requests
+async function getStoredRequests() {
+  const db = await openDB();
+  const tx = db.transaction(['quotes'], 'readonly');
+  return tx.objectStore('quotes').getAll();
+}
+
+// Clear stored requests after sync
+async function clearStoredRequests() {
+  const db = await openDB();
+  const tx = db.transaction(['quotes'], 'readwrite');
+  return tx.objectStore('quotes').clear();
+}
+
+// Simple IndexedDB wrapper
+function openDB() {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open('ShieldWiseDB', 1);
+    
+    request.onerror = () => reject(request.error);
+    request.onsuccess = () => resolve(request.result);
+    
+    request.onupgradeneeded = () => {
+      const db = request.result;
+      if (!db.objectStoreNames.contains('quotes')) {
+        db.createObjectStore('quotes', { keyPath: 'id', autoIncrement: true });
+      }
+    };
+  });
+}
+
+// Performance monitoring
+self.addEventListener('fetch', event => {
+  // Track navigation timing
+  if (event.request.destination === 'document') {
+    const startTime = performance.now();
+    
+    event.respondWith(
+      handleRequest(event.request).then(response => {
+        const endTime = performance.now();
+        const duration = endTime - startTime;
+        
+        // Report performance metrics
+        self.clients.matchAll().then(clients => {
+          clients.forEach(client => {
+            client.postMessage({
+              type: 'PERFORMANCE_METRIC',
+              metric: 'navigation_timing',
+              duration: duration,
+              url: event.request.url
+            });
+          });
+        });
+        
+        return response;
+      })
+    );
+  }
+});
+
+// Generic request handler
+async function handleRequest(request) {
+  try {
+    const response = await fetch(request);
+    return response;
+  } catch (error) {
+    const cachedResponse = await caches.match(request);
+    return cachedResponse || new Response('Offline', { status: 503 });
+  }
+}
