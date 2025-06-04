@@ -1,69 +1,226 @@
-<%- include('../partials/meta-tags-base') %>
-<!-- Enhanced Performance Optimization -->
+<%
+// Service data for dynamic resource hints
+const serviceData = (typeof locals !== 'undefined' && locals.serviceData) ? locals.serviceData : {};
+const serviceType = serviceData.serviceType || 'security';
+%>
 
-<!-- Critical Resource Preconnections -->
+<!-- Critical Resource Preconnections for 2025 Performance -->
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
 <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
-<!-- Critical Resource Preloading -->
+<!-- High Priority Resource Preloading -->
 <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/img/hero-<%= (typeof safeServiceData !== 'undefined' && safeServiceData.serviceType) || 'security' %>-service.webp" as="image" fetchpriority="high">
+<link rel="preload" href="/img/hero-<%= serviceType %>-service.webp" as="image" fetchpriority="high">
 <link rel="preload" href="/css/critical-path.css" as="style">
-<link rel="preload" href="/css/<%= (typeof safeServiceData !== 'undefined' && safeServiceData.serviceType) || 'apartment' %>-security.css" as="style">
+<link rel="preload" href="/css/<%= serviceType %>-security.css" as="style">
 
-<!-- DNS Prefetching for External Resources -->
-<link rel="dns-prefetch" href="https://www.google.com">
-<link rel="dns-prefetch" href="https://maps.googleapis.com">
-<link rel="dns-prefetch" href="https://connect.facebook.net">
-<link rel="dns-prefetch" href="https://www.linkedin.com">
+<!-- DNS Prefetching for Third-Party Resources -->
+<link rel="dns-prefetch" href="//www.google.com">
+<link rel="dns-prefetch" href="//maps.googleapis.com">
+<link rel="dns-prefetch" href="//connect.facebook.net">
+<link rel="dns-prefetch" href="//www.linkedin.com">
+<link rel="dns-prefetch" href="//static.hotjar.com">
+<link rel="dns-prefetch" href="//www.clarity.ms">
 
 <!-- Strategic Resource Prefetching -->
 <link rel="prefetch" href="/services/commercial-security">
 <link rel="prefetch" href="/services/armed-security">
 <link rel="prefetch" href="/services/mobile-patrol">
 <link rel="prefetch" href="/img/guard-team.webp">
+<link rel="prefetch" href="/get-quote">
 
-<!-- Resource Hints for Better Performance -->
+<!-- Module Preloading for JavaScript -->
 <link rel="modulepreload" href="/js/critical.js">
+<link rel="modulepreload" href="/js/security-forms.js">
+
+<!-- API Endpoint Preloading -->
 <link rel="preload" href="/api/security-assessment" as="fetch" crossorigin="anonymous">
 
-<!-- Early Hints for Critical CSS -->
+<!-- Critical Above-the-Fold CSS Inline for LCP Optimization -->
 <style>
-/* Critical above-the-fold CSS inlined */
-.hero-section{background-color:#1a3c64;min-height:60vh}
-.navbar{background-color:#fff;box-shadow:0 2px 4px rgba(0,0,0,.1)}
-.btn-primary{background-color:#2b5797;border-color:#2b5797}
-.loading-placeholder{background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);animation:loading 1.5s infinite}
-@keyframes loading{0%{background-position:-200px 0}100%{background-position:calc(200px + 100%) 0}}
+/* Critical CSS for Core Web Vitals - Inlined for LCP < 2.0s */
+.hero-section {
+  background: linear-gradient(135deg, #1a3c64 0%, #2d5a87 100%);
+  color: #fff;
+  padding: 80px 0;
+  text-align: center;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  font-display: swap;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #2b5797;
+  border-color: #2b5797;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: #1a3c64;
+  border-color: #1a3c64;
+  transform: translateY(-2px);
+}
+
+/* Loading placeholder for CLS prevention */
+.loading-placeholder {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+/* Prevent layout shift */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+  transition: top 0.3s;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Service cards base styling */
+.service-card, .apartment-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+  will-change: transform, opacity;
+}
+
+/* Critical font loading */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/inter-var.woff2') format('woff2');
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .hero-section {
+    background: linear-gradient(135deg, #0f1419 0%, #1a2332 100%);
+  }
+}
 </style>
-<!-- DNS Prefetch for External Resources -->
-<link rel="dns-prefetch" href="//fonts.googleapis.com">
-<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-<link rel="dns-prefetch" href="//stackpath.bootstrapcdn.com">
-<link rel="dns-prefetch" href="//code.jquery.com">
-<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
 
-<!-- Preconnect to Critical External Domains -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
-<!-- Preload Critical CSS -->
+<!-- Async CSS Loading for Non-Critical Styles -->
 <link rel="preload" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></noscript>
 
-<!-- Critical CSS Inline -->
-<style>
-.hero-section{background:linear-gradient(135deg,#1a3c64 0%,#2d5a87 100%);color:#fff;padding:100px 0;text-align:center}
-.hero-title{font-size:3rem;font-weight:700;margin-bottom:20px}
-.hero-subtitle{font-size:1.2rem;margin-bottom:0}
-.skip-link{position:absolute;top:-40px;left:6px;background:#000;color:#fff;padding:8px;text-decoration:none;transition:top 0.3s}
-.skip-link:focus{top:6px}
-</style>
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
-<!-- Resource Hints -->
-<link rel="prefetch" href="/css/apartment-security.css">
-<link rel="prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<!-- Service-specific CSS -->
+<link rel="preload" href="/css/<%= serviceType %>-security.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<!-- Performance Monitoring Script -->
+<script>
+// Core Web Vitals monitoring for 2025 standards
+(function() {
+  // LCP monitoring
+  new PerformanceObserver((entryList) => {
+    for (const entry of entryList.getEntries()) {
+      if (entry.startTime < 2000) { // Target: < 2.0s
+        console.log('LCP candidate:', entry.startTime);
+      }
+    }
+  }).observe({entryTypes: ['largest-contentful-paint']});
+
+  // CLS monitoring  
+  let clsValue = 0;
+  new PerformanceObserver((entryList) => {
+    for (const entry of entryList.getEntries()) {
+      if (!entry.hadRecentInput) {
+        clsValue += entry.value;
+      }
+    }
+    if (clsValue < 0.05) { // Target: < 0.05
+      console.log('CLS within target:', clsValue);
+    }
+  }).observe({entryTypes: ['layout-shift']});
+
+  // INP monitoring (replaces FID in 2025)
+  new PerformanceObserver((entryList) => {
+    for (const entry of entryList.getEntries()) {
+      if (entry.processingStart - entry.startTime < 150) { // Target: < 150ms
+        console.log('INP within target:', entry.processingStart - entry.startTime);
+      }
+    }
+  }).observe({entryTypes: ['first-input', 'event']});
+})();
+</script>
+
+<!-- Resource Hints for Better Performance -->
+<link rel="preload" href="/api/contact-form" as="fetch" crossorigin="anonymous">
+<link rel="prefetch" href="/testimonials.json">
+<link rel="prefetch" href="/security-pricing.json">
+
+<!-- Service Worker Registration for PWA Performance -->
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(registration => console.log('SW registered'))
+      .catch(error => console.log('SW registration failed'));
+  });
+}
+</script>

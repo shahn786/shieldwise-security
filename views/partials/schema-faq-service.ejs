@@ -1,4 +1,62 @@
-<!-- Dynamic FAQ Schema -->
+<%
+// Extract service data for FAQ generation
+const serviceData = (typeof locals !== 'undefined' && locals.serviceData) ? locals.serviceData : {};
+const {
+  serviceType = 'security',
+  serviceTitle = 'Professional Security Services',
+  propertyType = 'property',
+  priceRange = { low: 35, mid: 55, high: 85 },
+  audienceType = 'Property Managers and Business Owners'
+} = serviceData;
+
+// Dynamic FAQ content based on service type
+const serviceSpecificFAQs = {
+  apartment: {
+    relatedProperty: 'residential complexes, condominiums, and multi-family housing',
+    specializedServices: 'lobby security, visitor management, parking area patrols, package delivery coordination',
+    industryType: 'residential property management',
+    clientType: 'residents and property managers',
+    managerType: 'property managers',
+    assessmentSpecifics: 'tenant safety protocols, common area vulnerabilities, parking security'
+  },
+  commercial: {
+    relatedProperty: 'office buildings, retail centers, and business complexes',
+    specializedServices: 'executive protection, employee safety, asset protection, after-hours security',
+    industryType: 'commercial real estate',
+    clientType: 'business owners and facility managers',
+    managerType: 'facility managers',
+    assessmentSpecifics: 'business-specific risks, employee safety protocols, asset protection'
+  },
+  retail: {
+    relatedProperty: 'shopping centers, stores, and retail establishments',
+    specializedServices: 'loss prevention, customer safety, cash escort, inventory protection',
+    industryType: 'retail operations',
+    clientType: 'store managers and retail operators',
+    managerType: 'store managers',
+    assessmentSpecifics: 'theft prevention, customer flow analysis, cash handling security'
+  },
+  healthcare: {
+    relatedProperty: 'hospitals, medical centers, and healthcare facilities',
+    specializedServices: 'patient safety, HIPAA compliance, emergency response, visitor screening',
+    industryType: 'healthcare',
+    clientType: 'healthcare administrators and patients',
+    managerType: 'healthcare administrators',
+    assessmentSpecifics: 'patient safety protocols, HIPAA compliance, emergency procedures'
+  },
+  industrial: {
+    relatedProperty: 'manufacturing facilities, warehouses, and industrial complexes',
+    specializedServices: 'perimeter security, employee safety, equipment protection, access control',
+    industryType: 'industrial operations',
+    clientType: 'facility managers and safety coordinators',
+    managerType: 'facility managers',
+    assessmentSpecifics: 'industrial safety protocols, equipment security, worker protection'
+  }
+};
+
+const currentServiceFAQ = serviceSpecificFAQs[serviceType] || serviceSpecificFAQs.apartment;
+%>
+
+<!-- Comprehensive FAQ Schema for Voice Search & AI Optimization -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -9,7 +67,7 @@
       "name": "What does <%= serviceType %> security service include?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Our comprehensive <%= serviceType %> security services include 24/7 on-site security guards, access control systems, CCTV monitoring, mobile patrols, visitor management, emergency response, and detailed incident reporting. We create customized security plans based on your <%= propertyType %>'s specific needs and vulnerabilities. All services are backed by our 100% satisfaction guarantee."
+        "text": "Our comprehensive <%= serviceType %> security services include 24/7 on-site security guards, access control systems, CCTV monitoring, mobile patrols, visitor management, emergency response, and detailed incident reporting. We create customized security plans based on your <%= propertyType %>'s specific needs and vulnerabilities. All services are backed by our 100% satisfaction guarantee and $2 million liability insurance coverage."
       }
     },
     {
@@ -17,15 +75,15 @@
       "name": "How much do <%= serviceType %> security guards cost in California?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "<%= serviceType.charAt(0).toUpperCase() + serviceType.slice(1) %> security guard services in California typically range from $<%= priceRange.low %>-<%= priceRange.high %> per hour depending on the level of service, location, and specific requirements. Basic unarmed guards start at $<%= priceRange.low %>/hour, while armed guards or specialized security personnel range from $<%= priceRange.mid %>-<%= priceRange.high %>/hour. We offer customized quotes based on your <%= propertyType %>'s needs, with discounts available for long-term contracts."
+        "text": "<%= serviceType.charAt(0).toUpperCase() + serviceType.slice(1) %> security guard services in California typically range from $<%= priceRange.low %>-<%= priceRange.high %> per hour depending on the level of service, location, and specific requirements. Basic unarmed guards start at $<%= priceRange.low %>/hour, while armed guards or specialized security personnel range from $<%= priceRange.mid %>-<%= priceRange.high %>/hour. We offer customized quotes based on your <%= propertyType %>'s needs, with discounts available for long-term contracts and multi-site locations."
       }
     },
     {
       "@type": "Question",
-      "name": "Are your <%= serviceType %> security guards licensed?",
+      "name": "Are your <%= serviceType %> security guards licensed and insured?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, all our security guards are licensed by the California Bureau of Security and Investigative Services (BSIS) and undergo comprehensive training specific to <%= serviceType %> security protocols. Our guards receive over 80 hours of initial training, plus monthly continuing education. All guards are background-checked, drug-tested, and fully insured with $2 million liability coverage."
+        "text": "Yes, all our security guards are licensed by the California Bureau of Security and Investigative Services (BSIS) and undergo comprehensive training specific to <%= serviceType %> security protocols. Our guards receive over 80 hours of initial training, plus monthly continuing education. All guards are background-checked, drug-tested, bonded, and fully insured with $2 million liability coverage. We maintain active workers' compensation and professional liability insurance."
       }
     },
     {
@@ -33,7 +91,7 @@
       "name": "How quickly can you deploy security guards to my <%= propertyType %>?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We can deploy security guards to your <%= propertyType %> within 24 hours for emergency situations. For standard service contracts, we typically complete property assessment, create a security plan, and deploy guards within 2-5 business days. Our rapid response team is available 24/7 for immediate security concerns."
+        "text": "We can deploy security guards to your <%= propertyType %> within 24 hours for emergency situations. For standard service contracts, we typically complete property assessment, create a customized security plan, and deploy guards within 2-5 business days. Our rapid response team is available 24/7 for immediate security concerns, and we maintain reserve staff to ensure consistent coverage."
       }
     },
     {
@@ -41,23 +99,23 @@
       "name": "What makes ShieldWise better than other <%= serviceType %> security companies?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "ShieldWise Security stands out with our 20+ years of specialized <%= serviceType %> security experience, 4.9-star rating from 287+ verified reviews, proprietary threat assessment methodology, custom security plans, and cutting-edge technology integration. Unlike competitors, all our guards are full-time employees (not contractors), receive extensive training specific to <%= serviceType %> settings, and are supported by our 24/7 command center."
+        "text": "ShieldWise Security stands out with our 20+ years of specialized <%= serviceType %> security experience, 4.9-star rating from 287+ verified reviews, proprietary threat assessment methodology, custom security plans, and cutting-edge technology integration. Unlike competitors, all our guards are full-time employees (not contractors), receive extensive training specific to <%= serviceType %> settings, and are supported by our 24/7 command center with real-time communication systems."
       }
     },
     {
       "@type": "Question",
-      "name": "Do you provide security services for <%= relatedProperty %>?",
+      "name": "Do you provide security services for <%= currentServiceFAQ.relatedProperty %>?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, we provide comprehensive security services specifically designed for <%= relatedProperty %> throughout California. Our services include <%= specializedServices %>, and customized security protocols that align with <%= industryType %> regulations and guidelines."
+        "text": "Yes, we provide comprehensive security services specifically designed for <%= currentServiceFAQ.relatedProperty %> throughout California. Our services include <%= currentServiceFAQ.specializedServices %>, and customized security protocols that align with <%= currentServiceFAQ.industryType %> regulations and industry best practices. We understand the unique challenges of different property types and tailor our approach accordingly."
       }
     },
     {
       "@type": "Question",
-      "name": "What areas of California do you serve?",
+      "name": "What areas of California do you serve for <%= serviceType %> security?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "ShieldWise Security provides <%= serviceType %> security services throughout California, with primary service areas including Los Angeles County, Orange County, San Diego County, San Francisco Bay Area, Sacramento, and Inland Empire. We have regional offices in Los Angeles, San Francisco, and San Diego to ensure prompt service and local expertise."
+        "text": "ShieldWise Security provides <%= serviceType %> security services throughout California, with primary service areas including Los Angeles County, Orange County, San Diego County, San Francisco Bay Area, Sacramento, Central Valley, and Inland Empire. We have regional offices in Los Angeles, San Francisco, and San Diego to ensure prompt service and local expertise. We can also coordinate services in other California locations upon request."
       }
     },
     {
@@ -65,7 +123,7 @@
       "name": "Can you integrate with our existing security systems?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, our security solutions are designed to integrate seamlessly with your existing systems. Whether you have legacy access control, CCTV cameras, or alarm systems, our technical team can integrate with most major manufacturers and platforms. We provide a comprehensive assessment of your current systems and recommend integration strategies that maximize your security investment."
+        "text": "Yes, our security solutions are designed to integrate seamlessly with your existing systems. Whether you have legacy access control, CCTV cameras, alarm systems, or fire safety equipment, our technical team can integrate with most major manufacturers and platforms including Honeywell, Johnson Controls, Bosch, and Axis. We provide a comprehensive assessment of your current systems and recommend integration strategies that maximize your security investment while maintaining operational continuity."
       }
     },
     {
@@ -73,63 +131,121 @@
       "name": "How do you measure the effectiveness of your <%= serviceType %> security services?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We implement comprehensive performance metrics including incident reduction rates, response times, <%= clientType %> satisfaction surveys, and regular security audits. Our proprietary security dashboard provides <%= managerType %> with real-time data on security activities, incidents, and trends. We conduct quarterly performance reviews with all clients to ensure security objectives are being met and to adjust strategies as needed."
+        "text": "We implement comprehensive performance metrics including incident reduction rates, response times, <%= currentServiceFAQ.clientType %> satisfaction surveys, guard performance evaluations, and regular security audits. Our proprietary security dashboard provides <%= currentServiceFAQ.managerType %> with real-time data on security activities, incidents, trends, and guard locations. We conduct quarterly performance reviews with all clients to ensure security objectives are being met and to adjust strategies as needed."
       }
     },
     {
       "@type": "Question",
-      "name": "Do you offer security assessment for <%= propertyType %>?",
+      "name": "Do you offer free security assessments for <%= propertyType %>?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, we offer comprehensive security assessments for <%= propertyType %> of all sizes. Our assessment includes access point analysis, lighting evaluation, <%= assessmentSpecifics %>, existing technology evaluation, and <%= clientType %> security survey. Following the assessment, we provide a detailed report with prioritized recommendations and implementation options."
+        "text": "Yes, we offer comprehensive free security assessments for <%= propertyType %> of all sizes. Our assessment includes access point analysis, lighting evaluation, <%= currentServiceFAQ.assessmentSpecifics %>, existing technology evaluation, and <%= currentServiceFAQ.clientType %> security survey. Following the assessment, we provide a detailed written report with prioritized recommendations, cost estimates, and implementation timelines. This assessment typically takes 2-4 hours and includes a follow-up consultation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What training do your <%= serviceType %> security guards receive?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our <%= serviceType %> security guards complete 80+ hours of initial training including BSIS requirements, emergency response procedures, customer service, communication skills, legal authority, and <%= serviceType %>-specific protocols. Training includes de-escalation techniques, incident reporting, access control systems, and emergency medical response. Guards receive monthly continuing education, annual recertification, and specialized training for specific client needs. All training is documented and tracked through our learning management system."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide armed security guards for <%= serviceType %> properties?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we provide both armed and unarmed security officers based on your <%= propertyType %>'s risk assessment and security needs. Our armed guards hold valid California concealed carry permits, receive additional firearms training, and undergo enhanced background checks. Armed security services start at $<%= priceRange.high %>/hour and include specialized training in threat assessment, weapon retention, and legal use of force. We work with you to determine the appropriate security level for your specific situation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens during a security emergency at my <%= propertyType %>?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "During a security emergency, our guards immediately assess the situation, ensure personal safety, and contact appropriate emergency services (911, police, fire, medical) as needed. They secure the area, document the incident, and notify our 24/7 command center and designated client contacts. Our guards are trained in first aid, CPR, and emergency response procedures. A detailed incident report is completed within 2 hours, and we provide follow-up support including insurance documentation and security plan adjustments if needed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you ensure consistent quality across all <%= serviceType %> security assignments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We maintain consistent quality through standardized operating procedures, regular supervisor visits, GPS tracking and communication systems, client feedback surveys, mystery shopper evaluations, and performance monitoring. All guards use our mobile app to complete hourly reports, incident documentation, and checkpoint verification. Supervisors conduct weekly site visits and monthly performance reviews. We maintain detailed quality metrics and immediately address any service issues to ensure consistent excellence."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What technology do you use for <%= serviceType %> security monitoring?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We utilize advanced security technology including GPS-enabled guard tracking, mobile reporting apps, real-time communication systems, digital surveillance integration, and cloud-based incident management. Our guards carry smartphones with panic buttons, two-way radios, and body cameras when appropriate. We integrate with existing CCTV systems, access control platforms, and alarm systems. Our 24/7 command center monitors all activities and can provide immediate backup support when needed."
       }
     }
   ]
 }
 </script>
-<%
-// Extract serviceData for FAQ schema
-const faqServiceData = typeof locals.serviceData !== 'undefined' ? serviceData : {};
-const serviceTypeForFAQ = faqServiceData.serviceType || 'security';
-%>
 
-<!-- FAQ Schema for Service -->
+<!-- How-To Schema for Voice Search Optimization -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@type": "HowTo",
+  "name": "How to Choose the Right <%= serviceType.charAt(0).toUpperCase() + serviceType.slice(1) %> Security Service",
+  "description": "Step-by-step guide to selecting professional <%= serviceType %> security services in California",
+  "image": "https://shieldwisesecurity.com/img/security-selection-guide.webp",
+  "totalTime": "PT30M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": "<%= priceRange.low %>"
+  },
+  "supply": [
     {
-      "@type": "Question",
-      "name": "How much do <%= serviceTypeForFAQ %> security services cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Our <%= serviceTypeForFAQ %> security services start at $<%= (faqServiceData.priceRange && faqServiceData.priceRange.low) ? faqServiceData.priceRange.low : '35' %> per hour. Pricing varies based on service type, location, and duration. Contact us for a free customized quote."
-      }
+      "@type": "HowToSupply",
+      "name": "Security Assessment"
     },
     {
-      "@type": "Question",
-      "name": "Are your security guards licensed?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, all our security guards are BSIS (Bureau of Security and Investigative Services) licensed in California. We ensure all personnel meet state requirements and undergo continuous training."
-      }
+      "@type": "HowToSupply",
+      "name": "Budget Planning"
+    }
+  ],
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "Security Checklist"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Assess Your Security Needs",
+      "text": "Evaluate your <%= propertyType %>'s specific security requirements, vulnerabilities, and risk factors.",
+      "image": "https://shieldwisesecurity.com/img/security-assessment.webp"
     },
     {
-      "@type": "Question",
-      "name": "Do you provide 24/7 <%= serviceTypeForFAQ %> security services?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, we provide 24/7 <%= serviceTypeForFAQ %> security services throughout California. Our teams are available around the clock for immediate response and ongoing protection."
-      }
+      "@type": "HowToStep",
+      "name": "Verify Licensing and Insurance",
+      "text": "Ensure the security company holds valid BSIS licensing and adequate liability insurance coverage.",
+      "image": "https://shieldwisesecurity.com/img/licensing-verification.webp"
     },
     {
-      "@type": "Question",
-      "name": "What areas do you serve for <%= serviceTypeForFAQ %> security?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We provide <%= serviceTypeForFAQ %> security services throughout California, including Los Angeles, San Francisco, San Diego, Orange County, Sacramento, and surrounding areas."
-      }
+      "@type": "HowToStep",
+      "name": "Review Experience and Training",
+      "text": "Check the company's experience with <%= serviceType %> properties and guard training programs.",
+      "image": "https://shieldwisesecurity.com/img/guard-training.webp"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Compare Pricing and Services",
+      "text": "Obtain detailed quotes and compare service offerings, technology, and response capabilities.",
+      "image": "https://shieldwisesecurity.com/img/pricing-comparison.webp"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Check References and Reviews",
+      "text": "Contact references and read verified reviews from similar <%= serviceType %> clients.",
+      "image": "https://shieldwisesecurity.com/img/client-testimonials.webp"
     }
   ]
 }
