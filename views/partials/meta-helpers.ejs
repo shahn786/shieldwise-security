@@ -1,40 +1,26 @@
 <%
-// Helper function: truncateTitle
+// Helper functions
 function truncateTitle(title, maxLength = 58) {
   if (!title) return 'Security Services | ShieldWise';
   const suffix = ' | ShieldWise';
   const maxTitleLength = maxLength - suffix.length;
-  if (title.length > maxTitleLength) {
-    return title.substring(0, maxTitleLength).trim() + '...' + suffix;
-  } else {
-    return title + suffix;
-  }
+  return title.length > maxTitleLength ? title.substring(0, maxTitleLength).trim() + '...' + suffix : title + suffix;
 }
 
-// Helper function: truncateDescription
 function truncateDescription(desc, maxLength = 155) {
-  if (!desc) {
-    return 'Professional security services in California. BSIS licensed guards, 24/7 monitoring. Call 1-800-SHIELD-1 for free assessment.';
-  }
-  if (desc.length > maxLength) {
-    return desc.substring(0, maxLength).trim() + '...';
-  }
-  return desc;
+  if (!desc) return 'Professional security services in California. BSIS licensed guards, 24/7 monitoring. Call 1-800-SHIELD-1 for free assessment.';
+  return desc.length > maxLength ? desc.substring(0, maxLength).trim() + '...' : desc;
 }
 
-// Helper function: generateDynamicKeywords
 function generateDynamicKeywords(baseKeywords, serviceType, location = 'California') {
   const base = baseKeywords || '';
   const dynamic = `${serviceType} security, ${location} security company, licensed security guards, 24/7 security services`;
   return base + (base ? ', ' : '') + dynamic;
 }
 
-// Helper function: generateSchemaDescription
-function generateSchemaDescription(serviceData) {
-  return `Professional ${serviceData.serviceType} security services in California. ${serviceData.serviceDescription} Starting from $${serviceData.priceRange.low}/hour.`;
-}
-
 // Extract serviceData from locals or use defaults
+const serviceDataFromLocals = (typeof locals !== 'undefined' && locals.serviceData) ? locals.serviceData : {};
+
 const {
   serviceTitle = 'Professional Security Services',
   serviceDescription = 'Professional security services with licensed guards and 24/7 monitoring.',
@@ -48,9 +34,8 @@ const {
   serviceAltName = 'Security Guard Services',
   serviceOutput = 'Enhanced security and protection',
   audienceType = 'Property Managers and Business Owners'
-} = typeof locals !== 'undefined' && typeof locals.serviceData !== 'undefined' ? locals.serviceData : {};
+} = serviceDataFromLocals;
 
-// Build `safeServiceData` with the extracted values
 const safeServiceData = {
   serviceTitle,
   serviceDescription,

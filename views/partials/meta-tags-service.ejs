@@ -1,39 +1,27 @@
+<%- include('../partials/meta-helpers') %>
 <%
-// Build optimized Title, Description, and Keywords using our helper functions:
-const optimizedTitle = truncateTitle(
-  `${safeServiceData.serviceTitle} | 24/7 Guards from $${safeServiceData.priceRange.low}/hr`
-);
-
-const optimizedDescription = truncateDescription(
-  `${safeServiceData.serviceDescription} Licensed BSIS guards, 24/7 monitoring, access control & emergency response. 4.9★ (287+ reviews). Call 1-800-SHIELD-1.`
-);
-
-const optimizedKeywords = generateDynamicKeywords(
-  safeServiceData.serviceKeywords,
-  safeServiceData.serviceType
-);
+  const optimizedTitle = truncateTitle(`${safeServiceData.serviceTitle} | 24/7 Guards from $${safeServiceData.priceRange.low}/hr`);
+  const optimizedDescription = truncateDescription(`${safeServiceData.serviceDescription} Licensed BSIS guards, 24/7 monitoring, access control & emergency response. 4.9★ (287+ reviews). Call 1-800-SHIELD-1.`);
+  const optimizedKeywords = generateDynamicKeywords(safeServiceData.serviceKeywords, safeServiceData.serviceType);
 %>
-
 <!-- Core SEO Meta Tags -->
+<title><%= optimizedTitle %></title>
+<meta name="description" content="<%= optimizedDescription %>">
+<meta name="keywords" content="<%= optimizedKeywords %>">
+
+<!-- All your other meta tags (as you have them) go here. Do not duplicate <title> or description or keywords. -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-<title><%= optimizedTitle %></title>
-<meta name="description" content="<%= optimizedDescription %>">
-<meta name="keywords" content="<%= optimizedKeywords %>">
-
-<!-- Enhanced News Keywords -->
 <meta name="news_keywords" content="<%= safeServiceData.serviceType %> security, california security, <%= safeServiceData.propertyType %> protection">
 
-<!-- AI Search Engine Optimization Tags -->
 <meta name="ai-search-intent" content="Find professional <%= safeServiceData.serviceType %> security services in California">
 <meta name="ai-search-service" content="<%= safeServiceData.serviceType %> security guards, access control systems, mobile patrols, CCTV monitoring">
 <meta name="ai-search-price" content="From $<%= safeServiceData.priceRange.low %>/hour, Affordable, Licensed">
 <meta name="ai-search-benefit" content="Crime reduction, 24/7 protection, property value increase, <%= safeServiceData.serviceBenefit %>">
 
-<!-- Enhanced Open Graph Meta Tags -->
 <meta property="og:title" content="Professional <%= safeServiceData.serviceTitle %> | ShieldWise Security California">
 <meta property="og:description" content="Licensed 24/7 <%= safeServiceData.serviceType %> security guards for California. Access control, mobile patrols & emergency response from $<%= safeServiceData.priceRange.low %>/hour. 287+ verified reviews.">
 <meta property="og:image" content="https://shieldwisesecurity.com/img/<%= safeServiceData.serviceImage %>">
@@ -51,7 +39,6 @@ const optimizedKeywords = generateDynamicKeywords(
 <meta property="og:brand" content="ShieldWise Security">
 <meta property="og:phone_number" content="+18007433531">
 
-<!-- Enhanced Twitter Card Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@ShieldWiseSec">
 <meta name="twitter:creator" content="@ShieldWiseSec">
@@ -64,13 +51,11 @@ const optimizedKeywords = generateDynamicKeywords(
 <meta name="twitter:label2" content="Price">
 <meta name="twitter:data2" content="From $<%= safeServiceData.priceRange.low %>/hour">
 
-<!-- SINGLE SOURCE OF TRUTH: Canonical URL & Hreflang -->
 <link rel="canonical" href="https://shieldwisesecurity.com/services/<%= safeServiceData.serviceUrl %>">
 <link rel="alternate" hreflang="en-us" href="https://shieldwisesecurity.com/services/<%= safeServiceData.serviceUrl %>">
 <link rel="alternate" hreflang="es-us" href="https://shieldwisesecurity.com/es/servicios/<%= safeServiceData.serviceUrl %>">
 <link rel="alternate" hreflang="x-default" href="https://shieldwisesecurity.com/services/<%= safeServiceData.serviceUrl %>">
 
-<!-- Additional Meta Tags -->
 <meta name="format-detection" content="telephone=no">
 <meta name="author" content="ShieldWise Security Services">
 <meta name="publisher" content="ShieldWise Security Services">
@@ -81,33 +66,27 @@ const optimizedKeywords = generateDynamicKeywords(
 <meta name="web_author" content="ShieldWise Security Services">
 <meta name="article:publisher" content="https://www.facebook.com/ShieldWiseSecurity">
 
-<!-- Geographic Meta Tags -->
 <meta name="geo.region" content="US-CA">
 <meta name="geo.placename" content="California">
 <meta name="geo.position" content="34.052235;-118.243683">
 <meta name="ICBM" content="34.052235, -118.243683">
 
-<!-- Security & Privacy -->
 <meta name="referrer" content="no-referrer-when-downgrade">
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
-<!-- Language & Region -->
 <meta name="language" content="English">
 <meta name="content-language" content="en-US">
 <meta http-equiv="content-language" content="en-US">
 
-<!-- AI Search Engine Optimization Base Tags -->
 <meta name="ai-search-entity" content="ShieldWise Security Services">
 <meta name="ai-content-type" content="Business, Security Services">
 <meta name="ai-search-location" content="California, Los Angeles, San Francisco, San Diego, Orange County, Sacramento">
 <meta name="ai-search-differentiator" content="BSIS licensed, 20+ years experience, 287+ verified reviews, $2M liability coverage">
 
-<!-- Social Media Verification -->
 <meta name="google-site-verification" content="abc123xyz789definitelyrealgooglecode">
 <meta name="facebook-domain-verification" content="fb456def789realhashcode">
 <meta name="norton-safeweb-site-verification" content="norton789xyz456verification">
 
-<!-- Favicon + PWA Meta Icons -->
 <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
@@ -126,8 +105,3 @@ const optimizedKeywords = generateDynamicKeywords(
 <meta name="msapplication-config" content="/browserconfig.xml">
 <meta name="theme-color" content="#1a3c64">
 <meta name="mobile-web-app-capable" content="yes">
-
-<%- include('../partials/meta-tags-base') %>
-<%
-// Now these helpers and safeServiceData are available!
-function truncateTitle(title, maxLength = 58) {
