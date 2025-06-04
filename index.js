@@ -173,7 +173,13 @@ app.get('/services/apartment-security', (req, res) => {
     priceRange: { low: 35, mid: 55, high: 85 },
     serviceAltName: 'Residential Security Services',
     serviceOutput: 'Complete apartment complex protection',
-    audienceType: 'Property Managers and Residents'
+    audienceType: 'Property Managers and Residents',
+    relatedProperty: 'apartments',
+    specializedServices: 'access control systems, CCTV monitoring, visitor management, parking area security, emergency response protocols',
+    industryType: 'residential',
+    clientType: 'residents and property managers',
+    managerType: 'property managers',
+    assessmentSpecifics: 'resident safety protocols, common area security evaluation, parking garage assessment'
   };
 
   res.render('services/apartment-security', { 
@@ -360,26 +366,7 @@ app.get("/career", isAuthenticated, (req, res) => {
 // Services Page
 
 
-// In your main app.js or routes file
-app.get("/services/apartment-security", (req, res) => {
-  // Define the service data that your template expects
-  const serviceData = {
-    serviceTitle: 'Professional Apartment Security Services',
-    serviceDescription: 'Comprehensive apartment security solutions with 24/7 guards, access control, and surveillance systems.',
-    serviceKeywords: 'apartment security, residential security guards, access control, 24/7 monitoring',
-    serviceImage: 'apartment-security-hero.webp',
-    serviceUrl: 'apartment-security',
-    serviceType: 'apartment',
-    serviceBenefit: 'enhanced resident safety and property protection',
-    propertyType: 'apartment complex',
-    priceRange: { low: 35, mid: 55, high: 85 },
-    serviceAltName: 'Residential Security Services',
-    serviceOutput: 'Secure apartment living environment',
-    audienceType: 'Property Managers and Apartment Residents'
-  };
 
-  res.render("services/apartment-security", { serviceData });
-});
 
 // If you want a general services page
 app.get("/services", (req, res) => {
