@@ -10,7 +10,10 @@
     <%- include('../partials/schema-primary') %>
     <%- include('../partials/schema-service', serviceData) %>
     <%- include('../partials/schema-faq-service', serviceData) %>
-    <%- include('../partials/tracking-scripts') %>
+    <%- include('../partials/tracking-scripts', { 
+        serviceType: serviceData.serviceType, 
+        priceRange: serviceData.priceRange 
+    }) %>
 
 </head>
         
