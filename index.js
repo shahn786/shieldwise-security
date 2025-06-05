@@ -189,10 +189,57 @@ app.get('/services/apartment-security', (req, res) => {
   });
 });
 
+// Import route modules
+const armedSecurityRouter = require('./routes/armed-security');
+
 // Routes
 app.get("/", (req, res) => res.render("index"));
 
+app.get("/services", (req, res) => {
+  res.render("services");
+});
 
+app.get("/contact", (req, res) => {
+  res.render("contact", {
+    success: undefined,
+    name: "",
+    email: "",
+    contact_number: "",
+    best_time: "",
+    message: "",
+  });
+});
+
+app.get("/get-quote", (req, res) => {
+  res.render("get-quote", {
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+});
+
+app.get("/career", (req, res) => {
+  const username = req.session.user ? req.session.user.username : null;
+  res.render("career", { loggedIn: true, username });
+});
+
+app.get("/service-areas", (req, res) => {
+  res.render("service-areas");
+});
+
+app.get("/register", (req, res) => {
+  const loggedIn = req.isAuthenticated ? req.isAuthenticated() : false;
+  res.render("register", { loggedIn, error: null, success: null });
+});
+
+app.get("/login", (req, res) => {
+  const loggedIn = req.isAuthenticated ? req.isAuthenticated() : false;
+  res.render("login", { loggedIn, success: req.flash("success") });
+});
+
+// Service route handlers
+app.use('/services/armed-security', armedSecurityRouter);
 
 // Register Route
 app.get("/register", (req, res) => {
@@ -541,16 +588,6 @@ app.post("/logout", (req, res) => {
 });
 
 // Contact Route
-app.get("/contact", (req, res) => {
-  res.render("contact", {
-    success: undefined,
-    name: "",
-    email: "",
-    contact_number: "",
-    best_time: "",
-    message: "",
-  });
-});
 
 app.post("/contact", async (req, res) => {
   const { name, email, contact_number, best_time, message } = req.body;
