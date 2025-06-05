@@ -1,0 +1,94 @@
+
+<%
+// schema-faq-armed-security.ejs
+// Armed Security specific FAQ Schema for enhanced search visibility
+
+const serviceData = (typeof locals !== 'undefined' && locals.serviceData) ? locals.serviceData : {};
+const {
+    serviceType = 'armed_security',
+    priceRange = { low: 75, mid: 95, high: 125 }
+} = serviceData;
+%>
+
+<!-- Armed Security FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://shieldwisesecurity.com/faq/armed-security/#faqpage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What training and qualifications do your armed security guards have?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All ShieldWise Security armed personnel complete a comprehensive minimum of 80 hours specialized training program, including 40 hours of advanced firearms training, conflict de-escalation techniques, emergency response protocols, first aid/CPR certification, and legal use of force guidelines. Our guards must complete quarterly range qualification and participate in ongoing tactical training. 100% of our armed security officers have prior law enforcement or military experience, ensuring the highest level of professional expertise and situational awareness."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are your armed security guards properly licensed and insured in California?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all ShieldWise Security armed guards maintain full compliance with California regulations through valid Bureau of Security and Investigative Services (BSIS) licensing, including current Guard Cards and Exposed Firearms Permits. Our company maintains comprehensive insurance coverage including $5 million in general liability insurance and $2 million in professional liability insurance. Insurance certificates and license verification are available upon request for all client engagements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your guaranteed emergency response time for armed security services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ShieldWise Security guarantees emergency response times under 15 minutes throughout our primary service areas of Los Angeles County, Orange County, and San Diego County. For clients with dedicated 24/7 on-site security personnel, immediate response is provided by our stationed guards. Our strategically positioned mobile patrol units and rapid response teams ensure we consistently meet our response time commitments across all service territories."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which types of businesses and properties require armed security services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Businesses and properties that commonly benefit from armed security services include financial institutions and banks, jewelry stores and high-end retail, cannabis dispensaries and cultivation facilities, pharmaceutical facilities and medical centers, executive offices and corporate headquarters, government buildings and contractors, data centers and technology facilities, high-value asset storage, venues hosting high-profile events, and any business located in high-crime areas or handling valuable merchandise, cash, or sensitive information."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the costs and pricing for hiring armed security guards?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Armed security guard services begin at $<%= priceRange.low %> per hour with an 8-hour minimum shift requirement. Executive protection services start at $<%= priceRange.high %> per hour for specialized personal security details. Event security services are priced at $<%= priceRange.mid %> per hour per guard, with volume discounts available for multiple guard deployments. Mobile armed patrol services start at $85 per hour. Long-term service contracts receive preferential pricing rates, and customized security packages are available following a complimentary comprehensive security assessment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide 24/7 armed security coverage throughout California?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, ShieldWise Security provides comprehensive 24/7 armed security coverage throughout California, with primary service areas including Los Angeles County, Orange County, and San Diego County. Our around-the-clock operations center coordinates continuous coverage through shift rotations, ensuring seamless protection at all hours. We maintain emergency response capabilities 365 days per year, including holidays and weekends, with immediate dispatch available through our emergency hotline."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you ensure the quality and reliability of your armed security personnel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ShieldWise Security maintains the highest standards through rigorous screening processes including comprehensive background checks, psychological evaluations, drug testing, and verification of military or law enforcement experience. All armed personnel undergo continuous training, regular performance evaluations, and mandatory quarterly firearm qualifications. We maintain detailed incident reporting, client feedback systems, and quality assurance protocols. Our 99.8% client satisfaction rate reflects our commitment to excellence in armed security services."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes armed security different from unarmed security services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Armed security guards provide the highest level of deterrent presence and response capability. They are authorized to carry firearms and have enhanced training in threat assessment, tactical response, and emergency situations. Armed guards are ideal for high-risk environments, valuable asset protection, and situations requiring immediate response capability. They undergo additional background checks, firearms training, and psychological evaluations beyond standard security requirements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can armed security guards detain suspects or make arrests?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "California armed security guards have the same citizen's arrest authority as any private citizen, but with enhanced training in proper procedures. They can detain individuals who commit crimes in their presence until law enforcement arrives. Our guards are extensively trained in legal limitations, proper detention procedures, and when to involve law enforcement. All detention incidents are immediately reported to local police and thoroughly documented according to legal requirements."
+      }
+    }
+  ]
+}
+</script>
