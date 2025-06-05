@@ -1,0 +1,348 @@
+
+<style>
+/* Armed Security Specific Styles */
+:root {
+    --armed-primary: #1a2b4c;
+    --armed-secondary: #d4af37;
+    --armed-accent: #c41e3a;
+    --armed-dark: #0f1b2e;
+    --armed-light: #f5f7fa;
+    --armed-gradient: linear-gradient(135deg, #1a2b4c 0%, #2c4068 100%);
+    --armed-secondary-gradient: linear-gradient(135deg, #d4af37 0%, #f0c14b 100%);
+}
+
+/* Armed Security Hero Section */
+.armed-hero-section {
+    background: linear-gradient(rgba(26, 43, 76, 0.9), rgba(26, 43, 76, 0.9)), url('/img/armsecurity.png');
+    background-size: cover;
+    background-position: center;
+    padding: 180px 0;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.armed-hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--armed-gradient);
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.armed-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.armed-hero-title {
+    font-size: 3.8rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    line-height: 1.2;
+}
+
+.armed-hero-subtitle {
+    font-size: 1.6rem;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    opacity: 0.95;
+    font-weight: 300;
+}
+
+.armed-cta-button {
+    background: var(--armed-secondary-gradient);
+    color: var(--armed-dark);
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+}
+
+.armed-cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+    color: var(--armed-dark);
+}
+
+/* Armed Security Features */
+.armed-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+    margin-top: 50px;
+}
+
+.armed-feature-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.4s ease;
+    border: 3px solid transparent;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.armed-feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--armed-secondary-gradient);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.armed-feature-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(26, 43, 76, 0.15);
+    border-color: var(--armed-secondary);
+}
+
+.armed-feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+.armed-feature-icon {
+    width: 90px;
+    height: 90px;
+    background: var(--armed-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 2.8rem;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.armed-feature-card:hover .armed-feature-icon {
+    transform: scale(1.1);
+    background: var(--armed-secondary-gradient);
+    color: var(--armed-dark);
+}
+
+.armed-feature-title {
+    font-size: 1.5rem;
+    color: var(--armed-primary);
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+
+.armed-feature-description {
+    color: #666;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* Armed Security Stats */
+.armed-stats-section {
+    background: var(--armed-gradient);
+    padding: 80px 0;
+    color: white;
+}
+
+.armed-stat-card {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.armed-stat-number {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--armed-secondary);
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.armed-stat-label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* Armed Security Benefits */
+.armed-benefits-section {
+    padding: 100px 0;
+    background: var(--armed-light);
+}
+
+.armed-benefit-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    padding: 25px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.armed-benefit-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 12px 35px rgba(26, 43, 76, 0.12);
+}
+
+.armed-benefit-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--armed-secondary-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 25px;
+    flex-shrink: 0;
+    color: var(--armed-dark);
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.armed-benefit-content h4 {
+    color: var(--armed-primary);
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.armed-benefit-content p {
+    color: #666;
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+/* Armed Security Process */
+.armed-process-section {
+    padding: 100px 0;
+    background: white;
+}
+
+.armed-process-step {
+    text-align: center;
+    padding: 40px 25px;
+    margin-bottom: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.armed-process-step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(26, 43, 76, 0.15);
+}
+
+.armed-process-number {
+    width: 70px;
+    height: 70px;
+    background: var(--armed-secondary-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--armed-dark);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+}
+
+.armed-process-title {
+    font-size: 1.4rem;
+    color: var(--armed-primary);
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+
+.armed-process-description {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Armed Security CTA Section */
+.armed-cta-section {
+    background: var(--armed-gradient);
+    padding: 100px 0;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.armed-cta-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.armed-cta-text {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Emergency Contact Badge */
+.armed-emergency-badge {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--armed-accent);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    box-shadow: 0 8px 25px rgba(196, 30, 58, 0.3);
+    z-index: 1000;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .armed-hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .armed-hero-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .armed-features-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .armed-benefit-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .armed-benefit-icon {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+</style>
