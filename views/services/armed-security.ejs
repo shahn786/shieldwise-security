@@ -15,7 +15,349 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <%- include('../partials/armed-security-styles') %>
+    <style>
+        /* Apartment Security Section Styles */
+        .apartment-features-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .apartment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .apartment-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .apartment-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-secondary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .apartment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .apartment-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .apartment-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .apartment-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .apartment-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .security-process-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .process-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .benefits-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .benefit-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .benefit-content p {
+            color: #666;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        :root {
+            --primary-color: #1a3c6e;
+            --secondary-color: #bf9e5b;
+            --text-color: #333333;
+            --light-bg: #f8f9fa;
+            --gradient-secondary: linear-gradient(135deg, #bf9e5b, #d4b570);
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(26, 60, 110, 0.9), rgba(26, 60, 110, 0.9)), url('/img/armsecurity.png');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), #0d2b54);
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .btn-custom {
+            background: var(--secondary-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-custom:hover {
+            background: #a88b4a;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .stats-section {
+            padding: 60px 0;
+            background: var(--light-bg);
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .client-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .apartment-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Accessibility - Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 1000;
+            border-radius: 0 0 4px 4px;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
     <%- include('../partials/schema-primary') %>
     <%- include('../partials/schema-armed-security') %>
     <%- include('../partials/schema-faq-armed-security') %>
@@ -57,19 +399,19 @@
         </div>
 
         <!-- Armed Security Features Section -->
-        <section id="features" class="armed-features-section">
+        <section id="features" class="apartment-features-section">
             <div class="container">
                 <h2 class="section-title">Elite Armed Security Features</h2>
                 <p class="section-subtitle">Advanced protection capabilities with military-grade precision</p>
                 
-                <div class="armed-grid">
+                <div class="apartment-grid">
                     <% serviceData.features.forEach(feature => { %>
-                    <div class="armed-card">
-                        <div class="armed-icon">
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
                             <i class="<%= feature.icon %>" aria-hidden="true"></i>
                         </div>
-                        <h3 class="armed-title"><%= feature.title %></h3>
-                        <p class="armed-description"><%= feature.description %></p>
+                        <h3 class="apartment-title"><%= feature.title %></h3>
+                        <p class="apartment-description"><%= feature.description %></p>
                     </div>
                     <% }); %>
                 </div>
@@ -275,7 +617,7 @@
         }, observerOptions);
 
         // Observe elements for animation
-        document.querySelectorAll('.armed-card, .service-card, .process-step, .benefit-item').forEach(el => {
+        document.querySelectorAll('.apartment-card, .service-card, .process-step, .benefit-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.6s ease';
