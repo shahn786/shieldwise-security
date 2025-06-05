@@ -9,6 +9,7 @@
     <!-- CSS Resources -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="/css/apartment-security.css" rel="stylesheet">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,19 +58,19 @@
         </div>
 
         <!-- Armed Security Features Section -->
-        <section id="features" class="armed-features-section">
+        <section id="features" class="apartment-features-section">
             <div class="container">
                 <h2 class="section-title">Elite Armed Security Features</h2>
                 <p class="section-subtitle">Advanced protection capabilities with military-grade precision</p>
                 
-                <div class="armed-grid">
+                <div class="apartment-grid">
                     <% serviceData.features.forEach(feature => { %>
-                    <div class="armed-card">
-                        <div class="armed-icon">
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
                             <i class="<%= feature.icon %>" aria-hidden="true"></i>
                         </div>
-                        <h3 class="armed-title"><%= feature.title %></h3>
-                        <p class="armed-description"><%= feature.description %></p>
+                        <h3 class="apartment-title"><%= feature.title %></h3>
+                        <p class="apartment-description"><%= feature.description %></p>
                     </div>
                     <% }); %>
                 </div>
@@ -275,7 +276,7 @@
         }, observerOptions);
 
         // Observe elements for animation
-        document.querySelectorAll('.armed-card, .service-card, .process-step, .benefit-item').forEach(el => {
+        document.querySelectorAll('.apartment-card, .service-card, .process-step, .benefit-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.6s ease';
