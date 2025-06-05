@@ -1,4 +1,3 @@
-
 const express = require('express');
 const router = express.Router();
 
@@ -13,24 +12,24 @@ router.get('/', (req, res) => {
         serviceType: 'armed_security',
         serviceBenefit: 'enhanced protection with armed response capability',
         propertyType: 'high-risk properties and businesses',
-        
+
         // Pricing Information
         priceRange: { 
             low: 75, 
             mid: 95, 
             high: 125 
         },
-        
+
         // Alternative Names and Outputs
         serviceAltName: 'Armed Security Guard Services',
         serviceOutput: 'Enhanced Security and Peace of Mind with Armed Protection',
         audienceType: 'Business Owners, Property Managers, Event Organizers, Executives, High-Net-Worth Individuals',
-        
+
         // Page-specific Meta Data
         pageTitle: 'Armed Security Guards California | 24/7 Licensed Protection | ShieldWise Security',
         pageDescription: 'California\'s premier armed security service with BSIS-licensed guards. Military & law enforcement trained professionals. 24/7 emergency response under 15 minutes. Serving LA, Orange County & San Diego. Free security assessment - Call (800) 744-3531',
         canonicalUrl: 'https://shieldwisesecurity.com/services/armed-security/',
-        
+
         // Service-specific Features
         features: [
             {
@@ -64,7 +63,7 @@ router.get('/', (req, res) => {
                 description: 'Round-the-clock coordination and backup support through our professional security operations center.'
             }
         ],
-        
+
         // Service Process Steps
         processSteps: [
             {
@@ -88,7 +87,7 @@ router.get('/', (req, res) => {
                 description: 'Continuous armed protection with regular assessments, adjustments, and performance monitoring.'
             }
         ],
-        
+
         // Service Benefits
         benefits: [
             {
@@ -122,7 +121,7 @@ router.get('/', (req, res) => {
                 description: 'Direct coordination with local law enforcement and emergency services when incidents occur.'
             }
         ],
-        
+
         // Service Offerings
         serviceOfferings: [
             {
@@ -156,7 +155,7 @@ router.get('/', (req, res) => {
                 ]
             }
         ],
-        
+
         // Statistics
         statistics: [
             { number: '500+', label: 'Armed Guards Available' },
@@ -164,7 +163,7 @@ router.get('/', (req, res) => {
             { number: '24/7', label: 'Emergency Response' },
             { number: '15+', label: 'Years Experience' }
         ],
-        
+
         // Testimonials
         testimonials: [
             {
