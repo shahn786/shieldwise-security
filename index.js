@@ -799,3 +799,7 @@ app.use('/services/fire-watch', fireWatchRoute);
 app.use('/services/hospital-security', hospitalSecurityRouter);
 app.use('/services/hotel-security', hotelSecurityRoutes);
 app.use('/services/shopping-center-security', shoppingCenterSecurityRoute);
+app.use('/services/special-event-security', require('./routes/special-event-security'));
+
+// Start the server
+const PORT = process.env.PORT || 3000;
