@@ -787,3 +787,16 @@ orangeCountyCities.forEach(city => {
         res.render(`cities/${city}`, { title: formattedCity, cityName: formattedCity });
     });
 });
+
+const hotelSecurityRoutes = require('./routes/hotel-security');
+
+// Use routes
+app.use('/services/apartment-security', apartmentSecurityRouter);
+app.use('/services/armed-security', armedSecurityRoutes);
+app.use('/services/commercial-security', commercialSecurityRoutes);
+app.use('/services/construction-security', constructionSecurityRoutes);
+app.use('/services/educational-campus-security', educationalSecurityRoutes);
+app.use('/services/executive-protection', executiveProtectionRoute);
+app.use('/services/fire-watch', fireWatchRoute);
+app.use('/services/hospital-security', hospitalSecurityRouter);
+app.use('/services/hotel-security', hotelSecurityRoutes);
