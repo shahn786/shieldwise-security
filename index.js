@@ -191,6 +191,7 @@ app.get('/services/apartment-security', (req, res) => {
 
 // Import route modules
 const armedSecurityRouter = require('./routes/armed-security');
+const commercialSecurityRouter = require('./routes/commercial-security');
 
 // Routes
 app.get("/", (req, res) => res.render("index"));
@@ -240,6 +241,7 @@ app.get("/login", (req, res) => {
 
 // Service route handlers
 app.use('/services/armed-security', armedSecurityRouter);
+app.use('/services/commercial-security', commercialSecurityRouter);
 
 // Register Route
 app.get("/register", (req, res) => {
