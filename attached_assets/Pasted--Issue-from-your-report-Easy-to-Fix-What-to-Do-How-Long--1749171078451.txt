@@ -1,0 +1,14 @@
+| Issue (from your report)            | Easy to Fix? | What to Do / How Long?                                                                                              |
+| ----------------------------------- | :----------: | ------------------------------------------------------------------------------------------------------------------- |
+| Serve images in next-gen formats    |      Yes     | Convert JPG/PNG to WebP or AVIF (15-30 min with batch tools)                                                        |
+| Properly size images                |      Yes     | Resize large images to display size (use an image optimizer, 10 min)                                                |
+| Defer offscreen images              |      Yes     | Add `loading="lazy"` to all `<img>` tags (5 min)                                                                    |
+| Image elements lack width/height    |      Yes     | Add `width` and `height` attributes to `<img>` tags (10-20 min, search/replace or IDE assist)                       |
+| Use HTTP/2                          |   Sometimes  | Needs hosting update—most CDNs/hosts support it; ask host to enable or use Cloudflare/Netlify (1-2 hours if needed) |
+| Eliminate render-blocking resources |      Yes     | Load CSS `async` or inline critical CSS; defer JS (20-40 min)                                                       |
+| Minify CSS/JS                       |      Yes     | Use your build tool (Webpack, Vite, etc.) or online minifier (5-15 min)                                             |
+| Reduce unused CSS/JS                |      Yes     | Remove old libraries, audit styles/scripts (30-60 min)                                                              |
+| Enable text compression             |   Sometimes  | Enable gzip or Brotli on your server/CDN (10 min if you have server access)                                         |
+| Cache static assets efficiently     |      Yes     | Set long `Cache-Control` headers (5-10 min, update server config or .htaccess)                                      |
+| Avoid legacy JS for modern browsers |      Yes     | Remove/upgrade old polyfills or Babel settings (10-30 min)                                                          |
+| Avoid enormous network payloads     |      Yes     | Optimize images, minify assets, and lazy-load content (30-60 min total)                                             |
