@@ -1,0 +1,101 @@
+What Does “Best Practices 9” Refer To?
+This rating is about how well your HTML head and scripts follow modern web standards for:
+
+Accessibility (making your site usable for everyone, including those with disabilities),
+
+Performance (using <link rel="preconnect"> to speed up loading),
+
+Tracking (properly adding analytics, Facebook Pixel, etc.),
+
+Privacy (e.g., anonymizing IPs, setting privacy modes),
+
+Cleanliness (not repeating or bloating meta/scripts/CSS unnecessarily).
+
+2. Which Code is Involved?
+It mainly refers to all the <meta>, <link>, and <script> blocks in your HTML <head> and the setup in your EJS partials.
+Specifically:
+
+Your <meta> tags for accessibility, viewport, color schemes, etc.
+
+<link rel="preconnect"> for fonts, analytics, etc.
+
+Tracking scripts: Google Analytics, Tag Manager, Facebook Pixel, Microsoft Clarity.
+
+Privacy protection JS snippets.
+
+How CSS files are linked (and their names).
+
+Not repeating the same meta/scripts multiple times in the same page.
+
+Examples from Your Code
+Accessibility/Viewport/Color-Scheme:
+
+html
+Copy
+Edit
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+Preconnect for Performance:
+
+html
+Copy
+Edit
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+Tracking & Privacy:
+
+html
+Copy
+Edit
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<!-- Google Tag Manager, Microsoft Clarity, Facebook Pixel, etc. -->
+<script>
+  gtag('config', 'G-XXXXXXXXXX', { 
+    'anonymize_ip': true,
+    'allow_google_signals': false,
+    'allow_ad_personalization_signals': false,
+    // ...etc...
+  });
+</script>
+<script>
+  if (typeof window.dataLayer !== 'undefined') {
+    window.dataLayer.push({
+      'privacy_mode': true,
+      'anonymize_data': true,
+      'client_confidentiality': 'maximum'
+    });
+  }
+</script>
+CSS Naming/Loading:
+
+html
+Copy
+Edit
+<link href="/css/apartment-security.min.css" rel="stylesheet">
+If this is for Executive Protection, you might rename to /css/executive-protection.min.css for clarity.
+
+3. How to Improve (“Remove extra script/meta blocks, rename CSS”)
+Remove Duplicate <meta>/<script>:
+You had repeated blocks for meta charset, description, keywords, Open Graph, etc. Clean so each appears once in the head.
+
+Rename CSS Files If Needed:
+If you’re using /css/apartment-security.min.css for an executive protection page, consider renaming for clarity and maintainability:
+/css/executive-protection.min.css.
+
+4. Summary Table Row
+Area	Score	Strengths	Fixes/Opportunities
+Best Practices	9	Accessibility, preconnect, tracking, privacy	Remove extra script/meta blocks, rename CSS
+
+5. Short Summary
+This “Best Practices” rating covers your HTML head’s accessibility, performance, privacy, tracking, and clean code habits. It’s based on the code in your head/partials—especially meta tags, preconnects, analytics, privacy JS, and CSS link naming.
+The suggestions are:
+
+Remove duplicate meta/script blocks,
+
+Rename CSS files for clarity,
+
+Keep things lean and maintainable.
+
