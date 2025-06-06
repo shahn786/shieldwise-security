@@ -1,0 +1,102 @@
+
+<!-- Enhanced Fire Watch Service Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SecurityService",
+      "@id": "https://shieldwisesecurity.com/services/fire-watch-security/#service",
+      "serviceType": "Fire Watch Security Services",
+      "provider": { "@id": "https://shieldwisesecurity.com/#organization" },
+      "name": "Fire Watch Security Services",
+      "description": "Professional 24/7 fire watch security services including BSIS-licensed guards, fire safety patrols, construction site fire watch, system impairment coverage, and emergency response throughout California.",
+      "category": ["Fire Watch Services", "Fire Safety", "Construction Security", "Emergency Services", "Safety Compliance"],
+      "areaServed": [
+        { "@type": "State", "name": "California" },
+        { "@type": "City", "name": "Los Angeles" },
+        { "@type": "City", "name": "San Francisco" },
+        { "@type": "City", "name": "San Diego" },
+        { "@type": "City", "name": "Sacramento" },
+        { "@type": "City", "name": "Oakland" },
+        { "@type": "City", "name": "Fresno" },
+        { "@type": "City", "name": "Anaheim" },
+        { "@type": "City", "name": "Santa Ana" },
+        { "@type": "City", "name": "Riverside" },
+        { "@type": "City", "name": "Stockton" },
+        { "@type": "City", "name": "Irvine" },
+        { "@type": "City", "name": "Bakersfield" },
+        { "@type": "City", "name": "Long Beach" },
+        { "@type": "City", "name": "Orange County" }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "USD",
+        "price": "35",
+        "priceRange": "$35-$65",
+        "url": "https://shieldwisesecurity.com/services/fire-watch-security/",
+        "description": "Professional fire watch security services with BSIS-licensed guards providing 24/7 fire safety patrols and emergency response",
+        "eligibleRegion": {
+          "@type": "GeoCircle",
+          "name": "California Fire Watch Service Area"
+        },
+        "businessFunction": "https://purl.org/goodrelations/v1#Sell"
+      },
+      "additionalType": [
+        "https://schema.org/EmergencyService",
+        "https://schema.org/ProfessionalService",
+        "https://schema.org/SafetyService"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Fire Watch Services Catalog",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "24/7 Fire Watch Patrols",
+              "description": "Continuous on-site monitoring with licensed guards conducting regular patrols to identify and prevent fire hazards during system outages."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Construction Site Fire Watch",
+              "description": "Specialized protection for construction sites during vulnerable phases, hot work operations, and when fire suppression systems are offline."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Hot Work Supervision",
+              "description": "Expert supervision during welding, cutting, grinding, and other hot work operations with immediate fire suppression capabilities."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Emergency Response",
+              "description": "Rapid fire incident response with immediate notification protocols and coordination with local fire departments."
+            }
+          }
+        ]
+      },
+      "audience": {
+        "@type": "Audience",
+        "audienceType": [
+          "Construction Companies", "Property Managers", "Facility Managers", "Building Owners", "Contractors", "Maintenance Companies"
+        ]
+      },
+      "serviceOutput": {
+        "@type": "Thing",
+        "name": "Complete Fire Safety Compliance & Protection"
+      }
+    }
+  ]
+}
+</script>
