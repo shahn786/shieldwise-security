@@ -1,0 +1,324 @@
+
+<%
+// tracking-scripts-commercial-security.ejs
+// Enhanced tracking specifically for commercial security services
+
+const serviceData = (typeof locals !== 'undefined' && locals.serviceData) ? locals.serviceData : {};
+const {
+    serviceType = 'commercial_security',
+    priceRange = { low: 199, mid: 399, high: 999 }
+} = serviceData;
+%>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-SHIELD2025');</script>
+
+<!-- Enhanced Google Analytics 4 with Commercial Security Tracking -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SHLD9876543"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+// Enhanced Consent Mode v2 for 2025 compliance
+gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted'
+});
+
+gtag('js', new Date());
+gtag('config', 'G-SHLD9876543', {
+    'anonymize_ip': true,
+    'allow_google_signals': false,
+    'allow_ad_personalization_signals': false,
+    'cookie_flags': 'SameSite=None;Secure',
+    'custom_map': {
+        'custom_parameter_1': 'service_type',
+        'custom_parameter_2': 'business_size',
+        'custom_parameter_3': 'compliance_level',
+        'custom_parameter_4': 'package_interest'
+    },
+    'user_properties': {
+        'service_interest': '<%= serviceType %>',
+        'visitor_type': 'commercial_security_prospect',
+        'compliance_requirements': 'enterprise'
+    }
+});
+
+// Commercial Security specific page view tracking
+gtag('event', 'page_view', {
+    'service_type': '<%= serviceType %>',
+    'price_range': '<%= priceRange.low %>-<%= priceRange.high %>',
+    'location': 'California',
+    'page_category': 'commercial_security_page',
+    'content_group1': 'Commercial Security Services',
+    'content_group2': '<%= serviceType.charAt(0).toUpperCase() + serviceType.slice(1) %> Security',
+    'business_size': 'all_business_sizes',
+    'compliance_level': 'ISO_27001_SOC2'
+});
+
+// Commercial Security service view tracking
+gtag('event', 'view_item', {
+    'currency': 'USD',
+    'value': <%= priceRange.low %>,
+    'items': [{
+        'item_id': '<%= serviceType %>_commercial_security_service',
+        'item_name': 'Commercial Security System',
+        'item_category': 'Commercial Security Services',
+        'item_brand': 'ShieldWise Security',
+        'price': <%= priceRange.low %>,
+        'quantity': 1,
+        'item_variant': 'enterprise_grade'
+    }]
+});
+</script>
+
+<!-- Microsoft Clarity with Commercial Security Configuration -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "commercial_sec_clarity");
+
+// Enhanced Clarity tracking for commercial security
+clarity('set', 'service_type', '<%= serviceType %>');
+clarity('set', 'page_type', 'commercial_security');
+clarity('set', 'price_range', '<%= priceRange.low %>-<%= priceRange.high %>');
+clarity('set', 'business_focus', 'enterprise_solutions');
+clarity('set', 'compliance_level', 'ISO_27001_certified');
+</script>
+
+<!-- Facebook Pixel with Commercial Security Enhanced Conversions -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '987654321098765', {
+    'external_id': 'commercial_security_visitor'
+});
+fbq('track', 'PageView');
+
+// Enhanced Facebook tracking for commercial security services
+fbq('track', 'ViewContent', {
+    content_type: 'commercial_security_service',
+    content_name: '<%= serviceType %>_commercial_security_service',
+    content_category: 'Commercial Security Services',
+    value: <%= priceRange.low %>,
+    currency: 'USD',
+    contents: [{
+        'id': '<%= serviceType %>_commercial_security',
+        'quantity': 1,
+        'item_price': <%= priceRange.low %>,
+        'category': 'enterprise_security'
+    }],
+    custom_data: {
+        'security_level': 'commercial',
+        'compliance_certifications': 'ISO_27001_SOC2',
+        'business_focus': 'enterprise',
+        'service_area': 'california'
+    }
+});
+</script>
+
+<!-- LinkedIn Insight Tag with Enhanced B2B Commercial Security Tracking -->
+<script type="text/javascript">
+_linkedin_partner_id = "5432109";
+window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+
+// Enhanced LinkedIn tracking for commercial security
+window._linkedin_custom_data = {
+    'service_type': '<%= serviceType %>',
+    'industry': 'commercial_security_systems',
+    'price_range': '<%= priceRange.low %>-<%= priceRange.high %>',
+    'compliance_level': 'enterprise_grade',
+    'target_audience': 'business_owners_facility_managers',
+    'certifications': 'ISO_27001_SOC2_UL2050'
+};
+</script>
+<script type="text/javascript">
+(function(l) {
+if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+window.lintrk.q=[]}
+var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})(window.lintrk);
+</script>
+
+<!-- Hotjar Tracking with Commercial Security User Attributes -->
+<script>
+(function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:3789456,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+
+// Set user attributes for Hotjar - Commercial Security specific
+hj('identify', 'commercial_security_visitor', {
+    'service_interest': '<%= serviceType %>',
+    'page_type': 'commercial_security',
+    'price_range': '<%= priceRange.low %>-<%= priceRange.high %>',
+    'business_focus': 'enterprise_solutions',
+    'compliance_requirements': 'high_security'
+});
+</script>
+
+<!-- Custom Commercial Security Event Tracking -->
+<script>
+// Enhanced lead tracking functions for commercial security
+function trackCommercialSecurityConsultation() {
+    // Google Analytics 4
+    gtag('event', 'generate_lead', {
+        'event_category': 'Commercial Security Services',
+        'event_label': '<%= serviceType %>',
+        'value': 1,
+        'currency': 'USD',
+        'service_type': '<%= serviceType %>',
+        'lead_source': 'commercial_consultation_request',
+        'business_size': 'enterprise',
+        'compliance_level': 'ISO_27001'
+    });
+
+    // Facebook Pixel
+    fbq('track', 'Lead', {
+        content_name: '<%= serviceType %> Commercial Security Consultation',
+        content_category: 'Commercial Security Services',
+        value: <%= priceRange.low %>,
+        currency: 'USD',
+        custom_data: {
+            'security_type': 'commercial',
+            'compliance_requirements': 'enterprise_grade'
+        }
+    });
+
+    // LinkedIn
+    lintrk('track', { conversion_id: 12346 });
+
+    // Microsoft Clarity
+    clarity('event', 'commercial_consultation_request');
+
+    // Hotjar
+    hj('event', 'commercial_consultation_request');
+}
+
+// Enhanced package interest tracking
+function trackPackageInterest(packageName, packagePrice) {
+    gtag('event', 'package_interest', {
+        'event_category': 'Commercial Security Package',
+        'event_label': packageName,
+        'value': packagePrice,
+        'service_type': '<%= serviceType %>',
+        'package_type': packageName.toLowerCase().replace(/\s+/g, '_')
+    });
+
+    fbq('track', 'AddToWishlist', {
+        content_name: packageName + ' Commercial Security Package',
+        content_category: 'Security Packages',
+        value: packagePrice,
+        currency: 'USD'
+    });
+
+    clarity('event', 'package_interest', {
+        'package_name': packageName,
+        'package_price': packagePrice
+    });
+}
+
+// Business assessment tracking
+function trackBusinessAssessmentRequest() {
+    gtag('event', 'business_assessment_request', {
+        'event_category': 'Commercial Security Assessment',
+        'event_label': 'Free Business Assessment',
+        'service_type': '<%= serviceType %>',
+        'value': <%= priceRange.mid %>,
+        'assessment_type': 'comprehensive_business'
+    });
+
+    fbq('track', 'Schedule', {
+        content_name: 'Business Security Assessment',
+        content_category: 'Security Assessments',
+        value: <%= priceRange.mid %>,
+        currency: 'USD'
+    });
+
+    clarity('event', 'business_assessment_request');
+    hj('event', 'business_assessment_request');
+}
+
+// Compliance certification interest tracking
+function trackComplianceInterest(certificationType) {
+    gtag('event', 'compliance_interest', {
+        'event_category': 'Security Compliance',
+        'event_label': certificationType,
+        'service_type': '<%= serviceType %>',
+        'compliance_type': certificationType.toLowerCase().replace(/\s+/g, '_')
+    });
+
+    clarity('event', 'compliance_certification_click', {
+        'certification_type': certificationType
+    });
+}
+
+// Enhanced form tracking for commercial security
+function trackCommercialSecurityFormSubmission(formType) {
+    gtag('event', 'form_submit', {
+        'event_category': 'Commercial Security Lead Generation',
+        'event_label': formType,
+        'service_type': '<%= serviceType %>',
+        'value': 1,
+        'form_type': formType,
+        'business_focus': 'commercial'
+    });
+
+    fbq('track', 'CompleteRegistration', {
+        content_name: formType + ' Commercial Security Form',
+        content_category: 'Commercial Security Forms',
+        value: <%= priceRange.low %>,
+        currency: 'USD',
+        custom_data: {
+            'security_type': 'commercial',
+            'form_category': formType
+        }
+    });
+
+    clarity('event', 'commercial_security_form_submission', {
+        'form_type': formType,
+        'business_focus': 'commercial'
+    });
+
+    hj('event', 'commercial_security_form_submission');
+}
+
+// Industry-specific interest tracking
+function trackIndustryInterest(industryType) {
+    gtag('event', 'industry_interest', {
+        'event_category': 'Commercial Security Industry Focus',
+        'event_label': industryType,
+        'service_type': '<%= serviceType %>',
+        'industry_type': industryType.toLowerCase().replace(/\s+/g, '_')
+    });
+
+    clarity('event', 'industry_specific_interest', {
+        'industry_type': industryType
+    });
+}
+</script>
