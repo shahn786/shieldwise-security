@@ -1,0 +1,81 @@
+
+<!-- Enhanced Structured Data: LocalBusiness & Organization Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SecurityCompany",
+      "@id": "https://shieldwisesecurity.com/#organization",
+      "name": "ShieldWise Security",
+      "alternateName": "ShieldWise Construction Security Services",
+      "url": "https://shieldwisesecurity.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://shieldwisesecurity.com/images/logo.png",
+        "width": 600,
+        "height": 200,
+        "caption": "ShieldWise Security Logo"
+      },
+      "description": "California's premier construction security company offering 24/7 site protection, licensed guards, fire watch services, equipment theft prevention, and rapid emergency response across all major construction sites.",
+      "telephone": "+1-714-716-7430",
+      "email": "info@shieldwisesecurity.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1234 Security Boulevard",
+        "addressLocality": "Santa Ana",
+        "addressRegion": "CA",
+        "postalCode": "92701",
+        "addressCountry": "US"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "512",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "hasCredential": [
+        {
+          "@type": "Credential",
+          "credentialCategory": "Security License",
+          "name": "California BSIS Private Patrol Operator License"
+        },
+        {
+          "@type": "Credential",
+          "credentialCategory": "Fire Watch Certification",
+          "name": "Certified Fire Watch Personnel"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- Enhanced Service Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SecurityService",
+  "serviceType": "Construction Site Security Services",
+  "provider": { "@id": "https://shieldwisesecurity.com/#organization" },
+  "name": "Construction Site Security & Protection Services",
+  "description": "Comprehensive construction security services including 24/7 licensed guards, mobile patrols, fire watch services, access control systems, CCTV surveillance, equipment theft prevention, and rapid emergency response for construction sites throughout California.",
+  "category": ["Construction Security", "Site Protection", "Fire Watch", "Equipment Protection", "Emergency Response"],
+  "areaServed": [
+    { "@type": "State", "name": "California" },
+    { "@type": "City", "name": "Los Angeles" },
+    { "@type": "City", "name": "Orange County" },
+    { "@type": "City", "name": "San Diego" },
+    { "@type": "City", "name": "San Francisco" },
+    { "@type": "City", "name": "Sacramento" }
+  ],
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceRange": "$",
+    "url": "https://shieldwisesecurity.com/services/construction-security/"
+  }
+}
+</script>

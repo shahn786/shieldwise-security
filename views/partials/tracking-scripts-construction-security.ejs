@@ -1,0 +1,37 @@
+
+<!-- Enhanced Google Analytics with Construction-Specific Tracking -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', { 
+    'anonymize_ip': true,
+    'allow_google_signals': false,
+    'allow_ad_personalization_signals': false,
+    'custom_map': {
+      'custom_parameter_1': 'service_type',
+      'custom_parameter_2': 'construction_phase',
+      'custom_parameter_3': 'location_served'
+    }
+  });
+
+  // Enhanced event tracking for construction security services
+  gtag('event', 'page_view', {
+    'page_title': document.title,
+    'page_location': window.location.href,
+    'content_group1': 'Construction Security Services',
+    'content_group2': 'California',
+    'content_group3': 'Site Protection',
+    'custom_parameter_1': 'construction_security',
+    'custom_parameter_2': 'all_phases',
+    'custom_parameter_3': 'california_statewide'
+  });
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>

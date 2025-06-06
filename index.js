@@ -189,9 +189,10 @@ app.get('/services/apartment-security', (req, res) => {
   });
 });
 
-// Import route modules
-const armedSecurityRouter = require('./routes/armed-security');
-const commercialSecurityRouter = require('./routes/commercial-security');
+// Import route files
+const armedSecurityRoutes = require('./routes/armed-security');
+const commercialSecurityRoutes = require('./routes/commercial-security');
+const constructionSecurityRoutes = require('./routes/construction-security');
 
 // Routes
 app.get("/", (req, res) => res.render("index"));
@@ -240,8 +241,9 @@ app.get("/login", (req, res) => {
 });
 
 // Service route handlers
-app.use('/services/armed-security', armedSecurityRouter);
-app.use('/services/commercial-security', commercialSecurityRouter);
+app.use('/services/armed-security', armedSecurityRoutes);
+app.use('/services/commercial-security', commercialSecurityRoutes);
+app.use('/services/construction-security', constructionSecurityRoutes);
 
 // Register Route
 app.get("/register", (req, res) => {
