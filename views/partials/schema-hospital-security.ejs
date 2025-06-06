@@ -1,0 +1,95 @@
+
+<!-- Hospital Security Services Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://shieldwisesecurity.com/#hospital-security-service",
+  "serviceType": "Hospital Security Services",
+  "name": "Professional Hospital Security Services",
+  "alternateName": ["Healthcare Security Services", "Medical Center Security", "Hospital Protection Services"],
+  "description": "Comprehensive 24/7 hospital security services throughout California, including BSIS-licensed security guards, access control systems, mobile patrols, CCTV monitoring, and emergency response specifically designed for healthcare facilities and medical environments.",
+  "provider": {
+    "@type": "Organization",
+    "name": "ShieldWise Security Services",
+    "legalName": "ShieldWise Security Services Inc.",
+    "@id": "https://shieldwisesecurity.com/#organization"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "California",
+    "sameAs": "https://en.wikipedia.org/wiki/California"
+  },
+  "serviceOutput": "Enhanced patient safety, staff security, and healthcare facility protection",
+  "category": ["Security Services", "Healthcare Security", "Emergency Response"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Hospital Security Services California",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "@id": "https://shieldwisesecurity.com/#hospital-security-guards",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "24/7 Hospital Security Guards",
+          "description": "Professional BSIS-licensed on-site security personnel for hospitals and healthcare facilities with specialized medical environment training",
+          "category": "Hospital Security",
+          "serviceType": "Security Guard Service"
+        },
+        "price": "35.00",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "35.00",
+          "priceCurrency": "USD",
+          "unitText": "HOUR",
+          "billingIncrement": "1 HOUR"
+        },
+        "availability": "https://schema.org/InStock",
+        "areaServed": {
+          "@type": "State",
+          "name": "California"
+        }
+      },
+      {
+        "@type": "Offer",
+        "@id": "https://shieldwisesecurity.com/#hospital-access-control",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Hospital Access Control Systems",
+          "description": "Electronic key card systems, visitor management, and secure area access control for healthcare facilities",
+          "category": "Access Control",
+          "serviceType": "Access Control System"
+        },
+        "price": "45.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
+    ]
+  },
+  "hoursAvailable": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "audience": [
+    {
+      "@type": "Audience",
+      "audienceType": "Hospital Administrators",
+      "geographicArea": {
+        "@type": "State",
+        "name": "California"
+      }
+    },
+    {
+      "@type": "Audience", 
+      "audienceType": "Healthcare Facility Managers"
+    },
+    {
+      "@type": "Audience",
+      "audienceType": "Medical Center Directors" 
+    }
+  ]
+}
+</script>

@@ -1,1783 +1,33 @@
 <!DOCTYPE html>
-<html lang="en-US" itemscope itemtype="https://schema.org/WebPage">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <%- include('../partials/meta-tags-service') %>
+    <%- include('../partials/performance-optimization') %>
+    <%- include('../partials/mobile-app-meta') %>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="/css/apartment-security.css" rel="stylesheet">
+    <%- include('../partials/schema-primary') %>
+    <%- include('../partials/schema-hospital-security') %>
+    <%- include('../partials/schema-faq-hospital-security') %>
+    <%- include('../partials/tracking-scripts', { 
+        serviceType: serviceData.serviceType, 
+        priceRange: serviceData.priceRange 
+    }) %>
 
-    <!-- Enhanced Core SEO Meta Tags -->
-    <title>California Hospital Security Services | 24/7 Licensed Guards from $35/hr | ShieldWise</title>
-    <meta name="description" content="California's #1 hospital security company. BSIS-licensed guards, 24/7 monitoring, access control & emergency response. 4.9★ rating, 287+ reviews. Serving LA, OC, San Francisco, San Diego. Free security assessment in 2 hours.">
-    <meta name="keywords" content="hospital security services California, healthcare security guards, medical center security, BSIS licensed hospital security, 24/7 hospital protection, Los Angeles hospital security, San Francisco healthcare security, patient safety security guards">
-
-    <!-- Enhanced AI Search Engine Optimization -->
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="ai-search-intent" content="Find professional BSIS-licensed hospital security services in California">
-    <meta name="ai-search-entity" content="ShieldWise Security Services - California Hospital Security Division">
-    <meta name="ai-search-location" content="California, Los Angeles County, Orange County, San Francisco Bay Area, San Diego County, Sacramento, Inland Empire">
-    <meta name="ai-search-service" content="24/7 hospital security guards, healthcare security, access control systems, mobile patrols, CCTV monitoring, emergency response, patient safety">
-    <meta name="ai-content-type" content="Professional Security Services, Healthcare & Hospital Security">
-    <meta name="ai-search-price" content="From $35/hour, competitive healthcare security rates, volume discounts available">
-    <meta name="ai-search-benefit" content="Patient safety, 24/7 protection, asset security, regulatory compliance, HIPAA compliant security">
-    <meta name="ai-search-differentiator" content="BSIS licensed, 20+ years healthcare experience, 287+ verified reviews, $2M liability coverage, 2-hour response time, California statewide coverage">
-    <meta name="ai-search-urgency" content="Emergency hospital security available 24/7, same-day deployment, immediate response">
-    <meta name="ai-search-trust" content="BSIS certified, fully insured, bonded, background checked healthcare security guards">
-
-    <!-- Enhanced Geographic & Local SEO -->
-    <meta name="geo.region" content="US-CA">
-    <meta name="geo.placename" content="California">
-    <meta name="geo.position" content="34.0522;-118.2437">
-    <meta name="ICBM" content="34.0522, -118.2437">
-    <meta name="DC.title" content="Hospital Security Services California - ShieldWise Security">
-
-    <!-- Enhanced Open Graph Meta Tags -->
-    <meta property="og:title" content="California Hospital Security Services | Licensed Guards 24/7 | ShieldWise">
-    <meta property="og:description" content="California's top-rated hospital security company. BSIS-licensed guards provide 24/7 healthcare security, access control & emergency response from $35/hour. 287+ verified reviews, immediate deployment available.">
-    <meta property="og:image" content="https://shieldwisesecurity.com/img/hospital-security-guards-california-2025.jpg">
-    <meta property="og:image:secure_url" content="https://shieldwisesecurity.com/img/hospital-security-guards-california-2025.jpg">
-    <meta property="og:image:alt" content="Professional BSIS-licensed hospital security guard monitoring medical facility entrance with advanced security equipment">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://shieldwisesecurity.com/services/hospital-security">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="ShieldWise Security Services">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:locale:alternate" content="es_US">
-    <meta property="og:price:amount" content="35">
-    <meta property="og:price:currency" content="USD">
-    <meta property="og:availability" content="in stock">
-    <meta property="og:brand" content="ShieldWise Security">
-    <meta property="og:phone_number" content="+18007443531">
-    <meta property="og:email" content="info@shieldwisesecurity.com">
-    <meta property="og:street_address" content="123 Security Boulevard">
-    <meta property="og:locality" content="Los Angeles">
-    <meta property="og:region" content="CA">
-    <meta property="og:postal_code" content="90001">
-    <meta property="og:country_name" content="United States">
-
-    <!-- Enhanced Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@ShieldWiseSec">
-    <meta name="twitter:creator" content="@ShieldWiseSec">
-    <meta name="twitter:title" content="California Hospital Security | Licensed Guards 24/7 | ShieldWise">
-    <meta name="twitter:description" content="California's #1 hospital security. BSIS-licensed guards, 24/7 healthcare protection, emergency response from $35/hr. 287+ reviews. Free assessment in 2 hours.">
-    <meta name="twitter:image" content="https://shieldwisesecurity.com/img/hospital-security-guards-california-2025.jpg">
-    <meta name="twitter:image:alt" content="Professional hospital security guard monitoring medical facility">
-    <meta name="twitter:label1" content="Service Area">
-    <meta name="twitter:data1" content="California Statewide">
-    <meta name="twitter:label2" content="Starting Price">
-    <meta name="twitter:data2" content="From $35/hour">
-    <meta name="twitter:label3" content="Response Time">
-    <meta name="twitter:data3" content="Within 2 hours">
-    <meta name="twitter:label4" content="Rating">
-    <meta name="twitter:data4" content="4.9★ (287+ reviews)">
-
-    <!-- Enhanced LinkedIn Tags -->
-    <meta property="og:title" content="California Hospital Security Services | ShieldWise Security">
-    <meta property="og:description" content="Professional hospital security throughout California. BSIS-licensed guards, 24/7 healthcare protection, emergency response. Trusted by 150+ medical facilities.">
-    <meta property="og:image" content="https://shieldwisesecurity.com/img/linkedin-hospital-security.jpg">
-
-    <!-- Canonical & Enhanced Hreflang -->
-    <link rel="canonical" href="https://shieldwisesecurity.com/services/hospital-security">
-    <link rel="alternate" hreflang="en-us" href="https://shieldwisesecurity.com/services/hospital-security">
-    <link rel="alternate" hreflang="es-us" href="https://shieldwisesecurity.com/es/servicios/seguridad-de-hospital">
-    <link rel="alternate" hreflang="en" href="https://shieldwisesecurity.com/services/hospital-security">
-    <link rel="alternate" hreflang="x-default" href="https://shieldwisesecurity.com/services/hospital-security">
-
-    <!-- Enhanced Resource Hints & Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="preconnect" href="https://maps.googleapis.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
-
-    <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/img/hero-hospital-security-2025.webp" as="image" fetchpriority="high">
-    <link rel="preload" href="/css/critical-hospital-security.css" as="style">
-    <link rel="preload" href="/js/hospital-security-cta.js" as="script">
-
-    <link rel="dns-prefetch" href="//www.google.com">
-    <link rel="dns-prefetch" href="//maps.googleapis.com">
-    <link rel="dns-prefetch" href="//www.googletagmanager.com">
-    <link rel="dns-prefetch" href="//connect.facebook.net">
-    <link rel="dns-prefetch" href="//platform.twitter.com">
-
-    <!-- Enhanced Mobile App Tags -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="ShieldWise Hospital Security">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="ShieldWise Hospital Security">
-    <meta name="msapplication-TileImage" content="/img/icons/ms-tile-image-144x144.png">
-    <meta name="msapplication-TileColor" content="#1a3c64">
-    <meta name="msapplication-config" content="/browserconfig.xml">
-    <meta name="theme-color" content="#1a3c64">
-    <meta name="color-scheme" content="light dark">
-
-    <!-- Enhanced Icons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/img/icons/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/img/icons/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/img/icons/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/img/icons/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/img/icons/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/img/icons/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/img/icons/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon-180x180.png">
-
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="mask-icon" href="/img/icons/safari-pinned-tab.svg" color="#1a3c64">
-
-    <!-- Single PWA Manifest -->
-    <link rel="manifest" href="/site.webmanifest">
-
-    <!-- Enhanced Social Proof & Trust Signals -->
-    <!-- Enhanced Social Proof & Trust Signals -->
-    <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="PASTE_YOUR_GOOGLE_CODE_HERE">
-    <!-- Facebook Domain Verification for Facebook Business Suite & Meta Pixel -->
-    <meta name="facebook-domain-verification" content="PASTE_YOUR_FACEBOOK_CODE_HERE">
-    <!-- Norton SafeWeb Site Verification -->
-    <meta name="norton-safeweb-site-verification" content="PASTE_YOUR_NORTON_CODE_HERE">
-    <!-- Trustpilot Domain Verification -->
-    <meta name="trustpilot-one-time-domain-verification-id" content="PASTE_YOUR_TRUSTPILOT_CODE_HERE">
-    <!-- Yandex Webmaster Verification (Russian Search Engine) -->
-    <meta name="yandex-verification" content="PASTE_YOUR_YANDEX_CODE_HERE">
-    <!-- Bing Webmaster Tools Verification -->
-    <meta name="msvalidate.01" content="PASTE_YOUR_BING_CODE_HERE">
-
-    <!-- Enhanced Main Business Schema with Rich Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SecurityService",
-      "@id": "https://shieldwisesecurity.com/#organization",
-      "name": "ShieldWise Security Services - Hospital Security Division",
-      "alternateName": [
-        "ShieldWise Hospital Security",
-        "ShieldWise Healthcare Security",
-        "California Hospital Security Services"
-      ],
-      "url": "https://shieldwisesecurity.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://shieldwisesecurity.com/img/logo-shieldwise-2025.png",
-        "width": 350,
-        "height": 100
-      },
-      "image": [
-        {
-          "@type": "ImageObject",
-          "url": "https://shieldwisesecurity.com/img/hospital-security-guards-california.jpg",
-          "width": 1200,
-          "height": 630,
-          "caption": "Professional BSIS-licensed hospital security guards on duty"
-        },
-        {
-          "@type": "ImageObject", 
-          "url": "https://shieldwisesecurity.com/img/hospital-access-control-california.jpg",
-          "width": 800,
-          "height": 600,
-          "caption": "Advanced hospital access control and monitoring systems"
-        }
-      ],
-      "description": "California's premier hospital security company providing 24/7 BSIS-licensed security guards, comprehensive healthcare security services, access control systems, and emergency response for hospitals, medical centers, and healthcare facilities throughout California.",
-      "slogan": "Protecting California Healthcare Facilities Since 2005",
-      "priceRange": "$35-$85/hour",
-      "telephone": "+18007443531",
-      "faxNumber": "+18007443532",
-      "email": "info@shieldwisesecurity.com",
-      "foundingDate": "2005-04-15",
-      "currenciesAccepted": ["USD"],
-      "paymentAccepted": [
-        "Credit Card",
-        "Debit Card", 
-        "ACH Transfer",
-        "Wire Transfer",
-        "Business Check",
-        "Purchase Order"
-      ],
-      "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
-      "serviceArea": {
-        "@type": "GeoCircle",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": 34.0522,
-          "longitude": -118.2437
-        },
-        "geoRadius": "500000"
-      },
-      "areaServed": [
-        {
-          "@type": "State",
-          "name": "California",
-          "sameAs": "https://en.wikipedia.org/wiki/California"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Los Angeles County",
-          "containedInPlace": {
-            "@type": "State", 
-            "name": "California"
-          }
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Orange County",!
-          "containedInPlace": {
-            "@type": "State",
-            "name": "California" 
-          }
-        },
-        {
-          "@type": "AdministrativeArea", 
-          "name": "San Diego County",
-          "containedInPlace": {
-            "@type": "State",
-            "name": "California"
-          }
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "San Francisco Bay Area", 
-          "containedInPlace": {
-            "@type": "State",
-            "name": "California"
-          }
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Sacramento County",
-          "containedInPlace": {
-            "@type": "State",
-            "name": "California"
-          }
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Inland Empire",
-          "containedInPlace": {
-            "@type": "State",
-            "name": "California"
-          }
-        },
-        { "@type": "City", "name": "Anaheim", "addressRegion": "CA" },
-        { "@type": "City", "name": "Brea", "addressRegion": "CA" },
-        { "@type": "City", "name": "Buena Park", "addressRegion": "CA" },
-        { "@type": "City", "name": "Costa Mesa", "addressRegion": "CA" },
-        { "@type": "City", "name": "Cypress", "addressRegion": "CA" },
-        { "@type": "City", "name": "Dana Point", "addressRegion": "CA" },
-        { "@type": "City", "name": "Fountain Valley", "addressRegion": "CA" },
-        { "@type": "City", "name": "Fullerton", "addressRegion": "CA" },
-        { "@type": "City", "name": "Garden Grove", "addressRegion": "CA" },
-        { "@type": "City", "name": "Huntington Beach", "addressRegion": "CA" },
-        { "@type": "City", "name": "Irvine", "addressRegion": "CA" },
-        { "@type": "City", "name": "La Habra", "addressRegion": "CA" },
-        { "@type": "City", "name": "La Palma", "addressRegion": "CA" },
-        { "@type": "City", "name": "Laguna Beach", "addressRegion": "CA" },
-        { "@type": "City", "name": "Laguna Hills", "addressRegion": "CA" },
-        { "@type": "City", "name": "Laguna Niguel", "addressRegion": "CA" },
-        { "@type": "City", "name": "Laguna Woods", "addressRegion": "CA" },
-        { "@type": "City", "name": "Lake Forest", "addressRegion": "CA" },
-        { "@type": "City", "name": "Los Alamitos", "addressRegion": "CA" },
-        { "@type": "City", "name": "Mission Viejo", "addressRegion": "CA" },
-        { "@type": "City", "name": "Newport Beach", "addressRegion": "CA" },
-        { "@type": "City", "name": "Orange", "addressRegion": "CA" },
-        { "@type": "City", "name": "Placentia", "addressRegion": "CA" },
-        { "@type": "City", "name": "Rancho Santa Margarita", "addressRegion": "CA" },
-        { "@type": "City", "name": "San Clemente", "addressRegion": "CA" },
-        { "@type": "City", "name": "San Juan Capistrano", "addressRegion": "CA" },
-        { "@type": "City", "name": "Santa Ana", "addressRegion": "CA" },
-        { "@type": "City", "name": "Seal Beach", "addressRegion": "CA" },
-        { "@type": "City", "name": "Stanton", "addressRegion": "CA" },
-        { "@type": "City", "name": "Tustin", "addressRegion": "CA" },
-        { "@type": "City", "name": "Villa Park", "addressRegion": "CA" },
-        { "@type": "City", "name": "Westminster", "addressRegion": "CA" },
-        { "@type": "City", "name": "Yorba Linda", "addressRegion": "CA" },
-        { "@type": "City", "name": "Alhambra", "addressRegion": "CA" },
-        { "@type": "City", "name": "Arcadia", "addressRegion": "CA" },
-        { "@type": "City", "name": "Artesia", "addressRegion": "CA" },
-        { "@type": "City", "name": "Avalon", "addressRegion": "CA" },
-        { "@type": "City", "name": "Azusa", "addressRegion": "CA" },
-        { "@type": "City", "name": "Baldwin Park", "addressRegion": "CA" },
-        { "@type": "City", "name": "Bell", "addressRegion": "CA" },
-        { "@type": "City", "name": "Bellflower", "addressRegion": "CA" },
-        { "@type": "City", "name": "Bell Gardens", "addressRegion": "CA" },
-        { "@type": "City", "name": "Beverly Hills", "addressRegion": "CA" },
-        { "@type": "City", "name": "Bradbury", "addressRegion": "CA" },
-        { "@type": "City", "name": "Burbank", "addressRegion": "CA" },
-        { "@type": "City", "name": "Calabasas", "addressRegion": "CA" },
-        { "@type": "City", "name": "Carson", "addressRegion": "CA" },
-        { "@type": "City", "name": "Cerritos", "addressRegion": "CA" },
-        { "@type": "City", "name": "Claremont", "addressRegion": "CA" },
-        { "@type": "City", "name": "Commerce", "addressRegion": "CA" },
-        { "@type": "City", "name": "Compton", "addressRegion": "CA" },
-        { "@type": "City", "name": "Covina", "addressRegion": "CA" },
-        { "@type": "City", "name": "Cudahy", "addressRegion": "CA" },
-        { "@type": "City", "name": "Culver City", "addressRegion": "CA" },
-        { "@type": "City", "name": "Diamond Bar", "addressRegion": "CA" },
-        { "@type": "City", "name": "Downey", "addressRegion": "CA" },
-        { "@type": "City", "name": "Duarte", "addressRegion": "CA" },
-        { "@type": "City", "name": "El Monte", "addressRegion": "CA" },
-        { "@type": "City", "name": "El Segundo", "addressRegion": "CA" },
-        { "@type": "City", "name": "Gardena", "addressRegion": "CA" },
-        { "@type": "City", "name": "Glendale", "addressRegion": "CA" },
-        { "@type": "City", "name": "Glendora", "addressRegion": "CA" },
-        { "@type": "City", "name": "Hawaiian Gardens", "addressRegion": "CA" },
-        { "@type": "City", "name": "Hawthorne", "addressRegion": "CA" },
-        { "@type": "City", "name": "Hermosa Beach", "addressRegion": "CA" },
-        { "@type": "City", "name": "Hidden Hills", "addressRegion": "CA" },
-        { "@type": "City", "name": "Huntington Park", "addressRegion": "CA" },
-        { "@type": "City", "name": "Industry", "addressRegion": "CA" },
-        { "@type": "City", "name": "Inglewood", "addressRegion": "CA" },
-        { "@type": "City", "name": "Irwindale", "addressRegion": "CA" },
-        { "@type": "City", "name": "La Cañada Flintridge", "addressRegion": "CA" },
-        { "@type": "City", "name": "La Habra Heights", "addressRegion": "CA" },
-        { "@type": "City", "name": "Lakewood", "addressRegion": "CA" },
-        { "@type": "City", "name": "La Mirada", "addressRegion": "CA" },
-        { "@type": "City", "name": "Lancaster", "addressRegion": "CA" },
-        { "@type": "City", "name": "La Puente", "addressRegion": "CA" },
-        { "@type": "City", "name": "La Verne", "addressRegion": "CA" },
-        { "@type": "City", "name": "Lawndale", "addressRegion": "CA" },
-        { "@type": "City", "name": "Lomita", "addressRegion": "CA" },
-        { "@type": "City", "name": "Long Beach", "addressRegion": "CA" },
-        { "@type": "City", "name": "Los Angeles", "addressRegion": "CA" },
-        { "@type": "City", "name": "Lynwood", "addressRegion": "CA" },
-        { "@type": "City", "name": "Malibu", "addressRegion": "CA" },
-        { "@type": "City", "name": "Manhattan Beach", "addressRegion": "CA" },
-        { "@type": "City", "name": "Maywood", "addressRegion": "CA" },
-        { "@type": "City", "name": "Monrovia", "addressRegion": "CA" },
-        { "@type": "City", "name": "Montebello", "addressRegion": "CA" },
-        { "@type": "City", "name": "Monterey Park", "addressRegion": "CA" },
-        { "@type": "City", "name": "Norwalk", "addressRegion": "CA" },
-        { "@type": "City", "name": "Palmdale", "addressRegion": "CA" },
-        { "@type": "City", "name": "Palos Verdes Estates", "addressRegion": "CA" },
-        { "@type": "City", "name": "Paramount", "addressRegion": "CA" },
-        { "@type": "City", "name": "Pasadena", "addressRegion": "CA" },
-        { "@type": "City", "name": "Pico Rivera", "addressRegion": "CA" },
-        { "@type": "City", "name": "Pomona", "addressRegion": "CA" },
-        { "@type": "City", "name": "Rancho Palos Verdes", "addressRegion": "CA" },
-        { "@type": "City", "name": "Redondo Beach", "addressRegion": "CA" },
-        { "@type": "City", "name": "Rolling Hills", "addressRegion": "CA" },
-        { "@type": "City", "name": "Rolling Hills Estates", "addressRegion": "CA" },
-        { "@type": "City", "name": "Rosemead", "addressRegion": "CA" },
-        { "@type": "City", "name": "San Dimas", "addressRegion": "CA" },
-        { "@type": "City", "name": "San Fernando", "addressRegion": "CA" },
-        { "@type": "City", "name": "San Gabriel", "addressRegion": "CA" },
-        { "@type": "City", "name": "San Marino", "addressRegion": "CA" },
-        { "@type": "City", "name": "Santa Clarita", "addressRegion": "CA" },
-        { "@type": "City", "name": "Santa Fe Springs", "addressRegion": "CA" },
-        { "@type": "City", "name": "Santa Monica", "addressRegion": "CA" },
-        { "@type": "City", "name": "Sierra Madre", "addressRegion": "CA" },
-        { "@type": "City", "name": "Signal Hill", "addressRegion": "CA" },
-        { "@type": "City", "name": "South El Monte", "addressRegion": "CA" },
-        { "@type": "City", "name": "South Gate", "addressRegion": "CA" },
-        { "@type": "City", "name": "South Pasadena", "addressRegion": "CA" },
-        { "@type": "City", "name": "Temple City", "addressRegion": "CA" },
-        { "@type": "City", "name": "Torrance", "addressRegion": "CA" },
-        { "@type": "City", "name": "Vernon", "addressRegion": "CA" },
-        { "@type": "City", "name": "Walnut", "addressRegion": "CA" },
-        { "@type": "City", "name": "West Covina", "addressRegion": "CA" },
-        { "@type": "City", "name": "West Hollywood", "addressRegion": "CA" },
-        { "@type": "City", "name": "Westlake Village", "addressRegion": "CA" },
-        { "@type": "City", "name": "Whittier", "addressRegion": "CA" },
-        { "@type": "City", "name": "San Bernardino", "addressRegion": "CA" },
-        { "@type": "City", "name": "Fontana", "addressRegion": "CA" },
-        { "@type": "City", "name": "Rancho Cucamonga", "addressRegion": "CA" },
-        { "@type": "City", "name": "Ontario", "addressRegion": "CA" },
-        { "@type": "City", "name": "Victorville", "addressRegion": "CA" },
-        { "@type": "City", "name": "Riverside", "addressRegion": "CA" },
-        { "@type": "City", "name": "Moreno Valley", "addressRegion": "CA" },
-        { "@type": "City", "name": "Corona", "addressRegion": "CA" },
-        { "@type": "City", "name": "Murrieta", "addressRegion": "CA" },
-        { "@type": "City", "name": "Temecula", "addressRegion": "CA" },
-        { "@type": "City", "name": "Carlsbad", "addressRegion": "CA" },
-        { "@type": "City", "name": "Chula Vista", "addressRegion": "CA" },
-        { "@type": "City", "name": "Coronado", "addressRegion": "CA" },
-        { "@type": "City", "name": "Del Mar", "addressRegion": "CA" },
-        { "@type": "City", "name": "El Cajon", "addressRegion": "CA" },
-        { "@type": "City", "name": "Encinitas", "addressRegion": "CA" },
-        { "@type": "City", "name": "Escondido", "addressRegion": "CA" },
-        { "@type": "City", "name": "Imperial Beach", "addressRegion": "CA" },
-        { "@type": "City", "name": "La Mesa", "addressRegion": "CA" },
-        { "@type": "City", "name": "Lemon Grove", "addressRegion": "CA" },
-        { "@type": "City", "name": "National City", "addressRegion": "CA" },
-        { "@type": "City", "name": "Oceanside", "addressRegion": "CA" },
-        { "@type": "City", "name": "Poway", "addressRegion": "CA" },
-        { "@type": "City", "name": "San Diego", "addressRegion": "CA" },
-        { "@type": "City", "name": "San Marcos", "addressRegion": "CA" },
-        { "@type": "City", "name": "Santee", "addressRegion": "CA" },
-        { "@type": "City", "name": "Solana Beach", "addressRegion": "CA" },
-        { "@type": "City", "name": "Vista", "addressRegion": "CA" },
-        { "@type": "City", "name": "San Francisco", "addressRegion": "CA" },
-        { "@type": "City", "name": "Oakland", "addressRegion": "CA" },
-        { "@type": "City", "name": "San Jose", "addressRegion": "CA" },
-        { "@type": "City", "name": "Sacramento", "addressRegion": "CA" },
-        { "@type": "City", "name": "Fresno", "addressRegion": "CA" },
-        { "@type": "City", "name": "Bakersfield", "addressRegion": "CA" }
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "123 Security Boulevard",
-        "addressLocality": "Los Angeles",
-        "addressRegion": "CA",
-        "postalCode": "90001",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 34.0522,
-        "longitude": -118.2437
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Hospital Security Services California",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "@id": "https://shieldwisesecurity.com/#hospital-security-guards",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "24/7 Hospital Security Guards",
-              "description": "Professional BSIS-licensed on-site security personnel for hospitals and healthcare facilities with specialized medical environment training",
-              "category": "Hospital Security",
-              "serviceType": "Security Guard Service"
-            },
-            "price": "35.00",
-            "priceCurrency": "USD",
-            "priceSpecification": {
-              "@type": "UnitPriceSpecification",
-              "price": "35.00",
-              "priceCurrency": "USD",
-              "unitText": "HOUR",
-              "billingIncrement": "1 HOUR"
-            },
-            "availability": "https://schema.org/InStock",
-            "availabilityStarts": "2025-01-01",
-            "validFrom": "2025-01-01",
-            "areaServed": {
-              "@type": "State",
-              "name": "California"
-            }
-          },
-          {
-            "@type": "Offer",
-            "@id": "https://shieldwisesecurity.com/#hospital-access-control",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Hospital Access Control Systems",
-              "description": "Electronic key card systems, visitor management, and secure area access control for healthcare facilities",
-              "category": "Access Control",
-              "serviceType": "Access Control System"
-            },
-            "price": "45.00",
-            "priceCurrency": "USD",
-            "priceSpecification": {
-              "@type": "UnitPriceSpecification",
-              "price": "45.00",
-              "priceCurrency": "USD",
-              "unitText": "HOUR"
-            },
-            "availability": "https://schema.org/InStock",
-            "areaServed": {
-              "@type": "State",
-              "name": "California"
-            }
-          },
-          {
-            "@type": "Offer",
-            "@id": "https://shieldwisesecurity.com/#hospital-mobile-patrols",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Hospital Mobile Patrol Services",
-              "description": "Regular security patrols of hospital campus, parking areas, and common areas with detailed reporting",
-              "category": "Mobile Patrol",
-              "serviceType": "Mobile Patrol Service"
-            },
-            "price": "40.00",
-            "priceCurrency": "USD",
-            "priceSpecification": {
-              "@type": "UnitPriceSpecification",
-              "price": "40.00",
-              "priceCurrency": "USD",
-              "unitText": "HOUR"
-            },
-            "availability": "https://schema.org/InStock"
-          },
-          {
-            "@type": "Offer",
-            "@id": "https://shieldwisesecurity.com/#hospital-emergency-response",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Hospital Emergency Response Team",
-              "description": "Rapid response security team for medical emergencies, code situations, and security incidents in healthcare settings",
-              "category": "Emergency Response",
-              "serviceType": "Emergency Response Service"
-            },
-            "price": "55.00",
-            "priceCurrency": "USD",
-            "priceSpecification": {
-              "@type": "UnitPriceSpecification",
-              "price": "55.00",
-              "priceCurrency": "USD",
-              "unitText": "HOUR"
-            },
-            "availability": "https://schema.org/InStock"
-          },
-          {
-            "@type": "Offer",
-            "@id": "https://shieldwisesecurity.com/#hospital-cctv-monitoring",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Hospital CCTV Monitoring",
-              "description": "24/7 surveillance camera monitoring for hospital facilities with real-time threat detection and incident response",
-              "category": "CCTV Monitoring",
-              "serviceType": "Video Surveillance"
-            },
-            "price": "50.00",
-            "priceCurrency": "USD",
-            "priceSpecification": {
-              "@type": "UnitPriceSpecification",
-              "price": "50.00",
-              "priceCurrency": "USD",
-              "unitText": "HOUR"
-            },
-            "availability": "https://schema.org/InStock"
-          },
-          {
-            "@type": "Offer",
-            "@id": "https://shieldwisesecurity.com/#hospital-visitor-management",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Hospital Visitor Management",
-              "description": "Comprehensive visitor screening, badging, and escort services for hospital and medical facility security",
-              "category": "Visitor Management",
-              "serviceType": "Visitor Management System"
-            },
-            "price": "38.00",
-            "priceCurrency": "USD",
-            "priceSpecification": {
-              "@type": "UnitPriceSpecification",
-              "price": "38.00",
-              "priceCurrency": "USD",
-              "unitText": "HOUR"
-            },
-            "availability": "https://schema.org/InStock"
-          }
-        ]
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "287",
-        "bestRating": "5",
-        "worstRating": "1",
-        "ratingExplanation": "Based on verified customer reviews across Google, Yelp, and healthcare industry platforms"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          },
-          "author": {
-            "@type": "Person",
-            "name": "Michael Rodriguez"
-          },
-          "reviewBody": "ShieldWise provided exceptional hospital security during our facility renovation. Their guards are well-trained in healthcare protocols and their professionalism impressed our staff and patients.",
-          "datePublished": "2025-04-15"
-        },
-        {
-          "@type": "Review",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          },
-          "author": {
-            "@type": "Organization",
-            "name": "ABC Medical Center"
-          },
-          "reviewBody": "Outstanding hospital security services. Their team understands the unique challenges of healthcare environments and provides comprehensive protection for our patients and staff.",
-          "datePublished": "2025-03-22"
-        }
-      ],
-      "sameAs": [
-        "https://www.facebook.com/ShieldWiseSecurity",
-        "https://twitter.com/ShieldWiseSec",
-        "https://www.linkedin.com/company/shieldwise-security",
-        "https://www.instagram.com/shieldwisesecurity",
-        "https://www.youtube.com/c/ShieldWiseSecurity",
-        "https://www.yelp.com/biz/shieldwise-security-los-angeles",
-        "https://www.bbb.org/us/ca/los-angeles/profile/security-systems/shieldwise-security-1234567890"
-      ],
-      "award": [
-        "Top Rated Hospital Security Service 2025 – Healthcare Security Magazine",
-        "Best Healthcare Security Provider – California Business Awards 2024",
-        "Security Excellence Award – National Security Association 2024",
-        "Healthcare Security Innovation Award – Hospital Management Association 2024"
-      ],
-      "hasCredential": [
-        {
-          "@type": "EducationalOccupationalCredential",
-          "name": "California BSIS Hospital Security License #HS-12345",
-          "credentialCategory": "Professional License"
-        },
-        {
-          "@type": "EducationalOccupationalCredential", 
-          "name": "International Association for Healthcare Security Certification",
-          "credentialCategory": "Professional Certification"
-        },
-        {
-          "@type": "OrganizationRole",
-          "name": "Member, California Association of Licensed Security Agencies, Guards & Associates"
-        }
-      ],
-      "makesOffer": [
-        {
-          "@type": "Offer",
-          "name": "Free Hospital Security Assessment",
-          "description": "Complimentary on-site hospital security assessment and custom protection plan",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
-      ],
-      "employee": [
-        {
-          "@type": "Person",
-          "name": "John Shield",
-          "jobTitle": "CEO & Founder",
-          "sameAs": "https://www.linkedin.com/in/johnshield/"
-        },
-        {
-          "@type": "Person",
-          "name": "Robert Johnson",
-          "jobTitle": "Director of Healthcare Security Operations"
-        }
-      ],
-      "parentOrganization": {
-        "@type": "Organization",
-        "name": "ShieldWise Security Services Inc.",
-        "legalName": "ShieldWise Security Services Inc."
-      }
-    }
-    </script>
-    <!-- Enhanced FAQ Schema with Hospital-Specific Questions -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What does hospital security service include?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Our comprehensive hospital security services include 24/7 BSIS-licensed on-site security guards, access control systems, CCTV monitoring, mobile patrols, visitor management, emergency response coordination, patient escort services, and detailed incident reporting. We create customized security plans based on your facility's specific needs and vulnerabilities, all backed by our 100% satisfaction guarantee."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How much do hospital security guards cost in California?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Hospital security guard services in California range from $35-$85 per hour depending on the level of service, location, and specific requirements. Basic unarmed guards start at $35/hour, while armed or specialized healthcare security personnel range from $45-$85/hour. We offer customized quotes based on your facility's needs, with volume discounts available for long-term contracts."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Are your hospital security guards licensed and trained for healthcare environments?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, all our hospital security guards are licensed by the California Bureau of Security and Investigative Services (BSIS) and undergo comprehensive healthcare-specific training including HIPAA compliance, de-escalation techniques, medical emergency response, and patient interaction protocols. Our guards receive over 80 hours of initial training plus monthly continuing education. All guards are background-checked, drug-tested, and fully insured with $2M liability coverage."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How quickly can you deploy security guards to my hospital?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "We can deploy security guards to your hospital within 2 hours for emergency situations. For standard service contracts, we typically complete facility assessment, create a customized security plan, and deploy guards within 24-48 hours. Our rapid response team is available 24/7 for immediate security concerns and emergency coverage."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What makes ShieldWise better than other hospital security companies?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "ShieldWise Security stands out with our 20+ years of specialized hospital security experience, 4.9-star rating from 287+ verified reviews, proprietary healthcare threat assessment methodology, custom security plans, and cutting-edge technology integration. Unlike competitors, all our guards are full-time employees (not contractors), receive extensive healthcare-specific training, and are supported by our 24/7 command center with medical facility expertise."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Do you provide security services for medical campuses and healthcare facilities?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, we provide comprehensive security services specifically designed for medical campuses, clinics, surgery centers, and all types of healthcare facilities throughout California. Our services include perimeter patrols, access control, patient escort, visitor screening, parking enforcement, and customized security protocols that comply with HIPAA, Joint Commission standards, and healthcare regulations."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What areas of California do you serve for hospital security?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "ShieldWise Security provides hospital security services throughout California, with primary service areas including Los Angeles County, Orange County, San Diego County, San Francisco Bay Area, Sacramento, Central Valley, and Inland Empire. We have regional offices in Los Angeles, San Francisco, and San Diego to ensure prompt service and local healthcare expertise."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Can you integrate with our existing hospital security systems?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, our security solutions are designed to integrate seamlessly with your existing hospital systems. Whether you have legacy access control, CCTV cameras, nurse call systems, or alarm systems, our technical team can integrate with most major manufacturers and healthcare platforms. We provide a comprehensive assessment of your current systems and recommend integration strategies that maximize your security investment."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How do you ensure HIPAA compliance in hospital security services?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "All our hospital security personnel receive comprehensive HIPAA training and sign confidentiality agreements. Our security protocols are designed to protect patient privacy while maintaining facility security. We implement secure documentation processes, restricted access to patient areas, and maintain strict confidentiality standards in all security operations and incident reporting."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Do you offer 24/7 hospital security coverage?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, we provide 24/7 hospital security coverage with multiple shift options including 8-hour, 12-hour, and 24-hour coverage models. Our guards are specifically trained for overnight hospital operations, emergency department security, and handling the unique challenges of round-the-clock healthcare facility protection. We maintain consistent coverage with reliable guard scheduling and backup personnel."
-              }
-            }
-          ]
-        }
-        </script>
-
-        <!-- Enhanced LocalBusiness Schema – Los Angeles HQ -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          "@id": "https://shieldwisesecurity.com/#los-angeles-office",
-          "name": "ShieldWise Security Services – Hospital Security Division (Los Angeles HQ)",
-          "image": [
-            "https://shieldwisesecurity.com/img/los-angeles-hospital-security-office.jpg",
-            "https://shieldwisesecurity.com/img/la-hospital-security-team.jpg"
-          ],
-          "url": "https://shieldwisesecurity.com/locations/los-angeles/hospital-security",
-          "telephone": "+12134567890",
-          "email": "losangeles@shieldwisesecurity.com",
-          "priceRange": "$35-$85",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "123 Security Boulevard",
-            "addressLocality": "Los Angeles",
-            "addressRegion": "CA",
-            "postalCode": "90001",
-            "addressCountry": "US"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 34.052235,
-            "longitude": -118.243683
-          },
-          "openingHoursSpecification": [
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-              "opens": "00:00",
-              "closes": "23:59"
-            }
-          ],
-          "hasMap": "https://maps.google.com/?q=123+Security+Boulevard,+Los+Angeles,+CA+90001",
-          "areaServed": [
-            {
-              "@type": "City",
-              "name": "Los Angeles",
-              "@id": "https://en.wikipedia.org/wiki/Los_Angeles"
-            },
-            {
-              "@type": "AdministrativeArea",
-              "name": "Los Angeles County"
-            }
-          ],
-          "department": [
-            {
-              "@type": "SecurityService",
-              "name": "Hospital Security Division",
-              "description": "Specialized 24/7 hospital security and healthcare facility protection services",
-              "telephone": "+12134567891"
-            },
-            {
-              "@type": "SecurityService",
-              "name": "Healthcare Emergency Response Division", 
-              "description": "Rapid response hospital security deployment and medical emergency coordination",
-              "telephone": "+12134567892"
-            }
-          ],
-          "paymentAccepted": ["Cash", "Credit Card", "Debit Card", "Check", "Invoice", "ACH Transfer"],
-          "currenciesAccepted": "USD"
-        }
-        </script>
-
-        <!-- Enhanced LocalBusiness Schema – San Francisco -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          "@id": "https://shieldwisesecurity.com/#san-francisco-office",
-          "name": "ShieldWise Security Services – Hospital Security (San Francisco Bay Area)",
-          "image": "https://shieldwisesecurity.com/img/sf-hospital-security-office.jpg",
-          "url": "https://shieldwisesecurity.com/locations/san-francisco/hospital-security",
-          "telephone": "+14152345678",
-          "email": "sanfrancisco@shieldwisesecurity.com",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "456 Security Avenue",
-            "addressLocality": "San Francisco",
-            "addressRegion": "CA",
-            "postalCode": "94103",
-            "addressCountry": "US"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 37.7749,
-            "longitude": -122.4194
-          },
-          "openingHoursSpecification": [
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-              "opens": "00:00",
-              "closes": "23:59"
-            }
-          ],
-          "areaServed": [
-            { "@type": "City", "name": "San Francisco" },
-            { "@type": "City", "name": "Oakland" },
-            { "@type": "City", "name": "San Jose" },
-            { "@type": "City", "name": "Berkeley" },
-            { "@type": "City", "name": "Palo Alto" }
-          ]
-        }
-        </script>
-
-        <!-- Enhanced LocalBusiness Schema – San Diego -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          "@id": "https://shieldwisesecurity.com/#san-diego-office",
-          "name": "ShieldWise Security Services – Hospital Security (San Diego)",
-          "image": "https://shieldwisesecurity.com/img/sd-hospital-security-office.jpg",
-          "url": "https://shieldwisesecurity.com/locations/san-diego/hospital-security",
-          "telephone": "+16195551234",
-          "email": "sandiego@shieldwisesecurity.com",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "789 Healthcare Way",
-            "addressLocality": "San Diego",
-            "addressRegion": "CA",
-            "postalCode": "92101",
-            "addressCountry": "US"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 32.7157,
-            "longitude": -117.1611
-          },
-          "openingHoursSpecification": [
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-              "opens": "00:00",
-              "closes": "23:59"
-            }
-          ],
-          "areaServed": [
-            { "@type": "City", "name": "San Diego" },
-            { "@type": "City", "name": "Chula Vista" },
-            { "@type": "City", "name": "Oceanside" },
-            { "@type": "City", "name": "Escondido" },
-            { "@type": "City", "name": "Carlsbad" }
-          ]
-        }
-        </script>
-
-        <!-- Enhanced BreadcrumbList -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://shieldwisesecurity.com/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Security Services",
-              "item": "https://shieldwisesecurity.com/services/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "Hospital Security Services",
-              "item": "https://shieldwisesecurity.com/services/hospital-security/"
-            }
-          ]
-        }
-        </script>
-
-        <!-- Enhanced Service Schema -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "@id": "https://shieldwisesecurity.com/#hospital-security-service",
-          "serviceType": "Hospital Security Services",
-          "name": "Professional Hospital Security Services",
-          "alternateName": ["Healthcare Security Services", "Medical Center Security", "Hospital Protection Services"],
-          "description": "Comprehensive 24/7 hospital security services throughout California, including BSIS-licensed security guards, access control systems, mobile patrols, CCTV monitoring, and emergency response specifically designed for healthcare facilities and medical environments.",
-          "provider": {
-            "@type": "Organization",
-            "name": "ShieldWise Security Services",
-            "legalName": "ShieldWise Security Services Inc.",
-            "@id": "https://shieldwisesecurity.com/#organization"
-          },
-          "areaServed": {
-            "@type": "State",
-            "name": "California",
-            "sameAs": "https://en.wikipedia.org/wiki/California"
-          },
-          "serviceOutput": "Enhanced patient safety, staff security, and healthcare facility protection",
-          "category": ["Security Services", "Healthcare Security", "Emergency Response"],
-          "hasOfferCatalog": {
-            "@id": "https://shieldwisesecurity.com/#hospital-service-catalog"
-          },
-          "termsOfService": "https://shieldwisesecurity.com/terms/",
-          "hoursAvailable": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-            "opens": "00:00",
-            "closes": "23:59"
-          },
-          "audience": [
-            {
-              "@type": "Audience",
-              "audienceType": "Hospital Administrators",
-              "geographicArea": {
-                "@type": "State",
-                "name": "California"
-              }
-            },
-            {
-              "@type": "Audience", 
-              "audienceType": "Healthcare Facility Managers"
-            },
-            {
-              "@type": "Audience",
-              "audienceType": "Medical Center Directors" 
-            },
-            {
-              "@type": "Audience",
-              "audienceType": "Chief Security Officers"
-            }
-          ],
-          "isRelatedTo": [
-            {
-              "@type": "Service",
-              "name": "Security Guard Services"
-            },
-            {
-              "@type": "Service", 
-              "name": "Healthcare Consulting"
-            }
-          ],
-          "potentialAction": {
-            "@type": "ContactAction",
-            "target": {
-              "@type": "EntryPoint",
-              "urlTemplate": "https://shieldwisesecurity.com/contact/",
-              "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
-            }
-          }
-        }
-        </script>
-
-        <!-- Enhanced Event Schema – Free Hospital Security Assessment -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "Event",
-          "@id": "https://shieldwisesecurity.com/#free-hospital-assessment",
-          "name": "Free Hospital Security Assessment",
-          "alternateName": "Complimentary Healthcare Security Consultation",
-          "description": "Schedule a comprehensive hospital security assessment with our BSIS-certified healthcare security consultants. Includes detailed vulnerability analysis, HIPAA compliance review, staff safety evaluation, and a personalized hospital security implementation plan.",
-          "eventStatus": "https://schema.org/EventScheduled",
-          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-          "startDate": "2025-01-01",
-          "endDate": "2025-12-31",
-          "location": {
-            "@type": "Place",
-            "name": "Client Hospital Location",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Various Locations",
-              "addressRegion": "CA",
-              "addressCountry": "US"
-            }
-          },
-          "organizer": {
-            "@type": "Organization",
-            "name": "ShieldWise Security Services",
-            "url": "https://shieldwisesecurity.com",
-            "@id": "https://shieldwisesecurity.com/#organization"
-          },
-          "offers": {
-            "@type": "Offer",
-            "name": "Free Hospital Security Assessment",
-            "price": "0",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock",
-            "validFrom": "2025-01-01",
-            "validThrough": "2025-12-31",
-            "url": "https://shieldwisesecurity.com/free-hospital-security-assessment/",
-            "category": "Hospital Security Consultation"
-          },
-          "performer": {
-            "@type": "Person",
-            "name": "Hospital Security Consultant",
-            "worksFor": {
-              "@id": "https://shieldwisesecurity.com/#organization"
-            }
-          },
-          "audience": {
-            "@type": "Audience",
-            "audienceType": ["Hospital Administrators", "Healthcare Facility Managers", "Chief Security Officers"]
-          }
-        }
-        </script>
-
-        <!-- FIXED ServiceArea Schema with Proper JSON Structure -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "ServiceArea",
-          "@id": "https://shieldwisesecurity.com/#hospital-servicearea",
-          "provider": { "@id": "https://shieldwisesecurity.com/#organization" },
-          "serviceType": "Hospital Security Services",
-          "areaServed": [
-            { "@type": "State", "name": "California" },
-            { "@type": "City", "name": "Anaheim", "addressRegion": "CA" },
-            { "@type": "City", "name": "Brea", "addressRegion": "CA" },
-            { "@type": "City", "name": "Buena Park", "addressRegion": "CA" },
-            { "@type": "City", "name": "Costa Mesa", "addressRegion": "CA" },
-            { "@type": "City", "name": "Cypress", "addressRegion": "CA" },
-            { "@type": "City", "name": "Dana Point", "addressRegion": "CA" },
-            { "@type": "City", "name": "Fountain Valley", "addressRegion": "CA" },
-            { "@type": "City", "name": "Fullerton", "addressRegion": "CA" },
-            { "@type": "City", "name": "Garden Grove", "addressRegion": "CA" },
-            { "@type": "City", "name": "Huntington Beach", "addressRegion": "CA" },
-            { "@type": "City", "name": "Irvine", "addressRegion": "CA" },
-            { "@type": "City", "name": "La Habra", "addressRegion": "CA" },
-            { "@type": "City", "name": "La Palma", "addressRegion": "CA" },
-            { "@type": "City", "name": "Laguna Beach", "addressRegion": "CA" },
-            { "@type": "City", "name": "Laguna Hills", "addressRegion": "CA" },
-            { "@type": "City", "name": "Laguna Niguel", "addressRegion": "CA" },
-            { "@type": "City", "name": "Laguna Woods", "addressRegion": "CA" },
-            { "@type": "City", "name": "Lake Forest", "addressRegion": "CA" },
-            { "@type": "City", "name": "Los Alamitos", "addressRegion": "CA" },
-            { "@type": "City", "name": "Mission Viejo", "addressRegion": "CA" },
-            { "@type": "City", "name": "Newport Beach", "addressRegion": "CA" },
-            { "@type": "City", "name": "Orange", "addressRegion": "CA" },
-            { "@type": "City", "name": "Placentia", "addressRegion": "CA" },
-            { "@type": "City", "name": "Rancho Santa Margarita", "addressRegion": "CA" },
-            { "@type": "City", "name": "San Clemente", "addressRegion": "CA" },
-            { "@type": "City", "name": "San Juan Capistrano", "addressRegion": "CA" },
-            { "@type": "City", "name": "Santa Ana", "addressRegion": "CA" },
-            { "@type": "City", "name": "Seal Beach", "addressRegion": "CA" },
-            { "@type": "City", "name": "Stanton", "addressRegion": "CA" },
-            { "@type": "City", "name": "Tustin", "addressRegion": "CA" },
-            { "@type": "City", "name": "Villa Park", "addressRegion": "CA" },
-            { "@type": "City", "name": "Westminster", "addressRegion": "CA" },
-            { "@type": "City", "name": "Yorba Linda", "addressRegion": "CA" },
-            { "@type": "City", "name": "Alhambra", "addressRegion": "CA" },
-            { "@type": "City", "name": "Arcadia", "addressRegion": "CA" },
-            { "@type": "City", "name": "Artesia", "addressRegion": "CA" },
-            { "@type": "City", "name": "Avalon", "addressRegion": "CA" },
-            { "@type": "City", "name": "Azusa", "addressRegion": "CA" },
-            { "@type": "City", "name": "Baldwin Park", "addressRegion": "CA" },
-            { "@type": "City", "name": "Bell", "addressRegion": "CA" },
-            { "@type": "City", "name": "Bellflower", "addressRegion": "CA" },
-            { "@type": "City", "name": "Bell Gardens", "addressRegion": "CA" },
-            { "@type": "City", "name": "Beverly Hills", "addressRegion": "CA" },
-            { "@type": "City", "name": "Bradbury", "addressRegion": "CA" },
-            { "@type": "City", "name": "Burbank", "addressRegion": "CA" },
-            { "@type": "City", "name": "Calabasas", "addressRegion": "CA" },
-            { "@type": "City", "name": "Carson", "addressRegion": "CA" },
-            { "@type": "City", "name": "Cerritos", "addressRegion": "CA" },
-            { "@type": "City", "name": "Claremont", "addressRegion": "CA" },
-            { "@type": "City", "name": "Commerce", "addressRegion": "CA" },
-            { "@type": "City", "name": "Compton", "addressRegion": "CA" },
-            { "@type": "City", "name": "Covina", "addressRegion": "CA" },
-            { "@type": "City", "name": "Cudahy", "addressRegion": "CA" },
-            { "@type": "City", "name": "Culver City", "addressRegion": "CA" },
-            { "@type": "City", "name": "Diamond Bar", "addressRegion": "CA" },
-            { "@type": "City", "name": "Downey", "addressRegion": "CA" },
-            { "@type": "City", "name": "Duarte", "addressRegion": "CA" },
-            { "@type": "City", "name": "El Monte", "addressRegion": "CA" },
-            { "@type": "City", "name": "El Segundo", "addressRegion": "CA" },
-            { "@type": "City", "name": "Gardena", "addressRegion": "CA" },
-            { "@type": "City", "name": "Glendale", "addressRegion": "CA" },
-            { "@type": "City", "name": "Glendora", "addressRegion": "CA" },
-            { "@type": "City", "name": "Hawaiian Gardens", "addressRegion": "CA" },
-            { "@type": "City", "name": "Hawthorne", "addressRegion": "CA" },
-            { "@type": "City", "name": "Hermosa Beach", "addressRegion": "CA" },
-            { "@type": "City", "name": "Hidden Hills", "addressRegion": "CA" },
-            { "@type": "City", "name": "Huntington Park", "addressRegion": "CA" },
-            { "@type": "City", "name": "Industry", "addressRegion": "CA" },
-            { "@type": "City", "name": "Inglewood", "addressRegion": "CA" },
-            { "@type": "City", "name": "Irwindale", "addressRegion": "CA" },
-            { "@type": "City", "name": "La Cañada Flintridge", "addressRegion": "CA" },
-            { "@type": "City", "name": "La Habra Heights", "addressRegion": "CA" },
-            { "@type": "City", "name": "Lakewood", "addressRegion": "CA" },
-            { "@type": "City", "name": "La Mirada", "addressRegion": "CA" },
-            { "@type": "City", "name": "Lancaster", "addressRegion": "CA" },
-            { "@type": "City", "name": "La Puente", "addressRegion": "CA" },
-            { "@type": "City", "name": "La Verne", "addressRegion": "CA" },
-            { "@type": "City", "name": "Lawndale", "addressRegion": "CA" },
-            { "@type": "City", "name": "Lomita", "addressRegion": "CA" },
-            { "@type": "City", "name": "Long Beach", "addressRegion": "CA" },
-            { "@type": "City", "name": "Los Angeles", "addressRegion": "CA" },
-            { "@type": "City", "name": "Lynwood", "addressRegion": "CA" },
-            { "@type": "City", "name": "Malibu", "addressRegion": "CA" },
-            { "@type": "City", "name": "Manhattan Beach", "addressRegion": "CA" },
-            { "@type": "City", "name": "Maywood", "addressRegion": "CA" },
-            { "@type": "City", "name": "Monrovia", "addressRegion": "CA" },
-            { "@type": "City", "name": "Montebello", "addressRegion": "CA" },
-            { "@type": "City", "name": "Monterey Park", "addressRegion": "CA" },
-            { "@type": "City", "name": "Norwalk", "addressRegion": "CA" },
-            { "@type": "City", "name": "Palmdale", "addressRegion": "CA" },
-            { "@type": "City", "name": "Palos Verdes Estates", "addressRegion": "CA" },
-            { "@type": "City", "name": "Paramount", "addressRegion": "CA" },
-            { "@type": "City", "name": "Pasadena", "addressRegion": "CA" },
-            { "@type": "City", "name": "Pico Rivera", "addressRegion": "CA" },
-            { "@type": "City", "name": "Pomona", "addressRegion": "CA" },
-            { "@type": "City", "name": "Rancho Palos Verdes", "addressRegion": "CA" },
-            { "@type": "City", "name": "Redondo Beach", "addressRegion": "CA" },
-            { "@type": "City", "name": "Rolling Hills", "addressRegion": "CA" },
-            { "@type": "City", "name": "Rolling Hills Estates", "addressRegion": "CA" },
-            { "@type": "City", "name": "Rosemead", "addressRegion": "CA" },
-            { "@type": "City", "name": "San Dimas", "addressRegion": "CA" },
-            { "@type": "City", "name": "San Fernando", "addressRegion": "CA" },
-            { "@type": "City", "name": "San Gabriel", "addressRegion": "CA" },
-            { "@type": "City", "name": "San Marino", "addressRegion": "CA" },
-            { "@type": "City", "name": "Santa Clarita", "addressRegion": "CA" },
-            { "@type": "City", "name": "Santa Fe Springs", "addressRegion": "CA" },
-            { "@type": "City", "name": "Santa Monica", "addressRegion": "CA" },
-            { "@type": "City", "name": "Sierra Madre", "addressRegion": "CA" },
-            { "@type": "City", "name": "Signal Hill", "addressRegion": "CA" },
-            { "@type": "City", "name": "South El Monte", "addressRegion": "CA" },
-            { "@type": "City", "name": "South Gate", "addressRegion": "CA" },
-            { "@type": "City", "name": "South Pasadena", "addressRegion": "CA" },
-            { "@type": "City", "name": "Temple City", "addressRegion": "CA" },
-            { "@type": "City", "name": "Torrance", "addressRegion": "CA" },
-            { "@type": "City", "name": "Vernon", "addressRegion": "CA" },
-            { "@type": "City", "name": "Walnut", "addressRegion": "CA" },
-            { "@type": "City", "name": "West Covina", "addressRegion": "CA" },
-            { "@type": "City", "name": "West Hollywood", "addressRegion": "CA" },
-            { "@type": "City", "name": "Westlake Village", "addressRegion": "CA" },
-            { "@type": "City", "name": "Whittier", "addressRegion": "CA" },
-            { "@type": "City", "name": "San Bernardino", "addressRegion": "CA" },
-            { "@type": "City", "name": "Fontana", "addressRegion": "CA" },
-            { "@type": "City", "name": "Rancho Cucamonga", "addressRegion": "CA" },
-            { "@type": "City", "name": "Ontario", "addressRegion": "CA" },
-            { "@type": "City", "name": "Victorville", "addressRegion": "CA" },
-            { "@type": "City", "name": "Riverside", "addressRegion": "CA" },
-            { "@type": "City", "name": "Moreno Valley", "addressRegion": "CA" },
-            { "@type": "City", "name": "Corona", "addressRegion": "CA" },
-            { "@type": "City", "name": "Murrieta", "addressRegion": "CA" },
-            { "@type": "City", "name": "Temecula", "addressRegion": "CA" },
-            { "@type": "City", "name": "Carlsbad", "addressRegion": "CA" },
-            { "@type": "City", "name": "Chula Vista", "addressRegion": "CA" },
-            { "@type": "City", "name": "Coronado", "addressRegion": "CA" },
-            { "@type": "City", "name": "Del Mar", "addressRegion": "CA" },
-            { "@type": "City", "name": "El Cajon", "addressRegion": "CA" },
-            { "@type": "City", "name": "Encinitas", "addressRegion": "CA" },
-            { "@type": "City", "name": "Escondido", "addressRegion": "CA" },
-            { "@type": "City", "name": "Imperial Beach", "addressRegion": "CA" },
-            { "@type": "City", "name": "La Mesa", "addressRegion": "CA" },
-            { "@type": "City", "name": "Lemon Grove", "addressRegion": "CA" },
-            { "@type": "City", "name": "National City", "addressRegion": "CA" },
-            { "@type": "City", "name": "Oceanside", "addressRegion": "CA" },
-            { "@type": "City", "name": "Poway", "addressRegion": "CA" },
-            { "@type": "City", "name": "San Diego", "addressRegion": "CA" },
-            { "@type": "City", "name": "San Marcos", "addressRegion": "CA" },
-            { "@type": "City", "name": "Santee", "addressRegion": "CA" },
-            { "@type": "City", "name": "Solana Beach", "addressRegion": "CA" },
-            { "@type": "City", "name": "Vista", "addressRegion": "CA" },
-            { "@type": "City", "name": "San Francisco", "addressRegion": "CA" },
-            { "@type": "City", "name": "Oakland", "addressRegion": "CA" },
-            { "@type": "City", "name": "San Jose", "addressRegion": "CA" },
-            { "@type": "City", "name": "Sacramento", "addressRegion": "CA" },
-            { "@type": "City", "name": "Fresno", "addressRegion": "CA" },
-            { "@type": "City", "name": "Bakersfield", "addressRegion": "CA" }
-          ]
-        }
-        </script>
-
-        <!-- Enhanced WebSite Schema with Search -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "@id": "https://shieldwisesecurity.com/#website",
-          "name": "ShieldWise Security Services - California Hospital Security Experts",
-          "alternateName": "ShieldWise Hospital Security",
-          "url": "https://shieldwisesecurity.com",
-          "description": "California's premier hospital security company providing 24/7 BSIS-licensed guards, healthcare security services, and emergency response for medical facilities statewide.",
-          "inLanguage": ["en-US", "es-US"],
-          "copyrightYear": "2025",
-          "copyrightHolder": {
-            "@id": "https://shieldwisesecurity.com/#organization"
-          },
-          "publisher": {
-            "@id": "https://shieldwisesecurity.com/#organization"
-          },
-          "potentialAction": [
-            {
-              "@type": "SearchAction",
-              "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "https://shieldwisesecurity.com/search?q={search_term_string}",
-                "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
-              },
-              "query-input": "required name=search_term_string"
-            },
-            {
-              "@type": "ContactAction",
-              "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "https://shieldwisesecurity.com/contact/",
-                "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
-              }
-            }
-          ],
-          "sameAs": [
-            "https://www.facebook.com/ShieldWiseSecurity",
-            "https://twitter.com/ShieldWiseSec",
-            "https://www.linkedin.com/company/shieldwise-security"
-          ]
-        }
-        </script>
-
-        <!-- Enhanced Speakable Schema for Voice Search -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "@id": "https://shieldwisesecurity.com/services/hospital-security#webpage",
-          "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": [
-              ".speakable-intro",
-              ".speakable-services", 
-              ".speakable-contact",
-              ".speakable-pricing",
-              ".speakable-coverage-areas"
-            ],
-            "xpath": [
-              "/html/body/main/section[1]/div/h1",
-              "/html/body/main/section[2]/div/p[1]",
-              "/html/body/main/section[3]/div/ul"
-            ]
-          },
-          "url": "https://shieldwisesecurity.com/services/hospital-security",
-          "name": "Hospital Security Services California",
-          "description": "Professional hospital security services throughout California with BSIS-licensed guards available 24/7",
-          "mainEntity": {
-            "@id": "https://shieldwisesecurity.com/#hospital-security-service"
-          }
-        }
-        </script>
-
-        <!-- Enhanced Course Schema – Hospital Security Training -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "Course",
-          "@id": "https://training.shieldwisesecurity.com/hospital-security-certification",
-          "name": "Professional Hospital Security Staff Training & Certification",
-          "description": "Comprehensive 16-hour training program covering hospital security protocols, HIPAA compliance, patient interaction, emergency response, de-escalation techniques, and California healthcare regulations.",
-          "provider": {
-            "@type": "Organization",
-            "name": "ShieldWise Healthcare Security Academy",
-            "sameAs": "https://training.shieldwisesecurity.com",
-            "parentOrganization": {
-              "@id": "https://shieldwisesecurity.com/#organization"
-            }
-          },
-          "courseCode": "HOSP-SEC-101",
-          "courseModeOrWorkLoad": "In-person and Online Options",
-          "timeRequired": "P2D",
-          "numberOfCredits": 16,
-          "educationalCredentialAwarded": "Hospital Security Professional Certification",
-          "offers": [
-            {
-              "@type": "Offer",
-              "price": "399",
-              "priceCurrency": "USD",
-              "category": "In-Person Training"
-            },
-            {
-              "@type": "Offer", 
-              "price": "299",
-              "priceCurrency": "USD",
-              "category": "Online Training"
-            }
-          ],
-          "hasCourseInstance": [
-            {
-              "@type": "CourseInstance",
-              "courseMode": "InPerson",
-              "location": {
-                "@type": "Place",
-                "name": "ShieldWise Training Center Los Angeles",
-                "address": {
-                  "@type": "PostalAddress",
-                  "streetAddress": "123 Security Boulevard",
-                  "addressLocality": "Los Angeles",
-                  "addressRegion": "CA"
-                }
-              }
-            },
-            {
-              "@type": "CourseInstance",
-              "courseMode": "Online"
-            }
-          ],
-          "teaches": [
-            "Hospital security patrol procedures",
-            "HIPAA compliance and patient privacy",
-            "Emergency response protocols in healthcare settings",
-            "De-escalation and conflict resolution",
-            "Access control and visitor management",
-            "Incident documentation and reporting"
-          ]
-        }
-        </script>
-
-        <!-- Enhanced SiteNavigationElement Schema -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "SiteNavigationElement",
-          "name": [
-            "Home",
-            "Hospital Security Services", 
-            "Security Services",
-            "Service Areas",
-            "About ShieldWise",
-            "Healthcare Resources",
-            "Training & Certification",
-            "Contact Us",
-            "Get Quote"
-          ],
-          "url": [
-            "https://shieldwisesecurity.com/",
-            "https://shieldwisesecurity.com/services/hospital-security/",
-            "https://shieldwisesecurity.com/services/",
-            "https://shieldwisesecurity.com/locations/",
-            "https://shieldwisesecurity.com/about-us/",
-            "https://shieldwisesecurity.com/resources/",
-            "https://training.shieldwisesecurity.com/",
-            "https://shieldwisesecurity.com/contact/",
-            "https://shieldwisesecurity.com/get-quote/"
-          ]
-        }
-        </script>
-
-        <!-- Performance & Analytics Scripts -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'GA_MEASUREMENT_ID', {
-            page_title: 'Hospital Security Services California | ShieldWise',
-            page_location: window.location.href,
-            content_group1: 'Hospital Security Services',
-            content_group2: 'Healthcare Security',
-            custom_map: {'custom_dimension_1': 'service_type'}
-          });
-          gtag('event', 'page_view', {
-            page_title: 'Hospital Security Services',
-            page_location: window.location.href,
-            service_type: 'Hospital Security'
-          });
-        </script>
-
-        <!-- Schema.org JSON-LD Validation -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@graph": [
-            {
-              "@id": "https://shieldwisesecurity.com/#website"
-            },
-            {
-              "@id": "https://shieldwisesecurity.com/#organization"
-            },
-            {
-              "@id": "https://shieldwisesecurity.com/#hospital-security-service"
-            }
-          ]
-        }
-        </script>
-
-
-    <style>
-        /* Hospital Security Section Styles */
-        .hospital-features-section {
-            padding: 80px 0;
-            background: var(--light-bg);
-        }
-
-        .section-title {
-            font-size: 2.8rem;
-            color: var(--primary-color);
-            text-align: center;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 50px;
-        }
-
-        .hospital-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .hospital-card {
-            background: white;
-            border-radius: 15px;
-            padding: 35px 25px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hospital-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-secondary);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .hospital-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border-color: var(--secondary-color);
-        }
-
-        .hospital-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .hospital-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--gradient-secondary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 2.5rem;
-            color: white;
-        }
-
-        .hospital-title {
-            font-size: 1.4rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .hospital-description {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .security-process-section {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .process-step {
-            text-align: center;
-            padding: 30px 20px;
-            margin-bottom: 30px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-            position: relative;
-        }
-
-        .process-step:hover {
-            transform: translateY(-5px);
-        }
-
-        .process-number {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-secondary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: white;
-        }
-
-        .process-title {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .benefits-section {
-            padding: 80px 0;
-            background: var(--light-bg);
-        }
-
-        .benefit-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .benefit-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-secondary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            flex-shrink: 0;
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        .benefit-content h4 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-
-        .benefit-content p {
-            color: #666;
-            margin-bottom: 0;
-            line-height: 1.6;
-        }
-
-        :root {
-            --primary-color: #1a3c6e;
-            --secondary-color: #bf9e5b;
-            --text-color: #333333;
-            --light-bg: #f8f9fa;
-            --gradient-secondary: linear-gradient(135deg, #bf9e5b, #d4b570);
-        }
-
-        body {
-            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        .hero-section {
-            background: linear-gradient(rgba(26, 60, 110, 0.9), rgba(26, 60, 110, 0.9)), url('/img/hospitalsecurity.png');
-            background-size: cover;
-            background-position: center;
-            padding: 150px 0;
-            color: white;
-            text-align: center;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            max-width: 800px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-
-        .service-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            margin: 20px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-        }
-
-        .service-title {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .feature-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .feature-list li {
-            padding: 10px 0;
-            padding-left: 30px;
-            position: relative;
-        }
-
-        .feature-list li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--secondary-color);
-            font-weight: bold;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary-color), #0d2b54);
-            padding: 80px 0;
-            color: white;
-            text-align: center;
-        }
-
-        .btn-custom {
-            background: var(--secondary-color);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-        }
-
-        .btn-custom:hover {
-            background: #a88b4a;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .stats-section {
-            padding: 60px 0;
-            background: var(--light-bg);
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 30px;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .testimonial-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            margin: 20px 0;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-        }
-
-        .client-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .hospital-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
+
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <%- include('../partials/Header') %>
 
-    <main>
+    <main id="main-content">
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
-                <h1 class="hero-title">Professional Hospital Security Services</h1>
-                <p class="hero-subtitle">Comprehensive healthcare facility security ensuring patient safety and HIPAA compliance</p>
+                <h1 class="hero-title speakable-intro">Professional Hospital Security Services</h1>
+                <p class="hero-subtitle speakable-intro">Comprehensive healthcare facility security ensuring patient safety and HIPAA compliance</p>
             </div>
         </section>
 
@@ -1789,93 +39,84 @@
             <h1 style="font-size:38px; margin-bottom:28px; color:#152f45;">
                 Premier Hospital Security Services for Healthcare Excellence
             </h1>
-            <p style="font-size:20px; line-height:1.8; margin-bottom:0; transition: all 0.3s ease; cursor: default;" 
-               onmouseover="this.style.color='#152f45'; this.style.transform='scale(1.02)'; this.style.textShadow='0 2px 8px rgba(0,0,0,0.1)'" 
-               onmouseout="this.style.color='#1c1c1c'; this.style.transform='scale(1)'; this.style.textShadow='none'">
-                <strong>ShieldWise Security</strong> provides comprehensive hospital security services tailored to meet the unique needs of healthcare facilities. Our services are designed to ensure the safety and well-being of patients, staff, and visitors, while maintaining a secure environment conducive to quality healthcare delivery. We offer <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
-                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">24/7 on-site security personnel</strong> trained to handle the specific challenges of healthcare settings, conducting regular patrols, monitoring access points, and responding promptly to incidents. Our advanced <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
-                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">access control systems</strong> restrict unauthorized entry to sensitive areas such as emergency rooms, intensive care units, and administrative offices. Strategic surveillance solutions provide real-time oversight while our <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
-                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">visitor management protocols</strong> ensure only authorized individuals access restricted areas. By integrating physical and digital security strategies, including <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
-                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">HIPAA-compliant cybersecurity services</strong>, we provide a holistic approach to hospital security that supports the delivery of high-quality care.
+            <p class="speakable-services" style="font-size:20px; line-height:1.8; margin-bottom:0;">
+                <strong>ShieldWise Security</strong> provides comprehensive hospital security services tailored to meet the unique needs of healthcare facilities. Our services are designed to ensure the safety and well-being of patients, staff, and visitors, while maintaining a secure environment conducive to quality healthcare delivery. We offer <strong style="color:#bf9e5b;">24/7 on-site security personnel</strong> trained to handle the specific challenges of healthcare settings, conducting regular patrols, monitoring access points, and responding promptly to incidents. Our advanced <strong style="color:#bf9e5b;">access control systems</strong> restrict unauthorized entry to sensitive areas such as emergency rooms, intensive care units, and administrative offices. Strategic surveillance solutions provide real-time oversight while our <strong style="color:#bf9e5b;">visitor management protocols</strong> ensure only authorized individuals access restricted areas.
             </p>
-            <p>Call This Number +1-714-716-7430</p>
-
-            <p>Ask for Quote info@shieldwisesecurity.com</p>
-
-            <p><a href="https://www.instagram.com/shieldwisesecurity/">https://www.instagram.com/shieldwisesecurity/</a></p>
-
-            <p><a href="https://www.linkedin.com/company/shieldwisesecurity/">https://www.linkedin.com/company/shieldwisesecurity/</a></p>
+            <div class="speakable-contact" style="margin-top:20px; font-size:18px;">
+                <strong>Call This Number:</strong> +1-714-716-7430 | 
+                <strong>Email:</strong> info@shieldwisesecurity.com
+            </div>
         </div>
 
         <!-- Hospital Security Features Section -->
-        <section id="features" class="hospital-features-section">
+        <section id="features" class="apartment-features-section">
             <div class="container">
                 <h2 class="section-title">Comprehensive Hospital Security Features</h2>
                 <p class="section-subtitle">Advanced security solutions designed specifically for healthcare environments</p>
 
-                <div class="hospital-grid">
-                    <div class="hospital-card">
-                        <div class="hospital-icon">
-                            <i class="fas fa-user-md"></i>
+                <div class="apartment-grid">
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="fas fa-user-md" aria-hidden="true"></i>
                         </div>
-                        <h3 class="hospital-title">Emergency Department Security</h3>
-                        <p class="hospital-description">Specialized security for high-stress areas with trained personnel who understand medical emergencies and de-escalation techniques.</p>
+                        <h3 class="apartment-title">Emergency Department Security</h3>
+                        <p class="apartment-description">Specialized security for high-stress areas with trained personnel who understand medical emergencies and de-escalation techniques.</p>
                     </div>
 
-                    <div class="hospital-card">
-                        <div class="hospital-icon">
-                            <i class="fas fa-shield-virus"></i>
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="fas fa-shield-virus" aria-hidden="true"></i>
                         </div>
-                        <h3 class="hospital-title">ICU & Critical Care Protection</h3>
-                        <p class="hospital-description">Restricted access monitoring for intensive care units, ensuring only authorized medical staff and approved visitors enter sensitive areas.</p>
+                        <h3 class="apartment-title">ICU & Critical Care Protection</h3>
+                        <p class="apartment-description">Restricted access monitoring for intensive care units, ensuring only authorized medical staff and approved visitors enter sensitive areas.</p>
                     </div>
 
-                    <div class="hospital-card">
-                        <div class="hospital-icon">
-                            <i class="fas fa-clipboard-check"></i>
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="fas fa-clipboard-check" aria-hidden="true"></i>
                         </div>
-                        <h3 class="hospital-title">Visitor Management System</h3>
-                        <p class="hospital-description">Comprehensive visitor screening, badge issuance, and escort services to maintain controlled access throughout the facility.</p>
+                        <h3 class="apartment-title">Visitor Management System</h3>
+                        <p class="apartment-description">Comprehensive visitor screening, badge issuance, and escort services to maintain controlled access throughout the facility.</p>
                     </div>
 
-                    <div class="hospital-card">
-                        <div class="hospital-icon">
-                            <i class="fas fa-lock"></i>
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="fas fa-lock" aria-hidden="true"></i>
                         </div>
-                        <h3 class="hospital-title">HIPAA-Compliant Security</h3>
-                        <p class="hospital-description">Advanced cybersecurity protocols protecting electronic health information with data encryption and secure access controls.</p>
+                        <h3 class="apartment-title">HIPAA-Compliant Security</h3>
+                        <p class="apartment-description">Advanced cybersecurity protocols protecting electronic health information with data encryption and secure access controls.</p>
                     </div>
 
-                    <div class="hospital-card">
-                        <div class="hospital-icon">
-                            <i class="fas fa-exclamation-triangle"></i>
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
                         </div>
-                        <h3 class="hospital-title">Emergency Response Training</h3>
-                        <p class="hospital-description">Security officers trained in active shooter protocols, fire evacuations, and medical emergency procedures for swift response.</p>
+                        <h3 class="apartment-title">Emergency Response Training</h3>
+                        <p class="apartment-description">Security officers trained in active shooter protocols, fire evacuations, and medical emergency procedures for swift response.</p>
                     </div>
 
-                    <div class="hospital-card">
-                        <div class="hospital-icon">
-                            <i class="fas fa-pills"></i>
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="fas fa-pills" aria-hidden="true"></i>
                         </div>
-                        <h3 class="hospital-title">Pharmacy & Medical Supply Security</h3>
-                        <p class="hospital-description">Specialized protection for pharmaceutical storage areas and medical equipment to prevent theft and ensure regulatory compliance.</p>
+                        <h3 class="apartment-title">Pharmacy & Medical Supply Security</h3>
+                        <p class="apartment-description">Specialized protection for pharmaceutical storage areas and medical equipment to prevent theft and ensure regulatory compliance.</p>
                     </div>
 
-                    <div class="hospital-card">
-                        <div class="hospital-icon">
-                            <i class="fas fa-camera"></i>
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="fas fa-camera" aria-hidden="true"></i>
                         </div>
-                        <h3 class="hospital-title">24/7 Surveillance Monitoring</h3>
-                        <p class="hospital-description">Strategic camera placement and real-time monitoring systems providing comprehensive coverage while respecting patient privacy.</p>
+                        <h3 class="apartment-title">24/7 Surveillance Monitoring</h3>
+                        <p class="apartment-description">Strategic camera placement and real-time monitoring systems providing comprehensive coverage while respecting patient privacy.</p>
                     </div>
 
-                    <div class="hospital-card">
-                        <div class="hospital-icon">
-                            <i class="fas fa-baby"></i>
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="fas fa-baby" aria-hidden="true"></i>
                         </div>
-                        <h3 class="hospital-title">Maternity & Pediatric Security</h3>
-                        <p class="hospital-description">Enhanced security protocols for maternity wards and pediatric units including infant protection systems and specialized access controls.</p>
+                        <h3 class="apartment-title">Maternity & Pediatric Security</h3>
+                        <p class="apartment-description">Enhanced security protocols for maternity wards and pediatric units including infant protection systems and specialized access controls.</p>
                     </div>
                 </div>
             </div>
@@ -1928,7 +169,7 @@
                     <div class="col-md-6">
                         <div class="benefit-item">
                             <div class="benefit-icon">
-                                <i class="fas fa-graduation-cap"></i>
+                                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
                             </div>
                             <div class="benefit-content">
                                 <h4>Healthcare-Specialized Training</h4>
@@ -1938,7 +179,7 @@
 
                         <div class="benefit-item">
                             <div class="benefit-icon">
-                                <i class="fas fa-balance-scale"></i>
+                                <i class="fas fa-balance-scale" aria-hidden="true"></i>
                             </div>
                             <div class="benefit-content">
                                 <h4>Regulatory Compliance</h4>
@@ -1948,7 +189,7 @@
 
                         <div class="benefit-item">
                             <div class="benefit-icon">
-                                <i class="fas fa-heartbeat"></i>
+                                <i class="fas fa-heartbeat" aria-hidden="true"></i>
                             </div>
                             <div class="benefit-content">
                                 <h4>Medical Emergency Response</h4>
@@ -1959,7 +200,7 @@
                     <div class="col-md-6">
                         <div class="benefit-item">
                             <div class="benefit-icon">
-                                <i class="fas fa-users"></i>
+                                <i class="fas fa-users" aria-hidden="true"></i>
                             </div>
                             <div class="benefit-content">
                                 <h4>Patient & Family Focused</h4>
@@ -1969,7 +210,7 @@
 
                         <div class="benefit-item">
                             <div class="benefit-icon">
-                                <i class="fas fa-database"></i>
+                                <i class="fas fa-database" aria-hidden="true"></i>
                             </div>
                             <div class="benefit-content">
                                 <h4>Advanced Cybersecurity</h4>
@@ -1979,7 +220,7 @@
 
                         <div class="benefit-item">
                             <div class="benefit-icon">
-                                <i class="fas fa-clock"></i>
+                                <i class="fas fa-clock" aria-hidden="true"></i>
                             </div>
                             <div class="benefit-content">
                                 <h4>24/7 Coverage</h4>
@@ -1997,7 +238,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="service-card">
-                            <i class="fas fa-door-open service-icon"></i>
+                            <i class="fas fa-door-open service-icon" aria-hidden="true"></i>
                             <h3 class="service-title">Access Control & Monitoring</h3>
                             <ul class="feature-list">
                                 <li>Electronic Badge Systems</li>
@@ -2009,7 +250,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="service-card">
-                            <i class="fas fa-ambulance service-icon"></i>
+                            <i class="fas fa-ambulance service-icon" aria-hidden="true"></i>
                             <h3 class="service-title">Emergency Response Services</h3>
                             <ul class="feature-list">
                                 <li>Code Team Assistance</li>
@@ -2021,7 +262,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="service-card">
-                            <i class="fas fa-shield-alt service-icon"></i>
+                            <i class="fas fa-shield-alt service-icon" aria-hidden="true"></i>
                             <h3 class="service-title">Comprehensive Protection</h3>
                             <ul class="feature-list">
                                 <li>Perimeter Security</li>
@@ -2074,7 +315,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="testimonial-card">
-                            <img src="/img/james.png" alt="Client" class="client-image">
+                            <img src="/img/james.png" alt="Dr. Sarah Williams, Chief Medical Officer" class="client-image">
                             <h4>Dr. Sarah Williams</h4>
                             <p class="text-muted">Chief Medical Officer</p>
                             <p>"ShieldWise's understanding of healthcare security is exceptional. They've significantly improved our facility's safety while maintaining patient care standards."</p>
@@ -2082,7 +323,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="testimonial-card">
-                            <img src="/img/samanta.png" alt="Client" class="client-image">
+                            <img src="/img/samanta.png" alt="Michael Thompson, Hospital Administrator" class="client-image">
                             <h4>Michael Thompson</h4>
                             <p class="text-muted">Hospital Administrator</p>
                             <p>"Their HIPAA-compliant security solutions and emergency response training have been invaluable for our hospital operations."</p>
@@ -2090,7 +331,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="testimonial-card">
-                            <img src="/img/shahn1.png" alt="Client" class="client-image">
+                            <img src="/img/shahn1.png" alt="Lisa Rodriguez, Director of Nursing" class="client-image">
                             <h4>Lisa Rodriguez</h4>
                             <p class="text-muted">Director of Nursing</p>
                             <p>"The security team's professionalism and understanding of patient needs creates a safer environment for everyone."</p>
@@ -2105,16 +346,35 @@
             <div class="container">
                 <h2 class="mb-4">Secure Your Healthcare Facility Today</h2>
                 <p class="mb-4">Contact us for a customized hospital security solution that ensures patient safety and regulatory compliance</p>
-                <a href="/get-quote" class="btn btn-custom">Get a Free Security Assessment</a>
-                 <a href="tel:+17147167430" class="btn btn--secondary">Call (714) 716-7430</a>
+                <button class="btn btn-custom" aria-label="Request a free hospital security assessment" onclick="trackConsultationRequest()">Get a Free Security Assessment</button>
             </div>
         </section>
     </main>
 
     <%- include('../partials/Footer') %>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Structured Data for Voice Search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".speakable-intro",
+          ".speakable-services",
+          ".speakable-contact"
+        ]
+      },
+      "url": "https://shieldwisesecurity.com/services/hospital-security"
+    }
+    </script>
+
+    <!-- Essential Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <!-- Optimized JavaScript -->
     <script>
         // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -2146,7 +406,7 @@
         }, observerOptions);
 
         // Observe elements
-        document.querySelectorAll('.hospital-card, .service-card, .process-step, .benefit-item').forEach(el => {
+        document.querySelectorAll('.apartment-card, .service-card, .process-step, .benefit-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.6s ease';
@@ -2183,15 +443,21 @@
             statObserver.observe(el);
         });
 
-        // Add hover effect to cards
-        document.querySelectorAll('.hospital-card, .service-card, .process-step').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px)';
+        // Track consultation requests
+        function trackConsultationRequest() {
+            gtag('event', 'generate_lead', {
+                'event_category': 'Security Services',
+                'event_label': 'hospital',
+                'value': 1
             });
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-            });
-        });
+            fbq('track', 'Lead');
+            // Redirect to quote page
+            window.location.href = '/get-quote';
+        }
     </script>
+
+    <!-- Deferred Tracking Scripts -->
+    <%- include('../partials/tracking-scripts-deferred') %>
+
 </body>
 </html>

@@ -249,6 +249,10 @@ app.get("/login", (req, res) => {
 // Service route handlers
 const executiveProtectionRoute = require('./routes/executive-protection');
 const fireWatchRoute = require('./routes/fire-watch');
+app.use('/services/fire-watch', fireWatchRoute);
+
+const hospitalSecurityRouter = require('./routes/hospital-security');
+app.use('/services/hospital-security', hospitalSecurityRouter);
 
 app.use('/services/apartment-security', apartmentSecurityRouter);
 app.use('/services/armed-security', armedSecurityRoutes);
@@ -256,7 +260,6 @@ app.use('/services/commercial-security', commercialSecurityRoutes);
 app.use('/services/construction-security', constructionSecurityRoutes);
 app.use('/services/educational-campus-security', educationalSecurityRoutes);
 app.use('/services/executive-protection', executiveProtectionRoute);
-app.use('/services/fire-watch', fireWatchRoute);
 
 // Register Route
 app.get("/register", (req, res) => {
