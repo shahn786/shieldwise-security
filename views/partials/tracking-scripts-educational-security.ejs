@@ -1,0 +1,102 @@
+
+<!-- Enhanced Google Analytics with Educational-Specific Tracking -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', { 
+    'anonymize_ip': true,
+    'allow_google_signals': false,
+    'allow_ad_personalization_signals': false,
+    'custom_map': {
+      'custom_parameter_1': 'service_type',
+      'custom_parameter_2': 'education_level',
+      'custom_parameter_3': 'location_served'
+    }
+  });
+
+  // Enhanced event tracking for educational security services
+  gtag('event', 'page_view', {
+    'page_title': document.title,
+    'page_location': window.location.href,
+    'content_group1': 'Educational Security Services',
+    'content_group2': 'California',
+    'content_group3': 'Campus Protection',
+    'custom_parameter_1': 'campus_security',
+    'custom_parameter_2': 'all_education_levels',
+    'custom_parameter_3': 'california_statewide'
+  });
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "XXXXXXXXX");
+</script>
+
+<!-- Facebook Pixel -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'XXXXXXXXXXXXXXXXX');
+  fbq('track', 'PageView');
+  fbq('track', 'ViewContent', {
+    content_type: 'campus_security',
+    content_category: 'educational_services'
+  });
+</script>
+
+<!-- LinkedIn Insight Tag -->
+<script type="text/javascript">
+_linkedin_partner_id = "XXXXXXX";
+window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script>
+<script type="text/javascript">
+(function(l) {
+if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+window.lintrk.q=[]}
+var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})(window.lintrk);
+</script>
+
+<!-- Educational Security Specific Tracking -->
+<script>
+  // Track educational institution type interactions
+  function trackEducationLevel(level) {
+    gtag('event', 'education_level_interest', {
+      'event_category': 'Campus Security',
+      'event_label': level,
+      'value': 1
+    });
+  }
+
+  // Track security service interest
+  function trackSecurityService(service) {
+    gtag('event', 'security_service_interest', {
+      'event_category': 'Educational Services',
+      'event_label': service,
+      'value': 1
+    });
+  }
+</script>

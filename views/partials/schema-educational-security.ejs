@@ -1,0 +1,189 @@
+
+<!-- Enhanced Structured Data: Educational Security Company & Organization Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SecurityCompany",
+      "@id": "https://shieldwisesecurity.com/#organization",
+      "name": "ShieldWise Security",
+      "alternateName": "ShieldWise Educational Campus Security Services",
+      "url": "https://shieldwisesecurity.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://shieldwisesecurity.com/images/logo.png",
+        "width": 600,
+        "height": 200,
+        "caption": "ShieldWise Security Logo"
+      },
+      "image": [
+        "https://shieldwisesecurity.com/images/campus-security-office.jpg",
+        "https://shieldwisesecurity.com/images/educational-security-team.jpg",
+        "https://shieldwisesecurity.com/images/campus-patrol-services.jpg"
+      ],
+      "description": "California's leading educational security company providing comprehensive campus protection services for K-12 schools, colleges, and universities including licensed guards, student safety programs, emergency response planning, and threat assessment.",
+      "telephone": "+1-714-716-7430",
+      "email": "info@shieldwisesecurity.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1234 Security Boulevard",
+        "addressLocality": "Santa Ana",
+        "addressRegion": "CA",
+        "postalCode": "92701",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 33.7175,
+        "longitude": -117.8311,
+        "name": "ShieldWise Security Educational Division Headquarters"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59",
+        "description": "24/7 campus security services and emergency response"
+      },
+      "priceRange": "$$",
+      "paymentAccepted": ["Cash", "Credit Card", "Invoice", "Check", "Wire Transfer", "ACH"],
+      "currenciesAccepted": "USD",
+      "sameAs": [
+        "https://www.facebook.com/ShieldWiseCampusSecurity",
+        "https://twitter.com/ShieldWiseSec",
+        "https://www.linkedin.com/company/shieldwise-security",
+        "https://www.instagram.com/shieldwisesecurity/",
+        "https://www.youtube.com/channel/ShieldWiseEducationalSecurity",
+        "https://www.yelp.com/biz/shieldwise-campus-security",
+        "https://www.bbb.org/us/ca/santa-ana/profile/security-guard-service/shieldwise-security"
+      ],
+      "hasCredential": [
+        {
+          "@type": "Credential",
+          "credentialCategory": "Security License",
+          "name": "California BSIS Private Patrol Operator License",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "California Bureau of Security and Investigative Services",
+            "url": "https://www.dca.ca.gov/bsis/"
+          },
+          "validFrom": "2020-01-15",
+          "validThrough": "2026-01-15"
+        },
+        {
+          "@type": "Credential",
+          "credentialCategory": "Educational Security Certification",
+          "name": "Certified Educational Security Professional",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "International Association of Campus Law Enforcement Administrators",
+            "url": "https://www.iaclea.org/"
+          }
+        },
+        {
+          "@type": "Credential",
+          "credentialCategory": "Emergency Response Training",
+          "name": "Active Threat Response Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Federal Emergency Management Agency",
+            "url": "https://www.fema.gov/"
+          }
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "387",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Enhanced Educational Security Service Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SecurityService",
+      "@id": "https://shieldwisesecurity.com/services/campus-security/#service",
+      "serviceType": "Educational Campus Security Services",
+      "provider": { "@id": "https://shieldwisesecurity.com/#organization" },
+      "name": "Campus Security & Student Protection Services",
+      "description": "Comprehensive educational security services including 24/7 licensed campus guards, student safety programs, emergency response planning, threat assessment, active shooter response training, and event security for K-12 schools, colleges, and universities throughout California.",
+      "category": ["Campus Security", "Student Protection", "Educational Safety", "Emergency Response", "Threat Assessment"],
+      "areaServed": [
+        { "@type": "State", "name": "California" },
+        { "@type": "City", "name": "Los Angeles" },
+        { "@type": "City", "name": "San Diego" },
+        { "@type": "City", "name": "San Francisco" },
+        { "@type": "City", "name": "Sacramento" }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "USD",
+        "priceRange": "$",
+        "url": "https://shieldwisesecurity.com/services/campus-security/",
+        "description": "Professional educational security services with competitive pricing and flexible contracts tailored for educational institutions"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Educational Campus Security Services Catalog",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "24/7 Campus Security Guards",
+              "description": "Licensed security guards providing round-the-clock protection for educational campuses with specialized training in student safety and educational environments."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Student Safety Programs",
+              "description": "Comprehensive safety programs designed to protect students, staff, and faculty including escort services and emergency communication systems."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Campus Patrol Services",
+              "description": "Regular foot and vehicle patrols throughout educational facilities with detailed reporting and incident documentation."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Emergency Response Planning",
+              "description": "Comprehensive emergency response planning including active shooter protocols, evacuation procedures, and crisis management training."
+            }
+          }
+        ]
+      },
+      "audience": {
+        "@type": "Audience",
+        "audienceType": [
+          "School Administrators",
+          "College Presidents",
+          "University Officials",
+          "Education Directors",
+          "Safety Coordinators",
+          "Student Affairs Directors"
+        ]
+      }
+    }
+  ]
+}
+</script>
