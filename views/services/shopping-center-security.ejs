@@ -1,384 +1,33 @@
-{ "@type": "City", "name": "Santa Fe Springs" },
-        { "@type": "City", "name": "Santa Monica" },
-        { "@type": "City", "name": "Sierra Madre" },
-        { "@type": "City", "name": "Signal Hill" },
-        { "@type": "City", "name": "South El Monte" },
-        { "@type": "City", "name": "South Gate" },
-        { "@type": "City", "name": "South Pasadena" },
-        { "@type": "City", "name": "Temple City" },
-        { "@type": "City", "name": "Torrance" },
-        { "@type": "City", "name": "Vernon" },
-        { "@type": "City", "name": "Walnut" },
-        { "@type": "City", "name": "West Covina" },
-        { "@type": "City", "name": "West Hollywood" },
-        { "@type": "City", "name": "Westlake Village" },
-        { "@type": "City", "name": "Whittier" },
-        { "@type": "City", "name": "San Bernardino" },
-        { "@type": "City", "name": "Fontana" },
-        { "@type": "City", "name": "Rancho Cucamonga" },
-        { "@type": "City", "name": "Ontario" },
-        { "@type": "City", "name": "Victorville" },
-        { "@type": "City", "name": "Riverside" },
-        { "@type": "City", "name": "Moreno Valley" },
-        { "@type": "City", "name": "Corona" },
-        { "@type": "City", "name": "Murrieta" },
-        { "@type": "City", "name": "Temecula" },
-        { "@type": "City",  "name": "Carlsbad" },
-        { "@type": "City",  "name": "Chula Vista" },
-        { "@type": "City",  "name": "Coronado" },
-        { "@type": "City",  "name": "Del Mar" },
-        { "@type": "City",  "name": "El Cajon" },
-        { "@type": "City",  "name": "Encinitas" },
-        { "@type": "City",  "name": "Escondido" },
-        { "@type": "City",  "name": "Imperial Beach" },
-        { "@type": "City",  "name": "La Mesa" },
-        { "@type": "City",  "name": "Lemon Grove" },
-        { "@type": "City",  "name": "National City" },
-        { "@type": "City",  "name": "Oceanside" },
-        { "@type": "City",  "name": "Poway" },
-        { "@type": "City",  "name": "San Diego" },
-        { "@type": "City",  "name": "San Marcos" },
-        { "@type": "City",  "name": "Santee" },
-        { "@type": "City",  "name": "Solana Beach" },
-        { "@type": "City",  "name": "Vista" }
-      ],
-      "serviceType": "Shopping Center Security Services"
-    }
-    </script>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/meta-tags-shopping-center-security') %>
+    <%- include('../partials/performance-optimization') %>
+    <%- include('../partials/mobile-app-meta') %>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="/css/apartment-security.css" rel="stylesheet">
+    <%- include('../partials/schema-primary') %>
+    <%- include('../partials/schema-shopping-center-security') %>
+    <%- include('../partials/schema-faq-shopping-center-security') %>
+    <%- include('../partials/tracking-scripts', { 
+        serviceType: serviceData.serviceType, 
+        priceRange: serviceData.priceRange 
+    }) %>
 
-    <style>
-        /* Shopping Center Security Section Styles */
-        .shopping-features-section {
-            padding: 80px 0;
-            background: var(--light-bg);
-        }
-
-        .section-title {
-            font-size: 2.8rem;
-            color: var(--primary-color);
-            text-align: center;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 50px;
-        }
-
-        .shopping-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .shopping-card {
-            background: white;
-            border-radius: 15px;
-            padding: 35px 25px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .shopping-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-secondary);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .shopping-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border-color: var(--secondary-color);
-        }
-
-        .shopping-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .shopping-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--gradient-secondary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 2.5rem;
-            color: white;
-        }
-
-        .shopping-title {
-            font-size: 1.4rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .shopping-description {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .security-process-section {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .process-step {
-            text-align: center;
-            padding: 30px 20px;
-            margin-bottom: 30px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-            position: relative;
-        }
-
-        .process-step:hover {
-            transform: translateY(-5px);
-        }
-
-        .process-number {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-secondary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: white;
-        }
-
-        .process-title {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .benefits-section {
-            padding: 80px 0;
-            background: var(--light-bg);
-        }
-
-        .benefit-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .benefit-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-secondary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            flex-shrink: 0;
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        .benefit-content h4 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-
-        .benefit-content p {
-            color: #666;
-            margin-bottom: 0;
-            line-height: 1.6;
-        }
-
-        :root {
-            --primary-color: #1a3c6e;
-            --secondary-color: #bf9e5b;
-            --text-color: #333333;
-            --light-bg: #f8f9fa;
-            --gradient-secondary: linear-gradient(135deg, #bf9e5b, #d4b570);
-        }
-
-        body {
-            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        .hero-section {
-            background: linear-gradient(rgba(26, 60, 110, 0.9), rgba(26, 60, 110, 0.9)), url('/img/shoppingsecurity.webp');
-            background-size: cover;
-            background-position: center;
-            padding: 150px 0;
-            color: white;
-            text-align: center;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            max-width: 800px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-
-        .service-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            margin: 20px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-        }
-
-        .service-title {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .feature-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .feature-list li {
-            padding: 10px 0;
-            padding-left: 30px;
-            position: relative;
-        }
-
-        .feature-list li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--secondary-color);
-            font-weight: bold;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary-color), #0d2b54);
-            padding: 80px 0;
-            color: white;
-            text-align: center;
-        }
-
-        .btn-custom {
-            background: var(--secondary-color);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-        }
-
-        .btn-custom:hover {
-            background: #a88b4a;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .stats-section {
-            padding: 60px 0;
-            background: var(--light-bg);
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 30px;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .testimonial-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            margin: 20px 0;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-        }
-
-        .client-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .shopping-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
+
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <%- include('../partials/Header') %>
 
-    <main>
+    <main id="main-content">
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
-                <h1 class="hero-title">Professional Shopping Center Security Services</h1>
-                <p class="hero-subtitle">Comprehensive security solutions tailored for retail establishments, ensuring safety for shoppers, staff, and tenants</p>
+                <h1 class="hero-title speakable-intro">Professional Shopping Center Security Services</h1>
+                <p class="hero-subtitle speakable-intro">Comprehensive security solutions tailored for retail establishments, ensuring safety for shoppers, staff, and tenants</p>
             </div>
         </section>
 
@@ -387,91 +36,34 @@
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color:#1c1c1c; max-width:960px; margin:60px auto;
             box-shadow:0 10px 30px rgba(0,0,0,0.1); border:1px solid #e0e0e0;">
-            <h1 style="font-size:38px; margin-bottom:28px; color:#152f45;">
+            <h2 style="font-size:38px; margin-bottom:28px; color:#152f45;">
                 Premier Shopping Center Security Services for Complete Retail Protection
-            </h1>
-            <p style="font-size:20px; line-height:1.8; margin-bottom:0; transition: all 0.3s ease; cursor: default;" 
-               onmouseover="this.style.color='#152f45'; this.style.transform='scale(1.02)'; this.style.textShadow='0 2px 8px rgba(0,0,0,0.1)'" 
-               onmouseout="this.style.color='#1c1c1c'; this.style.transform='scale(1)'; this.style.textShadow='none'">
-                <strong>ShieldWise Security</strong> offers specialized shopping center security services tailored to meet the unique needs of retail establishments, ensuring the safety and well-being of shoppers, staff, and tenants. Our services include <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
-                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">24/7 on-site security personnel</strong> trained to handle the specific challenges of shopping center settings. Our team conducts regular patrols, monitors access points, and responds promptly to incidents, ensuring a constant presence that deters potential threats. Advanced <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
-                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">access control systems</strong> are implemented to restrict unauthorized entry, safeguarding sensitive areas such as storage rooms, administrative offices, and event spaces. Our <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
-                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">surveillance solutions</strong> encompass strategically placed cameras and monitoring systems that provide real-time oversight of shopping center premises. These systems not only enhance security but also assist in incident investigation and provide valuable evidence when necessary. <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
-                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">Visitor management protocols</strong> are enforced to ensure that only authorized individuals have access to restricted areas. This includes verifying identification, issuing visitor badges, and escorting visitors as needed, all of which contribute to a controlled and secure environment. Our security officers are trained in <strong style="color:#bf9e5b; transition: color 0.3s ease;" 
-                onmouseover="this.style.color='#d4b570'" onmouseout="this.style.color='#bf9e5b'">emergency response procedures</strong>, including handling active shooter situations, fire evacuations, and medical emergencies. By integrating physical and digital security strategies, ShieldWise Security provides a holistic approach to shopping center security, ensuring a secure environment that supports the delivery of exceptional customer experiences.
+            </h2>
+            <p class="speakable-services" style="font-size:20px; line-height:1.8; margin-bottom:0;">
+                <strong>ShieldWise Security</strong> offers specialized shopping center security services tailored to meet the unique needs of retail establishments, ensuring the safety and well-being of shoppers, staff, and tenants. Our services include <strong style="color:#bf9e5b;">24/7 on-site security personnel</strong> trained to handle the specific challenges of shopping center settings, <strong style="color:#bf9e5b;">advanced access control systems</strong>, <strong style="color:#bf9e5b;">surveillance solutions</strong>, and <strong style="color:#bf9e5b;">emergency response procedures</strong> for comprehensive retail protection.
             </p>
+            <div class="speakable-contact" style="margin-top:20px; font-size:18px;">
+                <strong>Call This Number:</strong> +1-714-716-7430 | 
+                <strong>Email:</strong> info@shieldwisesecurity.com
+            </div>
         </div>
 
         <!-- Shopping Center Security Features Section -->
-        <section id="features" class="shopping-features-section">
+        <section id="features" class="apartment-features-section">
             <div class="container">
                 <h2 class="section-title">Comprehensive Shopping Center Security Features</h2>
                 <p class="section-subtitle">Advanced security solutions designed specifically for retail establishments and shopping complexes</p>
 
-                <div class="shopping-grid">
-                    <div class="shopping-card">
-                        <div class="shopping-icon">
-                            <i class="fas fa-store"></i>
+                <div class="apartment-grid">
+                    <% serviceData.features.forEach(feature => { %>
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="<%= feature.icon %>" aria-hidden="true"></i>
                         </div>
-                        <h3 class="shopping-title">Retail Loss Prevention</h3>
-                        <p class="shopping-description">Specialized anti-theft strategies, shoplifting deterrence, inventory protection, and coordinated response with store management teams.</p>
+                        <h3 class="apartment-title"><%= feature.title %></h3>
+                        <p class="apartment-description"><%= feature.description %></p>
                     </div>
-
-                    <div class="shopping-card">
-                        <div class="shopping-icon">
-                            <i class="fas fa-car"></i>
-                        </div>
-                        <h3 class="shopping-title">Parking Lot Security</h3>
-                        <p class="shopping-description">Comprehensive surveillance and patrol of parking areas, vehicle protection, customer safety escorts, and theft prevention measures.</p>
-                    </div>
-
-                    <div class="shopping-card">
-                        <div class="shopping-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3 class="shopping-title">Crowd Management</h3>
-                        <p class="shopping-description">Expert handling of high-traffic periods, special events, holiday rushes, and emergency evacuation procedures for large crowds.</p>
-                    </div>
-
-                    <div class="shopping-card">
-                        <div class="shopping-icon">
-                            <i class="fas fa-video"></i>
-                        </div>
-                        <h3 class="shopping-title">24/7 CCTV Monitoring</h3>
-                        <p class="shopping-description">Real-time surveillance of all common areas, entrances, corridors, food courts, and critical zones with advanced monitoring technology.</p>
-                    </div>
-
-                    <div class="shopping-card">
-                        <div class="shopping-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3 class="shopping-title">Access Control Management</h3>
-                        <p class="shopping-description">Restricted area security, tenant access management, delivery coordination, and after-hours entry control systems.</p>
-                    </div>
-
-                    <div class="shopping-card">
-                        <div class="shopping-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <h3 class="shopping-title">Emergency Response</h3>
-                        <p class="shopping-description">Rapid response protocols for medical emergencies, security incidents, fire situations, and coordination with local emergency services.</p>
-                    </div>
-
-                    <div class="shopping-card">
-                        <div class="shopping-icon">
-                            <i class="fas fa-id-card"></i>
-                        </div>
-                        <h3 class="shopping-title">Tenant & Visitor Management</h3>
-                        <p class="shopping-description">Comprehensive visitor screening, contractor management, delivery coordination, and tenant security support services.</p>
-                    </div>
-
-                    <div class="shopping-card">
-                        <div class="shopping-icon">
-                            <i class="fas fa-calendar-alt"></i>
-                        </div>
-                        <h3 class="shopping-title">Special Event Security</h3>
-                        <p class="shopping-description">Customized security for promotional events, seasonal celebrations, grand openings, and high-profile retail activities.</p>
-                    </div>
+                    <% }); %>
                 </div>
             </div>
         </section>
@@ -483,34 +75,15 @@
                 <p class="section-subtitle">A systematic approach to retail security excellence</p>
 
                 <div class="row">
+                    <% serviceData.processSteps.forEach(step => { %>
                     <div class="col-md-3">
                         <div class="process-step">
-                            <div class="process-number">1</div>
-                            <h3 class="process-title">Comprehensive Assessment</h3>
-                            <p>Detailed evaluation of your shopping center's layout, tenant mix, traffic patterns, and specific security vulnerabilities.</p>
+                            <div class="process-number"><%= step.number %></div>
+                            <h3 class="process-title"><%= step.title %></h3>
+                            <p><%= step.description %></p>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="process-step">
-                            <div class="process-number">2</div>
-                            <h3 class="process-title">Customized Security Plan</h3>
-                            <p>Development of tailored security protocols specific to retail environments, tenant needs, and customer safety requirements.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="process-step">
-                            <div class="process-number">3</div>
-                            <h3 class="process-title">Strategic Implementation</h3>
-                            <p>Deployment of trained retail security personnel, installation of surveillance systems, and integration with existing operations.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="process-step">
-                            <div class="process-number">4</div>
-                            <h3 class="process-title">Continuous Monitoring</h3>
-                            <p>Ongoing security coverage with regular assessments, performance reviews, and adjustments to maintain optimal protection.</p>
-                        </div>
-                    </div>
+                    <% }); %>
                 </div>
             </div>
         </section>
@@ -521,66 +94,30 @@
                 <h2 class="section-title">Why Choose ShieldWise for Shopping Center Security</h2>
                 <div class="row">
                     <div class="col-md-6">
+                        <% serviceData.benefits.slice(0, 3).forEach(benefit => { %>
                         <div class="benefit-item">
                             <div class="benefit-icon">
-                                <i class="fas fa-shopping-cart"></i>
+                                <i class="<%= benefit.icon %>" aria-hidden="true"></i>
                             </div>
                             <div class="benefit-content">
-                                <h4>Retail Security Expertise</h4>
-                                <p>Specialized knowledge in retail security challenges, loss prevention strategies, and customer-focused security approaches.</p>
+                                <h4><%= benefit.title %></h4>
+                                <p><%= benefit.description %></p>
                             </div>
                         </div>
-
-                        <div class="benefit-item">
-                            <div class="benefit-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="benefit-content">
-                                <h4>24/7 Security Coverage</h4>
-                                <p>Round-the-clock protection during operating hours and after-hours security to protect against break-ins and vandalism.</p>
-                            </div>
-                        </div>
-
-                        <div class="benefit-item">
-                            <div class="benefit-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="benefit-content">
-                                <h4>Enhanced Property Value</h4>
-                                <p>Professional security presence increases tenant retention, attracts quality retailers, and improves overall property value.</p>
-                            </div>
-                        </div>
+                        <% }); %>
                     </div>
                     <div class="col-md-6">
+                        <% serviceData.benefits.slice(3, 6).forEach(benefit => { %>
                         <div class="benefit-item">
                             <div class="benefit-icon">
-                                <i class="fas fa-smile"></i>
+                                <i class="<%= benefit.icon %>" aria-hidden="true"></i>
                             </div>
                             <div class="benefit-content">
-                                <h4>Customer Confidence</h4>
-                                <p>Visible security presence creates a safe shopping environment, encouraging customer visits and extended shopping times.</p>
+                                <h4><%= benefit.title %></h4>
+                                <p><%= benefit.description %></p>
                             </div>
                         </div>
-
-                        <div class="benefit-item">
-                            <div class="benefit-icon">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <div class="benefit-content">
-                                <h4>Retail-Trained Personnel</h4>
-                                <p>Security officers specifically trained in retail environments, customer service, and de-escalation techniques.</p>
-                            </div>
-                        </div>
-
-                        <div class="benefit-item">
-                            <div class="benefit-icon">
-                                <i class="fas fa-handshake"></i>
-                            </div>
-                            <div class="benefit-content">
-                                <h4>Tenant Relationship Management</h4>
-                                <p>Collaborative approach with tenants, providing security support while maintaining positive business relationships.</p>
-                            </div>
-                        </div>
+                        <% }); %>
                     </div>
                 </div>
             </div>
@@ -590,42 +127,19 @@
         <section class="py-5">
             <div class="container">
                 <div class="row">
+                    <% serviceData.serviceOfferings.forEach(offering => { %>
                     <div class="col-md-4">
                         <div class="service-card">
-                            <i class="fas fa-building service-icon"></i>
-                            <h3 class="service-title">Mall & Center Security</h3>
+                            <i class="<%= offering.icon %> service-icon" aria-hidden="true"></i>
+                            <h3 class="service-title"><%= offering.title %></h3>
                             <ul class="feature-list">
-                                <li>Common Area Monitoring</li>
-                                <li>Food Court Security</li>
-                                <li>Restroom Area Patrols</li>
-                                <li>Maintenance Area Access</li>
+                                <% offering.features.forEach(feature => { %>
+                                <li><%= feature %></li>
+                                <% }); %>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="service-card">
-                            <i class="fas fa-truck service-icon"></i>
-                            <h3 class="service-title">Loading Dock & Delivery</h3>
-                            <ul class="feature-list">
-                                <li>Delivery Verification</li>
-                                <li>Loading Dock Security</li>
-                                <li>Vendor Management</li>
-                                <li>Inventory Protection</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="service-card">
-                            <i class="fas fa-route service-icon"></i>
-                            <h3 class="service-title">Mobile Patrol Services</h3>
-                            <ul class="feature-list">
-                                <li>Perimeter Security Checks</li>
-                                <li>Parking Lot Inspections</li>
-                                <li>External Area Monitoring</li>
-                                <li>Incident Response</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <% }); %>
                 </div>
             </div>
         </section>
@@ -634,30 +148,14 @@
         <section class="stats-section">
             <div class="container">
                 <div class="row">
+                    <% serviceData.statistics.forEach(stat => { %>
                     <div class="col-md-3">
                         <div class="stat-card">
-                            <div class="stat-number">150+</div>
-                            <div class="stat-label">Shopping Centers Secured</div>
+                            <div class="stat-number"><%= stat.number %></div>
+                            <div class="stat-label"><%= stat.label %></div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="stat-card">
-                            <div class="stat-number">96%</div>
-                            <div class="stat-label">Tenant Satisfaction</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="stat-card">
-                            <div class="stat-number">24/7</div>
-                            <div class="stat-label">Security Coverage</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="stat-card">
-                            <div class="stat-number">15+</div>
-                            <div class="stat-label">Years Experience</div>
-                        </div>
-                    </div>
+                    <% }); %>
                 </div>
             </div>
         </section>
@@ -667,30 +165,16 @@
             <div class="container">
                 <h2 class="text-center mb-5 service-title">What Property Managers & Tenants Say</h2>
                 <div class="row">
+                    <% serviceData.testimonials.forEach(testimonial => { %>
                     <div class="col-md-4">
                         <div class="testimonial-card">
-                            <img src="/img/james.png" alt="Client" class="client-image">
-                            <h4>Robert Chen</h4>
-                            <p class="text-muted">Mall Operations Director</p>
-                            <p>"ShieldWise's security team has significantly improved the safety at our shopping center. Their professional approach and customer service are outstanding."</p>
+                            <img src="/img/<%= testimonial.image %>" alt="<%= testimonial.name %>, <%= testimonial.title %>" class="client-image" loading="lazy" width="80" height="80">
+                            <h4><%= testimonial.name %></h4>
+                            <p class="text-muted"><%= testimonial.title %></p>
+                            <p>"<%= testimonial.quote %>"</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="testimonial-card">
-                            <img src="/img/samanta.png" alt="Client" class="client-image">
-                            <h4>Sarah Thompson</h4>
-                            <p class="text-muted">Property Manager</p>
-                            <p>"Since partnering with ShieldWise, we've seen a dramatic reduction in security incidents. Their team's responsiveness is exceptional."</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="testimonial-card">
-                            <img src="/img/shahn1.png" alt="Client" class="client-image">
-                            <h4>Lisa Martinez</h4>
-                            <p class="text-muted">Retail Store Manager</p>
-                            <p>"The security presence has made our customers feel safer and has helped reduce theft incidents significantly. Highly professional service."</p>
-                        </div>
-                    </div>
+                    <% }); %>
                 </div>
             </div>
         </section>
@@ -700,20 +184,35 @@
             <div class="container">
                 <h2 class="mb-4">Secure Your Shopping Center Today</h2>
                 <p class="mb-4">Contact us for a customized shopping center security solution that protects your investment and enhances customer experience</p>
-                <a href="/get-quote" class="btn btn-custom">Get a Free Security Assessment</a><br>
-                Call This Number +1-714-716-7430
-
-                Ask for Quote info@shieldwisesecurity.com
-
-                https://www.instagram.com/shieldwisesecurity/, https://www.linkedin.com/company/shieldwisesecurity/,
+                <button class="btn btn-custom" aria-label="Request a free security assessment for your shopping center" onclick="trackConsultationRequest()">Get a Free Security Assessment</button>
             </div>
         </section>
     </main>
 
     <%- include('../partials/Footer') %>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Structured Data for Voice Search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".speakable-intro",
+          ".speakable-services",
+          ".speakable-contact"
+        ]
+      },
+      "url": "https://shieldwisesecurity.com/services/shopping-center-security"
+    }
+    </script>
+
+    <!-- Essential Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <!-- Optimized JavaScript -->
     <script>
         // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -745,7 +244,7 @@
         }, observerOptions);
 
         // Observe elements
-        document.querySelectorAll('.shopping-card, .service-card, .process-step, .benefit-item').forEach(el => {
+        document.querySelectorAll('.apartment-card, .service-card, .process-step, .benefit-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.6s ease';
@@ -782,15 +281,21 @@
             statObserver.observe(el);
         });
 
-        // Add hover effect to cards
-        document.querySelectorAll('.shopping-card, .service-card, .process-step').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px)';
+        // Track consultation requests
+        function trackConsultationRequest() {
+            gtag('event', 'generate_lead', {
+                'event_category': 'Security Services',
+                'event_label': 'shopping_center',
+                'value': 1
             });
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-            });
-        });
+            fbq('track', 'Lead');
+            // Redirect to quote page
+            window.location.href = '/get-quote';
+        }
     </script>
+
+    <!-- Deferred Tracking Scripts -->
+    <%- include('../partials/tracking-scripts-deferred') %>
+
 </body>
 </html>

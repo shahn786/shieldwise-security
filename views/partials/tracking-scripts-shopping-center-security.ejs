@@ -1,0 +1,78 @@
+
+<!-- Enhanced Google Analytics with Shopping Center Security Specific Tracking -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SHLD9876543"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SHLD9876543', { 
+    'anonymize_ip': true,
+    'allow_google_signals': false,
+    'allow_ad_personalization_signals': false,
+    'custom_map': {
+      'custom_parameter_1': 'service_type',
+      'custom_parameter_2': 'client_type',
+      'custom_parameter_3': 'location_served'
+    }
+  });
+
+  // Enhanced event tracking for shopping center security services
+  gtag('event', 'page_view', {
+    'page_title': document.title,
+    'page_location': window.location.href,
+    'content_group1': 'Shopping Center Security Services',
+    'content_group2': 'California',
+    'content_group3': 'Retail Security',
+    'custom_parameter_1': 'shopping_center_security',
+    'custom_parameter_2': 'retail_establishments',
+    'custom_parameter_3': 'california_statewide'
+  });
+</script>
+
+<!-- Facebook Pixel -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '987654321098765');
+  fbq('track', 'PageView');
+  fbq('track', 'ViewContent', {
+    content_type: 'shopping_center_security',
+    content_category: 'retail_security_services'
+  });
+</script>
+
+<!-- Shopping Center Security Specific Tracking -->
+<script>
+  // Track retail establishment interest
+  function trackRetailInterest(type) {
+    gtag('event', 'retail_establishment_interest', {
+      'event_category': 'Shopping Center Security',
+      'event_label': type,
+      'value': 1
+    });
+  }
+
+  // Track loss prevention service interest
+  function trackLossPreventionService(service) {
+    gtag('event', 'loss_prevention_interest', {
+      'event_category': 'Retail Protection',
+      'event_label': service,
+      'value': 1
+    });
+  }
+
+  // Track parking security interest
+  function trackParkingSecurity() {
+    gtag('event', 'parking_security_interest', {
+      'event_category': 'Shopping Center Services',
+      'event_label': 'Parking Lot Security',
+      'value': 1
+    });
+  }
+</script>

@@ -789,6 +789,7 @@ orangeCountyCities.forEach(city => {
 });
 
 const hotelSecurityRoutes = require('./routes/hotel-security');
+const shoppingCenterSecurityRoute = require('./routes/shopping-center-security');
 
 // Use routes
 app.use('/services/apartment-security', apartmentSecurityRouter);
@@ -800,3 +801,4 @@ app.use('/services/executive-protection', executiveProtectionRoute);
 app.use('/services/fire-watch', fireWatchRoute);
 app.use('/services/hospital-security', hospitalSecurityRouter);
 app.use('/services/hotel-security', hotelSecurityRoutes);
+app.use('/services/shopping-center-security', shoppingCenterSecurityRoute);
