@@ -1,0 +1,179 @@
+
+<!-- Enhanced Structured Data: Executive Protection Company & Organization Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SecurityCompany",
+      "@id": "https://shieldwisesecurity.com/#organization",
+      "name": "ShieldWise Security",
+      "alternateName": "ShieldWise Executive Protection Services",
+      "url": "https://shieldwisesecurity.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://shieldwisesecurity.com/images/logo.png",
+        "width": 600,
+        "height": 200,
+        "caption": "ShieldWise Security Logo"
+      },
+      "description": "California's leading executive protection company providing comprehensive VIP security services for CEOs, celebrities, and high-profile clients including elite bodyguards, personal protection details, threat assessment, secure transportation, and 24/7 executive security solutions.",
+      "telephone": "+1-714-716-7430",
+      "email": "executive@shieldwisesecurity.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1234 Security Boulevard",
+        "addressLocality": "Santa Ana",
+        "addressRegion": "CA",
+        "postalCode": "92701",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 33.7175,
+        "longitude": -117.8311,
+        "name": "ShieldWise Security Executive Protection Division Headquarters"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "523",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "serviceArea": [
+        {
+          "@type": "State",
+          "name": "California"
+        }
+      ]
+    },
+    {
+      "@type": "SecurityService",
+      "@id": "https://shieldwisesecurity.com/services/executive-protection/#service",
+      "serviceType": "Executive Protection & VIP Security Services",
+      "provider": { "@id": "https://shieldwisesecurity.com/#organization" },
+      "name": "Executive Protection & VIP Security Services",
+      "description": "Comprehensive executive protection services including elite bodyguards, VIP security details, threat assessment, secure transportation, personal protection, and 24/7 executive security for CEOs, celebrities, and high-profile clients throughout California.",
+      "category": ["Executive Protection", "VIP Security", "Personal Bodyguards", "CEO Protection", "Celebrity Security", "Threat Assessment"],
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "USD",
+        "priceRange": "$$$$",
+        "url": "https://shieldwisesecurity.com/services/executive-protection/",
+        "description": "Premium executive protection services with elite bodyguards and comprehensive security packages tailored for high-profile clients"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Executive Protection Services Catalog",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "CEO & Executive Protection",
+              "description": "Comprehensive personal protection services for CEOs and senior executives including threat assessment, security planning, and elite bodyguard details."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Celebrity & VIP Security",
+              "description": "Discrete personal protection services for celebrities, entertainers, and VIP clients with specialized training in high-profile security."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Personal Bodyguard Services",
+              "description": "Elite personal bodyguards with extensive law enforcement and military backgrounds providing 24/7 close protection services."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Threat Assessment & Analysis",
+              "description": "Professional threat assessment services identifying potential security risks and developing comprehensive protection strategies."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Secure Transportation Services",
+              "description": "Armored vehicle transportation and security driving services with trained executive protection drivers and route planning."
+            }
+          }
+        ]
+      },
+      "audience": {
+        "@type": "Audience",
+        "audienceType": [
+          "CEOs",
+          "Executives",
+          "Celebrities",
+          "High-Profile Individuals",
+          "Corporate Leaders",
+          "Public Figures",
+          "Entrepreneurs"
+        ]
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Enhanced Executive Protection Service Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Executive Protection Services",
+  "provider": {
+    "@type": "Organization",
+    "name": "ShieldWise Security Services"
+  },
+  "areaServed": [
+    { "@type": "State", "name": "California" },
+    { "@type": "City", "name": "Los Angeles" },
+    { "@type": "City", "name": "Orange County" },
+    { "@type": "City", "name": "San Diego" },
+    { "@type": "City", "name": "San Francisco" },
+    { "@type": "City", "name": "Sacramento" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Executive Protection Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "VIP Close Protection",
+          "description": "Personal bodyguard services with advance security planning"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Secure Transportation",
+          "description": "Armored vehicle service with counter-surveillance driving"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Intelligence Services",
+          "description": "Threat assessment and background investigations"
+        }
+      }
+    ]
+  }
+}
+</script>
