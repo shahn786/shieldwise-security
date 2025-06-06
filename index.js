@@ -466,14 +466,9 @@ app.get("/services/shopping-center-security", (req, res) => {
   res.render("services/shopping-center-security");
 });
 
-// Educational Campus Security Page
-app.get("/services/educational-campus-security", (req, res) => {
-  res.render("services/educational-campus-security");
-});
-
-// Educational Security Page (alias)
+// Educational Security Page (alias) - redirect to main route
 app.get("/services/educational-security", (req, res) => {
-  res.render("services/educational-campus-security");
+  res.redirect(301, "/services/educational-campus-security");
 });
 
 // Armed Security Page
