@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('../partials/meta-tags-service') %>
+    <%- include('../partials/meta-tags-unarmed-security') %>
     <%- include('../partials/performance-optimization') %>
     <%- include('../partials/mobile-app-meta') %>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link href="/css/apartment-security.css" rel="stylesheet">
     <%- include('../partials/schema-primary') %>
-    <%- include('../partials/schema-service', { serviceData: serviceData }) %>
-    <%- include('../partials/schema-faq-service', { serviceData: serviceData }) %>
-    <%- include('../partials/tracking-scripts', { 
-        serviceType: 'unarmed_security', 
-        priceRange: { low: 35, high: 75 }
-    }) %>
+    <%- include('../partials/schema-unarmed-security') %>
+    <%- include('../partials/schema-faq-unarmed-security') %>
+    <%- include('../partials/tracking-scripts-unarmed-security', { serviceData: serviceData }) %>
 
     <style>
         /* Unarmed Security Section Styles */
@@ -390,8 +387,8 @@
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
-                <h1 class="hero-title speakable-intro">Professional Unarmed Security Services</h1>
-                <p class="hero-subtitle speakable-intro">Strategic and approachable security solutions providing effective deterrence and peace of mind</p>
+                <h1 class="hero-title speakable-intro"><%= serviceData.serviceTitle %></h1>
+                <p class="hero-subtitle speakable-intro"><%= serviceData.serviceDescription %></p>
             </div>
         </section>
 
@@ -424,69 +421,15 @@
                 <p class="section-subtitle">Professional security solutions without the complexities of armed personnel</p>
 
                 <div class="unarmed-grid">
+                    <% serviceData.features.forEach(feature => { %>
                     <div class="unarmed-card">
                         <div class="unarmed-icon">
-                            <i class="fas fa-eye" aria-hidden="true"></i>
+                            <i class="<%= feature.icon %>" aria-hidden="true"></i>
                         </div>
-                        <h3 class="unarmed-title">Surveillance & Monitoring</h3>
-                        <p class="unarmed-description">Professional monitoring of premises using CCTV systems, regular patrols, and real-time threat assessment to maintain security awareness.</p>
+                        <h3 class="unarmed-title"><%= feature.title %></h3>
+                        <p class="unarmed-description"><%= feature.description %></p>
                     </div>
-
-                    <div class="unarmed-card">
-                        <div class="unarmed-icon">
-                            <i class="fas fa-door-open" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="unarmed-title">Access Control Management</h3>
-                        <p class="unarmed-description">Controlling entry and exit points, visitor verification, ID checking, and ensuring only authorized personnel access restricted areas.</p>
-                    </div>
-
-                    <div class="unarmed-card">
-                        <div class="unarmed-icon">
-                            <i class="fas fa-users" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="unarmed-title">Customer Service Excellence</h3>
-                        <p class="unarmed-description">Friendly, professional interaction with visitors, providing assistance and information while maintaining security protocols.</p>
-                    </div>
-
-                    <div class="unarmed-card">
-                        <div class="unarmed-icon">
-                            <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="unarmed-title">Emergency Response</h3>
-                        <p class="unarmed-description">Rapid response to incidents, coordination with emergency services, evacuation procedures, and crisis management protocols.</p>
-                    </div>
-
-                    <div class="unarmed-card">
-                        <div class="unarmed-icon">
-                            <i class="fas fa-handshake" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="unarmed-title">De-escalation Techniques</h3>
-                        <p class="unarmed-description">Advanced conflict resolution skills to manage tense situations peacefully, reducing the need for physical intervention.</p>
-                    </div>
-
-                    <div class="unarmed-card">
-                        <div class="unarmed-icon">
-                            <i class="fas fa-clipboard-list" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="unarmed-title">Incident Documentation</h3>
-                        <p class="unarmed-description">Detailed reporting of all security incidents, maintaining accurate logs, and providing comprehensive documentation for management.</p>
-                    </div>
-
-                    <div class="unarmed-card">
-                        <div class="unarmed-icon">
-                            <i class="fas fa-route" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="unarmed-title">Mobile Patrol Services</h3>
-                        <p class="unarmed-description">Regular foot and vehicle patrols of designated areas, perimeter checks, and proactive security presence throughout the facility.</p>
-                    </div>
-
-                    <div class="unarmed-card">
-                        <div class="unarmed-icon">
-                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="unarmed-title">Loss Prevention</h3>
-                        <p class="unarmed-description">Theft deterrence through visible presence, monitoring suspicious activities, and implementing security protocols to prevent losses.</p>
-                    </div>
+                    <% }); %>
                 </div>
             </div>
         </section>
@@ -537,34 +480,15 @@
                 <p class="section-subtitle">A systematic approach to professional security services</p>
 
                 <div class="row">
+                    <% serviceData.processSteps.forEach(step => { %>
                     <div class="col-md-3">
                         <div class="process-step">
-                            <div class="process-number">1</div>
-                            <h3 class="process-title">Security Assessment</h3>
-                            <p>Comprehensive evaluation of your facility's security needs, risk factors, and operational requirements.</p>
+                            <div class="process-number"><%= step.number %></div>
+                            <h3 class="process-title"><%= step.title %></h3>
+                            <p><%= step.description %></p>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="process-step">
-                            <div class="process-number">2</div>
-                            <h3 class="process-title">Officer Selection</h3>
-                            <p>Careful selection of trained, licensed security officers who match your specific environment and needs.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="process-step">
-                            <div class="process-number">3</div>
-                            <h3 class="process-title">Custom Training</h3>
-                            <p>Site-specific training on your policies, procedures, and unique security requirements for optimal performance.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="process-step">
-                            <div class="process-number">4</div>
-                            <h3 class="process-title">Ongoing Support</h3>
-                            <p>Continuous supervision, performance monitoring, and service adjustments to maintain excellence.</p>
-                        </div>
-                    </div>
+                    <% }); %>
                 </div>
             </div>
         </section>
@@ -575,66 +499,30 @@
                 <h2 class="section-title">Advantages of Unarmed Security Services</h2>
                 <div class="row">
                     <div class="col-md-6">
+                        <% serviceData.benefits.slice(0, 3).forEach(benefit => { %>
                         <div class="benefit-item">
                             <div class="benefit-icon">
-                                <i class="fas fa-dollar-sign" aria-hidden="true"></i>
+                                <i class="<%= benefit.icon %>" aria-hidden="true"></i>
                             </div>
                             <div class="benefit-content">
-                                <h4>Cost-Effective Solution</h4>
-                                <p>Lower costs compared to armed security while maintaining professional protection and deterrence capabilities.</p>
+                                <h4><%= benefit.title %></h4>
+                                <p><%= benefit.description %></p>
                             </div>
                         </div>
-
-                        <div class="benefit-item">
-                            <div class="benefit-icon">
-                                <i class="fas fa-heart" aria-hidden="true"></i>
-                            </div>
-                            <div class="benefit-content">
-                                <h4>Non-Intimidating Presence</h4>
-                                <p>Approachable security officers who provide protection without creating an intimidating atmosphere for visitors and staff.</p>
-                            </div>
-                        </div>
-
-                        <div class="benefit-item">
-                            <div class="benefit-icon">
-                                <i class="fas fa-balance-scale" aria-hidden="true"></i>
-                            </div>
-                            <div class="benefit-content">
-                                <h4>Reduced Liability</h4>
-                                <p>Lower insurance costs and reduced legal liability associated with firearms on the premises.</p>
-                            </div>
-                        </div>
+                        <% }); %>
                     </div>
                     <div class="col-md-6">
+                        <% serviceData.benefits.slice(3, 6).forEach(benefit => { %>
                         <div class="benefit-item">
                             <div class="benefit-icon">
-                                <i class="fas fa-cogs" aria-hidden="true"></i>
+                                <i class="<%= benefit.icon %>" aria-hidden="true"></i>
                             </div>
                             <div class="benefit-content">
-                                <h4>Flexible Service Options</h4>
-                                <p>Customizable security solutions that can be tailored to meet specific operational needs and schedules.</p>
+                                <h4><%= benefit.title %></h4>
+                                <p><%= benefit.description %></p>
                             </div>
                         </div>
-
-                        <div class="benefit-item">
-                            <div class="benefit-icon">
-                                <i class="fas fa-comments" aria-hidden="true"></i>
-                            </div>
-                            <div class="benefit-content">
-                                <h4>Enhanced Communication</h4>
-                                <p>Officers trained in customer service and communication skills to interact positively with the public.</p>
-                            </div>
-                        </div>
-
-                        <div class="benefit-item">
-                            <div class="benefit-icon">
-                                <i class="fas fa-clock" aria-hidden="true"></i>
-                            </div>
-                            <div class="benefit-content">
-                                <h4>Quick Deployment</h4>
-                                <p>Faster implementation and deployment compared to armed security services with simplified licensing requirements.</p>
-                            </div>
-                        </div>
+                        <% }); %>
                     </div>
                 </div>
             </div>
@@ -681,42 +569,19 @@
         <section class="py-5">
             <div class="container">
                 <div class="row">
+                    <% serviceData.serviceOfferings.forEach(offering => { %>
                     <div class="col-md-4">
                         <div class="service-card">
-                            <i class="fas fa-shield-alt service-icon" aria-hidden="true"></i>
-                            <h3 class="service-title">General Security Services</h3>
+                            <i class="<%= offering.icon %> service-icon" aria-hidden="true"></i>
+                            <h3 class="service-title"><%= offering.title %></h3>
                             <ul class="feature-list">
-                                <li>Lobby Reception Services</li>
-                                <li>Access Point Monitoring</li>
-                                <li>Visitor Management</li>
-                                <li>Patrol Services</li>
+                                <% offering.features.forEach(feature => { %>
+                                <li><%= feature %></li>
+                                <% }); %>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="service-card">
-                            <i class="fas fa-video service-icon" aria-hidden="true"></i>
-                            <h3 class="service-title">Surveillance & Monitoring</h3>
-                            <ul class="feature-list">
-                                <li>CCTV System Operation</li>
-                                <li>Real-time Monitoring</li>
-                                <li>Incident Detection</li>
-                                <li>Security Reporting</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="service-card">
-                            <i class="fas fa-users service-icon" aria-hidden="true"></i>
-                            <h3 class="service-title">Customer Service Security</h3>
-                            <ul class="feature-list">
-                                <li>Friendly Reception Services</li>
-                                <li>Information Assistance</li>
-                                <li>Crowd Management</li>
-                                <li>Event Security</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <% }); %>
                 </div>
             </div>
         </section>
@@ -725,30 +590,14 @@
         <section class="stats-section">
             <div class="container">
                 <div class="row">
+                    <% serviceData.statistics.forEach(stat => { %>
                     <div class="col-md-3">
                         <div class="stat-card">
-                            <div class="stat-number">1000+</div>
-                            <div class="stat-label">Trained Officers</div>
+                            <div class="stat-number"><%= stat.number %></div>
+                            <div class="stat-label"><%= stat.label %></div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="stat-card">
-                            <div class="stat-number">99%</div>
-                            <div class="stat-label">Client Satisfaction</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="stat-card">
-                            <div class="stat-number">24/7</div>
-                            <div class="stat-label">Available Coverage</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="stat-card">
-                            <div class="stat-number">15+</div>
-                            <div class="stat-label">Years Experience</div>
-                        </div>
-                    </div>
+                    <% }); %>
                 </div>
             </div>
         </section>
@@ -758,30 +607,16 @@
             <div class="container">
                 <h2 class="text-center mb-5 service-title">What Our Clients Say</h2>
                 <div class="row">
+                    <% serviceData.testimonials.forEach(testimonial => { %>
                     <div class="col-md-4">
                         <div class="testimonial-card">
-                            <img src="/img/james.png" alt="Sarah Johnson, Retail Operations Manager" class="client-image" loading="lazy" width="80" height="80">
-                            <h4>Sarah Johnson</h4>
-                            <p class="text-muted">Retail Operations Manager</p>
-                            <p>"ShieldWise's unarmed security team has been exceptional in maintaining security at our retail locations. Their professionalism and customer service approach are outstanding."</p>
+                            <img src="/img/<%= testimonial.image %>" alt="<%= testimonial.name %>, <%= testimonial.title %>" class="client-image" loading="lazy" width="80" height="80">
+                            <h4><%= testimonial.name %></h4>
+                            <p class="text-muted"><%= testimonial.title %></p>
+                            <p>"<%= testimonial.quote %>"</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="testimonial-card">
-                            <img src="/img/samanta.png" alt="Michael Chen, Property Manager" class="client-image" loading="lazy" width="80" height="80">
-                            <h4>Michael Chen</h4>
-                            <p class="text-muted">Property Manager</p>
-                            <p>"We've been impressed with the quality of service provided by ShieldWise's unarmed officers. They're always professional, alert, and courteous with our tenants."</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="testimonial-card">
-                            <img src="/img/shahn1.png" alt="Dr. Emily Rodriguez, Healthcare Administrator" class="client-image" loading="lazy" width="80" height="80">
-                            <h4>Dr. Emily Rodriguez</h4>
-                            <p class="text-muted">Healthcare Administrator</p>
-                            <p>"The unarmed security services have created a safe, welcoming environment for our patients and staff. Their de-escalation skills are particularly valuable."</p>
-                        </div>
-                    </div>
+                    <% }); %>
                 </div>
             </div>
         </section>
@@ -811,7 +646,7 @@
           ".speakable-contact"
         ]
       },
-      "url": "https://shieldwisesecurity.com/services/unarmed-security"
+      "url": "<%= serviceData.canonicalUrl %>"
     }
     </script>
 
@@ -890,12 +725,7 @@
 
         // Track consultation requests
         function trackConsultationRequest() {
-            gtag('event', 'generate_lead', {
-                'event_category': 'Security Services',
-                'event_label': 'unarmed_security',
-                'value': 1
-            });
-            fbq('track', 'Lead');
+            trackUnarmedSecurityCTA('consultation_request');
             // Redirect to quote page
             window.location.href = '/get-quote';
         }

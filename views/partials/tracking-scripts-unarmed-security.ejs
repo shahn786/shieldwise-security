@@ -1,0 +1,58 @@
+
+<!-- Enhanced tracking specifically for unarmed security services -->
+<script>
+// Enhanced Google Analytics tracking for unarmed security
+gtag('config', 'GA_MEASUREMENT_ID', {
+  page_title: 'Unarmed Security Services',
+  page_location: 'https://shieldwisesecurity.com/services/unarmed-security',
+  content_group1: 'Security Services',
+  content_group2: 'Unarmed Security',
+  custom_parameter_1: 'unarmed_security_page'
+});
+
+// Track unarmed security specific events
+gtag('event', 'page_view', {
+  event_category: 'Unarmed Security Services',
+  event_label: 'unarmed_security_page_view',
+  value: 1
+});
+
+// Enhanced Facebook Pixel tracking
+fbq('track', 'ViewContent', {
+  content_name: 'Unarmed Security Services',
+  content_category: 'Security Services',
+  content_type: 'service_page',
+  value: <%= serviceData.priceRange.low %>,
+  currency: 'USD'
+});
+
+// Track scroll depth for unarmed security page
+let maxScroll = 0;
+window.addEventListener('scroll', function() {
+  const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+  if (scrollPercent > maxScroll && scrollPercent % 25 === 0) {
+    maxScroll = scrollPercent;
+    gtag('event', 'scroll', {
+      event_category: 'Unarmed Security Engagement',
+      event_label: `${scrollPercent}% scroll depth`,
+      value: scrollPercent
+    });
+  }
+});
+
+// Track CTA interactions
+function trackUnarmedSecurityCTA(action) {
+  gtag('event', 'generate_lead', {
+    event_category: 'Unarmed Security CTA',
+    event_label: action,
+    value: 1
+  });
+  
+  fbq('track', 'Lead', {
+    content_name: 'Unarmed Security ' + action,
+    content_category: 'Security Services',
+    value: <%= serviceData.priceRange.low %>,
+    currency: 'USD'
+  });
+}
+</script>

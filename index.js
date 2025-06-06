@@ -800,5 +800,6 @@ app.use('/services/hospital-security', hospitalSecurityRouter);
 app.use('/services/hotel-security', hotelSecurityRoutes);
 app.use('/services/shopping-center-security', shoppingCenterSecurityRoute);
 app.use('/services/special-event-security', require('./routes/special-event-security'));
+app.use('/services/unarmed-security', require('./routes/unarmed-security'));
 
 // Start the server
