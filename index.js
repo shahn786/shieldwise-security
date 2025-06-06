@@ -485,10 +485,7 @@ app.get("/services/armed-security", (req, res) => {
   res.render("services/armed-security");
 });
 
-// Unarmed Security Page
-app.get("/services/unarmed-security", (req, res) => {
-  res.render("services/unarmed-security");
-});
+// Unarmed Security Page - handled by separate router
 
 // Executive Protection Page
 app.get("/services/executive-protection", (req, res) => {
