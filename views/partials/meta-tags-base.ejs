@@ -1,23 +1,42 @@
 <%
-// Helper functions for meta optimization
-function truncateTitle(title, maxLength = 58) {
-  if (!title) return 'Security Services | ShieldWise';
-  const suffix = ' | ShieldWise';
-  const maxTitleLength = maxLength - suffix.length;
-  return title.length > maxTitleLength ? title.substring(0, maxTitleLength).trim() + '...' + suffix : title + suffix;
+// Meta tags base helper functions
+function truncateTitle(title) {
+  return title.length > 60 ? title.slice(0, 57) + '...' : title;
 }
 
-function truncateDescription(desc, maxLength = 155) {
-  if (!desc) return 'Professional security services in California. BSIS licensed guards, 24/7 monitoring. Call 1-800-SHIELD-1 for free assessment.';
-  return desc.length > maxLength ? desc.substring(0, maxLength).trim() + '...' : desc;
+function truncateDescription(desc) {
+  return desc.length > 160 ? desc.slice(0, 157) + '...' : desc;
 }
 
-function generateDynamicKeywords(baseKeywords, serviceType, location = 'California') {
-  const base = baseKeywords || '';
-  const dynamic = `${serviceType} security, ${location} security company, licensed security guards, 24/7 security services`;
-  return base + (base ? ', ' : '') + dynamic;
-}
+function generateDynamicKeywords(keywords, serviceType) {
+  // Convert keywords to array if it's a string
+  const keywordArray = typeof keywords === 'string' ? keywords.split(', ') : keywords;
 
+  // Add additional keywords and join
+  const allKeywords = [...keywordArray, serviceType, 'security', 'guards', 'California', 'professional'];
+
+  return allKeywords.join(', ');
+}
+%>
+
+<!-- Performance and Accessibility Best Practices -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+<link rel="dns-prefetch" href="https://stackpath.bootstrapcdn.com">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+<!-- Base Meta Tags -->
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<meta name="format-detection" content="telephone=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<%
 // Service data with fallbacks
 const serviceData = (typeof locals !== 'undefined' && locals.serviceData) ? locals.serviceData : {};
 const {
