@@ -189,6 +189,10 @@ app.get('/services/apartment-security', (req, res) => {
   });
 });
 
+// Event Security Service Route
+const eventSecurityRoute = require('./routes/event-security');
+app.use('/services/event-security', eventSecurityRoute);
+
 // Import route files
 const apartmentSecurityRouter = require('./routes/apartment-security');
 const armedSecurityRoutes = require('./routes/armed-security');

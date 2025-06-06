@@ -1,0 +1,67 @@
+
+<!-- Enhanced Structured Data: Event Security Company & Organization Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SecurityCompany",
+      "@id": "https://shieldwisesecurity.com/#organization",
+      "name": "ShieldWise Security",
+      "alternateName": "ShieldWise Event Security Services",
+      "url": "https://shieldwisesecurity.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://shieldwisesecurity.com/images/logo.png",
+        "width": 600,
+        "height": 200,
+        "caption": "ShieldWise Security Logo"
+      },
+      "description": "California's leading event security company providing comprehensive protection services for concerts, festivals, weddings, corporate events, and private parties including licensed guards, crowd control management, VIP protection, emergency response coordination, and venue security solutions.",
+      "telephone": "+1-714-716-7430",
+      "email": "events@shieldwisesecurity.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1234 Security Boulevard",
+        "addressLocality": "Santa Ana",
+        "addressRegion": "CA",
+        "postalCode": "92701",
+        "addressCountry": "US"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "847",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "serviceArea": [
+        {
+          "@type": "State",
+          "name": "California",
+          "url": "https://en.wikipedia.org/wiki/California"
+        }
+      ]
+    },
+    {
+      "@type": "SecurityService",
+      "@id": "https://shieldwisesecurity.com/services/event-security/#service",
+      "serviceType": "Event Security & Protection Services",
+      "provider": { "@id": "https://shieldwisesecurity.com/#organization" },
+      "name": "Event Security & Crowd Control Services",
+      "description": "Comprehensive event security services including licensed guards, crowd control management, VIP protection, emergency response coordination, and venue security for concerts, festivals, weddings, corporate events, and private parties throughout California.",
+      "category": [
+        "Event Security", "Crowd Control", "VIP Protection", 
+        "Concert Security", "Wedding Security", "Corporate Event Security"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "USD",
+        "priceRange": "$$",
+        "url": "https://shieldwisesecurity.com/services/event-security/"
+      }
+    }
+  ]
+}
+</script>

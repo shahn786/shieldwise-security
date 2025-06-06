@@ -1,0 +1,48 @@
+
+<!-- Event Security Specific Tracking -->
+<script>
+  // Track event type interest
+  function trackEventType(type) {
+    gtag('event', 'event_type_interest', {
+      'event_category': 'Event Security',
+      'event_label': type,
+      'value': 1
+    });
+  }
+
+  // Track security service interest
+  function trackSecurityService(service) {
+    gtag('event', 'security_service_interest', {
+      'event_category': 'Event Services',
+      'event_label': service,
+      'value': 1
+    });
+  }
+
+  // Track venue size interest
+  function trackVenueSize(size) {
+    gtag('event', 'venue_size_interest', {
+      'event_category': 'Event Planning',
+      'event_label': size,
+      'value': 1
+    });
+  }
+
+  // Track quote requests
+  function trackQuoteRequest(eventType, estimatedGuests) {
+    gtag('event', 'quote_request', {
+      'event_category': 'Lead Generation',
+      'event_label': eventType,
+      'value': estimatedGuests
+    });
+  }
+
+  // Track consultation bookings
+  function trackConsultationBooking() {
+    gtag('event', 'consultation_booking', {
+      'event_category': 'Lead Generation',
+      'event_label': 'Free Consultation',
+      'value': 1
+    });
+  }
+</script>
