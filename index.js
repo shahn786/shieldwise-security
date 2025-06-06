@@ -473,10 +473,7 @@ app.get("/services/commercial-security", (req, res) => {
   res.render("services/commercial-security");
 });
 
-// Shopping Center Security Page
-app.get("/services/shopping-center-security", (req, res) => {
-  res.render("services/shopping-center-security");
-});
+// Shopping Center Security route is handled by the separate router file
 
 // Educational Security Page (alias) - redirect to main route
 app.get("/services/educational-security", (req, res) => {
