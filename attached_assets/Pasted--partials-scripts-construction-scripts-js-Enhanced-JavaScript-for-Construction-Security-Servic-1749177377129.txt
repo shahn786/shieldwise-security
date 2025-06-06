@@ -1,0 +1,821 @@
+// partials/scripts/construction-scripts.js
+// Enhanced JavaScript for Construction Security Services
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize all components
+    initializeNavigation();
+    initializeAnimations();
+    initializeScrollEffects();
+    initializeFormHandling();
+    initializePerformanceTracking();
+    initializeAccessibility();
+    initializeConstructionSpecificFeatures();
+});
+
+// Navigation Enhancement
+function initializeNavigation() {
+    const navbar = document.querySelector('.navbar');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+    
+    // Navbar scroll effect
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+        
+        // Hide navbar on scroll down, show on scroll up
+        if (scrollTop > lastScrollTop && scrollTop > 200) {
+            navbar.style.transform = 'translateY(-100%)';
+        } else {
+            navbar.style.transform = 'translateY(0)';
+        }
+        lastScrollTop = scrollTop;
+    }, { passive: true });
+    
+    // Enhanced dropdown handling
+    dropdownMenus.forEach(menu => {
+        const toggle = menu.previousElementSibling;
+        let hoverTimeout;
+        
+        toggle.addEventListener('mouseenter', function() {
+            clearTimeout(hoverTimeout);
+            menu.classList.add('show');
+            this.setAttribute('aria-expanded', 'true');
+        });
+        
+        toggle.addEventListener('mouseleave', function() {
+            hoverTimeout = setTimeout(() => {
+                menu.classList.remove('show');
+                this.setAttribute('aria-expanded', 'false');
+            }, 300);
+        });
+        
+        menu.addEventListener('mouseenter', function() {
+            clearTimeout(hoverTimeout);
+        });
+        
+        menu.addEventListener('mouseleave', function() {
+            hoverTimeout = setTimeout(() => {
+                this.classList.remove('show');
+                toggle.setAttribute('aria-expanded', 'false');
+            }, 300);
+        });
+    });
+    
+    // Active page highlighting
+    const currentPath = window.location.pathname;
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+            link.classList.add('active');
+        }
+    });
+}
+
+// Advanced Animation System
+function initializeAnimations() {
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const element = entry.target;
+                
+                // Add staggered animation delay for grid items
+                if (element.closest('.construction-grid')) {
+                    const gridItems = Array.from(element.closest('.construction-grid').children);
+                    const index = gridItems.indexOf(element);
+                    element.style.animationDelay = `${index * 0.1}s`;
+                }
+                
+                element.classList.add('animate-in');
+                
+                // Start counter animation for stats
+                if (element.classList.contains('stat-card')) {
+                    animateCounter(element);
+                }
+                
+                // Trigger progress bars if any
+                const progressBars = element.querySelectorAll('.progress-bar');
+                progressBars.forEach(bar => animateProgressBar(bar));
+                
+                observer.unobserve(element);
+            }
+        });
+    }, observerOptions);
+    
+    // Observe all animatable elements
+    const animatableElements = document.querySelectorAll(`
+        .construction-card, .process-step, .benefit-item, .project-card,
+        .service-card, .testimonial-card, .stat-card, .hero-content
+    `);
+    
+    animatableElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        observer.observe(el);
+    });
+    
+    // Add CSS class for animations
+    const style = document.createElement('style');
+    style.textContent = `
+        .animate-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .construction-card.animate-in {
+            animation: slideInUp 0.6s ease-out;
+        }
+        
+        .stat-card.animate-in {
+            animation: fadeInScale 0.6s ease-out;
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// Counter Animation
+function animateCounter(element) {
+    const statNumber = element.querySelector('.stat-number');
+    if (!statNumber || statNumber.dataset.animated) return;
+    
+    const target = parseInt(statNumber.textContent.replace(/[^\d]/g, ''));
+    const duration = 2000;
+    const increment = target / (duration / 16);
+    let current = 0;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        
+        let displayValue = Math.floor(current);
+        const originalText = statNumber.textContent;
+        
+        // Preserve non-numeric characters
+        if (originalText.includes('+')) displayValue += '+';
+        if (originalText.includes('%')) displayValue += '%';
+        if (originalText.includes('K')) displayValue = Math.floor(displayValue / 1000) + 'K+';
+        
+        statNumber.textContent = displayValue;
+    }, 16);
+    
+    statNumber.dataset.animated = 'true';
+}
+
+// Progress Bar Animation
+function animateProgressBar(progressBar) {
+    const targetWidth = progressBar.getAttribute('aria-valuenow') + '%';
+    progressBar.style.width = '0%';
+    
+    setTimeout(() => {
+        progressBar.style.transition = 'width 1.5s ease-out';
+        progressBar.style.width = targetWidth;
+    }, 200);
+}
+
+// Enhanced Scroll Effects
+function initializeScrollEffects() {
+    // Parallax effect for hero section
+    const heroSection = document.querySelector('.hero-section');
+    if (heroSection) {
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            heroSection.style.transform = `translateY(${rate}px)`;
+        }, { passive: true });
+    }
+    
+    // Scroll progress indicator
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress';
+    progressBar.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 4px;
+        background: linear-gradient(90deg, #bf9e5b, #d4b570);
+        z-index: 9999;
+        transition: width 0.1s ease;
+    `;
+    document.body.appendChild(progressBar);
+    
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        progressBar.style.width = scrollPercent + '%';
+    }, { passive: true });
+    
+    // Back to top button
+    const backToTopBtn = document.getElementById('backToTop');
+    if (backToTopBtn) {
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.style.display = 'block';
+                setTimeout(() => backToTopBtn.style.opacity = '1', 10);
+            } else {
+                backToTopBtn.style.opacity = '0';
+                setTimeout(() => backToTopBtn.style.display = 'none', 300);
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+}
+
+// Form Handling and Validation
+function initializeFormHandling() {
+    const forms = document.querySelectorAll('form');
+    
+    forms.forEach(form => {
+        const inputs = form.querySelectorAll('input, textarea, select');
+        
+        // Real-time validation
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                validateField(this);
+            });
+            
+            input.addEventListener('input', function() {
+                if (this.classList.contains('is-invalid')) {
+                    validateField(this);
+                }
+            });
+        });
+        
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            inputs.forEach(input => {
+                if (!validateField(input)) {
+                    isValid = false;
+                }
+            });
+            
+            if (isValid) {
+                submitForm(this);
+            } else {
+                // Focus on first invalid field
+                const firstInvalid = form.querySelector('.is-invalid');
+                if (firstInvalid) {
+                    firstInvalid.focus();
+                    firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        });
+    });
+}
+
+// Field Validation
+function validateField(field) {
+    const value = field.value.trim();
+    const type = field.type;
+    const required = field.hasAttribute('required');
+    
+    // Remove existing validation classes
+    field.classList.remove('is-valid', 'is-invalid');
+    
+    // Remove existing feedback
+    const existingFeedback = field.parentNode.querySelector('.invalid-feedback');
+    if (existingFeedback) {
+        existingFeedback.remove();
+    }
+    
+    let isValid = true;
+    let errorMessage = '';
+    
+    // Required field validation
+    if (required && !value) {
+        isValid = false;
+        errorMessage = 'This field is required.';
+    }
+    
+    // Type-specific validation
+    if (value && isValid) {
+        switch (type) {
+            case 'email':
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(value)) {
+                    isValid = false;
+                    errorMessage = 'Please enter a valid email address.';
+                }
+                break;
+                
+            case 'tel':
+                const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+                const cleanPhone = value.replace(/[\s\-\(\)\.]/g, '');
+                if (!phoneRegex.test(cleanPhone) || cleanPhone.length < 10) {
+                    isValid = false;
+                    errorMessage = 'Please enter a valid phone number.';
+                }
+                break;
+                
+            case 'text':
+                if (field.name === 'name' && value.length < 2) {
+                    isValid = false;
+                    errorMessage = 'Name must be at least 2 characters long.';
+                }
+                break;
+        }
+    }
+    
+    // Apply validation classes and feedback
+    if (isValid) {
+        field.classList.add('is-valid');
+    } else {
+        field.classList.add('is-invalid');
+        
+        const feedback = document.createElement('div');
+        feedback.className = 'invalid-feedback';
+        feedback.textContent = errorMessage;
+        field.parentNode.appendChild(feedback);
+    }
+    
+    return isValid;
+}
+
+// Form Submission
+function submitForm(form) {
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    
+    // Show loading state
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+    
+    // Collect form data
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    
+    // Track form submission
+    const formType = form.getAttribute('data-form-type') || 'contact';
+    trackConstructionSecurityFormSubmission(formType);
+    
+    // Simulate API call (replace with actual endpoint)
+    setTimeout(() => {
+        // Success handling
+        showFormSuccess(form);
+        form.reset();
+        
+        // Reset button
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+        
+        // Clear validation classes
+        form.querySelectorAll('.is-valid, .is-invalid').forEach(field => {
+            field.classList.remove('is-valid', 'is-invalid');
+        });
+        
+    }, 2000);
+}
+
+// Form Success Message
+function showFormSuccess(form) {
+    const successMessage = document.createElement('div');
+    successMessage.className = 'alert alert-success alert-dismissible fade show';
+    successMessage.innerHTML = `
+        <i class="fas fa-check-circle me-2"></i>
+        <strong>Thank you!</strong> Your message has been sent successfully. 
+        Our construction security team will contact you within 24 hours.
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+    `;
+    
+    form.parentNode.insertBefore(successMessage, form);
+    
+    // Auto-remove after 5 seconds
+    setTimeout(() => {
+        successMessage.remove();
+    }, 5000);
+}
+
+// Performance Tracking
+function initializePerformanceTracking() {
+    // Core Web Vitals monitoring
+    if ('PerformanceObserver' in window) {
+        // LCP (Largest Contentful Paint)
+        new PerformanceObserver((entryList) => {
+            for (const entry of entryList.getEntries()) {
+                if (entry.startTime < 2500) {
+                    console.log('LCP: Good -', entry.startTime);
+                    gtag('event', 'web_vitals', {
+                        'metric_name': 'LCP',
+                        'metric_value': Math.round(entry.startTime),
+                        'metric_rating': 'good'
+                    });
+                }
+            }
+        }).observe({entryTypes: ['largest-contentful-paint']});
+        
+        // CLS (Cumulative Layout Shift)
+        let clsValue = 0;
+        new PerformanceObserver((entryList) => {
+            for (const entry of entryList.getEntries()) {
+                if (!entry.hadRecentInput) {
+                    clsValue += entry.value;
+                }
+            }
+            if (clsValue < 0.1) {
+                gtag('event', 'web_vitals', {
+                    'metric_name': 'CLS',
+                    'metric_value': clsValue,
+                    'metric_rating': 'good'
+                });
+            }
+        }).observe({entryTypes: ['layout-shift']});
+        
+        // FID (First Input Delay)
+        new PerformanceObserver((entryList) => {
+            for (const entry of entryList.getEntries()) {
+                const delay = entry.processingStart - entry.startTime;
+                if (delay < 100) {
+                    gtag('event', 'web_vitals', {
+                        'metric_name': 'FID',
+                        'metric_value': Math.round(delay),
+                        'metric_rating': 'good'
+                    });
+                }
+            }
+        }).observe({entryTypes: ['first-input']});
+    }
+    
+    // Page load timing
+    window.addEventListener('load', function() {
+        setTimeout(() => {
+            const perfData = performance.timing;
+            const loadTime = perfData.loadEventEnd - perfData.navigationStart;
+            
+            gtag('event', 'timing_complete', {
+                'name': 'page_load_time',
+                'value': Math.round(loadTime),
+                'event_category': 'Performance'
+            });
+        }, 0);
+    });
+}
+
+// Accessibility Enhancements
+function initializeAccessibility() {
+    // Keyboard navigation for custom elements
+    document.addEventListener('keydown', function(e) {
+        // Tab trapping for modals
+        if (e.key === 'Tab') {
+            const activeModal = document.querySelector('.modal.show');
+            if (activeModal) {
+                trapFocus(activeModal, e);
+            }
+        }
+        
+        // Escape key for closing modals
+        if (e.key === 'Escape') {
+            const activeModal = document.querySelector('.modal.show');
+            if (activeModal) {
+                const closeBtn = activeModal.querySelector('[data-dismiss="modal"]');
+                if (closeBtn) closeBtn.click();
+            }
+        }
+    });
+    
+    // Focus management
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+        modal.addEventListener('shown.bs.modal', function() {
+            const firstFocusable = this.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            if (firstFocusable) firstFocusable.focus();
+        });
+    });
+    
+    // Announce dynamic content changes
+    const announcer = document.createElement('div');
+    announcer.setAttribute('aria-live', 'polite');
+    announcer.setAttribute('aria-atomic', 'true');
+    announcer.className = 'sr-only';
+    document.body.appendChild(announcer);
+    
+    window.announceToScreenReader = function(message) {
+        announcer.textContent = message;
+        setTimeout(() => announcer.textContent = '', 1000);
+    };
+}
+
+// Focus Trapping
+function trapFocus(element, event) {
+    const focusableElements = element.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    const firstFocusable = focusableElements[0];
+    const lastFocusable = focusableElements[focusableElements.length - 1];
+    
+    if (event.shiftKey) {
+        if (document.activeElement === firstFocusable) {
+            lastFocusable.focus();
+            event.preventDefault();
+        }
+    } else {
+        if (document.activeElement === lastFocusable) {
+            firstFocusable.focus();
+            event.preventDefault();
+        }
+    }
+}
+
+// Construction-Specific Features
+function initializeConstructionSpecificFeatures() {
+    // Project type filtering
+    const projectFilters = document.querySelectorAll('[data-project-filter]');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    projectFilters.forEach(filter => {
+        filter.addEventListener('click', function() {
+            const filterValue = this.getAttribute('data-project-filter');
+            
+            // Update active filter
+            projectFilters.forEach(f => f.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filter projects
+            projectCards.forEach(card => {
+                const projectType = card.getAttribute('data-project-type');
+                if (filterValue === 'all' || projectType === filterValue) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeInUp 0.6s ease-out';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Track filter usage
+            gtag('event', 'filter_projects', {
+                'event_category': 'Construction Projects',
+                'event_label': filterValue
+            });
+        });
+    });
+    
+    // Security assessment calculator
+    const assessmentForm = document.querySelector('#security-assessment-form');
+    if (assessmentForm) {
+        const inputs = assessmentForm.querySelectorAll('input, select');
+        const resultDiv = assessmentForm.querySelector('.assessment-result');
+        
+        inputs.forEach(input => {
+            input.addEventListener('change', calculateSecurityNeeds);
+        });
+        
+        function calculateSecurityNeeds() {
+            const formData = new FormData(assessmentForm);
+            const data = Object.fromEntries(formData.entries());
+            
+            let riskScore = 0;
+            let recommendations = [];
+            
+            // Calculate risk based on inputs
+            if (data.siteSize === 'large') riskScore += 3;
+            else if (data.siteSize === 'medium') riskScore += 2;
+            else riskScore += 1;
+            
+            if (data.equipmentValue === 'high') riskScore += 3;
+            if (data.location === 'urban') riskScore += 2;
+            if (data.hours === '24_7') riskScore += 2;
+            
+            // Generate recommendations
+            if (riskScore >= 8) {
+                recommendations = [
+                    '24/7 on-site security guards',
+                    'Armed security personnel',
+                    'Comprehensive CCTV system',
+                    'Access control with biometrics',
+                    'Mobile patrol coordination'
+                ];
+            } else if (riskScore >= 5) {
+                recommendations = [
+                    'Daytime security guards',
+                    'CCTV monitoring system',
+                    'Access control gates',
+                    'Regular mobile patrols'
+                ];
+            } else {
+                recommendations = [
+                    'Basic perimeter security',
+                    'Security signage',
+                    'Periodic mobile patrols'
+                ];
+            }
+            
+            // Display results
+            if (resultDiv) {
+                resultDiv.innerHTML = `
+                    <h5>Recommended Security Level: ${riskScore >= 8 ? 'High' : riskScore >= 5 ? 'Medium' : 'Basic'}</h5>
+                    <ul>
+                        ${recommendations.map(rec => `<li>${rec}</li>`).join('')}
+                    </ul>
+                    <a href="/get-quote" class="btn btn-primary">Get Custom Quote</a>
+                `;
+                resultDiv.style.display = 'block';
+            }
+        }
+    }
+    
+    // Interactive site map
+    const siteMap = document.querySelector('#service-area-map');
+    if (siteMap) {
+        const counties = siteMap.querySelectorAll('.county');
+        const infoPanel = siteMap.querySelector('.map-info');
+        
+        counties.forEach(county => {
+            county.addEventListener('mouseenter', function() {
+                const countyName = this.getAttribute('data-county');
+                const responseTime = this.getAttribute('data-response-time');
+                
+                if (infoPanel) {
+                    infoPanel.innerHTML = `
+                        <h6>${countyName} County</h6>
+                        <p>Average Response Time: ${responseTime}</p>
+                        <p>24/7 Coverage Available</p>
+                    `;
+                    infoPanel.style.display = 'block';
+                }
+                
+                this.style.fill = '#bf9e5b';
+            });
+            
+            county.addEventListener('mouseleave', function() {
+                this.style.fill = '';
+                if (infoPanel) {
+                    infoPanel.style.display = 'none';
+                }
+            });
+            
+            county.addEventListener('click', function() {
+                const countyName = this.getAttribute('data-county');
+                window.location.href = `/locations/${countyName.toLowerCase().replace(/\s+/g, '-')}`;
+            });
+        });
+    }
+    
+    // Emergency contact features
+    const emergencyButton = document.querySelector('#emergency-contact');
+    if (emergencyButton) {
+        emergencyButton.addEventListener('click', function() {
+            // Show emergency modal
+            const modal = document.querySelector('#emergencyModal');
+            if (modal) {
+                $(modal).modal('show');
+            }
+            
+            // Track emergency button usage
+            gtag('event', 'emergency_contact_click', {
+                'event_category': 'Emergency Response',
+                'event_label': 'Emergency Button'
+            });
+        });
+    }
+    
+    // Live chat integration
+    window.openLiveChat = function() {
+        // Integration with your live chat service
+        if (typeof window.LiveChatWidget !== 'undefined') {
+            window.LiveChatWidget.call('maximize');
+        } else if (typeof window.Intercom !== 'undefined') {
+            window.Intercom('show');
+        } else {
+            // Fallback to phone call
+            window.location.href = 'tel:+17147167430';
+        }
+    };
+    
+    // Quote form enhancements
+    const quoteForm = document.querySelector('#quote-form');
+    if (quoteForm) {
+        const serviceCheckboxes = quoteForm.querySelectorAll('input[name="services"]');
+        const totalElement = quoteForm.querySelector('#estimated-total');
+        
+        serviceCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', updateQuoteEstimate);
+        });
+        
+        function updateQuoteEstimate() {
+            let total = 0;
+            const baseCost = 45; // Base hourly rate
+            
+            serviceCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    const serviceCost = parseInt(checkbox.getAttribute('data-cost') || baseCost);
+                    total += serviceCost;
+                }
+            });
+            
+            if (totalElement) {
+                totalElement.textContent = `${total}/hour`;
+            }
+        }
+    }
+}
+
+// Utility Functions
+function debounce(func, wait, immediate) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            timeout = null;
+            if (!immediate) func(...args);
+        };
+        const callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func(...args);
+    };
+}
+
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    }
+}
+
+// Error Handling
+window.addEventListener('error', function(e) {
+    gtag('event', 'exception', {
+        'description': e.message,
+        'fatal': false,
+        'page_url': window.location.href
+    });
+});
+
+// Service Worker Registration
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+                console.log('ServiceWorker registration successful');
+            })
+            .catch(function(error) {
+                console.log('ServiceWorker registration failed');
+            });
+    });
+}
+
+// Export functions for global use
+window.ConstructionSecurity = {
+    trackConsultationRequest: trackConstructionConsultationRequest,
+    trackPhoneClick: trackPhoneClick,
+    trackQuoteRequest: trackQuoteRequest,
+    trackProjectTypeInterest: trackProjectTypeInterest,
+    trackFireWatchInterest: trackFireWatchInterest,
+    trackEquipmentProtectionInterest: trackEquipmentProtectionInterest,
+    trackSiteAssessmentRequest: trackSiteAssessmentRequest,
+    announceToScreenReader: window.announceToScreenReader,
+    openLiveChat: window.openLiveChat
+};
