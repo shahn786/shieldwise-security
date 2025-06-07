@@ -5,21 +5,16 @@
     <%- include('../partials/meta-tags-hotel-security') %>
     <%- include('../partials/performance-optimization') %>
     <%- include('../partials/mobile-app-meta') %>
-
-    <!-- CSS Resources -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="/css/hotel-security.css" rel="stylesheet">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="/css/apartment-security.css" rel="stylesheet">
     <%- include('../partials/schema-primary') %>
     <%- include('../partials/schema-hotel-security') %>
     <%- include('../partials/schema-faq-hotel-security') %>
-    <%- include('../partials/tracking-scripts-hotel-security', { serviceData: serviceData }) %>
+    <%- include('../partials/tracking-scripts', { 
+        serviceType: serviceData.serviceType, 
+        priceRange: serviceData.priceRange 
+    }) %>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -30,26 +25,25 @@
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
-                <div class="hero-badge speakable-intro">Hotel Security Specialists</div>
-                <h1 class="hero-title speakable-intro"><%= serviceData.serviceTitle %></h1>
-                <p class="hero-subtitle speakable-intro"><%= serviceData.serviceDescription %></p>
-                <div class="response-guarantee speakable-contact">
-                    <i class="fas fa-shield-alt"></i> Licensed BSIS Guards & 24/7 Emergency Response
-                </div>
+                <h1 class="hero-title speakable-intro">Professional Hotel Security Services</h1>
+                <p class="hero-subtitle speakable-intro">Comprehensive hospitality facility security ensuring guest safety and property protection</p>
             </div>
         </section>
 
         <!-- Premier Overview Section -->
-        <div style="background-color:#ffffff; padding:60px; border-radius:14px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:#1c1c1c; max-width:960px; margin:60px auto; box-shadow:0 10px 30px rgba(26,60,110,0.1); border:1px solid #e0e0e0;">
-            <h2 style="font-size:38px; margin-bottom:28px; color:#152f45;">
-                Premier Hotel Security Services for Complete Guest Protection
-            </h2>
+        <div style="background-color:#ffffff; padding:60px; border-radius:14px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color:#1c1c1c; max-width:960px; margin:60px auto;
+            box-shadow:0 10px 30px rgba(0,0,0,0.1); border:1px solid #e0e0e0;">
+            <h1 style="font-size:38px; margin-bottom:28px; color:#152f45;">
+                Premier Hotel Security Services for Hospitality Excellence
+            </h1>
             <p class="speakable-services" style="font-size:20px; line-height:1.8; margin-bottom:0;">
-                <strong>ShieldWise Security</strong> provides California's most comprehensive hotel security services with <strong style="color:#1a3c6e;">BSIS-licensed security guards</strong>, <strong style="color:#1a3c6e;">24/7 guest protection</strong>, <strong style="color:#1a3c6e;">emergency response protocols</strong>, and <strong style="color:#1a3c6e;">hospitality-trained professionals</strong> for hotels, resorts, and hospitality businesses requiring premium security solutions.
+                <strong>ShieldWise Security</strong> provides comprehensive hotel security services tailored to meet the unique needs of hospitality facilities. Our services are designed to ensure the safety and well-being of guests, staff, and visitors, while maintaining a secure environment conducive to quality hospitality service delivery. We offer <strong style="color:#bf9e5b;">24/7 on-site security personnel</strong> trained to handle the specific challenges of hospitality settings, conducting regular patrols, monitoring access points, and responding promptly to incidents. Our advanced <strong style="color:#bf9e5b;">access control systems</strong> restrict unauthorized entry to sensitive areas such as guest floors, conference rooms, and administrative offices. Strategic surveillance solutions provide real-time oversight while our <strong style="color:#bf9e5b;">guest management protocols</strong> ensure only authorized individuals access restricted areas.
             </p>
             <div class="speakable-contact" style="margin-top:20px; font-size:18px;">
-                <strong>Call This Number:</strong> +1-714-716-7430 |
-                <strong>Email:</strong> hotel-security@shieldwisesecurity.com
+                <strong>Call This Number:</strong> +1-714-716-7430 | 
+                <strong>Email:</strong> info@shieldwisesecurity.com
             </div>
         </div>
 
