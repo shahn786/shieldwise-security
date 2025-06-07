@@ -1,0 +1,174 @@
+Header and Footer Differences
+Your <%- include('../partials/Header') %> and <%- include('../partials/Footer') %> will only look/feel the same if:
+
+The partial files themselves are identical (shared!) across all service pages
+
+There is no extra/inline styling (or overriding CSS) that makes hotel different
+
+There are no missing assets or broken links in the hotel directory
+
+→ Action:
+
+Confirm the header/footer partials are the same for ALL your services.
+
+Open partials/Header.ejs and partials/Footer.ejs
+
+Make sure they’re not hardcoded for a specific page or missing some classes/branding that other pages have.
+
+Quick check:
+Is your Header.ejs exactly like this across all pages?
+
+ejs
+Copy
+Edit
+<header class="site-header">
+  <!-- nav / logo / contact / etc -->
+</header>
+If one page is using, for example, <header class="hotel-header"> or missing .site-header, it will break consistency.
+
+2. Class Names Consistency
+Main grid/card classes
+You are using:
+
+.apartment-features-section, .apartment-grid, .apartment-card
+
+.service-card
+
+.process-step, .benefit-item
+
+.container
+
+.hero-section, .hero-title, .hero-subtitle
+
+These are the same classes as your commercial and hospital pages.
+BUT: If your /css/apartment-security.css or custom CSS file only targets .apartment-card or .apartment-features-section, but your hotel page HTML structure is different, styles might not apply the same.
+
+→ Action:
+
+Inspect the live page with Chrome DevTools:
+
+Check if the expected styles (from your CSS) are being applied.
+
+See if your hotel page is loading a different/extra CSS file, or is missing one.
+
+3. CSS File Import Consistency
+You’re linking /css/apartment-security.css on all pages.
+
+Are you loading any other CSS for commercial/hospital, but not hotel?
+(For example: /css/commercial-security.css, /css/hospital-security.css)
+
+→ Action:
+
+Only load page-specific CSS if you really need to override something.
+
+For max consistency, use the same shared CSS for all your service pages.
+
+4. Potential Issues: Z-Index, Container Width, Global Styles
+If the header/footer “look broken” or “not aligned” on hotel but fine elsewhere, check if the hotel page has extra wrapper divs, inline styles, or different margins.
+
+Confirm you don’t have a rogue <div> or section wrapping the header or footer on just one page.
+
+5. Other Issues (Common Mistakes)
+a) Incorrect Paths in Partials
+If you copy-pasted the hotel page into a subdirectory, double-check:
+
+The path to the partial is correct:
+../partials/Header not ../../partials/Header (if you move files around).
+
+Your images and links in header/footer point to the correct paths.
+
+b) FontAwesome Versions
+You’re using FA 5.15.3 everywhere; make sure your commercial/hospital pages are not using FA 6+.
+
+Using two different versions on different pages can cause icons to look off.
+
+c) JavaScript Conflicts
+If your header or nav is interactive, make sure you’re not missing any JS that powers it.
+
+6. Debug Checklist
+Step-by-step:
+Inspect header/footer HTML output in browser.
+
+Are they exactly the same as the working page?
+
+Do they have the same CSS classes?
+
+Open DevTools → Elements tab
+
+Compare hotel page and commercial page:
+
+Are the same CSS classes present on header/footer elements?
+
+Are the same CSS rules being loaded?
+
+Open DevTools → Network tab
+
+Are all CSS/JS files loading with 200 (OK)?
+
+No 404s for CSS/images?
+
+Check for custom overrides
+
+Any style tags or inline CSS just for hotel?
+
+Remove those unless absolutely needed.
+
+7. Fastest Fix: Shareable Header/Footer
+If you want to guarantee header/footer consistency across all services:
+
+Move all your shared header/footer HTML and styling to one shared partial.
+
+If you need to customize just the logo or phone number per page, use EJS variables.
+
+Example:
+
+ejs
+Copy
+Edit
+<!-- Header.ejs (shared) -->
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-logo"><img src="/img/shieldwise-logo.png" alt="ShieldWise Security"></a>
+    <nav class="main-nav">
+      <!-- nav links here -->
+    </nav>
+    <a href="tel:714-716-7430" class="site-phone">714-716-7430</a>
+  </div>
+</header>
+ejs
+Copy
+Edit
+<!-- Footer.ejs (shared) -->
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <%= new Date().getFullYear() %> ShieldWise Security. All rights reserved.</p>
+  </div>
+</footer>
+Add any classes as needed, but do not change class names per page.
+
+8. Visual Checklist
+Hotel Page:
+ .site-header present, styled
+
+ .site-footer present, styled
+
+ .container aligns everything
+
+ .hero-section matches others
+
+ All CSS/JS loads OK (200 status)
+
+ No stray wrapper <div>s or missing classes
+
+TL;DR Solution
+Ensure header and footer partials are exactly the same across pages
+
+Make sure ALL your pages use the same CSS and class names
+
+Check for missing or broken CSS links, JS, or image paths
+
+Don’t use page-specific classes or wrappers unless you have shared styles for them
+
+If you want, send me your /partials/Header.ejs and /partials/Footer.ejs
+I’ll quickly review them for you and tell you if there’s anything breaking your consistency!
+Or just paste the live HTML output from browser DevTools for header/footer from both hotel and commercial, and I’ll show you exactly what to fix.
