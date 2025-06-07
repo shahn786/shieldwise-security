@@ -458,10 +458,7 @@ app.get("/services/hospital-security", (req, res) => {
   res.render("services/hospital-security");
 });
 
-// Hotel Security Page
-app.get("/services/hotel-security", (req, res) => {
-  res.render("services/hotel-security");
-});
+// Hotel Security Page - handled by separate router
 
 // Construction Security Page
 app.get("/services/construction-security", (req, res) => {
