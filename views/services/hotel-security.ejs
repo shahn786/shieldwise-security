@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('../partials/meta-tags-hotel-security') %>
+    <%- include('../partials/meta-tags-service') %>
     <%- include('../partials/performance-optimization') %>
     <%- include('../partials/mobile-app-meta') %>
     
@@ -269,9 +269,7 @@
             <div class="container">
                 <h2 class="mb-4">Secure Your Hotel with Professional Security Services</h2>
                 <p class="mb-4">Get immediate hotel security deployment with our hospitality-focused protection services</p>
-                <button class="btn btn-custom" aria-label="Request hotel security consultation" onclick="trackHotelSecurityRequest()">
-                    <i class="fas fa-hotel"></i> Get Hotel Security Quote
-                </button>
+                <button class="btn btn-custom" aria-label="Request hotel security consultation" onclick="trackConsultationRequest()">Get a Free Security Assessment</button>
             </div>
         </section>
     </main>
@@ -302,21 +300,13 @@
     <!-- Hotel Security Specific JavaScript -->
     <script>
         // Enhanced tracking for hotel security
-        function trackHotelSecurityRequest() {
+        function trackConsultationRequest() {
             gtag('event', 'generate_lead', {
-                'event_category': 'Hotel Security Services',
-                'event_label': 'hotel_security',
-                'value': 1,
-                'custom_parameter_1': 'hotel_security'
+                'event_category': 'Security Services',
+                'event_label': 'hotel',
+                'value': 1
             });
-            
-            fbq('track', 'Lead', {
-                content_name: 'Hotel Security Request',
-                content_category: 'Hotel Security Services',
-                value: <%= serviceData.priceRange.low %>,
-                currency: 'USD'
-            });
-            
+            fbq('track', 'Lead');
             // Redirect to quote page
             window.location.href = '/get-quote';
         }

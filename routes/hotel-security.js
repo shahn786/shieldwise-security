@@ -155,7 +155,10 @@ router.get('/', (req, res) => {
         canonicalUrl: 'https://shieldwisesecurity.com/services/hotel-security'
     };
 
-    res.render('services/hotel-security', { serviceData });
+    // Add consistent data structure
+serviceData.serviceType = 'hotel-security';
+serviceData.priceRange = { low: 25, high: 45 };
+res.render('services/hotel-security', { serviceData });
 });
 
 module.exports = router;
