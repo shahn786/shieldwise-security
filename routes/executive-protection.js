@@ -5,7 +5,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
     const serviceData = {
         // Core Service Information
-        serviceTitle: 'Executive Protection Services California',
+        serviceTitle: 'ShieldWise Security Executive Protection Services California',
         serviceDescription: 'California\'s premier executive protection company with military & law enforcement trained professionals. Close protection, threat assessment, secure transportation & VIP security. 4.9★ rating from 200+ executives.',
         serviceKeywords: 'executive protection services California, bodyguard services, VIP security, close protection officers, personal security guards, threat assessment, secure transportation, celebrity protection, corporate executive security, dignitary protection',
         serviceImage: 'excutivesecurity.png',
@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
         audienceType: 'Executives, Celebrities, High-Net-Worth Individuals, Corporate Leaders, Government Officials',
 
         // Page-specific Meta Data
-        pageTitle: 'Executive Protection Services California | VIP Bodyguards | Close Protection | ShieldWise Security',
+        pageTitle: 'ShieldWise Security Executive Protection Services California | VIP Bodyguards | Close Protection',
         pageDescription: 'California\'s premier executive protection company. Military & law enforcement trained professionals. Close protection, threat assessment, secure transportation & VIP security. 4.9★ rating from 200+ executives. Free consultation - Call (714) 716-7430',
         canonicalUrl: 'https://shieldwisesecurity.com/services/executive-protection/',
 
