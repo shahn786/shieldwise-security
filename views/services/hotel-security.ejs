@@ -5,23 +5,26 @@
     <%- include('../partials/performance-optimization') %>
     <%- include('../partials/mobile-app-meta') %>
 
-    <!-- Preload critical resources -->
-    <link rel="preload" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="/css/apartment-security.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-        <link href="/css/apartment-security.css" rel="stylesheet">
-    </noscript>
+    <!-- Load CSS directly like other working service pages -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="/css/apartment-security.css" rel="stylesheet">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <!-- Hotel-specific hero background override -->
+    <!-- Hotel-specific hero background override and header fix -->
     <style>
+        /* Fix header overlap issue */
+        body {
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        /* Ensure header doesn't overlap content */
+        .navbar {
+            position: relative;
+            z-index: 1030;
+        }
+
+        /* Hotel-specific hero background */
         .hero-section {
             background: linear-gradient(rgba(26, 60, 110, 0.9), rgba(26, 60, 110, 0.9)), url('/img/Hotel-Security.webp');
             background-size: cover;
@@ -29,6 +32,19 @@
             padding: 150px 0;
             color: white;
             text-align: center;
+            margin-top: 0;
+            position: relative;
+        }
+
+        /* Ensure main content starts properly */
+        main {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Fix any sticky header issues */
+        .fixed-top {
+            position: relative !important;
         }
     </style>
 
