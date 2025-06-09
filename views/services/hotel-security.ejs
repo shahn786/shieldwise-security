@@ -2,22 +2,462 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEST - Hotel Security Page</title>
-    <style>
-        body {
-            background: red !important;
-            color: white !important;
-            padding: 50px;
-            font-size: 30px;
-            text-align: center;
-        }
-    </style>
+    <%- include('../partials/meta-tags-hotel-security') %>
+    <%- include('../partials/performance-optimization') %>
+    <%- include('../partials/mobile-app-meta') %>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="/css/apartment-security.css" rel="stylesheet">
+    <%- include('../partials/schema-primary') %>
+    <%- include('../partials/schema-hotel-security') %>
+    <%- include('../partials/schema-service', serviceData) %>
+    <%- include('../partials/schema-faq-hotel-security') %>
+    <%- include('../partials/tracking-scripts-hotel-security', { 
+        serviceType: serviceData.serviceType, 
+        priceRange: serviceData.priceRange 
+    }) %>
 </head>
+
 <body>
-    <h1>🔴 TEST: HOTEL SECURITY FILE IS NOW LOADING 🔴</h1>
-    <p>Timestamp: <%= new Date().toISOString() %></p>
-    <p>If you see this red page, the file is working correctly!</p>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <%- include('../partials/Header') %>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="hero-title speakable-intro">Professional Hotel Security Services</h1>
+                <p class="hero-subtitle speakable-intro">Protecting hospitality businesses with comprehensive security solutions tailored to modern hotel operations</p>
+            </div>
+        </section>
+
+        <!-- Premier Overview Section -->
+        <div style="background-color:#ffffff; padding:60px; border-radius:14px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color:#1c1c1c; max-width:960px; margin:60px auto;
+            box-shadow:0 10px 30px rgba(0,0,0,0.1); border:1px solid #e0e0e0;">
+            <h1 style="font-size:38px; margin-bottom:28px; color:#152f45;">
+                Premier Hotel Security Services for Complete Hospitality Protection
+            </h1>
+            <p class="speakable-services" style="font-size:20px; line-height:1.8; margin-bottom:0;">
+                <strong>ShieldWise Security</strong> understands that effective hotel security combines exceptional guest service with uncompromising protection. We employ state-of-the-art <strong style="color:#bf9e5b;">lobby security</strong> systems, professional <strong style="color:#bf9e5b;">guest protection</strong> services, comprehensive <strong style="color:#bf9e5b;">parking security</strong>, and customized <strong style="color:#bf9e5b;">emergency response plans</strong> to ensure complete protection for your hospitality business.
+            </p>
+            <div class="speakable-contact" style="margin-top:20px; font-size:18px;">
+                <strong>Call This Number:</strong> +1-714-716-7430 | 
+                <strong>Email:</strong> info@shieldwisesecurity.com
+            </div>
+        </div>
+
+        <!-- Hotel Security Features Section -->
+        <section id="features" class="apartment-features-section">
+            <div class="container">
+                <h2 class="section-title">Comprehensive Hotel Security Features</h2>
+                <p class="section-subtitle">Advanced security solutions designed specifically for hospitality businesses</p>
+
+                <div class="apartment-grid">
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="fas fa-hotel" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="apartment-title">Lobby Security</h3>
+                        <p class="apartment-description">Professional security presence in hotel lobbies ensuring guest safety while maintaining a welcoming environment for visitors and guests.</p>
+                    </div>
+
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="fas fa-users-shield" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="apartment-title">Guest Protection</h3>
+                        <p class="apartment-description">Comprehensive guest safety services including escort services, room security checks, and rapid response to guest concerns or emergencies.</p>
+                    </div>
+
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="fas fa-phone-volume" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="apartment-title">Emergency Response</h3>
+                        <p class="apartment-description">24/7 emergency response capabilities including medical emergencies, security incidents, fire safety, and coordination with local emergency services.</p>
+                    </div>
+
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="fas fa-car-side" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="apartment-title">Parking Security</h3>
+                        <p class="apartment-description">Hotel parking lot and garage security including vehicle patrols, theft prevention, guest assistance, and unauthorized access prevention.</p>
+                    </div>
+
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="fas fa-key" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="apartment-title">Access Control</h3>
+                        <p class="apartment-description">Monitoring and controlling access to restricted areas, managing key card systems, and ensuring only authorized personnel enter secure zones.</p>
+                    </div>
+
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="apartment-title">Event Security</h3>
+                        <p class="apartment-description">Specialized security for hotel events, conferences, weddings, and special occasions ensuring guest safety during large gatherings.</p>
+                    </div>
+
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="apartment-title">Mobile Patrol Services</h3>
+                        <p class="apartment-description">Regular security patrols of property perimeter, common areas, and surrounding areas for enhanced protection and deterrence.</p>
+                    </div>
+
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
+                            <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="apartment-title">Incident Reporting</h3>
+                        <p class="apartment-description">Detailed incident documentation, security logs, and regular reporting to hotel management and relevant authorities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Process Section -->
+        <section class="security-process-section">
+            <div class="container">
+                <h2 class="section-title">Our Hotel Security Process</h2>
+                <p class="section-subtitle">A systematic approach to hospitality security</p>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">1</div>
+                            <h3 class="process-title">Property Assessment</h3>
+                            <p>Comprehensive evaluation of your hotel property security needs, vulnerabilities, and guest safety requirements.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">2</div>
+                            <h3 class="process-title">Custom Security Plan</h3>
+                            <p>Development of tailored security protocols specific to your hotel layout, guest demographics, and hospitality standards.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">3</div>
+                            <h3 class="process-title">Implementation</h3>
+                            <p>Deployment of security personnel, installation of systems, and integration with existing hotel management protocols.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number">4</div>
+                            <h3 class="process-title">Ongoing Monitoring</h3>
+                            <p>Continuous security coverage with regular reviews, updates, and adjustments to maintain optimal guest protection levels.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <div class="container">
+                <h2 class="section-title">Why Choose ShieldWise for Hotel Security</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-clock" aria-hidden="true"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>24/7 Security Coverage</h4>
+                                <p>Round-the-clock protection with professional security personnel ensuring constant guest safety and property protection.</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Hospitality-Trained Guards</h4>
+                                <p>Security guards specifically trained in hospitality protocols, guest relations, and maintaining welcoming atmosphere.</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-dollar-sign" aria-hidden="true"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Cost-Effective Solutions</h4>
+                                <p>Competitive pricing with flexible service packages that enhance guest experience while protecting your investment.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Guest Satisfaction</h4>
+                                <p>Enhanced guest experience through improved safety, peace of mind, and professional security presence.</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-chart-line" aria-hidden="true"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Property Value Enhancement</h4>
+                                <p>Professional security services increase property desirability and can positively impact occupancy rates and reputation.</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>24/7 Emergency Support</h4>
+                                <p>Immediate response capabilities for emergencies with direct coordination with local emergency services and hotel management.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Overview -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="fas fa-building service-icon" aria-hidden="true"></i>
+                            <h3 class="service-title">Lobby & Reception Security</h3>
+                            <ul class="feature-list">
+                                <li>Front Desk Security Support</li>
+                                <li>Guest Check-in Assistance</li>
+                                <li>Visitor Management</li>
+                                <li>Concierge Security Services</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="fas fa-shield-alt service-icon" aria-hidden="true"></i>
+                            <h3 class="service-title">Guest Protection Services</h3>
+                            <ul class="feature-list">
+                                <li>Personal Safety Escorts</li>
+                                <li>Room Security Checks</li>
+                                <li>Guest Assistance Programs</li>
+                                <li>VIP Protection Services</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="fas fa-route service-icon" aria-hidden="true"></i>
+                            <h3 class="service-title">Property Patrol Services</h3>
+                            <ul class="feature-list">
+                                <li>Hotel Perimeter Patrols</li>
+                                <li>Parking Area Security</li>
+                                <li>Common Area Monitoring</li>
+                                <li>Emergency Response</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number">150+</div>
+                            <div class="stat-label">Hotels Protected</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number">99%</div>
+                            <div class="stat-label">Guest Satisfaction</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Security Coverage</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5 service-title">What Hotel Managers & Guests Say</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/james.png" alt="Sarah Johnson, Hotel Manager" class="client-image">
+                            <h4>Sarah Johnson</h4>
+                            <p class="text-muted">Hotel Manager</p>
+                            <p>"ShieldWise transformed our hotel security. Guest satisfaction scores have increased significantly since their implementation."</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/samanta.png" alt="Michael Chen, Resort Director" class="client-image">
+                            <h4>Michael Chen</h4>
+                            <p class="text-muted">Resort Director</p>
+                            <p>"Professional, courteous security staff who understand the hospitality industry. Our guests feel much safer."</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/shahn1.png" alt="Emily Rodriguez, Hospitality Manager" class="client-image">
+                            <h4>Emily Rodriguez</h4>
+                            <p class="text-muted">Hospitality Manager</p>
+                            <p>"The security team maintains our welcoming atmosphere while providing excellent protection. Perfect balance for hospitality."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="mb-4">Secure Your Hotel Property Today</h2>
+                <p class="mb-4">Contact us for a customized hotel security solution that enhances guest experience</p>
+                <button class="btn btn-custom" aria-label="Request a free security assessment for your hotel" onclick="trackConsultationRequest()">Get a Free Security Assessment</button>
+            </div>
+        </section>
+    </main>
+
+    <%- include('../partials/Footer') %>
+
+    <!-- Structured Data for Voice Search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".speakable-intro",
+          ".speakable-services",
+          ".speakable-contact"
+        ]
+      },
+      "url": "https://shieldwisesecurity.com/services/hotel-security"
+    }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <!-- Optimized JavaScript -->
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.apartment-card, .service-card, .process-step, .benefit-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Counter Animation for Statistics
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : element.textContent.includes('%') ? '%' : '');
+            }, 20);
+        }
+
+        // Trigger counter animation when in view
+        const statObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const value = parseInt(statNumber.textContent);
+                    animateCounter(statNumber, value);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-card').forEach(el => {
+            statObserver.observe(el);
+        });
+
+        // Track consultation requests
+        function trackConsultationRequest() {
+            gtag('event', 'generate_lead', {
+                'event_category': 'Security Services',
+                'event_label': 'hotel',
+                'value': 1
+            });
+            fbq('track', 'Lead');
+            // Redirect to quote page
+            window.location.href = '/get-quote';
+        }
+    </script>
+
+    <!-- Deferred Tracking Scripts -->
+    <%- include('../partials/tracking-scripts-deferred') %>
+
 </body>
 </html>
