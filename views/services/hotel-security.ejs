@@ -1,13 +1,21 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US" itemscope itemtype="https://schema.org/WebPage">
 <head>
     <%- include('../partials/meta-tags-hotel-security') %>
     <%- include('../partials/performance-optimization') %>
     <%- include('../partials/mobile-app-meta') %>
+
+    <!-- CSS Resources -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <link href="/css/apartment-security.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="/css/apartment-security.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
     <%- include('../partials/schema-primary') %>
     <%- include('../partials/schema-hotel-security') %>
     <%- include('../partials/schema-service', serviceData) %>
@@ -27,8 +35,8 @@
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
-                <h1 class="hero-title speakable-intro">Professional Hotel Security Services in California</h1>
-                <p class="hero-subtitle speakable-intro">24/7 Guest Protection & Hospitality Security Solutions</p>
+                <h1 class="hero-title speakable-intro"><%= serviceData.serviceTitle %></h1>
+                <p class="hero-subtitle speakable-intro"><%= serviceData.serviceDescription %></p>
             </div>
         </section>
 
@@ -37,9 +45,9 @@
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color:#1c1c1c; max-width:960px; margin:60px auto;
             box-shadow:0 10px 30px rgba(0,0,0,0.1); border:1px solid #e0e0e0;">
-            <h1 style="font-size:38px; margin-bottom:28px; color:#152f45;">
+            <h2 style="font-size:38px; margin-bottom:28px; color:#152f45;">
                 Premier Hotel Security Services for Complete Guest Protection
-            </h1>
+            </h2>
             <p class="speakable-services" style="font-size:20px; line-height:1.8; margin-bottom:0;">
                 <strong>ShieldWise Security</strong> provides comprehensive hotel security services that maintain the welcoming atmosphere of hospitality while ensuring guest safety. We employ professional <strong style="color:#bf9e5b;">lobby security</strong>, advanced <strong style="color:#bf9e5b;">access control systems</strong>, specialized <strong style="color:#bf9e5b;">guest protection services</strong>, and <strong style="color:#bf9e5b;">24/7 emergency response</strong> protocols tailored specifically for the hospitality industry.
             </p>
@@ -169,7 +177,7 @@
                     <% serviceData.testimonials.forEach(function(testimonial) { %>
                     <div class="col-md-4">
                         <div class="testimonial-card">
-                            <img src="/img/<%= testimonial.image %>" alt="<%= testimonial.name %>, <%= testimonial.title %>" class="client-image">
+                            <img src="/img/<%= testimonial.image %>" alt="<%= testimonial.name %>, <%= testimonial.title %>" class="client-image" loading="lazy" width="80" height="80">
                             <h4><%= testimonial.name %></h4>
                             <p class="text-muted"><%= testimonial.title %></p>
                             <p>"<%= testimonial.quote %>"</p>
@@ -185,7 +193,9 @@
             <div class="container">
                 <h2 class="mb-4">Secure Your Hotel Property Today</h2>
                 <p class="mb-4">Contact us for a customized hotel security solution that enhances guest experience</p>
-                <button class="btn btn-custom" aria-label="Request a free security assessment for your hotel" onclick="trackConsultationRequest()">Get a Free Security Assessment</button>
+                <button class="btn btn-custom" aria-label="Request a free security assessment for your hotel" onclick="trackConsultationRequest()">
+                    <i class="fas fa-hotel"></i> Get a Free Security Assessment
+                </button>
             </div>
         </section>
     </main>
@@ -205,16 +215,37 @@
           ".speakable-contact"
         ]
       },
-      "url": "https://shieldwisesecurity.com/services/hotel-security"
+      "url": "<%= serviceData.canonicalUrl %>"
     }
     </script>
 
+    <!-- Essential Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" defer></script>
 
-    <!-- Optimized JavaScript -->
+    <!-- Hotel Security Specific JavaScript -->
     <script>
-        // Smooth Scrolling
+        // Enhanced tracking for hotel security services
+        function trackConsultationRequest() {
+            gtag('event', 'generate_lead', {
+                'event_category': 'Security Services',
+                'event_label': 'hotel',
+                'value': 1,
+                'custom_parameter_1': 'hotel_security'
+            });
+
+            fbq('track', 'Lead', {
+                content_name: 'Hotel Security Request',
+                content_category: 'Hotel Security Services',
+                value: <%= serviceData.priceRange.low %>,
+                currency: 'USD'
+            });
+
+            // Redirect to quote page
+            window.location.href = '/get-quote';
+        }
+
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -228,7 +259,7 @@
             });
         });
 
-        // Intersection Observer for Animations
+        // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
@@ -243,7 +274,7 @@
             });
         }, observerOptions);
 
-        // Observe elements
+        // Observe elements for animation
         document.querySelectorAll('.apartment-card, .service-card, .process-step, .benefit-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
@@ -251,7 +282,7 @@
             observer.observe(el);
         });
 
-        // Counter Animation for Statistics
+        // Counter animation for statistics
         function animateCounter(element, target) {
             let current = 0;
             const increment = target / 100;
@@ -261,18 +292,28 @@
                     current = target;
                     clearInterval(timer);
                 }
-                element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : element.textContent.includes('%') ? '%' : '');
+                const displayValue = Math.floor(current);
+                const originalText = element.textContent;
+                if (originalText.includes('+')) {
+                    element.textContent = displayValue + '+';
+                } else if (originalText.includes('%')) {
+                    element.textContent = displayValue + '%';
+                } else {
+                    element.textContent = displayValue;
+                }
             }, 20);
         }
 
-        // Trigger counter animation when in view
+        // Trigger counter animation when stats come into view
         const statObserver = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
                     entry.target.classList.add('animated');
                     const statNumber = entry.target.querySelector('.stat-number');
-                    const value = parseInt(statNumber.textContent);
-                    animateCounter(statNumber, value);
+                    const value = parseInt(statNumber.textContent.replace(/[^\d]/g, ''));
+                    if (value && value > 0) {
+                        animateCounter(statNumber, value);
+                    }
                 }
             });
         }, { threshold: 0.5 });
@@ -280,22 +321,9 @@
         document.querySelectorAll('.stat-card').forEach(el => {
             statObserver.observe(el);
         });
-
-        // Track consultation requests
-        function trackConsultationRequest() {
-            gtag('event', 'generate_lead', {
-                'event_category': 'Security Services',
-                'event_label': 'hotel',
-                'value': 1
-            });
-            fbq('track', 'Lead');
-            // Redirect to quote page
-            window.location.href = '/get-quote';
-        }
     </script>
 
     <!-- Deferred Tracking Scripts -->
     <%- include('../partials/tracking-scripts-deferred') %>
-
 </body>
 </html>
