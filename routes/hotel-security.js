@@ -3,11 +3,13 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    // Add cache-busting headers
+    // Add aggressive cache-busting headers
     res.set({
-        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Cache-Control': 'no-cache, no-store, must-revalidate, max-age=0',
         'Pragma': 'no-cache',
-        'Expires': '0'
+        'Expires': '0',
+        'Last-Modified': new Date().toUTCString(),
+        'ETag': Math.random().toString()
     });
     
     const serviceData = {
