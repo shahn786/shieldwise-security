@@ -21,6 +21,7 @@ router.get('/', (req, res) => {
         serviceTitle: 'Professional Hotel Security Services in California',
         serviceDescription: '24/7 Guest Protection & Hospitality Security Solutions',
         serviceAltName: 'Hospitality Security Services',
+        serviceOutput: 'Complete hotel security protection with guest safety assurance',
         priceRange: { low: 35, mid: 55, high: 85 },
         features: [
             {
