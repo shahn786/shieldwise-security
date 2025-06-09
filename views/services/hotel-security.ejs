@@ -5,26 +5,118 @@
     <%- include('../partials/performance-optimization') %>
     <%- include('../partials/mobile-app-meta') %>
 
-    <!-- Load CSS directly like other working service pages -->
+    <!-- CSS Resources -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <link href="/css/apartment-security.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="/css/apartment-security.min.css" rel="stylesheet">
 
-    <!-- Hotel-specific hero background override and header fix -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Critical CSS Inline -->
     <style>
-        /* Fix header overlap issue */
-        body {
-            padding-top: 0;
-            margin-top: 0;
+        /* Hotel Security Section Styles */
+        .hotel-features-section {
+            padding: 80px 0;
+            background: var(--light-bg);
         }
 
-        /* Ensure header doesn't overlap content */
-        .navbar {
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .hotel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .hotel-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
             position: relative;
-            z-index: 1030;
+            overflow: hidden;
         }
 
-        /* Hotel-specific hero background */
+        .hotel-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-secondary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .hotel-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .hotel-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .hotel-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .hotel-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .hotel-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        :root {
+            --primary-color: #1a3c6e;
+            --secondary-color: #bf9e5b;
+            --text-color: #333333;
+            --light-bg: #f8f9fa;
+            --gradient-secondary: linear-gradient(135deg, #bf9e5b, #d4b570);
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
         .hero-section {
             background: linear-gradient(rgba(26, 60, 110, 0.9), rgba(26, 60, 110, 0.9)), url('/img/Hotel-Security.webp');
             background-size: cover;
@@ -32,19 +124,57 @@
             padding: 150px 0;
             color: white;
             text-align: center;
-            margin-top: 0;
-            position: relative;
         }
 
-        /* Ensure main content starts properly */
-        main {
-            position: relative;
-            z-index: 1;
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        /* Fix any sticky header issues */
-        .fixed-top {
-            position: relative !important;
+        .hero-subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), #0d2b54);
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .btn-custom {
+            background: var(--secondary-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-custom:hover {
+            background: #a88b4a;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hotel-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 
@@ -64,8 +194,12 @@
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
+                <div class="hero-badge speakable-intro">Hospitality Security Specialists</div>
                 <h1 class="hero-title speakable-intro">Professional Hotel Security Services</h1>
                 <p class="hero-subtitle speakable-intro">Comprehensive hospitality facility security ensuring guest safety and property protection</p>
+                <div class="response-guarantee speakable-contact">
+                    <i class="fas fa-clock"></i> 24-Hour Hotel Emergency Response Available
+                </div>
             </div>
         </section>
 
@@ -87,19 +221,19 @@
         </div>
 
         <!-- Hotel Security Features Section -->
-        <section id="features" class="apartment-features-section">
+        <section id="features" class="hotel-features-section">
             <div class="container">
-                <h2 class="section-title">Comprehensive Hotel Security Features</h2>
-                <p class="section-subtitle">Advanced protection capabilities designed for hospitality excellence</p>
+                <h2 class="section-title">Comprehensive Hotel Security Solutions</h2>
+                <p class="section-subtitle">Advanced security services designed specifically for hospitality environments</p>
 
-                <div class="apartment-grid">
+                <div class="hotel-grid">
                     <% serviceData.features.forEach(feature => { %>
-                    <div class="apartment-card">
-                        <div class="apartment-icon">
+                    <div class="hotel-card">
+                        <div class="hotel-icon">
                             <i class="<%= feature.icon %>" aria-hidden="true"></i>
                         </div>
-                        <h3 class="apartment-title"><%= feature.title %></h3>
-                        <p class="apartment-description"><%= feature.description %></p>
+                        <h3 class="hotel-title"><%= feature.title %></h3>
+                        <p class="hotel-description"><%= feature.description %></p>
                     </div>
                     <% }); %>
                 </div>
@@ -255,11 +389,19 @@
         // Enhanced tracking for hotel security
         function trackConsultationRequest() {
             gtag('event', 'generate_lead', {
-                'event_category': 'Security Services',
-                'event_label': 'hotel',
-                'value': 1
+                'event_category': 'Hotel Security Services',
+                'event_label': 'hotel_security',
+                'value': 1,
+                'custom_parameter_1': 'hotel_security'
             });
-            fbq('track', 'Lead');
+
+            fbq('track', 'Lead', {
+                content_name: 'Hotel Security Request',
+                content_category: 'Hotel Security Services',
+                value: 55,
+                currency: 'USD'
+            });
+
             // Redirect to quote page
             window.location.href = '/get-quote';
         }
