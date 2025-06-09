@@ -3,14 +3,18 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    // Add aggressive cache-busting headers
+    // Add super aggressive cache-busting headers
     res.set({
-        'Cache-Control': 'no-cache, no-store, must-revalidate, max-age=0',
+        'Cache-Control': 'no-cache, no-store, must-revalidate, private, max-age=0',
         'Pragma': 'no-cache',
-        'Expires': '0',
+        'Expires': '-1',
         'Last-Modified': new Date().toUTCString(),
-        'ETag': Math.random().toString()
+        'ETag': Math.random().toString(),
+        'X-Debug-Route': 'hotel-security-router'
     });
+    
+    // Debug log to confirm route is being hit
+    console.log('🏨 Hotel Security Route Hit - Timestamp:', new Date().toISOString());
     
     const serviceData = {
         serviceType: 'hotel_security',
