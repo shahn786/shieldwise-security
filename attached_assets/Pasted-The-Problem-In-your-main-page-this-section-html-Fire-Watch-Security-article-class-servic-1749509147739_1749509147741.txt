@@ -1,0 +1,49 @@
+The Problem
+In your main page, this section:
+html<!-- Fire Watch Security -->
+<article class="service-item mb-5" id="fire-watch-security-services">
+    <!-- ... content ... -->
+    <a href="/services/fire-watch" class="btn btn-primary service-link" title="Learn more about our Fire Watch Security Services">Explore Fire Watch Security</a>
+</article>
+The link href="/services/fire-watch" should be going to your fire watch page, but it's showing hotel security content instead.
+The Solution
+You need to check your routing configuration. Based on your server code at the bottom, I can see you have:
+javascriptapp.use('/services/fire-watch', fireWatchRoute);
+app.use('/services/hotel-security', hotelSecurityRoutes);
+The issue is likely one of these:
+1. Route Order Problem
+Make sure your fire-watch route is defined BEFORE any catch-all routes. The order should be:
+javascript// Specific routes first
+app.use('/services/fire-watch', fireWatchRoute);
+app.use('/services/hotel-security', hotelSecurityRoutes);
+// ... other specific routes
+
+// Catch-all routes last (if any)
+2. Route Variable Naming
+Check that fireWatchRoute is properly imported and points to the correct router:
+javascriptconst fireWatchRoute = require('./routes/fire-watch'); // Make sure this path is correct
+3. Fire Watch Router File
+Verify that your routes/fire-watch.js file exists and has the correct content. It should look like:
+javascriptconst express = require('express');
+const router = express.Router();
+
+router.get('/', (req, res) => {
+    // Your fire watch service data here
+    const serviceData = {
+        // ... fire watch specific data
+    };
+    
+    res.render('services/fire-watch', { serviceData });
+});
+
+module.exports = router;
+4. Template File
+Make sure you have a views/services/fire-watch.ejs template file (not just the route).
+Quick Fix
+
+Check if routes/fire-watch.js exists - if not, create it using the fire watch router code you provided
+Verify the import in your main server file:
+javascriptconst fireWatchRoute = require('./routes/fire-watch');
+
+Clear any server cache and restart your server
+Test the URL directly by going to /services/fire-watch in your browser
