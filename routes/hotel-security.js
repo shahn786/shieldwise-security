@@ -3,6 +3,13 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
+    // Add cache-busting headers
+    res.set({
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': '0'
+    });
+    
     const serviceData = {
         serviceType: 'hotel_security',
         serviceTitle: 'Professional Hotel Security Services in California',
