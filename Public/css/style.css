@@ -2089,10 +2089,7 @@ html, body {
     font-size: 1.2rem;
     line-height: 1.8;
     color: #444;
-    margin-bottom: 25px;
-}
-
-.service-features {
+    margin-bottom: 25px.service-features {
     list-style-type: none;
     padding-left: 0;
     margin-bottom: 30px;
@@ -2168,4 +2165,22 @@ html, body {
         padding: 25px;
         margin-bottom: 50px;
     }
+}
+
+/* Professional Security Guard Services Section */
+.why-choose-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+/* Professional Security Guard Services Section */
+.why-choose-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+/* Professional Security Guard Services Section */
+.why-choose-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
 }
