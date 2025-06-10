@@ -648,17 +648,17 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible; /* Allow overflow to see the full image */
   max-width: 50%; /* Increased to 50% for more space */
   padding: 20px; /* Add padding around the image */
+  min-height: 0; /* Allow it to shrink if needed */
 }
 
 .why-choose-image img {
   width: 100%;
-  height: 100%;
-  object-fit: contain; /* Changed to contain to show full image without cropping */
-  max-width: 600px; /* Increased size to show complete guard and car */
-  max-height: 400px; /* Set max height to maintain aspect ratio */
+  height: auto; /* Maintain natural aspect ratio */
+  object-fit: contain; /* Show entire image without cropping */
+  max-width: 100%; /* Make it scale with container */
   border-radius: 8px; /* Add slight border radius for better appearance */
 }
 
