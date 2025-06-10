@@ -414,11 +414,6 @@ app.post("/logout", (req, res) => {
   });
 });
 
-app.get("/career", (req, res) => {
-  const loggedIn = req.isAuthenticated ? req.isAuthenticated() : false;
-  res.render("login", { loggedIn, success: req.flash("success") });
-});
-
 // app.get("/career", (req, res) => {
 //   if (!req.isAuthenticated()) {
 //     return res.redirect("/login");
