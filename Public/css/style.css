@@ -631,10 +631,10 @@ html, body {
 /* Testimonial Section Styling */
 /* new section  */
 
-/* 90% Width Container */
+/* 80% Width Container */
 .why-choose-full-width {
   display: flex;
-  width: 90%;
+  width: 80%;
   min-height: 100vh;
   margin: 40px auto; /* Center the container with auto margins */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Add subtle shadow for better visual separation */
