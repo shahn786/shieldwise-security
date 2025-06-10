@@ -631,12 +631,15 @@ html, body {
 /* Testimonial Section Styling */
 /* new section  */
 
-/* Full-width Container */
+/* 90% Width Container */
 .why-choose-full-width {
   display: flex;
-  width: 100%;
+  width: 90%;
   min-height: 100vh;
-  margin: 40px 0; /* Add margin to the top and bottom for separation */
+  margin: 40px auto; /* Center the container with auto margins */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Add subtle shadow for better visual separation */
+  border-radius: 12px; /* Add rounded corners */
+  overflow: hidden; /* Ensure rounded corners are respected */
 }
 
 /* Left Column with Image */
