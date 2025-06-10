@@ -269,7 +269,7 @@
     position: static !important;
     width: 100%;
   }
-
+  
   /* Ensure dropdown toggle is clearly clickable */
   .navbar-nav .dropdown-toggle {
     cursor: pointer;
@@ -282,7 +282,7 @@
     position: relative;
     z-index: 10;
   }
-
+  
   /* Style dropdown menus */
   .navbar-main .dropdown-menu {
     position: static !important;
@@ -313,21 +313,21 @@
     z-index: 1000 !important;
     max-height: none !important;
   }
-
+  
   /* For services and service area dropdowns specifically */
   .nav-item.dropdown .dropdown-menu.show {
     max-height: 300px;
     overflow-y: auto;
     padding: 8px 0 !important;
   }
-
+  
   .navbar-main .dropdown-menu.show {
     max-height: 1000px !important;
     opacity: 1 !important;
     visibility: visible !important;
     padding: 8px 0 !important;
   }
-
+  
   /* Open state for dropdown menus */
   .navbar-main .dropdown-menu.show {
     display: block !important;
@@ -338,7 +338,7 @@
     padding-bottom: 10px !important;
     border-left: 3px solid #d4af37 !important;
   }
-
+  
   /* Dropdown items styling */
   .navbar-main .dropdown-menu .dropdown-item {
     color: rgba(255,255,255,.75) !important;
@@ -349,14 +349,14 @@
     display: block;
     width: 100%;
   }
-
+  
   .navbar-main .dropdown-menu .dropdown-item:hover,
   .navbar-main .dropdown-menu .dropdown-item:focus {
     background-color: #343a40 !important;
     color: #d4af37 !important;
     transform: translateX(5px);
   }
-
+  
   /* Dropdown arrow styling */
   .dropdown-toggle::after {
     float: right;
@@ -366,157 +366,31 @@
     border-left: 0.3em solid transparent;
     transition: transform 0.3s ease;
   }
-
+  
   /* Rotate arrow when expanded */
   .dropdown-toggle[aria-expanded="true"]::after {
     transform: rotate(180deg);
   }
-
+  
   /* Add highlighting for active dropdown toggle */
   .dropdown-toggle[aria-expanded="true"] {
     background-color: rgba(212, 175, 55, 0.1);
     color: #d4af37 !important;
   }
-
+  
   /* Ensure dropdown menus appear even in mobile view */
   .navbar-collapse.show .dropdown-menu,
   .navbar-collapse.collapsing .dropdown-menu {
     display: none; /* Start closed - JS will handle opening */
   }
-
+  
   /* Keep parent link active while displaying children */
   .dropdown.show > .nav-link {
     color: #d4af37 !important;
   }
-
+  
   /* Force higher z-index for dropdown menus to ensure they appear above other content */
   .dropdown-menu.show {
     z-index: 1030 !important;
-  }
-}
-
-/* Enhanced Professional Header Styling */
-
-/* Professional Logo Branding */
-.navbar-brand {
-  display: flex !important;
-  align-items: center;
-  padding: 10px 0;
-  margin-right: 40px;
-  text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.brand-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 15px;
-  padding: 5px 10px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-}
-
-.brand-container:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-}
-
-.brand-logo {
-  height: 48px;
-  width: auto;
-  max-width: 160px;
-  object-fit: contain;
-  transition: all 0.3s ease;
-  filter: brightness(1.05) contrast(1.1);
-}
-
-.brand-text {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-  white-space: nowrap;
-}
-
-/* Logo Animation on Hover */
-.navbar-brand:hover .brand-logo {
-  transform: scale(1.08);
-  filter: brightness(1.15) contrast(1.2);
-}
-
-.navbar-brand:hover .brand-text {
-  color: #f8f9fa;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-  letter-spacing: 1px;
-}
-
-/* Ensure Logo Stays Left */
-.navbar .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.navbar-brand {
-  order: -1;
-  flex-shrink: 0;
-}
-
-/* Mobile Responsive Logo */
-@media (max-width: 991px) {
-  .brand-container {
-    gap: 10px;
-    padding: 4px 8px;
-  }
-
-  .brand-logo {
-    height: 42px;
-  }
-
-  .brand-text {
-    font-size: 1.2rem;
-    letter-spacing: 0.5px;
-  }
-}
-
-@media (max-width: 768px) {
-  .brand-container {
-    gap: 8px;
-    padding: 3px 6px;
-  }
-
-  .brand-logo {
-    height: 38px;
-  }
-
-  .brand-text {
-    font-size: 1.1rem;
-  }
-
-  .navbar-brand {
-    margin-right: 20px;
-  }
-}
-
-@media (max-width: 576px) {
-  .brand-logo {
-    height: 35px;
-  }
-
-  .brand-text {
-    font-size: 1rem;
-    letter-spacing: 0.3px;
-  }
-
-  .navbar-brand {
-    margin-right: 15px;
   }
 }
