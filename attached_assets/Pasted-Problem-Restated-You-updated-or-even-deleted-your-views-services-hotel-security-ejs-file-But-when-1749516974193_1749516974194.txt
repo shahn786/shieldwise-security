@@ -1,0 +1,67 @@
+Problem Restated
+You updated or even deleted your views/services/hotel-security.ejs file.
+But when you visit /services/hotel-security in your browser, you still see the old (cached) version of the hotel security page, not the new/updated one.
+Root Causes (Based on Your Situation & Code):
+Browser or Proxy Cache:
+Even though your code sets aggressive cache-busting headers, sometimes browsers, proxies, or CDNs (like Cloudflare, Vercel, Netlify) can serve cached pages.
+
+Multiple Template Locations:
+If your project has multiple views folders or you have a misconfigured views path, Express might be loading a different hotel-security.ejs than the one you think.
+
+Server Not Restarted:
+If you didn’t fully restart your Node.js server after changing/deleting the EJS file, the server might still use the old file.
+
+View Engine or File Case Sensitivity:
+On some systems (especially Linux), file names are case sensitive.
+Example: hotel-security.ejs vs Hotel-Security.ejs.
+
+Wrong Route Handler:
+If you have a router or route leftover from before, it might render a different template or static file.
+
+Step-by-Step Fix
+1. HARD REFRESH YOUR BROWSER
+On Windows: Ctrl + F5
+On Mac: Cmd + Shift + R
+Or open in Chrome’s Incognito/Private mode.
+2. CHECK YOUR VIEWS FOLDER
+Make sure you have only one views/services/hotel-security.ejs file.
+Delete all other possible copies (old backups, wrong directories, etc).
+Double-check the spelling and casing.
+3. VERIFY YOUR EXPRESS VIEW PATH
+Check this part in your server code:
+
+js
+app.set("views", path.join(__dirname, "views"));
+You should only set the views path ONCE.
+If you have multiple app.set("views", ...), remove or consolidate them.
+
+4. RESTART YOUR NODE SERVER
+Stop your server (Ctrl+C in your terminal)
+Start it again: node index.js or npm start or however you usually start it.
+5. CHECK YOUR ROUTE HANDLER
+Since you are using a direct route handler for /services/hotel-security, make sure it’s not calling res.sendFile or serving a static HTML file by mistake. You want only:
+
+js
+res.render('services/hotel-security', { serviceData, ... });
+6. DEBUG: ADD A UNIQUE MARKER TO EJS
+Add a test comment or some unique text to your EJS file, for example:
+
+EJS
+<!-- TEST MARKER 2025-06-10 -->
+Now reload the page and View Source in your browser. If you do NOT see this marker, it means the file being rendered is NOT the file you are editing.
+
+7. CHECK FOR STATIC FILE CONFLICTS
+If you have a file at public/services/hotel-security.html, Express’ static middleware might serve it instead of rendering your EJS.
+Delete any static file with that name.
+
+8. CHECK FOR CDN OR HOSTING CACHE
+If you are using a cloud server (Vercel, Netlify, Cloudflare, etc.), clear the cache from their dashboard, or deploy fresh.
+
+Quick Checklist
+ Only one views/services/hotel-security.ejs in your project.
+ No static public/services/hotel-security.html file exists.
+ You restarted your server.
+ You added a unique marker to your EJS file and confirmed it renders.
+ No duplicate/misplaced app.set("views", ...) statement.
+ No router or leftover code that could override your handler.
+ No CDN or host is serving old content.
