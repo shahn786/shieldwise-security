@@ -641,18 +641,19 @@ html, body {
 
 /* Left Column with Image */
 .why-choose-image {
-  flex: 1;
+  flex: 0 0 35%; /* Fixed width at 35% instead of 50% */
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  max-width: 50%; /* Set the image container to 50% of the full width */
+  max-width: 35%; /* Reduced from 50% to 35% */
 }
 
 .why-choose-image img {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ensures the image covers the entire container area */
+  max-width: 400px; /* Add maximum width constraint */
 }
 
 /* Right Column with Content */
@@ -663,7 +664,7 @@ html, body {
   flex-direction: column;
   justify-content: center;
   background-color: #f8f9fa;
-  max-width: 50%; /* Set the content container to 50% of the full width */
+  max-width: 65%; /* Increased from 50% to 65% to balance with smaller image */
 }
 
 /* Title Styling */
