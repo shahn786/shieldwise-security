@@ -639,39 +639,37 @@ html, body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Add subtle shadow for better visual separation */
   border-radius: 12px; /* Add rounded corners */
   overflow: hidden; /* Ensure rounded corners are respected */
-  min-height: 600px; /* Set a minimum height for both sections */
+  min-height: 700px; /* Increased minimum height for better proportion */
+  height: auto; /* Allow natural height growth */
 }
 
 /* Left Column with Image */
 .why-choose-image {
-  flex: 0 0 50%; /* Increased to 50% to fully show the guard and car */
+  flex: 0 0 50%; /* Equal width distribution */
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden; /* Ensure contained within box */
-  max-width: 50%; /* Increased to 50% for more space */
-  padding: 20px; /* Add padding around the image */
-  height: 100%; /* Match the container height */
+  padding: 0; /* Remove padding to maximize image space */
+  min-height: 700px; /* Ensure minimum height matches container */
 }
 
 .why-choose-image img {
   width: 100%;
-  height: 100%; /* Fill the container height */
+  height: 100%; /* Fill the entire container height */
   object-fit: cover; /* Cover the entire container while maintaining aspect ratio */
-  max-width: 100%; /* Make it scale with container */
-  border-radius: 8px; /* Add slight border radius for better appearance */
+  display: block; /* Remove any inline spacing */
 }
 
 /* Right Column with Content */
 .why-choose-content {
-  flex: 1;
+  flex: 0 0 50%; /* Equal width distribution */
   padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: #f8f9fa;
-  max-width: 50%; /* Reduced to 50% to balance with larger image */
-  height: 100%; /* Match the container height */
+  min-height: 700px; /* Ensure minimum height matches container */
 }
 
 /* Title Styling */
