@@ -27,39 +27,85 @@
 .navbar-logo {
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
   transition: all 0.3s ease;
-  height: 50px;
+  height: 45px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  margin-right: 12px;
 }
 
 .logo-text {
-  font-size: 2rem;
-  font-weight: 800;
-  letter-spacing: 1.2px;
-  margin-left: 15px;
-  font-family: 'Arial', sans-serif;
-  text-transform: uppercase;
-  background: linear-gradient(135deg, #ffffff 0%, #d4af37 70%, #ffffff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  color: #ffffff;
+  text-shadow: 
+    0 0 10px rgba(212, 175, 55, 0.6),
+    2px 2px 4px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(212, 175, 55, 0.3);
   position: relative;
-  padding: 5px 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  display: inline-block;
 }
 
-.logo-text::after {
+.logo-text::before {
   content: '';
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #d4af37, transparent);
-  opacity: 0.7;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(212, 175, 55, 0.1) 0%, 
+    rgba(255, 255, 255, 0.05) 30%, 
+    rgba(212, 175, 55, 0.1) 70%, 
+    rgba(255, 255, 255, 0.05) 100%);
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  padding: 8px 12px;
+  margin: -8px -12px;
 }
 
 .navbar-brand:hover .logo-text {
-  background: linear-gradient(135deg, #d4af37 0%, #ffffff 50%, #d4af37 100%);
-  -webkit-background-clip: text;
-  transform: scale(1.02);
+  color: #d4af37;
+  text-shadow: 
+    0 0 15px rgba(212, 175, 55, 0.8),
+    2px 2px 6px rgba(0, 0, 0, 0.9),
+    0 0 25px rgba(212, 175, 55, 0.4);
+  transform: translateY(-1px);
+}
+
+.navbar-brand:hover .logo-text::before {
+  opacity: 1;
+}
+
+/* Responsive logo adjustments */
+@media (max-width: 768px) {
+  .navbar-logo {
+    height: 35px;
+    margin-right: 8px;
+  }
+  
+  .logo-text {
+    font-size: 1.4rem;
+    letter-spacing: 0.8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-logo {
+    height: 30px;
+    margin-right: 6px;
+  }
+  
+  .logo-text {
+    font-size: 1.2rem;
+    letter-spacing: 0.6px;
+  }
 }
 
 .navbar-toggler {
