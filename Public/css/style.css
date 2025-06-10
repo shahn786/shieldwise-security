@@ -635,11 +635,11 @@ html, body {
 .why-choose-full-width {
   display: flex;
   width: 80%;
-  min-height: 100vh;
   margin: 40px auto; /* Center the container with auto margins */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Add subtle shadow for better visual separation */
   border-radius: 12px; /* Add rounded corners */
   overflow: hidden; /* Ensure rounded corners are respected */
+  min-height: 600px; /* Set a minimum height for both sections */
 }
 
 /* Left Column with Image */
@@ -648,16 +648,16 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: visible; /* Allow overflow to see the full image */
+  overflow: hidden; /* Ensure contained within box */
   max-width: 50%; /* Increased to 50% for more space */
   padding: 20px; /* Add padding around the image */
-  min-height: 0; /* Allow it to shrink if needed */
+  height: 100%; /* Match the container height */
 }
 
 .why-choose-image img {
   width: 100%;
-  height: auto; /* Maintain natural aspect ratio */
-  object-fit: contain; /* Show entire image without cropping */
+  height: 100%; /* Fill the container height */
+  object-fit: cover; /* Cover the entire container while maintaining aspect ratio */
   max-width: 100%; /* Make it scale with container */
   border-radius: 8px; /* Add slight border radius for better appearance */
 }
@@ -671,6 +671,7 @@ html, body {
   justify-content: center;
   background-color: #f8f9fa;
   max-width: 50%; /* Reduced to 50% to balance with larger image */
+  height: 100%; /* Match the container height */
 }
 
 /* Title Styling */
