@@ -1,0 +1,17 @@
+
+{
+  "name": "ShieldWise Security Services",
+  "short_name": "ShieldWise",
+  "description": "Professional security services for businesses and residential properties in California",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a3c6e",
+  "theme_color": "#1a3c6e",
+  "icons": [
+    {
+      "src": "/img/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}
