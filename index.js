@@ -414,13 +414,16 @@ app.post("/logout", (req, res) => {
   });
 });
 
-// app.get("/career", (req, res) => {
-//   if (!req.isAuthenticated()) {
-//     return res.redirect("/login");
-//   }
-//   const username = req.user ? req.user.username : null;
-//   res.render("career", { loggedIn: true, username });
-// });
+// Career route removed - careers navigation now points to login page
+
+// Redirect any direct career access to login page
+app.get("/career", (req, res) => {
+  res.redirect(301, "/login");
+});
+
+app.get("/service-areas", (req, res) => {
+  res.render("service-areas");
+});
 
 // Services Page
 
@@ -787,7 +790,7 @@ app.use('/services/hospital-security', hospitalSecurityRouter);
 // Hotel Security Route - Direct Handler
 app.get('/services/hotel-security', (req, res) => {
   console.log('🏨 Hotel Security Route Hit - Direct Route Handler');
-  
+
   // Add aggressive cache-busting headers
   res.set({
     'Cache-Control': 'no-cache, no-store, must-revalidate, private, max-age=0',
