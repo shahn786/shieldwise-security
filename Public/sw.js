@@ -1,4 +1,3 @@
-
 // Service Worker for ShieldWise Security - Enhanced Performance & Offline Support
 const CACHE_NAME = 'shieldwise-security-v2025.1';
 const OFFLINE_URL = '/offline.html';
@@ -61,64 +60,54 @@ self.addEventListener('activate', event => {
   );
 });
 
-// Fetch event - implement caching strategies
+// Fetch event - serve from cache, fallback to network
 self.addEventListener('fetch', event => {
   // Skip non-GET requests
   if (event.request.method !== 'GET') return;
-  
+
   // Skip cross-origin requests
   if (!event.request.url.startsWith(self.location.origin)) return;
 
   event.respondWith(
     caches.match(event.request)
       .then(response => {
-        // Return cached version if available
         if (response) {
           console.log('SW: Serving from cache', event.request.url);
           return response;
         }
 
-        // Network first for HTML pages
-        if (event.request.destination === 'document') {
-          return fetch(event.request)
-            .then(response => {
-              // Cache successful responses
-              if (response.status === 200) {
-                const responseClone = response.clone();
-                caches.open(CACHE_NAME)
-                  .then(cache => {
-                    cache.put(event.request, responseClone);
-                  });
-              }
-              return response;
-            })
-            .catch(() => {
-              // Return offline page for navigation requests
-              return caches.match(OFFLINE_URL);
-            });
-        }
-
-        // Cache first for static assets
+        console.log('SW: Fetching from network', event.request.url);
         return fetch(event.request)
-          .then(response => {
-            // Cache successful responses for static assets
-            if (response.status === 200 && (
-              event.request.destination === 'style' ||
-              event.request.destination === 'script' ||
-              event.request.destination === 'image' ||
-              event.request.destination === 'font'
-            )) {
-              const responseClone = response.clone();
-              caches.open(CACHE_NAME)
-                .then(cache => {
-                  cache.put(event.request, responseClone);
-                });
+          .then(fetchResponse => {
+            // Check if we received a valid response
+            if (!fetchResponse || fetchResponse.status !== 200 || fetchResponse.type !== 'basic') {
+              // For missing images, return a fallback
+              if (event.request.url.includes('/img/') && fetchResponse.status === 404) {
+                return caches.match('/img/favicon.ico') || fetchResponse;
+              }
+              return fetchResponse;
             }
-            return response;
+
+            // Clone the response for caching
+            const responseToCache = fetchResponse.clone();
+
+            caches.open(CACHE_NAME)
+              .then(cache => {
+                // Cache successful responses
+                cache.put(event.request, responseToCache);
+              });
+
+            return fetchResponse;
           })
           .catch(() => {
-            // Return cached version or default for failed requests
-            return caches.match(event.request);
+            // Return offline page for navigation requests
+            if (event.request.mode === 'navigate') {
+              return caches.match(OFFLINE_URL);
+            }
+            // For missing images, return favicon as fallback
+            if (event.request.url.includes('/img/')) {
+              return caches.match('/img/favicon.ico');
+            }
           });
       })
   );
@@ -198,7 +187,7 @@ self.addEventListener('message', event => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
-  
+
   if (event.data && event.data.type === 'CACHE_UPDATE') {
     event.waitUntil(
       updateCache(event.data.urls)
@@ -237,10 +226,10 @@ async function clearStoredRequests() {
 function openDB() {
   return new Promise((resolve, reject) => {
     const request = indexedDB.open('ShieldWiseDB', 1);
-    
+
     request.onerror = () => reject(request.error);
     request.onsuccess = () => resolve(request.result);
-    
+
     request.onupgradeneeded = () => {
       const db = request.result;
       if (!db.objectStoreNames.contains('quotes')) {
@@ -255,12 +244,12 @@ self.addEventListener('fetch', event => {
   // Track navigation timing
   if (event.request.destination === 'document') {
     const startTime = performance.now();
-    
+
     event.respondWith(
       handleRequest(event.request).then(response => {
         const endTime = performance.now();
         const duration = endTime - startTime;
-        
+
         // Report performance metrics
         self.clients.matchAll().then(clients => {
           clients.forEach(client => {
@@ -272,7 +261,7 @@ self.addEventListener('fetch', event => {
             });
           });
         });
-        
+
         return response;
       })
     );
