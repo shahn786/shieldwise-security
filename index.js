@@ -227,10 +227,7 @@ app.get("/get-quote", (req, res) => {
   });
 });
 
-app.get("/career", (req, res) => {
-  const username = req.session.user ? req.session.user.username : null;
-  res.render("career", { loggedIn: true, username });
-});
+
 
 app.get("/service-areas", (req, res) => {
   res.render("service-areas");
@@ -417,9 +414,9 @@ app.post("/logout", (req, res) => {
   });
 });
 
-app.get("/career", isAuthenticated, (req, res) => {
-  const username = req.session.user ? req.session.user.username : null;
-  res.render("career", { loggedIn: true, username });
+app.get("/career", (req, res) => {
+  const loggedIn = req.isAuthenticated ? req.isAuthenticated() : false;
+  res.render("login", { loggedIn, success: req.flash("success") });
 });
 
 // app.get("/career", (req, res) => {
