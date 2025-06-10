@@ -3,7 +3,10 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-2 navbar-main">
     <div class="container">
       <a class="navbar-brand" href="/">
-        <img src="/img/logo.png" alt="ShieldWise Security" height="50">
+        <div class="brand-container">
+          <img src="/img/logo.png" alt="ShieldWise Security Logo" class="brand-logo">
+          <span class="brand-text">ShieldWise Security</span>
+        </div>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -58,6 +61,82 @@
 
 <style>
 /* Enhanced Professional Header Styling */
+
+/* Brand Logo Styling */
+.navbar-brand {
+  padding: 8px 0;
+  margin-right: 30px;
+  transition: all 0.3s ease;
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  height: 45px;
+  width: auto;
+  transition: all 0.3s ease;
+  filter: brightness(1.1);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.brand-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-brand:hover .brand-logo {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand:hover .brand-text {
+  color: #f8f9fa;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Logo Adjustments */
+@media (max-width: 768px) {
+  .brand-logo {
+    height: 40px;
+  }
+  
+  .brand-text {
+    font-size: 1.3rem;
+  }
+  
+  .brand-container {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .brand-logo {
+    height: 35px;
+  }
+  
+  .brand-text {
+    font-size: 1.1rem;
+  }
+}
+
+/* Navbar Enhanced Styling */
+.navbar-dark .navbar-brand {
+  color: #fff;
+}
+
+.navbar-dark .navbar-brand:hover {
+  color: #fff;
+  text-decoration: none;
+}
 
 /* JS Script for Navbar scroll effect */
 document.addEventListener('DOMContentLoaded', function() {
