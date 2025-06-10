@@ -788,21 +788,44 @@ app.use('/services/educational-campus-security', educationalSecurityRoutes);
 app.use('/services/executive-protection', executiveProtectionRoute);
 app.use('/services/fire-watch', fireWatchRoute);
 app.use('/services/hospital-security', hospitalSecurityRouter);
+// Hotel security route is handled directly above - no separate router needed
 // const hotelSecurityRoutes = require('./routes/hotel-security');
 // app.use('/services/hotel-security', hotelSecurityRoutes);
 
-// Add direct route handler for hotel security
+// Hotel Security Route - Direct Handler
 app.get('/services/hotel-security', (req, res) => {
-  console.log('🏨 Hotel Security Route Hit - Direct Route');
+  console.log('🏨 Hotel Security Route Hit - Direct Route Handler');
+  
+  // Add aggressive cache-busting headers
+  res.set({
+    'Cache-Control': 'no-cache, no-store, must-revalidate, private, max-age=0',
+    'Pragma': 'no-cache',
+    'Expires': '-1',
+    'Last-Modified': new Date().toUTCString(),
+    'ETag': Math.random().toString(),
+    'X-Debug-Route': 'direct-hotel-security-route',
+    'X-Timestamp': new Date().toISOString()
+  });
 
   const serviceData = {
-    serviceType: 'hotel_security',
+    serviceType: 'hotel-security',
     serviceTitle: 'Professional Hotel Security Services in California',
     serviceDescription: '24/7 Guest Protection & Hospitality Security Solutions',
+    serviceKeywords: 'hotel security, hospitality security guards, guest protection, hotel safety',
+    serviceImage: 'Hotel-Security.webp',
+    serviceUrl: 'hotel-security',
+    serviceBenefit: 'enhanced guest safety and hospitality security',
+    propertyType: 'hotel and hospitality facilities',
+    priceRange: { low: 35, mid: 55, high: 85 },
     serviceAltName: 'Hospitality Security Services',
     serviceOutput: 'Complete hotel security protection with guest safety assurance',
     audienceType: 'Hotel Owners, Managers, Hospitality Businesses',
-    priceRange: { low: 35, mid: 55, high: 85 },
+    relatedProperty: 'hotels and resorts',
+    specializedServices: 'guest protection, lobby security, emergency response, access control',
+    industryType: 'hospitality',
+    clientType: 'hotel guests and management',
+    managerType: 'hotel managers',
+    assessmentSpecifics: 'guest safety protocols, lobby security evaluation, emergency response planning',
     features: [
       {
         icon: 'fas fa-hotel',
@@ -950,20 +973,10 @@ app.get('/services/hotel-security', (req, res) => {
     canonicalUrl: 'https://shieldwisesecurity.com/services/hotel-security'
   };
 
-  // Add cache-busting headers to ensure fresh content
-  res.set({
-    'Cache-Control': 'no-cache, no-store, must-revalidate, private, max-age=0',
-    'Pragma': 'no-cache',
-    'Expires': '-1',
-    'Last-Modified': new Date().toUTCString(),
-    'ETag': Math.random().toString(),
-    'X-Debug-Route': 'direct-hotel-security-route'
-  });
-
-  // Include meta helpers if you have them
+  // Include meta helpers
   const metaHelpers = require('./utils/metaHelpers') || {};
 
-  // Render the correct template
+  // Render the template with complete data
   res.render('services/hotel-security', { 
     serviceData,
     safeServiceData: serviceData,
