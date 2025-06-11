@@ -839,6 +839,23 @@
 
     <%- include('../partials/Footer') %>
 
+    <!-- Structured Data for Voice Search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".speakable-intro",
+          ".speakable-services",
+          ".speakable-contact"
+        ]
+      },
+      "url": "https://shieldwisesecurity.com/los-angeles/hollywood"
+    }
+    </script>
+
     <!-- JavaScript for Interactive Elements -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
