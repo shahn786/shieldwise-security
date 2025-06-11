@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<!-- 🎬 HOLLYWOOD SECURITY – 10/10 TECHNICAL‑SEO OPTIMIZED FOR SAFARI, BING, EDGE, GOOGLE, AI SEARCH -->
+
+<!-- 1 ▸ Core Meta + Enhanced Robots -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<title>Hollywood Security Guards | Film Set & Entertainment Security | ShieldWise</title>
+<meta name="description" content="Hollywood’s #1 security company for film sets, celebrity & VIP protection, and Sunset Strip venues. 24/7 BSIS–licensed guards. Immediate response. Call (323) 555‑1890.">
+<link rel="canonical" href="https://shieldwisesecurity.com/los-angeles/hollywood">
+<link rel="alternate" hreflang="en-US" href="https://shieldwisesecurity.com/los-angeles/hollywood">
+
+<!-- 2 ▸ Enhanced Performance Hints + Critical CSS -->
+<link rel="dns-prefetch" href="//cdn.shieldwisesecurity.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="preconnect" href="https://cdn.shieldwisesecurity.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preload" href="https://shieldwisesecurity.com/css/critical.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://shieldwisesecurity.com/css/critical.css"></noscript>
+<link rel="preload" href="https://shieldwisesecurity.com/img/hollywood-security-guards-1200x630.webp" as="image" imagesrcset="https://shieldwisesecurity.com/img/hollywood-security-guards-1200x630.webp 1200w" fetchpriority="high">
+
+<!-- 3 ▸ Critical CSS Inline -->
+<style>
+/* Critical CSS for above-the-fold content */
+.hero-image{width:100%;height:auto;display:block;max-width:1200px}
+.business-name{font-size:2.5rem;font-weight:700;color:#1a1a1a;margin:0 0 1rem}
+.phone-number{font-size:1.25rem;color:#0066cc;font-weight:600}
+.phone-link{color:#0066cc;text-decoration:none}
+.phone-link:hover{text-decoration:underline}
+.address,.hours{color:#666;font-size:1rem;margin:0.5rem 0}
+.trust-signals{background:#f8f9fa;padding:2rem;margin:2rem 0;border-radius:8px}
+.client-logos{display:flex;gap:2rem;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:1rem}
+@media(max-width:768px){.business-name{font-size:1.8rem}.client-logos{gap:1rem}}
+</style>
+
+<!-- 4 ▸ Complete Favicon Suite -->
+<link rel="icon" type="image/svg+xml" href="https://shieldwisesecurity.com/img/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="https://shieldwisesecurity.com/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://shieldwisesecurity.com/img/favicon-16x16.png">
+<link rel="mask-icon" href="https://shieldwisesecurity.com/img/safari-pinned-tab.svg" color="#1a365d">
+
+<!-- 5 ▸ Social Cards -->
+<meta property="og:title" content="Hollywood Security Guards | Film Set & Entertainment Security | ShieldWise">
+<meta property="og:description" content="Hollywood’s best security for film sets, stars, nightclubs & events. 24/7 BSIS–licensed guards.">
+<meta property="og:image" content="https://shieldwisesecurity.com/img/hollywood-security-guards-1200x630.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://shieldwisesecurity.com/los-angeles/hollywood">
+<meta property="og:type" content="LocalBusiness">
+<meta property="og:site_name" content="ShieldWise Security">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@shieldwisesec">
+<meta name="twitter:title" content="Hollywood Security Guards | Film Set & Entertainment Security | ShieldWise">
+<meta name="twitter:description" content="Hollywood’s trusted entertainment security company. 24/7 rapid dispatch.">
+<meta name="twitter:image" content="https://shieldwisesecurity.com/img/hollywood-security-guards-1200x630.webp">
+
+<!-- 6 ▸ Apple / Safari Enhanced -->
+<meta name="apple-mobile-web-app-title" content="ShieldWise Hollywood">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" sizes="180x180" href="https://shieldwisesecurity.com/img/apple-touch-icon-180x180.png">
+
+<!-- 7 ▸ Enhanced Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SecurityService",
+  "@id": "https://shieldwisesecurity.com/los-angeles/hollywood#service",
+  "name": "ShieldWise Security – Hollywood",
+  "alternateName": ["Hollywood Security Guards","Film Set Security"],
+  "url": "https://shieldwisesecurity.com/los-angeles/hollywood",
+  "description": "Hollywood’s #1 security company for film sets, studios, nightclubs & celebrity events. BSIS‑licensed, armed & unarmed guards. 24/7 rapid deployment.",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://shieldwisesecurity.com/img/hollywood-security-guards-1200x630.webp",
+    "width": 1200,
+    "height": 630
+  },
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://shieldwisesecurity.com/img/shieldwise-logo-400x400.png",
+    "width": 400,
+    "height": 400
+  },
+  "telephone": "+1-323-555-1890",
+  "priceRange": "$$‑$$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "6464 Sunset Blvd Suite 790",
+    "addressLocality": "Hollywood",
+    "addressRegion": "CA",
+    "postalCode": "90028",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 34.0928,
+    "longitude": -118.3287
+  },
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 34.0928,
+      "longitude": -118.3287
+    },
+    "geoRadius": "20000"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "ratingCount": "97"
+  },
+  "employee": [{
+    "@type": "Person",
+    "name": "Chief Security Officer",
+    "hasCredential": "BSIS License Level III",
+    "alumniOf": "California Security Academy"
+  }],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Hollywood Security Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Film Set Security",
+          "serviceType": "Entertainment Security"
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "price": "45-75"
+        }
+      }
+    ]
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://shieldwisesecurity.com/los-angeles/hollywood#business",
+  "name": "ShieldWise Security – Hollywood",
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "ShieldWise Security"
+  },
+  "image": "https://shieldwisesecurity.com/img/hollywood-security-guards-1200x630.webp",
+  "address": {"@id": "https://shieldwisesecurity.com/los-angeles/hollywood#service"},
+  "url": "https://shieldwisesecurity.com/los-angeles/hollywood",
+  "telephone": "+1-323-555-1890",
+  "sameAs": [
+    "https://www.facebook.com/shieldwisesecurity",
+    "https://twitter.com/shieldwisesec",
+    "https://www.instagram.com/shieldwisesecurity",
+    "https://www.linkedin.com/company/shieldwise-security"
+  ],
+  "slogan": "Hollywood’s Most Trusted Entertainment Security Partner"
+}
+</script>
+
+<!-- 8 ▸ FAQ & Breadcrumb Schema (for AI+Rich Results) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you provide security for film productions in Hollywood?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We secure studios, on‑location shoots, equipment, talent & crowd control with guards trained in industry protocols."
+      }
+    },
+    {
+      "@type": "Question", 
+      "name": "Are your guards BSIS Level III certified?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. All our Hollywood security personnel hold current BSIS licenses with Level III certification for armed security and entertainment industry specialization."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes your Hollywood security different from other companies?",
+      "acceptedAnswer": {
+        "@type": "Answer", 
+        "text": "We specialize exclusively in entertainment industry security with 15+ years of Hollywood experience. Our guards understand film set protocols, celebrity privacy, and venue operations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can you deploy security for Hollywood venues?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Emergency deployment in 2-3 hours for urgent situations. Standard security requests are fulfilled within 24 hours from our Sunset Boulevard headquarters."
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://shieldwisesecurity.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Los Angeles Security", "item": "https://shieldwisesecurity.com/los-angeles/" },
+    { "@type": "ListItem", "position": 3, "name": "Hollywood Security Guards", "item": "https://shieldwisesecurity.com/los-angeles/hollywood" }
+  ]
+}
+</script>
+
+<!-- 9 ▸ WebSite Schema for Sitelinks -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://shieldwisesecurity.com/#website",
+  "url": "https://shieldwisesecurity.com/",
+  "name": "ShieldWise Security",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://shieldwisesecurity.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- 10 ▸ Bing/Edge/AI Enhanced Meta -->
+<meta name="msvalidate.01" content="PUT-YOUR-BING-VERIFICATION-CODE-HERE">
+<meta name="application-name" content="ShieldWise Security – Hollywood">
+
+<!-- 11 ▸ Safari Pinned Tab -->
+<link rel="mask-icon" href="https://shieldwisesecurity.com/img/safari-pinned-tab.svg" color="#1a365d">
+
+<!-- 12 ▸ Accessibility & Language -->
+<meta http-equiv="Content-Language" content="en-US">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="theme-color" content="#1a365d">
+<meta name="color-scheme" content="light only">
+
+<!-- 13 ▸ Open Graph Location (for Apple/AI) -->
+<meta property="place:location:latitude" content="34.0928">
+<meta property="place:location:longitude" content="-118.3287">
+<meta name="geo.region" content="US-CA">
+<meta name="geo.placename" content="Hollywood, Los Angeles">
+<meta name="geo.position" content="34.0928;-118.3287">
+<meta name="ICBM" content="34.0928, -118.3287">
+
+<!-- 14 ▸ IndexNow for Bing, Yandex, AI -->
+<link rel="indexnow" href="https://shieldwisesecurity.com/indexnow.txt">
+
+</head>
