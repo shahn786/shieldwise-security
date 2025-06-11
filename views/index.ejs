@@ -13,9 +13,7 @@
     <meta name="author" content="ShieldWise Security">
     <meta name="publisher" content="ShieldWise Security">
     <meta name="language" content="en-US">
-    <meta name="distribution" content="global">
     <meta name="rating" content="general">
-    <meta name="revisit-after" content="1 day">
 
     <!-- Canonical and Alternate URLs -->
     <link rel="canonical" href="https://shieldwisesecurity.com/">
@@ -66,10 +64,10 @@
     <meta name="MobileOptimized" content="320">
 
     <!-- Search Engine Verification -->
-    <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE_HERE" />
-    <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE_HERE" />
-    <meta name="yandex-verification" content="YOUR_YANDEX_VERIFICATION_CODE_HERE" />
-    <meta name="baidu-site-verification" content="YOUR_BAIDU_VERIFICATION_CODE_HERE" />
+    <meta name="google-site-verification" content="REPLACE_WITH_ACTUAL_GOOGLE_VERIFICATION_CODE" />
+    <meta name="msvalidate.01" content="REPLACE_WITH_ACTUAL_BING_VERIFICATION_CODE" />
+    <meta name="yandex-verification" content="REPLACE_WITH_ACTUAL_YANDEX_VERIFICATION_CODE" />
+    <meta name="baidu-site-verification" content="REPLACE_WITH_ACTUAL_BAIDU_VERIFICATION_CODE" />
 
     <!-- Enhanced Resource Hints for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -110,6 +108,7 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <!-- Font Preloading -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"></noscript>
 
@@ -527,10 +526,7 @@
         "url": "https://shieldwisesecurity.com",
         "potentialAction": {
             "@type": "SearchAction",
-            "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "https://shieldwisesecurity.com/search?q={search_term_string}"
-            },
+            "target": "https://shieldwisesecurity.com/search?q={search_term_string}",
             "query-input": "required name=search_term_string"
         },
         "sameAs": [
@@ -617,7 +613,6 @@
     </script>
 
     <!-- AI Search Optimization -->
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1">
     <meta name="bingbot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1">
 
