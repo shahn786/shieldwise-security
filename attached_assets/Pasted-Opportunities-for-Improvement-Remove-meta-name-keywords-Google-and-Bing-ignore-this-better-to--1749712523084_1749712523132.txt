@@ -1,0 +1,74 @@
+Opportunities for Improvement
+Remove <meta name="keywords">
+
+Google and Bing ignore this; better to eliminate it to declutter head.
+
+Optimize Title Length
+
+At ~70 characters, you’re nudging the upper limit. Consider trimming brand or parentheses if you need room for future tweaks.
+
+Consolidate & Chunk JSON-LD
+
+A single large <script> can slow parsing. Splitting into smaller blocks (e.g. one per major entity) can improve reliability.
+
+Add Robots.txt Reference
+
+While robots meta tag is good, ensure your root robots.txt (and a link to it in head) is set up to guide crawlers.
+
+Leverage Meta Viewport Enhancements
+
+You’ve got viewport-fit=cover for iOS; consider adding maximum-scale=1 to prevent unintended zooming, if that suits your UX.
+
+Verify Sitemap Discovery
+
+<link rel="sitemap" …> is uncommon. Better ensure you have a Sitemap: https://…/sitemap.xml line in your robots.txt.
+
+Prioritize Critical CSS Inline
+
+You preload style.css asynchronously, which is great—but consider inlining just the hero-section CSS to speed up first paint.
+
+Audit Analytics Load Order
+
+Preconnecting to GA and GTM is solid—but double-check you’re not over-connecting (limit to truly critical domains).
+
+🔧 Actionable Recommendations
+Clean Up Unused Tags
+
+html
+Copy
+Edit
+<!-- Remove this block -->
+<meta name="keywords" content="…">
+Split JSON-LD
+
+html
+Copy
+Edit
+<script type="application/ld+json"> /* WebSite + Organization */ </script>
+<script type="application/ld+json"> /* LocalBusiness + Service */  </script>
+<script type="application/ld+json"> /* FAQPage */               </script>
+Robots.txt Enhancement
+
+txt
+Copy
+Edit
+# robots.txt at root
+User-agent: *
+Disallow:
+
+Sitemap: https://shieldwisesecurity.com/sitemap.xml
+Inline Critical CSS
+
+html
+Copy
+Edit
+<style>
+  /* Only the essential CSS for above-the-fold content */
+</style>
+<link rel="preload" href="/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+Trim Title If Needed
+
+html
+Copy
+Edit
+<title>Beverly Hills Security Guards | ShieldWise Security</title>
