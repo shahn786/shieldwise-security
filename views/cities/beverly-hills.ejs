@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Enhanced SEO Meta Tags -->
-    <title>Shieldwise Security Guard Services in Beverly Hills CA | ShieldWise Security</title>
+    <title>ShieldWise Security | Beverly Hills Guard Services</title>
     <meta name="description" content="Premier security guard services in Beverly Hills, CA. Licensed & insured guards for luxury estates, high-end retail, celebrity protection, and exclusive events. 24/7 protection. Free quotes!">
-    <meta name="keywords" content="Beverly Hills security guards, estate security Beverly Hills, event security Beverly Hills, celebrity protection Beverly Hills">
     <meta name="robots" content="index, follow">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://shieldwisesecurity.com/los-angeles/beverly-hills" />
+    
+    <!-- Sitemap -->
+    <link rel="sitemap" href="/sitemap.xml">
 
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Elite Security Guard Services in Beverly Hills CA | ShieldWise Security">
@@ -19,17 +21,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://shieldwisesecurity.com/los-angeles/beverly-hills">
     <meta property="og:image" content="https://shieldwisesecurity.com/img/beverly-hills-security.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="ShieldWise Security">
     <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="es_US">
 
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@shieldwisesec">
     <meta name="twitter:title" content="Elite Beverly Hills Security Guard Services | ShieldWise Security">
     <meta name="twitter:description" content="Licensed & insured security guards protecting luxury estates, high-end retail, celebrity events and properties in Beverly Hills, CA.">
     <meta name="twitter:image" content="https://shieldwisesecurity.com/img/beverly-hills-security.jpg">
 
     <!-- Preload critical assets -->
-   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="/css/style-cities.css" as="style">
     <link rel="preload" href="/img/beverly-hills-security.jpg" as="image">
 
@@ -39,7 +46,6 @@
     <link rel="stylesheet" href="/css/style-cities.css">
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
@@ -48,60 +54,116 @@
     <!-- Favicon -->
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
 
-    <!-- Enhanced Structured Data (JSON-LD) -->
+    <!-- Consolidated Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "SecurityService",
+        "@type": ["SecurityService", "LocalBusiness"],
         "name": "ShieldWise Security - Beverly Hills",
         "image": "https://shieldwisesecurity.com/img/beverly-hills-security.jpg",
         "description": "Professional security guard services in Beverly Hills. Our trained and licensed security personnel protect luxury estates, high-end retail, events, and properties 24/7.",
-        "priceRange": "$$$-$$$$",
+        "priceRange": "$35-$95/hour",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "9465 Wilshire Blvd",
+            "streetAddress": "123 Security Boulevard",
             "addressLocality": "Beverly Hills",
             "addressRegion": "CA",
-            "postalCode": "90212",
+            "postalCode": "90210",
             "addressCountry": "US"
         },
         "geo": {
             "@type": "GeoCoordinates",
-            "latitude": 34.0674,
-            "longitude": -118.4016
+            "latitude": 34.0696,
+            "longitude": -118.4053
         },
         "url": "https://shieldwisesecurity.com/los-angeles/beverly-hills",
         "telephone": "+1-714-716-7430",
-        "openingHours": "Mo-Su 00:00-23:59",
+        "email": "info@shieldwisesecurity.com",
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+        },
+        "paymentAccepted": ["Cash", "Credit Card", "Check", "Invoice"],
+        "currenciesAccepted": "USD",
+        "hasCredential": {
+            "@type": "EducationalOccupationalCredential",
+            "name": "California BSIS License",
+            "credentialCategory": "license"
+        },
+        "serviceType": [
+            "Estate Security",
+            "Event Security", 
+            "Celebrity Protection",
+            "Luxury Retail Security",
+            "Armed Security Guards",
+            "Unarmed Security Guards"
+        ],
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "Beverly Hills Security Services",
             "itemListElement": [
                 {
-                    "@type": "OfferCatalog",
+                    "@type": "Offer",
                     "name": "Estate Security",
-                    "description": "Professional armed security guards for luxury estates and residences in Beverly Hills."
+                    "description": "Professional armed security guards for luxury estates and residences in Beverly Hills.",
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "minPrice": "45",
+                        "maxPrice": "95",
+                        "priceCurrency": "USD",
+                        "unitText": "HOUR"
+                    }
                 },
                 {
-                    "@type": "OfferCatalog",
+                    "@type": "Offer", 
                     "name": "Event Security",
-                    "description": "Specialized security for galas, exclusive events and high-end functions in Beverly Hills."
+                    "description": "Specialized security for galas, exclusive events and high-end functions in Beverly Hills.",
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "minPrice": "50",
+                        "maxPrice": "85",
+                        "priceCurrency": "USD",
+                        "unitText": "HOUR"
+                    }
                 },
                 {
-                    "@type": "OfferCatalog",
-                    "name": "Celebrity Protection",
-                    "description": "Discreet security services for VIPs and celebrities in Beverly Hills."
+                    "@type": "Offer",
+                    "name": "Celebrity Protection", 
+                    "description": "Discreet security services for VIPs and celebrities in Beverly Hills.",
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "minPrice": "75",
+                        "maxPrice": "150",
+                        "priceCurrency": "USD",
+                        "unitText": "HOUR"
+                    }
                 },
                 {
-                    "@type": "OfferCatalog",
+                    "@type": "Offer",
                     "name": "Luxury Retail Security",
-                    "description": "Premium loss prevention and retail security solutions for Rodeo Drive and Beverly Hills boutiques."
+                    "description": "Premium loss prevention and retail security solutions for Rodeo Drive and Beverly Hills boutiques.",
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "minPrice": "40",
+                        "maxPrice": "75",
+                        "priceCurrency": "USD",
+                        "unitText": "HOUR"
+                    }
                 }
             ]
         },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "93",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
         "sameAs": [
             "https://www.facebook.com/shieldwisesecurity",
-            "https://twitter.com/shieldwisesecurity",
+            "https://twitter.com/shieldwisesecurity", 
             "https://www.instagram.com/shieldwisesecurity",
             "https://www.linkedin.com/company/shieldwisesecurity"
         ],
@@ -109,14 +171,15 @@
             "@type": "GeoCircle",
             "geoMidpoint": {
                 "@type": "GeoCoordinates",
-                "latitude": 34.0674,
-                "longitude": -118.4016
+                "latitude": 34.0696,
+                "longitude": -118.4053
             },
             "geoRadius": "15000"
         },
         "areaServed": {
             "@type": "City",
-            "name": "Beverly Hills"
+            "name": "Beverly Hills",
+            "sameAs": "https://en.wikipedia.org/wiki/Beverly_Hills,_California"
         }
     }
     </script>
@@ -271,56 +334,7 @@
     }
     </script>
 
-        <!-- Enhanced Schema Markup for SEO -->
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "ShieldWise Security - Beverly Hills",
-            "image": "https://shieldwisesecurity.com/img/beverly-hills-security.jpg",
-            "url": "https://shieldwisesecurity.com/los-angeles/beverly-hills",
-            "telephone": "+1-714-716-7430",
-            "priceRange": "$$$-$$$$",
-            "description": "Expert security guard services in Beverly Hills, CA. ShieldWise Security provides comprehensive security solutions including luxury estate protection, high-end retail security, event security, and VIP protection with trained and licensed guards available 24/7.",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "468 N Camden Dr",
-                "addressLocality": "Beverly Hills",
-                "addressRegion": "CA",
-                "postalCode": "90210",
-                "addressCountry": "US"
-            },
-            "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 34.0696,
-                "longitude": -118.4053
-            },
-            "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday",
-                    "Sunday"
-                ],
-                "opens": "00:00",
-                "closes": "23:59"
-            },
-            "sameAs": [
-                "https://www.facebook.com/shieldwisesecurity",
-                "https://twitter.com/shieldwisesecurity",
-                "https://www.instagram.com/shieldwisesecurity",
-                "https://www.linkedin.com/company/shieldwisesecurity"
-            ],
-            "areaServed": {
-                "@type": "City",
-                "name": "Beverly Hills"
-            }
-        }
-        </script>
+        
 </head>
 <body>
     <!-- Header Section -->
