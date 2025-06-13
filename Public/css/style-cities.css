@@ -170,46 +170,40 @@ a:hover {
 .content-wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 50px;
-    text-align: left;
-    margin-top: 40px;
+    gap: 40px;
+    margin-top: 30px;
 }
 
-/* Text Styling */
 .text-content {
-    flex: 1;
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.8;
-    max-width: 600px;
+    flex: 2;
 }
 
-.text-content .highlight {
-    color: #d12028;
-    font-weight: 700;
-}
-
-/* Image Styling */
 .image-content {
     flex: 1;
     text-align: center;
-    position: relative;
+    display: block;
+    visibility: visible;
 }
 
 .image-content img {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 50%;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    transition: transform 0.5s ease;
-    object-fit: cover;
-    aspect-ratio: 1/1;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
 }
 
-.image-content img:hover {
-    transform: scale(1.03);
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image-content {
+        order: -1;
+        margin-bottom: 20px;
+    }
 }
 
 /* Our Services Section - Dark Theme */
