@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com; frame-src https://www.google.com;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 
     <!-- Enhanced SEO Meta Tags -->
     <title>ShieldWise Security | Beverly Hills Guard Services</title>
@@ -40,12 +47,27 @@
     <link rel="preload" href="/css/style-cities.css" as="style">
     <link rel="preload" href="/img/beverly-hills-security.jpg" as="image">
 
-    <!-- CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="/css/style-cities.css">
+    <!-- Critical CSS inline for above-the-fold content -->
+    <style>
+        body{font-family:'Roboto','Arial',sans-serif;line-height:1.6;margin:0;padding:0;color:#333;background-color:#f8f9fa}
+        .hero-downtown{position:relative;height:85vh;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding:0;background:url('/img/downtown_la.jpg') no-repeat center center/cover;background-attachment:fixed}
+        .hero-downtown h1{color:#ffffff;font-size:3.5rem;font-weight:800;text-align:center;margin-bottom:20px;text-shadow:2px 2px 4px rgba(0,0,0,0.5)}
+        .hero-downtown h2{color:#ffffff;font-size:1.8rem;font-weight:500;margin-bottom:30px;text-shadow:1px 1px 3px rgba(0,0,0,0.5)}
+        .hero-downtown::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.4));z-index:1}
+        .hero-downtown .hero-content{position:relative;z-index:2;max-width:800px;padding:20px}
+        .btn{padding:15px 30px;font-size:1rem;border:none;border-radius:50px;cursor:pointer;transition:all 0.3s ease;text-transform:uppercase;letter-spacing:1px}
+        .btn-primary{background:#007BFF;color:#fff;box-shadow:0 4px 10px rgba(0,123,255,0.3)}
+        .container{max-width:1200px;margin:0 auto;padding:0 15px}
+    </style>
 
-    <!-- Google Fonts -->
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"></noscript>
+    
+    <link rel="preload" href="/css/style-cities.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/style-cities.css"></noscript>
+
+    <!-- Google Fonts with font-display swap -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
@@ -53,284 +75,294 @@
 
     <!-- Favicon -->
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-
-    <!-- Consolidated Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": ["SecurityService", "LocalBusiness"],
-        "name": "ShieldWise Security - Beverly Hills",
-        "image": "https://shieldwisesecurity.com/img/beverly-hills-security.jpg",
-        "description": "Professional security guard services in Beverly Hills. Our trained and licensed security personnel protect luxury estates, high-end retail, events, and properties 24/7.",
-        "priceRange": "$35-$95/hour",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "123 Security Boulevard",
-            "addressLocality": "Beverly Hills",
-            "addressRegion": "CA",
-            "postalCode": "90210",
-            "addressCountry": "US"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 34.0696,
-            "longitude": -118.4053
-        },
-        "url": "https://shieldwisesecurity.com/los-angeles/beverly-hills",
-        "telephone": "+1-714-716-7430",
-        "email": "info@shieldwisesecurity.com",
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-            "opens": "00:00",
-            "closes": "23:59"
-        },
-        "paymentAccepted": ["Cash", "Credit Card", "Check", "Invoice"],
-        "currenciesAccepted": "USD",
-        "hasCredential": {
-            "@type": "EducationalOccupationalCredential",
-            "name": "California BSIS License",
-            "credentialCategory": "license"
-        },
-        "serviceType": [
-            "Estate Security",
-            "Event Security", 
-            "Celebrity Protection",
-            "Luxury Retail Security",
-            "Armed Security Guards",
-            "Unarmed Security Guards"
-        ],
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Beverly Hills Security Services",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "name": "Estate Security",
-                    "description": "Professional armed security guards for luxury estates and residences in Beverly Hills.",
-                    "priceSpecification": {
-                        "@type": "PriceSpecification",
-                        "minPrice": "45",
-                        "maxPrice": "95",
-                        "priceCurrency": "USD",
-                        "unitText": "HOUR"
-                    }
-                },
-                {
-                    "@type": "Offer", 
-                    "name": "Event Security",
-                    "description": "Specialized security for galas, exclusive events and high-end functions in Beverly Hills.",
-                    "priceSpecification": {
-                        "@type": "PriceSpecification",
-                        "minPrice": "50",
-                        "maxPrice": "85",
-                        "priceCurrency": "USD",
-                        "unitText": "HOUR"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "name": "Celebrity Protection", 
-                    "description": "Discreet security services for VIPs and celebrities in Beverly Hills.",
-                    "priceSpecification": {
-                        "@type": "PriceSpecification",
-                        "minPrice": "75",
-                        "maxPrice": "150",
-                        "priceCurrency": "USD",
-                        "unitText": "HOUR"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "name": "Luxury Retail Security",
-                    "description": "Premium loss prevention and retail security solutions for Rodeo Drive and Beverly Hills boutiques.",
-                    "priceSpecification": {
-                        "@type": "PriceSpecification",
-                        "minPrice": "40",
-                        "maxPrice": "75",
-                        "priceCurrency": "USD",
-                        "unitText": "HOUR"
-                    }
-                }
-            ]
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "93",
-            "bestRating": "5",
-            "worstRating": "1"
-        },
-        "sameAs": [
-            "https://www.facebook.com/shieldwisesecurity",
-            "https://twitter.com/shieldwisesecurity", 
-            "https://www.instagram.com/shieldwisesecurity",
-            "https://www.linkedin.com/company/shieldwisesecurity"
-        ],
-        "serviceArea": {
-            "@type": "GeoCircle",
-            "geoMidpoint": {
-                "@type": "GeoCoordinates",
-                "latitude": 34.0696,
-                "longitude": -118.4053
-            },
-            "geoRadius": "15000"
-        },
-        "areaServed": {
-            "@type": "City",
-            "name": "Beverly Hills",
-            "sameAs": "https://en.wikipedia.org/wiki/Beverly_Hills,_California"
+    
+    <!-- Additional Performance Optimizations -->
+    <meta name="theme-color" content="#1a3c6e">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Resource Hints for Better Performance -->
+    <link rel="dns-prefetch" href="//www.google.com">
+    <link rel="dns-prefetch" href="//maps.googleapis.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    
+    <!-- Preload critical images -->
+    <link rel="preload" href="/img/beverly-hills.jpg" as="image" fetchpriority="high">
+    
+    <!-- Performance Monitoring -->
+    <script>
+        // Core Web Vitals monitoring
+        if ('web-vitals' in window) {
+            import('https://unpkg.com/web-vitals@3/dist/web-vitals.js').then(({getCLS, getFID, getFCP, getLCP, getTTFB}) => {
+                getCLS(console.log);
+                getFID(console.log);
+                getFCP(console.log);
+                getLCP(console.log);
+                getTTFB(console.log);
+            });
         }
-    }
     </script>
 
-    <!-- Aggregate Rating Structured Data -->
+    <!-- Consolidated Comprehensive Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "AggregateRating",
-        "itemReviewed": {
-            "@type": "SecurityService",
-            "name": "ShieldWise Security - Beverly Hills",
-            "sameAs": "https://shieldwisesecurity.com/los-angeles/beverly-hills"
-        },
-        "ratingValue": "4.9",
-        "bestRating": "5",
-        "worstRating": "1",
-        "ratingCount": "93"
-    }
-    </script>
-
-    <!-- FAQ Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
+        "@graph": [
             {
-                "@type": "Question",
-                "name": "What security services do you offer in Beverly Hills?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We offer a comprehensive range of security services in Beverly Hills, including estate security, luxury retail protection, event security, celebrity protection, armed and unarmed guards, mobile patrol services, and loss prevention. All our services are customized to meet the exacting standards expected in Beverly Hills."
-                }
+                "@type": ["SecurityService", "LocalBusiness"],
+                "@id": "https://shieldwisesecurity.com/los-angeles/beverly-hills#business",
+                "name": "ShieldWise Security - Beverly Hills",
+                "image": "https://shieldwisesecurity.com/img/beverly-hills-security.jpg",
+                "description": "Professional security guard services in Beverly Hills. Our trained and licensed security personnel protect luxury estates, high-end retail, events, and properties 24/7.",
+                "priceRange": "$35-$95/hour",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "123 Security Boulevard",
+                    "addressLocality": "Beverly Hills",
+                    "addressRegion": "CA",
+                    "postalCode": "90210",
+                    "addressCountry": "US"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 34.0696,
+                    "longitude": -118.4053
+                },
+                "url": "https://shieldwisesecurity.com/los-angeles/beverly-hills",
+                "telephone": "+1-714-716-7430",
+                "email": "info@shieldwisesecurity.com",
+                "openingHoursSpecification": {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                    "opens": "00:00",
+                    "closes": "23:59"
+                },
+                "paymentAccepted": ["Cash", "Credit Card", "Check", "Invoice"],
+                "currenciesAccepted": "USD",
+                "hasCredential": [
+                    {
+                        "@type": "EducationalOccupationalCredential",
+                        "name": "California BSIS License",
+                        "credentialCategory": "license"
+                    },
+                    {
+                        "@type": "EducationalOccupationalCredential", 
+                        "name": "Bonded and Insured",
+                        "credentialCategory": "certification"
+                    }
+                ],
+                "serviceType": [
+                    "Estate Security",
+                    "Event Security", 
+                    "Celebrity Protection",
+                    "Luxury Retail Security",
+                    "Armed Security Guards",
+                    "Unarmed Security Guards",
+                    "Mobile Patrol Services",
+                    "Executive Protection"
+                ],
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Beverly Hills Security Services",
+                    "itemListElement": [
+                        {
+                            "@type": "Offer",
+                            "name": "Estate Security",
+                            "description": "Professional armed security guards for luxury estates and residences in Beverly Hills.",
+                            "priceSpecification": {
+                                "@type": "PriceSpecification",
+                                "minPrice": "45",
+                                "maxPrice": "95",
+                                "priceCurrency": "USD",
+                                "unitText": "HOUR"
+                            }
+                        },
+                        {
+                            "@type": "Offer", 
+                            "name": "Event Security",
+                            "description": "Specialized security for galas, exclusive events and high-end functions in Beverly Hills.",
+                            "priceSpecification": {
+                                "@type": "PriceSpecification",
+                                "minPrice": "50",
+                                "maxPrice": "85",
+                                "priceCurrency": "USD",
+                                "unitText": "HOUR"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Celebrity Protection", 
+                            "description": "Discreet security services for VIPs and celebrities in Beverly Hills.",
+                            "priceSpecification": {
+                                "@type": "PriceSpecification",
+                                "minPrice": "75",
+                                "maxPrice": "150",
+                                "priceCurrency": "USD",
+                                "unitText": "HOUR"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Luxury Retail Security",
+                            "description": "Premium loss prevention and retail security solutions for Rodeo Drive and Beverly Hills boutiques.",
+                            "priceSpecification": {
+                                "@type": "PriceSpecification",
+                                "minPrice": "40",
+                                "maxPrice": "75",
+                                "priceCurrency": "USD",
+                                "unitText": "HOUR"
+                            }
+                        }
+                    ]
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "reviewCount": "93",
+                    "bestRating": "5",
+                    "worstRating": "1"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/shieldwisesecurity",
+                    "https://twitter.com/shieldwisesecurity", 
+                    "https://www.instagram.com/shieldwisesecurity",
+                    "https://www.linkedin.com/company/shieldwisesecurity"
+                ],
+                "serviceArea": {
+                    "@type": "GeoCircle",
+                    "geoMidpoint": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 34.0696,
+                        "longitude": -118.4053
+                    },
+                    "geoRadius": "15000"
+                },
+                "areaServed": {
+                    "@type": "City",
+                    "name": "Beverly Hills",
+                    "sameAs": "https://en.wikipedia.org/wiki/Beverly_Hills,_California"
+                },
+                "founder": {
+                    "@type": "Person",
+                    "name": "ShieldWise Security Team"
+                },
+                "numberOfEmployees": "50-100",
+                "yearEstablished": "2010"
             },
             {
-                "@type": "Question",
-                "name": "Are your security guards licensed and insured?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, all our security guards are fully licensed, bonded, and insured in accordance with California state regulations. They undergo rigorous background checks, receive comprehensive training, and hold valid guard cards issued by the Bureau of Security and Investigative Services (BSIS)."
-                }
+                "@type": "FAQPage",
+                "@id": "https://shieldwisesecurity.com/los-angeles/beverly-hills#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What security services do you offer in Beverly Hills?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We offer a comprehensive range of security services in Beverly Hills, including estate security, luxury retail protection, event security, celebrity protection, armed and unarmed guards, mobile patrol services, and loss prevention. All our services are customized to meet the exacting standards expected in Beverly Hills."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Are your security guards licensed and insured?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, all our security guards are fully licensed, bonded, and insured in accordance with California state regulations. They undergo rigorous background checks, receive comprehensive training, and hold valid guard cards issued by the Bureau of Security and Investigative Services (BSIS)."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do you provide security for high-end events and galas?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, we specialize in high-profile event security in Beverly Hills. Our experienced team provides security for luxury galas, charity events, private parties, celebrity events, and other exclusive gatherings. Our guards are trained in discreet security protocols, access control, and VIP protection."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How quickly can you deploy security guards in Beverly Hills?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We pride ourselves on quick response times. For standard security needs, we can typically deploy guards within 24-48 hours. For emergency situations in Beverly Hills, we offer expedited service and can often provide security personnel within hours. Contact us for immediate assistance."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do you offer celebrity and executive protection services?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, we provide specialized executive protection and celebrity security services tailored to Beverly Hills clientele. Our team includes former law enforcement and military personnel trained in close protection techniques. We offer discreet security solutions for high-profile individuals, ensuring their safety while maintaining their privacy and lifestyle."
+                        }
+                    }
+                ]
             },
             {
-                "@type": "Question",
-                "name": "Do you provide security for high-end events and galas?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, we specialize in high-profile event security in Beverly Hills. Our experienced team provides security for luxury galas, charity events, private parties, celebrity events, and other exclusive gatherings. Our guards are trained in discreet security protocols, access control, and VIP protection."
-                }
+                "@type": "Review",
+                "@id": "https://shieldwisesecurity.com/los-angeles/beverly-hills#review1",
+                "itemReviewed": {
+                    "@id": "https://shieldwisesecurity.com/los-angeles/beverly-hills#business"
+                },
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Elizabeth Morgan"
+                },
+                "reviewBody": "ShieldWise Security has provided exceptional service for our Beverly Hills estate. Their professional guards demonstrate impeccable discretion and attention to detail. The comprehensive security protocols have given our family complete peace of mind while maintaining the aesthetic and lifestyle we value.",
+                "datePublished": "2024-10-15"
             },
             {
-                "@type": "Question",
-                "name": "How quickly can you deploy security guards in Beverly Hills?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We pride ourselves on quick response times. For standard security needs, we can typically deploy guards within 24-48 hours. For emergency situations in Beverly Hills, we offer expedited service and can often provide security personnel within hours. Contact us for immediate assistance."
-                }
+                "@type": "BreadcrumbList",
+                "@id": "https://shieldwisesecurity.com/los-angeles/beverly-hills#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://shieldwisesecurity.com"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Los Angeles",
+                        "item": "https://shieldwisesecurity.com/los-angeles"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Beverly Hills Security Services",
+                        "item": "https://shieldwisesecurity.com/los-angeles/beverly-hills"
+                    }
+                ]
             },
             {
-                "@type": "Question",
-                "name": "Do you offer celebrity and executive protection services?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, we provide specialized executive protection and celebrity security services tailored to Beverly Hills clientele. Our team includes former law enforcement and military personnel trained in close protection techniques. We offer discreet security solutions for high-profile individuals, ensuring their safety while maintaining their privacy and lifestyle."
+                "@type": "Article",
+                "@id": "https://shieldwisesecurity.com/los-angeles/beverly-hills#article",
+                "headline": "Beverly Hills Security Services: Your Complete Guide",
+                "description": "Everything you need to know about premium security services in Beverly Hills, including types of security guards, costs, and how to choose the right security provider for luxury properties and events.",
+                "image": "https://shieldwisesecurity.com/img/beverly-hills-security-guide.jpg",
+                "author": {
+                    "@type": "Organization",
+                    "name": "ShieldWise Security",
+                    "url": "https://shieldwisesecurity.com"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "ShieldWise Security",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://shieldwisesecurity.com/img/shieldwise-logo.png"
+                    }
+                },
+                "datePublished": "2024-09-15",
+                "dateModified": "2024-10-28",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://shieldwisesecurity.com/los-angeles/beverly-hills"
                 }
             }
         ]
-    }
-    </script>
-
-    <!-- Review Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Review",
-        "itemReviewed": {
-            "@type": "SecurityService",
-            "name": "ShieldWise Security - Beverly Hills",
-            "sameAs": "https://shieldwisesecurity.com/los-angeles/beverly-hills"
-        },
-        "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-        },
-        "author": {
-            "@type": "Person",
-            "name": "Elizabeth Morgan"
-        },
-        "reviewBody": "ShieldWise Security has provided exceptional service for our Beverly Hills estate. Their professional guards demonstrate impeccable discretion and attention to detail. The comprehensive security protocols have given our family complete peace of mind while maintaining the aesthetic and lifestyle we value."
-    }
-    </script>
-
-    <!-- Breadcrumb Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://shieldwisesecurity.com"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Los Angeles",
-                "item": "https://shieldwisesecurity.com/los-angeles"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Beverly Hills Security Services",
-                "item": "https://shieldwisesecurity.com/los-angeles/beverly-hills"
-            },
-            {
-                "@type": "ListItem",
-                "position": 4,
-                "name": "Security Services Guide",
-                "item": "https://shieldwisesecurity.com/los-angeles/beverly-hills/security-guide"
-            }
-        ]
-    }
-    </script>
-
-    <!-- Article Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Beverly Hills Security Services: Your Complete Guide",
-        "description": "Everything you need to know about premium security services in Beverly Hills, including types of security guards, costs, and how to choose the right security provider for luxury properties and events.",
-        "image": "https://shieldwisesecurity.com/img/beverly-hills-security-guide.jpg",
-        "author": {
-            "@type": "Organization",
-            "name": "ShieldWise Security",
-            "url": "https://shieldwisesecurity.com"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "ShieldWise Security",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://shieldwisesecurity.com/img/shieldwise-logo.png"
-            }
-        },
-        "datePublished": "2024-09-15",
-        "dateModified": "2024-10-28"
     }
     </script>
 
@@ -631,80 +663,70 @@
                 <div class="col-lg-8">
                     <div class="accordion" id="beverlyHillsFAQ">
                         <!-- FAQ Item 1 -->
-                        <div class="card mb-3">
-                            <div class="card-header" id="headingOne">
-                                <h3 class="mb-0 h5">
-                                    <button class="btn btn-link btn-block text-left text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        What security services do you offer in Beverly Hills?
-                                    </button>
-                                </h3>
-                            </div>
-                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#beverlyHillsFAQ">
-                                <div class="card-body">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    What security services do you offer in Beverly Hills?
+                                </button>
+                            </h3>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#beverlyHillsFAQ">
+                                <div class="accordion-body">
                                     We offer a comprehensive range of security services in Beverly Hills, including luxury retail security, residential security for high-end properties, executive protection, event security, hotel security, and mobile patrol services. All our services are customized to meet the specific needs of each client in the Beverly Hills area.
                                 </div>
                             </div>
                         </div>
                         
                         <!-- FAQ Item 2 -->
-                        <div class="card mb-3">
-                            <div class="card-header" id="headingTwo">
-                                <h3 class="mb-0 h5">
-                                    <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Are your security guards licensed and insured?
-                                    </button>
-                                </h3>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#beverlyHillsFAQ">
-                                <div class="card-body">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Are your security guards licensed and insured?
+                                </button>
+                            </h3>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#beverlyHillsFAQ">
+                                <div class="accordion-body">
                                     Yes, all our security guards are fully licensed, bonded, and insured in accordance with California state regulations. They undergo rigorous background checks, receive comprehensive training, and hold valid guard cards issued by the Bureau of Security and Investigative Services (BSIS).
                                 </div>
                             </div>
                         </div>
                         
                         <!-- FAQ Item 3 -->
-                        <div class="card mb-3">
-                            <div class="card-header" id="headingThree">
-                                <h3 class="mb-0 h5">
-                                    <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        Do you provide executive protection for VIPs and celebrities in Beverly Hills?
-                                    </button>
-                                </h3>
-                            </div>
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#beverlyHillsFAQ">
-                                <div class="card-body">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Do you provide executive protection for VIPs and celebrities in Beverly Hills?
+                                </button>
+                            </h3>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#beverlyHillsFAQ">
+                                <div class="accordion-body">
                                     Yes, we offer specialized executive protection services for high-profile individuals in Beverly Hills. Our security professionals are trained in VIP protection protocols and understand the unique security challenges faced by celebrities and executives. Contact us to discuss your specific executive protection needs.
                                 </div>
                             </div>
                         </div>
                         
                         <!-- FAQ Item 4 -->
-                        <div class="card mb-3">
-                            <div class="card-header" id="headingFour">
-                                <h3 class="mb-0 h5">
-                                    <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        How quickly can you deploy security guards in Beverly Hills?
-                                    </button>
-                                </h3>
-                            </div>
-                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#beverlyHillsFAQ">
-                                <div class="card-body">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    How quickly can you deploy security guards in Beverly Hills?
+                                </button>
+                            </h3>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#beverlyHillsFAQ">
+                                <div class="accordion-body">
                                     We pride ourselves on quick response times. For standard security needs, we can typically deploy guards within 24-48 hours. For emergency situations in Beverly Hills, we offer expedited service and can often provide security personnel within hours. Contact us for immediate assistance.
                                 </div>
                             </div>
                         </div>
                         
                         <!-- FAQ Item 5 -->
-                        <div class="card">
-                            <div class="card-header" id="headingFive">
-                                <h3 class="mb-0 h5">
-                                    <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                        Do you offer security for luxury retail stores on Rodeo Drive?
-                                    </button>
-                                </h3>
-                            </div>
-                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#beverlyHillsFAQ">
-                                <div class="card-body">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    Do you offer security for luxury retail stores on Rodeo Drive?
+                                </button>
+                            </h3>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#beverlyHillsFAQ">
+                                <div class="accordion-body">
                                     Yes, we specialize in luxury retail security on Rodeo Drive and throughout Beverly Hills. Our guards are trained in high-end retail security protocols, loss prevention, and customer service excellence. We understand the unique balance of security and customer experience required in luxury retail environments.
                                 </div>
                             </div>
@@ -779,21 +801,29 @@
         <i class="fas fa-arrow-up"></i>
     </a>
     
-    <!-- JavaScript for Interactive Elements -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Optimized JavaScript Loading -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Back to Top Button Functionality
             const backToTopButton = document.querySelector('.back-to-top');
             
-            window.addEventListener('scroll', function() {
+            // Throttled scroll handler for better performance
+            let ticking = false;
+            function updateBackToTop() {
                 if (window.pageYOffset > 300) {
                     backToTopButton.classList.add('active');
                 } else {
                     backToTopButton.classList.remove('active');
+                }
+                ticking = false;
+            }
+            
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    requestAnimationFrame(updateBackToTop);
+                    ticking = true;
                 }
             });
             
@@ -805,17 +835,52 @@
                 });
             });
             
-            // Lazy load images for better performance
-            if ('loading' in HTMLImageElement.prototype) {
-                const images = document.querySelectorAll('img[loading="lazy"]');
-                images.forEach(img => {
-                    img.src = img.dataset.src;
+            // Enhanced lazy loading with Intersection Observer
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            if (img.dataset.src) {
+                                img.src = img.dataset.src;
+                                img.removeAttribute('data-src');
+                            }
+                            img.classList.remove('loading');
+                            observer.unobserve(img);
+                        }
+                    });
+                }, {
+                    rootMargin: '50px 0px'
                 });
+                
+                lazyImages.forEach(img => imageObserver.observe(img));
             } else {
-                // Fallback for browsers that don't support lazy loading
-                const script = document.createElement('script');
-                script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
-                document.body.appendChild(script);
+                // Fallback for older browsers
+                lazyImages.forEach(img => {
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                    }
+                });
+            }
+            
+            // Performance monitoring
+            if ('PerformanceObserver' in window) {
+                // Monitor Largest Contentful Paint
+                new PerformanceObserver((list) => {
+                    const entries = list.getEntries();
+                    const lastEntry = entries[entries.length - 1];
+                    console.log('LCP:', lastEntry.startTime);
+                }).observe({entryTypes: ['largest-contentful-paint']});
+                
+                // Monitor First Input Delay
+                new PerformanceObserver((list) => {
+                    const entries = list.getEntries();
+                    entries.forEach(entry => {
+                        console.log('FID:', entry.processingStart - entry.startTime);
+                    });
+                }).observe({entryTypes: ['first-input']});
             }
         });
     </script>
