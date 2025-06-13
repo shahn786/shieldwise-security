@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="https://schema.org/LocalBusiness">
+<html lang="en-US" itemscope itemtype="https://schema.org/LocalBusiness">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +7,18 @@
     <!-- Enhanced SEO Meta Tags -->
     <title>Premier Security Guard Services in Santa Monica CA | ShieldWise Security</title>
     <meta name="description" content="Elite security guard services in Santa Monica, CA. Licensed & insured guards for beaches, pier, Third Street Promenade, hotels, and exclusive events. 24/7 protection. Free quotes!">
-    <meta name="keywords" content="Santa Monica security guards, Third Street Promenade security, Santa Monica Pier security, beach security Santa Monica, event security Santa Monica, retail security Santa Monica, hotel security Santa Monica">
+    <meta name="author" content="ShieldWise Security">
     <meta name="robots" content="index, follow">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://shieldwisesecurity.com/los-angeles/santa-monica" />
+
+    <!-- Sitemap Link -->
+    <link rel="sitemap" href="/sitemap.xml">
+
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#1a3c6e">
+    <link rel="manifest" href="/manifest.json">
 
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Premier Security Guard Services in Santa Monica CA | ShieldWise Security">
@@ -19,27 +26,32 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://shieldwisesecurity.com/los-angeles/santa-monica">
     <meta property="og:image" content="https://shieldwisesecurity.com/img/santa-monica-security.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="ShieldWise Security">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@shieldwisesec">
     <meta name="twitter:title" content="Premier Santa Monica Security Guard Services | ShieldWise Security">
     <meta name="twitter:description" content="Licensed & insured security guards protecting beaches, promenade, pier, hotels, events and properties in Santa Monica, CA.">
     <meta name="twitter:image" content="https://shieldwisesecurity.com/img/santa-monica-security.jpg">
 
     <!-- Preload critical assets -->
-   
     <link rel="preload" href="/css/style-cities.css" as="style">
     <link rel="preload" href="/img/santa-monica-security.jpg" as="image">
 
+    <!-- DNS Prefetch and Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="/css/style-cities.css">
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
@@ -48,464 +60,214 @@
     <!-- Favicon -->
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
 
-    <!-- Enhanced Structured Data (JSON-LD) -->
+    <!-- Hreflang Tags -->
+    <link rel="alternate" hreflang="en-us" href="https://shieldwisesecurity.com/los-angeles/santa-monica">
+    <link rel="alternate" hreflang="es-us" href="https://shieldwisesecurity.com/es/los-angeles/santa-monica">
+    <link rel="alternate" hreflang="x-default" href="https://shieldwisesecurity.com/los-angeles/santa-monica">
+
+    <!-- Consolidated Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "SecurityService",
-        "name": "ShieldWise Security - Santa Monica",
-        "image": "https://shieldwisesecurity.com/img/santa-monica-security.jpg",
-        "description": "Professional security guard services in Santa Monica. Our trained and licensed security personnel protect beaches, the pier, Third Street Promenade, hotels, events, and properties 24/7.",
-        "priceRange": "$$-$$$",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1503 4th Street",
-            "addressLocality": "Santa Monica",
-            "addressRegion": "CA",
-            "postalCode": "90401",
-            "addressCountry": "US"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 34.0195,
-            "longitude": -118.4912
-        },
-        "url": "https://shieldwisesecurity.com/los-angeles/santa-monica",
-        "telephone": "+1-714-716-7430",
-        "openingHours": "Mo-Su 00:00-23:59",
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Santa Monica Security Services",
-            "itemListElement": [
-                {
-                    "@type": "OfferCatalog",
-                    "name": "Beach & Pier Security",
-                    "description": "Professional security guards for Santa Monica Beach and Pier areas."
+        "@graph": [
+            {
+                "@type": ["SecurityService", "LocalBusiness"],
+                "@id": "https://shieldwisesecurity.com/los-angeles/santa-monica#business",
+                "name": "ShieldWise Security - Santa Monica",
+                "image": "https://shieldwisesecurity.com/img/santa-monica-security.jpg",
+                "description": "Professional security guard services in Santa Monica. Our trained and licensed security personnel protect beaches, the pier, Third Street Promenade, hotels, events, and properties 24/7.",
+                "priceRange": "$$-$$$",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "1333 Third Street Promenade",
+                    "addressLocality": "Santa Monica",
+                    "addressRegion": "CA",
+                    "postalCode": "90401",
+                    "addressCountry": "US"
                 },
-                {
-                    "@type": "OfferCatalog",
-                    "name": "Promenade Security",
-                    "description": "Specialized security for Third Street Promenade and retail establishments."
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 34.0195,
+                    "longitude": -118.4912
                 },
-                {
+                "url": "https://shieldwisesecurity.com/los-angeles/santa-monica",
+                "telephone": "+1-714-716-7430",
+                "openingHours": "Mo-Su 00:00-23:59",
+                "hasOfferCatalog": {
                     "@type": "OfferCatalog",
-                    "name": "Hotel & Hospitality Security",
-                    "description": "Comprehensive security services for Santa Monica hotels and hospitality venues."
+                    "name": "Santa Monica Security Services",
+                    "itemListElement": [
+                        {
+                            "@type": "OfferCatalog",
+                            "name": "Beach & Pier Security",
+                            "description": "Professional security guards for Santa Monica Beach and Pier areas."
+                        },
+                        {
+                            "@type": "OfferCatalog",
+                            "name": "Promenade Security",
+                            "description": "Specialized security for Third Street Promenade and retail establishments."
+                        },
+                        {
+                            "@type": "OfferCatalog",
+                            "name": "Hotel & Hospitality Security",
+                            "description": "Comprehensive security services for Santa Monica hotels and hospitality venues."
+                        },
+                        {
+                            "@type": "OfferCatalog",
+                            "name": "Event Security",
+                            "description": "Professional security for Santa Monica events, festivals, and gatherings."
+                        }
+                    ]
                 },
-                {
-                    "@type": "OfferCatalog",
-                    "name": "Event Security",
-                    "description": "Professional security for Santa Monica events, festivals, and gatherings."
-                }
-            ]
-        },
-        "sameAs": [
-            "https://www.facebook.com/shieldwisesecurity",
-            "https://twitter.com/shieldwisesecurity",
-            "https://www.instagram.com/shieldwisesecurity",
-            "https://www.linkedin.com/company/shieldwisesecurity"
-        ],
-        "serviceArea": {
-            "@type": "GeoCircle",
-            "geoMidpoint": {
-                "@type": "GeoCoordinates",
-                "latitude": 34.0195,
-                "longitude": -118.4912
-            },
-            "geoRadius": "10000"
-        },
-        "areaServed": {
-            "@type": "City",
-            "name": "Santa Monica"
-        }
-    }
-    </script>
-
-    <!-- Aggregate Rating Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "AggregateRating",
-        "itemReviewed": {
-            "@type": "SecurityService",
-            "name": "ShieldWise Security - Santa Monica",
-            "sameAs": "https://shieldwisesecurity.com/los-angeles/santa-monica"
-        },
-        "ratingValue": "4.8",
-        "bestRating": "5",
-        "worstRating": "1",
-        "ratingCount": "76"
-    }
-    </script>
-
-    <!-- FAQ Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What security services do you offer in Santa Monica?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We offer a comprehensive range of security services in Santa Monica, including beach and pier security, promenade protection, hotel security, event security, retail security, residential security, armed and unarmed guards, and mobile patrol services. All our services are customized to meet the specific needs of Santa Monica's unique environment."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Do you provide security for Third Street Promenade businesses?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, we specialize in retail and commercial security for the Third Street Promenade area. Our experienced team provides loss prevention, customer safety, and property protection services tailored to the high-foot-traffic environment of Santa Monica's premier shopping district."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How quickly can you deploy security guards in Santa Monica?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We pride ourselves on quick response times. For standard security needs, we can typically deploy guards within 24-48 hours. For emergency situations in Santa Monica, we offer expedited service and can often provide security personnel within hours. Contact us for immediate assistance."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Do you provide security for Santa Monica beach events?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, we provide specialized security services for beach events, festivals, and gatherings in Santa Monica. Our guards are experienced in handling the unique challenges of beach environments, including crowd management, access control, and coordination with local authorities to ensure safe and successful events."
-                }
-            }
-        ]
-    }
-    </script>
-
-    <!-- Review Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Review",
-        "itemReviewed": {
-            "@type": "SecurityService",
-            "name": "ShieldWise Security - Santa Monica",
-            "sameAs": "https://shieldwisesecurity.com/los-angeles/santa-monica"
-        },
-        "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-        },
-        "author": {
-            "@type": "Person",
-            "name": "Michael Thompson"
-        },
-        "reviewBody": "ShieldWise Security has provided exceptional service for our hotel in Santa Monica. Their professional guards demonstrate excellent customer service skills while maintaining vigilant security. The detailed reports and communication have significantly improved our overall security protocols."
-    }
-    </script>
-
-    <!-- Breadcrumb Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://shieldwisesecurity.com"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Los Angeles",
-                "item": "https://shieldwisesecurity.com/los-angeles"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Santa Monica Security Services",
-                "item": "https://shieldwisesecurity.com/los-angeles/santa-monica"
-            }
-        ]
-    }
-    </script>
-
-    <!-- Article Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Santa Monica Security Services: Your Complete Guide",
-        "description": "Everything you need to know about professional security services in Santa Monica, including beach patrol, promenade security, hotel protection, and event security solutions.",
-        "image": "https://shieldwisesecurity.com/img/santa-monica-security-guide.jpg",
-        "author": {
-            "@type": "Organization",
-            "name": "ShieldWise Security",
-            "url": "https://shieldwisesecurity.com"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "ShieldWise Security",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://shieldwisesecurity.com/img/shieldwise-logo.png"
-            }
-        },
-        "datePublished": "2024-09-01",
-        "dateModified": "2024-10-28"
-    }
-    </script>
-
-    <!-- Enhanced SEO Schema Markup -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "ShieldWise Security - Santa Monica",
-        "image": "https://shieldwisesecurity.com/img/santa-monica-security.jpg",
-        "url": "https://shieldwisesecurity.com/los-angeles/santa-monica",
-        "telephone": "+1-714-716-7430",
-        "priceRange": "$$-$$$",
-        "description": "Premier security guard services in Santa Monica, CA. Protecting businesses, beaches, Third Street Promenade, and properties with trained and licensed security guards available 24/7.",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1333 Third Street Promenade",
-            "addressLocality": "Santa Monica",
-            "addressRegion": "CA",
-            "postalCode": "90401",
-            "addressCountry": "US"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 34.0195,
-            "longitude": -118.4912
-        },
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-                "Sunday"
-            ],
-            "opens": "00:00",
-            "closes": "23:59"
-        }
-    }
-    </script>
-
-    <!-- CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="/css/style-cities.css">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-    <!-- Favicon -->
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-
-    <!-- Aggregate Rating Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "AggregateRating",
-        "itemReviewed": {
-            "@type": "SecurityService",
-            "name": "ShieldWise Security - Santa Monica",
-            "sameAs": "https://shieldwisesecurity.com/los-angeles/santa-monica"
-        },
-        "ratingValue": "4.8",
-        "bestRating": "5",
-        "worstRating": "1",
-        "ratingCount": "76"
-    }
-    </script>
-
-    <!-- FAQ Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What security services do you offer in Santa Monica?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We offer a comprehensive range of security services in Santa Monica, including beach and pier security, promenade protection, hotel security, event security, retail security, residential security, armed and unarmed guards, and mobile patrol services. All our services are customized to meet the specific needs of Santa Monica's unique environment."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Do you provide security for Third Street Promenade businesses?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, we specialize in retail and commercial security for the Third Street Promenade area. Our experienced team provides loss prevention, customer safety, and property protection services tailored to the high-foot-traffic environment of Santa Monica's premier shopping district."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How quickly can you deploy security guards in Santa Monica?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We pride ourselves on quick response times. For standard security needs, we can typically deploy guards within 24-48 hours. For emergency situations in Santa Monica, we offer expedited service and can often provide security personnel within hours. Contact us for immediate assistance."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Do you provide security for Santa Monica beach events?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, we provide specialized security services for beach events, festivals, and gatherings in Santa Monica. Our guards are experienced in handling the unique challenges of beach environments, including crowd management, access control, and coordination with local authorities to ensure safe and successful events."
-                }
-            }
-        ]
-    }
-    </script>
-
-    <!-- Review Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Review",
-        "itemReviewed": {
-            "@type": "SecurityService",
-            "name": "ShieldWise Security - Santa Monica",
-            "sameAs": "https://shieldwisesecurity.com/los-angeles/santa-monica"
-        },
-        "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-        },
-        "author": {
-            "@type": "Person",
-            "name": "Michael Thompson"
-        },
-        "reviewBody": "ShieldWise Security has provided exceptional service for our hotel in Santa Monica. Their professional guards demonstrate excellent customer service skills while maintaining vigilant security. The detailed reports and communication have significantly improved our overall security protocols."
-    }
-    </script>
-
-    <!-- Breadcrumb Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://shieldwisesecurity.com"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Los Angeles",
-                "item": "https://shieldwisesecurity.com/los-angeles"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Santa Monica Security Services",
-                "item": "https://shieldwisesecurity.com/los-angeles/santa-monica"
-            }
-        ]
-    }
-    </script>
-
-    <!-- Article Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Santa Monica Security Services: Your Complete Guide",
-        "description": "Everything you need to know about professional security services in Santa Monica, including beach patrol, promenade security, hotel protection, and event security solutions.",
-        "image": "https://shieldwisesecurity.com/img/santa-monica-security-guide.jpg",
-        "author": {
-            "@type": "Organization",
-            "name": "ShieldWise Security",
-            "url": "https://shieldwisesecurity.com"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "ShieldWise Security",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://shieldwisesecurity.com/img/shieldwise-logo.png"
-            }
-        },
-        "datePublished": "2024-09-01",
-        "dateModified": "2024-10-28"
-    }
-    </script>
-
-        <!-- Enhanced Schema Markup for SEO -->
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "ShieldWise Security - Santa Monica",
-            "image": "https://shieldwisesecurity.com/img/santa-monica-security.jpg",
-            "url": "https://shieldwisesecurity.com/los-angeles/santa-monica",
-            "telephone": "+1-714-716-7430",
-            "priceRange": "$$-$$$",
-            "description": "Professional security guard services in Santa Monica, CA. ShieldWise Security provides comprehensive security solutions including beach property protection, retail security, event security, and tourist area protection with trained and licensed guards available 24/7.",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "1299 Ocean Ave",
-                "addressLocality": "Santa Monica",
-                "addressRegion": "CA",
-                "postalCode": "90401",
-                "addressCountry": "US"
-            },
-            "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 34.0195,
-                "longitude": -118.4912
-            },
-            "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday",
-                    "Sunday"
+                "sameAs": [
+                    "https://www.facebook.com/shieldwisesecurity",
+                    "https://www.twitter.com/shieldwisesec",
+                    "https://www.instagram.com/shieldwisesecurity",
+                    "https://www.linkedin.com/company/shieldwisesecurity"
                 ],
-                "opens": "00:00",
-                "closes": "23:59"
+                "serviceArea": {
+                    "@type": "GeoCircle",
+                    "geoMidpoint": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 34.0195,
+                        "longitude": -118.4912
+                    },
+                    "geoRadius": "10000"
+                },
+                "areaServed": {
+                    "@type": "City",
+                    "name": "Santa Monica"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.8",
+                    "bestRating": "5",
+                    "worstRating": "1",
+                    "ratingCount": "76"
+                }
             },
-            "sameAs": [
-                "https://www.facebook.com/shieldwisesecurity",
-                "https://twitter.com/shieldwisesecurity",
-                "https://www.instagram.com/shieldwisesecurity",
-                "https://www.linkedin.com/company/shieldwisesecurity"
-            ],
-            "areaServed": {
-                "@type": "City",
-                "name": "Santa Monica"
+            {
+                "@type": "Organization",
+                "@id": "https://shieldwisesecurity.com#organization",
+                "name": "ShieldWise Security Services",
+                "url": "https://shieldwisesecurity.com",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://shieldwisesecurity.com/img/shieldwise-logo.png"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/shieldwisesecurity",
+                    "https://www.twitter.com/shieldwisesec",
+                    "https://www.instagram.com/shieldwisesecurity",
+                    "https://www.linkedin.com/company/shieldwisesecurity"
+                ]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://shieldwisesecurity.com"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Los Angeles",
+                        "item": "https://shieldwisesecurity.com/los-angeles"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Santa Monica Security Services",
+                        "item": "https://shieldwisesecurity.com/los-angeles/santa-monica"
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What security services do you offer in Santa Monica?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We offer a comprehensive range of security services in Santa Monica, including beach and pier security, promenade protection, hotel security, event security, retail security, residential security, armed and unarmed guards, and mobile patrol services. All our services are customized to meet the specific needs of Santa Monica's unique environment."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do you provide security for Third Street Promenade businesses?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, we specialize in retail and commercial security for the Third Street Promenade area. Our experienced team provides loss prevention, customer safety, and property protection services tailored to the high-foot-traffic environment of Santa Monica's premier shopping district."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How quickly can you deploy security guards in Santa Monica?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We pride ourselves on quick response times. For standard security needs, we can typically deploy guards within 24-48 hours. For emergency situations in Santa Monica, we offer expedited service and can often provide security personnel within hours. Contact us for immediate assistance."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do you provide security for Santa Monica beach events?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, we provide specialized security services for beach events, festivals, and gatherings in Santa Monica. Our guards are experienced in handling the unique challenges of beach environments, including crowd management, access control, and coordination with local authorities to ensure safe and successful events."
+                        }
+                    }
+                ]
+            },
+            {
+                "@type": "Review",
+                "itemReviewed": {
+                    "@type": "SecurityService",
+                    "name": "ShieldWise Security - Santa Monica",
+                    "sameAs": "https://shieldwisesecurity.com/los-angeles/santa-monica"
+                },
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Michael Thompson"
+                },
+                "reviewBody": "ShieldWise Security has provided exceptional service for our hotel in Santa Monica. Their professional guards demonstrate excellent customer service skills while maintaining vigilant security. The detailed reports and communication have significantly improved our overall security protocols."
+            },
+            {
+                "@type": "Article",
+                "headline": "Santa Monica Security Services: Your Complete Guide",
+                "description": "Everything you need to know about professional security services in Santa Monica, including beach patrol, promenade security, hotel protection, and event security solutions.",
+                "image": "https://shieldwisesecurity.com/img/santa-monica-security-guide.jpg",
+                "author": {
+                    "@type": "Organization",
+                    "name": "ShieldWise Security",
+                    "url": "https://shieldwisesecurity.com"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "ShieldWise Security",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://shieldwisesecurity.com/img/shieldwise-logo.png"
+                    }
+                },
+                "datePublished": "2024-09-01",
+                "dateModified": "2024-10-28"
             }
-        }
-        </script>
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Header Section -->
     <%- include('../partials/Header') %>
-
-    <!-- Emergency Response Section for Voice Search -->
-   
 
     <!-- Hero Section with Background Image -->
     <section class="hero-downtown">
@@ -526,7 +288,7 @@
                     <p>Our team of highly trained and licensed security professionals understands the diverse security requirements across different neighborhoods in Santa Monica, from the bustling downtown and Third Street Promenade to the beachfront areas and residential communities. We combine advanced security protocols with a customer-focused approach to create security solutions that address your specific concerns.</p>
                 </div>
                 <div class="image-content">
-                    <img src="/img/santa-monica-security.jpg" alt="Professional Security Guards in Santa Monica" loading="lazy">
+                    <img src="/img/santa-monica-security.jpg" alt="Professional Security Guards protecting Santa Monica properties and businesses" loading="lazy">
                 </div>
             </div>
         </div>
@@ -606,15 +368,15 @@
                     <h2 class="mb-4">Santa Monica Security Challenges</h2>
                     <p>Santa Monica presents unique security challenges for businesses and properties. As a popular tourist destination with high-traffic areas, beachfront properties, and a vibrant downtown, Santa Monica requires specialized security approaches.</p>
                     <ul class="list-unstyled">
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> High tourist traffic requiring vigilant monitoring</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Retail centers with specific loss prevention needs</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Beachfront areas requiring specialized security measures</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Coordination with local law enforcement for comprehensive protection</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Upscale residential communities needing discrete security</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> High tourist traffic requiring vigilant monitoring</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Retail centers with specific loss prevention needs</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Beachfront areas requiring specialized security measures</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Coordination with local law enforcement for comprehensive protection</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Upscale residential communities needing discrete security</li>
                     </ul>
                 </div>
                 <div class="col-lg-6">
-                    <img src="/img/santa-monica-pier.jpg" alt="Santa Monica Security Services" class="img-fluid rounded shadow">
+                    <img src="/img/santa-monica-pier.jpg" alt="Santa Monica Pier requiring specialized security services" class="img-fluid rounded shadow">
                 </div>
             </div>
         </div>
@@ -632,25 +394,25 @@
             <div class="row">
                 <div class="col-md-6">
                     <ul class="list-unstyled">
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Downtown Santa Monica</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Third Street Promenade</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Santa Monica Pier</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Ocean Park</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger me-2"></i> Downtown Santa Monica</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger me-2"></i> Third Street Promenade</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger me-2"></i> Santa Monica Pier</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger me-2"></i> Ocean Park</li>
                     </ul>
                 </div>
                 <div class="col-md-6">
                     <ul class="list-unstyled">
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Wilshire Montana</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Mid-City</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Pico District</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Sunset Park</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger me-2"></i> Wilshire Montana</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger me-2"></i> Mid-City</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger me-2"></i> Pico District</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger me-2"></i> Sunset Park</li>
                     </ul>
                 </div>
             </div>
             <div class="row mt-4">
                 <div class="col-12">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26455.614027970697!2d-118.50989522270508!3d34.01947565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2a4cec2910019%3A0xb4170ab5ff23f5ab!2sSanta%20Monica%2C%20CA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26455.614027970697!2d-118.50989522270508!3d34.01947565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2a4cec2910019%3A0xb4170ab5ff23f5ab!2sSanta%20Monica%2C%20CA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" title="Map showing Santa Monica security service coverage areas"></iframe>
                     </div>
                 </div>
             </div>
@@ -875,135 +637,14 @@
     <%- include('../partials/Footer') %>
 
     <!-- Back to Top Button -->
+    ```
     <a href="#" class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </a>
 
-        <!-- Enhanced Schema Markup for Santa Monica SEO -->
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "ShieldWise Security - Santa Monica",
-            "image": "https://shieldwisesecurity.com/img/santa-monica-security.jpg",
-            "url": "https://shieldwisesecurity.com/los-angeles/santa-monica",
-            "telephone": "+1-310-555-1234",
-            "priceRange": "$$-$$$",
-            "description": "ShieldWise Security provides top-rated security guard services in Santa Monica, CA, specializing in protecting businesses, retail stores, events, residential areas, and beachfront properties. Our licensed guards offer 24/7 customized security solutions.",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "1350 3rd Street Promenade, Suite 220",
-                "addressLocality": "Santa Monica",
-                "addressRegion": "CA",
-                "postalCode": "90401",
-                "addressCountry": "US"
-            },
-            "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 34.0167,
-                "longitude": -118.4967
-            },
-            "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday",
-                    "Sunday"
-                ],
-                "opens": "00:00",
-                "closes": "23:59"
-            },
-            "sameAs": [
-                "https://www.facebook.com/shieldwisesecurity",
-                "https://twitter.com/shieldwisesecurity",
-                "https://www.instagram.com/shieldwisesecurity",
-                "https://www.linkedin.com/company/shieldwisesecurity"
-            ],
-            "areaServed": {
-                "@type": "City",
-                "name": "Santa Monica"
-            },
-            "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Santa Monica Security Services",
-                "itemListElement": [
-                    {
-                        "@type": "Offer",
-                        "itemOffered": {
-                            "@type": "Service",
-                            "name": "Retail & Commercial Security",
-                            "description": "Customized security solutions for retail stores and commercial businesses along 3rd Street Promenade and Main Street in Santa Monica."
-                        }
-                    },
-                    {
-                        "@type": "Offer",
-                        "itemOffered": {
-                            "@type": "Service",
-                            "name": "Event Security",
-                            "description": "Professional security services for events at the Santa Monica Pier, local festivals, and corporate gatherings."
-                        }
-                    },
-                    {
-                        "@type": "Offer",
-                        "itemOffered": {
-                            "@type": "Service",
-                            "name": "Residential Security",
-                            "description": "Comprehensive protection services for residential buildings, condominiums, and beachfront properties in Santa Monica."
-                        }
-                    },
-                    {
-                        "@type": "Offer",
-                        "itemOffered": {
-                            "@type": "Service",
-                            "name": "Beachfront & Marina Security",
-                            "description": "Dedicated security patrols and monitoring services specifically designed for beachfront properties, marinas, and coastal areas in Santa Monica."
-                        }
-                    }
-                ]
-            },
-            "review": [
-                {
-                    "@type": "Review",
-                    "author": {
-                        "@type": "Person",
-                        "name": "Emily Watson"
-                    },
-                    "reviewRating": {
-                        "@type": "Rating",
-                        "ratingValue": "5",
-                        "bestRating": "5"
-                    },
-                    "datePublished": "2024-02-18",
-                    "reviewBody": "ShieldWise Security has provided exceptional security for our retail locations on the Promenade. Their team is professional, reliable, and has significantly improved safety."
-                },
-                {
-                    "@type": "Review",
-                    "author": {
-                        "@type": "Person",
-                        "name": "James Anderson"
-                    },
-                    "reviewRating": {
-                        "@type": "Rating",
-                        "ratingValue": "5",
-                        "bestRating": "5"
-                    },
-                    "datePublished": "2024-03-12",
-                    "reviewBody": "Highly recommend ShieldWise Security for any Santa Monica event. Their staff ensured everything ran smoothly and securely at our recent Pier festival."
-                }
-            ],
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "reviewCount": "82",
-                "bestRating": "5"
-            }
-        }
-        </script>
+    <!-- Essential Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" defer></script>
 
-    </body>
-
+</body>
 </html>
