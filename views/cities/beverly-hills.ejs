@@ -61,7 +61,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <!-- Favicon -->
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
@@ -69,6 +69,62 @@
     <!-- Additional Performance Optimizations -->
     <meta name="theme-color" content="#1a3c6e">
     <link rel="manifest" href="/manifest.json">
+    
+    <!-- Fix Font Awesome icon display -->
+    <style>
+        /* Ensure Font Awesome icons display properly */
+        .fas, .far, .fab, .fal, .fad, .fa {
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro", "Font Awesome 6 Brands" !important;
+            font-weight: 900 !important;
+            font-style: normal !important;
+            display: inline-block !important;
+            text-rendering: auto !important;
+            -webkit-font-smoothing: antialiased !important;
+            -moz-osx-font-smoothing: grayscale !important;
+        }
+        
+        .far {
+            font-weight: 400 !important;
+        }
+        
+        .fab {
+            font-family: "Font Awesome 6 Brands" !important;
+            font-weight: 400 !important;
+        }
+        
+        /* Fix specific icons that might have issues */
+        .fa-map-marker-alt:before {
+            content: "\f3c5" !important;
+        }
+        
+        .fa-certificate:before {
+            content: "\f0a3" !important;
+        }
+        
+        .fa-clock:before {
+            content: "\f017" !important;
+        }
+        
+        .fa-shield-alt:before {
+            content: "\f3ed" !important;
+        }
+        
+        .fa-check-circle:before {
+            content: "\f058" !important;
+        }
+        
+        .fa-star:before {
+            content: "\f005" !important;
+        }
+        
+        .fa-phone-alt:before {
+            content: "\f879" !important;
+        }
+        
+        .fa-arrow-up:before {
+            content: "\f062" !important;
+        }
+    </style>
     
     <!-- Resource Hints for Better Performance -->
     <link rel="dns-prefetch" href="//www.google.com">
@@ -369,7 +425,7 @@
             <h1>Beverly Hills Security Services</h1>
             <h2>Protecting luxury businesses, residences, and properties with premium security solutions</h2>
             <a href="/get-quote" class="btn btn-primary btn-lg">Get a Free Security Quote</a>
-            <p class="mt-3"><a href="tel:+17147167430" class="text-white"><i class="fas fa-phone-alt mr-2"></i>(714) 716-7430</a> - Available 24/7</p>
+            <p class="mt-3"><a href="tel:+17147167430" class="text-white"><i class="fas fa-phone me-2"></i>(714) 716-7430</a> - Available 24/7</p>
         </div>
     </section>
     
@@ -465,7 +521,7 @@
                     <div class="card h-100 shadow-sm">
                         <div class="card-body">
                             <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-certificate text-primary mr-3" style="font-size: 1.8rem;"></i>
+                                <i class="fas fa-certificate text-primary me-3" style="font-size: 1.8rem;"></i>
                                 <h3 class="h5 m-0">Licensed & Insured Guards</h3>
                             </div>
                             <p class="card-text">All ShieldWise security personnel are fully licensed by the California Bureau of Security and Investigative Services. We maintain comprehensive insurance coverage, giving Beverly Hills clients complete peace of mind.</p>
@@ -476,7 +532,7 @@
                     <div class="card h-100 shadow-sm">
                         <div class="card-body">
                             <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-clock text-primary mr-3" style="font-size: 1.8rem;"></i>
+                                <i class="fas fa-clock text-primary me-3" style="font-size: 1.8rem;"></i>
                                 <h3 class="h5 m-0">24/7 Availability</h3>
                             </div>
                             <p class="card-text">Security threats don't follow a 9-to-5 schedule. Our Beverly Hills security teams are available around the clock, providing continuous protection when you need it most, including holidays and weekends.</p>
@@ -487,7 +543,7 @@
                     <div class="card h-100 shadow-sm">
                         <div class="card-body">
                             <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-map-marked-alt text-primary mr-3" style="font-size: 1.8rem;"></i>
+                                <i class="fas fa-map-marked-alt text-primary me-3" style="font-size: 1.8rem;"></i>
                                 <h3 class="h5 m-0">Local Beverly Hills Knowledge</h3>
                             </div>
                             <p class="card-text">Our security teams understand Beverly Hills' unique security landscape, from Rodeo Drive to Trousdale Estates. This local expertise ensures tailored security solutions that address area-specific threats.</p>
@@ -498,7 +554,7 @@
                     <div class="card h-100 shadow-sm">
                         <div class="card-body">
                             <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-shield-alt text-primary mr-3" style="font-size: 1.8rem;"></i>
+                                <i class="fas fa-shield-alt text-primary me-3" style="font-size: 1.8rem;"></i>
                                 <h3 class="h5 m-0">Custom Security Plans</h3>
                             </div>
                             <p class="card-text">Every Beverly Hills business has unique security needs. We don't provide one-size-fits-all solutions. Instead, we create custom security plans based on detailed risk assessments of your specific property or event.</p>
@@ -517,11 +573,11 @@
                     <h2 class="mb-4">Beverly Hills Security Challenges</h2>
                     <p>Beverly Hills presents unique security challenges for businesses and properties. As a hub for luxury shopping, high-end residences, and celebrity presence, Beverly Hills requires specialized security approaches tailored to its exclusive environment.</p>
                     <ul class="list-unstyled">
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Protection of high-value merchandise and luxury goods in retail establishments</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Maintaining privacy and security for high-profile individuals and celebrities</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Securing exclusive events and private gatherings with discretion</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Balancing visible security with discreet professionalism in luxury settings</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Coordination with local law enforcement for comprehensive protection</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Protection of high-value merchandise and luxury goods in retail establishments</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Maintaining privacy and security for high-profile individuals and celebrities</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Securing exclusive events and private gatherings with discretion</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Balancing visible security with discreet professionalism in luxury settings</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Coordination with local law enforcement for comprehensive protection</li>
                     </ul>
                 </div>
                 <div class="col-lg-6">
@@ -735,7 +791,7 @@
                     <h2 class="mb-4">Ready to Secure Your Beverly Hills Property?</h2>
                     <p class="lead mb-5">Contact ShieldWise Security today for a customized security solution designed specifically for your Beverly Hills location. Our team of security experts will work with you to develop a comprehensive security plan that addresses your unique challenges.</p>
                     <a href="/get-quote" class="btn btn-light btn-lg mr-3 mb-3">Get a Free Quote</a>
-                    <a href="tel:+17147167430" class="btn btn-outline-light btn-lg mb-3"><i class="fas fa-phone-alt mr-2"></i>Call (714) 716-7430</a>
+                    <a href="tel:+17147167430" class="btn btn-outline-light btn-lg mb-3"><i class="fas fa-phone me-2"></i>Call (714) 716-7430</a>
                 </div>
             </div>
         </div>
