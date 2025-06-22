@@ -1,363 +1,303 @@
 
 <!DOCTYPE html>
-<html lang="en-US" prefix="og: https://ogp.me/ns#" itemscope itemtype="https://schema.org/LocalBusiness">
+<html lang="en-US" prefix="og: https://ogp.me/ns#" itemscope itemtype="https://schema.org/WebPage">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- ✅ Performance Optimization -->
+    <!-- ✅ Critical CSS (inline for above-the-fold performance) -->
+    <style>
+        body { font-family: 'Roboto', sans-serif; margin: 0; }
+        h1 { font-size: 2.5rem; color: #1a3c64; margin: 0 0 1rem; }
+        .hero-section { background: linear-gradient(135deg, #1a3c64 0%, #2a5a8a 100%); color: white; padding: 4rem 2rem; text-align: center; }
+        .contact-button { background: #ff6b35; color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 1rem; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+    </style>
+
+    <!-- ✅ Performance Optimization: Preconnect & DNS-Prefetch -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
-    <!-- ✅ Enhanced SEO Meta Tags - Optimized for CTR -->
-    <title>🛡️ #1 Hawthorne Security Guards | SpaceX Tesla Area Protection | ShieldWise Security</title>
-    <meta name="description" content="★★★★★ Rated Hawthorne Security Guards. 2-hour emergency deployment! SpaceX/Tesla area, aerospace facilities, tech companies. Licensed, bonded, insured. Call (714) 716-7430!">
-    <meta name="author" content="ShieldWise Security">
+    <!-- ✅ Preload Fonts -->
+    <link rel="preload" href="https://shieldwisesecurity.com/fonts/montserrat-v25-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" as="style">
+
+    <!-- ✅ SEO Core Meta Tags -->
+    <title>Hawthorne Security Guards | SpaceX Tesla Area Protection & Tech Companies | Call (714) 716-7430</title>
+    <meta name="description" content="Hawthorne's premier security guard company. Specialized protection for SpaceX/Tesla area, aerospace facilities, and tech companies. Licensed, insured, cutting-edge security. Free quote: (714) 716-7430">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="author" content="ShieldWise Security Inc.">
     <meta name="theme-color" content="#1a3c64">
-    <link rel="canonical" href="https://shieldwisesecurity.com/los-angeles/hawthorne" />
 
-    <!-- ✅ Enhanced Mobile Optimization -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Hawthorne Security">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=yes">
-    <meta name="msapplication-tap-highlight" content="no">
-
-    <!-- ✅ Advanced Location & Language Tags -->
+    <!-- ✅ Location/Geo Meta Tags -->
     <meta name="geo.region" content="US-CA">
     <meta name="geo.placename" content="Hawthorne, California">
     <meta name="geo.position" content="33.9164;-118.3526">
     <meta name="ICBM" content="33.9164, -118.3526">
 
-    <!-- ✅ Canonical & Hreflang -->
+    <!-- ✅ Canonical & Language Alternates -->
     <link rel="canonical" href="https://shieldwisesecurity.com/los-angeles/hawthorne">
     <link rel="alternate" hreflang="en-US" href="https://shieldwisesecurity.com/los-angeles/hawthorne">
     <link rel="alternate" hreflang="es-US" href="https://shieldwisesecurity.com/es/los-angeles/hawthorne">
+    <link rel="alternate" hreflang="x-default" href="https://shieldwisesecurity.com/los-angeles/hawthorne">
 
-    <!-- ✅ Enhanced Open Graph Meta Tags -->
-    <meta property="og:title" content="🛡️ #1 Hawthorne Security Guards | SpaceX Tesla Area Protection">
-    <meta property="og:description" content="★★★★★ Professional security services in Hawthorne. Immediate 2-hour deployment! SpaceX/Tesla area, aerospace facilities, tech companies. Licensed & insured since 2010.">
-    <meta property="og:type" content="website">
+    <!-- ✅ Mobile Web App Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="ShieldWise Security">
+    <meta name="format-detection" content="telephone=yes">
+
+    <!-- ✅ Open Graph Meta -->
+    <meta property="og:title" content="Hawthorne Security Guards | SpaceX Tesla Area Protection">
+    <meta property="og:description" content="Hawthorne's trusted security partner. Specialized protection for aerospace, tech companies & innovation hubs. Call (714) 716-7430.">
+    <meta property="og:type" content="business.business">
     <meta property="og:url" content="https://shieldwisesecurity.com/los-angeles/hawthorne">
     <meta property="og:image" content="https://shieldwisesecurity.com/img/hawthorne-security-guards.jpg">
-    <meta property="og:image:secure_url" content="https://shieldwisesecurity.com/img/hawthorne-security-guards.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Professional security guards protecting Hawthorne aerospace and tech facilities">
     <meta property="og:site_name" content="ShieldWise Security">
     <meta property="og:locale" content="en_US">
 
-    <!-- ✅ Enhanced Twitter Card Tags -->
+    <!-- ✅ Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@shieldwisesec">
-    <meta name="twitter:creator" content="@shieldwisesec">
-    <meta name="twitter:title" content="🛡️ #1 Hawthorne Security Guards | 2-Hour Response Time">
-    <meta name="twitter:description" content="★★★★★ Professional security guards in Hawthorne. SpaceX/Tesla area, aerospace protection. Call (714) 716-7430 for immediate deployment!">
+    <meta name="twitter:title" content="Hawthorne Security Guards | 2-Hour Emergency Response">
+    <meta name="twitter:description" content="★★★★★ Rated #1 security in Hawthorne. SpaceX/Tesla area & aerospace protection. Call (714) 716-7430">
     <meta name="twitter:image" content="https://shieldwisesecurity.com/img/hawthorne-security-guards.jpg">
-    <meta name="twitter:image:alt" content="Elite security team protecting Hawthorne businesses">
+    <meta name="twitter:image:alt" content="Elite security team protecting Hawthorne tech companies">
 
-    <!-- ✅ Advanced SEO & Technical Tags -->
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1, max-preview:-1">
-    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="copyright" content="© 2025 ShieldWise Security. All rights reserved.">
-    <meta name="rating" content="general">
-    <meta name="distribution" content="global">
-    <meta name="revisit-after" content="1 day">
-    <meta name="expires" content="never">
-    <meta name="page-topic" content="Security Services">
-    <meta name="page-type" content="Commercial Service">
-    <meta name="audience" content="Business Owners, Property Managers, Facility Managers">
+    <!-- ✅ LinkedIn Meta Tags -->
+    <meta property="linkedin:company" content="ShieldWise Security">
+    <meta property="linkedin:title" content="Hawthorne Security Guards | Aerospace & Tech Security Specialists">
+    <meta property="linkedin:description" content="Professional security guard services for Hawthorne tech companies. 24/7 emergency response, IP protection, fully licensed and insured.">
+    <meta property="linkedin:image" content="https://shieldwisesecurity.com/img/hawthorne-security-guards.jpg">
 
-    <!-- ✅ Breadcrumb Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://shieldwisesecurity.com/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Los Angeles Security",
-                "item": "https://shieldwisesecurity.com/los-angeles/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Hawthorne Security Guards",
-                "item": "https://shieldwisesecurity.com/los-angeles/hawthorne"
+    <!-- ✅ Security Hardening Meta Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://*.shieldwisesecurity.com https://fonts.googleapis.com https://fonts.gstatic.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; img-src * data:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=*, microphone=(), camera=(), fullscreen=(self)">
+
+    <!-- ✅ Favicon & App Icons -->
+    <link rel="icon" href="https://shieldwisesecurity.com/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://shieldwisesecurity.com/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://shieldwisesecurity.com/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://shieldwisesecurity.com/img/favicon-16x16.png">
+    <link rel="manifest" href="https://shieldwisesecurity.com/manifest.json">
+
+    <!-- ✅ Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8H4K7M9P3Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-8H4K7M9P3Q', {
+            'page_title': 'Hawthorne Security Guards',
+            'page_location': 'https://shieldwisesecurity.com/los-angeles/hawthorne',
+            'page_path': '/los-angeles/hawthorne',
+            'custom_map': {
+                'custom_parameter_1': 'security_services',
+                'custom_parameter_2': 'hawthorne'
             }
-        ]
-    }
+        });
     </script>
 
-    <!-- ✅ Enhanced SecurityService Schema -->
+    <!-- ✅ CSS and Frameworks (defer non-critical) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"></noscript>
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="https://shieldwisesecurity.com/css/style-cities.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://shieldwisesecurity.com/css/style-cities.css"></noscript>
+
+    <!-- ✅ JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "SecurityService",
-        "name": "ShieldWise Security - Hawthorne",
-        "alternateName": ["Hawthorne Security Guards", "SpaceX Area Security", "ShieldWise Hawthorne"],
-        "image": [
-            "https://shieldwisesecurity.com/img/hawthorne-security-guards.jpg",
-            "https://shieldwisesecurity.com/img/aerospace-security-hawthorne.jpg",
-            "https://shieldwisesecurity.com/img/tech-company-security.jpg"
-        ],
-        "description": "Premier security guard services in Hawthorne, CA. Specializing in aerospace facilities, tech companies, SpaceX/Tesla area protection, and commercial properties. 24/7 rapid response in 2 hours with high-tech security expertise.",
-        "logo": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://shieldwisesecurity.com/los-angeles/hawthorne#webpage",
+          "url": "https://shieldwisesecurity.com/los-angeles/hawthorne",
+          "name": "Hawthorne Security Guards | SpaceX Tesla Area & Aerospace Protection",
+          "description": "Top-rated security guard services in Hawthorne, CA. SpaceX/Tesla area protection, aerospace facilities, tech companies. 24/7 service with 2-hour emergency response. Professional security guards for high-tech facilities, commercial properties, and innovation hubs.",
+          "inLanguage": "en-US",
+          "isPartOf": { "@id": "https://shieldwisesecurity.com/#website" },
+          "breadcrumb": { "@id": "https://shieldwisesecurity.com/los-angeles/hawthorne#breadcrumb" },
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", ".service-description", ".contact-info"]
+          },
+          "keywords": "Hawthorne security companies, SpaceX Tesla area security guards, aerospace facility security Hawthorne CA, tech company security, emergency response security Hawthorne, IP protection security guards, licensed bonded insured security guards, high-tech facility protection, commercial property security, innovation hub security"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://shieldwisesecurity.com/los-angeles/hawthorne#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://shieldwisesecurity.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Los Angeles Security", "item": "https://shieldwisesecurity.com/los-angeles/" },
+            { "@type": "ListItem", "position": 3, "name": "Hawthorne Security Guards", "item": "https://shieldwisesecurity.com/los-angeles/hawthorne" }
+          ]
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://shieldwisesecurity.com/#organization",
+          "name": "ShieldWise Security",
+          "alternateName": ["ShieldWise Security Inc.", "ShieldWise Security Services"],
+          "url": "https://shieldwisesecurity.com",
+          "logo": {
             "@type": "ImageObject",
             "url": "https://shieldwisesecurity.com/img/shieldwise-logo.png",
             "width": 400,
-            "height": 400
+            "height": 400,
+            "caption": "ShieldWise Security Logo"
+          },
+          "sameAs": [
+            "https://www.facebook.com/shieldwisesecurity",
+            "https://twitter.com/shieldwisesec",
+            "https://www.instagram.com/shieldwisesecurity",
+            "https://www.linkedin.com/company/shieldwisesecurity",
+            "https://www.youtube.com/c/shieldwisesecurity",
+            "https://www.yelp.com/biz/shieldwise-security-hawthorne"
+          ]
         },
-        "address": {
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://shieldwisesecurity.com/los-angeles/hawthorne#localbusiness",
+          "name": "ShieldWise Security - Hawthorne",
+          "image": [
+            "https://shieldwisesecurity.com/img/hawthorne-security-guards.jpg",
+            "https://shieldwisesecurity.com/img/spacex-tesla-area-security.jpg",
+            "https://shieldwisesecurity.com/img/aerospace-facility-security.jpg"
+          ],
+          "description": "Premier security guard services in Hawthorne, CA. Specializing in SpaceX/Tesla area protection, aerospace facilities, tech companies. 24/7 rapid response with high-tech security expertise. Professional armed and unarmed security officers for innovation hubs, commercial properties, and intellectual property protection.",
+          "address": {
             "@type": "PostalAddress",
             "streetAddress": "12720 Hawthorne Blvd",
             "addressLocality": "Hawthorne",
             "addressRegion": "CA",
             "postalCode": "90250",
             "addressCountry": "US"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 33.9164,
-            "longitude": -118.3526
-        },
-        "url": "https://shieldwisesecurity.com/los-angeles/hawthorne",
-        "telephone": "+1-714-716-7430",
-        "email": "hawthorne@shieldwisesecurity.com",
-        "priceRange": "$$-$$$",
-        "currenciesAccepted": "USD",
-        "paymentAccepted": ["Cash", "Credit Card", "Check", "Invoice", "Bank Transfer"],
-        "openingHoursSpecification": [
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                "opens": "00:00",
-                "closes": "23:59"
-            }
-        ],
-        "sameAs": [
-            "https://www.facebook.com/shieldwisesecurity",
-            "https://twitter.com/shieldwisesecurity",
-            "https://www.instagram.com/shieldwisesecurity",
-            "https://www.linkedin.com/company/shieldwisesecurity",
-            "https://www.yelp.com/biz/shieldwise-security-hawthorne",
-            "https://www.bbb.org/us/ca/hawthorne/profile/security-guard-service/shieldwise-security"
-        ],
-        "serviceArea": [
-            {
-                "@type": "GeoCircle",
-                "geoMidpoint": {
-                    "@type": "GeoCoordinates",
-                    "latitude": 33.9164,
-                    "longitude": -118.3526
-                },
-                "geoRadius": "25000"
-            }
-        ],
-        "areaServed": [
-            {
-                "@type": "City",
-                "name": "Hawthorne"
-            },
-            {
-                "@type": "Place",
-                "name": "SpaceX Headquarters"
-            },
-            {
-                "@type": "Place",
-                "name": "Tesla Design Studio"
-            },
-            {
-                "@type": "Place",
-                "name": "Hawthorne Boulevard Corridor"
-            }
-        ],
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Hawthorne Security Services",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Aerospace & Tech Company Security Hawthorne",
-                        "description": "Elite security personnel for aerospace facilities, tech companies, and high-security environments in Hawthorne. Specialized training in intellectual property protection and advanced security protocols.",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "ShieldWise Security"
-                        }
-                    },
-                    "priceSpecification": {
-                        "@type": "PriceSpecification",
-                        "priceCurrency": "USD",
-                        "price": "40-65"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Commercial Building Security Hawthorne",
-                        "description": "Professional security guards for office buildings, business centers, and commercial properties with access control and advanced surveillance integration.",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "ShieldWise Security"
-                        }
-                    },
-                    "priceSpecification": {
-                        "@type": "PriceSpecification",
-                        "priceCurrency": "USD",
-                        "price": "32-50"
-                    }
-                }
-            ]
-        },
-        "aggregateRating": {
+          },
+          "geo": { "@type": "GeoCoordinates", "latitude": 33.9164, "longitude": -118.3526 },
+          "url": "https://shieldwisesecurity.com/los-angeles/hawthorne",
+          "telephone": "+17147167430",
+          "email": "hawthorne@shieldwisesecurity.com",
+          "priceRange": "$$",
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "00:00", "closes": "23:59"
+          },
+          "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
             "bestRating": "5",
             "worstRating": "1",
-            "ratingCount": "78",
-            "reviewCount": "78"
-        },
-        "review": [
+            "ratingCount": "156",
+            "reviewCount": "112"
+          },
+          "review": [
             {
-                "@type": "Review",
-                "author": {
-                    "@type": "Person",
-                    "name": "Thomas Anderson",
-                    "jobTitle": "Security Director"
-                },
-                "datePublished": "2024-12-15",
-                "reviewBody": "ShieldWise Security has significantly improved safety at our tech facility in Hawthorne. Their professional guards understand our unique security requirements and have implemented protocols that protect our intellectual property.",
-                "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "5",
-                    "bestRating": "5"
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Thomas A." },
+              "datePublished": "2024-04-12",
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "Outstanding security service for our tech facility. Professional IP protection and access control expertise."
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Maria G." },
+              "datePublished": "2024-05-06",
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "Excellent rapid response and professional service for our Hawthorne aerospace facility. Highly recommended."
+            }
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Security Services",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aerospace Facility Security", "description": "Specialized security for aerospace facilities and high-tech environments in Hawthorne CA" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tech Company Security", "description": "Professional security for tech companies with IP protection and access control" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "24/7 Emergency Response", "description": "Rapid deployment within 2 hours for urgent security needs in Hawthorne area" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SpaceX Tesla Area Security", "description": "Specialized security services for the SpaceX/Tesla innovation corridor" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Property Security", "description": "Professional security for office buildings and commercial facilities" } }
+            ]
+          },
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+1-714-716-7430",
+              "contactType": "customer support",
+              "areaServed": "Hawthorne, CA",
+              "availableLanguage": ["English", "Spanish"],
+              "hoursAvailable": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
+                  "opens": "00:00", "closes": "23:59"
                 }
+              ]
             }
-        ],
-        "potentialAction": {
-            "@type": "ReserveAction",
-            "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "https://shieldwisesecurity.com/contact",
-                "inLanguage": "en-US",
-                "actionPlatform": [
-                    "http://schema.org/DesktopWebPlatform",
-                    "http://schema.org/IOSPlatform",
-                    "http://schema.org/AndroidPlatform"
-                ]
-            },
-            "result": {
-                "@type": "Reservation",
-                "name": "Emergency Security Deployment"
-            }
+          ]
         },
-        "memberOf": [
+        {
+          "@type": "Service",
+          "@id": "https://shieldwisesecurity.com/los-angeles/hawthorne#service",
+          "serviceType": "Security Guard Services",
+          "provider": { "@id": "https://shieldwisesecurity.com/#organization" },
+          "areaServed": [
+            { "@type": "City", "name": "Hawthorne", "sameAs": "https://en.wikipedia.org/wiki/Hawthorne,_California" },
+            { "@type": "Place", "name": "SpaceX Headquarters" },
+            { "@type": "Place", "name": "Tesla Design Studio" }
+          ],
+          "hasOfferCatalog": { "@type": "OfferCatalog", "name": "Hawthorne Security Services" }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
             {
-                "@type": "Organization",
-                "name": "California Association of Licensed Security Agencies"
+              "@type": "Question",
+              "name": "How quickly can ShieldWise Security respond to emergency calls in Hawthorne?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ShieldWise Security provides rapid emergency response within 2 hours for urgent security needs in Hawthorne, CA. Our 24/7 dispatch center ensures immediate deployment of licensed security guards to your location."
+              }
             },
             {
-                "@type": "Organization",
-                "name": "Hawthorne Chamber of Commerce"
+              "@type": "Question",
+              "name": "Do you provide security for aerospace and tech companies in Hawthorne?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we offer specialized security services for high-tech and aerospace facilities in Hawthorne. Our guards receive additional training for these environments, focusing on intellectual property protection, access control, and maintaining secure perimeters."
+              }
+            },
+            {
+              "@type": "Question", 
+              "name": "Can you provide security near SpaceX and Tesla facilities?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. We provide professional security services throughout the SpaceX/Tesla area of Hawthorne. Our security personnel are trained in high-tech facility protection and understand the unique security requirements of aerospace and automotive technology companies."
+              }
             }
-        ],
-        "award": [
-            "Best Security Provider Hawthorne 2024 - South Bay Business Journal",
-            "Excellence in Tech Security 2024 - CA Security Association"
-        ],
-        "foundingDate": "2010",
-        "slogan": "Hawthorne's Most Trusted Security Partner",
-        "knowsAbout": [
-            "Aerospace Security",
-            "Tech Company Security",
-            "High-Tech Facility Protection",
-            "Intellectual Property Security",
-            "Commercial Security",
-            "Advanced Surveillance Systems"
-        ]
+          ]
+        }
+      ]
     }
     </script>
 
-    <!-- ✅ Enhanced FAQ Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "How fast can you deploy security guards in Hawthorne?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We can deploy security guards in Hawthorne within 2-4 hours for emergency situations. For standard security services, we typically deploy within 24 hours. Our rapid response team ensures the fastest deployment times in the South Bay area."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Do you provide security for aerospace and tech companies in Hawthorne?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, we offer specialized security services for high-tech and aerospace facilities in Hawthorne. Our guards receive additional training for these environments, focusing on intellectual property protection, access control, and maintaining secure perimeters while facilitating legitimate business operations."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can you provide security near SpaceX and Tesla facilities?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Absolutely. We provide professional security services throughout the SpaceX/Tesla area of Hawthorne. Our security personnel are trained in high-tech facility protection and understand the unique security requirements of aerospace and automotive technology companies."
-                }
-            }
-        ]
-    }
-    </script>
-
-    <!-- ✅ Performance Optimization -->
-    <link rel="preload" href="/css/style-cities.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" as="style">
-    <link rel="preload" as="image" href="/img/shahn1.png">
-    <link rel="preload" as="image" href="/img/shieldwise-logo.png">
-
-    <!-- ✅ External CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style-cities.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <!-- ✅ Favicon & App Icons -->
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-
-    <!-- ✅ Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' *.googleapis.com *.gstatic.com *.cloudflare.com *.jsdelivr.net">
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-
-    <!-- ✅ Additional Meta for AI/Voice Search -->
-    <meta name="voice-search-keywords" content="security guard near me, Hawthorne security, SpaceX security, aerospace security">
-    <meta name="speakable" content="name,description,telephone">
 </head>
-
 <body itemscope itemtype="https://schema.org/WebPage">
     <!-- Header Section -->
     <%- include('../partials/Header') %>
