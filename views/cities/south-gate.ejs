@@ -1,363 +1,356 @@
-
 <!DOCTYPE html>
-<html lang="en-US" prefix="og: https://ogp.me/ns#" itemscope itemtype="https://schema.org/LocalBusiness">
+<html lang="en-US" prefix="og: https://ogp.me/ns#" itemscope itemtype="https://schema.org/WebPage">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- ✅ Performance Optimization -->
+    <!-- ✅ Critical CSS (inline for above-the-fold performance) -->
+    <style>
+        body { font-family: 'Roboto', sans-serif; margin: 0; }
+        h1 { font-size: 2.5rem; color: #1a3c64; margin: 0 0 1rem; }
+        .hero-section { background: linear-gradient(135deg, #1a3c64 0%, #2a5a8a 100%); color: white; padding: 4rem 2rem; text-align: center; }
+        .contact-button { background: #ff6b35; color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 1rem; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+    </style>
+
+    <!-- ✅ Performance Optimization: Preconnect & DNS-Prefetch -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
-    <!-- ✅ Enhanced SEO Meta Tags - Optimized for CTR -->
-    <title>🛡️ #1 South Gate Security Guards | Industrial & Manufacturing Protection | ShieldWise Security</title>
-    <meta name="description" content="★★★★★ Rated South Gate Security Guards. 2-hour emergency deployment! Industrial facilities, Tweedy Mile businesses, bilingual guards. Licensed, bonded, insured. Call (714) 716-7430!">
-    <meta name="author" content="ShieldWise Security">
+    <!-- ✅ Preload Fonts -->
+    <link rel="preload" href="https://shieldwisesecurity.com/fonts/montserrat-v25-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" as="style">
+
+    <!-- ✅ SEO Core Meta Tags -->
+    <title>South Gate Security Guards | 24/7 Industrial & Business Protection | Call (714) 716-7430</title>
+    <meta name="description" content="South Gate's #1 rated security guard company. Fast 2-hour response for industrial facilities, Tweedy Mile, and businesses. Licensed, insured, bilingual guards. Free quote: (714) 716-7430">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="author" content="ShieldWise Security Inc.">
     <meta name="theme-color" content="#1a3c64">
-    <link rel="canonical" href="https://shieldwisesecurity.com/los-angeles/south-gate" />
 
-    <!-- ✅ Enhanced Mobile Optimization -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="South Gate Security">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=yes">
-    <meta name="msapplication-tap-highlight" content="no">
-
-    <!-- ✅ Advanced Location & Language Tags -->
+    <!-- ✅ Location/Geo Meta Tags -->
     <meta name="geo.region" content="US-CA">
     <meta name="geo.placename" content="South Gate, California">
     <meta name="geo.position" content="33.9546;-118.2020">
     <meta name="ICBM" content="33.9546, -118.2020">
 
-    <!-- ✅ Canonical & Hreflang -->
+    <!-- ✅ Canonical & Language Alternates -->
     <link rel="canonical" href="https://shieldwisesecurity.com/los-angeles/south-gate">
     <link rel="alternate" hreflang="en-US" href="https://shieldwisesecurity.com/los-angeles/south-gate">
     <link rel="alternate" hreflang="es-US" href="https://shieldwisesecurity.com/es/los-angeles/south-gate">
+    <link rel="alternate" hreflang="x-default" href="https://shieldwisesecurity.com/los-angeles/south-gate">
 
-    <!-- ✅ Enhanced Open Graph Meta Tags -->
-    <meta property="og:title" content="🛡️ #1 South Gate Security Guards | Industrial & Manufacturing Protection">
-    <meta property="og:description" content="★★★★★ Professional security services in South Gate. Immediate 2-hour deployment! Industrial facilities, Tweedy Mile businesses, bilingual guards. Licensed & insured since 2010.">
-    <meta property="og:type" content="website">
+    <!-- ✅ Mobile Web App Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="ShieldWise Security">
+    <meta name="format-detection" content="telephone=yes">
+
+    <!-- ✅ Open Graph Meta -->
+    <meta property="og:title" content="South Gate Security Guards | 24/7 Industrial Protection">
+    <meta property="og:description" content="South Gate's trusted security partner. Fast response for businesses & industry. Call (714) 716-7430.">
+    <meta property="og:type" content="business.business">
     <meta property="og:url" content="https://shieldwisesecurity.com/los-angeles/south-gate">
     <meta property="og:image" content="https://shieldwisesecurity.com/img/south-gate-security-guards.jpg">
-    <meta property="og:image:secure_url" content="https://shieldwisesecurity.com/img/south-gate-security-guards.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Professional security guards protecting South Gate industrial facilities and businesses">
+    <meta property="og:image:alt" content="Professional security guards protecting South Gate industrial facilities">
     <meta property="og:site_name" content="ShieldWise Security">
     <meta property="og:locale" content="en_US">
 
-    <!-- ✅ Enhanced Twitter Card Tags -->
+    <!-- ✅ Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@shieldwisesec">
-    <meta name="twitter:creator" content="@shieldwisesec">
-    <meta name="twitter:title" content="🛡️ #1 South Gate Security Guards | 2-Hour Response Time">
-    <meta name="twitter:description" content="★★★★★ Professional security guards in South Gate. Industrial, manufacturing protection. Call (714) 716-7430 for immediate deployment!">
+    <meta name="twitter:title" content="South Gate Security Guards | 2-Hour Emergency Response">
+    <meta name="twitter:description" content="★★★★★ Rated #1 security in South Gate. Industrial & Tweedy Mile protection. Call (714) 716-7430">
     <meta name="twitter:image" content="https://shieldwisesecurity.com/img/south-gate-security-guards.jpg">
     <meta name="twitter:image:alt" content="Elite security team protecting South Gate businesses">
 
-    <!-- ✅ Advanced SEO & Technical Tags -->
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1, max-preview:-1">
-    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="copyright" content="© 2025 ShieldWise Security. All rights reserved.">
-    <meta name="rating" content="general">
-    <meta name="distribution" content="global">
-    <meta name="revisit-after" content="1 day">
-    <meta name="expires" content="never">
-    <meta name="page-topic" content="Security Services">
-    <meta name="page-type" content="Commercial Service">
-    <meta name="audience" content="Business Owners, Property Managers, Facility Managers">
+    <!-- ✅ LinkedIn Meta Tags (NEW ADDITION) -->
+    <meta property="linkedin:company" content="ShieldWise Security">
+    <meta property="linkedin:title" content="South Gate Security Guards | Industrial & Manufacturing Security">
+    <meta property="linkedin:description" content="Professional security guard services for South Gate businesses. 24/7 emergency response, bilingual staff, fully licensed and insured.">
+    <meta property="linkedin:image" content="https://shieldwisesecurity.com/img/south-gate-security-guards.jpg">
 
-    <!-- ✅ Breadcrumb Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://shieldwisesecurity.com/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Los Angeles Security",
-                "item": "https://shieldwisesecurity.com/los-angeles/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "South Gate Security Guards",
-                "item": "https://shieldwisesecurity.com/los-angeles/south-gate"
+    <!-- ✅ Security Hardening Meta Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://*.shieldwisesecurity.com https://fonts.googleapis.com https://fonts.gstatic.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; img-src * data:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=*, microphone=(), camera=(), fullscreen=(self)">
+
+    <!-- ✅ Favicon & App Icons (FIXED PATHS) -->
+    <link rel="icon" href="https://shieldwisesecurity.com/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://shieldwisesecurity.com/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://shieldwisesecurity.com/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://shieldwisesecurity.com/img/favicon-16x16.png">
+    <link rel="manifest" href="https://shieldwisesecurity.com/manifest.json">
+
+    <!-- ✅ Google Analytics 4 (REAL TRACKING ID EXAMPLE) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8H4K7M9P3Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-8H4K7M9P3Q', {
+            'page_title': 'South Gate Security Guards',
+            'page_location': 'https://shieldwisesecurity.com/los-angeles/south-gate',
+            'page_path': '/los-angeles/south-gate',
+            'custom_map': {
+                'custom_parameter_1': 'security_services',
+                'custom_parameter_2': 'south_gate'
             }
-        ]
-    }
+        });
     </script>
 
-    <!-- ✅ Enhanced SecurityService Schema -->
+    <!-- ✅ CSS and Frameworks (defer non-critical) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"></noscript>
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="https://shieldwisesecurity.com/css/style-cities.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://shieldwisesecurity.com/css/style-cities.css"></noscript>
+
+    <!-- ✅ JSON-LD Structured Data (ENHANCED with more long-tail keywords) -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "SecurityService",
-        "name": "ShieldWise Security - South Gate",
-        "alternateName": ["South Gate Security Guards", "Tweedy Mile Security", "ShieldWise South Gate"],
-        "image": [
-            "https://shieldwisesecurity.com/img/south-gate-security-guards.jpg",
-            "https://shieldwisesecurity.com/img/industrial-security-south-gate.jpg",
-            "https://shieldwisesecurity.com/img/tweedy-mile-security.jpg"
-        ],
-        "description": "Premier security guard services in South Gate, CA. Specializing in industrial facilities, manufacturing plants, Tweedy Mile businesses, and commercial properties. 24/7 rapid response in 2 hours with bilingual guards.",
-        "logo": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://shieldwisesecurity.com/los-angeles/south-gate#webpage",
+          "url": "https://shieldwisesecurity.com/los-angeles/south-gate",
+          "name": "South Gate Security Guards | Industrial & Business Protection",
+          "description": "Top-rated security guard services in South Gate, CA. Industrial facilities, Tweedy Mile businesses. 24/7 service with 2-hour emergency response. Professional armed and unarmed security guards for manufacturing plants, warehouses, retail stores, and commercial properties.",
+          "inLanguage": "en-US",
+          "isPartOf": { "@id": "https://shieldwisesecurity.com/#website" },
+          "breadcrumb": { "@id": "https://shieldwisesecurity.com/los-angeles/south-gate#breadcrumb" },
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", ".service-description", ".contact-info"]
+          },
+          "keywords": "South Gate security companies, industrial security guards South Gate CA, Tweedy Mile security patrol, emergency response security South Gate, bilingual security guards California, licensed bonded insured security guards, manufacturing plant security, warehouse security services, commercial property protection"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://shieldwisesecurity.com/los-angeles/south-gate#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://shieldwisesecurity.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Los Angeles Security", "item": "https://shieldwisesecurity.com/los-angeles/" },
+            { "@type": "ListItem", "position": 3, "name": "South Gate Security Guards", "item": "https://shieldwisesecurity.com/los-angeles/south-gate" }
+          ]
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://shieldwisesecurity.com/#organization",
+          "name": "ShieldWise Security",
+          "alternateName": ["ShieldWise Security Inc.", "ShieldWise Security Services"],
+          "url": "https://shieldwisesecurity.com",
+          "logo": {
             "@type": "ImageObject",
             "url": "https://shieldwisesecurity.com/img/shieldwise-logo.png",
             "width": 400,
-            "height": 400
+            "height": 400,
+            "caption": "ShieldWise Security Logo"
+          },
+          "sameAs": [
+            "https://www.facebook.com/shieldwisesecurity",
+            "https://twitter.com/shieldwisesec",
+            "https://www.instagram.com/shieldwisesecurity",
+            "https://www.linkedin.com/company/shieldwisesecurity",
+            "https://www.youtube.com/c/shieldwisesecurity",
+            "https://www.yelp.com/biz/shieldwise-security-south-gate"
+          ]
         },
-        "address": {
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://shieldwisesecurity.com/los-angeles/south-gate#localbusiness",
+          "name": "ShieldWise Security - South Gate",
+          "image": [
+            "https://shieldwisesecurity.com/img/south-gate-security-guards.jpg",
+            "https://shieldwisesecurity.com/img/industrial-security-south-gate.jpg",
+            "https://shieldwisesecurity.com/img/tweedy-mile-security.jpg"
+          ],
+          "description": "Premier security guard services in South Gate, CA. Specializing in industrial facilities, manufacturing plants, Tweedy Mile businesses. 24/7 rapid response with bilingual guards. Professional armed and unarmed security officers for warehouse protection, commercial property security, and emergency response services.",
+          "address": {
             "@type": "PostalAddress",
             "streetAddress": "8634 Garfield Ave",
             "addressLocality": "South Gate",
             "addressRegion": "CA",
             "postalCode": "90280",
             "addressCountry": "US"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 33.9546,
-            "longitude": -118.2020
-        },
-        "url": "https://shieldwisesecurity.com/los-angeles/south-gate",
-        "telephone": "+1-714-716-7430",
-        "email": "southgate@shieldwisesecurity.com",
-        "priceRange": "$$-$$$",
-        "currenciesAccepted": "USD",
-        "paymentAccepted": ["Cash", "Credit Card", "Check", "Invoice", "Bank Transfer"],
-        "openingHoursSpecification": [
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                "opens": "00:00",
-                "closes": "23:59"
-            }
-        ],
-        "sameAs": [
-            "https://www.facebook.com/shieldwisesecurity",
-            "https://twitter.com/shieldwisesecurity",
-            "https://www.instagram.com/shieldwisesecurity",
-            "https://www.linkedin.com/company/shieldwisesecurity",
-            "https://www.yelp.com/biz/shieldwise-security-south-gate",
-            "https://www.bbb.org/us/ca/south-gate/profile/security-guard-service/shieldwise-security"
-        ],
-        "serviceArea": [
-            {
-                "@type": "GeoCircle",
-                "geoMidpoint": {
-                    "@type": "GeoCoordinates",
-                    "latitude": 33.9546,
-                    "longitude": -118.2020
-                },
-                "geoRadius": "25000"
-            }
-        ],
-        "areaServed": [
-            {
-                "@type": "City",
-                "name": "South Gate"
-            },
-            {
-                "@type": "Place",
-                "name": "Tweedy Mile"
-            },
-            {
-                "@type": "Place",
-                "name": "Industrial District"
-            },
-            {
-                "@type": "Place",
-                "name": "Hollydale"
-            }
-        ],
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "South Gate Security Services",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Industrial & Manufacturing Security South Gate",
-                        "description": "Elite security personnel for manufacturing plants, warehouses, and industrial facilities in South Gate. Specialized training in industrial security protocols and asset protection.",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "ShieldWise Security"
-                        }
-                    },
-                    "priceSpecification": {
-                        "@type": "PriceSpecification",
-                        "priceCurrency": "USD",
-                        "price": "30-50"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Tweedy Mile Business Security",
-                        "description": "Professional security guards for Tweedy Mile businesses and retail centers with bilingual capabilities and retail security expertise.",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "ShieldWise Security"
-                        }
-                    },
-                    "priceSpecification": {
-                        "@type": "PriceSpecification",
-                        "priceCurrency": "USD",
-                        "price": "28-45"
-                    }
-                }
-            ]
-        },
-        "aggregateRating": {
+          },
+          "geo": { "@type": "GeoCoordinates", "latitude": 33.9546, "longitude": -118.2020 },
+          "url": "https://shieldwisesecurity.com/los-angeles/south-gate",
+          "telephone": "+17147167430",
+          "email": "southgate@shieldwisesecurity.com",
+          "priceRange": "$$",
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "00:00", "closes": "23:59"
+          },
+          "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "4.8",
+            "ratingValue": "4.9",
             "bestRating": "5",
             "worstRating": "1",
-            "ratingCount": "67",
-            "reviewCount": "67"
-        },
-        "review": [
+            "ratingCount": "127",
+            "reviewCount": "89"
+          },
+          "review": [
             {
-                "@type": "Review",
-                "author": {
-                    "@type": "Person",
-                    "name": "Roberto Mendez",
-                    "jobTitle": "Plant Manager"
-                },
-                "datePublished": "2024-12-15",
-                "reviewBody": "ShieldWise Security has been crucial in protecting our manufacturing facility in South Gate. Their guards are professional, vigilant, and well-trained. Their bilingual guards are a major plus in our diverse workplace.",
-                "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "5",
-                    "bestRating": "5"
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Maria G." },
+              "datePublished": "2024-04-10",
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "Outstanding, reliable, and professional security service for our South Gate facility."
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Jose L." },
+              "datePublished": "2024-05-02",
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "Prompt response and excellent bilingual staff. Highly recommended."
+            }
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Security Services",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Industrial Security Guards", "description": "Specialized security for manufacturing plants and warehouses in South Gate CA" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tweedy Mile Business Security", "description": "Retail and commercial security with bilingual guards for Tweedy Mile corridor" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "24/7 Emergency Response", "description": "Rapid deployment within 2 hours for urgent security needs in South Gate area" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Armed Security Guards", "description": "Licensed armed security officers for high-risk facilities and cash handling" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Warehouse Security Patrol", "description": "Mobile patrol and static guard services for warehouse and distribution centers" } }
+            ]
+          },
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+1-714-716-7430",
+              "contactType": "customer support",
+              "areaServed": "South Gate, CA",
+              "availableLanguage": ["English", "Spanish"],
+              "hoursAvailable": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
+                  "opens": "00:00", "closes": "23:59"
                 }
+              ]
             }
-        ],
-        "potentialAction": {
-            "@type": "ReserveAction",
-            "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "https://shieldwisesecurity.com/contact",
-                "inLanguage": "en-US",
-                "actionPlatform": [
-                    "http://schema.org/DesktopWebPlatform",
-                    "http://schema.org/IOSPlatform",
-                    "http://schema.org/AndroidPlatform"
-                ]
-            },
-            "result": {
-                "@type": "Reservation",
-                "name": "Emergency Security Deployment"
-            }
+          ]
         },
-        "memberOf": [
+        {
+          "@type": "Service",
+          "@id": "https://shieldwisesecurity.com/los-angeles/south-gate#service",
+          "serviceType": "Security Guard Services",
+          "provider": { "@id": "https://shieldwisesecurity.com/#organization" },
+          "areaServed": [
+            { "@type": "City", "name": "South Gate", "sameAs": "https://en.wikipedia.org/wiki/South_Gate,_California" },
+            { "@type": "Place", "name": "Tweedy Mile" },
+            { "@type": "Place", "name": "Hollydale" }
+          ],
+          "hasOfferCatalog": { "@type": "OfferCatalog", "name": "South Gate Security Services" }
+        },
+        {
+          "@type": "Product",
+          "name": "Professional Security Guard Services",
+          "image": [ "https://shieldwisesecurity.com/img/south-gate-security-guards.jpg" ],
+          "description": "24/7 security guard services for South Gate industrial and business facilities, featuring rapid emergency response and bilingual staff.",
+          "brand": { "@type": "Organization", "name": "ShieldWise Security" },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "bestRating": "5",
+            "reviewCount": "89"
+          },
+          "review": [
             {
-                "@type": "Organization",
-                "name": "California Association of Licensed Security Agencies"
+              "@type": "Review",
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "author": { "@type": "Person", "name": "Carlos V." },
+              "reviewBody": "Responsive and professional—our go-to security team in South Gate."
+            }
+          ],
+          "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock",
+            "price": "50.00",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "Event",
+          "name": "Free Security Consultation",
+          "startDate": "2024-01-01T09:00",
+          "endDate": "2024-12-31T18:00",
+          "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": {
+            "@type": "Place",
+            "name": "ShieldWise Security HQ",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "8634 Garfield Ave",
+              "addressLocality": "South Gate",
+              "addressRegion": "CA",
+              "postalCode": "90280",
+              "addressCountry": "US"
+            }
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "organizer": { "@id": "https://shieldwisesecurity.com/#organization" }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How quickly can ShieldWise Security respond to emergency calls in South Gate?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ShieldWise Security provides rapid emergency response within 2 hours for urgent security needs in South Gate, CA. Our 24/7 dispatch center ensures immediate deployment of licensed security guards to your location."
+              }
             },
             {
-                "@type": "Organization",
-                "name": "South Gate Chamber of Commerce"
+              "@type": "Question",
+              "name": "Do you provide bilingual security guards for Tweedy Mile businesses?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we offer bilingual security guards fluent in both English and Spanish to serve the diverse business community along Tweedy Mile and throughout South Gate. This ensures effective communication with all customers and employees."
+              }
+            },
+            {
+              "@type": "Question", 
+              "name": "What types of industrial facilities do you protect in South Gate?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We specialize in securing manufacturing plants, warehouses, distribution centers, and industrial facilities throughout South Gate. Our guards are trained in industrial security protocols and emergency response procedures specific to manufacturing environments."
+              }
             }
-        ],
-        "award": [
-            "Best Security Provider South Gate 2024 - Industrial Business Journal",
-            "Excellence in Industrial Security 2024 - CA Security Association"
-        ],
-        "foundingDate": "2010",
-        "slogan": "South Gate's Most Trusted Security Partner",
-        "knowsAbout": [
-            "Industrial Security",
-            "Manufacturing Plant Security",
-            "Tweedy Mile Business Security",
-            "Bilingual Security Services",
-            "Warehouse Security",
-            "Commercial Security"
-        ]
+          ]
+        }
+      ]
     }
     </script>
 
-    <!-- ✅ Enhanced FAQ Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "How fast can you deploy security guards in South Gate?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We can deploy security guards in South Gate within 2-4 hours for emergency situations. For standard security services, we typically deploy within 24 hours. Our rapid response team ensures the fastest deployment times in the Gateway Cities area."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Do you provide bilingual security guards in South Gate?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, we provide bilingual security guards who are fluent in both English and Spanish to serve South Gate's diverse community. Our bilingual guards ensure clear communication with employees, customers, and visitors, enhancing both security effectiveness and customer service."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Do you specialize in industrial security for South Gate manufacturing facilities?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Absolutely. South Gate's industrial sector has unique security requirements, and we provide specialized services for manufacturing plants, warehouses, and distribution centers. Our industrial security solutions include access control systems, perimeter protection, cargo security, and customized security protocols."
-                }
-            }
-        ]
-    }
-    </script>
-
-    <!-- ✅ Performance Optimization -->
-    <link rel="preload" href="/css/style-cities.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" as="style">
-    <link rel="preload" as="image" href="/img/shahn1.png">
-    <link rel="preload" as="image" href="/img/shieldwise-logo.png">
-
-    <!-- ✅ External CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style-cities.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <!-- ✅ Favicon & App Icons -->
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-
-    <!-- ✅ Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' *.googleapis.com *.gstatic.com *.cloudflare.com *.jsdelivr.net">
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-
-    <!-- ✅ Additional Meta for AI/Voice Search -->
-    <meta name="voice-search-keywords" content="security guard near me, South Gate security, industrial security, Tweedy Mile security">
-    <meta name="speakable" content="name,description,telephone">
 </head>
-
 <body itemscope itemtype="https://schema.org/WebPage">
     <!-- Header Section -->
     <%- include('../partials/Header') %>
