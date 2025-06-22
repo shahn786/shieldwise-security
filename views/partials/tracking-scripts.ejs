@@ -4,71 +4,154 @@ const serviceType = (typeof locals !== 'undefined' && locals.serviceType) ? loca
 const priceRange = (typeof locals !== 'undefined' && locals.priceRange) ? locals.priceRange : { low: 35, mid: 55, high: 85 };
 %>
 
-<!-- Enhanced Tracking Scripts -->
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX', {
-    'anonymize_ip': true,
-    'allow_google_signals': false,
-    'allow_ad_personalization_signals': false
-  });
-</script>
-
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+<script defer>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-SHLD2025');</script>
 
-<!-- Hotjar Tracking Code (Fixed) -->
+<!-- Enhanced Google Analytics 4 with Advanced E-commerce Tracking -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SHLD9876543"></script>
 <script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:1234567,hjsv:6}; // Replace with actual ID
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
 
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "XXXXXXXXX");
-</script>
+// Enhanced Consent Mode v2 for 2025 compliance
+gtag('consent', 'default', {
+  'analytics_storage': 'denied',
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'functionality_storage': 'granted',
+  'security_storage': 'granted'
+});
 
-<!-- Privacy Protection -->
-<script>
-  if (typeof window.dataLayer !== 'undefined') {
-    window.dataLayer.push({
-      'privacy_mode': true,
-      'anonymize_data': true,
-      'client_confidentiality': 'maximum'
-    });
+gtag('js', new Date());
+gtag('config', 'G-SHLD9876543', { 
+  'anonymize_ip': true,
+  'allow_google_signals': false,
+  'allow_ad_personalization_signals': false,
+  'cookie_flags': 'SameSite=None;Secure',
+  'custom_map': {
+    'custom_parameter_1': 'service_type',
+    'custom_parameter_2': 'price_range',
+    'custom_parameter_3': 'location_served',
+    'custom_parameter_4': 'lead_source'
+  },
+  'user_properties': {
+    'service_interest': '<%= serviceType %>',
+    'visitor_type': 'prospect'
   }
+});
+
+// Enhanced eCommerce tracking for security services
+gtag('event', 'page_view', {
+  'service_type': '<%= serviceType %>',
+  'price_range': '<%= priceRange.low %>',
+  'location': 'California',
+  'page_category': 'service_page',
+  'content_group1': 'Security Services',
+  'content_group2': '<%= serviceType.charAt(0).toUpperCase() + serviceType.slice(1) %> Security'
+});
+
+// Service view tracking
+gtag('event', 'view_item', {
+  'currency': 'USD',
+  'value': <%= priceRange.low %>,
+  'items': [{
+    'item_id': '<%= serviceType %>_security_service',
+    'item_name': '<%= serviceType.charAt(0).toUpperCase() + serviceType.slice(1) %> Security Service',
+    'item_category': 'Security Services',
+    'item_brand': 'ShieldWise Security',
+    'price': <%= priceRange.low %>,
+    'quantity': 1
+  }]
+});
 </script>
 
-<!-- Facebook Pixel -->
+<!-- Microsoft Clarity with Enhanced Configuration -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "shld8k2m9n");
+
+// Enhanced Clarity tracking
+clarity('set', 'service_type', '<%= serviceType %>');
+clarity('set', 'page_type', 'service');
+clarity('set', 'price_range', '<%= priceRange.low %>-<%= priceRange.high %>');
+</script>
+
+<!-- Facebook Pixel with Enhanced Conversions -->
 <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', 'XXXXXXXXXXXXXXXXX');
-  fbq('track', 'PageView');
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '987654321098765', {
+  'external_id': 'security_visitor'
+});
+fbq('track', 'PageView');
+
+// Enhanced Facebook tracking for security services
+fbq('track', 'ViewContent', {
+  content_type: 'security_service',
+  content_name: '<%= serviceType %>_security_service',
+  content_category: 'Security Services',
+  value: <%= priceRange.low %>,
+  currency: 'USD',
+  contents: [{
+    'id': '<%= serviceType %>_security',
+    'quantity': 1,
+    'item_price': <%= priceRange.low %>
+  }]
+});
+</script>
+
+<!-- LinkedIn Insight Tag with Enhanced B2B Tracking -->
+<script type="text/javascript">
+_linkedin_partner_id = "5432109";
+window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+
+// Enhanced LinkedIn tracking
+window._linkedin_custom_data = {
+  'service_type': '<%= serviceType %>',
+  'industry': 'security_services',
+  'price_range': '<%= priceRange.low %>-<%= priceRange.high %>'
+};
+</script>
+<script type="text/javascript">
+(function(l) {
+if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+window.lintrk.q=[]}
+var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})(window.lintrk);
+</script>
+
+<!-- Hotjar Tracking with User Attributes -->
+<script>
+(function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:3789456,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+
+// Set user attributes for Hotjar
+hj('identify', 'security_visitor', {
+  'service_interest': '<%= serviceType %>',
+  'page_type': 'service',
+  'price_range': '<%= priceRange.low %>-<%= priceRange.high %>'
+});
 </script>
 
 <!-- Custom Security Service Event Tracking -->
@@ -132,7 +215,7 @@ function trackFormSubmission(formType) {
 
   fbq('track', 'CompleteRegistration', {
     content_name: formType + ' Form',
-    content_category': 'Forms',
+    content_category: 'Forms',
     value: <%= priceRange.low %>,
     currency: 'USD'
   });
