@@ -1,0 +1,177 @@
+Great debugging question! Your Burbank page works (Map + FAQ expand/collapse), but your South Gate page doesn’t (Map doesn’t show, FAQ won’t expand). Let’s break down and directly compare both to find the problem.
+
+1. MAP Section
+Both pages use a Google Maps <iframe>.
+In South Gate:
+
+html
+Copy
+Edit
+<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=..."></iframe>
+In Burbank:
+
+html
+Copy
+Edit
+<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=..."></iframe>
+If the map doesn't display:
+Check the parent containers. Both use:
+
+html
+Copy
+Edit
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" ...></iframe>
+</div>
+Check for CSS issues (missing/incompatible Bootstrap).
+
+Check the src URL — it must be a valid Google Maps embed link.
+
+Problem Detected:
+Burbank loads Bootstrap 4’s CSS and JS (bootstrap.min.js).
+
+South Gate loads Bootstrap 4’s CSS and bootstrap.bundle.min.js (which should include Popper and Bootstrap’s JS, so that’s fine).
+
+BUT: Sometimes, the bundle script may not load properly if something is cached/broken, or if there’s a JS error before it.
+
+2. FAQ Collapse (Accordion) Not Expanding
+This almost always means Bootstrap’s collapse JavaScript is not loaded or is conflicting with another script.
+
+Burbank loads:
+
+html
+Copy
+Edit
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+South Gate loads:
+
+html
+Copy
+Edit
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+That’s fine, but Bootstrap's JS REQUIRES jquery to be loaded BEFORE it.
+
+If any JavaScript error happens before the Bootstrap JS loads, the accordion/collapse feature will not work.
+
+If you load jQuery twice (sometimes via a partial), it can also cause breakage.
+
+Extra scripts:
+
+Burbank uses only Bootstrap/Popper/jQuery.
+
+South Gate tries to initialize tooltips/popovers, which is fine, but make sure those don’t throw errors if the selectors don't exist.
+
+3. Common Causes and Quick Fixes
+A. Double Check Console Errors
+Open Chrome DevTools > Console.
+
+Any red errors?
+
+“Uncaught TypeError: ...” usually means jQuery or Bootstrap JS loaded in the wrong order, or is missing entirely.
+
+B. Order of JS Files
+Burbank:
+
+html
+Copy
+Edit
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<!-- Popper (required for some Bootstrap) -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+South Gate:
+
+html
+Copy
+Edit
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<!-- Bootstrap Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+These should work, but you must make sure there is NO extra jQuery loaded (not via a header or partial).
+
+C. The Accordion Markup
+Your accordion markup is valid Bootstrap 4. If the collapse does not work, it’s 99% due to JS not loaded, loaded in wrong order, or a JS error anywhere before Bootstrap is initialized.
+
+4. Specific Recommendations & Fixes
+Step 1: Make South Gate match Burbank’s working JS order
+Change this (South Gate):
+
+html
+Copy
+Edit
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+TO THIS:
+
+html
+Copy
+Edit
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+(Just like in Burbank!)
+
+Step 2: Remove or Comment Out Custom jQuery Code
+South Gate has:
+
+js
+Copy
+Edit
+$(document).ready(function() {
+    // Initialize Bootstrap dropdowns
+    $('.dropdown-toggle').dropdown();
+    
+    // Initialize Bootstrap tooltips and popovers
+    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="popover"]').popover();
+    
+    // Let Bootstrap handle the collapse functionality automatically
+    // No custom accordion code needed - Bootstrap 4 handles this natively
+});
+These are not needed unless you use tooltips/popovers.
+
+If there’s a JS error here, it could break everything. Comment out this block temporarily.
+
+Step 3: Make Sure No jQuery Is Loaded Twice
+Check all partials (header/footer).
+
+If you include <script src="...jquery..."> more than once, Bootstrap JS will break.
+
+5. Extra Notes on Map Display
+If the map <iframe> isn’t displaying:
+
+Make sure the parent containers have the right CSS classes (embed-responsive).
+
+Sometimes, the image or container may be collapsed due to missing classes/styles. Compare all container markup to Burbank’s.
+
+6. Summary Checklist
+ Copy Burbank’s script tags and use in South Gate (order and CDNs).
+
+ Comment out custom jQuery in South Gate for now.
+
+ Check there’s only one jQuery loaded (inspect elements).
+
+ Look for console errors in DevTools.
+
+ Check CSS classes for the map container (embed-responsive).
+
+EXAMPLE – Script section at the end of South Gate page
+html
+Copy
+Edit
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<!-- Popper -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+(If you still want tooltips/popovers, you can add them after you confirm the FAQ and map work.)
+
+Try these steps, and your South Gate page’s map and FAQ will work just like Burbank!
+If it’s still broken after this, copy just the ending of Burbank’s working file (footer/JS section) and use it in South Gate for testing.
