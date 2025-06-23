@@ -934,29 +934,6 @@
     <!-- JavaScript for Interactive Elements -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize Bootstrap tooltips and popovers
-            $('[data-toggle="tooltip"]').tooltip();
-            $('[data-toggle="popover"]').popover();
-            
-            // FAQ accordion functionality with proper Bootstrap 4 handling
-            $('[data-toggle="collapse"]').on('click', function(e) {
-                e.preventDefault();
-                const target = $(this).attr('data-target') || $(this).attr('href');
-                $(target).collapse('toggle');
-                
-                // Update aria-expanded attribute
-                const isExpanded = $(target).hasClass('show');
-                $(this).attr('aria-expanded', !isExpanded);
-            });
-
-            // Handle collapse events
-            $('.collapse').on('show.bs.collapse', function() {
-                $(this).siblings('.card-header').find('[data-toggle="collapse"]').attr('aria-expanded', 'true');
-            });
-
-            $('.collapse').on('hide.bs.collapse', function() {
-                $(this).siblings('.card-header').find('[data-toggle="collapse"]').attr('aria-expanded', 'false');
-            });
             // Back to Top Button Functionality
             const backToTopButton = document.querySelector('.back-to-top');
 
@@ -1014,6 +991,32 @@
 
             // Run once on load
             animateOnScroll();
+        });
+
+        $(document).ready(function() {
+            // Initialize Bootstrap tooltips and popovers
+            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-toggle="popover"]').popover();
+            
+            // FAQ accordion functionality with proper Bootstrap 4 handling
+            $('[data-toggle="collapse"]').on('click', function(e) {
+                e.preventDefault();
+                const target = $(this).attr('data-target') || $(this).attr('href');
+                $(target).collapse('toggle');
+                
+                // Update aria-expanded attribute
+                const isExpanded = $(target).hasClass('show');
+                $(this).attr('aria-expanded', !isExpanded);
+            });
+
+            // Handle collapse events
+            $('.collapse').on('show.bs.collapse', function() {
+                $(this).siblings('.card-header').find('[data-toggle="collapse"]').attr('aria-expanded', 'true');
+            });
+
+            $('.collapse').on('hide.bs.collapse', function() {
+                $(this).siblings('.card-header').find('[data-toggle="collapse"]').attr('aria-expanded', 'false');
+            });
         });
     </script>
 

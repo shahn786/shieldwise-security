@@ -620,7 +620,7 @@
             <div class="row mt-4">
                 <div class="col-12">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52876.83631213732!2d-118.35590658136717!3d34.18112210000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2955b1db1904f%3A0x47fde469c268f39b!2sBurbank%2C%20CA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" title="Map of Burbank, California showing ShieldWise Security service areas"></iframe>
+                        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26444.93271925618!2d-117.92765682191085!3d34.13970000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c3258b3dd97beb%3A0xd9c1f6b4c0e6b8a7!2sArcadia%2C%20CA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" title="Map of Arcadia, California showing ShieldWise Security service areas"></iframe>
                     </div>
                 </div>
             </div>
@@ -897,100 +897,44 @@
         });
     </script>
 
-    <!-- jQuery and Bootstrap JS for Dropdown Functionality -->
+    <!-- JavaScript for Interactive Elements -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!-- Bootstrap JS for FAQ Accordion -->
     <script>
-        $(document).ready(function() {
-            // Initialize Bootstrap tooltips and popovers
-            $('[data-toggle="tooltip"]').tooltip();
-            $('[data-toggle="popover"]').popover();
+        document.addEventListener('DOMContentLoaded', function() {
+            // Back to Top Button Functionality
+            const backToTopButton = document.querySelector('.back-to-top');
 
-            // FAQ accordion functionality with proper Bootstrap 4 handling
-            $('[data-toggle="collapse"]').on('click', function(e) {
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('active');
+                } else {
+                    backToTopButton.classList.remove('active');
+                }
+            });
+
+            backToTopButton.addEventListener('click', function(e) {
                 e.preventDefault();
-                const target = $(this).attr('data-target') || $(this).attr('href');
-                $(target).collapse('toggle');
-
-                // Update aria-expanded attribute
-                const isExpanded = $(target).hasClass('show');
-                $(this).attr('aria-expanded', !isExpanded);
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             });
 
-            // Handle collapse events
-            $('.collapse').on('show.bs.collapse', function() {
-                $(this).siblings('.card-header').find('[data-toggle="collapse"]').attr('aria-expanded', 'true');
-            });
-
-            $('.collapse').on('hide.bs.collapse', function() {
-                $(this).siblings('.card-header').find('[data-toggle="collapse"]').attr('aria-expanded', 'false');
-            });
-        });
-    </script>
-    <!-- jQuery and Bootstrap JS for Dropdown Functionality -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Bootstrap JS for FAQ Accordion -->
-    <script>
-        $(document).ready(function() {
-            // Initialize Bootstrap tooltips and popovers
-            $('[data-toggle="tooltip"]').tooltip();
-            $('[data-toggle="popover"]').popover();
-
-            // FAQ accordion functionality with proper Bootstrap 4 handling
-            $('[data-toggle="collapse"]').on('click', function(e) {
-                e.preventDefault();
-                const target = $(this).attr('data-target') || $(this).attr('href');
-                $(target).collapse('toggle');
-
-                // Update aria-expanded attribute
-                const isExpanded = $(target).hasClass('show');
-                $(this).attr('aria-expanded', !isExpanded);
-            });
-
-            // Handle collapse events
-            $('.collapse').on('show.bs.collapse', function() {
-                $(this).siblings('.card-header').find('[data-toggle="collapse"]').attr('aria-expanded', 'true');
-            });
-
-            $('.collapse').on('hide.bs.collapse', function() {
-                $(this).siblings('.card-header').find('[data-toggle="collapse"]').attr('aria-expanded', 'false');
-            });
-        });
-    </script>
-    <!-- jQuery and Bootstrap JS for Dropdown Functionality -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Bootstrap JS for FAQ Accordion -->
-    <script>
-        $(document).ready(function() {
-            // Initialize Bootstrap tooltips and popovers
-            $('[data-toggle="tooltip"]').tooltip();
-            $('[data-toggle="popover"]').popover();
-
-            // FAQ accordion functionality with proper Bootstrap 4 handling
-            $('[data-toggle="collapse"]').on('click', function(e) {
-                e.preventDefault();
-                const target = $(this).attr('data-target') || $(this).attr('href');
-                $(target).collapse('toggle');
-
-                // Update aria-expanded attribute
-                const isExpanded = $(target).hasClass('show');
-                $(this).attr('aria-expanded', !isExpanded);
-            });
-
-            // Handle collapse events
-            $('.collapse').on('show.bs.collapse', function() {
-                $(this).siblings('.card-header').find('[data-toggle="collapse"]').attr('aria-expanded', 'true');
-            });
-
-            $('.collapse').on('hide.bs.collapse', function() {
-                $(this).siblings('.card-header').find('[data-toggle="collapse"]').attr('aria-expanded', 'false');
-            });
+            // Lazy load images for better performance
+            if ('loading' in HTMLImageElement.prototype) {
+                const images = document.querySelectorAll('img[loading="lazy"]');
+                images.forEach(img => {
+                    img.src = img.dataset.src;
+                });
+            } else {
+                // Fallback for browsers that don't support lazy loading
+                const script = document.createElement('script');
+                script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+                document.body.appendChild(script);
+            }
         });
     </script>
 
