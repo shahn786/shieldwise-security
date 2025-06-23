@@ -429,7 +429,7 @@
             <div class="row mt-4">
                 <div class="col-12">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52893.03631636644!2d-118.37737370483419!3d33.91639989447531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b4d407f58b11%3A0xca9f33d998eb5618!2sHawthorne%2C%20CA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" title="Hawthorne Map - ShieldWise Security Service Area"></iframe>
+                        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26446.51815818422!2d-118.37737370927734!3d33.91640000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b4d407f58b11%3A0xca9f33d998eb5618!2sHawthorne%2C%20CA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" title="Hawthorne Map - ShieldWise Security Service Area"></iframe>
                     </div>
                 </div>
             </div>
@@ -634,13 +634,28 @@
     <!-- JavaScript for Interactive Elements -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize Bootstrap collapse for FAQ
-            $('.collapse').collapse();
+            // Initialize Bootstrap tooltips and popovers
+            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-toggle="popover"]').popover();
             
-            // FAQ accordion functionality
-            $('.card-header button').on('click', function() {
-                const target = $(this).attr('data-target');
+            // FAQ accordion functionality with proper Bootstrap 4 handling
+            $('[data-toggle="collapse"]').on('click', function(e) {
+                e.preventDefault();
+                const target = $(this).attr('data-target') || $(this).attr('href');
                 $(target).collapse('toggle');
+                
+                // Update aria-expanded attribute
+                const isExpanded = $(target).hasClass('show');
+                $(this).attr('aria-expanded', !isExpanded);
+            });
+
+            // Handle collapse events
+            $('.collapse').on('show.bs.collapse', function() {
+                $(this).siblings('.card-header').find('[data-toggle="collapse"]').attr('aria-expanded', 'true');
+            });
+
+            $('.collapse').on('hide.bs.collapse', function() {
+                $(this).siblings('.card-header').find('[data-toggle="collapse"]').attr('aria-expanded', 'false');
             });
             // Back to Top Button Functionality
             const backToTopButton = document.querySelector('.back-to-top');

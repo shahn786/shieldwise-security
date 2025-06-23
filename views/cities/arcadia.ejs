@@ -670,7 +670,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"After hiring ShieldWise Security for our residential community in North Arcadia, we've experienced a significant improvement in security and resident satisfaction. Their guards are professional, courteous, and provide excellent service to our residents."</p>
+                    <p>"We've experienced a significant improvement in security and resident satisfaction. Their guards are professional, courteous, and provide excellent service to our residents."</p>
                     <h4>Jennifer Lee</h4>
                     <div class="position">HOA President, North Arcadia</div>
                 </div>
@@ -904,13 +904,28 @@
     <!-- Bootstrap JS for FAQ Accordion -->
     <script>
         $(document).ready(function() {
-            // Initialize Bootstrap collapse
-            $('.collapse').collapse();
+            // Initialize Bootstrap tooltips and popovers
+            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-toggle="popover"]').popover();
 
-            // FAQ accordion functionality
-            $('.card-header button').on('click', function() {
-                const target = $(this).attr('data-target');
+            // FAQ accordion functionality with proper Bootstrap 4 handling
+            $('[data-toggle="collapse"]').on('click', function(e) {
+                e.preventDefault();
+                const target = $(this).attr('data-target') || $(this).attr('href');
                 $(target).collapse('toggle');
+
+                // Update aria-expanded attribute
+                const isExpanded = $(target).hasClass('show');
+                $(this).attr('aria-expanded', !isExpanded);
+            });
+
+            // Handle collapse events
+            $('.collapse').on('show.bs.collapse', function() {
+                $(this).siblings('.card-header').find('[data-toggle="collapse"]').attr('aria-expanded', 'true');
+            });
+
+            $('.collapse').on('hide.bs.collapse', function() {
+                $(this).siblings('.card-header').find('[data-toggle="collapse"]').attr('aria-expanded', 'false');
             });
         });
     </script>
@@ -921,13 +936,28 @@
     <!-- Bootstrap JS for FAQ Accordion -->
     <script>
         $(document).ready(function() {
-            // Initialize Bootstrap collapse
-            $('.collapse').collapse();
+            // Initialize Bootstrap tooltips and popovers
+            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-toggle="popover"]').popover();
 
-            // FAQ accordion functionality
-            $('.card-header button').on('click', function() {
-                const target = $(this).attr('data-target');
+            // FAQ accordion functionality with proper Bootstrap 4 handling
+            $('[data-toggle="collapse"]').on('click', function(e) {
+                e.preventDefault();
+                const target = $(this).attr('data-target') || $(this).attr('href');
                 $(target).collapse('toggle');
+
+                // Update aria-expanded attribute
+                const isExpanded = $(target).hasClass('show');
+                $(this).attr('aria-expanded', !isExpanded);
+            });
+
+            // Handle collapse events
+            $('.collapse').on('show.bs.collapse', function() {
+                $(this).siblings('.card-header').find('[data-toggle="collapse"]').attr('aria-expanded', 'true');
+            });
+
+            $('.collapse').on('hide.bs.collapse', function() {
+                $(this).siblings('.card-header').find('[data-toggle="collapse"]').attr('aria-expanded', 'false');
             });
         });
     </script>
@@ -938,13 +968,28 @@
     <!-- Bootstrap JS for FAQ Accordion -->
     <script>
         $(document).ready(function() {
-            // Initialize Bootstrap collapse
-            $('.collapse').collapse();
+            // Initialize Bootstrap tooltips and popovers
+            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-toggle="popover"]').popover();
 
-            // FAQ accordion functionality
-            $('.card-header button').on('click', function() {
-                const target = $(this).attr('data-target');
+            // FAQ accordion functionality with proper Bootstrap 4 handling
+            $('[data-toggle="collapse"]').on('click', function(e) {
+                e.preventDefault();
+                const target = $(this).attr('data-target') || $(this).attr('href');
                 $(target).collapse('toggle');
+
+                // Update aria-expanded attribute
+                const isExpanded = $(target).hasClass('show');
+                $(this).attr('aria-expanded', !isExpanded);
+            });
+
+            // Handle collapse events
+            $('.collapse').on('show.bs.collapse', function() {
+                $(this).siblings('.card-header').find('[data-toggle="collapse"]').attr('aria-expanded', 'true');
+            });
+
+            $('.collapse').on('hide.bs.collapse', function() {
+                $(this).siblings('.card-header').find('[data-toggle="collapse"]').attr('aria-expanded', 'false');
             });
         });
     </script>
