@@ -17,7 +17,6 @@
     <meta name="author" content="ShieldWise Security">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="theme-color" content="#1a3c64">
-    <link rel="canonical" href="https://shieldwisesecurity.com/los-angeles/south-gate" />
 
     <!-- ✅ Enhanced Mobile Optimization -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -65,13 +64,14 @@
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="copyright" content="© 2025 ShieldWise Security. All rights reserved.">
-    <meta name="rating" content="general">
-    <meta name="distribution" content="global">
-    <meta name="revisit-after" content="1 day">
-    <meta name="expires" content="never">
     <meta name="page-topic" content="Security Services">
     <meta name="page-type" content="Commercial Service">
     <meta name="audience" content="Business Owners, Property Managers, Facility Managers">
+    
+    <!-- ✅ Core Web Vitals Optimization -->
+    <meta name="critical-resource-hint" content="preload">
+    <link rel="preload" href="/css/style-cities.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/style-cities.css"></noscript>
 
     <!-- ✅ Breadcrumb Schema -->
     <script type="application/ld+json">
@@ -109,9 +109,27 @@
         "name": "ShieldWise Security - South Gate",
         "alternateName": ["South Gate Security Guards", "Tweedy Mile Security", "ShieldWise South Gate"],
         "image": [
-            "https://shieldwisesecurity.com/img/south-gate-security-guards.jpg",
-            "https://shieldwisesecurity.com/img/industrial-security-south-gate.jpg",
-            "https://shieldwisesecurity.com/img/business-security-patrol.jpg"
+            {
+                "@type": "ImageObject",
+                "url": "https://shieldwisesecurity.com/img/south-gate-security-guards.webp",
+                "width": 1200,
+                "height": 630,
+                "caption": "Professional security guards providing comprehensive protection in South Gate, CA"
+            },
+            {
+                "@type": "ImageObject", 
+                "url": "https://shieldwisesecurity.com/img/industrial-security-south-gate.webp",
+                "width": 1200,
+                "height": 630,
+                "caption": "Industrial security services for South Gate manufacturing facilities"
+            },
+            {
+                "@type": "ImageObject",
+                "url": "https://shieldwisesecurity.com/img/business-security-patrol.webp", 
+                "width": 1200,
+                "height": 630,
+                "caption": "Mobile patrol services for Tweedy Mile and South Gate business districts"
+            }
         ],
         "description": "Premier security guard services in South Gate, CA. Specializing in industrial facilities, Tweedy Mile businesses, manufacturing plants, and commercial protection. 24/7 rapid response in 2 hours.",
         "logo": {
@@ -364,6 +382,29 @@
             "latitude": 33.9546,
             "longitude": -118.2020
         },
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "telephone": "+1-714-716-7430",
+                "contactType": "customer service",
+                "areaServed": "South Gate",
+                "availableLanguage": ["English", "Spanish"],
+                "hoursAvailable": {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                    "opens": "00:00",
+                    "closes": "23:59"
+                }
+            },
+            {
+                "@type": "ContactPoint",
+                "telephone": "+1-714-716-7430",
+                "contactType": "emergency",
+                "areaServed": "South Gate",
+                "availableLanguage": ["English", "Spanish"],
+                "hoursAvailable": "24/7"
+            }
+        ],
         "openingHoursSpecification": {
             "@type": "OpeningHoursSpecification",
             "dayOfWeek": [
@@ -502,6 +543,25 @@
     <!-- ✅ Additional Meta for AI/Voice Search -->
     <meta name="voice-search-keywords" content="security guard near me, South Gate security, industrial security, Tweedy Mile security, bilingual security guards">
     <meta name="speakable" content="name,description,telephone">
+
+    <!-- ✅ Analytics & Tracking -->
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
+    </script>
 </head>
 
 <body itemscope itemtype="https://schema.org/WebPage">
@@ -527,7 +587,7 @@
                     <p>Our security professionals are thoroughly trained in the unique requirements of South Gate's industrial districts, retail areas, and residential communities. We provide advanced security protocols combined with bilingual communication capabilities to serve this diverse community effectively.</p>
                 </div>
                 <div class="image-content">
-                    <img src="/img/shahn1.png" alt="Professional Security Guards in South Gate" loading="lazy">
+                    <img src="/img/shahn1.png" alt="Professional licensed security guards providing comprehensive protection services in South Gate, CA industrial districts and Tweedy Mile business areas" loading="lazy" width="500" height="300">
                 </div>
             </div>
         </div>
@@ -615,7 +675,7 @@
                     </ul>
                 </div>
                 <div class="col-lg-6">
-                    <img src="/img/2.webp" alt="South Gate Security Services" class="img-fluid rounded shadow">
+                    <img src="/img/2.webp" alt="ShieldWise Security guards providing industrial security services at South Gate manufacturing facilities and Tweedy Mile commercial properties" class="img-fluid rounded shadow" width="600" height="400" loading="lazy">
                 </div>
             </div>
         </div>
@@ -825,7 +885,7 @@
                 <div class="col-md-4 mb-4">
                     <a href="/los-angeles" class="text-decoration-none">
                         <div class="card h-100 shadow-sm hover-effect">
-                            <img src="/img/la-pic.webp" class="card-img-top" alt="Los Angeles Security Services">
+                            <img src="/img/la-pic.webp" class="card-img-top" alt="Professional security guard services in Los Angeles with 24/7 armed and unarmed protection for businesses and events" width="400" height="250" loading="lazy">
                             <div class="card-body text-center">
                                 <h3 class="h5 card-title">Los Angeles</h3>
                                 <p class="card-text">Comprehensive security services throughout Los Angeles.</p>
@@ -836,7 +896,7 @@
                 <div class="col-md-4 mb-4">
                     <a href="/los-angeles/compton" class="text-decoration-none">
                         <div class="card h-100 shadow-sm hover-effect">
-                            <img src="/img/OC1.webp" class="card-img-top" alt="Compton Security Services">
+                            <img src="/img/OC1.webp" class="card-img-top" alt="Licensed security guards in Compton providing specialized business protection and event security services throughout Los Angeles County" width="400" height="250" loading="lazy">
                             <div class="card-body text-center">
                                 <h3 class="h5 card-title">Compton</h3>
                                 <p class="card-text">Specialized security for Compton businesses and events.</p>
@@ -847,7 +907,7 @@
                 <div class="col-md-4 mb-4">
                     <a href="/los-angeles/downey" class="text-decoration-none">
                         <div class="card h-100 shadow-sm hover-effect">
-                            <img src="/img/santaclara.webp" class="card-img-top" alt="Downey Security Services">
+                            <img src="/img/santaclara.webp" class="card-img-top" alt="Premium security solutions for Downey properties including commercial buildings, residential complexes, and industrial facilities" width="400" height="250" loading="lazy">
                             <div class="card-body text-center">
                                 <h3 class="h5 card-title">Downey</h3>
                                 <p class="card-text">Premium security solutions for Downey properties.</p>
