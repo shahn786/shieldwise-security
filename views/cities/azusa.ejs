@@ -931,6 +931,9 @@
         });
 
         $(document).ready(function() {
+            // Initialize Bootstrap dropdowns
+            $('.dropdown-toggle').dropdown();
+            
             // Initialize Bootstrap tooltips and popovers
             $('[data-toggle="tooltip"]').tooltip();
             $('[data-toggle="popover"]').popover();
