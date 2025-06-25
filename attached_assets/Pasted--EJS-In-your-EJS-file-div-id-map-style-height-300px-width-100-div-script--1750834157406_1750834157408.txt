@@ -1,0 +1,73 @@
+
+EJS
+<!-- In your EJS file -->
+<div id="map" style="height: 300px; width: 100%;"></div>
+<script>
+  function initMap() {
+    var location = {lat: 33.9446, lng: -118.2120}; // Example South Gate coords
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 14,
+      center: location
+    });
+    new google.maps.Marker({ position: location, map: map });
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+        async defer></script>
+Make sure the id="map" matches in both the <div> and the JS.
+Check that you have a valid API key.
+2. FAQ Not Expanding
+Common Issues:
+The FAQ section uses Bootstrap collapse, but the proper JS/CSS isn't loaded.
+IDs and data-bs-target/href attributes don't match.
+FAQ JS is missing or conflicts with other code.
+Solution Example:
+EJS
+<!-- Bootstrap FAQ Example -->
+<div class="accordion" id="faqAccordion">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="faqHeading1">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
+        What is your question?
+      </button>
+    </h2>
+    <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        The answer goes here.
+      </div>
+    </div>
+  </div>
+  <!-- Repeat for more FAQs -->
+</div>
+<!-- Make sure you load Bootstrap JS and CSS: -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+Check:
+
+The data-bs-target="#faqCollapse1" and id="faqCollapse1" match.
+Bootstrap JS is loaded (not just CSS).
+3. Compare with Burbank
+Compare the working burbank.ejs and the broken south-gate.ejs side-by-side.
+Look for differences in:
+Script and CSS file loads (especially for Google Maps/Bootstrap).
+Map container IDs and JS.
+FAQ element IDs, data-bs-* attributes, class names.
+Checklist for Fixing
+Map:
+
+Is the <div id="map"> present and spelled correctly?
+Is the map JS code present and executed? Is the API key correct?
+Are there any JS errors in the browser console related to Google Maps?
+FAQ:
+
+Are you loading Bootstrap's JS? (Not just CSS!)
+Are the HTML IDs and data-bs-target matching exactly?
+Is your FAQ markup identical to the working version?
+If You Want to Share the Code
+If you paste the code for both files here, I can make a line-by-line comparison and show you the exact difference and fix.
+
+Summary Table
+Issue	How to Fix/Check
+Map not showing	Check API key, JS script src, container ID, JS errors
+FAQ not expanding	Check Bootstrap JS loaded, correct IDs/data-bs-target, no JS errors
+JS/CSS missing	Compare <link> and <script> tags vs. burbank.ejs
