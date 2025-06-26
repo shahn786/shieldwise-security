@@ -1,0 +1,59 @@
+1. The Problem: Wrong Google Maps Embed URL
+Both of your <iframe> embeds use the same Google Maps embed URL, which is for Burbank, CA:
+
+HTML
+src="https://www.google.com/maps/embed?pb=!1m18!...0x80c2955b1db1904f%3A0x47fde469c268f39b!2sBurbank%2C%20CA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus"
+So, even though your section titles and lists change, the map you're embedding is always for Burbank.
+If your South Gate page is not showing any map at all, one of these is likely:
+
+The embed code is being blocked (perhaps by a browser extension, adblocker, or CORS policy).
+The section is being hidden by CSS or removed by JavaScript.
+A typo or syntax error elsewhere is breaking the rendering of this section.
+The embed code itself is incorrect or malformed (but you pasted the working Burbank embed).
+2. Steps to Fix:
+A. Use the Correct Google Maps Embed URL for South Gate
+You need to generate a Google Map embed link for South Gate, CA, not Burbank.
+
+Here’s how:
+
+Go to Google Maps
+Search for “South Gate, CA”
+Click the “Share” button
+Switch to the “Embed a map” tab, and copy the HTML <iframe> code.
+It should look something like this (the src will be different):
+
+HTML
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!...!2sSouth%20Gate%2C%20CA!5e0!3m2!1sen!2sus!4vYOUR_UNIQUE_ID"
+  width="600"
+  height="450"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+Replace the <iframe> in your South Gate section with this!
+
+B. Double-Check HTML Structure
+Your code otherwise looks fine and matches the working section.
+
+C. Check for CSS/JS Issues
+Make sure no CSS (display:none, visibility:hidden) is hiding the map container.
+Make sure no JS is removing the map element.
+Open browser dev tools (F12), inspect the element, and see if the iframe is in the DOM.
+3. Summary
+The sections are identical except for headings and lists.
+The map does not show for South Gate because you are still embedding the Burbank map.
+Get the correct embed code for South Gate, replace it, and it should display.
+4. Example: South Gate Embed
+Replace this block in your South Gate code:
+
+HTML
+<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52876.83631213732!2d-118.35590658136717!3d34.18112210000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2955b1db1904f%3A0x47fde469c268f39b!2sBurbank%2C%20CA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" title="Map of Burbank, California showing ShieldWise Security service areas"></iframe>
+with a new embed link for South Gate, e.g.:
+
+HTML
+<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.27426296544!2d-118.5246982!3d33.9445409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c7e2b3f2b2d9%3A0x5d5b6b8f9b2b2b9b!2sSouth%20Gate%2C%20CA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" title="Map of South Gate, California showing ShieldWise Security service areas"></iframe>
+(the above is an example; use the actual code from Google Maps!)
+
+If the map still doesn’t appear after this, check your browser console for errors and make sure your network is not blocking Google Maps.
+
