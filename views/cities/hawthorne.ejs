@@ -82,7 +82,10 @@
     <link rel="manifest" href="/manifest.json">
 
     <!-- ✅ Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' *.googleapis.com *.gstatic.com *.cloudflare.com *.jsdelivr.net">
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self' 'unsafe-inline' 'unsafe-eval' *.googleapis.com *.gstatic.com *.cloudflare.com *.jsdelivr.net www.google.com maps.googleapis.com maps.gstatic.com maps.google.com;
+      frame-src 'self' www.google.com maps.google.com;
+    ">
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
