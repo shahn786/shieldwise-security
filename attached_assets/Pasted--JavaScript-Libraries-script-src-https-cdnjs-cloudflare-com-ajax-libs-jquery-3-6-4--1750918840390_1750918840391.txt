@@ -1,0 +1,145 @@
+<!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded successfully');
+            
+            // Initialize fade-in animations
+            function initAnimations() {
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, observerOptions);
+
+                // Observe all fade-in elements
+                document.querySelectorAll('.fade-in').forEach(el => {
+                    observer.observe(el);
+                });
+            }
+
+            // Initialize back to top button
+            function initBackToTop() {
+                const backToTopButton = document.getElementById('backToTop');
+                
+                if (backToTopButton) {
+                    window.addEventListener('scroll', function() {
+                        if (window.pageYOffset > 300) {
+                            backToTopButton.classList.add('active');
+                        } else {
+                            backToTopButton.classList.remove('active');
+                        }
+                    });
+
+                    backToTopButton.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    });
+                }
+            }
+
+            // Initialize navbar scroll effect
+            function initNavbar() {
+                const navbar = document.querySelector('.navbar');
+                
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 50) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                });
+            }
+
+            // Test map loading
+            function testMapLoading() {
+                const mapIframe = document.querySelector('.map-container iframe');
+                if (mapIframe) {
+                    console.log('Map iframe found, src:', mapIframe.src);
+                    
+                    mapIframe.addEventListener('load', function() {
+                        console.log('Map loaded successfully');
+                    });
+                    
+                    mapIframe.addEventListener('error', function(e) {
+                        console.error('Map failed to load:', e);
+                    });
+                } else {
+                    console.error('Map iframe not found');
+                }
+            }
+
+            // Initialize all functions
+            initAnimations();
+            initBackToTop();
+            initNavbar();
+            testMapLoading();
+        });
+
+        // jQuery ready function for Bootstrap components
+        $(document).ready(function() {
+            console.log('jQuery loaded successfully, version:', $.fn.jquery);
+            
+            // Test FAQ accordion functionality
+            $('.collapse').on('show.bs.collapse', function () {
+                console.log('FAQ opening:', this.id);
+                const button = $(this).parent().find('[data-toggle="collapse"]');
+                button.removeClass('collapsed');
+            });
+            
+            $('.collapse').on('hide.bs.collapse', function () {
+                console.log('FAQ closing:', this.id);
+                const button = $(this).parent().find('[data-toggle="collapse"]');
+                button.addClass('collapsed');
+            });
+
+            // Test FAQ button clicks
+            $('[data-toggle="collapse"]').on('click', function() {
+                console.log('FAQ button clicked:', $(this).attr('data-target'));
+            });
+
+            // Smooth scrolling for anchor links
+            $('a[href^="#"]').on('click', function(event) {
+                const target = $(this.getAttribute('href'));
+                if (target.length) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 70
+                    }, 1000);
+                }
+            });
+
+            // Initialize tooltips if any
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
+        // Fallback for older browsers
+        if (typeof IntersectionObserver === 'undefined') {
+            // Fallback animation for older browsers
+            window.addEventListener('scroll', function() {
+                const elements = document.querySelectorAll('.fade-in');
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+
+                    if (elementPosition < screenPosition) {
+                        element.classList.add('visible');
+                    }
+                });
+            });
+        }
+    </script>
