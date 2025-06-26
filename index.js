@@ -193,7 +193,7 @@ app.get('/services/apartment-security', (req, res) => {
 const eventSecurityRoute = require('./routes/event-security');
 app.use('/services/event-security', eventSecurityRoute);
 
-// Import route files
+// Import route modules
 const apartmentSecurityRouter = require('./routes/apartment-security');
 const armedSecurityRoutes = require('./routes/armed-security');
 const commercialSecurityRoutes = require('./routes/commercial-security');
@@ -201,7 +201,15 @@ const constructionSecurityRoutes = require('./routes/construction-security');
 const educationalSecurityRoutes = require('./routes/educational-security');
 
 // Routes
-app.get("/", (req, res) => res.render("index"));
+app.get("/", (req, res) => res.render("index", { title: 'ShieldWise Security - Professional Security Services' }));
+
+// Testimonials showcase route
+app.get('/testimonials', (req, res) => {
+  res.render('testimonials-showcase', { 
+    title: 'California Security Testimonials - ShieldWise Security',
+    description: 'Read testimonials from satisfied clients across California who trust ShieldWise Security for professional security services.'
+  });
+});
 
 app.get("/services", (req, res) => {
   res.render("services");
