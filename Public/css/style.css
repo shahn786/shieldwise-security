@@ -1834,14 +1834,15 @@ html, body {
     align-items: center;
 }
 
+/* Author Photo and Content */
 .author-photo {
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     overflow: hidden;
     border-radius: 50%;
-    margin-right: 12px;
-    border: 2px solid #d12028;
-    box-shadow: 0 2px 8px rgba(209, 32, 40, 0.15);
+    margin-right: 8px;
+    border: 1px solid #d12028;
+    box-shadow: 0 1px 4px rgba(209, 32, 40, 0.15);
     flex-shrink: 0;
 }
 
@@ -1852,32 +1853,32 @@ html, body {
 }
 
 .author-info h4 {
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 700;
-    margin: 0 0 3px 0;
+    margin: 0 0 2px 0;
     color: #1a3c6e;
     line-height: 1.2;
 }
 
 .author-info p {
-    margin: 0 0 3px 0;
+    margin: 0 0 2px 0;
     color: #495057;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     line-height: 1.3;
 }
 
 .author-location {
     display: block;
     color: #6c757d;
-    font-size: 0.8rem;
-    margin-bottom: 5px;
+    font-size: 0.65rem;
+    margin-bottom: 3px;
     line-height: 1.2;
 }
 
 .star-rating {
     color: #ffc107;
-    letter-spacing: 2px;
-    font-size: 1rem;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
 }
 
 /* Client Grid */
@@ -1890,9 +1891,9 @@ html, body {
 
 .premium-card {
     background-color: #fff;
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -1923,7 +1924,7 @@ html, body {
 }
 
 .card-photo {
-    height: 120px;
+    height: 80px;
     overflow: hidden;
     position: relative;
 }
@@ -1950,7 +1951,7 @@ html, body {
 }
 
 .card-content {
-    padding: 30px;
+    padding: 20px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -1958,10 +1959,10 @@ html, body {
 }
 
 .premium-card blockquote {
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 0.85rem;
+    line-height: 1.5;
     color: #495057;
-    margin: 0 0 25px 0;
+    margin: 0 0 15px 0;
     padding: 0;
     font-style: italic;
     flex-grow: 1;
@@ -1981,18 +1982,18 @@ html, body {
 .card-author {
     display: flex;
     align-items: center;
-    padding-top: 20px;
+    padding-top: 15px;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .card-author-photo {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     overflow: hidden;
     border-radius: 50%;
-    margin-right: 10px;
-    border: 2px solid #d12028;
-    box-shadow: 0 2px 6px rgba(209, 32, 40, 0.15);
+    margin-right: 8px;
+    border: 1px solid #d12028;
+    box-shadow: 0 1px 3px rgba(209, 32, 40, 0.15);
     flex-shrink: 0;
 }
 
@@ -2034,7 +2035,7 @@ html, body {
 
 /* Results Bar */
 .results-bar {
-    display: flex;
+    display:Analysis: The CSS code will be updated to reduce the sizes of testimonial boxes and images, specifically affecting the author photo dimensions, font sizes in author information, and the overall size of the client grid cards in the testimonial section. flex;
     justify-content: space-between;
     margin-bottom: 60px;
     flex-wrap: wrap;
