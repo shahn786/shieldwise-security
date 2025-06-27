@@ -1835,13 +1835,13 @@ html, body {
 }
 
 .author-photo {
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
     overflow: hidden;
     border-radius: 50%;
-    margin-right: 15px;
+    margin-right: 12px;
     border: 2px solid #d12028;
-    box-shadow: 0 3px 10px rgba(209, 32, 40, 0.15);
+    box-shadow: 0 2px 8px rgba(209, 32, 40, 0.15);
     flex-shrink: 0;
 }
 
@@ -1923,7 +1923,7 @@ html, body {
 }
 
 .card-photo {
-    height: 180px;
+    height: 120px;
     overflow: hidden;
     position: relative;
 }
@@ -1934,7 +1934,7 @@ html, body {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 40px;
+    height: 30px;
     background: linear-gradient(to top, rgba(255,255,255,0.9), transparent);
 }
 
@@ -1986,13 +1986,13 @@ html, body {
 }
 
 .card-author-photo {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     overflow: hidden;
     border-radius: 50%;
-    margin-right: 12px;
+    margin-right: 10px;
     border: 2px solid #d12028;
-    box-shadow: 0 2px 8px rgba(209, 32, 40, 0.15);
+    box-shadow: 0 2px 6px rgba(209, 32, 40, 0.15);
     flex-shrink: 0;
 }
 
@@ -2146,19 +2146,19 @@ html, body {
     }
 
     .card-photo {
-        height: 160px;
+        height: 100px;
     }
 
     .author-photo {
-        width: 50px;
-        height: 50px;
-        margin-right: 15px;
+        width: 32px;
+        height: 32px;
+        margin-right: 12px;
     }
 
     .card-author-photo {
-        width: 40px;
-        height: 40px;
-        margin-right: 12px;
+        width: 28px;
+        height: 28px;
+        margin-right: 10px;
     }
 
     .result-item {
@@ -2193,15 +2193,15 @@ html, body {
     }
 
     .author-photo {
-        width: 45px;
-        height: 45px;
-        margin-right: 12px;
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
     }
 
     .card-author-photo {
-        width: 35px;
-        height: 35px;
-        margin-right: 10px;
+        width: 26px;
+        height: 26px;
+        margin-right: 8px;
     }
 
     .card-content {
@@ -2209,7 +2209,7 @@ html, body {
     }
 
     .card-photo {
-        height: 140px;
+        height: 80px;
     }
 
     .premium-cta p {
