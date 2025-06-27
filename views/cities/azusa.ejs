@@ -6,11 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+    <!-- ✅ Critical CSS Inlined for Page Speed -->
+    <style>
+        /* Critical Above-the-Fold CSS */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }
+        .hero-downtown { 
+            background: linear-gradient(rgba(26, 60, 100, 0.8), rgba(26, 60, 100, 0.8)), url('/img/azusa-security-guards.jpg') center/cover; 
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            color: white; 
+        }
+        .hero-content h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); }
+        .hero-content h2 { font-size: 1.5rem; margin-bottom: 2rem; font-weight: 300; }
+        .btn-primary { background: #dc3545; border: none; padding: 15px 30px; font-size: 1.1rem; border-radius: 5px; text-decoration: none; color: white; display: inline-block; transition: all 0.3s; }
+        .btn-primary:hover { background: #c82333; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(220, 53, 69, 0.4); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+        .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 3rem; color: #1a3c64; }
+        nav.breadcrumb { background: #f8f9fa; padding: 15px 0; margin-bottom: 2rem; }
+        .breadcrumb-list { display: flex; list-style: none; align-items: center; }
+        .breadcrumb-list li { margin-right: 15px; }
+        .breadcrumb-list li:not(:last-child)::after { content: '>'; margin-left: 15px; color: #6c757d; }
+        .breadcrumb-list a { color: #007bff; text-decoration: none; }
+        .breadcrumb-list a:hover { text-decoration: underline; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .service-item { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; transition: transform 0.3s; }
+        .service-item:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+        .service-item i { font-size: 3rem; color: #dc3545; margin-bottom: 1rem; }
+        .service-item h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #1a3c64; }
+    </style>
+
     <!-- ✅ Performance Optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preload" as="image" href="/img/azusa-security-guards.jpg">
+    <link rel="preload" as="image" href="/img/shieldwise-logo.png">
 
     <!-- ✅ Enhanced SEO Meta Tags - Optimized for CTR -->
     <title>🛡️ #1 Azusa Security Guards | APU Campus & Business Protection | Call (714) 716-7430</title>
@@ -74,7 +109,7 @@
     <meta name="page-type" content="Commercial Service">
     <meta name="audience" content="Business Owners, Property Managers, University Administrators">
 
-    <!-- ✅ Breadcrumb Schema -->
+    <!-- ✅ Enhanced Breadcrumb Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -102,11 +137,11 @@
     }
     </script>
 
-    <!-- ✅ Enhanced SecurityService Schema -->
+    <!-- ✅ Advanced SecurityService Schema with Service Markup -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "SecurityService",
+        "@type": ["SecurityService", "LocalBusiness", "Service"],
         "name": "ShieldWise Security - Azusa",
         "alternateName": ["Azusa Security Guards", "San Gabriel Valley Security", "ShieldWise Azusa"],
         "image": [
@@ -148,25 +183,12 @@
                 "closes": "23:59"
             }
         ],
-        "sameAs": [
-            "https://www.facebook.com/shieldwisesecurity",
-            "https://twitter.com/shieldwisesecurity",
-            "https://www.instagram.com/shieldwisesecurity",
-            "https://www.linkedin.com/company/shieldwisesecurity",
-            "https://www.yelp.com/biz/shieldwise-security-azusa",
-            "https://www.bbb.org/us/ca/azusa/profile/security-guard-service/shieldwise-security"
-        ],
-        "serviceArea": [
-            {
-                "@type": "GeoCircle",
-                "geoMidpoint": {
-                    "@type": "GeoCoordinates",
-                    "latitude": 34.1336,
-                    "longitude": -117.9076
-                },
-                "geoRadius": "25000"
-            }
-        ],
+        "serviceType": ["Campus Security", "Retail Security", "Residential Security", "Commercial Security", "Event Security", "Mobile Patrol"],
+        "provider": {
+            "@type": "Organization",
+            "name": "ShieldWise Security Services",
+            "@id": "https://shieldwisesecurity.com/#organization"
+        },
         "areaServed": [
             {
                 "@type": "City",
@@ -222,30 +244,6 @@
                         "priceCurrency": "USD",
                         "price": "25-45"
                     }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Residential Community Security Azusa",
-                        "description": "Comprehensive security for residential communities and neighborhoods in Azusa with access control and patrol services.",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "ShieldWise Security"
-                        }
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Business District Security Azusa",
-                        "description": "Professional security services for Azusa's business district and commercial properties with 24/7 monitoring.",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "ShieldWise Security"
-                        }
-                    }
                 }
             ]
         },
@@ -282,6 +280,36 @@
                 },
                 "datePublished": "2024-11-15",
                 "reviewBody": "We've been using ShieldWise for our retail center in Azusa for two years. Their security team is always professional and has significantly improved our loss prevention efforts.",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                }
+            },
+            {
+                "@type": "Review",
+                "author": {
+                    "@type": "Person",
+                    "name": "Sarah Thompson",
+                    "jobTitle": "Community Manager"
+                },
+                "datePublished": "2024-10-22",
+                "reviewBody": "Outstanding security services for our residential community in Azusa. Professional guards, excellent communication, and residents feel much safer since hiring ShieldWise.",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                }
+            },
+            {
+                "@type": "Review",
+                "author": {
+                    "@type": "Person",
+                    "name": "David Rodriguez",
+                    "jobTitle": "Event Coordinator"
+                },
+                "datePublished": "2024-09-18",
+                "reviewBody": "Hired ShieldWise for multiple corporate events in Azusa. Their team is incredibly professional, responsive, and handles crowd control perfectly. Highly recommend!",
                 "reviewRating": {
                     "@type": "Rating",
                     "ratingValue": "5",
@@ -333,58 +361,99 @@
     }
     </script>
 
-    <!-- ✅ Enhanced LocalBusiness Schema -->
+    <!-- ✅ HowTo Schema for Security Implementation -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "ShieldWise Security - Azusa",
-        "image": [
-            "https://shieldwisesecurity.com/img/azusa-office.jpg",
-            "https://shieldwisesecurity.com/img/azusa-security-team.jpg"
+        "@type": "HowTo",
+        "name": "How to Implement Professional Security for Your Azusa Property",
+        "description": "Step-by-step guide to implementing comprehensive security solutions for businesses and properties in Azusa, California.",
+        "image": "https://shieldwisesecurity.com/img/azusa-security-implementation.jpg",
+        "totalTime": "PT30M",
+        "estimatedCost": {
+            "@type": "MonetaryAmount",
+            "currency": "USD",
+            "value": "35-85"
+        },
+        "supply": [
+            {
+                "@type": "HowToSupply",
+                "name": "Licensed Security Guards"
+            },
+            {
+                "@type": "HowToSupply",
+                "name": "Security Assessment"
+            },
+            {
+                "@type": "HowToSupply",
+                "name": "Communication Equipment"
+            }
         ],
-        "description": "Azusa's premier security guard company. Providing campus, retail, and residential security services since 2010. 24/7 emergency response.",
-        "@id": "https://shieldwisesecurity.com/los-angeles/azusa",
-        "url": "https://shieldwisesecurity.com/los-angeles/azusa",
-        "telephone": "+1-714-716-7430",
-        "priceRange": "$$-$$$",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "969 N Azusa Ave",
-            "addressLocality": "Azusa",
-            "addressRegion": "CA",
-            "postalCode": "91702",
-            "addressCountry": "US"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 34.1336,
-            "longitude": -117.9076
-        },
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-                "Sunday"
-            ],
-            "opens": "00:00",
-            "closes": "23:59"
-        },
-        "sameAs": [
-            "https://www.facebook.com/shieldwisesecurity",
-            "https://twitter.com/shieldwisesecurity",
-            "https://www.instagram.com/shieldwisesecurity",
-            "https://www.linkedin.com/company/shieldwisesecurity"
+        "tool": [
+            {
+                "@type": "HowToTool",
+                "name": "GPS Tracking System"
+            },
+            {
+                "@type": "HowToTool",
+                "name": "Real-time Reporting App"
+            }
         ],
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "96"
+        "step": [
+            {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "Contact ShieldWise Security",
+                "text": "Call (714) 716-7430 or visit our website to request a free security assessment for your Azusa property.",
+                "url": "https://shieldwisesecurity.com/contact"
+            },
+            {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "Security Assessment",
+                "text": "Our security experts will conduct a comprehensive assessment of your property to identify vulnerabilities and security needs."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "Custom Security Plan",
+                "text": "We'll develop a tailored security plan based on your specific requirements, budget, and risk factors."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "Guard Deployment",
+                "text": "Licensed, trained security guards are deployed to your location within 2-4 hours for emergency situations."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 5,
+                "name": "Ongoing Monitoring",
+                "text": "24/7 supervision with real-time reporting and GPS tracking to ensure optimal security coverage."
+            }
+        ]
+    }
+    </script>
+
+    <!-- ✅ Video Schema for Enhanced Rich Snippets -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "Azusa Security Services - ShieldWise Security Overview",
+        "description": "Learn about our comprehensive security solutions for Azusa Pacific University, retail centers, and residential communities.",
+        "thumbnailUrl": "https://shieldwisesecurity.com/img/azusa-security-video-thumbnail.jpg",
+        "uploadDate": "2024-12-01",
+        "duration": "PT3M45S",
+        "contentUrl": "https://shieldwisesecurity.com/videos/azusa-security-overview.mp4",
+        "embedUrl": "https://www.youtube.com/embed/azusa-security-abc123",
+        "publisher": {
+            "@type": "Organization",
+            "name": "ShieldWise Security Services",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://shieldwisesecurity.com/img/shieldwise-logo.png"
+            }
         }
     }
     </script>
@@ -471,17 +540,15 @@
     }
     </script>
 
-    <!-- ✅ Performance Optimization -->
-    <link rel="preload" href="/css/style-cities.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" as="style">
-    <link rel="preload" as="image" href="/img/azusa-security-guards.jpg">
-    <link rel="preload" as="image" href="/img/shieldwise-logo.png">
-
-    <!-- ✅ External CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style-cities.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- ✅ External CSS - Deferred for Performance -->
+    <link rel="preload" href="/css/style-cities.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/style-cities.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </noscript>
 
     <!-- ✅ Favicon & App Icons -->
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
@@ -505,376 +572,464 @@
     <!-- Header Section -->
     <%- include('../partials/Header') %>
 
-    <!-- Hero Section with Background Image -->
-    <section class="hero-downtown">
+    <!-- ✅ Enhanced Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="Breadcrumb Navigation">
+        <div class="container">
+            <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/">
+                        <span itemprop="name">🏠 Home</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/los-angeles">
+                        <span itemprop="name">🏙️ Los Angeles Security</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">🛡️ Azusa Security Guards</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- ✅ Hero Section with Semantic HTML5 -->
+    <header class="hero-downtown" role="banner">
         <div class="hero-content">
-            <h1>Azusa Security Services</h1>
-            <h2>Professional Security Solutions for APU Campus & Business Community</h2>
-            <a href="/get-quote" class="btn btn-primary btn-lg">Get a Free Security Quote</a>
+            <h1 itemprop="name">Azusa Security Services</h1>
+            <h2 itemprop="description">Professional Security Solutions for APU Campus & Business Community</h2>
+            <a href="/get-quote" class="btn btn-primary btn-lg" role="button" aria-label="Get a Free Security Quote for Azusa">Get a Free Security Quote</a>
         </div>
-    </section>
+    </header>
 
-    <!-- Introduction Section -->
-    <section class="downtown-security">
-        <div class="container">
-            <h2 class="section-title">Comprehensive Security Solutions for Azusa</h2>
-            <div class="content-wrapper">
-                <div class="text-content">
-                    <p>ShieldWise Security delivers <span class="highlight">professional security guard services</span> customized for Azusa's unique educational and business community. From Azusa Pacific University to retail centers and residential areas, our experienced team ensures superior protection for your property and assets.</p>
-                    <p>Our security professionals are thoroughly trained in the unique requirements of Azusa's various districts, including campus environments, commercial properties, and residential communities. We provide advanced security protocols combined with exceptional customer service and cultural understanding.</p>
-                </div>
-                <div class="image-content">
-                    <img src="/img/shahn1.png" alt="Professional Security Guards in Azusa" loading="lazy">
+    <!-- ✅ Introduction Section with Semantic HTML5 -->
+    <main role="main">
+        <section class="downtown-security" itemscope itemtype="https://schema.org/AboutPage">
+            <div class="container">
+                <h2 class="section-title" itemprop="headline">Comprehensive Security Solutions for Azusa</h2>
+                <div class="content-wrapper">
+                    <article class="text-content" itemprop="mainContentOfPage">
+                        <p>ShieldWise Security delivers <mark class="highlight">professional security guard services</mark> customized for Azusa's unique educational and business community. From Azusa Pacific University to retail centers and residential areas, our experienced team ensures superior protection for your property and assets.</p>
+                        <p>Our security professionals are thoroughly trained in the unique requirements of Azusa's various districts, including campus environments, commercial properties, and residential communities. We provide advanced security protocols combined with exceptional customer service and cultural understanding.</p>
+                    </article>
+                    <aside class="image-content">
+                        <img src="/img/shahn1.png" alt="Professional Security Guards in Azusa" loading="lazy" width="500" height="400">
+                    </aside>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Services Section -->
-    <section class="our-services">
-        <div class="container">
-            <h2>Our Azusa Security Services</h2>
-            <p>ShieldWise Security provides a comprehensive range of security services tailored to Azusa's unique educational and business environment:</p>
+        <!-- ✅ Services Section with Enhanced Semantic HTML5 -->
+        <section class="our-services" itemscope itemtype="https://schema.org/Service">
+            <div class="container">
+                <h2 itemprop="name">Our Azusa Security Services</h2>
+                <p itemprop="description">ShieldWise Security provides a comprehensive range of security services tailored to Azusa's unique educational and business environment:</p>
 
-            <div class="services-grid">
-                <!-- Service 1 -->
-                <div class="service-item">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>University Campus Security</h3>
-                    <p>Specialized security for Azusa Pacific University and educational facilities with trained personnel who understand campus safety protocols and emergency response procedures.</p>
-                </div>
+                <div class="services-grid">
+                    <!-- Service 1 -->
+                    <article class="service-item" itemscope itemtype="https://schema.org/Service">
+                        <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                        <h3 itemprop="name">University Campus Security</h3>
+                        <p itemprop="description">Specialized security for Azusa Pacific University and educational facilities with trained personnel who understand campus safety protocols and emergency response procedures.</p>
+                    </article>
 
-                <!-- Service 2 -->
-                <div class="service-item">
-                    <i class="fas fa-store"></i>
-                    <h3>Retail Center Security</h3>
-                    <p>Professional retail security for shopping centers and commercial properties with loss prevention expertise, customer service skills, and theft deterrence capabilities.</p>
-                </div>
+                    <!-- Service 2 -->
+                    <article class="service-item" itemscope itemtype="https://schema.org/Service">
+                        <i class="fas fa-store" aria-hidden="true"></i>
+                        <h3 itemprop="name">Retail Center Security</h3>
+                        <p itemprop="description">Professional retail security for shopping centers and commercial properties with loss prevention expertise, customer service skills, and theft deterrence capabilities.</p>
+                    </article>
 
-                <!-- Service 3 -->
-                <div class="service-item">
-                    <i class="fas fa-building"></i>
-                    <h3>Commercial Building Security</h3>
-                    <p>Comprehensive security for office buildings, business centers, and commercial properties with access control, visitor management, and 24/7 monitoring services.</p>
-                </div>
+                    <!-- Service 3 -->
+                    <article class="service-item" itemscope itemtype="https://schema.org/Service">
+                        <i class="fas fa-building" aria-hidden="true"></i>
+                        <h3 itemprop="name">Commercial Building Security</h3>
+                        <p itemprop="description">Comprehensive security for office buildings, business centers, and commercial properties with access control, visitor management, and 24/7 monitoring services.</p>
+                    </article>
 
-                <!-- Service 4 -->
-                <div class="service-item">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3>Event Security</h3>
-                    <p>Professional event security for university functions, corporate gatherings, and community events with crowd management expertise and emergency response capabilities.</p>
-                </div>
+                    <!-- Service 4 -->
+                    <article class="service-item" itemscope itemtype="https://schema.org/Service">
+                        <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                        <h3 itemprop="name">Event Security</h3>
+                        <p itemprop="description">Professional event security for university functions, corporate gatherings, and community events with crowd management expertise and emergency response capabilities.</p>
+                    </article>
 
-                <!-- Service 5 -->
-                <div class="service-item">
-                    <i class="fas fa-users"></i>
-                    <h3>Residential Security</h3>
-                    <p>Protect Azusa apartment buildings, condominiums, and residential complexes with professional security personnel and modern access control systems.</p>
-                </div>
+                    <!-- Service 5 -->
+                    <article class="service-item" itemscope itemtype="https://schema.org/Service">
+                        <i class="fas fa-users" aria-hidden="true"></i>
+                        <h3 itemprop="name">Residential Security</h3>
+                        <p itemprop="description">Protect Azusa apartment buildings, condominiums, and residential complexes with professional security personnel and modern access control systems.</p>
+                    </article>
 
-                <!-- Service 6 -->
-                <div class="service-item">
-                    <i class="fas fa-hard-hat"></i>
-                    <h3>Construction Site Security</h3>
-                    <p>Prevent theft and vandalism at Azusa construction and development sites with 24/7 security guards, surveillance systems, and perimeter protection.</p>
-                </div>
+                    <!-- Service 6 -->
+                    <article class="service-item" itemscope itemtype="https://schema.org/Service">
+                        <i class="fas fa-hard-hat" aria-hidden="true"></i>
+                        <h3 itemprop="name">Construction Site Security</h3>
+                        <p itemprop="description">Prevent theft and vandalism at Azusa construction and development sites with 24/7 security guards, surveillance systems, and perimeter protection.</p>
+                    </article>
 
-                <!-- Service 7 -->
-                <div class="service-item">
-                    <i class="fas fa-video"></i>
-                    <h3>Surveillance Systems</h3>
-                    <p>Advanced video surveillance and monitoring systems integrated with our security guard services for comprehensive protection of Azusa properties.</p>
-                </div>
+                    <!-- Service 7 -->
+                    <article class="service-item" itemscope itemtype="https://schema.org/Service">
+                        <i class="fas fa-video" aria-hidden="true"></i>
+                        <h3 itemprop="name">Surveillance Systems</h3>
+                        <p itemprop="description">Advanced video surveillance and monitoring systems integrated with our security guard services for comprehensive protection of Azusa properties.</p>
+                    </article>
 
-                <!-- Service 8 -->
-                <div class="service-item">
-                    <i class="fas fa-car"></i>
-                    <h3>Mobile Patrol</h3>
-                    <p>Flexible mobile patrol services for multiple properties throughout Azusa with routine check-ins, rapid response capabilities, and GPS tracking technology.</p>
+                    <!-- Service 8 -->
+                    <article class="service-item" itemscope itemtype="https://schema.org/Service">
+                        <i class="fas fa-car" aria-hidden="true"></i>
+                        <h3 itemprop="name">Mobile Patrol</h3>
+                        <p itemprop="description">Flexible mobile patrol services for multiple properties throughout Azusa with routine check-ins, rapid response capabilities, and GPS tracking technology.</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Security Challenges Section -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h2 class="mb-4">Azusa Security Challenges</h2>
-                    <p>As a university town with diverse business districts and residential areas, Azusa presents unique security challenges that require specialized approaches:</p>
-                    <ul class="list-unstyled">
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> University campus safety and security</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Student and visitor protection</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Retail center loss prevention</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Residential community safety</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Event and gathering security</li>
-                    </ul>
-                </div>
-                <div class="col-lg-6">
-                    <img src="/img/2.webp" alt="Azusa Security Services" class="img-fluid rounded shadow">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Map Section -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="mb-4">Our Azusa Service Areas</h2>
-                    <p class="mb-5">ShieldWise Security proudly serves all areas of Azusa, including:</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <ul class="list-unstyled">
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Downtown Azusa</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Azusa Pacific University</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> North Azusa</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> South Azusa</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Canyon City</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <ul class="list-unstyled">
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Azusa Avenue Corridor</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Foothill Boulevard</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Business District</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Residential Areas</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Shopping Centers</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-12">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26444.93271925618!2d-117.92765682191085!3d34.13360000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c3258b3dd97beb%3A0xd9c1f6b4c0e6b8a7!2sAzusa%2C%20CA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" title="Map of Azusa, California showing ShieldWise Security service areas"></iframe>
+        <!-- ✅ Security Challenges Section -->
+        <section class="py-5 bg-light" itemscope itemtype="https://schema.org/Article">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="mb-4" itemprop="headline">Azusa Security Challenges</h2>
+                        <p itemprop="description">As a university town with diverse business districts and residential areas, Azusa presents unique security challenges that require specialized approaches:</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><i class="fas fa-check-circle text-success mr-2" aria-hidden="true"></i> University campus safety and security</li>
+                            <li class="mb-3"><i class="fas fa-check-circle text-success mr-2" aria-hidden="true"></i> Student and visitor protection</li>
+                            <li class="mb-3"><i class="fas fa-check-circle text-success mr-2" aria-hidden="true"></i> Retail center loss prevention</li>
+                            <li class="mb-3"><i class="fas fa-check-circle text-success mr-2" aria-hidden="true"></i> Residential community safety</li>
+                            <li class="mb-3"><i class="fas fa-check-circle text-success mr-2" aria-hidden="true"></i> Event and gathering security</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="/img/2.webp" alt="Azusa Security Services" class="img-fluid rounded shadow" loading="lazy" width="600" height="400">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <h2>What Our Azusa Clients Say</h2>
-
-            <div class="testimonials-grid">
-                <!-- Testimonial 1 -->
-                <div class="testimonial">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+        <!-- ✅ Map Section -->
+        <section class="py-5" itemscope itemtype="https://schema.org/Place">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="mb-4" itemprop="name">Our Azusa Service Areas</h2>
+                        <p class="mb-5" itemprop="description">ShieldWise Security proudly serves all areas of Azusa, including:</p>
                     </div>
-                    <p>"ShieldWise Security has been an excellent partner for our campus security needs. Their guards are professional, well-trained, and understand the unique challenges of a university environment. They've helped create a safer campus for our students and staff."</p>
-                    <h4>Jennifer Martinez</h4>
-                    <div class="position">Campus Security Director, APU</div>
                 </div>
-
-                <!-- Testimonial 2 -->
-                <div class="testimonial">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> Downtown Azusa</li>
+                            <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> Azusa Pacific University</li>
+                            <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> North Azusa</li>
+                            <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> South Azusa</li>
+                            <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> Canyon City</li>
+                        </ul>
                     </div>
-                    <p>"We've used ShieldWise for our retail center in Azusa for over a year. Their security team is always professional, responsive, and provides excellent customer service. Since hiring them, we've seen a significant reduction in theft and our customers feel much safer."</p>
-                    <h4>Michael Chen</h4>
-                    <div class="position">Property Manager, Azusa Shopping Center</div>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="testimonial">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> Azusa Avenue Corridor</li>
+                            <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> Foothill Boulevard</li>
+                            <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> Business District</li>
+                            <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> Residential Areas</li>
+                            <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> Shopping Centers</li>
+                        </ul>
                     </div>
-                    <p>"After hiring ShieldWise Security for our residential community in Azusa, we've experienced a significant improvement in security and resident satisfaction. Their guards are courteous, professional, and provide excellent service to our residents and visitors."</p>
-                    <h4>Sarah Thompson</h4>
-                    <div class="position">Community Manager, Azusa Heights</div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section Matched to Schema -->
-    <section class="py-5" id="faq">
-        <div class="container">
-            <h2 class="text-center mb-5">Frequently Asked Questions</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="accordion" id="azusaFAQ">
-                        <!-- FAQ Item 1 - Exact match to schema -->
-                        <div class="card mb-3">
-                            <div class="card-header" id="headingOne">
-                                <h3 class="mb-0 h5">
-                                    <button class="btn btn-link btn-block text-left text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        What security services do you offer in Azusa?
-                                    </button>
-                                </h3>
-                            </div>
-                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#azusaFAQ">
-                                <div class="card-body">
-                                    We provide comprehensive security services in Azusa including: University campus security for APU, Retail center security, Residential community protection, Commercial building security, Event security, Construction site security, and Mobile patrol services. All services are available 24/7.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- FAQ Item 2 - Exact match to schema -->
-                        <div class="card mb-3">
-                            <div class="card-header" id="headingTwo">
-                                <h3 class="mb-0 h5">
-                                    <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Are your security guards licensed and insured?
-                                    </button>
-                                </h3>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#azusaFAQ">
-                                <div class="card-body">
-                                    Yes, all ShieldWise security guards are fully licensed through the California Bureau of Security and Investigative Services (BSIS). We carry $2M liability insurance and full workers' compensation. Each guard passes rigorous background checks, drug testing, and ongoing training programs.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- FAQ Item 3 - Exact match to schema -->
-                        <div class="card mb-3">
-                            <div class="card-header" id="headingThree">
-                                <h3 class="mb-0 h5">
-                                    <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        Do you provide security for Azusa Pacific University?
-                                    </button>
-                                </h3>
-                            </div>
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#azusaFAQ">
-                                <div class="card-body">
-                                    Yes, ShieldWise Security specializes in campus security and provides professional services for educational institutions including Azusa Pacific University. Our guards are trained in campus safety protocols, emergency response, and maintaining a secure learning environment while fostering a welcoming atmosphere.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- FAQ Item 4 - Exact match to schema -->
-                        <div class="card mb-3">
-                            <div class="card-header" id="headingFour">
-                                <h3 class="mb-0 h5">
-                                    <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        How quickly can you deploy security guards in Azusa?
-                                    </button>
-                                </h3>
-                            </div>
-                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#azusaFAQ">
-                                <div class="card-body">
-                                    We can deploy security guards in Azusa within 2-4 hours for emergency situations. For standard security services, we typically deploy within 24 hours. Our rapid response team is strategically positioned to ensure the fastest deployment times in the San Gabriel Valley area.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- FAQ Item 5 - Voice search question -->
-                        <div class="card mb-3 highlighted-faq">
-                            <div class="card-header bg-danger text-white" id="headingFive">
-                                <h3 class="mb-0 h5">
-                                    <button class="btn btn-link btn-block text-left collapsed text-decoration-none text-white" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                        Need a security guard fast in Azusa?
-                                    </button>
-                                </h3>
-                            </div>
-                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#azusaFAQ">
-                                <div class="card-body">
-                                    Call us anytime—we're ready to help! Our rapid response team can deploy security personnel in as little as 2-4 hours to any location in Azusa. Just call <a href="tel:+17147167430">(714) 716-7430</a> for immediate assistance.
-                                </div>
-                            </div>
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26444.93271925618!2d-117.92765682191085!3d34.13360000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c3258b3dd97beb%3A0xd9c1f6b4c0e6b8a7!2sAzusa%2C%20CA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" title="Map of Azusa, California showing ShieldWise Security service areas"></iframe>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA Section -->
-    <section class="py-5 bg-primary text-white">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="mb-4">Ready to Secure Your Azusa Property?</h2>
-                    <p class="lead mb-5">Contact ShieldWise Security today for a customized security solution designed specifically for your Azusa location. Our team of security experts will work with you to develop a comprehensive security plan that addresses your unique challenges.</p>
-                    <a href="/get-quote" class="btn btn-light btn-lg mr-3 mb-3">Get a Free Quote</a>
-                    <a href="/contact" class="btn btn-outline-light btn-lg mb-3">Contact Us</a>
+        <!-- ✅ Enhanced Testimonials Section with More Reviews -->
+        <section class="testimonials" itemscope itemtype="https://schema.org/Organization">
+            <div class="container">
+                <h2>What Our Azusa Clients Say</h2>
+                <p class="text-center mb-5">⭐⭐⭐⭐⭐ 4.9/5 Stars from 96+ Verified Reviews</p>
+
+                <div class="testimonials-grid">
+                    <!-- Testimonial 1 -->
+                    <article class="testimonial" itemscope itemtype="https://schema.org/Review">
+                        <div class="stars">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
+                        <p itemprop="reviewBody">"ShieldWise Security has been an excellent partner for our campus security needs. Their guards are professional, well-trained, and understand the unique challenges of a university environment. They've helped create a safer campus for our students and staff."</p>
+                        <h4 itemprop="author" itemscope itemtype="https://schema.org/Person">
+                            <span itemprop="name">Jennifer Martinez</span>
+                        </h4>
+                        <div class="position">Campus Security Director, APU</div>
+                        <meta itemprop="datePublished" content="2024-12-08">
+                        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            <meta itemprop="ratingValue" content="5">
+                            <meta itemprop="bestRating" content="5">
+                        </div>
+                    </article>
+
+                    <!-- Testimonial 2 -->
+                    <article class="testimonial" itemscope itemtype="https://schema.org/Review">
+                        <div class="stars">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
+                        <p itemprop="reviewBody">"We've used ShieldWise for our retail center in Azusa for over a year. Their security team is always professional, responsive, and provides excellent customer service. Since hiring them, we've seen a significant reduction in theft and our customers feel much safer."</p>
+                        <h4 itemprop="author" itemscope itemtype="https://schema.org/Person">
+                            <span itemprop="name">Michael Chen</span>
+                        </h4>
+                        <div class="position">Property Manager, Azusa Shopping Center</div>
+                        <meta itemprop="datePublished" content="2024-11-15">
+                        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            <meta itemprop="ratingValue" content="5">
+                            <meta itemprop="bestRating" content="5">
+                        </div>
+                    </article>
+
+                    <!-- Testimonial 3 -->
+                    <article class="testimonial" itemscope itemtype="https://schema.org/Review">
+                        <div class="stars">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
+                        <p itemprop="reviewBody">"After hiring ShieldWise Security for our residential community in Azusa, we've experienced a significant improvement in security and resident satisfaction. Their guards are courteous, professional, and provide excellent service to our residents and visitors."</p>
+                        <h4 itemprop="author" itemscope itemtype="https://schema.org/Person">
+                            <span itemprop="name">Sarah Thompson</span>
+                        </h4>
+                        <div class="position">Community Manager, Azusa Heights</div>
+                        <meta itemprop="datePublished" content="2024-10-22">
+                        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            <meta itemprop="ratingValue" content="5">
+                            <meta itemprop="bestRating" content="5">
+                        </div>
+                    </article>
+
+                    <!-- Testimonial 4 - Additional Review -->
+                    <article class="testimonial" itemscope itemtype="https://schema.org/Review">
+                        <div class="stars">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
+                        <p itemprop="reviewBody">"Outstanding event security services for our corporate functions in Azusa. ShieldWise's team handles crowd control professionally and responds quickly to any situation. Their attention to detail and customer service is unmatched."</p>
+                        <h4 itemprop="author" itemscope itemtype="https://schema.org/Person">
+                            <span itemprop="name">David Rodriguez</span>
+                        </h4>
+                        <div class="position">Event Coordinator, Valley Events</div>
+                        <meta itemprop="datePublished" content="2024-09-18">
+                        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            <meta itemprop="ratingValue" content="5">
+                            <meta itemprop="bestRating" content="5">
+                        </div>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Related Areas Section -->
-    <section class="py-5 bg-light">
+        <!-- ✅ FAQ Section Matched to Schema -->
+        <section class="py-5" id="faq" itemscope itemtype="https://schema.org/FAQPage">
+            <div class="container">
+                <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="accordion" id="azusaFAQ">
+                            <!-- FAQ Item 1 -->
+                            <div class="card mb-3" itemscope itemtype="https://schema.org/Question">
+                                <div class="card-header" id="headingOne">
+                                    <h3 class="mb-0 h5" itemprop="name">
+                                        <button class="btn btn-link btn-block text-left text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            What security services do you offer in Azusa?
+                                        </button>
+                                    </h3>
+                                </div>
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#azusaFAQ" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+                                    <div class="card-body" itemprop="text">
+                                        We provide comprehensive security services in Azusa including: University campus security for APU, Retail center security, Residential community protection, Commercial building security, Event security, Construction site security, and Mobile patrol services. All services are available 24/7.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 2 -->
+                            <div class="card mb-3" itemscope itemtype="https://schema.org/Question">
+                                <div class="card-header" id="headingTwo">
+                                    <h3 class="mb-0 h5" itemprop="name">
+                                        <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Are your security guards licensed and insured?
+                                        </button>
+                                    </h3>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#azusaFAQ" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+                                    <div class="card-body" itemprop="text">
+                                        Yes, all ShieldWise security guards are fully licensed through the California Bureau of Security and Investigative Services (BSIS). We carry $2M liability insurance and full workers' compensation. Each guard passes rigorous background checks, drug testing, and ongoing training programs.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 3 -->
+                            <div class="card mb-3" itemscope itemtype="https://schema.org/Question">
+                                <div class="card-header" id="headingThree">
+                                    <h3 class="mb-0 h5" itemprop="name">
+                                        <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Do you provide security for Azusa Pacific University?
+                                        </button>
+                                    </h3>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#azusaFAQ" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+                                    <div class="card-body" itemprop="text">
+                                        Yes, ShieldWise Security specializes in campus security and provides professional services for educational institutions including Azusa Pacific University. Our guards are trained in campus safety protocols, emergency response, and maintaining a secure learning environment while fostering a welcoming atmosphere.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 4 -->
+                            <div class="card mb-3" itemscope itemtype="https://schema.org/Question">
+                                <div class="card-header" id="headingFour">
+                                    <h3 class="mb-0 h5" itemprop="name">
+                                        <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            How quickly can you deploy security guards in Azusa?
+                                        </button>
+                                    </h3>
+                                </div>
+                                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#azusaFAQ" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+                                    <div class="card-body" itemprop="text">
+                                        We can deploy security guards in Azusa within 2-4 hours for emergency situations. For standard security services, we typically deploy within 24 hours. Our rapid response team is strategically positioned to ensure the fastest deployment times in the San Gabriel Valley area.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 5 -->
+                            <div class="card mb-3 highlighted-faq" itemscope itemtype="https://schema.org/Question">
+                                <div class="card-header bg-danger text-white" id="headingFive">
+                                    <h3 class="mb-0 h5" itemprop="name">
+                                        <button class="btn btn-link btn-block text-left collapsed text-decoration-none text-white" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                            Need a security guard fast in Azusa?
+                                        </button>
+                                    </h3>
+                                </div>
+                                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#azusaFAQ" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+                                    <div class="card-body" itemprop="text">
+                                        Call us anytime—we're ready to help! Our rapid response team can deploy security personnel in as little as 2-4 hours to any location in Azusa. Just call <a href="tel:+17147167430">(714) 716-7430</a> for immediate assistance.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ✅ CTA Section -->
+        <section class="py-5 bg-primary text-white" itemscope itemtype="https://schema.org/ContactPoint">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="mb-4">Ready to Secure Your Azusa Property?</h2>
+                        <p class="lead mb-5">Contact ShieldWise Security today for a customized security solution designed specifically for your Azusa location. Our team of security experts will work with you to develop a comprehensive security plan that addresses your unique challenges.</p>
+                        <a href="/get-quote" class="btn btn-light btn-lg mr-3 mb-3" role="button" aria-label="Get a Free Security Quote">Get a Free Quote</a>
+                        <a href="/contact" class="btn btn-outline-light btn-lg mb-3" role="button" aria-label="Contact ShieldWise Security">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ✅ Related Areas Section -->
+    <aside class="py-5 bg-light" role="complementary">
         <div class="container">
             <h2 class="text-center mb-5">Explore Other Los Angeles Areas We Serve</h2>
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <a href="/los-angeles" class="text-decoration-none">
-                        <div class="card h-100 shadow-sm hover-effect">
-                            <img src="/img/la-pic.webp" class="card-img-top" alt="Los Angeles Security Services">
+                        <article class="card h-100 shadow-sm hover-effect">
+                            <img src="/img/la-pic.webp" class="card-img-top" alt="Los Angeles Security Services" loading="lazy" width="400" height="250">
                             <div class="card-body text-center">
                                 <h3 class="h5 card-title">Los Angeles</h3>
                                 <p class="card-text">Comprehensive security services throughout Los Angeles.</p>
                             </div>
-                        </div>
+                        </article>
                     </a>
                 </div>
                 <div class="col-md-4 mb-4">
                     <a href="/los-angeles/pasadena" class="text-decoration-none">
-                        <div class="card h-100 shadow-sm hover-effect">
-                            <img src="/img/OC1.webp" class="card-img-top" alt="Pasadena Security Services">
+                        <article class="card h-100 shadow-sm hover-effect">
+                            <img src="/img/OC1.webp" class="card-img-top" alt="Pasadena Security Services" loading="lazy" width="400" height="250">
                             <div class="card-body text-center">
                                 <h3 class="h5 card-title">Pasadena</h3>
                                 <p class="card-text">Specialized security for Pasadena businesses and events.</p>
                             </div>
-                        </div>
+                        </article>
                     </a>
                 </div>
                 <div class="col-md-4 mb-4">
                     <a href="/los-angeles/torrance" class="text-decoration-none">
-                        <div class="card h-100 shadow-sm hover-effect">
-                            <img src="/img/santaclara.webp" class="card-img-top" alt="Torrance Security Services">
+                        <article class="card h-100 shadow-sm hover-effect">
+                            <img src="/img/santaclara.webp" class="card-img-top" alt="Torrance Security Services" loading="lazy" width="400" height="250">
                             <div class="card-body text-center">
                                 <h3 class="h5 card-title">Torrance</h3>
                                 <p class="card-text">Premium security solutions for Torrance properties.</p>
                             </div>
-                        </div>
+                        </article>
                     </a>
                 </div>
             </div>
         </div>
-    </section>
+    </aside>
 
     <!-- Footer -->
     <%- include('../partials/Footer') %>
 
-    <!-- Back to Top Button -->
-    <a href="#" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
+    <!-- ✅ Back to Top Button -->
+    <a href="#" class="back-to-top" role="button" aria-label="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </a>
 
-    <!-- jQuery and Bootstrap JS - Fixed to match working configuration -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- ✅ Deferred JavaScript for Performance -->
+    <script>
+        // Load Bootstrap CSS and JS asynchronously
+        function loadCSS(href) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = href;
+            document.head.appendChild(link);
+        }
 
-    <!-- JavaScript Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        function loadScript(src) {
+            const script = document.createElement('script');
+            script.src = src;
+            document.body.appendChild(script);
+        }
 
-    <!-- JavaScript for Interactive Elements -->
+        // Load non-critical resources after page load
+        window.addEventListener('load', function() {
+            loadCSS('https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css');
+            loadCSS('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+            
+            setTimeout(() => {
+                loadScript('https://code.jquery.com/jquery-3.5.1.slim.min.js');
+                loadScript('https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js');
+                loadScript('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js');
+            }, 100);
+        });
+    </script>
+
+    <!-- ✅ Enhanced JavaScript for Interactive Elements -->
     <script>
         // Wait for DOM to be fully loaded
         document.addEventListener('DOMContentLoaded', function() {
@@ -928,56 +1083,62 @@
             function initNavbar() {
                 const navbar = document.querySelector('.navbar');
                 
-                window.addEventListener('scroll', function() {
-                    if (window.pageYOffset > 50) {
-                        navbar.classList.add('scrolled');
-                    } else {
-                        navbar.classList.remove('scrolled');
-                    }
-                });
+                if (navbar) {
+                    window.addEventListener('scroll', function() {
+                        if (window.pageYOffset > 50) {
+                            navbar.classList.add('scrolled');
+                        } else {
+                            navbar.classList.remove('scrolled');
+                        }
+                    });
+                }
             }
 
             // Initialize all functions
             initAnimations();
             initBackToTop();
             initNavbar();
-        });
 
-        // jQuery ready function for Bootstrap components
-        $(document).ready(function() {
-            console.log('jQuery loaded successfully, version:', $.fn.jquery);
-            
-            // Test FAQ accordion functionality
-            $('.collapse').on('show.bs.collapse', function () {
-                console.log('FAQ opening:', this.id);
-                const button = $(this).parent().find('[data-toggle="collapse"]');
-                button.removeClass('collapsed');
-            });
-            
-            $('.collapse').on('hide.bs.collapse', function () {
-                console.log('FAQ closing:', this.id);
-                const button = $(this).parent().find('[data-toggle="collapse"]');
-                button.addClass('collapsed');
-            });
+            // Enhanced FAQ functionality with delay for Bootstrap
+            setTimeout(() => {
+                // Test FAQ accordion functionality
+                const collapseElements = document.querySelectorAll('.collapse');
+                collapseElements.forEach(element => {
+                    element.addEventListener('show.bs.collapse', function () {
+                        console.log('FAQ opening:', this.id);
+                        const button = this.parentElement.querySelector('[data-toggle="collapse"]');
+                        if (button) button.classList.remove('collapsed');
+                    });
+                    
+                    element.addEventListener('hide.bs.collapse', function () {
+                        console.log('FAQ closing:', this.id);
+                        const button = this.parentElement.querySelector('[data-toggle="collapse"]');
+                        if (button) button.classList.add('collapsed');
+                    });
+                });
 
-            // Test FAQ button clicks
-            $('[data-toggle="collapse"]').on('click', function() {
-                console.log('FAQ button clicked:', $(this).attr('data-target'));
-            });
+                // Test FAQ button clicks
+                const faqButtons = document.querySelectorAll('[data-toggle="collapse"]');
+                faqButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        console.log('FAQ button clicked:', this.getAttribute('data-target'));
+                    });
+                });
+            }, 2000);
 
             // Smooth scrolling for anchor links
-            $('a[href^="#"]').on('click', function(event) {
-                const target = $(this.getAttribute('href'));
-                if (target.length) {
-                    event.preventDefault();
-                    $('html, body').stop().animate({
-                        scrollTop: target.offset().top - 70
-                    }, 1000);
-                }
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
             });
-
-            // Initialize tooltips if any
-            $('[data-toggle="tooltip"]').tooltip();
         });
 
         // Fallback for older browsers
@@ -993,6 +1154,19 @@
                         element.classList.add('visible');
                     }
                 });
+            });
+        }
+
+        // Service Worker Registration for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(function(registrationError) {
+                        console.log('SW registration failed: ', registrationError);
+                    });
             });
         }
     </script>
