@@ -1030,10 +1030,9 @@
     <%- include('../partials/Footer') %>
 
     <!-- Back to Top Button -->
-        <!-- Back to Top Button -->
-        <a href="#" class="back-to-top">
-            <i class="fas fa-arrow-up"></i>
-        </a>
+    <a href="#" id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
     <!-- Deferred JavaScript Loading -->
 
         
@@ -1066,13 +1065,13 @@
             });
         }
     </script>
-        // Initialize back to top button
-        
+        <!-- Back to Top Button JavaScript -->
     <script>
-        function initBackToTop() {
+        document.addEventListener('DOMContentLoaded', function() {
             const backToTopButton = document.getElementById('backToTop');
 
             if (backToTopButton) {
+                // Show/hide button based on scroll position
                 window.addEventListener('scroll', function() {
                     if (window.pageYOffset > 300) {
                         backToTopButton.classList.add('active');
@@ -1081,6 +1080,7 @@
                     }
                 });
 
+                // Smooth scroll to top when clicked
                 backToTopButton.addEventListener('click', function(e) {
                     e.preventDefault();
                     window.scrollTo({
@@ -1089,7 +1089,7 @@
                     });
                 });
             }
-        }
+        });
     </script>
         
 
