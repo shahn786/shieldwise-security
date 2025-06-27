@@ -1835,13 +1835,13 @@ html, body {
 }
 
 .author-photo {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     overflow: hidden;
     border-radius: 50%;
-    margin-right: 20px;
-    border: 3px solid #d12028;
-    box-shadow: 0 5px 15px rgba(209, 32, 40, 0.2);
+    margin-right: 15px;
+    border: 2px solid #d12028;
+    box-shadow: 0 3px 10px rgba(209, 32, 40, 0.15);
     flex-shrink: 0;
 }
 
@@ -1852,23 +1852,26 @@ html, body {
 }
 
 .author-info h4 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
-    margin: 0 0 5px 0;
+    margin: 0 0 3px 0;
     color: #1a3c6e;
+    line-height: 1.2;
 }
 
 .author-info p {
-    margin: 0 0 5px 0;
+    margin: 0 0 3px 0;
     color: #495057;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    line-height: 1.3;
 }
 
 .author-location {
     display: block;
     color: #6c757d;
-    font-size: 0.85rem;
-    margin-bottom: 8px;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    line-height: 1.2;
 }
 
 .star-rating {
@@ -1983,13 +1986,13 @@ html, body {
 }
 
 .card-author-photo {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     overflow: hidden;
     border-radius: 50%;
-    margin-right: 15px;
+    margin-right: 12px;
     border: 2px solid #d12028;
-    box-shadow: 0 3px 10px rgba(209, 32, 40, 0.2);
+    box-shadow: 0 2px 8px rgba(209, 32, 40, 0.15);
     flex-shrink: 0;
 }
 
@@ -2004,22 +2007,25 @@ html, body {
 }
 
 .card-author h5 {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 700;
-    margin: 0 0 3px 0;
+    margin: 0 0 2px 0;
     color: #1a3c6e;
+    line-height: 1.2;
 }
 
 .card-author p {
-    margin: 0 0 3px 0;
+    margin: 0 0 2px 0;
     color: #495057;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    line-height: 1.2;
 }
 
 .card-author span {
     display: block;
     color: #6c757d;
     font-size: 0.75rem;
+    line-height: 1.2;
 }
 
 .card-author .star-rating {
