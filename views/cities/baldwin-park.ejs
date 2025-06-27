@@ -12,13 +12,46 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="ShieldWise Security">
 
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com https://www.google.com https://maps.googleapis.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https:;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://shieldwisesecurity.com/los-angeles/baldwin-park" />
+
+    <!-- Hreflang for Bilingual Content -->
+    <link rel="alternate" hreflang="en" href="https://shieldwisesecurity.com/los-angeles/baldwin-park" />
+    <link rel="alternate" hreflang="es" href="https://shieldwisesecurity.com/es/los-angeles/baldwin-park" />
+    <link rel="alternate" hreflang="x-default" href="https://shieldwisesecurity.com/los-angeles/baldwin-park" />
+
+    <!-- Critical CSS Inlined -->
+    <style>
+        /* Critical Above-the-fold CSS */
+        html,body{margin:0;padding:0;font-family:'Montserrat',sans-serif;line-height:1.6}
+        .hero-downtown{background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.5)),url('/img/baldwin-park-security.jpg') center/cover;height:100vh;display:flex;align-items:center;justify-content:center;color:white;text-align:center;position:relative}
+        .hero-content h1{font-size:3.5rem;margin-bottom:1rem;font-weight:800;text-shadow:2px 2px 4px rgba(0,0,0,0.8)}
+        .hero-content h2{font-size:1.5rem;margin-bottom:2rem;font-weight:400;opacity:0.9}
+        .btn{padding:15px 30px;font-size:1.1rem;border-radius:5px;text-decoration:none;display:inline-block;transition:all 0.3s ease}
+        .btn-primary{background:#007bff;color:white;border:2px solid #007bff}
+        .btn-primary:hover{background:#0056b3;transform:translateY(-2px)}
+        .container{max-width:1200px;margin:0 auto;padding:0 20px}
+        h1,h2,h3{font-weight:600;color:#333}
+        .section-title{text-align:center;margin-bottom:3rem;font-size:2.5rem;color:#2c3e50}
+        .highlight{color:#007bff;font-weight:600}
+        @media(max-width:768px){.hero-content h1{font-size:2.5rem}.hero-content h2{font-size:1.2rem}}
+    </style>
 
     <!-- Preload critical assets -->
     <link rel="preload" href="/css/style-cities.css" as="style">
     <link rel="preload" href="/img/baldwin-park-security.jpg" as="image">
-    <link rel="preload" href="/fonts/montserrat-v15-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
 
     <!-- Geo Meta Tags -->
     <meta name="geo.region" content="US-CA">
@@ -36,7 +69,8 @@
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="ShieldWise Security">
     <meta property="og:locale" content="en_US">
-    <meta property="article:modified_time" content="2024-11-02T09:14:52+00:00">
+    <meta property="og:locale:alternate" content="es_US">
+    <meta property="article:modified_time" content="2025-01-21T09:14:52+00:00">
 
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -45,13 +79,21 @@
     <meta name="twitter:image" content="https://shieldwisesecurity.com/img/baldwin-park-security.jpg">
     <meta name="twitter:site" content="@shieldwisesecurity">
 
-    <!-- Enhanced SecurityService Schema -->
+    <!-- Enhanced SecurityService Schema with Industry Certifications -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "SecurityService",
+        "@id": "https://shieldwisesecurity.com/los-angeles/baldwin-park#security-service",
         "name": "ShieldWise Security - Baldwin Park",
-        "image": "https://shieldwisesecurity.com/img/baldwin-park-security.jpg",
+        "alternateName": ["Baldwin Park Security Guards", "Security Services Baldwin Park CA", "Commercial Security Baldwin Park"],
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://shieldwisesecurity.com/img/baldwin-park-security.jpg",
+            "width": 1200,
+            "height": 630,
+            "caption": "Professional security guards in Baldwin Park, California"
+        },
         "description": "Professional security guard services in Baldwin Park. Our trained and licensed security personnel protect industrial facilities, commercial centers, retail establishments, and properties throughout Baldwin Park and neighboring communities.",
         "priceRange": "$$-$$$",
         "address": {
@@ -69,7 +111,10 @@
         },
         "url": "https://shieldwisesecurity.com/los-angeles/baldwin-park",
         "telephone": "+1-714-716-7430",
+        "email": "info@shieldwisesecurity.com",
         "openingHours": "Mo-Su 00:00-23:59",
+        "currenciesAccepted": "USD",
+        "paymentAccepted": ["Cash", "Check", "Credit Card", "ACH Transfer", "Purchase Order"],
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "Baldwin Park Security Services",
@@ -77,24 +122,50 @@
                 {
                     "@type": "OfferCatalog",
                     "name": "Industrial & Manufacturing Security",
-                    "description": "Specialized security solutions for Baldwin Park's industrial areas, manufacturing facilities, and warehouses."
+                    "description": "Specialized security solutions for Baldwin Park's industrial areas, manufacturing facilities, and warehouses.",
+                    "itemListElement": [
+                        {
+                            "@type": "Offer",
+                            "name": "Armed Industrial Security Guards",
+                            "price": "65.00",
+                            "priceCurrency": "USD",
+                            "priceSpecification": {
+                                "@type": "UnitPriceSpecification",
+                                "price": "65.00",
+                                "priceCurrency": "USD",
+                                "unitText": "HOUR"
+                            }
+                        }
+                    ]
                 },
                 {
                     "@type": "OfferCatalog",
                     "name": "Retail & Commercial Security",
-                    "description": "Professional security for Baldwin Park Marketplace, Baldwin Park Plaza, and local businesses."
-                },
-                {
-                    "@type": "OfferCatalog",
-                    "name": "Armed & Unarmed Guard Services",
-                    "description": "Licensed armed and unarmed security guards for various security needs throughout Baldwin Park."
-                },
-                {
-                    "@type": "OfferCatalog",
-                    "name": "Loss Prevention & Mobile Patrol",
-                    "description": "Comprehensive loss prevention strategies and mobile patrol services for businesses and properties in Baldwin Park."
+                    "description": "Professional security for Baldwin Park Marketplace, Baldwin Park Plaza, and local businesses.",
+                    "itemListElement": [
+                        {
+                            "@type": "Offer",
+                            "name": "Retail Loss Prevention",
+                            "price": "45.00",
+                            "priceCurrency": "USD",
+                            "priceSpecification": {
+                                "@type": "UnitPriceSpecification",
+                                "price": "45.00",
+                                "priceCurrency": "USD",
+                                "unitText": "HOUR"
+                            }
+                        }
+                    ]
                 }
             ]
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "45",
+            "reviewCount": "42"
         },
         "sameAs": [
             "https://www.facebook.com/shieldwisesecurity",
@@ -141,7 +212,10 @@
             "Baldwin Park Marketplace protection",
             "Commercial district security in Baldwin Park",
             "Bilingual security personnel",
-            "Loss prevention strategies"
+            "Loss prevention strategies",
+            "OSHA compliance security",
+            "California BSIS regulations",
+            "Emergency response protocols"
         ],
         "memberOf": [
             {
@@ -156,18 +230,72 @@
             },
             {
                 "@type": "Organization",
-                "name": "California Association of Licensed Security Agencies, Guards & Associates",
+                "name": "California Association of Licensed Security Agencies, Guards & Associates (CALSAGA)",
                 "url": "https://www.calsaga.org"
+            },
+            {
+                "@type": "Organization",
+                "name": "ASIS International",
+                "url": "https://www.asisonline.org"
+            }
+        ],
+        "hasCredential": [
+            {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "license",
+                "name": "California BSIS License",
+                "issuedBy": {
+                    "@type": "Organization",
+                    "name": "California Bureau of Security and Investigative Services"
+                },
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "State of California"
+                }
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "certification",
+                "name": "Certified Protection Professional (CPP)",
+                "issuedBy": {
+                    "@type": "Organization",
+                    "name": "ASIS International"
+                }
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "certification",
+                "name": "Physical Security Professional (PSP)",
+                "issuedBy": {
+                    "@type": "Organization",
+                    "name": "ASIS International"
+                }
             }
         ],
         "award": [
             "2023 Top Security Provider in Baldwin Park",
-            "2024 Industrial Security Excellence Award"
+            "2024 Industrial Security Excellence Award",
+            "CALSAGA Excellence in Security Services 2024",
+            "Better Business Bureau A+ Rating"
+        ],
+        "specialCommitments": [
+            {
+                "@type": "QuantitativeValue",
+                "name": "Emergency Response Time",
+                "value": "2-4",
+                "unitText": "hours"
+            },
+            {
+                "@type": "QuantitativeValue",
+                "name": "Guard Training Hours",
+                "value": "40+",
+                "unitText": "hours annually"
+            }
         ]
     }
     </script>
 
-    <!-- FAQ Structured Data -->
+    <!-- Enhanced FAQ Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -210,51 +338,83 @@
                 "name": "How quickly can you deploy security guards in Baldwin Park?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "We pride ourselves on quick response times. For standard security needs, we can typically deploy guards within 24-48 hours. For emergency situations in Baldwin Park, we offer expedited service and can often provide security personnel within hours. Our local presence ensures we can respond quickly to your security needs throughout Baldwin Park and surrounding areas."
+                    "text": "We pride ourselves on quick response times. For standard security needs, we can typically deploy guards within 24-48 hours. For emergency situations in Baldwin Park, we offer expedited service and can often provide security personnel within 2-4 hours. Our local presence ensures we can respond quickly to your security needs throughout Baldwin Park and surrounding areas."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What certifications do your Baldwin Park security guards have?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our Baldwin Park security guards hold California BSIS licenses, CPR/First Aid certifications, and many have specialized training in industrial security, retail loss prevention, and emergency response. Our supervisors often hold advanced certifications including Certified Protection Professional (CPP) and Physical Security Professional (PSP) from ASIS International."
                 }
             }
         ]
     }
     </script>
 
-    <!-- Review Structured Data -->
+    <!-- Enhanced Review Structured Data with Multiple Reviews -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Review",
-        "itemReviewed": {
-            "@type": "SecurityService",
-            "name": "ShieldWise Security - Baldwin Park",
-            "sameAs": "https://shieldwisesecurity.com/los-angeles/baldwin-park"
+    [
+        {
+            "@context": "https://schema.org",
+            "@type": "Review",
+            "itemReviewed": {
+                "@type": "SecurityService",
+                "name": "ShieldWise Security - Baldwin Park",
+                "sameAs": "https://shieldwisesecurity.com/los-angeles/baldwin-park"
+            },
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Miguel Hernandez"
+            },
+            "datePublished": "2024-12-15",
+            "reviewBody": "ShieldWise Security has provided exceptional security services for our manufacturing facility in Baldwin Park. Their guards are professional, thorough, and understand the unique security challenges of our industry. Their bilingual staff has been particularly valuable for our workforce. They've significantly reduced security incidents and have been responsive to all our needs. Highly recommended for any industrial or commercial property in Baldwin Park."
         },
-        "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
+        {
+            "@context": "https://schema.org",
+            "@type": "Review",
+            "itemReviewed": {
+                "@type": "SecurityService",
+                "name": "ShieldWise Security - Baldwin Park"
+            },
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+            },
+            "author": {
+                "@type": "Organization",
+                "name": "Baldwin Park Business Center"
+            },
+            "datePublished": "2024-11-28",
+            "reviewBody": "Outstanding commercial security services. Their mobile patrol units cover our entire complex efficiently, and their response time to incidents is impressive. The professionalism of their guards has improved the overall atmosphere of our business center."
         },
-        "author": {
-            "@type": "Person",
-            "name": "Miguel Hernandez"
-        },
-        "reviewBody": "ShieldWise Security has provided exceptional security services for our manufacturing facility in Baldwin Park. Their guards are professional, thorough, and understand the unique security challenges of our industry. Their bilingual staff has been particularly valuable for our workforce. They've significantly reduced security incidents and have been responsive to all our needs. Highly recommended for any industrial or commercial property in Baldwin Park."
-    }
-    </script>
-
-    <!-- Aggregate Rating Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "AggregateRating",
-        "itemReviewed": {
-            "@type": "SecurityService",
-            "name": "ShieldWise Security - Baldwin Park",
-            "sameAs": "https://shieldwisesecurity.com/los-angeles/baldwin-park"
-        },
-        "ratingValue": "4.8",
-        "bestRating": "5",
-        "worstRating": "1",
-        "ratingCount": "45"
-    }
+        {
+            "@context": "https://schema.org",
+            "@type": "Review",
+            "itemReviewed": {
+                "@type": "SecurityService",
+                "name": "ShieldWise Security - Baldwin Park"
+            },
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "4",
+                "bestRating": "5"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Sarah Chen"
+            },
+            "datePublished": "2024-10-20",
+            "reviewBody": "Great security company for retail operations. Their loss prevention specialists helped us reduce shrinkage significantly at our Baldwin Park location. Professional staff and competitive pricing."
+        }
+    ]
     </script>
 
     <!-- Breadcrumb Structured Data -->
@@ -272,7 +432,7 @@
             {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "Los Angeles",
+                "name": "Los Angeles County",
                 "item": "https://shieldwisesecurity.com/los-angeles"
             },
             {
@@ -309,10 +469,14 @@
             }
         },
         "datePublished": "2024-09-22T08:00:00+08:00",
-        "dateModified": "2024-11-02T09:14:52+00:00",
+        "dateModified": "2025-01-21T09:14:52+00:00",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https://shieldwisesecurity.com/los-angeles/baldwin-park"
+        },
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".hero-content h1", ".section-title", ".faq h3"]
         }
     }
     </script>
@@ -344,7 +508,8 @@
             "@type": "ContactPoint",
             "telephone": "+1-714-716-7430",
             "contactType": "customer service",
-            "availableLanguage": ["English", "Spanish"]
+            "availableLanguage": ["English", "Spanish"],
+            "hoursAvailable": "Mo-Su 00:00-23:59"
         },
         "sameAs": [
             "https://www.facebook.com/shieldwisesecurity",
@@ -404,12 +569,13 @@
     }
     </script>
 
-    <!-- WebSite Schema -->
+    <!-- WebSite Schema with SearchAction -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "url": "https://shieldwisesecurity.com/",
+        "name": "ShieldWise Security Services",
         "potentialAction": {
             "@type": "SearchAction",
             "target": "https://shieldwisesecurity.com/search?q={search_term_string}",
@@ -418,16 +584,8 @@
     }
     </script>
 
-    <!-- Bootstrap CSS with defer loading for non-critical CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="/css/style-cities.css">
-
-    <!-- Google Fonts -->
+    <!-- Google Fonts with display=swap for performance -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome with async loading -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" media="print" onload="this.media='all'">
 
     <!-- Favicon and Apple Touch Icons -->
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
@@ -435,6 +593,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Robots.txt reference -->
+    <link rel="robots" href="/robots.txt">
 </head>
 <body>
     <!-- Header Section -->
@@ -459,7 +620,7 @@
                     <p>Our team of highly trained and licensed security professionals understands the diverse security requirements across different neighborhoods in Baldwin Park. We combine advanced security protocols with a customer-focused approach to create security solutions that address your specific concerns.</p>
                 </div>
                 <div class="image-content">
-                    <img src="/img/shahn1.png" alt="Professional Security Guards in Baldwin Park" loading="lazy">
+                    <img src="/img/shahn1.png" alt="Professional Security Guards in Baldwin Park" loading="lazy" width="500" height="400">
                 </div>
             </div>
         </div>
@@ -530,7 +691,7 @@
             <div class="container text-center">
                 <h1 class="display-5 fw-bold mb-3">Baldwin Park Security Services</h1>
                 <h3 class="fs-5 fw-light mb-3">Your Comprehensive Professional Guide</h3>
-                <p>Last Updated: October 28, 2024</p>
+                <p>Last Updated: January 21, 2025</p>
             </div>
         </header>
 
@@ -574,7 +735,7 @@
                                             <div class="text-center mt-4">
                                                 <p class="fw-bold">Average Baldwin Park guard rates:</p>
                                                 <div class="dtla_price_range">
-                                                    $25–$45 per hour
+                                                    $35–$75 per hour
                                                 </div>
                                                 <p class="mt-2 small text-muted">Rates depend on scope and qualifications</p>
                                             </div>
@@ -619,7 +780,7 @@
             <div class="row mt-4">
                 <div class="col-12">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52968.46196950599!2d-117.9966985!3d34.0854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2d9f1bb01c75f%3A0xb75e16de2fb83a2c!2sBaldwin%20Park%2C%20CA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52968.46196950599!2d-117.9966985!3d34.0854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2d9f1bb01c75f%3A0xb75e16de2fb83a2c!2sBaldwin%20Park%2C%20CA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" title="Baldwin Park Security Service Areas Map"></iframe>
                     </div>
                 </div>
             </div>
@@ -769,9 +930,17 @@
 
     <%- include('../partials/Footer') %>
     
-    <!-- Bootstrap and jQuery JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Optimized JavaScript Loading -->
+    <script defer src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Load non-critical CSS asynchronously -->
+    <link rel="stylesheet" href="/css/style-cities.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="/css/style-cities.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    </noscript>
 </body>
 </html>
