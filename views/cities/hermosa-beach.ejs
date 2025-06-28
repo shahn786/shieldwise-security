@@ -31,7 +31,7 @@
     <link rel="preload" href="/img/downtown-la1.webp" as="image" fetchpriority="high">
 
     <!-- Enhanced SEO Meta Tags -->
-    <title>Hermosa Beach Security Guards | Professional 24/7 Beach Security Services | ShieldWise Security | BSIS Licensed</title>
+    <title>Hermosa Beach Security Guards | 24/7 Beach & Nightlife Protection | ShieldWise BSIS Licensed</title>
     <meta name="description" content="Award-winning security guard services in Hermosa Beach, CA. Licensed BSIS guards, 24/7 armed & unarmed protection for beach properties, restaurants, bars, events. Emergency response 1-4 hours. Free consultation. $35-$95/hour.">
     <meta name="keywords" content="Hermosa Beach security guards, Hermosa Beach security services, beach property security, Pier Plaza security, restaurant security Hermosa Beach, bar security Hermosa Beach, nightlife security, event security Hermosa Beach, retail security Hermosa Beach, patrol services, residential security, professional security Hermosa Beach, beach event security, Hermosa Beach security company, armed security Hermosa Beach, unarmed security Hermosa Beach, BSIS licensed Hermosa Beach, 24/7 security Hermosa Beach">
 
@@ -64,12 +64,16 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://shieldwisesecurity.com/los-angeles/hermosa-beach/">
 
+    <!-- Sitemap and RSS Feed References -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://shieldwisesecurity.com/sitemap.xml">
+    <link rel="alternate" type="application/rss+xml" title="ShieldWise Security News" href="https://shieldwisesecurity.com/feed.xml">
+
     <!-- Enhanced Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Professional Security Guard Services in Hermosa Beach, CA | ShieldWise Security">
     <meta property="og:description" content="Expert beach security services for Hermosa Beach businesses, restaurants, bars, events and properties. 24/7 armed and unarmed protection from the most trusted beach security team in Hermosa Beach. BSIS licensed, insured. Free consultation.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://shieldwisesecurity.com/los-angeles/hermosa-beach/">
-    <meta property="og:image" content="https://shieldwisesecurity.com/img/downtown-la1.webp">
+    <meta property="og:image" content="https://shieldwisesecurity.com/img/hermosa-beach-security.webp">
     <meta property="og:image:alt" content="Professional security guards on patrol in Hermosa Beach, California">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -93,7 +97,7 @@
     <meta name="twitter:creator" content="@ShieldWiseSec">
     <meta name="twitter:title" content="Professional Security Guard Services in Hermosa Beach, CA | ShieldWise Security">
     <meta name="twitter:description" content="Expert beach security solutions for Hermosa Beach. Protect your restaurant, bar, event, or property with our licensed security guards. Available 24/7. Free security assessment.">
-    <meta name="twitter:image" content="https://shieldwisesecurity.com/img/downtown-la1.webp">
+    <meta name="twitter:image" content="https://shieldwisesecurity.com/img/hermosa-beach-security.webp">
     <meta name="twitter:image:alt" content="Professional beach security team in Hermosa Beach, California">
     <meta name="twitter:label1" content="Location">
     <meta name="twitter:data1" content="Hermosa Beach, CA">
@@ -110,7 +114,7 @@
     <style>
         /* Critical Above-the-Fold CSS for LCP Optimization */
         .hero-downtown {
-            background: linear-gradient(135deg, rgba(26,60,100,0.9), rgba(45,90,135,0.9)), url('/img/downtown-la1.webp');
+            background: linear-gradient(135deg, rgba(26,60,100,0.9), rgba(45,90,135,0.9)), url('/img/hermosa-beach-security.webp');
             background-size: cover;
             background-position: center;
             color: #fff;
@@ -378,6 +382,29 @@
     }
     </script>
 
+    <!-- Customer Review Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Review",
+        "itemReviewed": {
+            "@type": "LocalBusiness",
+            "name": "ShieldWise Security - Hermosa Beach"
+        },
+        "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Michael Anderson"
+        },
+        "datePublished": "2024-11-15",
+        "reviewBody": "ShieldWise Security has been instrumental in improving safety at our beachfront property. Their professional guards are well-trained, attentive, and provide excellent service while understanding the unique challenges of beach security."
+    }
+    </script>
+
     <!-- Enhanced FAQ Schema -->
     <script type="application/ld+json">
     {
@@ -459,16 +486,18 @@
 </head>
 <body>
     <!-- Skip Link for Accessibility -->
-    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <a class="skip-link sr-only sr-only-focusable" href="#main-content" aria-label="Skip to main content">Skip to main content</a>
 
-    <!-- Header Section -->
-    <%- include('../partials/Header') %>
+    <!-- Header Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+        <%- include('../partials/Header') %>
+    </nav>
 
     <!-- Hero Section with Background Image -->
     <section class="hero-downtown" id="main-content">
         <div class="hero-content">
-            <h1 itemprop="name">Hermosa Beach Security Services</h1>
-            <h2 class="services-overview">Protecting businesses, events, and properties in the heart of Hermosa Beach with professional BSIS-licensed beach security experts</h2>
+            <h1 itemprop="name">Hermosa Beach Security Guards & Beach Security Services</h1>
+            <h2 class="services-overview">Professional nightlife security, beach patrol, and vacation rental protection in Hermosa Beach with BSIS-licensed beach security experts</h2>
             <div class="contact-phone" style="margin-bottom: 1rem;">
                 <a href="tel:+13108551234" style="color: #fff; text-decoration: none; font-size: 1.3rem; font-weight: 600;">
                     <i class="fas fa-phone"></i> (310) 855-1234
@@ -481,11 +510,17 @@
     <!-- Introduction Section -->
     <section class="downtown-security" itemscope itemtype="https://schema.org/Service">
         <div class="container">
-            <h2 class="section-title">Comprehensive Security Solutions for Hermosa Beach</h2>
+            <h2 class="section-title">Comprehensive Beach Security Solutions for Hermosa Beach</h2>
             <div class="content-wrapper">
                 <div class="text-content">
-                    <p>ShieldWise Security provides <span class="highlight">professional security guard services</span> tailored specifically to the unique needs of Hermosa Beach businesses, properties, and events. With our extensive knowledge of the coastal area's security challenges and landscape, we deliver unmatched protection and peace of mind.</p>
-                    <p>Our team of highly trained and licensed security professionals understands the diverse security requirements across different areas in Hermosa Beach, from beachfront properties to commercial districts. We combine advanced security protocols with a customer-focused approach to create security solutions that address your specific concerns.</p>
+                    <p>ShieldWise Security provides <span class="highlight">professional Hermosa Beach security guards</span> tailored specifically to the unique needs of beach businesses, vacation rentals, and seasonal events. With our extensive knowledge of coastal security challenges and tourism safety protocols, we deliver unmatched beach security and peace of mind.</p>
+                    <p>Our team of highly trained and licensed security professionals understands the seasonal fluctuations of Hermosa Beach, from summer crowd management and spring break security to off-season vacation rental protection. We specialize in nightlife security, beach patrol services, and tourism safety protocols that address the dynamic nature of coastal communities.</p>
+                    <div class="seasonal-security-notice" style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                        <h3 style="color: #2b5797; margin-bottom: 10px;"><i class="fas fa-calendar-alt"></i> Seasonal Security Expertise</h3>
+                        <p><strong>Summer Peak Season:</strong> Enhanced crowd control, beach event security, and 24/7 patrol coverage<br>
+                        <strong>Spring Break:</strong> Specialized party security and tourist safety management<br>
+                        <strong>Off-Season:</strong> Vacation rental security and property protection services</p>
+                    </div>
                     <div class="credentials-badges" style="margin-top: 2rem;">
                         <img src="/img/bsis.png" alt="BSIS Licensed" style="height: 60px; margin-right: 15px;" loading="lazy">
                         <img src="/img/asis1.avif" alt="ASIS International Member" style="height: 60px; margin-right: 15px;" loading="lazy">
@@ -493,7 +528,7 @@
                     </div>
                 </div>
                 <div class="image-content">
-                    <img src="/img/shahn1.png" alt="Professional Security Guards in Hermosa Beach" loading="lazy" width="500" height="400">
+                    <img src="/img/hermosa-beach-security.webp" alt="Professional Hermosa Beach security guards providing beach security services and nightlife protection" loading="lazy" width="500" height="400">
                 </div>
             </div>
         </div>
@@ -545,12 +580,12 @@
                 <!-- Service 4 -->
                 <div class="service-item" itemscope itemtype="https://schema.org/Service">
                     <i class="fas fa-umbrella-beach"></i>
-                    <h3 itemprop="name">Beach Property Security</h3>
-                    <p itemprop="description">Secure beachfront properties in Hermosa Beach with our specialized security services designed for coastal locations and high-traffic beach areas.</p>
+                    <h3 itemprop="name">Beach Property & Vacation Rental Security</h3>
+                    <p itemprop="description">Comprehensive security for beachfront properties and vacation rentals in Hermosa Beach, including guest management, property protection, and seasonal security adjustments.</p>
                     <div class="service-features">
                         <span class="badge badge-info">Beach Patrol</span>
-                        <span class="badge badge-primary">Property Protection</span>
-                        <span class="badge badge-secondary">Coastal Expertise</span>
+                        <span class="badge badge-primary">Vacation Rentals</span>
+                        <span class="badge badge-secondary">Seasonal Security</span>
                     </div>
                 </div>
 
@@ -593,35 +628,51 @@
                 <!-- Service 8 -->
                 <div class="service-item" itemscope itemtype="https://schema.org/Service">
                     <i class="fas fa-car"></i>
-                    <h3 itemprop="name">Mobile Patrol</h3>
-                    <p itemprop="description">Our mobile patrol services offer flexible security coverage for multiple properties throughout Hermosa Beach with routine check-ins and rapid response.</p>
+                    <h3 itemprop="name">Beach Patrol & Mobile Security</h3>
+                    <p itemprop="description">Specialized beach patrol services and mobile security coverage throughout Hermosa Beach, including ATV beach patrols, pier security, and emergency response coordination.</p>
                     <div class="service-features">
-                        <span class="badge badge-primary">Rapid Response</span>
-                        <span class="badge badge-secondary">GPS Tracking</span>
-                        <span class="badge badge-success">Cost Effective</span>
+                        <span class="badge badge-primary">Beach ATV Patrol</span>
+                        <span class="badge badge-secondary">Pier Security</span>
+                        <span class="badge badge-success">Emergency Response</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Hermosa Beach Security Challenges Section -->
+    <!-- Tourism Safety Protocols & Certifications Section -->
     <section class="py-5 bg-light">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h2 class="mb-4">Hermosa Beach Security Challenges</h2>
-                    <p>Hermosa Beach presents unique security challenges as a popular beach destination with vibrant nightlife, tourism, and beachfront properties. Our specialized approach addresses these specific needs.</p>
+                    <h2 class="mb-4">Tourism Safety Protocols & Beach Emergency Response</h2>
+                    <p>Hermosa Beach presents unique security challenges as a popular beach destination with vibrant nightlife, tourism, and beachfront properties. Our certified approach addresses these specific needs with industry-leading protocols.</p>
                     <ul class="list-unstyled">
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Beach property security with coastal access points</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Nightlife and entertainment district security</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> High-volume tourist area management</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Event security for beach festivals and gatherings</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Coordination with local law enforcement and beach patrol</li>
+                        <li class="mb-3"><i class="fas fa-shield-alt text-success mr-2"></i> Beach emergency response protocols (water safety coordination)</li>
+                        <li class="mb-3"><i class="fas fa-certificate text-success mr-2"></i> Tourism industry certified security professionals</li>
+                        <li class="mb-3"><i class="fas fa-users text-success mr-2"></i> Crowd management for summer peak seasons</li>
+                        <li class="mb-3"><i class="fas fa-calendar-check text-success mr-2"></i> Spring break security and party management</li>
+                        <li class="mb-3"><i class="fas fa-home text-success mr-2"></i> Vacation rental guest screening and safety protocols</li>
+                        <li class="mb-3"><i class="fas fa-handshake text-success mr-2"></i> Coordination with lifeguards, beach patrol, and local law enforcement</li>
                     </ul>
+                    <div class="certifications mt-4">
+                        <h4 class="mb-3">Industry Certifications:</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span class="badge badge-primary mb-2">Tourism Security Certified</span><br>
+                                <span class="badge badge-secondary mb-2">Beach Safety Protocols</span><br>
+                                <span class="badge badge-info mb-2">Emergency Water Response</span>
+                            </div>
+                            <div class="col-md-6">
+                                <span class="badge badge-success mb-2">BSIS Licensed</span><br>
+                                <span class="badge badge-warning mb-2">CPR/AED Certified</span><br>
+                                <span class="badge badge-danger mb-2">First Aid Certified</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-6">
-                    <img src="/img/2.webp" alt="Hermosa Beach Security Services" class="img-fluid rounded shadow" loading="lazy" width="600" height="400">
+                    <img src="/img/hermosa-beach-patrol.webp" alt="Hermosa Beach security guards providing tourism safety and beach emergency response protocols" class="img-fluid rounded shadow" loading="lazy" width="600" height="400">
                 </div>
             </div>
         </div>
@@ -671,7 +722,10 @@
             
             <div class="testimonials-grid">
                 <!-- Testimonial 1 -->
-                <div class="testimonial" itemscope itemtype="https://schema.org/Review">
+                <div class="testimonial review-item" itemscope itemtype="https://schema.org/Review">
+                    <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/LocalBusiness">
+                        <meta itemprop="name" content="ShieldWise Security - Hermosa Beach">
+                    </div>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -680,7 +734,9 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <p itemprop="reviewBody">"ShieldWise Security has been instrumental in improving safety at our beachfront property. Their professional guards are well-trained, attentive, and provide excellent service while understanding the unique challenges of beach security."</p>
-                    <h4 itemprop="author">Michael Anderson</h4>
+                    <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <h4 itemprop="name">Michael Anderson</h4>
+                    </div>
                     <div class="position">Property Manager, The Strand</div>
                     <meta itemprop="datePublished" content="2024-11-15">
                     <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
@@ -731,12 +787,12 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="py-5" id="faq">
+    <section class="py-5 faq-section" id="faq" itemscope itemtype="https://schema.org/FAQPage">
         <div class="container">
-            <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+            <h2 class="text-center mb-5">Frequently Asked Questions About Hermosa Beach Security</h2>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="accordion" id="hermosaBeachFAQ">
+                    <div class="accordion faq-accordion" id="hermosaBeachFAQ">
                         <!-- FAQ Item 1 -->
                         <div class="card mb-3">
                             <div class="card-header" id="headingOne">
@@ -830,11 +886,46 @@
                     <h2 class="mb-4">Ready to Secure Your Hermosa Beach Property?</h2>
                     <p class="lead mb-5">Contact ShieldWise Security today for a customized security solution designed specifically for your Hermosa Beach location. Our team of beach security experts will work with you to develop a comprehensive security plan that addresses the unique challenges of coastal properties.</p>
                     <div class="cta-buttons">
-                        <a href="/get-quote?location=hermosa-beach" class="btn btn-light btn-lg mr-3 mb-3">Get a Free Quote</a>
-                        <a href="/contact" class="btn btn-outline-light btn-lg mb-3">Contact Us</a>
-                        <a href="tel:+13108551234" class="btn btn-warning btn-lg mb-3">
-                            <i class="fas fa-phone"></i> (310) 855-1234
+                        <a href="/get-quote?location=hermosa-beach" class="btn btn-light btn-lg mr-3 mb-3" aria-label="Get a free security quote for Hermosa Beach">Get a Free Quote</a>
+                        <a href="/contact" class="btn btn-outline-light btn-lg mb-3" aria-label="Contact ShieldWise Security">Contact Us</a>
+                        <a href="tel:+13108551234" class="btn btn-warning btn-lg mb-3" aria-label="Call ShieldWise Security at 310-855-1234">
+                            <i class="fas fa-phone" aria-hidden="true"></i> (310) 855-1234
                         </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal Event Security Calendar -->
+    <section class="py-5" id="seasonal-events">
+        <div class="container">
+            <h2 class="text-center mb-5">Hermosa Beach Security for Seasonal Events & Festivals</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="event-calendar" style="background: #f8f9fa; padding: 30px; border-radius: 12px;">
+                        <h3 class="mb-4"><i class="fas fa-calendar-alt text-primary"></i> 2025 Event Security Calendar</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Spring Events</h4>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-star text-warning"></i> <strong>Spring Break Security (March-April)</strong> - Enhanced nightlife and beach patrol</li>
+                                    <li class="mb-2"><i class="fas fa-music text-info"></i> <strong>Beach Concerts</strong> - Crowd control and event security</li>
+                                    <li class="mb-2"><i class="fas fa-volleyball-ball text-success"></i> <strong>Beach Volleyball Tournaments</strong> - Athlete and spectator safety</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Summer Peak Season</h4>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-sun text-warning"></i> <strong>Summer Festival Season (June-August)</strong> - 24/7 enhanced security</li>
+                                    <li class="mb-2"><i class="fas fa-fireworks text-danger"></i> <strong>4th of July Celebrations</strong> - Mass event security and crowd management</li>
+                                    <li class="mb-2"><i class="fas fa-cocktail text-primary"></i> <strong>Peak Nightlife Season</strong> - Restaurant and bar security</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="/get-quote?location=hermosa-beach&service=event-security" class="btn btn-primary btn-lg">Book Event Security Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
