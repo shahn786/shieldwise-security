@@ -204,43 +204,198 @@
     }
     </script>
 
-    <!-- Structured Data - FAQ -->
+    <!-- Consolidated Structured Data using @graph approach for efficiency -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
+        "@graph": [
             {
-                "@type": "Question",
-                "name": "What security services does ShieldWise offer in Manhattan Beach?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "ShieldWise Security offers elite security services in Manhattan Beach including luxury home security, beachfront property protection, upscale business security, executive protection, private event security, and vacation home security."
-                }
+                "@type": ["SecurityService", "LocalBusiness"],
+                "@id": "https://shieldwisesecurity.com/los-angeles/manhattan-beach/",
+                "name": "ShieldWise Security - Manhattan Beach",
+                "image": "https://shieldwisesecurity.com/img/downtown-la-security.jpg",
+                "logo": "https://shieldwisesecurity.com/img/logo1.png",
+                "url": "https://shieldwisesecurity.com/los-angeles/manhattan-beach/",
+                "telephone": "+13109865472",
+                "priceRange": "$45-$125",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "1150 Manhattan Avenue, Suite 202",
+                    "addressLocality": "Manhattan Beach",
+                    "addressRegion": "CA",
+                    "postalCode": "90266",
+                    "addressCountry": "US"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 33.8847,
+                    "longitude": -118.4109
+                },
+                "openingHoursSpecification": {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                    "opens": "00:00",
+                    "closes": "23:59"
+                },
+                "description": "Professional security guard services in Manhattan Beach, CA. Providing 24/7 armed and unarmed security for luxury homes, beachfront properties, and upscale businesses.",
+                "areaServed": {
+                    "@type": "City",
+                    "name": "Manhattan Beach",
+                    "containedInPlace": {
+                        "@type": "State",
+                        "name": "California"
+                    }
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": 4.9,
+                    "reviewCount": 68,
+                    "bestRating": 5
+                },
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Manhattan Beach Security Services",
+                    "itemListElement": [
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Luxury Home Security",
+                                "description": "Professional security services for high-value residences in Manhattan Beach"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Beachfront Property Security",
+                                "description": "Specialized security for oceanfront properties along The Strand"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Executive Protection",
+                                "description": "VIP protection services for high-profile individuals"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Event Security Services",
+                                "description": "Professional security for private events and gatherings"
+                            }
+                        }
+                    ]
+                },
+                "review": [
+                    {
+                        "@type": "Review",
+                        "author": {
+                            "@type": "Person",
+                            "name": "James Richardson"
+                        },
+                        "reviewRating": {
+                            "@type": "Rating",
+                            "ratingValue": 5,
+                            "bestRating": 5
+                        },
+                        "reviewBody": "ShieldWise Security has been providing protection for our oceanfront home in Manhattan Beach for over a year. Their team understands the unique security challenges of beachfront properties. The guards are professional, discrete, and highly trained. We've had peace of mind knowing our property is protected whether we're home or away.",
+                        "datePublished": "2024-11-15"
+                    },
+                    {
+                        "@type": "Review",
+                        "author": {
+                            "@type": "Person",
+                            "name": "Elizabeth Chen"
+                        },
+                        "reviewRating": {
+                            "@type": "Rating",
+                            "ratingValue": 5,
+                            "bestRating": 5
+                        },
+                        "reviewBody": "We hired ShieldWise for a high-profile private event at a beachfront property in Manhattan Beach. Their security team was exceptional – professional, courteous, and highly effective. They coordinated seamlessly with our staff and handled several security situations with discretion and tact. Will definitely use them again for future events in the area.",
+                        "datePublished": "2024-10-20"
+                    },
+                    {
+                        "@type": "Review",
+                        "author": {
+                            "@type": "Person",
+                            "name": "Michael Stevens"
+                        },
+                        "reviewRating": {
+                            "@type": "Rating",
+                            "ratingValue": 5,
+                            "bestRating": 5
+                        },
+                        "reviewBody": "As a business owner in downtown Manhattan Beach, I've been extremely impressed with ShieldWise Security's services. Their guards maintain a perfect balance between ensuring security while maintaining a welcoming atmosphere for our upscale clientele. They've helped reduce incidents while enhancing our customers' sense of safety. Highly recommended for any business in Manhattan Beach.",
+                        "datePublished": "2024-09-30"
+                    }
+                ]
             },
             {
-                "@type": "Question",
-                "name": "Are ShieldWise security guards licensed and insured?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, all ShieldWise security personnel are fully licensed, insured, and certified. Our guards undergo rigorous background checks and receive comprehensive training in emergency response and security protocols."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How quickly can ShieldWise deploy security guards in Manhattan Beach?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "ShieldWise Security can deploy guards in Manhattan Beach within 2-4 hours for emergency situations and within 24 hours for standard security needs after completing a security assessment."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Does ShieldWise provide security for beachfront properties?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, we specialize in beachfront property security throughout Manhattan Beach, particularly along The Strand. Our approach includes securing beach access points and monitoring pedestrian traffic."
-                }
+                "@type": "FAQPage",
+                "@id": "https://shieldwisesecurity.com/los-angeles/manhattan-beach/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What security services does ShieldWise offer in Manhattan Beach?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "ShieldWise Security offers elite security services in Manhattan Beach including luxury home security, beachfront property protection, upscale business security, executive protection, private event security, vacation home security, mobile patrol services, and advanced surveillance systems. Our services are specifically designed for Manhattan Beach's affluent coastal community and focus on discretion, professionalism, and effectiveness."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Are ShieldWise security guards licensed and insured?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, all ShieldWise security personnel are fully licensed, bonded, and insured in accordance with California state regulations. They undergo rigorous background checks, receive comprehensive training, and hold valid guard cards issued by the Bureau of Security and Investigative Services (BSIS). We maintain higher insurance coverage than industry standards for our elite services."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How quickly can ShieldWise deploy security guards in Manhattan Beach?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "ShieldWise Security can deploy guards in Manhattan Beach within 2-4 hours for emergency situations and within 24 hours for standard security needs after completing a security assessment. Our elite service includes priority deployment for our Manhattan Beach clientele."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does ShieldWise provide security for beachfront properties?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, we specialize in beachfront property security throughout Manhattan Beach, particularly along The Strand and in the Sand Section. Our approach includes securing beach access points, monitoring pedestrian traffic along public beach areas, implementing advanced surveillance systems, and conducting regular perimeter checks while maintaining the aesthetic appeal and privacy that beachfront property owners value."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What makes ShieldWise different from other security companies in Manhattan Beach?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "ShieldWise stands out in Manhattan Beach through our specialized understanding of luxury coastal properties, extensive experience with high-net-worth clients, discrete service approach, advanced technology integration, and rapid response capabilities. Our guards are specifically trained for the unique challenges of Manhattan Beach's exclusive community, including beach access security, VIP protection protocols, and maintaining the sophisticated atmosphere that residents and businesses expect."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do you offer executive protection services in Manhattan Beach?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, we provide executive protection services for high-profile individuals, executives, and VIPs in Manhattan Beach. Our executive protection includes personal security, secure transportation, advance planning, threat assessment, and residence security. Our personnel are specially trained in executive protection protocols and understand the discretion required in Manhattan Beach's exclusive community."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is the cost of security services in Manhattan Beach?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Security service costs in Manhattan Beach typically range from $45-$125 per hour depending on the level of service, armed vs. unarmed guards, and specific requirements. Luxury home security, beachfront property protection, and executive protection services are priced at premium rates reflecting the specialized training and discretion required. We provide customized quotes based on your specific security needs and property requirements."
+                        }
+                    }
+                ]
             }
         ]
     }
@@ -630,15 +785,47 @@
                         </div>
 
                         <!-- FAQ Item 7 -->
-                        <div class="card">
+                        <div class="card mb-3">
                             <div class="card-header" id="headingSeven">
                                 <h3 class="mb-0 h5">
                                     <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                                        What areas of Manhattan Beach do you serve?
+                                        What makes ShieldWise different from other security companies in Manhattan Beach?
                                     </button>
                                 </h3>
                             </div>
                             <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#manhattanBeachFAQ">
+                                <div class="card-body">
+                                    ShieldWise stands out in Manhattan Beach through our specialized understanding of luxury coastal properties, extensive experience with high-net-worth clients, discrete service approach, advanced technology integration, and rapid response capabilities. Our guards are specifically trained for the unique challenges of Manhattan Beach's exclusive community, including beach access security, VIP protection protocols, and maintaining the sophisticated atmosphere that residents and businesses expect.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 8 -->
+                        <div class="card mb-3">
+                            <div class="card-header" id="headingEight">
+                                <h3 class="mb-0 h5">
+                                    <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                        What is the cost of security services in Manhattan Beach?
+                                    </button>
+                                </h3>
+                            </div>
+                            <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#manhattanBeachFAQ">
+                                <div class="card-body">
+                                    Security service costs in Manhattan Beach typically range from $45-$125 per hour depending on the level of service, armed vs. unarmed guards, and specific requirements. Luxury home security, beachfront property protection, and executive protection services are priced at premium rates reflecting the specialized training and discretion required. We provide customized quotes based on your specific security needs and property requirements.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 9 -->
+                        <div class="card">
+                            <div class="card-header" id="headingNine">
+                                <h3 class="mb-0 h5">
+                                    <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                        What areas of Manhattan Beach do you serve?
+                                    </button>
+                                </h3>
+                            </div>
+                            <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#manhattanBeachFAQ">
                                 <div class="card-body">
                                     We provide security services throughout all areas of Manhattan Beach including The Strand, Sand Section, Tree Section (Hill Section), Manhattan Village, El Porto, downtown Manhattan Beach, the pier area, and all residential neighborhoods. Our coverage extends to adjacent areas when needed for comprehensive security solutions.
                                 </div>
