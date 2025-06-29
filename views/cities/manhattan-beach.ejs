@@ -608,7 +608,14 @@
             <div class="row mt-4">
                 <div class="col-12">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26533.04151273053!2d-118.42589122089844!3d33.884700000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b3eca6743829%3A0x98448969b9b4373d!2sManhattan%20Beach%2C%20CA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" title="Manhattan Beach, CA Service Area Map"></iframe>
+                        <iframe class="embed-responsive-item" 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26533.04151273053!2d-118.42589122089844!3d33.884700000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b3eca6743829%3A0x98448969b9b4373d!2sManhattan%20Beach%2C%20CA!5e0!3m2!1sen!2sus!4v1735000000000!5m2!1sen!2sus" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Manhattan Beach, CA Service Area Map"
+                                style="border:0; width: 100%; height: 400px;">
+                        </iframe>
                     </div>
                 </div>
             </div>
@@ -906,38 +913,80 @@
     <%- include('../partials/Footer') %>
 
     <!-- Back to Top Button -->
-    <a href="#" id="backToTop" class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
+    <a href="#" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
     </a>
 
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <!-- Optimized JavaScript Loading -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- Back to Top Button JavaScript -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const backToTopButton = document.getElementById('backToTop');
+        $(document).ready(function() {
+            // Back to top button functionality
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 300) {
+                    $('.back-to-top').addClass('show').removeClass('hide');
+                } else {
+                    $('.back-to-top').removeClass('show').addClass('hide');
+                }
+            });
 
-            if (backToTopButton) {
-                window.addEventListener('scroll', function() {
-                    if (window.pageYOffset > 300) {
-                        backToTopButton.classList.add('active');
-                    } else {
-                        backToTopButton.classList.remove('active');
-                    }
-                });
+            $('.back-to-top').click(function(e) {
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 300);
+            });
 
-                backToTopButton.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                });
-            }
+            // Map iframe error handling
+            $('iframe').on('load', function() {
+                console.log('Map loaded successfully');
+            }).on('error', function() {
+                console.log('Map failed to load');
+            });
         });
     </script>
+
+    <!-- Additional CSS for back-to-top button -->
+    <style>
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #2b5797;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(43, 87, 151, 0.3);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: #1a3c64;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(43, 87, 151, 0.4);
+            color: #ffffff;
+            text-decoration: none;
+        }
+    </style>
 </body>
 </html>
