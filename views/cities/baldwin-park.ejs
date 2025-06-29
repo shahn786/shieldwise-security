@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-US" prefix="og: https://ogp.me/ns#" itemscope itemtype="https://schema.org/LocalBusiness">
 <head>
@@ -942,7 +941,7 @@
         // Wait for DOM to be fully loaded
         document.addEventListener('DOMContentLoaded', function() {
             console.log('DOM loaded successfully');
-            
+
             // Initialize fade-in animations
             function initAnimations() {
                 const observerOptions = {
@@ -968,7 +967,7 @@
             function initBackToTop() {
                 const backToTopButton = document.getElementById('backToTop');
                 const backToTopButtonAlt = document.querySelector('.back-to-top');
-                
+
                 function showHideButton() {
                     if (window.pageYOffset > 300) {
                         if (backToTopButton) backToTopButton.classList.add('active');
@@ -978,7 +977,7 @@
                         if (backToTopButtonAlt) backToTopButtonAlt.classList.remove('active');
                     }
                 }
-                
+
                 window.addEventListener('scroll', showHideButton);
 
                 function scrollToTop(e) {
@@ -1000,7 +999,7 @@
             // Initialize navbar scroll effect
             function initNavbar() {
                 const navbar = document.querySelector('.navbar');
-                
+
                 window.addEventListener('scroll', function() {
                     if (window.pageYOffset > 50) {
                         navbar.classList.add('scrolled');
@@ -1015,11 +1014,11 @@
                 const mapIframe = document.querySelector('.embed-responsive iframe');
                 if (mapIframe) {
                     console.log('Map iframe found, src:', mapIframe.src);
-                    
+
                     mapIframe.addEventListener('load', function() {
                         console.log('Map loaded successfully');
                     });
-                    
+
                     mapIframe.addEventListener('error', function(e) {
                         console.error('Map failed to load:', e);
                     });
@@ -1038,14 +1037,14 @@
         // jQuery ready function for Bootstrap components
         $(document).ready(function() {
             console.log('jQuery loaded successfully, version:', $.fn.jquery);
-            
+
             // Test FAQ accordion functionality
             $('.collapse').on('show.bs.collapse', function () {
                 console.log('FAQ opening:', this.id);
                 const button = $(this).parent().find('[data-toggle="collapse"]');
                 button.removeClass('collapsed');
             });
-            
+
             $('.collapse').on('hide.bs.collapse', function () {
                 console.log('FAQ closing:', this.id);
                 const button = $(this).parent().find('[data-toggle="collapse"]');

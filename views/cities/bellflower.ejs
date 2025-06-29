@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="https://schema.org/LocalBusiness">
 <head>
@@ -693,7 +692,8 @@
                 </div>
 
                 <!-- Service 2 -->
-                <div class="service-item">
+                ```text
+        <div class="service-item">
                     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
                     <h3>Event Security</h3>
                     <p>From corporate functions to public gatherings, our trained security personnel ensure your Bellflower events run smoothly and safely with crowd management and access control.</p>
@@ -1024,7 +1024,7 @@
     </section>
 
     <!-- Emergency Response Section -->
-    
+
 
     <!-- Footer -->
     <%- include('../partials/Footer') %>
@@ -1035,7 +1035,7 @@
     </a>
     <!-- Deferred JavaScript Loading -->
 
-        
+
     <script>
         // Load non-critical CSS after page load
         window.addEventListener('load', function() {
@@ -1045,7 +1045,7 @@
             }
         });
     </script>
-        
+
 
     <!-- Bootstrap and jQuery JavaScript with defer loading -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
@@ -1066,32 +1066,9 @@
         }
     </script>
         <!-- Back to Top Button JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const backToTopButton = document.getElementById('backToTop');
 
-            if (backToTopButton) {
-                // Show/hide button based on scroll position
-                window.addEventListener('scroll', function() {
-                    if (window.pageYOffset > 300) {
-                        backToTopButton.classList.add('active');
-                    } else {
-                        backToTopButton.classList.remove('active');
-                    }
-                });
 
-                // Smooth scroll to top when clicked
-                backToTopButton.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                });
-            }
-        });
-    </script>
-        
+
 
 
     <!-- JavaScript for Interactive Elements -->

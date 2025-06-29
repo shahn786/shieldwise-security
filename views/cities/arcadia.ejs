@@ -852,7 +852,7 @@
         // Wait for DOM to be fully loaded
         document.addEventListener('DOMContentLoaded', function() {
             console.log('DOM loaded successfully');
-            
+
             // Initialize fade-in animations
             function initAnimations() {
                 const observerOptions = {
@@ -877,7 +877,7 @@
             // Initialize back to top button
             function initBackToTop() {
                 const backToTopButton = document.querySelector('.back-to-top');
-                
+
                 if (backToTopButton) {
                     window.addEventListener('scroll', function() {
                         if (window.pageYOffset > 300) {
@@ -900,7 +900,7 @@
             // Initialize navbar scroll effect
             function initNavbar() {
                 const navbar = document.querySelector('.navbar');
-                
+
                 window.addEventListener('scroll', function() {
                     if (window.pageYOffset > 50) {
                         navbar.classList.add('scrolled');
@@ -919,14 +919,14 @@
         // jQuery ready function for Bootstrap components
         $(document).ready(function() {
             console.log('jQuery loaded successfully, version:', $.fn.jquery);
-            
+
             // Test FAQ accordion functionality
             $('.collapse').on('show.bs.collapse', function () {
                 console.log('FAQ opening:', this.id);
                 const button = $(this).parent().find('[data-toggle="collapse"]');
                 button.removeClass('collapsed');
             });
-            
+
             $('.collapse').on('hide.bs.collapse', function () {
                 console.log('FAQ closing:', this.id);
                 const button = $(this).parent().find('[data-toggle="collapse"]');
@@ -969,13 +969,3 @@
             });
         }
     </script>
-
-
-    <!-- JavaScript for Interactive Elements -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Back to Top and Common Functionality -->
-    <script src="/JS/back-to-top.js"></script>
-</body>
-</html>
