@@ -1,0 +1,115 @@
+ Root Cause
+Your HTML, JavaScript, and CSS setup are mostly correct.
+But:
+
+By default, your button is always opacity: 0; visibility: hidden; — so it will never show unless your script adds an .active class.
+
+Your script is supposed to do that when the user scrolls >300px down.
+
+But:
+
+Your CSS never defines what .active actually does!
+
+So, when .active is added, nothing changes — it's still hidden!
+
+2. How to Fix
+A. Update CSS to Show When .active
+Add this to your CSS (preferably in style-cities.css or wherever your .back-to-top styles live):
+
+css
+Copy
+Edit
+.back-to-top.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto;
+}
+This overrides the initial hidden state when .active is added.
+
+B. Double-Check Button's Default State
+Your script already sets display: flex and display: none in JS — you only need to care about opacity and visibility for smooth transitions.
+
+C. (Optional) Remove Redundant CSS
+If you want it to be completely invisible by default, keep:
+
+css
+Copy
+Edit
+.back-to-top {
+    /* ...existing styles... */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+And then use the .active class as shown above.
+
+D. Example: Complete CSS Section
+Here’s what your CSS for the button should look like:
+
+css
+Copy
+Edit
+.back-to-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: #d12028;
+    color: #fff;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    z-index: 999;
+    text-align: center;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(209, 32, 40, 0.3);
+}
+
+.back-to-top.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto;
+}
+3. Quick Checklist
+ You have one button in your HTML (good).
+
+ JS file is included after the button in the HTML (good).
+
+ Script is loaded and running (use console.log to check).
+
+ You updated CSS as above (do this!).
+
+4. Test Your Fix
+Add the .active class to the button temporarily in your HTML and refresh:
+
+html
+Copy
+Edit
+<a href="#top" id="backToTop" class="back-to-top active" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+</a>
+If it appears now, the problem was CSS only.
+
+Remove .active from HTML. Scroll the page. The button should appear after you scroll down.
+
+5. Final HTML Example
+html
+Copy
+Edit
+<!-- Back to Top Button -->
+<a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+</a>
+Include your fixed CSS as above, and your JS code will work as expected.
+
+6. Extra: Only Include Once
+You should only have ONE button and ONE copy of the JS and CSS per page — don’t duplicate for each city page!
+Just include the same code in your main template or via a partial.
+
