@@ -793,29 +793,6 @@ a:hover {
 
 /* Back to Top Button */
 .back-to-top {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    background: #d12028;
-    color: #fff;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    border-radius: 50%;
-    z-index: 999;
-    text-align: center;
-    font-size: 20px;
-    transition: all 0.3s ease;
-    opacity: 0;
-    visibility: hidden;
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(209, 32, 40, 0.3);
-}
-
-/* Back to Top Button Styles */
-.back-to-top {
     position: fixed;
     bottom: 30px;
     right: 30px;

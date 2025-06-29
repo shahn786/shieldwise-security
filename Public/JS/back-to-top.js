@@ -15,10 +15,10 @@ function initBackToTop() {
         window.addEventListener('scroll', function() {
             if (window.pageYOffset > 300) {
                 backToTopButton.classList.add('active');
-                backToTopButton.style.display = 'block'; // Fallback
+                backToTopButton.style.display = 'flex'; // Use flex to match CSS
             } else {
                 backToTopButton.classList.remove('active');
-                backToTopButton.style.display = 'none'; // Fallback
+                backToTopButton.style.display = 'none';
             }
         });
 
