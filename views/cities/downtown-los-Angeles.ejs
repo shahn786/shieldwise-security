@@ -680,8 +680,9 @@
 
                 <!-- Service 7 -->
                 <div class="service-item">
-                    <i class="fas fa-video"></i>
-                    <h3>Surveillance Systems                    <p>We design and implement advanced video surveillance systems to complement our security guard services, providing comprehensive protection for Downtown LA properties.</p>
+                    <i class="fas fa-video</i>
+                    <h3>Surveillance Systems</h3>
+                    <p>We design and implement advanced video surveillance systems to complement our security guard services, providing comprehensive protection for Downtown LA properties.</p>
                 </div>
 
                 <!-- Service 8 -->
@@ -1122,109 +1123,52 @@
 
 
 
+    <!-- Footer -->
+    <%- include('../partials/Footer') %>
+
     <!-- Back to Top Button -->
-    <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
+    <a href="#" id="backToTop" class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <%- include('../partials/Footer') %>
-
-    <!-- Enhanced Schema Markup for SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What security services do you offer in Downtown Los Angeles?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We offer a comprehensive range of security services in Downtown LA, including commercial building security, retail security, event security, construction site security, residential building security, and parking lot security. All our services are customized to meet the specific needs of each client in the Downtown Los Angeles area."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Are your security guards licensed and insured?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, all our security guards are fully licensed, bonded, and insured in accordance with California state regulations. They undergo rigorous background checks, receive comprehensive training, and hold valid guard cards issued by the Bureau of Security and Investigative Services (BSIS)."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Do you provide armed security guards in Downtown LA?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, we offer both armed and unarmed security guard services in Downtown Los Angeles. Our armed guards receive additional specialized training and certification and are deployed based on specific security needs and risk assessments of each property or event."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How quickly can you deploy security guards in Downtown Los Angeles?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We pride ourselves on quick response times. For standard security needs, we can typically deploy guards within 24-48 hours. For emergency situations in Downtown LA, we offer expedited service and can often provide security personnel within hours. Contact us for immediate assistance."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Do you offer mobile patrol services in Downtown Los Angeles?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, we provide mobile patrol services throughout Downtown Los Angeles. Our patrol vehicles are clearly marked and equipped with GPS tracking. Mobile patrols offer a cost-effective security solution for properties that don't require a permanent security presence but benefit from regular security checks."
-                }
-            }
-        ]
-    }
-    </script>
-
-    <!-- Service Schema Markup -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "serviceType": "Security Service",
-        "provider": {
-            "@type": "LocalBusiness",
-            "name": "ShieldWise Security",
-            "url": "https://shieldwisesecurity.com"
-        },
-        "areaServed": {
-            "@type": "City",
-            "name": "Downtown Los Angeles",
-            "containedInPlace": {
-                "@type": "City",
-                "name": "Los Angeles",
-                "containedInPlace": {
-                    "@type": "State",
-                    "name": "California"
-                }
-            }
-        },
-        "serviceOutput": "Enhanced security and protection for businesses, events, and properties",
-        "offers": {
-            "@type": "Offer",
-            "price": "30.00",
-            "priceCurrency": "USD",
-            "priceSpecification": {
-                "@type": "UnitPriceSpecification",
-                "price": "30.00",
-                "priceCurrency": "USD",
-                "unitText": "Hour"
-            },
-            "availability": "https://schema.org/InStock"
-        },
-        "termsOfService": "https://shieldwisesecurity.com/terms"
-    }
-    </script>
-
-    <!-- JavaScript for Interactive Elements -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Back to Top and Common Functionality -->
+    <!-- Back to Top Button Script -->
     <script src="/JS/back-to-top.js"></script>
 
+    <!-- Performance Optimized JavaScript Loading -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
+
+    <script>
+        // Service Worker Registration for PWA Performance
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => console.log('SW registered'))
+                    .catch(error => console.log('SW registration failed'));
+            });
+        }
+
+        // Core Web Vitals Monitoring
+        (function() {
+            // LCP monitoring
+            new PerformanceObserver((entryList) => {
+                for (const entry of entryList.getEntries()) {
+                    console.log('LCP:', entry.startTime);
+                }
+            }).observe({entryTypes: ['largest-contentful-paint']});
+
+            // CLS monitoring
+            let clsValue = 0;
+            new PerformanceObserver((entryList) => {
+                for (const entry of entryList.getEntries()) {
+                    if (!entry.hadRecentInput) {
+                        clsValue += entry.value;
+                    }
+                }
+                console.log('CLS:', clsValue);
+            })();
+        })();
+    </script>
 </body>
 </html>
