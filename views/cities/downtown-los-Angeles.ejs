@@ -600,7 +600,7 @@
     <meta name="speakable" content="name,description,telephone">
 </head>
 
-<body itemscope itemtype="https://schema.org/WebPage">
+<body id="top" itemscope itemtype="https://schema.org/WebPage">
     <!-- Header Section -->
     <%- include('../partials/Header') %>
 
@@ -1123,11 +1123,11 @@
 
 
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top">
+    <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </a>
 
-                     <%- include('../partials/Footer') %>
+    <%- include('../partials/Footer') %>
 
     <!-- Enhanced Schema Markup for SEO -->
     <script type="application/ld+json">
@@ -1179,8 +1179,6 @@
     }
     </script>
 
-
-
     <!-- Service Schema Markup -->
     <script type="application/ld+json">
     {
@@ -1221,96 +1219,12 @@
     }
     </script>
 
-
-
     <!-- JavaScript for Interactive Elements -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Back to Top Button Functionality
-            const backToTopButton = document.querySelector('.back-to-top');
-
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    backToTopButton.classList.add('active');
-                } else {
-                    backToTopButton.classList.remove('active');
-                }
-            });
-
-            backToTopButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-
-            // Add active class to current navbar item
-            const currentLocation = window.location.pathname;
-            const navLinks = document.querySelectorAll('.nav-link');
-
-            navLinks.forEach(link => {
-                if (link.getAttribute('href') === currentLocation) {
-                    link.classList.add('active');
-                }
-            });
-
-            // Accordion Functionality for FAQ
-            const accordionButtons = document.querySelectorAll('.accordion-button');
-
-            accordionButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const isCollapsed = this.classList.contains('collapsed');
-
-                    // First collapse all items
-                    accordionButtons.forEach(btn => {
-                        btn.classList.add('collapsed');
-                        btn.setAttribute('aria-expanded', 'false');
-                        const target = document.querySelector(btn.getAttribute('data-target'));
-                        if (target) target.classList.remove('show');
-                    });
-
-                    // Then open the clicked one if it was collapsed
-                    if (isCollapsed) {
-                        this.classList.remove('collapsed');
-                        this.setAttribute('aria-expanded', 'true');
-                        const target = document.querySelector(this.getAttribute('data-target'));
-                        if (target) target.classList.add('show');
-                    }
-                });
-            });
-
-            // Animation for services on scroll
-            const animateOnScroll = function() {
-                const elements = document.querySelectorAll('.service-item, .testimonial');
-
-                elements.forEach(element => {
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const screenPosition = window.innerHeight / 1.2;
-
-                    if (elementPosition < screenPosition) {
-                        element.style.opacity = '1';
-                        element.style.transform = 'translateY(0)';
-                    }
-                });
-            };
-
-            // Set initial state
-            const serviceItems = document.querySelectorAll('.service-item, .testimonial');
-            serviceItems.forEach(item => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
-                item.style.transition = 'all 0.6s ease-out';
-            });
-
-            // Run on scroll
-            window.addEventListener('scroll', animateOnScroll);
-
-            // Run once on load
-            animateOnScroll();
-        });
-    </script>
-<!-- Enhanced SEO Schema Markup -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Back to Top and Common Functionality -->
+    <script src="/JS/back-to-top.js"></script>
 
 </body>
 </html>

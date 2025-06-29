@@ -354,7 +354,7 @@
 
 </head>
 
-<body itemscope itemtype="https://schema.org/WebPage">
+<body id="top" itemscope itemtype="https://schema.org/WebPage">
     <!-- Skip to main content for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
@@ -869,8 +869,8 @@
     </section>
 
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
     </a>
     </main>
 
@@ -878,7 +878,7 @@
     <footer role="contentinfo">
         <%- include('../partials/Footer') %>
             <!-- Back to Top Button -->
-            <a href="#" class="back-to-top" aria-label="Back to top">
+            <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
                 <i class="fas fa-arrow-up"></i>
             </a>
 
@@ -999,6 +999,8 @@
 
     <!-- Bootstrap JavaScript (Bootstrap 5.3 - no jQuery required) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+     <!-- Back to Top and Common Functionality -->
+    <script src="/JS/back-to-top.js"></script>
     </footer>
 
 </body>
