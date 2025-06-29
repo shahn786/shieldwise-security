@@ -966,27 +966,30 @@
     
     <!-- Back to Top Button Script -->
     <script>
-        // Back to Top Button Functionality
-        $(document).ready(function() {
-            var backToTopBtn = $('.back-to-top');
+        // Back to Top Button Functionality with Vanilla JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopBtn = document.querySelector('.back-to-top');
             
-            // Show/hide button based on scroll position
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > 300) {
-                    backToTopBtn.addClass('show');
-                } else {
-                    backToTopBtn.removeClass('show');
-                }
-            });
-            
-            // Smooth scroll to top when clicked
-            backToTopBtn.click(function(e) {
-                e.preventDefault();
-                $('html, body').animate({
-                    scrollTop: 0
-                }, 600);
-                return false;
-            });
+            if (backToTopBtn) {
+                // Show/hide button based on scroll position
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 300) {
+                        backToTopBtn.classList.add('show');
+                    } else {
+                        backToTopBtn.classList.remove('show');
+                    }
+                });
+                
+                // Smooth scroll to top when clicked
+                backToTopBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    return false;
+                });
+            }
         });
     </script>
 </body>
