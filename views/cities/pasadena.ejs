@@ -705,81 +705,54 @@
         </div>
     </section>
 
-    <!-- Emergency Response Section -->
-    <section class="emergency-response py-4 bg-danger text-white">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-8">
-                    <h3 class="mb-0"><i class="fas fa-exclamation-circle mr-3"></i> Need a security guard fast in Pasadena?</h3>
-                    <p class="lead mb-0">Call us anytime—we're ready to help! Our rapid response team can deploy security personnel in as little as 2-4 hours.</p>
-                </div>
-                <div class="col-md-4 text-center text-md-right mt-3 mt-md-0">
-                    <a href="tel:+17147167430" class="btn btn-light btn-lg"><i class="fas fa-phone-alt mr-2"></i> (714) 716-7430</a>
-                </div>
-            </div>
-        </div>
-    </section>
+  
 
-    <!-- Footer -->
-    <%- include('../partials/Footer') %>
+        <!-- Footer -->
+        <%- include('../partials/Footer') %>
 
-    <!-- Back to Top Button -->
-    <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+        <!-- Back to Top Button -->
+        <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
+            <i class="fas fa-arrow-up"></i>
+        </a>
 
-    <!-- JavaScript for Interactive Elements -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Back to Top and Common Functionality -->
-    <script src="/JS/back-to-top.js"></script>
-<!-- Footer -->
-    <%- include('../partials/Footer') %>
+        <!-- Back to Top and Common Functionality -->
+        <script src="/JS/back-to-top.js"></script>
 
-    <!-- Back to Top Button -->
-    <a href="#" id="backToTop" class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+        <!-- Performance Optimized JavaScript Loading -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
 
-    <!-- Back to Top Button Script -->
-    <script src="/JS/back-to-top.js"></script>
+        <script>
+            // Service Worker Registration for PWA Performance
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/sw.js')
+                        .then(registration => console.log('SW registered'))
+                        .catch(error => console.log('SW registration failed'));
+                });
+            }
 
-    <!-- Performance Optimized JavaScript Loading -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
-
-    <script>
-        // Service Worker Registration for PWA Performance
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(registration => console.log('SW registered'))
-                    .catch(error => console.log('SW registration failed'));
-            });
-        }
-
-        // Core Web Vitals Monitoring
-        (function() {
-            // LCP monitoring
-            new PerformanceObserver((entryList) => {
-                for (const entry of entryList.getEntries()) {
-                    console.log('LCP:', entry.startTime);
-                }
-            }).observe({entryTypes: ['largest-contentful-paint']});
-
-            // CLS monitoring
-            let clsValue = 0;
-            new PerformanceObserver((entryList) => {
-                for (const entry of entryList.getEntries()) {
-                    if (!entry.hadRecentInput) {
-                        clsValue += entry.value;
+            // Core Web Vitals Monitoring
+            (function() {
+                // LCP monitoring
+                new PerformanceObserver((entryList) => {
+                    for (const entry of entryList.getEntries()) {
+                        console.log('LCP:', entry.startTime);
                     }
-                }
-                console.log('CLS:', clsValue);
-            }).observe({entryTypes: ['layout-shift']});
-        })();
-    </script>
-</body>
-</html>
+                }).observe({entryTypes: ['largest-contentful-paint']});
+
+                // CLS monitoring
+                let clsValue = 0;
+                new PerformanceObserver((entryList) => {
+                    for (const entry of entryList.getEntries()) {
+                        if (!entry.hadRecentInput) {
+                            clsValue += entry.value;
+                        }
+                    }
+                    console.log('CLS:', clsValue);
+                }).observe({entryTypes: ['layout-shift']});
+            })();
+        </script>
+        </body>
+        </html>
