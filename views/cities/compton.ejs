@@ -204,7 +204,7 @@
     <link rel="manifest" href="/manifest.json">
 </head>
 
-<body itemscope itemtype="https://schema.org/WebPage">
+<body id="top" itemscope itemtype="https://schema.org/WebPage">
     <!-- Header Section -->
     <%- include('../partials/Header') %>
 
@@ -517,7 +517,7 @@
     <%- include('../partials/Footer') %>
 
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top" aria-label="Back to top">
+    <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </a>
 
@@ -527,16 +527,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Back to Top Button Functionality
-            const backToTopButton = document.querySelector('.back-to-top');
-
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    backToTopButton.classList.add('active');
-                } else {
-                    backToTopButton.classList.remove('active');
-                }
-            });
+            
 
             backToTopButton.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -547,5 +538,12 @@
             });
         });
     </script>
+
+    <!-- JavaScript for Interactive Elements -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Back to Top and Common Functionality -->
+    <script src="/JS/back-to-top.js"></script>
 </body>
 </html>
