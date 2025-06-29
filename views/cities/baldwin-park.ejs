@@ -924,7 +924,7 @@
     <%- include('../partials/Footer') %>
 
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top">
+    <a href="#" class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </a>
 
@@ -967,23 +967,33 @@
             // Initialize back to top button
             function initBackToTop() {
                 const backToTopButton = document.getElementById('backToTop');
+                const backToTopButtonAlt = document.querySelector('.back-to-top');
                 
-                if (backToTopButton) {
-                    window.addEventListener('scroll', function() {
-                        if (window.pageYOffset > 300) {
-                            backToTopButton.classList.add('active');
-                        } else {
-                            backToTopButton.classList.remove('active');
-                        }
-                    });
+                function showHideButton() {
+                    if (window.pageYOffset > 300) {
+                        if (backToTopButton) backToTopButton.classList.add('active');
+                        if (backToTopButtonAlt) backToTopButtonAlt.classList.add('active');
+                    } else {
+                        if (backToTopButton) backToTopButton.classList.remove('active');
+                        if (backToTopButtonAlt) backToTopButtonAlt.classList.remove('active');
+                    }
+                }
+                
+                window.addEventListener('scroll', showHideButton);
 
-                    backToTopButton.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        window.scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
+                function scrollToTop(e) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
                     });
+                }
+
+                if (backToTopButton) {
+                    backToTopButton.addEventListener('click', scrollToTop);
+                }
+                if (backToTopButtonAlt) {
+                    backToTopButtonAlt.addEventListener('click', scrollToTop);
                 }
             }
 
