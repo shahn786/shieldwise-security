@@ -693,7 +693,7 @@
                 <div class="row mt-4">
                     <div class="col-12">
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26444.93271925618!2d-117.92765682191085!3d34.13360000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c3258b3dd97beb%3A0xd9c1f6b4c0e6b8a7!2sAzusa%2C%20CA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" title="Map of Azusa, California showing ShieldWise Security service areas"></iframe>
+                            <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52968.46196950599!2d-117.92765682191085!3d34.13360000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c3258b3dd97beb%3A0xd9c1f6b4c0e6b8a7!2sAzusa%2C%20CA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Azusa, California showing ShieldWise Security service areas"></iframe>
                         </div>
                     </div>
                 </div>
@@ -794,13 +794,13 @@
             </div>
         </section>
 
-        <!-- ✅ FAQ Section Matched to Schema -->
-        <section class="py-5" id="faq" itemscope itemtype="https://schema.org/FAQPage">
+        <!-- FAQ Section -->
+        <section class="py-5 faq-section" id="faq" itemscope itemtype="https://schema.org/FAQPage">
             <div class="container">
-                <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+                <h2 class="text-center mb-5 fade-in">Frequently Asked Questions</h2>
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
-                        <div class="accordion" id="azusaFAQ">
+                        <div class="accordion fade-in" id="azusaFAQ">
                             <!-- FAQ Item 1 -->
                             <div class="card mb-3" itemscope itemtype="https://schema.org/Question">
                                 <div class="card-header" id="headingOne">
@@ -951,36 +951,16 @@
         <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </a>
 
-    <!-- ✅ Deferred JavaScript for Performance -->
-    <script>
-        // Load Bootstrap CSS and JS asynchronously
-        function loadCSS(href) {
-            const link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = href;
-            document.head.appendChild(link);
-        }
+    <!-- jQuery and Bootstrap JS - Fixed to match working Baldwin Park configuration -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-        function loadScript(src) {
-            const script = document.createElement('script');
-            script.src = src;
-            document.body.appendChild(script);
-        }
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-        // Load non-critical resources after page load
-        window.addEventListener('load', function() {
-            loadCSS('https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css');
-            loadCSS('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
-            
-            setTimeout(() => {
-                loadScript('https://code.jquery.com/jquery-3.5.1.slim.min.js');
-                loadScript('https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js');
-                loadScript('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js');
-            }, 100);
-        });
-    </script>
-
-    <!-- ✅ Enhanced JavaScript for Interactive Elements -->
     <script>
         // Wait for DOM to be fully loaded
         document.addEventListener('DOMContentLoaded', function() {
@@ -1009,7 +989,7 @@
 
             // Initialize back to top button
             function initBackToTop() {
-                const backToTopButton = document.querySelector('.back-to-top');
+                const backToTopButton = document.getElementById('backToTop');
                 
                 if (backToTopButton) {
                     window.addEventListener('scroll', function() {
@@ -1034,14 +1014,30 @@
             function initNavbar() {
                 const navbar = document.querySelector('.navbar');
                 
-                if (navbar) {
-                    window.addEventListener('scroll', function() {
-                        if (window.pageYOffset > 50) {
-                            navbar.classList.add('scrolled');
-                        } else {
-                            navbar.classList.remove('scrolled');
-                        }
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 50) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                });
+            }
+
+            // Test map loading
+            function testMapLoading() {
+                const mapIframe = document.querySelector('.embed-responsive iframe');
+                if (mapIframe) {
+                    console.log('Map iframe found, src:', mapIframe.src);
+                    
+                    mapIframe.addEventListener('load', function() {
+                        console.log('Map loaded successfully');
                     });
+                    
+                    mapIframe.addEventListener('error', function(e) {
+                        console.error('Map failed to load:', e);
+                    });
+                } else {
+                    console.error('Map iframe not found');
                 }
             }
 
@@ -1049,47 +1045,44 @@
             initAnimations();
             initBackToTop();
             initNavbar();
+            testMapLoading();
+        });
 
-            // Enhanced FAQ functionality with delay for Bootstrap
-            setTimeout(() => {
-                // Test FAQ accordion functionality
-                const collapseElements = document.querySelectorAll('.collapse');
-                collapseElements.forEach(element => {
-                    element.addEventListener('show.bs.collapse', function () {
-                        console.log('FAQ opening:', this.id);
-                        const button = this.parentElement.querySelector('[data-toggle="collapse"]');
-                        if (button) button.classList.remove('collapsed');
-                    });
-                    
-                    element.addEventListener('hide.bs.collapse', function () {
-                        console.log('FAQ closing:', this.id);
-                        const button = this.parentElement.querySelector('[data-toggle="collapse"]');
-                        if (button) button.classList.add('collapsed');
-                    });
-                });
+        // jQuery ready function for Bootstrap components
+        $(document).ready(function() {
+            console.log('jQuery loaded successfully, version:', $.fn.jquery);
+            
+            // Test FAQ accordion functionality
+            $('.collapse').on('show.bs.collapse', function () {
+                console.log('FAQ opening:', this.id);
+                const button = $(this).parent().find('[data-toggle="collapse"]');
+                button.removeClass('collapsed');
+            });
+            
+            $('.collapse').on('hide.bs.collapse', function () {
+                console.log('FAQ closing:', this.id);
+                const button = $(this).parent().find('[data-toggle="collapse"]');
+                button.addClass('collapsed');
+            });
 
-                // Test FAQ button clicks
-                const faqButtons = document.querySelectorAll('[data-toggle="collapse"]');
-                faqButtons.forEach(button => {
-                    button.addEventListener('click', function() {
-                        console.log('FAQ button clicked:', this.getAttribute('data-target'));
-                    });
-                });
-            }, 2000);
+            // Test FAQ button clicks
+            $('[data-toggle="collapse"]').on('click', function() {
+                console.log('FAQ button clicked:', $(this).attr('data-target'));
+            });
 
             // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        e.preventDefault();
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
+            $('a[href^="#"]').on('click', function(event) {
+                const target = $(this.getAttribute('href'));
+                if (target.length) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 70
+                    }, 1000);
+                }
             });
+
+            // Initialize tooltips if any
+            $('[data-toggle="tooltip"]').tooltip();
         });
 
         // Fallback for older browsers
@@ -1105,19 +1098,6 @@
                         element.classList.add('visible');
                     }
                 });
-            });
-        }
-
-        // Service Worker Registration for PWA
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(function(registration) {
-                        console.log('SW registered: ', registration);
-                    })
-                    .catch(function(registrationError) {
-                        console.log('SW registration failed: ', registrationError);
-                    });
             });
         }
     </script>
