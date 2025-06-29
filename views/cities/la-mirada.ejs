@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-US" itemscope itemtype="https://schema.org/WebPage">
 <head>
@@ -45,7 +44,7 @@
 
     <!-- Voice Search Optimization -->
     <meta name="speakable-sections" content="hero-section, services-overview, contact-info">
-    
+
     <!-- Multilingual Support -->
     <link rel="alternate" hreflang="en-US" href="https://shieldwisesecurity.com/los-angeles/la-mirada/">
     <link rel="alternate" hreflang="es-US" href="https://shieldwisesecurity.com/es/los-angeles/la-mirada/">
@@ -583,7 +582,7 @@
                         <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Retail centers needing comprehensive loss prevention</li>
                         <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Residential areas requiring tailored security solutions</li>
                         <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Coordination with local law enforcement for comprehensive protection</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Tailored security plans for specific La Mirada neighborhoods</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Tailored securityplans for specific La Mirada neighborhoods</li>
                     </ul>
                 </div>
                 <div class="col-lg-6">
@@ -866,32 +865,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
 
     <!-- Back to Top Button JavaScript -->
+    <script src="/JS/back-to-top.js"></script>
+
+    <!-- Service Worker Registration for PWA Performance -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const backToTopButton = document.getElementById('backToTop');
-
-            if (backToTopButton) {
-                // Show/hide button based on scroll position
-                window.addEventListener('scroll', function() {
-                    if (window.pageYOffset > 300) {
-                        backToTopButton.classList.add('active');
-                    } else {
-                        backToTopButton.classList.remove('active');
-                    }
-                });
-
-                // Smooth scroll to top when clicked
-                backToTopButton.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                });
-            }
-        });
-
-        // Service Worker Registration for PWA Performance
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/sw.js')
@@ -927,6 +904,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Back to Top and Common Functionality -->
-    <script src="/JS/back-to-top.js"></script>
+    
 </body>
 </html>
