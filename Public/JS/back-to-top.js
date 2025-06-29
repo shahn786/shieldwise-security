@@ -5,26 +5,34 @@
 
 // Back to Top Button Handler
 function initBackToTop() {
+    console.log('Initializing Back to Top'); // Debug log
     const backToTopButton = document.getElementById('backToTop');
 
     if (backToTopButton) {
+        console.log('Back to top button found'); // Debug log
+
         // Show/hide button based on scroll position
         window.addEventListener('scroll', function() {
             if (window.pageYOffset > 300) {
                 backToTopButton.classList.add('active');
+                backToTopButton.style.display = 'block'; // Fallback
             } else {
                 backToTopButton.classList.remove('active');
+                backToTopButton.style.display = 'none'; // Fallback
             }
         });
 
         // Smooth scroll to top when clicked
         backToTopButton.addEventListener('click', function(e) {
             e.preventDefault();
+            console.log('Back to top clicked'); // Debug log
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         });
+    } else {
+        console.log('Back to top button NOT found'); // Debug log
     }
 }
 
