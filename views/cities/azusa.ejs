@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self' 'unsafe-inline' 'unsafe-eval' *.googleapis.com *.gstatic.com *.cloudflare.com *.jsdelivr.net www.google.com maps.googleapis.com maps.gstatic.com maps.google.com;
+      frame-src 'self' www.google.com maps.google.com;
+    ">
+
     <!-- ✅ Critical CSS Inlined for Page Speed -->
 
     <!-- ✅ Performance Optimization -->
@@ -541,29 +546,7 @@
     <%- include('../partials/Header') %>
 
     <!-- ✅ Enhanced Breadcrumb Navigation -->
-    <nav class="breadcrumb" aria-label="Breadcrumb Navigation">
-        <div class="container">
-            <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
-                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="/">
-                        <span itemprop="name">🏠 Home</span>
-                    </a>
-                    <meta itemprop="position" content="1" />
-                </li>
-                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="/los-angeles">
-                        <span itemprop="name">🏙️ Los Angeles Security</span>
-                    </a>
-                    <meta itemprop="position" content="2" />
-                </li>
-                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <span itemprop="name">🛡️ Azusa Security Guards</span>
-                    <meta itemprop="position" content="3" />
-                </li>
-            </ol>
-        </div>
-    </nav>
-
+   
     <!-- ✅ Hero Section with Semantic HTML5 -->
     <header class="hero-downtown" role="banner">
         <div class="hero-content">
