@@ -830,6 +830,13 @@ a:hover {
     text-decoration: none;
     z-index: 1000;
     transition: all 0.3s ease;
+    font-size: 18px;
+    box-shadow: 0 4px 12px rgba(43, 87, 151, 0.3);
+}
+
+.back-to-top i {
+    font-size: 18px;
+    line-height: 1;
 }
 
 .back-to-top:hover {
@@ -837,6 +844,7 @@ a:hover {
     color: white;
     text-decoration: none;
     transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(43, 87, 151, 0.4);
 }
 
 .back-to-top.active {
