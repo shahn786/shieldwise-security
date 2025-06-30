@@ -1,0 +1,176 @@
+<style>
+        .anaheim-nearby-cities {
+            background: #f8f9fa;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .cities-header h3 {
+            font-size: 2.5rem;
+            color: #003366;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .cities-header p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        .cities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto auto; /* 3 rows total */
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* First row - 3 cities */
+        .cities-grid .city-link:nth-child(1) {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .cities-grid .city-link:nth-child(2) {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .cities-grid .city-link:nth-child(3) {
+            grid-column: 3;
+            grid-row: 1;
+        }
+
+        /* Second row - 3 cities */
+        .cities-grid .city-link:nth-child(4) {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .cities-grid .city-link:nth-child(5) {
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        .cities-grid .city-link:nth-child(6) {
+            grid-column: 3;
+            grid-row: 2;
+        }
+
+        /* Third row - main link spanning all columns */
+        .cities-grid .main-link {
+            grid-column: 1 / -1;
+            grid-row: 3;
+        }
+
+        .city-link {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #003366;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            min-height: 100px;
+        }
+
+        .city-link:hover {
+            border-color: #003366;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 51, 102, 0.15);
+            text-decoration: none;
+            color: #003366;
+        }
+
+        .city-link i {
+            font-size: 2rem;
+            color: #dc3545;
+        }
+
+        .city-link span {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .main-link {
+            background: #003366 !important;
+            color: white !important;
+            border-color: #003366 !important;
+        }
+
+        .main-link:hover {
+            background: #002244 !important;
+            color: white !important;
+            border-color: #002244 !important;
+        }
+
+        .main-link i {
+            color: white !important;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .cities-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .cities-grid .city-link:nth-child(1) {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .cities-grid .city-link:nth-child(2) {
+                grid-column: 2;
+                grid-row: 1;
+            }
+
+            .cities-grid .city-link:nth-child(3) {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            .cities-grid .city-link:nth-child(4) {
+                grid-column: 2;
+                grid-row: 2;
+            }
+
+            .cities-grid .city-link:nth-child(5) {
+                grid-column: 1;
+                grid-row: 3;
+            }
+
+            .cities-grid .city-link:nth-child(6) {
+                grid-column: 2;
+                grid-row: 3;
+            }
+
+            .cities-grid .main-link {
+                grid-column: 1 / -1;
+                grid-row: 4;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cities-grid .city-link {
+                grid-column: 1 !important;
+            }
+
+            .cities-grid .city-link:nth-child(1) { grid-row: 1; }
+            .cities-grid .city-link:nth-child(2) { grid-row: 2; }
+            .cities-grid .city-link:nth-child(3) { grid-row: 3; }
+            .cities-grid .city-link:nth-child(4) { grid-row: 4; }
+            .cities-grid .city-link:nth-child(5) { grid-row: 5; }
+            .cities-grid .city-link:nth-child(6) { grid-row: 6; }
+            .cities-grid .main-link { grid-row: 7; }
+        }
