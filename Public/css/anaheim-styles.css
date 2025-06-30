@@ -755,6 +755,8 @@
   color: var(--primary-dark);
 }
 
+/*         cities list */
+
 /* Enhanced Nearby Cities Section */
 .anaheim-nearby-cities {
   background: #f8f9fa;
@@ -780,7 +782,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 30px auto;
   align-items: stretch;
 }
 
@@ -817,11 +819,16 @@
   font-size: 1.1rem;
 }
 
+/* Main link container - separate from grid */
+.main-link-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
 .main-link {
   background: #003366 !important;
   color: white !important;
   border-color: #003366 !important;
-  grid-column: 1 / -1;
 }
 
 .main-link:hover {
@@ -840,35 +847,14 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
-
-  .main-link {
-    grid-column: 1 / -1;
-  }
 }
 
 @media (max-width: 480px) {
   .cities-grid {
     grid-template-columns: 1fr;
   }
-
-  .main-link {
-    grid-column: 1;
-  }
 }
 
-@media (max-width: 768px) {
-  .anaheim-areas-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .anaheim-area-item {
-    padding: 30px 20px;
-  }
-
-  .anaheim-areas-section h2 {
-    font-size: 1.8rem;
-  }
-}
 
 /* Section Badge (optional style) */
 .section-badge {
