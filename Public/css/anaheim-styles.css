@@ -819,7 +819,6 @@
 .cities-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
   gap: 25px;
   max-width: 700px;
   margin: 0 auto;
@@ -893,7 +892,6 @@
 
 .city-link.main-link {
   grid-column: 1 / -1;
-  grid-row: 4;
   background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
   color: white;
   padding: 35px 30px;
@@ -935,7 +933,6 @@
 @media (max-width: 992px) {
   .cities-grid {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
     gap: 20px;
     max-width: 600px;
   }
@@ -952,7 +949,6 @@
   
   .cities-grid {
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
     gap: 15px;
     max-width: 400px;
   }
@@ -971,7 +967,6 @@
   
   .city-link.main-link {
     grid-column: 1;
-    grid-row: auto;
     padding: 30px 20px;
   }
 }
