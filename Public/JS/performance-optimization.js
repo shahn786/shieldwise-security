@@ -1,6 +1,6 @@
+
 // Performance optimization script for ShieldWise Security
 document.addEventListener('DOMContentLoaded', function() {
-
     // Image lazy loading with enhanced performance
     const imageObserver = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Observe all images with data-src attribute
-    document.querySelectorAll('img[data-src]').forEach(image => {
+    document.querySelectorAll('img[data-src]').forEach(function(image) {
         imageObserver.observe(image);
     });
 
@@ -39,12 +39,12 @@ document.addEventListener('DOMContentLoaded', function() {
                         video.setAttribute('preload', 'auto');
                     }
                     // Play the video with a small delay to ensure smooth loading
-                    setTimeout(() => {
+                    setTimeout(function() {
                         const playPromise = video.play();
                         if (playPromise !== undefined) {
-                            playPromise.then(() => {
+                            playPromise.then(function() {
                                 video.classList.add('loaded');
-                            }).catch(error => {
+                            }).catch(function(error) {
                                 console.log("Video autoplay prevented:", error);
                             });
                         }
@@ -58,10 +58,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, {
         threshold: 0.1,
-        rootMargin: '100px 0px' // Load videos 100px before they come into view
+        rootMargin: '100px 0px'
     });
 
-    document.querySelectorAll('video').forEach(video => {
+    // Observe all videos
+    document.querySelectorAll('video').forEach(function(video) {
         videoObserver.observe(video);
         // Handle video loading errors
         video.addEventListener('error', function(e) {
@@ -87,8 +88,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
             if (document.querySelector(targetId)) {
                 e.preventDefault();
@@ -101,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // FAQ accordion animation improvement
     const faqHeaders = document.querySelectorAll('.faq-header');
-    faqHeaders.forEach(header => {
+    faqHeaders.forEach(function(header) {
         header.addEventListener('click', function() {
             const icon = this.querySelector('.faq-icon');
             if (icon) {
@@ -116,23 +117,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add image/video load complete event for critical elements
     const criticalImages = document.querySelectorAll('img[fetchpriority="high"], video[fetchpriority="high"]');
-    criticalImages.forEach(elem => {
+    criticalImages.forEach(function(elem) {
         if (elem.complete || (elem.readyState && elem.readyState >= 3)) {
             elem.classList.add('loaded');
         } else {
-            elem.addEventListener('load', () => {
+            elem.addEventListener('load', function() {
                 elem.classList.add('loaded');
             });
         }
     });
 
     // Improve page speed by deferring non-critical operations
-    setTimeout(() => {
+    setTimeout(function() {
         // Load non-critical resources after page is interactive
         const deferredScripts = document.querySelectorAll('script[data-defer="true"]');
-        deferredScripts.forEach(script => {
+        deferredScripts.forEach(function(script) {
             const newScript = document.createElement('script');
-            [...script.attributes].forEach(attr => {
+            Array.from(script.attributes).forEach(function(attr) {
                 if (attr.name !== 'data-defer') {
                     newScript.setAttribute(attr.name, attr.value);
                 }
