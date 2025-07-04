@@ -1,3 +1,4 @@
+
 // Image and Video optimization - enhanced for performance
 document.addEventListener('DOMContentLoaded', function () {
   // --- Image Lazy Loading ---
