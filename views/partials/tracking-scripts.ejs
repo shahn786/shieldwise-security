@@ -135,24 +135,7 @@ b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
 s.parentNode.insertBefore(b, s);})(window.lintrk);
 </script>
 
-<!-- Hotjar Tracking with User Attributes -->
-<script>
-(function(h,o,t,j,a,r){
-    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-    h._hjSettings={hjid:3789456,hjsv:6};
-    a=o.getElementsByTagName('head')[0];
-    r=o.createElement('script');r.async=1;
-    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-    a.appendChild(r);
-})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 
-// Set user attributes for Hotjar
-hj('identify', 'security_visitor', {
-  'service_interest': '<%= serviceType %>',
-  'page_type': 'service',
-  'price_range': '<%= priceRange.low %>-<%= priceRange.high %>'
-});
-</script>
 
 <!-- Custom Security Service Event Tracking -->
 <script>
@@ -182,8 +165,7 @@ function trackConsultationRequest() {
   // Microsoft Clarity
   clarity('event', 'consultation_request');
 
-  // Hotjar
-  hj('event', 'consultation_request');
+  
 }
 
 // Enhanced phone tracking
@@ -224,7 +206,7 @@ function trackFormSubmission(formType) {
     'form_type': formType
   });
 
-  hj('event', 'form_submission');
+  
 }
 
 // Scroll depth tracking
