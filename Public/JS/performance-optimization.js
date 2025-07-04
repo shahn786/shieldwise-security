@@ -1,145 +1,142 @@
 
-// Performance optimization script for ShieldWise Security
+// Enhanced Performance Optimization Script for ShieldWise Security
 document.addEventListener('DOMContentLoaded', function() {
-    // Image lazy loading with enhanced performance
-    const imageObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-            const image = entry.target;
-            if (entry.isIntersecting) {
-                if (image.dataset.src) {
-                    image.src = image.dataset.src;
-                    image.removeAttribute('data-src');
+    // Defer non-critical scripts
+    const deferredScripts = document.querySelectorAll('script[data-defer="true"]');
+    
+    deferredScripts.forEach(function(script) {
+        if (!script || !script.attributes) return;
+        
+        const newScript = document.createElement('script');
+        
+        // Safely copy attributes
+        try {
+            Array.from(script.attributes).forEach(function(attr) {
+                if (attr && attr.name && attr.name !== 'data-defer') {
+                    newScript.setAttribute(attr.name, attr.value || '');
                 }
-                if (image.dataset.srcset) {
-                    image.srcset = image.dataset.srcset;
-                    image.removeAttribute('data-srcset');
-                }
-                image.classList.add('loaded');
-                imageObserver.unobserve(image);
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '50px 0px'
+            });
+        } catch (e) {
+            console.log('Error copying script attributes:', e);
+            return;
+        }
+        
+        if (script.parentNode) {
+            script.parentNode.replaceChild(newScript, script);
+        }
     });
 
-    // Observe all images with data-src attribute
-    document.querySelectorAll('img[data-src]').forEach(function(image) {
-        imageObserver.observe(image);
-    });
-
-    // Video optimization - enhanced for performance
-    const videoObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-            const video = entry.target;
-            if (entry.isIntersecting) {
-                if (video.paused) {
-                    // If the video has preload="none", change it to "auto" when in view
-                    if (video.getAttribute('preload') === 'none') {
-                        video.setAttribute('preload', 'auto');
+    // Lazy load images with intersection observer
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img && img.dataset && img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        observer.unobserve(img);
                     }
-                    // Play the video with a small delay to ensure smooth loading
-                    setTimeout(function() {
-                        const playPromise = video.play();
-                        if (playPromise !== undefined) {
-                            playPromise.then(function() {
-                                video.classList.add('loaded');
-                            }).catch(function(error) {
-                                console.log("Video autoplay prevented:", error);
-                            });
-                        }
-                    }, 100);
                 }
-            } else {
-                if (!video.paused && video.getAttribute('data-load-priority') === 'low') {
-                    video.pause();
-                }
-            }
+            });
         });
-    }, {
-        threshold: 0.1,
-        rootMargin: '100px 0px'
-    });
 
-    // Observe all videos
-    document.querySelectorAll('video').forEach(function(video) {
-        videoObserver.observe(video);
-        // Handle video loading errors
-        video.addEventListener('error', function(e) {
-            console.log("Video error:", e);
-            if (video.parentNode) {
-                video.parentNode.style.backgroundColor = '#111';
+        const lazyImages = document.querySelectorAll('img[data-src]');
+        lazyImages.forEach(function(img) {
+            if (img) {
+                imageObserver.observe(img);
             }
         });
-    });
-
-    // Optimize second video loading
-    const secondVideo = document.getElementById('background-video12');
-    if (secondVideo) {
-        const secondVideoObserver = new IntersectionObserver(function(entries) {
-            if (entries[0].isIntersecting) {
-                secondVideo.setAttribute('preload', 'auto');
-                secondVideoObserver.unobserve(secondVideo);
-            }
-        }, {
-            rootMargin: '500px 0px'
-        });
-        secondVideoObserver.observe(secondVideo);
     }
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (document.querySelector(targetId)) {
-                e.preventDefault();
-                document.querySelector(targetId).scrollIntoView({
-                    behavior: 'smooth'
-                });
+    // Optimize video loading
+    const videos = document.querySelectorAll('video');
+    videos.forEach(function(video) {
+        if (!video) return;
+        
+        try {
+            // Set video attributes for better performance
+            video.setAttribute('preload', 'none');
+            
+            // Play the video with a small delay to ensure smooth loading
+            if (video.autoplay) {
+                setTimeout(function() {
+                    if (video && typeof video.play === 'function') {
+                        video.play().catch(function(e) {
+                            console.log('Video autoplay blocked:', e);
+                        });
+                    }
+                }, 100);
             }
-        });
-    });
-
-    // FAQ accordion animation improvement
-    const faqHeaders = document.querySelectorAll('.faq-header');
-    faqHeaders.forEach(function(header) {
-        header.addEventListener('click', function() {
-            const icon = this.querySelector('.faq-icon');
-            if (icon) {
-                if (icon.textContent === '+') {
-                    icon.textContent = '-';
-                } else {
-                    icon.textContent = '+';
-                }
-            }
-        });
-    });
-
-    // Add image/video load complete event for critical elements
-    const criticalImages = document.querySelectorAll('img[fetchpriority="high"], video[fetchpriority="high"]');
-    criticalImages.forEach(function(elem) {
-        if (elem.complete || (elem.readyState && elem.readyState >= 3)) {
-            elem.classList.add('loaded');
-        } else {
-            elem.addEventListener('load', function() {
-                elem.classList.add('loaded');
-            });
+        } catch (e) {
+            console.log('Video optimization error:', e);
         }
     });
 
     // Improve page speed by deferring non-critical operations
     setTimeout(function() {
-        // Load non-critical resources after page is interactive
-        const deferredScripts = document.querySelectorAll('script[data-defer="true"]');
-        deferredScripts.forEach(function(script) {
-            const newScript = document.createElement('script');
-            Array.from(script.attributes).forEach(function(attr) {
-                if (attr.name !== 'data-defer') {
-                    newScript.setAttribute(attr.name, attr.value);
+        // Load non-critical CSS
+        const criticalCSS = document.querySelectorAll('link[rel="preload"][as="style"]');
+        criticalCSS.forEach(function(link) {
+            if (link) {
+                link.rel = 'stylesheet';
+            }
+        });
+
+        // Initialize third-party widgets after page load
+        if (typeof initializeWidgets === 'function') {
+            initializeWidgets();
+        }
+    }, 1000);
+
+    // FAQ accordion animation improvements
+    const faqHeaders = document.querySelectorAll('.faq-header');
+    faqHeaders.forEach(function(header) {
+        if (!header) return;
+        
+        header.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            if (content) {
+                content.style.transition = 'max-height 0.3s ease';
+            }
+        });
+    });
+
+    // Add intersection observer for animations
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    if (animatedElements.length > 0 && 'IntersectionObserver' in window) {
+        const animationObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting && entry.target) {
+                    entry.target.classList.add('animated');
                 }
             });
-            newScript.appendChild(document.createTextNode(script.innerHTML));
-            script.parentNode.replaceChild(newScript, script);
+        }, { threshold: 0.1 });
+
+        animatedElements.forEach(function(element) {
+            if (element) {
+                animationObserver.observe(element);
+            }
         });
-    }, 3000);
+    }
 });
+
+// Utility function to safely get element by ID
+function safeGetElementById(id) {
+    try {
+        return document.getElementById(id);
+    } catch (e) {
+        console.log('Error getting element by ID:', id, e);
+        return null;
+    }
+}
+
+// Utility function to safely query selector
+function safeQuerySelector(selector) {
+    try {
+        return document.querySelector(selector);
+    } catch (e) {
+        console.log('Error with querySelector:', selector, e);
+        return null;
+    }
+}
