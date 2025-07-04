@@ -1,92 +1,91 @@
-
 // Image and Video optimization - enhanced for performance
-document.addEventListener('DOMContentLoaded', function() {
-  // Image lazy loading observer
-  const imageObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      const image = entry.target;
-      if (entry.isIntersecting) {
-        if (image.dataset.src) {
-          image.src = image.dataset.src;
-          image.removeAttribute('data-src');
-        }
-        image.classList.add('loaded');
-        imageObserver.unobserve(image);
-      }
-    });
-  }, {
-    threshold: 0.1,
-    rootMargin: '50px 0px'
-  });
-
-  // Observe all images with data-src attribute
-  document.querySelectorAll('img[data-src]').forEach(image => {
-    imageObserver.observe(image);
-  });
-
-  // Video optimization - enhanced for performance
-  const videoObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      const video = entry.target;
-      if (entry.isIntersecting) {
-        if (video.paused) {
-          // If the video has preload="none", change it to "auto" when in view
-          if (video.getAttribute('preload') === 'none') {
-            video.setAttribute('preload', 'auto');
+document.addEventListener('DOMContentLoaded', function () {
+  // --- Image Lazy Loading ---
+  if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const image = entry.target;
+          if (image && image.dataset && image.dataset.src) {
+            image.src = image.dataset.src;
+            image.removeAttribute('data-src');
           }
-          // Play the video with a small delay to ensure smooth loading
-          setTimeout(() => {
-            const playPromise = video.play();
-            if (playPromise !== undefined) {
-              playPromise.then(() => {
-                video.classList.add('loaded');
-              }).catch(error => {
-                console.log("Video autoplay prevented:", error);
-              });
-            }
-          }, 100);
+          image.classList.add('loaded');
+          observer.unobserve(image);
         }
-      } else {
-        if (!video.paused && video.getAttribute('data-load-priority') === 'low') {
-          video.pause();
-        }
-      }
-    });
-  }, {
-    threshold: 0.1,
-    rootMargin: '100px 0px' // Load videos 100px before they come into view
-  });
-
-  document.querySelectorAll('video').forEach(video => {
-    videoObserver.observe(video);
-    // Handle video loading errors
-    video.addEventListener('error', function(e) {
-      console.log("Video error:", e);
-      if (video.parentNode) {
-        video.parentNode.style.backgroundColor = '#111';
-      }
-    });
-  });
-
-  // Optimize second video loading
-  const secondVideo = document.getElementById('background-video12');
-  if (secondVideo) {
-    const secondVideoObserver = new IntersectionObserver(function(entries) {
-      if (entries[0].isIntersecting) {
-        secondVideo.setAttribute('preload', 'auto');
-        secondVideoObserver.unobserve(secondVideo);
-      }
+      });
     }, {
-      rootMargin: '500px 0px'
+      threshold: 0.1,
+      rootMargin: '50px 0px'
     });
-    secondVideoObserver.observe(secondVideo);
+
+    document.querySelectorAll('img[data-src]').forEach(image => {
+      imageObserver.observe(image);
+    });
+
+    // --- Video Lazy Loading & Optimization ---
+    const videoObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+          if (video.paused) {
+            if (video.getAttribute('preload') === 'none') {
+              video.setAttribute('preload', 'auto');
+            }
+            setTimeout(() => {
+              const playPromise = video.play();
+              if (playPromise !== undefined) {
+                playPromise.then(() => {
+                  video.classList.add('loaded');
+                }).catch(error => {
+                  // Autoplay might be blocked on some browsers
+                  console.log("Video autoplay prevented:", error);
+                });
+              }
+            }, 100);
+          }
+        } else {
+          // Pause low-priority videos when out of view
+          if (!video.paused && video.getAttribute('data-load-priority') === 'low') {
+            video.pause();
+          }
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '100px 0px'
+    });
+
+    document.querySelectorAll('video').forEach(video => {
+      videoObserver.observe(video);
+      video.addEventListener('error', function (e) {
+        console.log("Video error:", e);
+        if (video.parentNode) {
+          video.parentNode.style.backgroundColor = '#111';
+        }
+      });
+    });
+
+    // --- Special Second Video Optimization ---
+    const secondVideo = document.getElementById('background-video12');
+    if (secondVideo) {
+      const secondVideoObserver = new IntersectionObserver(function (entries, observer) {
+        if (entries[0].isIntersecting) {
+          secondVideo.setAttribute('preload', 'auto');
+          observer.unobserve(secondVideo);
+        }
+      }, {
+        rootMargin: '500px 0px'
+      });
+      secondVideoObserver.observe(secondVideo);
+    }
   }
 
-  // Smooth scrolling for anchor links
+  // --- Smooth Scrolling for Anchor Links ---
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
-      if (document.querySelector(targetId)) {
+      if (targetId && document.querySelector(targetId)) {
         e.preventDefault();
         document.querySelector(targetId).scrollIntoView({
           behavior: 'smooth'
@@ -95,36 +94,39 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // FAQ accordion animation improvement
+  // --- FAQ Accordion Animation ---
   const faqHeaders = document.querySelectorAll('.faq-header');
   faqHeaders.forEach(header => {
-    header.addEventListener('click', function() {
+    header.addEventListener('click', function () {
       const icon = this.querySelector('.faq-icon');
       if (icon) {
-        if (icon.textContent === '+') {
-          icon.textContent = '-';
-        } else {
-          icon.textContent = '+';
-        }
+        icon.textContent = (icon.textContent === '+') ? '-' : '+';
       }
     });
   });
 
-  // Add image/video load complete event for critical elements
-  const criticalImages = document.querySelectorAll('img[fetchpriority="high"], video[fetchpriority="high"]');
-  criticalImages.forEach(elem => {
-    if (elem.complete || (elem.readyState && elem.readyState >= 3)) {
+  // --- Add 'loaded' Class for Critical Images/Videos ---
+  const criticalMedia = document.querySelectorAll('img[fetchpriority="high"], video[fetchpriority="high"]');
+  criticalMedia.forEach(elem => {
+    if (
+      (elem.tagName === 'IMG' && elem.complete) ||
+      (elem.tagName === 'VIDEO' && elem.readyState >= 3)
+    ) {
       elem.classList.add('loaded');
     } else {
       elem.addEventListener('load', () => {
         elem.classList.add('loaded');
       });
+      if (elem.tagName === 'VIDEO') {
+        elem.addEventListener('loadeddata', () => {
+          elem.classList.add('loaded');
+        });
+      }
     }
   });
 
-  // Improve page speed by deferring non-critical operations
+  // --- Defer Non-Critical Scripts ---
   setTimeout(() => {
-    // Load non-critical resources after page is interactive
     const deferredScripts = document.querySelectorAll('script[data-defer="true"]');
     deferredScripts.forEach(script => {
       const newScript = document.createElement('script');
@@ -133,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
           newScript.setAttribute(attr.name, attr.value);
         }
       });
-      newScript.appendChild(document.createTextNode(script.innerHTML));
+      newScript.text = script.innerHTML;
       script.parentNode.replaceChild(newScript, script);
     });
   }, 3000);
