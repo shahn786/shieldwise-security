@@ -601,7 +601,7 @@
 </head>
 
 
-<body>
+<body id="top">
   <!-- Header Section -->
   <%- include('../partials/Header') %>
 
@@ -1126,9 +1126,7 @@
 
 
   <!-- Back to Top Button -->
-  <a href="#" class="back-to-top">
-      <i class="fas fa-arrow-up"></i>
-  </a>
+  
 
                    <%- include('../partials/Footer') %>
 
@@ -1295,6 +1293,12 @@
                          ]
                        }
                        </script>
-                   </body>
+                       <!-- Back to Top Button -->
+    <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    <!-- Back to Top JavaScript -->
+    <script src="/JS/back-to-top.js"></script>
+</body>
 
                        

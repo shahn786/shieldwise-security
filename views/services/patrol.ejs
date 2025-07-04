@@ -839,7 +839,7 @@
   }
   </script>
 </head>
-<body>
+<body id="top">
     <!-- Your website content goes here -->
 
     <!-- Bootstrap and jQuery Scripts -->
@@ -891,7 +891,7 @@
     });
     </script>
 </head>
-<body>
+<body id="top">
   <!-- Include the header -->
   <%- include('../partials/Header') %>
 
@@ -1254,5 +1254,11 @@
 
   <!-- Include Footer -->
   <%- include('../partials/Footer') %>
+    <!-- Back to Top Button -->
+    <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    <!-- Back to Top JavaScript -->
+    <script src="/JS/back-to-top.js"></script>
 </body>
 </html>
