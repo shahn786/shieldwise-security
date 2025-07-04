@@ -14,7 +14,467 @@
           <meta property="og:title" content="Contact Us - ShieldWise Security">
           <meta property="og:description" content="ShieldWise Security provides professional security guard services in California. Get a free quote today!">
           <meta property="og:image" content="/img/shieldwise-security.jpg">
-          <meta property="og:url" content="https:
+          <meta property="og:url" content="https://www.shieldwisesecurity.com/contact">
+          <meta property="og:type" content="website">
+
+          <!-- Structured Data for Google Rich Results -->
+          <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "ShieldWise Security",
+            "image": "https://www.shieldwisesecurity.com/img/logo.png",
+            "url": "https://www.shieldwisesecurity.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "220 Soco Dr",
+              "addressLocality": "Fullerton",
+              "addressRegion": "CA",
+              "postalCode": "92832",
+              "addressCountry": "US"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+1-714-716-7430",
+              "contactType": "customer service"
+            }
+          }
+          </script>
+
+          <!-- Favicon -->
+          <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+          <!-- Bootstrap CSS -->
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+          <!-- FontAwesome for Icons -->
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+          <!-- Custom CSS -->
+          <link rel="stylesheet" href="/css/style.css">
+          <link rel="stylesheet" href="/css/contact-style.css">
+          
+          <!-- Additional responsive optimizations -->
+          <style>
+            @media (max-width: 768px) {
+              .page-intro h1 {
+                font-size: 2.2rem;
+              }
+              
+              .page-intro p {
+                font-size: 1.1rem;
+              }
+              
+              .contact-container {
+                flex-direction: column;
+                gap: 30px;
+              }
+              
+              .contact-box, .contact-info-box {
+                width: 100%;
+                max-width: 100%;
+              }
+            }
+          </style>
+          
+          <!-- Structured Data - Local Business -->
+          <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "SecurityService",
+            "name": "ShieldWise Security",
+            "url": "https://www.shieldwisesecurity.com",
+            "logo": "https://www.shieldwisesecurity.com/img/logo.png",
+            "image": "https://www.shieldwisesecurity.com/img/shieldwise-security.jpg",
+            "description": "ShieldWise Security provides professional security guard services throughout California with armed and unarmed guards, mobile patrols, and specialized security solutions.",
+            "telephone": "+1-714-716-7430",
+            "email": "info@shieldwisesecurity.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "220 Soco Dr",
+              "addressLocality": "Fullerton", 
+              "addressRegion": "CA",
+              "postalCode": "92832",
+              "addressCountry": "US"
+            },
+            "areaServed": "California",
+            "openingHours": "Mo-Su 00:00-23:59",
+            "sameAs": [
+              "https://www.facebook.com/shieldwisesecurity",
+              "https://www.linkedin.com/company/shieldwisesecurity",
+              "https://twitter.com/shieldwisesec"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+1-714-716-7430",
+              "contactType": "customer service",
+              "availableLanguage": ["English", "Spanish"]
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Security Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Armed Security"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Unarmed Security"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Mobile Patrol"
+                  }
+                }
+              ]
+            }
+          }
+          </script>
+      </head>
+
+      <body class="contact-page">
+
+          <!-- Include Header -->
+          <%- include('partials/Header') %>
+
+          <main>
+              <!-- Page Title and Intro Section -->
+              <div class="page-intro">
+                  <div class="container">
+                      <h1 style="color: #ffffff;">Contact ShieldWise Security</h1>
+                      <p>We're here to help with your security needs. Reach out for a free consultation or to learn more about our services.</p>
+                  </div>
+              </div>
+              
+              <div class="contact-container">
+                  <!-- Contact Form Section -->
+                  <div class="contact-box">
+                      <h2 class="section-header">Get In Touch With Us</h2>
+                      <div id="form-alert" class="alert d-none"></div>
+
+                      <form id="contact-form" class="contact-form" method="POST" action="/submit_form">
+                          <div class="form-group">
+                              <label for="name">Your Name</label>
+                              <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="email">Email Address</label>
+                              <input type="email" class="form-control" id="email" name="email" placeholder="your@email.com" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="contact_number">Contact Number</label>
+                              <input type="tel" class="form-control" id="contact_number" name="contact_number" placeholder="1234567890" maxlength="10" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="best_time">Best Time to Reach You</label>
+                              <input type="text" class="form-control" id="best_time" name="best_time" placeholder="e.g. Afternoons, Evenings" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="message">Your Message</label>
+                              <textarea class="form-control" id="message" name="message" rows="4" placeholder="Tell us about your security needs..." required></textarea>
+                          </div>
+                          <button type="submit" class="btn">Submit Request</button>
+                      </form>
+                  </div>
+
+                  <!-- Contact Information Section -->
+                  <div class="contact-info-box" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                      <h2 class="section-header">Our Office Locations</h2>
+                      <div class="contact-info">
+                          <!-- Head Office -->
+                          <h5>ShieldWise Security - Head Office</h5>
+                          <p>
+                              <span itemprop="streetAddress">220 Soco Dr</span>, 
+                              <span itemprop="addressLocality">Fullerton</span>, 
+                              <span itemprop="addressRegion">CA</span> 
+                              <span itemprop="postalCode">92832</span>
+                          </p>
+                          <p><strong>Phone:</strong> <a href="tel:+17147167430" itemprop="telephone">714-716-7430</a></p>
+                          <p><strong>Email:</strong> <a href="mailto:info@shieldwisesecurity.com" itemprop="email">info@shieldwisesecurity.com</a></p>
+
+                          <!-- Branch Office -->
+                          <h5>ShieldWise Security - Riverside Office</h5>
+                          <p>
+                              <span itemprop="streetAddress">7155 Dimaggio St</span>, 
+                              <span itemprop="addressLocality">Riverside</span>, 
+                              <span itemprop="addressRegion">CA</span> 
+                              <span itemprop="postalCode">92503</span>
+                          </p>
+                          <p><strong>Phone:</strong> <a href="tel:+17147167430" itemprop="telephone">714-716-7430</a></p>
+                          <p><strong>Email:</strong> <a href="mailto:info@shieldwisesecurity.com" itemprop="email">info@shieldwisesecurity.com</a></p>
+                          
+                          <h5>Hours of Operation</h5>
+                          <p>Our offices are open Monday through Friday from 9:00 AM to 5:00 PM</p>
+                          <p>24/7 Security Services and Emergency Response Available</p>
+                      </div>
+                  </div>
+              </div>
+          </main>
+<!-- California Locations Section -->
+<section class="locations-wrapper" itemscope itemtype="https://schema.org/Organization">
+    <div class="container">
+        <h2 class="locations-title">California Locations We Serve</h2>
+        
+        <div class="locations-container">
+            <!-- Map Section -->
+            <div class="map-wrapper">
+                <img src="/img/cali_map.png" alt="Map of California with ShieldWise Security Locations" class="map-image" loading="lazy">
+            </div>
+
+            <!-- Locations List -->
+            <div class="locations-list">
+                <h3 class="locations-subtitle">Cities We Serve</h3>
+                <ul class="city-list" itemscope itemtype="https://schema.org/ServiceArea">
+                    <!-- Major Regions -->
+                    <li itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="/los-angeles"><span itemprop="addressLocality">Los Angeles</span></a>, <span itemprop="addressRegion">CA</span>
+                    </li>
+                    <li itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="/orange-county"><span itemprop="addressLocality">Orange County</span></a>, <span itemprop="addressRegion">CA</span>
+                    </li>
+                    <li itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="/san-diego"><span itemprop="addressLocality">San Diego</span></a>, <span itemprop="addressRegion">CA</span>
+                    </li>
+                    <li itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="/riverside-county"><span itemprop="addressLocality">Riverside</span></a>, <span itemprop="addressRegion">CA</span>
+                    </li>
+                    <li itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="/san-bernardino"><span itemprop="addressLocality">San Bernardino</span></a>, <span itemprop="addressRegion">CA</span>
+                    </li>
+                    <li itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="/san-francisco"><span itemprop="addressLocality">San Francisco</span></a>, <span itemprop="addressRegion">CA</span>
+                    </li>
+                    
+                    <!-- Southern California Cities -->
+                    <li itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span itemprop="addressLocality">Anaheim</span>, <span itemprop="addressRegion">CA</span>
+                    </li>
+                    <li itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span itemprop="addressLocality">Bakersfield</span>, <span itemprop="addressRegion">CA</span>
+                    </li>
+                    <li itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span itemprop="addressLocality">Burbank</span>, <span itemprop="addressRegion">CA</span>
+                    </li>
+                    <li itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span itemprop="addressLocality">Carlsbad</span>, <span itemprop="addressRegion">CA</span>
+                    </li>
+                    <li itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span itemprop="addressLocality">Irvine</span>, <span itemprop="addressRegion">CA</span>
+                    </li>
+                    <li itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span itemprop="addressLocality">Santa Ana</span>, <span itemprop="addressRegion">CA</span>
+                    </li>
+                    <li itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span itemprop="addressLocality">Santa Clarita</span>, <span itemprop="addressRegion">CA</span>
+                    </li>
+                    <li itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span itemprop="addressLocality">Chula Vista</span>, <span itemprop="addressRegion">CA</span>
+                    </li>
+                    
+                    <!-- Northern California Cities -->
+                    <li itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span itemprop="addressLocality">Berkeley</span>, <span itemprop="addressRegion">CA</span>
+                    </li>
+                    <li itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span itemprop="addressLocality">Fremont</span>, <span itemprop="addressRegion">CA</span>
+                    </li>
+                    <li itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span itemprop="addressLocality">Fresno</span>, <span itemprop="addressRegion">CA</span>
+                    </li>
+                    <li itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span itemprop="addressLocality">San Jose</span>, <span itemprop="addressRegion">CA</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="cta-section">
+    <div class="container">
+        <h2>Need Immediate Security Assistance?</h2>
+        <p>Contact our 24/7 security team for emergency response or to schedule a security consultation. We're ready to protect what matters most to you.</p>
+        <div class="cta-buttons">
+            <a href="tel:+17147167430" class="phone-button">Call Now: (714) 716-7430</a>
+            <a href="/get-quote" class="quote-button">Request a Quote</a>
+        </div>
+    </div>
+</section>
+
+<!-- SEO FAQ Section -->
+<section class="faq-section">
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="accordion" id="contactFAQ">
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        How quickly can ShieldWise deploy security personnel?
+                    </button>
+                </h3>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-parent="#contactFAQ">
+                    <div class="accordion-body">
+                        ShieldWise Security can deploy security personnel within 24-48 hours for standard requests, and even faster for emergency situations. Our rapid response team is available 24/7 to address urgent security needs throughout California.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Are ShieldWise security guards licensed and insured?
+                    </button>
+                </h3>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-parent="#contactFAQ">
+                    <div class="accordion-body">
+                        Yes, all ShieldWise security guards are fully licensed, bonded, and insured in accordance with California state regulations. Our guards hold valid Guard Cards issued by the Bureau of Security and Investigative Services (BSIS) and receive ongoing training to maintain compliance with industry standards.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        What types of security services does ShieldWise offer?
+                    </button>
+                </h3>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-parent="#contactFAQ">
+                    <div class="accordion-body">
+                        ShieldWise offers a comprehensive range of security services including armed and unarmed guards, mobile patrol, event security, fire watch, executive protection, loss prevention, construction site security, and customized security solutions for residential, commercial, and industrial properties throughout California.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Include Footer -->
+<%- include('partials/Footer') %>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Form Validation and Submission Script -->
+<script>
+  const form = document.getElementById('contact-form');
+
+  // Event listener for real-time validation
+  form.querySelectorAll('input, textarea').forEach((field) => {
+    field.addEventListener('input', () => {
+      if (field.classList.contains('is-invalid')) {
+        field.classList.remove('is-invalid');
+      }
+    });
+  });
+
+  form.addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    // Get form elements
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const contact_number = document.getElementById('contact_number').value.trim();
+    const best_time = document.getElementById('best_time').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Validation
+    let isValid = true;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const contactRegex = /^\d{10}$/;
+
+    const fields = [
+      { field: 'name', value: name, error: 'Name is required.' },
+      { field: 'email', value: email, regex: emailRegex, error: 'Please enter a valid email address.' },
+      { field: 'contact_number', value: contact_number, regex: contactRegex, error: 'Contact number must be exactly 10 digits.' },
+      { field: 'best_time', value: best_time, error: 'Best time to reach is required.' },
+    ];
+
+    fields.forEach(({ field, value, regex }) => {
+      const fieldElement = document.getElementById(field);
+      if (!value || (regex && !regex.test(value))) {
+        fieldElement.classList.add('is-invalid');
+        isValid = false;
+      }
+    });
+
+    if (!isValid) return;
+
+    // API Call
+    try {
+      const response = await fetch('/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, contact_number, best_time, message }),
+      });
+
+      const result = await response.json();
+      const alertBox = document.getElementById('form-alert');
+
+      if (response.ok) {
+        alertBox.className = 'alert alert-success';
+        alertBox.innerHTML =  `${result.message || "Your message has been successfully submitted."}`;
+        form.reset(); // Reset form
+      } else {
+        alertBox.className  = 'alert alert-danger';
+        alertBox.innerHTML  = `${result.message || "An error occurred. Please try again."}`;          
+      }
+
+      alertBox.classList.remove('d-none');
+      
+      // Smooth scroll to alert message
+      alertBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } catch (error) {
+      const alertBox = document.getElementById('form-alert');
+      alertBox.className = 'alert alert-danger';
+      alertBox.textContent = 'An error occurred. Please try again later.';
+      alertBox.classList.remove('d-none');
+    }
+  });
+  
+  // Back to Top Button Functionality
+  const backToTopButton = document.querySelector('.back-to-top');
+  
+  if (backToTopButton) {
+      // Show/hide button based on scroll position
+      window.addEventListener('scroll', function() {
+          if (window.pageYOffset > 300) {
+              backToTopButton.classList.add('show');
+          } else {
+              backToTopButton.classList.remove('show');
+          }
+      });
 
       // Smooth scroll to top when clicked
       backToTopButton.addEventListener('click', function(e) {
@@ -38,11 +498,5 @@
   });
 </script>
 
-    <!-- Back to Top Button -->
-    <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-    <!-- Back to Top JavaScript -->
-    <script src="/JS/back-to-top.js"></script>
 </body>
 </html>
