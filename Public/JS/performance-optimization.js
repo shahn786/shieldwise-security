@@ -1,7 +1,6 @@
-
 // Performance optimization script for ShieldWise Security
 document.addEventListener('DOMContentLoaded', function() {
-    
+
     // Image lazy loading with enhanced performance
     const imageObserver = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
