@@ -94,20 +94,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Critical resource preloading
-    const criticalResources = [
-        '/Public/css/critical.css',
-        '/Public/JS/global.js'
-    ];
-
-    criticalResources.forEach(resource => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.href = resource;
-        link.as = resource.endsWith('.css') ? 'style' : 'script';
-        document.head.appendChild(link);
-    });
-
     // Background video optimization
     const backgroundVideo = document.getElementById('background-video12');
     if (backgroundVideo) {
