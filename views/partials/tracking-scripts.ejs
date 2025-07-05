@@ -139,6 +139,14 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
 
 <!-- Custom Security Service Event Tracking -->
 <script>
+// Tracking variables validation
+if (typeof window.hj === 'undefined') {
+  console.log('Hotjar not loaded - this is normal if not using Hotjar');
+}
+if (typeof window.clarity === 'undefined') {
+  console.log('Clarity loaded successfully');
+}
+
 // Enhanced lead tracking functions
 function trackConsultationRequest() {
   // Google Analytics 4
@@ -165,7 +173,7 @@ function trackConsultationRequest() {
   // Microsoft Clarity
   clarity('event', 'consultation_request');
 
-  
+
 }
 
 // Enhanced phone tracking
@@ -206,7 +214,7 @@ function trackFormSubmission(formType) {
     'form_type': formType
   });
 
-  
+
 }
 
 // Scroll depth tracking
