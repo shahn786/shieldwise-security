@@ -66,6 +66,18 @@ gtag('event', 'view_item', {
 });
 </script>
 
+<!-- Hotjar Tracking Code -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:6455643,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
 <!-- Microsoft Clarity - Disabled (placeholder ID removed) -->
 <!-- To enable Clarity, replace with your actual tracking ID -->
 
@@ -157,6 +169,11 @@ function trackConsultationRequest() {
     lintrk('track', { conversion_id: 12345 });
   }
 
+  // Hotjar
+  if (typeof hj !== 'undefined') {
+    hj('event', 'consultation_request');
+  }
+
   // Microsoft Clarity - Disabled
   // clarity('event', 'consultation_request');
 }
@@ -177,6 +194,11 @@ function trackPhoneClick() {
       content_name: 'Phone Call',
       content_category: 'Contact'
     });
+  }
+
+  // Hotjar
+  if (typeof hj !== 'undefined') {
+    hj('event', 'phone_click');
   }
 
   // Microsoft Clarity - Disabled
@@ -202,6 +224,11 @@ function trackFormSubmission(formType) {
       value: <%= priceRange.low %>,
       currency: 'USD'
     });
+  }
+
+  // Hotjar
+  if (typeof hj !== 'undefined') {
+    hj('event', 'form_submission');
   }
 
   // Microsoft Clarity - Disabled
@@ -267,6 +294,11 @@ document.addEventListener('DOMContentLoaded', function() {
           'event_label': buttonText,
           'service_type': '<%= serviceType %>'
         });
+      }
+
+      // Hotjar
+      if (typeof hj !== 'undefined') {
+        hj('event', 'button_click');
       }
 
       // Microsoft Clarity - Disabled
