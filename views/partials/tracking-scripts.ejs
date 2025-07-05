@@ -75,9 +75,11 @@ gtag('event', 'view_item', {
 })(window, document, "clarity", "script", "shld8k2m9n");
 
 // Enhanced Clarity tracking
-clarity('set', 'service_type', '<%= serviceType %>');
-clarity('set', 'page_type', 'service');
-clarity('set', 'price_range', '<%= priceRange.low %>-<%= priceRange.high %>');
+if (typeof clarity !== 'undefined') {
+  clarity('set', 'service_type', '<%= serviceType %>');
+  clarity('set', 'page_type', 'service');
+  clarity('set', 'price_range', '<%= priceRange.low %>-<%= priceRange.high %>');
+}
 </script>
 
 <!-- Facebook Pixel with Enhanced Conversions -->
@@ -139,82 +141,90 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
 
 <!-- Custom Security Service Event Tracking -->
 <script>
-// Tracking variables validation
-if (typeof window.hj === 'undefined') {
-  console.log('Hotjar not loaded - this is normal if not using Hotjar');
-}
-if (typeof window.clarity === 'undefined') {
-  console.log('Clarity loaded successfully');
-}
-
 // Enhanced lead tracking functions
 function trackConsultationRequest() {
   // Google Analytics 4
-  gtag('event', 'generate_lead', {
-    'event_category': 'Security Services',
-    'event_label': '<%= serviceType %>',
-    'value': 1,
-    'currency': 'USD',
-    'service_type': '<%= serviceType %>',
-    'lead_source': 'consultation_request'
-  });
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'generate_lead', {
+      'event_category': 'Security Services',
+      'event_label': '<%= serviceType %>',
+      'value': 1,
+      'currency': 'USD',
+      'service_type': '<%= serviceType %>',
+      'lead_source': 'consultation_request'
+    });
+  }
 
   // Facebook Pixel
-  fbq('track', 'Lead', {
-    content_name: '<%= serviceType %> Security Consultation',
-    content_category: 'Security Services',
-    value: <%= priceRange.low %>,
-    currency: 'USD'
-  });
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'Lead', {
+      content_name: '<%= serviceType %> Security Consultation',
+      content_category: 'Security Services',
+      value: <%= priceRange.low %>,
+      currency: 'USD'
+    });
+  }
 
   // LinkedIn
-  lintrk('track', { conversion_id: 12345 });
+  if (typeof lintrk !== 'undefined') {
+    lintrk('track', { conversion_id: 12345 });
+  }
 
   // Microsoft Clarity
-  clarity('event', 'consultation_request');
-
-
+  if (typeof clarity !== 'undefined') {
+    clarity('event', 'consultation_request');
+  }
 }
 
 // Enhanced phone tracking
 function trackPhoneClick() {
-  gtag('event', 'phone_call', {
-    'event_category': 'Contact',
-    'event_label': 'Header Phone',
-    'value': 1,
-    'service_type': '<%= serviceType %>'
-  });
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'phone_call', {
+      'event_category': 'Contact',
+      'event_label': 'Header Phone',
+      'value': 1,
+      'service_type': '<%= serviceType %>'
+    });
+  }
 
-  fbq('track', 'Contact', {
-    content_name: 'Phone Call',
-    content_category': 'Contact'
-  });
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'Contact', {
+      content_name: 'Phone Call',
+      content_category: 'Contact'
+    });
+  }
 
-  clarity('event', 'phone_click');
+  if (typeof clarity !== 'undefined') {
+    clarity('event', 'phone_click');
+  }
 }
 
 // Enhanced form tracking
 function trackFormSubmission(formType) {
-  gtag('event', 'form_submit', {
-    'event_category': 'Lead Generation',
-    'event_label': formType,
-    'service_type': '<%= serviceType %>',
-    'value': 1,
-    'form_type': formType
-  });
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'form_submit', {
+      'event_category': 'Lead Generation',
+      'event_label': formType,
+      'service_type': '<%= serviceType %>',
+      'value': 1,
+      'form_type': formType
+    });
+  }
 
-  fbq('track', 'CompleteRegistration', {
-    content_name: formType + ' Form',
-    content_category: 'Forms',
-    value: <%= priceRange.low %>,
-    currency: 'USD'
-  });
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'CompleteRegistration', {
+      content_name: formType + ' Form',
+      content_category: 'Forms',
+      value: <%= priceRange.low %>,
+      currency: 'USD'
+    });
+  }
 
-  clarity('event', 'form_submission', {
-    'form_type': formType
-  });
-
-
+  if (typeof clarity !== 'undefined') {
+    clarity('event', 'form_submission', {
+      'form_type': formType
+    });
+  }
 }
 
 // Scroll depth tracking
@@ -229,11 +239,13 @@ window.addEventListener('scroll', function() {
   scrollDepths.forEach(function(depth) {
     if (scrollPercent >= depth && scrollDepthTracked.indexOf(depth) === -1) {
       scrollDepthTracked.push(depth);
-      gtag('event', 'scroll', {
-        'event_category': 'Engagement',
-        'event_label': depth + '%',
-        'value': depth
-      });
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'scroll', {
+          'event_category': 'Engagement',
+          'event_label': depth + '%',
+          'value': depth
+        });
+      }
     }
   });
 });
@@ -250,11 +262,13 @@ setInterval(function() {
   timeThresholds.forEach(function(threshold) {
     if (timeOnPage >= threshold && timeTracked.indexOf(threshold) === -1) {
       timeTracked.push(threshold);
-      gtag('event', 'timing_complete', {
-        'name': 'time_on_page',
-        'value': threshold,
-        'event_category': 'Engagement'
-      });
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'timing_complete', {
+          'name': 'time_on_page',
+          'value': threshold,
+          'event_category': 'Engagement'
+        });
+      }
     }
   });
 }, 10000);
@@ -265,43 +279,52 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.btn, .cta-button, [data-track="button"]').forEach(function(button) {
     button.addEventListener('click', function() {
       let buttonText = this.textContent.trim() || this.getAttribute('aria-label') || 'Unknown Button';
-      gtag('event', 'click', {
-        'event_category': 'Button',
-        'event_label': buttonText,
-        'service_type': '<%= serviceType %>'
-      });
+      
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'click', {
+          'event_category': 'Button',
+          'event_label': buttonText,
+          'service_type': '<%= serviceType %>'
+        });
+      }
 
-      clarity('event', 'button_click', {
-        'button_text': buttonText
-      });
+      if (typeof clarity !== 'undefined') {
+        clarity('event', 'button_click', {
+          'button_text': buttonText
+        });
+      }
     });
   });
 
   // Track external link clicks
   document.querySelectorAll('a[href^="http"]:not([href*="shieldwisesecurity.com"])').forEach(function(link) {
     link.addEventListener('click', function() {
-      gtag('event', 'click', {
-        'event_category': 'External Link',
-        'event_label': this.href,
-        'transport_type': 'beacon'
-      });
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'click', {
+          'event_category': 'External Link',
+          'event_label': this.href,
+          'transport_type': 'beacon'
+        });
+      }
     });
   });
 });
 
 // Enhanced error tracking
 window.addEventListener('error', function(e) {
-  gtag('event', 'exception', {
-    'description': e.message,
-    'fatal': false,
-    'page_url': window.location.href
-  });
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'exception', {
+      'description': e.message,
+      'fatal': false,
+      'page_url': window.location.href
+    });
+  }
 });
 
 // Performance tracking
 window.addEventListener('load', function() {
   setTimeout(function() {
-    if ('performance' in window) {
+    if ('performance' in window && typeof gtag !== 'undefined') {
       let perfData = performance.timing;
       let loadTime = perfData.loadEventEnd - perfData.navigationStart;
 
@@ -314,15 +337,19 @@ window.addEventListener('load', function() {
       // Track Core Web Vitals
       if ('PerformanceObserver' in window) {
         // LCP tracking
-        new PerformanceObserver((entryList) => {
-          for (const entry of entryList.getEntries()) {
-            gtag('event', 'web_vitals', {
-              'metric_name': 'LCP',
-              'metric_value': Math.round(entry.startTime),
-              'metric_rating': entry.startTime < 2500 ? 'good' : entry.startTime < 4000 ? 'needs-improvement' : 'poor'
-            });
-          }
-        }).observe({entryTypes: ['largest-contentful-paint']});
+        try {
+          new PerformanceObserver((entryList) => {
+            for (const entry of entryList.getEntries()) {
+              gtag('event', 'web_vitals', {
+                'metric_name': 'LCP',
+                'metric_value': Math.round(entry.startTime),
+                'metric_rating': entry.startTime < 2500 ? 'good' : entry.startTime < 4000 ? 'needs-improvement' : 'poor'
+              });
+            }
+          }).observe({entryTypes: ['largest-contentful-paint']});
+        } catch (error) {
+          console.log('Performance observer not supported');
+        }
       }
     }
   }, 0);
