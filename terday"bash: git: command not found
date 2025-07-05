@@ -1,0 +1,22 @@
+[33m544b2a4[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Assistant checkpoint: Fix undefined object errors in performance script
+[33m8e162a1[m Checkpoint before assistant change: Improve the website's visual layout and fix display issues on different screens
+[33mbd2f676[m Assistant checkpoint: Add performance script to main template
+[33me33358c[m Checkpoint before assistant change: Provide instructions for correctly referencing JavaScript files in HTML
+[33md796bd9[m Assistant checkpoint: Fixed JS syntax errors and removed broken file
+[33mcb37fbf[m Checkpoint before assistant change: Improve webpage loading and fix occasional script parsing errors
+[33md04134b[m Assistant checkpoint: Fixed performance optimization script and cleaned up
+[33mf92436a[m Checkpoint before assistant change: Remove unnecessary JavaScript file that optimizes images and videos
+[33m0db86e1[m Assistant checkpoint: Fixed JavaScript syntax errors and structure
+[33m2bb248c[m Checkpoint before assistant change: Improve how images and videos load, making the website feel much faster
+[33m7396ee0[m Checkpoint before assistant change: Improve the way videos load on the page for faster and smoother playback
+[33m5489cd0[m Assistant checkpoint: Remove all Hotjar tracking code
+[33m32faa35[m Checkpoint before assistant change: Create core system for managing user accounts, authentication, and database
+[33m8c9f02a[m Assistant checkpoint: Fixed video optimization script and added to header
+[33m59e47ee[m Checkpoint before assistant change: Improve website loading speed by only loading images and videos when visible
+[33md164125[m Restored to 'fabc4a709e53613e0beb2bda8db1fcc099898b3a'
+[33m5e07b5f[m Restored to '2b9d6785f6670bd1312d0120c45b4c33cbc79b02'
+[33mf99b2fb[m Checkpoint before assistant change: Improve website loading speeds by optimizing how videos begin playing
+[33m2b9d678[m Checkpoint before assistant change: Improve website speed by only loading videos when they are visible to users
+[33m26239a1[m Assistant checkpoint: Create performance optimization JS file and include in layout
+[33mc4c24db[m Checkpoint before assistant change: Add a button that allows users to quickly scroll back to the top of page
+[33mfabc4a7[m Assistant checkpoint: Updated back-to-top to use external CSS/JS files
