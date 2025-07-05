@@ -66,8 +66,21 @@ gtag('event', 'view_item', {
 });
 </script>
 
-<!-- Microsoft Clarity - Disabled (placeholder ID removed) -->
-<!-- To enable Clarity, replace with your actual tracking ID -->
+<!-- Microsoft Clarity with Enhanced Configuration -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "shld8k2m9n");
+
+// Enhanced Clarity tracking
+if (typeof clarity !== 'undefined') {
+  clarity('set', 'service_type', '<%= serviceType %>');
+  clarity('set', 'page_type', 'service');
+  clarity('set', 'price_range', '<%= priceRange.low %>-<%= priceRange.high %>');
+}
+</script>
 
 <!-- Facebook Pixel with Enhanced Conversions -->
 <script>
@@ -157,8 +170,10 @@ function trackConsultationRequest() {
     lintrk('track', { conversion_id: 12345 });
   }
 
-  // Microsoft Clarity - Disabled
-  // clarity('event', 'consultation_request');
+  // Microsoft Clarity
+  if (typeof clarity !== 'undefined') {
+    clarity('event', 'consultation_request');
+  }
 }
 
 // Enhanced phone tracking
@@ -179,8 +194,9 @@ function trackPhoneClick() {
     });
   }
 
-  // Microsoft Clarity - Disabled
-  // clarity('event', 'phone_click');
+  if (typeof clarity !== 'undefined') {
+    clarity('event', 'phone_click');
+  }
 }
 
 // Enhanced form tracking
@@ -204,8 +220,11 @@ function trackFormSubmission(formType) {
     });
   }
 
-  // Microsoft Clarity - Disabled
-  // clarity('event', 'form_submission', { 'form_type': formType });
+  if (typeof clarity !== 'undefined') {
+    clarity('event', 'form_submission', {
+      'form_type': formType
+    });
+  }
 }
 
 // Scroll depth tracking
@@ -269,8 +288,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       }
 
-      // Microsoft Clarity - Disabled
-      // clarity('event', 'button_click', { 'button_text': buttonText });
+      if (typeof clarity !== 'undefined') {
+        clarity('event', 'button_click', {
+          'button_text': buttonText
+        });
+      }
     });
   });
 
