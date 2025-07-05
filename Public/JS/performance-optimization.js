@@ -232,6 +232,61 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Fix preloaded resources usage
+    function ensurePreloadedResourcesUsage() {
+        // Ensure logo images are visible
+        const logoImages = document.querySelectorAll('img[src*="logo"], img[alt*="logo"], img[alt*="Logo"]');
+        logoImages.forEach(img => {
+            if (!img.complete) {
+                img.addEventListener('load', () => {
+                    img.style.display = img.style.display || 'block';
+                });
+            }
+        });
+
+        // Ensure fonts are applied
+        const fontElements = document.querySelectorAll('body, h1, h2, h3, h4, h5, h6, p, span, div');
+        fontElements.forEach(elem => {
+            const computedStyle = window.getComputedStyle(elem);
+            if (computedStyle.fontFamily.includes('Inter')) {
+                elem.style.fontDisplay = 'swap';
+            }
+        });
+
+        // Remove unused preload links after a delay
+        setTimeout(() => {
+            const preloadLinks = document.querySelectorAll('link[rel="preload"]');
+            preloadLinks.forEach(link => {
+                const href = link.href;
+                let isUsed = false;
+
+                // Check if image is used
+                if (link.getAttribute('as') === 'image') {
+                    const images = document.querySelectorAll('img');
+                    isUsed = Array.from(images).some(img => img.src === href || img.currentSrc === href);
+                }
+
+                // Check if font is used
+                if (link.getAttribute('as') === 'font') {
+                    const elements = document.querySelectorAll('*');
+                    isUsed = Array.from(elements).some(elem => {
+                        const style = window.getComputedStyle(elem);
+                        return style.fontFamily.includes('Inter') || style.fontFamily.includes(href);
+                    });
+                }
+
+                // Remove unused preload links to prevent warnings
+                if (!isUsed) {
+                    console.log('Removing unused preload:', href);
+                    link.remove();
+                }
+            });
+        }, 3000);
+    }
+
+    // Run preload optimization
+    ensurePreloadedResourcesUsage();
+
     // Deferred script loading
     setTimeout(() => {
         const deferredScripts = document.querySelectorAll('script[data-defer="true"]');
