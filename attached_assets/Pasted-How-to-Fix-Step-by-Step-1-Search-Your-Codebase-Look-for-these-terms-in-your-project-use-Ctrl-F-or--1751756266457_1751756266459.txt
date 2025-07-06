@@ -1,0 +1,91 @@
+How to Fix Step-by-Step
+1. Search Your Codebase
+Look for these terms in your project (use Ctrl+F or your code editor’s search):
+
+YOUR_HOTJAR_ID
+
+YOUR_CLARITY_ID
+
+hotjar
+
+clarity
+
+2. Remove or Replace All Placeholders
+Hotjar:
+
+If you want to use Hotjar: Replace YOUR_HOTJAR_ID with your real numeric ID everywhere.
+
+If you don’t: Delete or comment out all <script> tags with Hotjar code that contains YOUR_HOTJAR_ID.
+
+Clarity:
+
+If you want to use Clarity: Replace YOUR_CLARITY_ID with your real Clarity project ID everywhere.
+
+If you don’t: Delete or comment out all <script> tags with Clarity code that contains YOUR_CLARITY_ID.
+
+3. Check All Files
+Common files where this code might hide:
+
+layout.ejs
+
+header.ejs
+
+footer.ejs
+
+index.ejs
+
+Any template partial (e.g., _head.ejs, _footer.ejs)
+
+4. Clear Cache and Hard Reload
+After you clean up the scripts:
+
+Clear your browser cache (or use incognito mode)
+
+Hard reload your website
+
+Why you’re still seeing the error
+You might have:
+
+Multiple templates (main, partial, etc.)—the old code is in a file you didn’t update yet.
+
+A cached version of the page—browser is loading old HTML.
+
+A typo—make sure there’s no YOUR_HOTJAR_ID or YOUR_CLARITY_ID left anywhere.
+
+Example: How It Should Look
+✅ Correct Hotjar (with real ID):
+html
+Copy
+Edit
+<script>
+  (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:6455643,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+✅ Correct Clarity (with real ID):
+html
+Copy
+Edit
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "sad9rk2mwn");
+</script>
+❌ Incorrect (do NOT leave these anywhere!):
+html
+Copy
+Edit
+<script>...YOUR_HOTJAR_ID...</script>
+<script src="https://www.clarity.ms/tag/YOUR_CLARITY_ID"></script>
+If you still see the error
+It’s almost always because there’s a copy of the old code somewhere in your project.
+
+If you paste your full <head> section here, I’ll help you spot it!
+
