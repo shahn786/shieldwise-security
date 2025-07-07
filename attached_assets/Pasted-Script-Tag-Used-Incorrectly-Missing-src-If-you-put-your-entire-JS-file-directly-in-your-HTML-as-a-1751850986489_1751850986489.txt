@@ -1,0 +1,62 @@
+Script Tag Used Incorrectly (Missing src)
+If you put your entire JS file directly in your HTML as a string or inside a <script> tag without type="text/javascript" or accidentally paste code in the wrong place, the browser may render it as text.
+
+Correct usage:
+
+HTML
+<script src="/Public/JS/performance-optimization.js"></script>
+Incorrect (would show code as content):
+
+HTML
+<body>
+{ imageObserver.observe(image); ... }
+</body>
+or
+
+HTML
+<script>
+{ imageObserver.observe(image); ... }
+</script>
+(If you use { ... } directly in HTML, the browser will treat it as text.)
+
+2. Your JavaScript File Is Requested as HTML
+If you link or embed your script file in a way that makes the server return it as text/html (not application/javascript), the browser might display the code as text.
+
+How this happens:
+
+Your web server is misconfigured and sends JS files as HTML.
+You visit the JS file directly in your browser and see code (this is normal if you open the JS file URL directly).
+3. Your Build/Template Is Outputting JS Code as a Variable
+If you use { ... } (curly braces) in a templating system that expects HTML (e.g., React, Handlebars, EJS), and you output raw JS code, that code will be shown as text.
+
+How to Fix
+A. Double-check Your HTML
+Make sure your HTML includes your script like this:
+
+HTML
+<!-- Should be just before </body> -->
+<script src="/Public/JS/performance-optimization.js"></script>
+B. Don't Paste JS Code Directly in HTML
+Never put your raw JS code inside { ... } or directly in your HTML outside of <script> tags.
+
+C. Check for Templating Mistakes
+If your framework uses {} for variable interpolation (like React, Vue, EJS, etc.), make sure you’re not accidentally outputting JS code instead of HTML.
+
+D. Server MIME Type
+Make sure your server is serving .js files as application/javascript and not as text/html or another type.
+
+If You Need to Render a Website, Not Code:
+The browser needs valid HTML inside <body>, not JS code.
+JS code should be in a separate .js file or inside a <script> tag.
+Make sure nothing like { ... } is outside of <script> tags.
+Summary Table
+Problem	What Happens	Solution
+JS pasted in HTML body	Code shown as text	Move JS to <script> tag or external file
+JS referenced incorrectly	Code shown as text	Use <script src="..."></script>
+Templating system outputting JS code	Code shown as text	Output only HTML, not code
+Server sending JS as HTML	Browser renders code as text	Fix server to send correct MIME type
+What to Do Next
+Check your HTML and template files. Make sure you are never outputting { ... } code blocks directly in HTML.
+Use <script src="..."></script> to include JavaScript.
+If you are using a framework, ensure you’re not accidentally outputting JS code in your templates.
+If you share your HTML file (or th
