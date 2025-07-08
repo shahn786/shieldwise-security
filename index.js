@@ -762,6 +762,31 @@ riversideCountyCities.forEach(city => {
     });
 });
 
+// San Bernardino County cities routes
+const sanBernardinoCities = [
+    'corona', 'moreno-valley', 'riverside', 'fontana', 'rancho-cucamonga',
+    'ontario', 'victorville', 'hesperia', 'apple-valley', 'redlands',
+    'highland', 'colton', 'rialto', 'upland', 'montclair',
+    'chino', 'chino-hills', 'barstow', 'big-bear-lake', 'twentynine-palms'
+];
+
+sanBernardinoCities.forEach(city => {
+    const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    app.get(`/${city}`, (req, res) => {
+        // Check if we have a specific template for this city, otherwise use a generic template
+        try {
+            res.render(`cities/${city}`, { title: formattedCity });
+        } catch (error) {
+            // If the specific city template doesn't exist, render a generic city page
+            res.render('cities/san-bernardino', { 
+                title: formattedCity,
+                cityName: formattedCity,
+                isGeneric: true 
+            });
+        }
+    });
+});
+
 // Orange County cities routes - all files at views/cities/[CityName].ejs
 const orangeCountyCities = [
     'anaheim', 'irvine', 'santa-ana', 'newport-beach', 'huntington-beach',
