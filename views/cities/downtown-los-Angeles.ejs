@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -200,9 +201,12 @@
 <meta name="geo.position" content="34.0522;-118.2555">
 
 <!-- 13 ▸ Optimized Performance CSS with Lazy Loading -->
-<link rel="stylesheet" href="/css/style-cities.css" media="print" onload="this.media='all'">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="/css/style-cities.css">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
 <!-- 14 ▸ PWA Support -->
 <link rel="manifest" href="/manifest.json">
@@ -217,245 +221,239 @@
 </head>
 
 <body id="top" itemscope itemtype="https://schema.org/WebPage">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header Section -->
+    <header role="banner">
+        <%- include('../partials/Header') %>
+    </header>
 
     <!-- Main content area -->
-    <main id="main-content" role="main" itemscope itemtype="https://schema.org/MainContentOfPage">
-        <!-- Hero Section with Semantic HTML5 -->
-        <section class="hero-downtown" role="banner" itemscope itemtype="https://schema.org/Service">
+    <main id="main-content" role="main">
+        <!-- Hero Section with Background Image -->
+        <section class="hero-downtown" role="banner">
             <div class="hero-content">
-                <h1 itemprop="name">Downtown Los Angeles Security Guard Services</h1>
-                <h2 itemprop="description">Protecting corporate towers, business districts, and high-rise buildings</h2>
-                <p class="hero-subtitle" itemprop="serviceOutput">Professional BSIS-licensed security guards specializing in corporate protection and business district security</p>
-                <a href="/get-quote" class="btn btn-primary btn-lg" itemprop="potentialAction" itemscope itemtype="https://schema.org/Action">
-                    <span itemprop="name">Get a Free Security Quote</span>
-                </a>
+                <h1>Downtown Los Angeles Security Guard Services</h1>
+                <h2>Protecting corporate towers, business districts, and high-rise buildings</h2>
+                <p class="hero-subtitle">Professional BSIS-licensed security guards specializing in corporate protection and business district security</p>
+                <a href="/get-quote" class="btn btn-primary btn-lg">Get a Free Security Quote</a>
             </div>
         </section>
 
-        <!-- Introduction Section with Semantic HTML -->
-        <section class="downtown-security" itemscope itemtype="https://schema.org/AboutPage">
+        <!-- Introduction Section -->
+        <section class="downtown-security">
             <div class="container">
-                <header>
-                    <h2 class="section-title" itemprop="headline">Premier Corporate Security Solutions for Downtown Los Angeles</h2>
-                </header>
+                <h2 class="section-title">Premier Corporate Security Solutions for Downtown Los Angeles</h2>
                 <div class="content-wrapper">
-                    <article class="text-content" itemprop="mainContentOfPage">
-                        <p itemprop="description">ShieldWise Security provides <mark class="highlight">professional security guard services</mark> tailored specifically to the unique needs of corporate environments, high-rise buildings, and business districts. With our extensive knowledge of downtown security challenges and corporate landscape, we deliver unmatched protection and peace of mind.</p>
+                    <div class="text-content">
+                        <p>ShieldWise Security provides <span class="highlight">professional security guard services</span> tailored specifically to the unique needs of corporate environments, high-rise buildings, and business districts. With our extensive knowledge of downtown security challenges and corporate landscape, we deliver unmatched protection and peace of mind.</p>
                         <p>Our team of highly trained and licensed security professionals understands the diverse security requirements across different sectors, from major corporate towers to the bustling Financial District. We combine advanced security protocols with a customer-focused approach to create security solutions that address your specific business concerns.</p>
-                    </article>
-                    <aside class="image-content">
+                    </div>
+                    <div class="image-content">
                         <img src="/img/downtown_la.webp" 
                              alt="Professional BSIS-licensed security guards providing specialized corporate security and high-rise building protection services in downtown Los Angeles" 
                              loading="lazy" 
                              width="500" 
-                             height="333"
-                             itemprop="image">
-                    </aside>
+                             height="333">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Services Section with Semantic Structure -->
-        <section class="our-services" itemscope itemtype="https://schema.org/Service">
+        <!-- Services Section -->
+        <section class="our-services">
             <div class="container">
-                <header>
-                    <h2 itemprop="name">Our Downtown Los Angeles Security Services</h2>
-                    <p itemprop="description">ShieldWise Security offers a comprehensive range of security services tailored to the unique needs of corporate environments, high-rise buildings, and business districts. Our experienced team provides customized security solutions to address your specific concerns in the heart of Los Angeles' business center.</p>
-                </header>
+                <h2>Our Downtown Los Angeles Security Services</h2>
+                <p>ShieldWise Security offers a comprehensive range of security services tailored to the unique needs of corporate environments, high-rise buildings, and business districts. Our experienced team provides customized security solutions to address your specific concerns in the heart of Los Angeles' business center.</p>
 
-                <div class="services-grid" role="list">
+                <div class="services-grid">
                     <!-- Service 1 -->
-                    <article class="service-item" role="listitem" itemscope itemtype="https://schema.org/Service">
-                        <i class="fas fa-building" aria-hidden="true"></i>
-                        <h3 itemprop="name">High-Rise Building Security</h3>
-                        <p itemprop="description">Specialized security solutions for corporate towers and high-rise buildings, including lobby security, access control, tenant services, and comprehensive building protection.</p>
-                    </article>
+                    <div class="service-item">
+                        <i class="fas fa-building"></i>
+                        <h3>High-Rise Building Security</h3>
+                        <p>Specialized security solutions for corporate towers and high-rise buildings, including lobby security, access control, tenant services, and comprehensive building protection.</p>
+                    </div>
 
                     <!-- Service 2 -->
-                    <article class="service-item" role="listitem" itemscope itemtype="https://schema.org/Service">
-                        <i class="fas fa-briefcase" aria-hidden="true"></i>
-                        <h3 itemprop="name">Corporate Office Security</h3>
-                        <p itemprop="description">Professional security services for corporate offices, business centers, and commercial spaces throughout the Financial District and business corridors.</p>
-                    </article>
+                    <div class="service-item">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Corporate Office Security</h3>
+                        <p>Professional security services for corporate offices, business centers, and commercial spaces throughout the Financial District and business corridors.</p>
+                    </div>
 
                     <!-- Service 3 -->
-                    <article class="service-item" role="listitem" itemscope itemtype="https://schema.org/Service">
-                        <i class="fas fa-user-shield" aria-hidden="true"></i>
-                        <h3 itemprop="name">Executive Protection</h3>
-                        <p itemprop="description">Discreet and professional executive protection services for business leaders, corporate executives, and VIPs working in the corporate environment.</p>
-                    </article>
+                    <div class="service-item">
+                        <i class="fas fa-user-shield"></i>
+                        <h3>Executive Protection</h3>
+                        <p>Discreet and professional executive protection services for business leaders, corporate executives, and VIPs working in the corporate environment.</p>
+                    </div>
 
                     <!-- Service 4 -->
-                    <article class="service-item" role="listitem" itemscope itemtype="https://schema.org/Service">
-                        <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-                        <h3 itemprop="name">Corporate Event Security</h3>
-                        <p itemprop="description">Comprehensive security for corporate events, business conferences, and professional gatherings in venues, hotels, and convention centers.</p>
-                    </article>
+                    <div class="service-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Corporate Event Security</h3>
+                        <p>Comprehensive security for corporate events, business conferences, and professional gatherings in venues, hotels, and convention centers.</p>
+                    </div>
 
                     <!-- Service 5 -->
-                    <article class="service-item" role="listitem" itemscope itemtype="https://schema.org/Service">
-                        <i class="fas fa-shield-alt" aria-hidden="true"></i>
-                        <h3 itemprop="name">Financial District Security</h3>
-                        <p itemprop="description">Specialized security services for banks, financial institutions, and investment firms with strict access control and threat assessment.</p>
-                    </article>
+                    <div class="service-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Financial District Security</h3>
+                        <p>Specialized security services for banks, financial institutions, and investment firms with strict access control and threat assessment.</p>
+                    </div>
 
                     <!-- Service 6 -->
-                    <article class="service-item" role="listitem" itemscope itemtype="https://schema.org/Service">
-                        <i class="fas fa-car" aria-hidden="true"></i>
-                        <h3 itemprop="name">Parking Garage Security</h3>
-                        <p itemprop="description">Comprehensive security for corporate parking structures and garages, ensuring employee and visitor safety with patrol and surveillance services.</p>
-                    </article>
+                    <div class="service-item">
+                        <i class="fas fa-car"></i>
+                        <h3>Parking Garage Security</h3>
+                        <p>Comprehensive security for corporate parking structures and garages, ensuring employee and visitor safety with patrol and surveillance services.</p>
+                    </div>
 
                     <!-- Service 7 -->
-                    <article class="service-item" role="listitem" itemscope itemtype="https://schema.org/Service">
-                        <i class="fas fa-video" aria-hidden="true"></i>
-                        <h3 itemprop="name">Surveillance Systems</h3>
-                        <p itemprop="description">Advanced video surveillance and monitoring systems designed for corporate environments, integrated with our security guard services for comprehensive protection.</p>
-                    </article>
+                    <div class="service-item">
+                        <i class="fas fa-video"></i>
+                        <h3>Surveillance Systems</h3>
+                        <p>Advanced video surveillance and monitoring systems designed for corporate environments, integrated with our security guard services for comprehensive protection.</p>
+                    </div>
 
                     <!-- Service 8 -->
-                    <article class="service-item" role="listitem" itemscope itemtype="https://schema.org/Service">
-                        <i class="fas fa-route" aria-hidden="true"></i>
-                        <h3 itemprop="name">Mobile Patrol Services</h3>
-                        <p itemprop="description">Flexible mobile patrol coverage for multiple properties with routine security checks, rapid response capabilities, and visible deterrent presence.</p>
-                    </article>
+                    <div class="service-item">
+                        <i class="fas fa-route"></i>
+                        <h3>Mobile Patrol Services</h3>
+                        <p>Flexible mobile patrol coverage for multiple properties with routine security checks, rapid response capabilities, and visible deterrent presence.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Security Guide Section -->
-        <section id="downtown_la_security_guide_2024" class="dtla_security_wrapper" itemscope itemtype="https://schema.org/Guide">
+        <!-- Downtown LA Security Challenges Section -->
+        <div id="downtown_la_security_guide_2024" class="dtla_security_wrapper">
             <!-- Header Section -->
             <header class="dtla_header_section">
                 <div class="container text-center">
-                    <h1 class="display-5 fw-bold mb-3" itemprop="headline">Corporate Security Services Guide</h1>
-                    <h3 class="fs-5 fw-light mb-3" itemprop="alternativeHeadline">Your Comprehensive Corporate Security Guide</h3>
-                    <time class="last-updated" datetime="2025-01-15" itemprop="dateModified">Last Updated: January 15, 2025</time>
+                    <h1 class="display-5 fw-bold mb-3">Corporate Security Services Guide</h1>
+                    <h3 class="fs-5 fw-light mb-3">Your Comprehensive Corporate Security Guide</h3>
+                    <p>Last Updated: January 15, 2025</p>
                 </div>
             </header>
 
-            <article class="dtla_main_content" itemprop="mainContentOfPage">
+            <main class="dtla_main_content">
                 <div class="container my-5">
                     <div class="row justify-content-center">
                         <div class="col-lg-10">
                             <!-- Introduction -->
-                            <p class="dtla_lead_text" itemprop="description">Navigating security needs in corporate environments requires understanding the unique challenges. This comprehensive guide covers everything you need to know about professional security services, from high-rise building protection to executive security and corporate event safety.</p>
+                            <p class="dtla_lead_text">Navigating security needs in corporate environments requires understanding the unique challenges. This comprehensive guide covers everything you need to know about professional security services, from high-rise building protection to executive security and corporate event safety.</p>
 
                             <!-- Security Landscape Section -->
-                            <section>
-                                <h2 class="dtla_section_title">Understanding Corporate Security Landscape</h2>
-                                <p>The area represents the heart of Southern California's business district, featuring numerous high-rise buildings, corporate headquarters, financial institutions, and commercial developments. The area encompasses distinct zones including the Financial District, Bunker Hill, Arts District, and the Historic Core, each presenting unique security challenges.</p>
+                            <h2 class="dtla_section_title">Understanding Corporate Security Landscape</h2>
+                            <p>The area represents the heart of Southern California's business district, featuring numerous high-rise buildings, corporate headquarters, financial institutions, and commercial developments. The area encompasses distinct zones including the Financial District, Bunker Hill, Arts District, and the Historic Core, each presenting unique security challenges.</p>
 
-                                <p>As the business center of Los Angeles, this area has specific security needs including corporate building protection, executive security, financial institution security, parking structure safety, event security for business gatherings, and comprehensive access control for commercial properties.</p>
-                            </section>
+                            <p>As the business center of Los Angeles, this area has specific security needs including corporate building protection, executive security, financial institution security, parking structure safety, event security for business gatherings, and comprehensive access control for commercial properties.</p>
 
                             <div class="dtla_section_divider"></div>
 
                             <!-- Security Services Section -->
-                            <section>
-                                <h2 class="dtla_section_title">Types of Security Services Available</h2>
-                                <p>When considering security options for your property, business, or corporate facility, it's important to understand the different types of services available:</p>
+                            <h2 class="dtla_section_title">Types of Security Services Available</h2>
+                            <p>When considering security options for your property, business, or corporate facility, it's important to understand the different types of services available:</p>
 
-                                <div class="row mt-4">
-                                    <!-- Corporate Security -->
-                                    <div class="col-md-6 mb-4">
-                                        <article class="dtla_security_card" itemscope itemtype="https://schema.org/Service">
-                                            <div class="dtla_card_body">
-                                                <div class="dtla_security_icon">
-                                                    <i class="fas fa-building" aria-hidden="true"></i>
-                                                </div>
-                                                <h4 class="dtla_card_title" itemprop="name">High-Rise Building Security</h4>
-                                                <p class="dtla_card_text" itemprop="description">Comprehensive protection for corporate towers and commercial high-rises, including lobby security, access control, tenant services, and emergency response protocols tailored to vertical properties.</p>
+                            <div class="row mt-4">
+                                <!-- Corporate Security -->
+                                <div class="col-md-6 mb-4">
+                                    <div class="dtla_security_card">
+                                        <div class="dtla_card_body">
+                                            <div class="dtla_security_icon">
+                                                <i class="fas fa-building"></i>
                                             </div>
-                                        </article>
-                                    </div>
-
-                                    <!-- Executive Protection -->
-                                    <div class="col-md-6 mb-4">
-                                        <article class="dtla_security_card" itemscope itemtype="https://schema.org/Service">
-                                            <div class="dtla_card_body">
-                                                <div class="dtla_security_icon">
-                                                    <i class="fas fa-user-shield" aria-hidden="true"></i>
-                                                </div>
-                                                <h4 class="dtla_card_title" itemprop="name">Executive Protection</h4>
-                                                <p class="dtla_card_text" itemprop="description">Discreet personal security for corporate executives, business leaders, and VIPs, including transportation security, office protection, and event security.</p>
-                                            </div>
-                                        </article>
-                                    </div>
-
-                                    <!-- Financial Security -->
-                                    <div class="col-md-6 mb-4">
-                                        <article class="dtla_security_card" itemscope itemtype="https://schema.org/Service">
-                                            <div class="dtla_card_body">
-                                                <div class="dtla_security_icon">
-                                                    <i class="fas fa-university" aria-hidden="true"></i>
-                                                </div>
-                                                <h4 class="dtla_card_title" itemprop="name">Financial District Security</h4>
-                                                <p class="dtla_card_text" itemprop="description">Specialized security for banks, investment firms, and financial institutions with enhanced access control, threat assessment, and compliance with financial industry security standards.</p>
-                                            </div>
-                                        </article>
-                                    </div>
-
-                                    <!-- Corporate Events -->
-                                    <div class="col-md-6 mb-4">
-                                        <article class="dtla_security_card" itemscope itemtype="https://schema.org/Service">
-                                            <div class="dtla_card_body">
-                                                <div class="dtla_security_icon">
-                                                    <i class="fas fa-calendar-check" aria-hidden="true"></i>
-                                                </div>
-                                                <h4 class="dtla_card_title" itemprop="name">Corporate Event Security</h4>
-                                                <p class="dtla_card_text" itemprop="description">Professional security for business conferences, corporate meetings, and executive events in venues with crowd management and VIP protection services.</p>
-                                            </div>
-                                        </article>
+                                            <h4 class="dtla_card_title">High-Rise Building Security</h4>
+                                            <p class="dtla_card_text">Comprehensive protection for corporate towers and commercial high-rises, including lobby security, access control, tenant services, and emergency response protocols tailored to vertical properties.</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </section>
+
+                                <!-- Executive Protection -->
+                                <div class="col-md-6 mb-4">
+                                    <div class="dtla_security_card">
+                                        <div class="dtla_card_body">
+                                            <div class="dtla_security_icon">
+                                                <i class="fas fa-user-shield"></i>
+                                            </div>
+                                            <h4 class="dtla_card_title">Executive Protection</h4>
+                                            <p class="dtla_card_text">Discreet personal security for corporate executives, business leaders, and VIPs, including transportation security, office protection, and event security.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Financial Security -->
+                                <div class="col-md-6 mb-4">
+                                    <div class="dtla_security_card">
+                                        <div class="dtla_card_body">
+                                            <div class="dtla_security_icon">
+                                                <i class="fas fa-university"></i>
+                                            </div>
+                                            <h4 class="dtla_card_title">Financial District Security</h4>
+                                            <p class="dtla_card_text">Specialized security for banks, investment firms, and financial institutions with enhanced access control, threat assessment, and compliance with financial industry security standards.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Corporate Events -->
+                                <div class="col-md-6 mb-4">
+                                    <div class="dtla_security_card">
+                                        <div class="dtla_card_body">
+                                            <div class="dtla_security_icon">
+                                                <i class="fas fa-calendar-check"></i>
+                                            </div>
+                                            <h4 class="dtla_card_title">Corporate Event Security</h4>
+                                            <p class="dtla_card_text">Professional security for business conferences, corporate meetings, and executive events in venues with crowd management and VIP protection services.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="dtla_section_divider"></div>
 
                             <!-- Choosing Provider Section -->
-                            <section>
-                                <h2 class="dtla_section_title">Choosing the Right Security Provider</h2>
-                                <p>Key criteria to evaluate your corporate security vendor:</p>
+                            <h2 class="dtla_section_title">Choosing the Right Security Provider</h2>
+                            <p>Key criteria to evaluate your corporate security vendor:</p>
 
-                                <div class="mt-4" role="list">
-                                    <div class="dtla_list_item_check" role="listitem">
-                                        <i class="fas fa-check-circle" aria-hidden="true"></i>
-                                        <strong>Corporate Security Experience:</strong> Proven track record with high-rise buildings, corporate clients, and business district security protocols
-                                    </div>
-                                    <div class="dtla_list_item_check" role="listitem">
-                                        <i class="fas fa-check-circle" aria-hidden="true"></i>
-                                        <strong>BSIS Licensing & Insurance:</strong> Verified BSIS-certified guards with specialized corporate security training and comprehensive liability coverage
-                                    </div>
-                                    <div class="dtla_list_item_check" role="listitem">
-                                        <i class="fas fa-check-circle" aria-hidden="true"></i>
-                                        <strong>Rapid Response Capability:</strong> Local response teams available 24/7 for emergency deployment within the business district
-                                    </div>
-                                    <div class="dtla_list_item_check" role="listitem">
-                                        <i class="fas fa-check-circle" aria-hidden="true"></i>
-                                        <strong>Technology Integration:</strong> Advanced security systems, access control integration, and real-time monitoring capabilities
-                                    </div>
-                                    <div class="dtla_list_item_check" role="listitem">
-                                        <i class="fas fa-check-circle" aria-hidden="true"></i>
-                                        <strong>Professional Standards:</strong> Corporate-level service standards, detailed reporting, and executive-level communication protocols
-                                    </div>
+                            <div class="mt-4">
+                                <div class="dtla_list_item_check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <strong>Corporate Security Experience:</strong> Proven track record with high-rise buildings, corporate clients, and business district security protocols
                                 </div>
-                            </section>
+                                <div class="dtla_list_item_check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <strong>BSIS Licensing & Insurance:</strong> Verified BSIS-certified guards with specialized corporate security training and comprehensive liability coverage
+                                </div>
+                                <div class="dtla_list_item_check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <strong>Rapid Response Capability:</strong> Local response teams available 24/7 for emergency deployment within the business district
+                                </div>
+                                <div class="dtla_list_item_check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <strong>Technology Integration:</strong> Advanced security systems, access control integration, and real-time monitoring capabilities
+                                </div>
+                                <div class="dtla_list_item_check">
+                                    <i class="fas fa-check-circle"></i>
+                                    <strong>Professional Standards:</strong> Corporate-level service standards, detailed reporting, and executive-level communication protocols
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </article>
-        </section>
+            </main>
+        </div>
 
         <!-- Emergency Response Section -->
         <aside class="emergency-response text-center text-white" role="complementary">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
-                        <h3><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Need Emergency Security?</h3>
+                        <h3><i class="fas fa-exclamation-triangle"></i> Need Emergency Security?</h3>
                         <p class="lead">Our rapid response team can deploy to any location within 1-2 hours for urgent security situations.</p>
                         <a href="tel:+12135551890" class="btn btn-light btn-lg">
-                            <i class="fas fa-phone" aria-hidden="true"></i> Call (213) 555-1890 Now
+                            <i class="fas fa-phone"></i> Call (213) 555-1890 Now
                         </a>
                     </div>
                 </div>
@@ -463,31 +461,31 @@
         </aside>
 
         <!-- Map Section -->
-        <section class="py-5 full-width-section" itemscope itemtype="https://schema.org/Map">
+        <section class="py-5">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center">
-                        <h2 class="mb-4" itemprop="name">Our Service Areas</h2>
-                        <p class="mb-5" itemprop="description">ShieldWise Security proudly serves all areas of the region, including:</p>
+                        <h2 class="mb-4">Our Service Areas</h2>
+                        <p class="mb-5">ShieldWise Security proudly serves all areas of the region, including:</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <ul class="list-unstyled" role="list">
-                            <li class="mb-3" role="listitem"><i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> Financial District</li>
-                            <li class="mb-3" role="listitem"><i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> Bunker Hill</li>
-                            <li class="mb-3" role="listitem"><i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> Arts District</li>
-                            <li class="mb-3" role="listitem"><i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> Historic Core</li>
-                            <li class="mb-3" role="listitem"><i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> South Park</li>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Financial District</li>
+                            <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Bunker Hill</li>
+                            <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Arts District</li>
+                            <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Historic Core</li>
+                            <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> South Park</li>
                         </ul>
                     </div>
                     <div class="col-md-6">
-                        <ul class="list-unstyled" role="list">
-                            <li class="mb-3" role="listitem"><i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> Little Tokyo</li>
-                            <li class="mb-3" role="listitem"><i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> Fashion District</li>
-                            <li class="mb-3" role="listitem"><i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> Jewelry District</li>
-                            <li class="mb-3" role="listitem"><i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> Central City East</li>
-                            <li class="mb-3" role="listitem"><i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> Grand Central Area</li>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Little Tokyo</li>
+                            <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Fashion District</li>
+                            <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Jewelry District</li>
+                            <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Central City East</li>
+                            <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Grand Central Area</li>
                         </ul>
                     </div>
                 </div>
@@ -508,199 +506,183 @@
         </section>
 
         <!-- Testimonials Section -->
-        <section class="testimonials" itemscope itemtype="https://schema.org/Review">
+        <section class="testimonials">
             <div class="container">
-                <header>
-                    <h2>What Our Clients Say</h2>
-                </header>
+                <h2>What Our Clients Say</h2>
 
-                <div class="testimonials-grid" role="list">
+                <div class="testimonials-grid">
                     <!-- Testimonial 1 -->
-                    <article class="testimonial" role="listitem" itemscope itemtype="https://schema.org/Review">
-                        <div class="stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                            <meta itemprop="ratingValue" content="5">
-                            <meta itemprop="bestRating" content="5">
-                            <i class="fas fa-star" aria-hidden="true"></i>
-                            <i class="fas fa-star" aria-hidden="true"></i>
-                            <i class="fas fa-star" aria-hidden="true"></i>
-                            <i class="fas fa-star" aria-hidden="true"></i>
-                            <i class="fas fa-star" aria-hidden="true"></i>
+                    <div class="testimonial">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
-                        <p itemprop="reviewBody">"ShieldWise Security has been exceptional in securing our corporate headquarters. Their professional guards understand the business environment and provide excellent lobby security and access control. The detailed reporting helps us maintain security standards across our entire building."</p>
-                        <h4 itemprop="author" itemscope itemtype="https://schema.org/Person">
-                            <span itemprop="name">Robert Chen</span>
-                        </h4>
+                        <p>"ShieldWise Security has been exceptional in securing our corporate headquarters. Their professional guards understand the business environment and provide excellent lobby security and access control. The detailed reporting helps us maintain security standards across our entire building."</p>
+                        <h4>Robert Chen</h4>
                         <div class="position">Facilities Manager, Financial District Tower</div>
-                    </article>
+                    </div>
 
                     <!-- Testimonial 2 -->
-                    <article class="testimonial" role="listitem" itemscope itemtype="https://schema.org/Review">
-                        <div class="stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                            <meta itemprop="ratingValue" content="5">
-                            <meta itemprop="bestRating" content="5">
-                            <i class="fas fa-star" aria-hidden="true"></i>
-                            <i class="fas fa-star" aria-hidden="true"></i>
-                            <i class="fas fa-star" aria-hidden="true"></i>
-                            <i class="fas fa-star" aria-hidden="true"></i>
-                            <i class="fas fa-star" aria-hidden="true"></i>
+                    <div class="testimonial">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
-                        <p itemprop="reviewBody">"We've used ShieldWise for multiple corporate events and executive meetings. Their team is always professional, discreet, and provides excellent crowd management and VIP protection. The security coordination with our event staff is seamless and highly effective."</p>
-                        <h4 itemprop="author" itemscope itemtype="https://schema.org/Person">
-                            <span itemprop="name">Maria Rodriguez</span>
-                        </h4>
+                        <p>"We've used ShieldWise for multiple corporate events and executive meetings. Their team is always professional, discreet, and provides excellent crowd management and VIP protection. The security coordination with our event staff is seamless and highly effective."</p>
+                        <h4>Maria Rodriguez</h4>
                         <div class="position">Corporate Event Director, Bunker Hill</div>
-                    </article>
+                    </div>
 
                     <!-- Testimonial 3 -->
-                    <article class="testimonial" role="listitem" itemscope itemtype="https://schema.org/Review">
-                        <div class="stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                            <meta itemprop="ratingValue" content="5">
-                            <meta itemprop="bestRating" content="5">
-                            <i class="fas fa-star" aria-hidden="true"></i>
-                            <i class="fas fa-star" aria-hidden="true"></i>
-                            <i class="fas fa-star" aria-hidden="true"></i>
-                            <i class="fas fa-star" aria-hidden="true"></i>
-                            <i class="fas fa-star" aria-hidden="true"></i>
+                    <div class="testimonial">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
-                        <p itemprop="reviewBody">"After implementing ShieldWise Security for our executive protection needs, we've had complete confidence in our operations. Their guards are professional, well-trained, and understand the unique requirements of corporate security. They provide peace of mind for our leadership team."</p>
-                        <h4 itemprop="author" itemscope itemtype="https://schema.org/Person">
-                            <span itemprop="name">James Patterson</span>
-                        </h4>
+                        <p>"After implementing ShieldWise Security for our executive protection needs, we've had complete confidence in our operations. Their guards are professional, well-trained, and understand the unique requirements of corporate security. They provide peace of mind for our leadership team."</p>
+                        <h4>James Patterson</h4>
                         <div class="position">Security Director, Corporate Plaza</div>
-                    </article>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Pricing Section -->
-        <section class="dtla_pricing_section" itemscope itemtype="https://schema.org/PriceSpecification">
+        <section class="dtla_pricing_section">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
-                        <article class="dtla_pricing_container">
+                        <div class="dtla_pricing_container">
                             <h2 class="dtla_section_title">Understanding Corporate Security Costs</h2>
                             <p>Security pricing depends on various factors specific to the corporate environment:</p>
 
-                            <div class="mt-4" role="list">
-                                <div class="dtla_price_item" role="listitem">
-                                    <i class="fas fa-dollar-sign" aria-hidden="true"></i>
+                            <div class="mt-4">
+                                <div class="dtla_price_item">
+                                    <i class="fas fa-dollar-sign"></i>
                                     <strong>High-Rise Building Security:</strong> Premium rates for specialized training and access control systems
                                 </div>
-                                <div class="dtla_price_item" role="listitem">
-                                    <i class="fas fa-dollar-sign" aria-hidden="true"></i>
+                                <div class="dtla_price_item">
+                                    <i class="fas fa-dollar-sign"></i>
                                     <strong>Executive Protection:</strong> Discrete protection rates 50-70% higher than standard security
                                 </div>
-                                <div class="dtla_price_item" role="listitem">
-                                    <i class="fas fa-dollar-sign" aria-hidden="true"></i>
+                                <div class="dtla_price_item">
+                                    <i class="fas fa-dollar-sign"></i>
                                     <strong>Corporate Events:</strong> Specialized event security with VIP protection expertise
                                 </div>
-                                <div class="dtla_price_item" role="listitem">
-                                    <i class="fas fa-dollar-sign" aria-hidden="true"></i>
+                                <div class="dtla_price_item">
+                                    <i class="fas fa-dollar-sign"></i>
                                     <strong>Additional Factors:</strong> Technology integration, reporting requirements, and corporate protocols
                                 </div>
                             </div>
 
                             <div class="text-center mt-4">
                                 <p class="fw-bold">Average corporate security rates:</p>
-                                <div class="dtla_price_range" itemprop="price">
-                                    <span itemprop="priceCurrency" content="USD">$35–$65 per hour</span>
+                                <div class="dtla_price_range">
+                                    $35–$65 per hour
                                 </div>
                                 <p class="mt-2 small text-muted">Rates depend on service type and corporate requirements</p>
                             </div>
-                        </article>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- FAQ Section -->
-        <section class="py-5" id="faq" itemscope itemtype="https://schema.org/FAQPage">
+        <section class="py-5" id="faq">
             <div class="container">
-                <header>
-                    <h2 class="text-center mb-5">Frequently Asked Questions</h2>
-                </header>
+                <h2 class="text-center mb-5">Frequently Asked Questions</h2>
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="accordion" id="downtownLAFAQ">
-                            <!-- FAQ Item 1 -->
-                            <article class="card mb-3" itemscope itemtype="https://schema.org/Question">
+                            <!-- FAQ Item 1 - Exact match to schema -->
+                            <div class="card mb-3">
                                 <div class="card-header" id="headingOne">
-                                    <h3 class="mb-0 h5" itemprop="name">
+                                    <h3 class="mb-0 h5">
                                         <button class="btn btn-link btn-block text-left text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            Do you provide security for high-rise buildings?
+                                            Do you provide security for downtown LA high-rise buildings?
                                         </button>
                                     </h3>
                                 </div>
-                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#downtownLAFAQ" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-                                    <div class="card-body" itemprop="text">
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#downtownLAFAQ">
+                                    <div class="card-body">
                                         Yes. We specialize in corporate high-rise security, including lobby security, access control, tenant services, and comprehensive building protection throughout the business district.
                                     </div>
                                 </div>
-                            </article>
+                            </div>
 
-                            <!-- FAQ Item 2 -->
-                            <article class="card mb-3" itemscope itemtype="https://schema.org/Question">
+                            <!-- FAQ Item 2 - Exact match to schema -->
+                            <div class="card mb-3">
                                 <div class="card-header" id="headingTwo">
-                                    <h3 class="mb-0 h5" itemprop="name">
+                                    <h3 class="mb-0 h5">
                                         <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            Are your security guards BSIS certified?
+                                            Are your guards BSIS certified?
                                         </button>
                                     </h3>
                                 </div>
-                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#downtownLAFAQ" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-                                    <div class="card-body" itemprop="text">
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#downtownLAFAQ">
+                                    <div class="card-body">
                                         Absolutely. All our security personnel hold current BSIS licenses with specialized training in corporate security, high-rise building protocols, and emergency response procedures.
                                     </div>
                                 </div>
-                            </article>
+                            </div>
 
                             <!-- FAQ Item 3 -->
-                            <article class="card mb-3" itemscope itemtype="https://schema.org/Question">
+                            <div class="card mb-3">
                                 <div class="card-header" id="headingThree">
-                                    <h3 class="mb-0 h5" itemprop="name">
+                                    <h3 class="mb-0 h5">
                                         <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                             What makes your security different from other companies?
                                         </button>
                                     </h3>
                                 </div>
-                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#downtownLAFAQ" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-                                    <div class="card-body" itemprop="text">
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#downtownLAFAQ">
+                                    <div class="card-body">
                                         We specialize in corporate and high-rise security with 15+ years experience. Our guards understand business district protocols, executive protection, and the unique security challenges of the financial district.
                                     </div>
                                 </div>
-                            </article>
+                            </div>
 
-                            <!-- FAQ Item 4 -->
-                            <article class="card mb-3" itemscope itemtype="https://schema.org/Question">
+                            <!-- FAQ Item 4 - Exact match to schema -->
+                            <div class="card mb-3">
                                 <div class="card-header" id="headingFour">
-                                    <h3 class="mb-0 h5" itemprop="name">
+                                    <h3 class="mb-0 h5">
                                         <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                             How quickly can you deploy security?
                                         </button>
                                     </h3>
                                 </div>
-                                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#downtownLAFAQ" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-                                    <div class="card-body" itemprop="text">
-                                        Emergency deployment in 1-2 hours for urgent situations. Standard security requests are fulfilled within 24 hours from our headquarters.
+                                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#downtownLAFAQ">
+                                    <div class="card-body">
+                                        Emergency deployment in 1-2 hours for urgent situations. Standard security requests are fulfilled within 24 hours from our downtown LA headquarters.
                                     </div>
                                 </div>
-                            </article>
+                            </div>
 
                             <!-- FAQ Item 5 -->
-                            <article class="card mb-3 highlighted-faq" itemscope itemtype="https://schema.org/Question">
+                            <div class="card mb-3 highlighted-faq">
                                 <div class="card-header bg-danger text-white" id="headingFive">
-                                    <h3 class="mb-0 h5" itemprop="name">
+                                    <h3 class="mb-0 h5">
                                         <button class="btn btn-link btn-block text-left collapsed text-decoration-none text-white" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                                             Need a security guard fast?
                                         </button>
                                     </h3>
                                 </div>
-                                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#downtownLAFAQ" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-                                    <div class="card-body" itemprop="text">
+                                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#downtownLAFAQ">
+                                    <div class="card-body">
                                         Call us anytime—we're based right here on 5th Street! Our rapid response team can deploy security personnel in as little as 1-2 hours to any location. Just call <a href="tel:+17147167430">(714) 716-7430</a> for immediate assistance.
                                     </div>
                                 </div>
-                            </article>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -708,15 +690,13 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="py-5 bg-primary text-white" style="margin-bottom: 4rem; padding-top: 4rem !important; padding-bottom: 4rem !important;" itemscope itemtype="https://schema.org/ContactPage">
+        <section class="py-5 bg-primary text-white" style="margin-bottom: 4rem; padding-top: 4rem !important; padding-bottom: 4rem !important;">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center">
-                        <h2 class="mb-4" itemprop="headline">Ready to Secure Your Property or Business?</h2>
-                        <p class="lead mb-5" itemprop="description">Contact ShieldWise Security today for a customized security solution designed specifically for your location or corporate facility. Our team of security experts will work with you to develop a comprehensive security plan that addresses your unique business challenges.</p>
-                        <a href="/get-quote" class="btn btn-light btn-lg mr-3 mb-3" itemprop="potentialAction" itemscope itemtype="https://schema.org/Action">
-                            <span itemprop="name">Get a Free Quote</span>
-                        </a>
+                        <h2 class="mb-4">Ready to Secure Your Property or Business?</h2>
+                        <p class="lead mb-5">Contact ShieldWise Security today for a customized security solution designed specifically for your location or corporate facility. Our team of security experts will work with you to develop a comprehensive security plan that addresses your unique business challenges.</p>
+                        <a href="/get-quote" class="btn btn-light btn-lg mr-3 mb-3">Get a Free Quote</a>
                         <a href="/contact" class="btn btn-outline-light btn-lg mb-3">Contact Us</a>
                     </div>
                 </div>
@@ -724,43 +704,41 @@
         </section>
 
         <!-- Related Areas Section -->
-        <section class="py-5 bg-light" itemscope itemtype="https://schema.org/ItemList">
+        <section class="py-5 bg-light">
             <div class="container">
-                <header>
-                    <h2 class="text-center mb-5" itemprop="name">Explore Other Los Angeles Areas We Serve</h2>
-                </header>
-                <div class="row" role="list">
-                    <div class="col-md-4 mb-4" role="listitem" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        <a href="/los-angeles" class="text-decoration-none" itemprop="item">
-                            <article class="card h-100 shadow-sm hover-effect">
-                                <img src="/img/OC1.webp" class="card-img-top" alt="Los Angeles Security Services" loading="lazy" itemprop="image">
+                <h2 class="text-center mb-5">Explore Other Los Angeles Areas We Serve</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <a href="/los-angeles" class="text-decoration-none">
+                            <div class="card h-100 shadow-sm hover-effect">
+                                <img src="/img/OC1.webp" class="card-img-top" alt="Los Angeles Security Services" loading="lazy">
                                 <div class="card-body text-center">
-                                    <h3 class="h5 card-title" itemprop="name">Los Angeles</h3>
-                                    <p class="card-text" itemprop="description">Comprehensive security services throughout Los Angeles.</p>
+                                    <h3 class="h5 card-title">Los Angeles</h3>
+                                    <p class="card-text">Comprehensive security services throughout Los Angeles.</p>
                                 </div>
-                            </article>
+                            </div>
                         </a>
                     </div>
-                    <div class="col-md-4 mb-4" role="listitem" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        <a href="/los-angeles/hollywood" class="text-decoration-none" itemprop="item">
-                            <article class="card h-100 shadow-sm hover-effect">
-                                <img src="/img/hsecurity.webp" class="card-img-top" alt="Hollywood Security Services" loading="lazy" itemprop="image">
+                    <div class="col-md-4 mb-4">
+                        <a href="/los-angeles/hollywood" class="text-decoration-none">
+                            <div class="card h-100 shadow-sm hover-effect">
+                                <img src="/img/hsecurity.webp" class="card-img-top" alt="Hollywood Security Services" loading="lazy">
                                 <div class="card-body text-center">
-                                    <h3 class="h5 card-title" itemprop="name">Hollywood</h3>
-                                    <p class="card-text" itemprop="description">Entertainment industry security for Hollywood venues and studios.</p>
+                                    <h3 class="h5 card-title">Hollywood</h3>
+                                    <p class="card-text">Entertainment industry security for Hollywood venues and studios.</p>
                                 </div>
-                            </article>
+                            </div>
                         </a>
                     </div>
-                    <div class="col-md-4 mb-4" role="listitem" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        <a href="/los-angeles/beverly-hills" class="text-decoration-none" itemprop="item">
-                            <article class="card h-100 shadow-sm hover-effect">
-                                <img src="/img/LA.webp" class="card-img-top" alt="Beverly Hills Security Services" loading="lazy" itemprop="image">
+                    <div class="col-md-4 mb-4">
+                        <a href="/los-angeles/beverly-hills" class="text-decoration-none">
+                            <div class="card h-100 shadow-sm hover-effect">
+                                <img src="/img/LA.webp" class="card-img-top" alt="Beverly Hills Security Services" loading="lazy">
                                 <div class="card-body text-center">
-                                    <h3 class="h5 card-title" itemprop="name">Beverly Hills</h3>
-                                    <p class="card-text" itemprop="description">Premium security solutions for Beverly Hills properties.</p>
+                                    <h3 class="h5 card-title">Beverly Hills</h3>
+                                    <p class="card-text">Premium security solutions for Beverly Hills properties.</p>
                                 </div>
-                            </article>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -769,13 +747,13 @@
     </main>
 
     <!-- Footer Section -->
-    <footer role="contentinfo" itemscope itemtype="https://schema.org/WPFooter">
+    <footer role="contentinfo">
         <%- include('../partials/Footer') %>
     </footer>
 
     <!-- Back to Top Button -->
     <a href="#" id="backToTop" class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+        <i class="fas fa-arrow-up"></i>
     </a>
 
     <!-- Core Web Vitals Optimization Script -->
