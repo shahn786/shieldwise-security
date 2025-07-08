@@ -1156,6 +1156,38 @@ a:hover {
     overflow-x: hidden;
 }
 
+/* Ensure all main content sections span full width */
+.dtla_main_content {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Override Bootstrap container restrictions for full-width sections */
+.full-width-section .container,
+.full-width-section .container-fluid {
+    max-width: none !important;
+    width: 100% !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+/* Map section full width fix */
+.py-5.full-width-section {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    box-sizing: border-box;
+}
+
 
 /* Unique Variables for DTLA Security Guide */
 .dtla_security_wrapper {
