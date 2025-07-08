@@ -736,6 +736,10 @@ app.get('/santa-clara', (req, res) => {
     res.render('cities/santa-clara', { title: 'Santa Clara' });
 });
 
+app.get('/alameda', (req, res) => {
+    res.render('cities/alameda', { title: 'Alameda' });
+});
+
 // Los Angeles area routes
 const losAngelesAreas = [
     'downtown', 'hollywood', 'beverly-hills', 'santa-monica', 'pasadena',
