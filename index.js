@@ -728,6 +728,10 @@ app.get('/ventura', (req, res) => {
     res.render('cities/ventura', { title: 'Ventura County' });
 });
 
+app.get('/sacramento', (req, res) => {
+    res.render('cities/sacramento', { title: 'Sacramento' });
+});
+
 // Los Angeles area routes
 const losAngelesAreas = [
     'downtown', 'hollywood', 'beverly-hills', 'santa-monica', 'pasadena',
