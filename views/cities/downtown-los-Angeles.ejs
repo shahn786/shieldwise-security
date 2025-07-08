@@ -605,9 +605,16 @@
 </head>
 
 <body id="top" itemscope itemtype="https://schema.org/WebPage">
-    <!-- Header Section -->
-    <%- include('../partials/Header') %>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
+    <!-- Header Section -->
+    <header role="banner">
+        <%- include('../partials/Header') %>
+    </header>
+
+    <!-- Main content area -->
+    <main id="main-content" role="main">
     <!-- Hero Section with Background Image -->
     <section class="hero-downtown">
         <div class="hero-content">
@@ -1111,7 +1118,7 @@
     </section>
 
         <!-- Emergency Response Section for Voice Search -->
-       
+
 
 
 
