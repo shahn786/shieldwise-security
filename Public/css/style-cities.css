@@ -43,15 +43,20 @@ a:hover {
 /* Hero Section */
 .hero-downtown {
     position: relative;
-    height: 85vh;
+    height: 100vh;
+    min-height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
     padding: 0;
-    background: url('/img/downtown_la.jpg') no-repeat center center/cover;
+    margin: 0;
+    background: url('/img/downtown_la.webp') no-repeat center center/cover;
     background-attachment: fixed;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    overflow: hidden;
 }
 
 .hero-downtown h1 {
@@ -68,9 +73,27 @@ a:hover {
     color: #ffffff;
     font-size: 1.8rem;
     font-weight: 500;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     animation: fadeInUp 1.2s ease-out;
+}
+
+.hero-downtown .hero-subtitle {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1.4s ease-out;
+    opacity: 0.95;
+}
+
+.hero-downtown .hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 1.6s ease-out;
 }
 
 /* Transparent Overlay */
@@ -500,7 +523,8 @@ a:hover {
     }
 
     .hero-downtown {
-        height: 70vh;
+        height: 100vh;
+        min-height: 500px;
     }
 
     .hero-downtown h1 {
@@ -509,6 +533,20 @@ a:hover {
 
     .hero-downtown h2 {
         font-size: 1.3rem;
+    }
+
+    .hero-downtown .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-downtown .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-downtown .btn {
+        width: 100%;
+        max-width: 300px;
     }
 
     .testimonials-grid {
