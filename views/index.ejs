@@ -1356,106 +1356,21 @@
         <!-- Footer -->
         <%- include('partials/Footer') %>
 
-        <!-- Scripts (optimized loading) -->
+        <!-- Back to Top Button -->
+        <a href="#" id="backToTop" class="back-to-top" aria-label="Back to top">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+
+        <!-- Back to Top Button Script -->
+        <script src="/JS/back-to-top.js"></script>
+
+        <!-- Bootstrap & jQuery (required for Bootstrap 4.x, can remove jQuery if using Bootstrap 5+) -->
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous" defer></script>
 
-        <!-- Performance Optimization & Custom Scripts -->
+        <!-- Custom Page Scripts -->
         <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Back to Top Button Functionality
-            const backToTopButton = document.querySelector('.back-to-top');
-            if (backToTopButton) {
-                window.addEventListener('scroll', function() {
-                    if (window.pageYOffset > 300) {
-                        backToTopButton.classList.add('show');
-                    } else {
-                        backToTopButton.classList.remove('show');
-                    }
-                });
-                backToTopButton.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-            }
-
-            // Performance optimization - minimize layout shifts
-            if ('IntersectionObserver' in window) {
-                // Image lazy loading
-                const imageObserver = new IntersectionObserver(function(entries, observer) {
-                    entries.forEach(function(entry) {
-                        if (entry.isIntersecting) {
-                            const lazyImage = entry.target;
-                            if (lazyImage.dataset.src) {
-                                lazyImage.src = lazyImage.dataset.src;
-                                lazyImage.removeAttribute('data-src');
-                            }
-                            lazyImage.classList.add('loaded');
-                            observer.unobserve(lazyImage);
-                        }
-                    });
-                }, {
-                    rootMargin: '200px 0px'
-                });
-
-                document.querySelectorAll('img[loading="lazy"]').forEach(image => {
-                    imageObserver.observe(image);
-                });
-
-                // Video optimization - enhanced for performance
-                const videoObserver = new IntersectionObserver(function(entries) {
-                    entries.forEach(function(entry) {
-                        const video = entry.target;
-                        if (entry.isIntersecting) {
-                            if (video.paused) {
-                                if (video.getAttribute('preload') === 'none') {
-                                    video.setAttribute('preload', 'auto');
-                                }
-                                setTimeout(() => {
-                                    const playPromise = video.play();
-                                    if (playPromise !== undefined) {
-                                        playPromise.then(() => {
-                                            video.classList.add('loaded');
-                                        }).catch(error => {
-                                            console.log("Video autoplay prevented:", error);
-                                        });
-                                    }
-                                }, 100);
-                            }
-                        } else {
-                            if (!video.paused && video.getAttribute('data-load-priority') === 'low') {
-                                video.pause();
-                            }
-                        }
-                    });
-                }, { 
-                    threshold: 0.1,
-                    rootMargin: '100px 0px'
-                });
-
-                document.querySelectorAll('video').forEach(video => {
-                    videoObserver.observe(video);
-                    video.addEventListener('error', function(e) {
-                        console.log("Video error:", e);
-                        if (video.parentNode) {
-                            video.parentNode.style.backgroundColor = '#111';
-                        }
-                    });
-                });
-
-                // Optimize second video loading
-                const secondVideo = document.getElementById('background-video12');
-                if (secondVideo) {
-                    const secondVideoObserver = new IntersectionObserver(function(entries) {
-                        if (entries[0].isIntersecting) {
-                            secondVideo.setAttribute('preload', 'auto');
-                            secondVideoObserver.unobserve(secondVideo);
-                        }
-                    }, { rootMargin: '500px 0px' });
-                    secondVideoObserver.observe(secondVideo);
-                }
-            }
-
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -1473,41 +1388,10 @@
                 header.addEventListener('click', function() {
                     const icon = this.querySelector('.faq-icon');
                     if (icon) {
-                        if (icon.textContent === '+') {
-                            icon.textContent = '-';
-                        } else {
-                            icon.textContent = '+';
-                        }
+                        icon.textContent = (icon.textContent === '+') ? '-' : '+';
                     }
                 });
             });
-
-            // Add image/video load complete event for critical elements
-            const criticalImages = document.querySelectorAll('img[fetchpriority="high"], video[fetchpriority="high"]');
-            criticalImages.forEach(elem => {
-                if (elem.complete || (elem.readyState && elem.readyState >= 3)) {
-                    elem.classList.add('loaded');
-                } else {
-                    elem.addEventListener('load', () => {
-                        elem.classList.add('loaded');
-                    });
-                }
-            });
-
-            // Improve page speed by deferring non-critical operations
-            setTimeout(() => {
-                const deferredScripts = document.querySelectorAll('script[data-defer="true"]');
-                deferredScripts.forEach(script => {
-                    const newScript = document.createElement('script');
-                    [...script.attributes].forEach(attr => {
-                        if (attr.name !== 'data-defer') {
-                            newScript.setAttribute(attr.name, attr.value);
-                        }
-                    });
-                    newScript.appendChild(document.createTextNode(script.innerHTML));
-                    script.parentNode.replaceChild(newScript, script);
-                });
-            }, 3000);
         });
         </script>
         </body>
