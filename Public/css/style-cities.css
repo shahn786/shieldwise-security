@@ -6,6 +6,8 @@ body {
     padding: 0;
     color: #333;
     background-color: #f8f9fa;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
@@ -28,6 +30,14 @@ a:hover {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
+    width: 100%;
+}
+
+/* Override for full-width sections */
+.dtla_main_content .container,
+.dtla_header_section .container {
+    max-width: 1200px;
+    width: 100%;
 }
 
 /* Hero Section */
@@ -839,8 +849,8 @@ a:hover {
     padding: 80px 20px;
     background: linear-gradient(to bottom, #ffffff, #f8f9fa);
     color: #333;
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
 }
 
 .downtown-guide .guide-header {
@@ -1109,6 +1119,8 @@ a:hover {
     line-height: 1.7;
     color: #444;
     background-color: #fff;
+    width: 100%;
+    max-width: none;
 }
 
 .dtla_header_section {
