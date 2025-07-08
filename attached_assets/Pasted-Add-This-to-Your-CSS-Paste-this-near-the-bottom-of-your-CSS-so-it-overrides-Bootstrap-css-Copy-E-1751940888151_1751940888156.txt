@@ -1,0 +1,151 @@
+Add This to Your CSS
+Paste this near the bottom of your CSS (so it overrides Bootstrap):
+
+css
+Copy
+Edit
+/* ====== FULL WIDTH SECTIONS - REUSABLE CLASS ====== */
+.full-width-section {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: inherit; /* Keep the section's background */
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+2. Update Your HTML Sections
+Here are the sections to update, using .full-width-section and .container-fluid for full width:
+
+A. HERO SECTION
+html
+Copy
+Edit
+<section class="hero-downtown full-width-section">
+    <div class="hero-content">
+        <h1>🛡️ Downtown Los Angeles Security Guards</h1>
+        <h2>Professional Armed & Unarmed Protection Services</h2>
+        <p class="hero-subtitle">Immediate 2-Hour Deployment • Licensed & Insured • 24/7 Emergency Response</p>
+        <div class="hero-buttons">
+            <a href="/get-quote" class="btn btn-danger btn-lg mr-3">Get FREE Quote Now</a>
+            <a href="tel:+17147167430" class="btn btn-outline-light btn-lg">Call (714) 716-7430</a>
+        </div>
+    </div>
+</section>
+B. BLUE HEADER SECTION
+html
+Copy
+Edit
+<header class="dtla_header_section full-width-section">
+    <div class="container-fluid text-center">
+        <h1 class="display-5 fw-bold mb-3">Downtown Los Angeles Security Services</h1>
+        <h3 class="fs-5 fw-light mb-3">Your Comprehensive Professional Guide</h3>
+        <p>Last Updated: October 28, 2024</p>
+    </div>
+</header>
+C. PRICING SECTION
+html
+Copy
+Edit
+<section class="dtla_pricing_section full-width-section">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="dtla_pricing_container">
+                    <h2 class="dtla_section_title">Understanding Security Costs in Downtown Los Angeles</h2>
+                    <p>Security pricing depends on various factors. Here's a general breakdown:</p>
+                    <div class="mt-4">
+                        <div class="dtla_price_item">
+                            <i class="fas fa-dollar-sign"></i>
+                            <strong>Armed Guards:</strong> Cost 25-35% more than unarmed guards
+                        </div>
+                        <div class="dtla_price_item">
+                            <i class="fas fa-dollar-sign"></i>
+                            <strong>24/7 Contracts:</strong> Yield better hourly rates
+                        </div>
+                        <div class="dtla_price_item">
+                            <i class="fas fa-dollar-sign"></i>
+                            <strong>Specialized Services:</strong> Require premium fees
+                        </div>
+                        <div class="dtla_price_item">
+                            <i class="fas fa-dollar-sign"></i>
+                            <strong>Additional Factors:</strong> Contract length, number of guards, and on-site equipment
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <p class="fw-bold">Average DTLA guard rates:</p>
+                        <div class="dtla_price_range">$25–$45 per hour</div>
+                        <p class="mt-2 small text-muted">Rates depend on scope and qualifications</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+D. TESTIMONIALS SECTION
+html
+Copy
+Edit
+<section class="testimonials full-width-section">
+    <div class="container-fluid">
+        <h2>What Our Downtown LA Clients Say</h2>
+        <div class="testimonials-grid">
+            <!-- Testimonial 1 -->
+            <div class="testimonial">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"ShieldWise Security has been instrumental in decreasing security incidents at our Downtown LA office building..."</p>
+                <h4>Michael Rodriguez</h4>
+                <div class="position">Property Manager, Financial District</div>
+            </div>
+            <!-- ...other testimonials... -->
+        </div>
+    </div>
+</section>
+E. RELATED AREAS SECTION
+html
+Copy
+Edit
+<section class="related-areas full-width-section py-5 bg-light">
+    <div class="container-fluid">
+        <h2 class="text-center mb-5">Explore Other Los Angeles Areas We Serve</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <a href="/los-angeles" class="text-decoration-none">
+                    <div class="card h-100 shadow-sm hover-effect">
+                        <img src="/img/la-pic.webp" class="card-img-top" alt="Los Angeles Security Services">
+                        <div class="card-body text-center">
+                            <h3 class="h5 card-title">Los Angeles</h3>
+                            <p class="card-text">Comprehensive security services throughout Los Angeles.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- ...other area cards... -->
+        </div>
+    </div>
+</section>
+F. MAP/AREA SECTION (If you want full width for the map area)
+html
+Copy
+Edit
+<section class="py-5 full-width-section">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-4">Our Downtown Los Angeles Service Areas</h2>
+                <p class="mb-5">ShieldWise Security proudly serves all areas of Downtown Los Angeles, including:</p>
+            </div>
+        </div>
+        <!-- ...rest of your area lists and map iframe... -->
+    </div>
+</section>
+3. Done!
+You can use the .full-width-section class with any section to force it edge-to-edge.
+Keep .container for sections you want boxed/centered.
+
