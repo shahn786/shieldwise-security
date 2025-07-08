@@ -1143,6 +1143,19 @@ a:hover {
     margin-top: 3rem;
 }
 
+/* ====== FULL WIDTH SECTIONS - REUSABLE CLASS ====== */
+.full-width-section {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: inherit;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
 
 /* Unique Variables for DTLA Security Guide */
 .dtla_security_wrapper {
