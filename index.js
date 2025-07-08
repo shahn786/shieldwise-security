@@ -724,6 +724,10 @@ app.get('/san-bernardino', (req, res) => {
     res.render('cities/san-bernardino', { title: 'San Bernardino' });
 });
 
+app.get('/ventura', (req, res) => {
+    res.render('cities/ventura', { title: 'Ventura County' });
+});
+
 // Los Angeles area routes
 const losAngelesAreas = [
     'downtown', 'hollywood', 'beverly-hills', 'santa-monica', 'pasadena',
@@ -779,6 +783,28 @@ sanBernardinoCities.forEach(city => {
         } catch (error) {
             // If the specific city template doesn't exist, render a generic city page
             res.render('cities/san-bernardino', { 
+                title: formattedCity,
+                cityName: formattedCity,
+                isGeneric: true 
+            });
+        }
+    });
+});
+
+// Ventura County cities routes
+const venturaCountyCities = [
+    'oxnard', 'thousand-oaks', 'simi-valley', 'ventura', 'camarillo',
+    'moorpark', 'fillmore', 'santa-paula', 'port-hueneme', 'ojai'
+];
+
+venturaCountyCities.forEach(city => {
+    const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    app.get(`/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { title: formattedCity });
+        } catch (error) {
+            // If the specific city template doesn't exist, render a generic city page
+            res.render('cities/ventura', { 
                 title: formattedCity,
                 cityName: formattedCity,
                 isGeneric: true 
