@@ -7,8 +7,18 @@
     <!-- Enhanced SEO Meta Tags -->
     <title>Expert Security Guard Services in Pasadena CA | ShieldWise Security</title>
     <meta name="description" content="Professional security guard services in Pasadena. Licensed & insured guards for Rose Bowl events, businesses, and properties. Tournament of Roses specialists. Free quotes!">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="author" content="ShieldWise Security">
+    <meta name="keywords" content="Pasadena security guards, Rose Bowl security, Tournament of Roses security, Pasadena event security, commercial security Pasadena, armed guards Pasadena, unarmed security Pasadena, mobile patrol Pasadena, construction security Pasadena, retail security Pasadena">
+    
+    <!-- Enhanced Geo-Location Meta Tags -->
+    <meta name="geo.region" content="US-CA">
+    <meta name="geo.placename" content="Pasadena">
+    <meta name="geo.position" content="34.1478;-118.1445">
+    <meta name="ICBM" content="34.1478, -118.1445">
+    <meta name="city" content="Pasadena">
+    <meta name="state" content="California">
+    <meta name="zipcode" content="91101">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://shieldwisesecurity.com/los-angeles/pasadena" />
@@ -19,6 +29,17 @@
     <link rel="alternate" hreflang="es-us" href="https://shieldwisesecurity.com/es/los-angeles/pasadena">
     <link rel="alternate" hreflang="x-default" href="https://shieldwisesecurity.com/los-angeles/pasadena">
 
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+    <!-- Apple Mobile Web App Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Pasadena Security">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
     <!-- Enhanced Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Expert Security Guard Services in Pasadena CA | ShieldWise Security">
     <meta property="og:description" content="Reliable and professional security services in Pasadena. Specialists in Rose Bowl events, businesses, and property protection. 24/7 service available.">
@@ -27,6 +48,7 @@
     <meta property="og:image" content="https://shieldwisesecurity.com/img/pasadena-unsplash.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Professional Pasadena security guard services on duty near Rose Bowl and Old Town">
     <meta property="og:site_name" content="ShieldWise Security">
     <meta property="og:locale" content="en_US">
 
@@ -36,7 +58,7 @@
     <meta name="twitter:title" content="Expert Pasadena Security Guard Services | ShieldWise Security">
     <meta name="twitter:description" content="Licensed & insured guards protecting Pasadena businesses, events, Rose Bowl, and Tournament of Roses. Professional security solutions.">
     <meta name="twitter:image" content="https://shieldwisesecurity.com/img/pasadena-unsplash.jpg">
-    <meta name="twitter:image:alt" content="ShieldWise Security guard at a Pasadena event">
+    <meta name="twitter:image:alt" content="Professional Pasadena security guard services on duty near Rose Bowl and Old Town">
 
     <!-- Resource Hints for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +68,7 @@
     <link rel="dns-prefetch" href="//code.jquery.com">
 
     <!-- Preload critical assets -->
-
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" as="style">
     <link rel="preload" href="/css/style-cities.css" as="style">
     <link rel="preload" href="/img/pasadena-unsplash.jpg" as="image">
 
@@ -95,7 +117,15 @@
                 },
                 "url": "https://shieldwisesecurity.com/los-angeles/pasadena",
                 "telephone": "+1-714-716-7430",
-                "openingHours": "Mo-Su 00:00-23:59",
+                "openingHours": ["Mo 00:00-23:59", "Tu 00:00-23:59", "We 00:00-23:59", "Th 00:00-23:59", "Fr 00:00-23:59", "Sa 00:00-23:59", "Su 00:00-23:59"],
+                "openingHoursSpecification": [
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                        "opens": "00:00",
+                        "closes": "23:59"
+                    }
+                ],
                 "aggregateRating": {
                     "@type": "AggregateRating",
                     "ratingValue": "4.9",
@@ -113,6 +143,13 @@
                                 "@type": "Service",
                                 "name": "Event Security",
                                 "description": "Specialized security solutions for events including the Rose Bowl and Tournament of Roses Parade."
+                            },
+                            "priceSpecification": {
+                                "@type": "PriceSpecification",
+                                "minPrice": "45.00",
+                                "maxPrice": "125.00",
+                                "priceCurrency": "USD",
+                                "unitText": "HOUR"
                             }
                         },
                         {
@@ -121,6 +158,13 @@
                                 "@type": "Service",
                                 "name": "Commercial Building Security",
                                 "description": "Comprehensive security solutions for Pasadena businesses and commercial properties."
+                            },
+                            "priceSpecification": {
+                                "@type": "PriceSpecification",
+                                "minPrice": "35.00",
+                                "maxPrice": "85.00",
+                                "priceCurrency": "USD",
+                                "unitText": "HOUR"
                             }
                         },
                         {
@@ -129,6 +173,13 @@
                                 "@type": "Service",
                                 "name": "Retail Security",
                                 "description": "Loss prevention and retail security solutions in Pasadena."
+                            },
+                            "priceSpecification": {
+                                "@type": "PriceSpecification",
+                                "minPrice": "32.00",
+                                "maxPrice": "75.00",
+                                "priceCurrency": "USD",
+                                "unitText": "HOUR"
                             }
                         },
                         {
@@ -137,6 +188,13 @@
                                 "@type": "Service",
                                 "name": "Residential Security",
                                 "description": "Professional security services for residential properties and complexes in Pasadena."
+                            },
+                            "priceSpecification": {
+                                "@type": "PriceSpecification",
+                                "minPrice": "38.00",
+                                "maxPrice": "80.00",
+                                "priceCurrency": "USD",
+                                "unitText": "HOUR"
                             }
                         }
                     ]
@@ -629,7 +687,7 @@
                         </div>
 
                         <!-- FAQ Item 5 -->
-                        <div class="card">
+                        <div class="card mb-3">
                             <div class="card-header" id="headingFive">
                                 <h3 class="mb-0 h5">
                                     <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
@@ -640,6 +698,38 @@
                             <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#pasadenaFAQ">
                                 <div class="card-body">
                                     Yes, we provide mobile patrol services throughout Pasadena. Our patrol vehicles are clearly marked and equipped with GPS tracking. Mobile patrols offer a cost-effective security solution for properties that don't require a permanent security presence but benefit from regular security checks.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 6 -->
+                        <div class="card mb-3">
+                            <div class="card-header" id="headingSix">
+                                <h3 class="mb-0 h5">
+                                    <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                        What are your rates for security guards in Pasadena?
+                                    </button>
+                                </h3>
+                            </div>
+                            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#pasadenaFAQ">
+                                <div class="card-body">
+                                    Our security guard rates in Pasadena typically range from $32-$125 per hour depending on the type of service (armed/unarmed), location, and specific requirements. Event security and specialized services may have different pricing. We offer competitive rates and provide free consultations to discuss your specific needs and budget.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 7 -->
+                        <div class="card">
+                            <div class="card-header" id="headingSeven">
+                                <h3 class="mb-0 h5">
+                                    <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                        Do you provide security for Caltech and other educational institutions?
+                                    </button>
+                                </h3>
+                            </div>
+                            <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#pasadenaFAQ">
+                                <div class="card-body">
+                                    Yes, we provide specialized security services for educational institutions in Pasadena, including colleges, universities, and schools. Our guards are trained in campus security protocols, student safety, and can work with existing security systems. We understand the unique needs of educational environments and provide discreet, professional security presence.
                                 </div>
                             </div>
                         </div>
