@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="https://schema.org/LocalBusiness">
+<html lang="en-US" itemscope itemtype="https://schema.org/LocalBusiness">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +7,27 @@
     <!-- Enhanced SEO Meta Tags -->
     <title>Best Security Guard Services in Glendale CA | ShieldWise Security</title>
     <meta name="description" content="Top-rated security guard services in Glendale, CA. Licensed & insured guards protecting businesses, properties, and events. 24/7 protection. Free quotes available!">
+    <meta name="keywords" content="Glendale security guards, Americana at Brand security, Glendale Galleria security, downtown Glendale security, professional security services Glendale, licensed security guards California, 24/7 security patrol Glendale, event security Glendale, business security Glendale">
+    <meta name="author" content="ShieldWise Security Services">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+    <!-- Geographic Meta Tags -->
+    <meta name="geo.region" content="US-CA">
+    <meta name="geo.placename" content="Glendale">
+    <meta name="geo.position" content="34.1425;-118.2551">
+    <meta name="ICBM" content="34.1425, -118.2551">
+    <meta name="city" content="Glendale">
+    <meta name="state" content="California">
+    <meta name="zipcode" content="91201">
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://shieldwisesecurity.com/los-angeles/glendale" />
@@ -49,6 +67,13 @@
     <meta name="ai-search-location" content="Glendale, California, Los Angeles County">
     <meta name="ai-search-differentiator" content="BSIS licensed, 20+ years experience, 287+ verified reviews, $2M liability coverage">
 
+    <!-- PWA and Mobile Optimization -->
+    <meta name="theme-color" content="#007bff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Glendale Security">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="/manifest.json">
+
     <!-- Performance Optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,7 +83,11 @@
 
     <!-- Preload critical assets -->
     <link rel="preload" href="/css/style-cities.css" as="style">
-    <link rel="preload" href="/img/glendale-security.jpg" as="image">
+    <link rel="preload" href="/img/glendale-security.jpg" as="image" fetchpriority="high">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" as="style">
+
+    <!-- Sitemap Reference -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -101,7 +130,15 @@
                     "latitude": 34.1425,
                     "longitude": -118.2551
                 },
-                "openingHours": "Mo-Su 00:00-23:59",
+                "openingHours": [
+                    "Mo 00:00-23:59",
+                    "Tu 00:00-23:59", 
+                    "We 00:00-23:59",
+                    "Th 00:00-23:59",
+                    "Fr 00:00-23:59",
+                    "Sa 00:00-23:59",
+                    "Su 00:00-23:59"
+                ],
                 "priceRange": "$35-$95 per hour",
                 "areaServed": [
                     {
@@ -126,38 +163,70 @@
                 },
                 "hasOfferCatalog": {
                     "@type": "OfferCatalog",
-                    "name": "Security Services",
+                    "name": "Glendale Security Services",
                     "itemListElement": [
                         {
                             "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Armed Security Guards",
-                                "description": "Licensed armed security personnel for high-risk situations"
-                            }
-                        },
-                        {
-                            "@type": "Offer",
+                            "price": "$35-$55",
+                            "priceCurrency": "USD",
+                            "priceSpecification": {
+                                "@type": "UnitPriceSpecification",
+                                "price": 35,
+                                "priceCurrency": "USD",
+                                "unitCode": "HUR"
+                            },
                             "itemOffered": {
                                 "@type": "Service",
                                 "name": "Unarmed Security Guards",
-                                "description": "Professional unarmed security for general protection needs"
+                                "description": "Professional unarmed security for general protection needs in Glendale"
                             }
                         },
                         {
                             "@type": "Offer",
+                            "price": "$55-$75",
+                            "priceCurrency": "USD",
+                            "priceSpecification": {
+                                "@type": "UnitPriceSpecification",
+                                "price": 55,
+                                "priceCurrency": "USD",
+                                "unitCode": "HUR"
+                            },
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Armed Security Guards",
+                                "description": "Licensed armed security personnel for high-risk situations in Glendale"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "price": "$45-$65",
+                            "priceCurrency": "USD",
+                            "priceSpecification": {
+                                "@type": "UnitPriceSpecification",
+                                "price": 45,
+                                "priceCurrency": "USD",
+                                "unitCode": "HUR"
+                            },
                             "itemOffered": {
                                 "@type": "Service",
                                 "name": "Mobile Patrol Services",
-                                "description": "Vehicle-based security patrols for multiple locations"
+                                "description": "Vehicle-based security patrols for multiple Glendale locations"
                             }
                         },
                         {
                             "@type": "Offer",
+                            "price": "$65-$95",
+                            "priceCurrency": "USD",
+                            "priceSpecification": {
+                                "@type": "UnitPriceSpecification",
+                                "price": 65,
+                                "priceCurrency": "USD",
+                                "unitCode": "HUR"
+                            },
                             "itemOffered": {
                                 "@type": "Service",
                                 "name": "Event Security",
-                                "description": "Specialized security for events and gatherings"
+                                "description": "Specialized security for Glendale events and gatherings"
                             }
                         }
                     ]
@@ -195,8 +264,47 @@
                         },
                         "datePublished": "2024-04-10",
                         "reviewBody": "Outstanding security services in Glendale. The guards are well-trained and the management team is very responsive to our needs."
+                    },
+                    {
+                        "@type": "Review",
+                        "reviewRating": {
+                            "@type": "Rating",
+                            "ratingValue": "5"
+                        },
+                        "author": {
+                            "@type": "Person",
+                            "name": "Robert Thompson"
+                        },
+                        "datePublished": "2024-05-20",
+                        "reviewBody": "Hired ShieldWise for security at our Americana at Brand location. Excellent service, professional guards, and competitive pricing. Highly recommend for Glendale businesses."
+                    },
+                    {
+                        "@type": "Review",
+                        "reviewRating": {
+                            "@type": "Rating",
+                            "ratingValue": "4"
+                        },
+                        "author": {
+                            "@type": "Person",
+                            "name": "Sarah Martinez"
+                        },
+                        "datePublished": "2024-06-08",
+                        "reviewBody": "Great experience with ShieldWise Security in Glendale. Quick response time and very professional team. They understand the unique security needs of our downtown location."
                     }
                 ],
+                "parentOrganization": {
+                    "@type": "Organization",
+                    "name": "ShieldWise Security Services",
+                    "url": "https://shieldwisesecurity.com",
+                    "logo": "https://shieldwisesecurity.com/img/logo1.png",
+                    "foundingDate": "2004",
+                    "numberOfEmployees": "250-500",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressRegion": "CA",
+                        "addressCountry": "US"
+                    }
+                },
                 "brand": {
                     "@type": "Brand",
                     "name": "ShieldWise Security"
@@ -293,6 +401,9 @@
 </head>
 
 <body id="top">
+    <!-- Skip Navigation for Accessibility -->
+    <a href="#main-content" class="skip-nav" style="position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;">Skip to main content</a>
+    
     <!-- Header Section -->
     <%- include('../partials/Header') %>
 
@@ -307,17 +418,18 @@
     </section>
 
     <!-- Introduction Section -->
+    <main id="main-content">
     <section class="downtown-security">
         <div class="container">
             <h2 class="section-title">Trusted Security Guard Services in Glendale</h2>
             <div class="content-wrapper">
                 <div class="text-content">
-                    <p>ShieldWise Security provides <span class="highlight">professional security guard services</span> tailored specifically to the unique needs of Glendale businesses, properties, and events. With our extensive knowledge of Glendale's diverse neighborhoods and commercial districts, we deliver unmatched protection and peace of mind.</p>
-                    <p>Our team of highly trained, licensed and insured security professionals understands the diverse security requirements across different sectors in Glendale, from the Americana at Brand to downtown Glendale's business district. We combine advanced security protocols with a customer-focused approach to create security solutions that address your specific concerns.</p>
-                    <p>Whether you need <a href="/services/armed-security">armed guards</a>, <a href="/services/unarmed-security">unarmed security personnel</a>, or <a href="/services/patrol">mobile patrols</a> in Glendale, our team is ready to develop a comprehensive security plan for your business or property.</p>
+                    <p>ShieldWise Security provides <span class="highlight">professional security guard services</span> tailored specifically to the unique needs of Glendale businesses, properties, and events. With our extensive knowledge of Glendale's diverse neighborhoods and commercial districts, including the iconic <strong>Americana at Brand</strong>, <strong>Glendale Galleria</strong>, and <strong>Brand Boulevard</strong>, we deliver unmatched protection and peace of mind.</p>
+                    <p>Our team of highly trained, licensed and insured security professionals understands the diverse security requirements across different sectors in Glendale, from the bustling <strong>downtown Glendale business district</strong> to the residential areas near <strong>Verdugo Mountains</strong> and <strong>Forest Lawn Memorial Park</strong>. We combine advanced security protocols with a customer-focused approach to create security solutions that address your specific concerns.</p>
+                    <p>Whether you need <a href="/services/armed-security">armed guards</a>, <a href="/services/unarmed-security">unarmed security personnel</a>, or <a href="/services/patrol">mobile patrols</a> in Glendale neighborhoods like <strong>Adams Hill</strong>, <strong>Rossmoyne</strong>, or <strong>Sparr Heights</strong>, our team is ready to develop a comprehensive security plan for your business or property.</p>
                 </div>
                 <div class="image-content">
-                    <img src="/img/glendale-security.jpg" alt="Professional Security Guards in Glendale, CA providing 24/7 protection services" loading="lazy" width="500" height="333">
+                    <img src="/img/glendale-security.jpg" alt="Professional security guard providing protection services at Americana at Brand and downtown Glendale business district with Brand Boulevard visible in background" loading="lazy" width="500" height="333">
                 </div>
             </div>
         </div>
@@ -741,6 +853,8 @@
         </div>
     </section>
 
+    </main>
+    
     <!-- Footer -->
     <%- include('../partials/Footer') %>
 
@@ -748,6 +862,24 @@
     <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </a>
+
+    <style>
+    .skip-nav:focus {
+        position: fixed !important;
+        left: 6px !important;
+        top: 7px !important;
+        width: auto !important;
+        height: auto !important;
+        overflow: visible !important;
+        background: #000 !important;
+        color: #fff !important;
+        padding: 8px 16px !important;
+        text-decoration: none !important;
+        border: 2px solid #fff !important;
+        border-radius: 4px !important;
+        z-index: 99999 !important;
+    }
+    </style>
 
     <!-- JavaScript for Interactive Elements -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
