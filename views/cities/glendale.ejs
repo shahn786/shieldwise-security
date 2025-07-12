@@ -83,7 +83,8 @@
 
     <!-- Preload critical assets -->
     <link rel="preload" href="/css/style-cities.css" as="style">
-    <link rel="preload" href="/img/glendale-security.jpg" as="image" fetchpriority="high">
+    <link rel="preload" href="/img/shahn1.png" as="image" fetchpriority="high">
+    <link rel="preload" href="/img/2.webp" as="image" fetchpriority="high">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" as="style">
 
     <!-- Sitemap Reference -->
@@ -429,7 +430,7 @@
                     <p>Whether you need <a href="/services/armed-security">armed guards</a>, <a href="/services/unarmed-security">unarmed security personnel</a>, or <a href="/services/patrol">mobile patrols</a> in Glendale neighborhoods like <strong>Adams Hill</strong>, <strong>Rossmoyne</strong>, or <strong>Sparr Heights</strong>, our team is ready to develop a comprehensive security plan for your business or property.</p>
                 </div>
                 <div class="image-content">
-                    <img src="/img/glendale-security.jpg" alt="Professional security guard providing protection services at Americana at Brand and downtown Glendale business district with Brand Boulevard visible in background" loading="lazy" width="500" height="333">
+                    <img src="/img/shahn1.png" alt="Professional security guard providing protection services at Americana at Brand and downtown Glendale business district with Brand Boulevard visible in background" loading="lazy" width="500" height="333">
                 </div>
             </div>
         </div>
@@ -570,7 +571,7 @@
                     </ul>
                 </div>
                 <div class="col-lg-6">
-                    <img src="/img/glendale-security-guide.jpg" alt="Glendale Security Services Guide - Professional security solutions for businesses and properties in Glendale, California" class="img-fluid rounded shadow" width="600" height="400">
+                    <img src="/img/2.webp" alt="Glendale Security Services Guide - Professional security solutions for businesses and properties in Glendale, California" class="img-fluid rounded shadow" width="600" height="400">
                 </div>
             </div>
         </div>
@@ -796,20 +797,7 @@
         </div>
     </section>
 
-    <!-- Emergency Response Section -->
-    <section class="emergency-response py-4 bg-danger text-white">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-8">
-                    <h3 class="mb-0"><i class="fas fa-exclamation-circle mr-3"></i> Need a security guard fast in Glendale?</h3>
-                    <p class="lead mb-0">Call us anytime—we're ready to help! Our rapid response team can deploy security personnel in as little as 2-4 hours.</p>
-                </div>
-                <div class="col-md-4 text-center text-md-right mt-3 mt-md-0">
-                    <a href="tel:+17147167430" class="btn btn-light btn-lg"><i class="fas fa-phone-alt mr-2"></i> (714) 716-7430</a>
-                </div>
-            </div>
-        </div>
-    </section>
+   
 
     <!-- Related Areas Section -->
     <section class="py-5 bg-light">
@@ -819,7 +807,7 @@
                 <div class="col-md-4 mb-4">
                     <a href="/los-angeles" class="text-decoration-none">
                         <div class="card h-100 shadow-sm hover-effect">
-                            <img src="/img/los-angeles.jpg" class="card-img-top" alt="Los Angeles Security Services" width="350" height="200">
+                            <img src="/img/downtown-la1.webp" class="card-img-top" alt="Los Angeles Security Services" width="350" height="200">
                             <div class="card-body text-center">
                                 <h3 class="h5 card-title">Los Angeles</h3>
                                 <p class="card-text">Comprehensive security services throughout Los Angeles.</p>
@@ -830,7 +818,7 @@
                 <div class="col-md-4 mb-4">
                     <a href="/los-angeles/burbank" class="text-decoration-none">
                         <div class="card h-100 shadow-sm hover-effect">
-                            <img src="/img/burbank-security.jpg" class="card-img-top" alt="Burbank Security Services" width="350" height="200">
+                            <img src="/img/LA.webp" class="card-img-top" alt="Burbank Security Services" width="350" height="200">
                             <div class="card-body text-center">
                                 <h3 class="h5 card-title">Burbank</h3>
                                 <p class="card-text">Specialized security for Burbank studios and businesses.</p>
@@ -841,7 +829,7 @@
                 <div class="col-md-4 mb-4">
                     <a href="/los-angeles/pasadena" class="text-decoration-none">
                         <div class="card h-100 shadow-sm hover-effect">
-                            <img src="/img/pasadena-security.jpg" class="card-img-top" alt="Pasadena Security Services" width="350" height="200">
+                            <img src="/img/downtown_la.webp" class="card-img-top" alt="Pasadena Security Services" width="350" height="200">
                             <div class="card-body text-center">
                                 <h3 class="h5 card-title">Pasadena</h3>
                                 <p class="card-text">Security solutions for Pasadena businesses and properties.</p>
@@ -855,84 +843,70 @@
 
     </main>
     
-    <!-- Footer -->
-    <%- include('../partials/Footer') %>
+            <!-- Footer -->
+            <%- include('../partials/Footer') %>
 
-    <!-- Back to Top Button -->
-    <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+            <!-- Back to Top Button -->
+            <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
+                <i class="fas fa-arrow-up"></i>
+            </a>
 
-    <style>
-    .skip-nav:focus {
-        position: fixed !important;
-        left: 6px !important;
-        top: 7px !important;
-        width: auto !important;
-        height: auto !important;
-        overflow: visible !important;
-        background: #000 !important;
-        color: #fff !important;
-        padding: 8px 16px !important;
-        text-decoration: none !important;
-        border: 2px solid #fff !important;
-        border-radius: 4px !important;
-        z-index: 99999 !important;
-    }
-    </style>
+            <!-- Skip Navigation Style for Accessibility (Optional) -->
+            <style>
+            .skip-nav:focus {
+                position: fixed !important;
+                left: 6px !important;
+                top: 7px !important;
+                width: auto !important;
+                height: auto !important;
+                overflow: visible !important;
+                background: #000 !important;
+                color: #fff !important;
+                padding: 8px 16px !important;
+                text-decoration: none !important;
+                border: 2px solid #fff !important;
+                border-radius: 4px !important;
+                z-index: 99999 !important;
+            }
+            </style>
 
-    <!-- JavaScript for Interactive Elements -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Back to Top and Common Functionality -->
-    <script src="/JS/back-to-top.js"></script>
-<!-- Footer -->
-    <%- include('../partials/Footer') %>
+            <!-- Performance Optimized JavaScript Loading -->
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
+            <!-- Back to Top and Common Functionality -->
+            <script src="/JS/back-to-top.js" defer></script>
 
-    <!-- Back to Top Button -->
-    <a href="#" id="backToTop" class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-
-    <!-- Back to Top Button Script -->
-    <script src="/JS/back-to-top.js"></script>
-
-    <!-- Performance Optimized JavaScript Loading -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
-
-    <script>
-        // Service Worker Registration for PWA Performance
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(registration => console.log('SW registered'))
-                    .catch(error => console.log('SW registration failed'));
-            });
-        }
-
-        // Core Web Vitals Monitoring
-        (function() {
-            // LCP monitoring
-            new PerformanceObserver((entryList) => {
-                for (const entry of entryList.getEntries()) {
-                    console.log('LCP:', entry.startTime);
+            <script>
+                // Service Worker Registration for PWA Performance
+                if ('serviceWorker' in navigator) {
+                    window.addEventListener('load', () => {
+                        navigator.serviceWorker.register('/sw.js')
+                            .then(registration => console.log('SW registered'))
+                            .catch(error => console.log('SW registration failed'));
+                    });
                 }
-            }).observe({entryTypes: ['largest-contentful-paint']});
 
-            // CLS monitoring
-            let clsValue = 0;
-            new PerformanceObserver((entryList) => {
-                for (const entry of entryList.getEntries()) {
-                    if (!entry.hadRecentInput) {
-                        clsValue += entry.value;
-                    }
-                }
-                console.log('CLS:', clsValue);
-            }).observe({entryTypes: ['layout-shift']});
-        })();
-    </script>
-</body>
-</html>
+                // Core Web Vitals Monitoring
+                (function() {
+                    // LCP monitoring
+                    new PerformanceObserver((entryList) => {
+                        for (const entry of entryList.getEntries()) {
+                            console.log('LCP:', entry.startTime);
+                        }
+                    }).observe({entryTypes: ['largest-contentful-paint']});
+
+                    // CLS monitoring
+                    let clsValue = 0;
+                    new PerformanceObserver((entryList) => {
+                        for (const entry of entryList.getEntries()) {
+                            if (!entry.hadRecentInput) {
+                                clsValue += entry.value;
+                            }
+                        }
+                        console.log('CLS:', clsValue);
+                    }).observe({entryTypes: ['layout-shift']});
+                })();
+            </script>
+        </body>
+        </html>
