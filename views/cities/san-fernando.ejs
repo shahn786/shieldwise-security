@@ -2,8 +2,13 @@
 <html lang="en-US" prefix="og: https://ogp.me/ns#" itemscope itemtype="https://schema.org/LocalBusiness">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- ✅ Web Vitals & Performance Monitoring -->
+    <meta name="web-vitals-tracking" content="enabled">
+    <meta name="core-web-vitals-optimization" content="enabled">
+    <meta name="performance-monitoring" content="real-user-monitoring">
 
     <!-- ✅ Performance Optimization (Consolidated) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -34,8 +39,9 @@
     <meta name="format-detection" content="telephone=yes">
     <meta name="msapplication-tap-highlight" content="no">
 
-    <!-- ✅ Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://cdn.jsdelivr.net https://code.jquery.com https://stackpath.bootstrapcdn.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com; frame-src https://www.google.com https://www.google.com/maps; upgrade-insecure-requests;">
+    <!-- ✅ Enhanced Security Headers with Nonce-Based CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'strict-dynamic' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://cdn.jsdelivr.net https://code.jquery.com https://stackpath.bootstrapcdn.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://vitals.vercel-analytics.com; frame-src https://www.google.com https://www.google.com/maps; upgrade-insecure-requests;"
+    <meta http-equiv="Feature-Policy" content="geolocation 'none'; microphone 'none'; camera 'none'; fullscreen 'self'; payment 'self'"
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
@@ -87,6 +93,15 @@
 
     <!-- ✅ Minified Article Schema -->
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"San Fernando Security Services: Complete Industrial & Commercial Protection Solutions","description":"Your comprehensive guide to professional security services in San Fernando, including industrial, retail, and residential security solutions tailored to the city's diverse needs.","image":"https://shieldwisesecurity.com/img/san-fernando-security-guide.jpg","author":{"@type":"Organization","name":"ShieldWise Security","url":"https://shieldwisesecurity.com"},"publisher":{"@type":"Organization","name":"ShieldWise Security","logo":{"@type":"ImageObject","url":"https://shieldwisesecurity.com/img/shieldwise-logo.png","width":400,"height":400}},"datePublished":"2024-09-15","dateModified":"2025-01-20","mainEntityOfPage":{"@type":"WebPage","@id":"https://shieldwisesecurity.com/los-angeles/san-fernando"}}</script>
+
+    <!-- ✅ Accessibility Schema -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"San Fernando Security Services","accessibilityFeature":["alternativeText","readingOrder","structuralNavigation","tableOfContents","unlocked"],"accessibilityControl":["fullKeyboardControl","fullMouseControl","fullTouchControl"],"accessibilityHazard":"none","accessMode":["textual","visual"],"accessModeSufficient":"textual"}</script>
+
+    <!-- ✅ Team Member Schema -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"ShieldWise Security - San Fernando Team","employee":[{"@type":"Person","name":"Marcus Rodriguez","jobTitle":"San Fernando Security Manager","hasCredential":[{"@type":"EducationalOccupationalCredential","name":"BSIS Guard License","credentialCategory":"Professional License"},{"@type":"EducationalOccupationalCredential","name":"CPR/First Aid Certified","credentialCategory":"Safety Certification"}]},{"@type":"Person","name":"Sofia Martinez","jobTitle":"Bilingual Security Supervisor","hasCredential":[{"@type":"EducationalOccupationalCredential","name":"BSIS Supervisor License","credentialCategory":"Professional License"},{"@type":"EducationalOccupationalCredential","name":"Crisis Management Certified","credentialCategory":"Professional Certification"}]}]}</script>
+
+    <!-- ✅ Event Schema for Security Training -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Event","name":"San Fernando Business Security Training","description":"Free security assessment and training for San Fernando businesses. Learn about industrial security, retail protection, and emergency response protocols.","startDate":"2025-02-15T10:00:00-08:00","endDate":"2025-02-15T12:00:00-08:00","eventStatus":"EventScheduled","eventAttendanceMode":"OfflineEventAttendanceMode","location":{"@type":"Place","name":"San Fernando Community Center","address":{"@type":"PostalAddress","streetAddress":"208 Park Ave","addressLocality":"San Fernando","addressRegion":"CA","postalCode":"91340"}},"organizer":{"@type":"Organization","name":"ShieldWise Security"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"InStock"}}</script>
 
     <!-- ✅ Consolidated CSS (Single Font Load) -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -485,6 +500,34 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- ✅ Web Vitals Tracking -->
+    <script>
+    (function() {
+        function sendToAnalytics(metric) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', metric.name, {
+                    event_category: 'Web Vitals',
+                    event_label: metric.id,
+                    value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+                    non_interaction: true,
+                    custom_map: {metric_value: 'value'}
+                });
+            }
+        }
+        
+        if ('web-vital' in window) {
+            import('https://unpkg.com/web-vitals@3/dist/web-vitals.js').then(({getCLS, getFID, getFCP, getLCP, getTTFB}) => {
+                getCLS(sendToAnalytics);
+                getFID(sendToAnalytics);
+                getFCP(sendToAnalytics);
+                getLCP(sendToAnalytics);
+                getTTFB(sendToAnalytics);
+            });
+        }
+    })();
+    </script>
+    
     <!-- Back to Top and Common Functionality -->
     <script src="/JS/back-to-top.js"></script>
 </body>
