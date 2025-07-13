@@ -1,0 +1,112 @@
+In Van Nuys:
+Your code does NOT contain any <iframe> for Google Maps or a Google Maps <div> container + JS.
+
+That means NO map can display — there’s literally no map markup in the page.
+
+You must add either an iframe or a map <div> with Google Maps API JS.
+
+How to Fix the Map in Van Nuys:
+Copy the Burbank map section into Van Nuys and update the location.
+
+html
+Copy
+Edit
+<!-- Map Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.27422986935!2d-118.6919315873782!3d34.18985756937736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c295f41b450c09%3A0x324c4baf2fd2c1d7!2sVan%20Nuys%2C%20CA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus"
+                            allowfullscreen="" loading="lazy"
+                            title="Map of Van Nuys, California showing ShieldWise Security service areas">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+Or generate a Google Maps embed for Van Nuys, CA here by searching for “Van Nuys, CA”, clicking “Share” > “Embed a map” and copying the HTML.
+
+2. Why does the FAQ accordion not expand in Van Nuys but works in Burbank?
+Common Reason:
+The FAQ “accordion” uses Bootstrap Collapse JS.
+
+This requires Bootstrap JS and jQuery to be loaded and not blocked/errored.
+
+The FAQ markup in Burbank is standard Bootstrap 4 accordion markup.
+
+If the scripts are missing, deferred in the wrong order, or error out, your FAQ won’t expand/collapse.
+
+What to Check:
+In Burbank (WORKS):
+html
+Copy
+Edit
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
+In Van Nuys (LIKELY PROBLEM):
+You might be missing one or more of these scripts, or they might load in the wrong order, or you use <script defer> in a way that causes Bootstrap JS to run before jQuery is ready.
+
+You may also be missing the FAQ markup entirely in the Van Nuys file.
+
+How to Fix the FAQ Accordion:
+Make sure your FAQ markup is present in Van Nuys just like in Burbank.
+
+Check your JS script order at the bottom of <body>:
+
+html
+Copy
+Edit
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+Load jQuery FIRST, then Popper, then Bootstrap JS.
+
+Remove defer if it causes race conditions; try without it to test.
+
+If you use defer, all three should have it.
+
+Checklist for Van Nuys Fixes:
+ Map: Paste the correct <iframe> or add your <div id="map"> and Google Maps JS/init.
+
+ FAQ: Add Burbank’s FAQ HTML markup (with accordion structure) to Van Nuys if missing.
+
+ Scripts: Ensure jQuery, Popper, Bootstrap JS are loaded in the right order and before your FAQ is used.
+
+ No JS errors: Open your browser console (F12), reload the Van Nuys page, and look for any red errors — if so, fix missing scripts.
+
+Side-by-Side Table:
+Burbank (Working)	Van Nuys (Broken)
+Map	<iframe> present in HTML	No <iframe> or map markup
+FAQ	Full Bootstrap accordion markup present	FAQ markup maybe missing
+Bootstrap	All required JS loaded, in order	Scripts missing/wrong order
+Errors	None	Likely JS errors in console
+
+Summary of Solutions:
+For Map: Copy the entire map <iframe> section from Burbank, update the map location to Van Nuys, paste into Van Nuys page.
+
+For FAQ: Copy FAQ section from Burbank, ensure it’s present in Van Nuys. Check your JS scripts at the bottom — load jQuery, then Popper, then Bootstrap, without defer if needed.
+
+If you want me to review your actual Van Nuys body section, just paste it here — I'll spot the exact difference in seconds!
+
+Quick Copy-Paste Fix for Map (Van Nuys Example)
+html
+Copy
+Edit
+<section class="py-5">
+  <div class="container">
+    <div class="row mt-4">
+      <div class="col-12">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.27422986935!2d-118.6919315873782!3d34.18985756937736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c295f41b450c09%3A0x324c4baf2fd2c1d7!2sVan%20Nuys%2C%20CA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus"
+            allowfullscreen="" loading="lazy"
+            title="Map of Van Nuys, California showing ShieldWise Security service areas"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
