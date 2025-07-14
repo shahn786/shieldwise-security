@@ -619,68 +619,267 @@
     </section>
 
     <!-- Security Challenges Section -->
-    <section class="py-5 bg-light">
+    <section class="culver-security-challenges-premium">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <h2 class="text-center mb-5">Culver City Security Challenges</h2>
-                    <p class="lead text-center mb-5">As a major entertainment and media hub in the South Bay, Culver City presents unique security challenges that require specialized approaches:</p>
-                    
-                    <div class="row">
-                        <div class="col-md-6 mb-4">
-                            <div class="d-flex align-items-start">
-                                <i class="fas fa-film text-primary mr-3 mt-1"></i>
-                                <div>
-                                    <h5>Studio facility protection</h5>
-                                    <p class="mb-0">Securing film and television production facilities with access control and asset protection.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6 mb-4">
-                            <div class="d-flex align-items-start">
-                                <i class="fas fa-shopping-cart text-primary mr-3 mt-1"></i>
-                                <div>
-                                    <h5>Retail center security</h5>
-                                    <p class="mb-0">Protecting shopping centers and commercial districts from theft and ensuring customer safety.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6 mb-4">
-                            <div class="d-flex align-items-start">
-                                <i class="fas fa-building text-primary mr-3 mt-1"></i>
-                                <div>
-                                    <h5>Corporate campus safety</h5>
-                                    <p class="mb-0">Comprehensive security for media companies and corporate headquarters in the area.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6 mb-4">
-                            <div class="d-flex align-items-start">
-                                <i class="fas fa-home text-primary mr-3 mt-1"></i>
-                                <div>
-                                    <h5>Residential property protection</h5>
-                                    <p class="mb-0">Securing apartment complexes and residential communities throughout Culver City.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-12 mb-4">
-                            <div class="d-flex align-items-start">
-                                <i class="fas fa-calendar-alt text-primary mr-3 mt-1"></i>
-                                <div>
-                                    <h5>Event security management</h5>
-                                    <p class="mb-0">Professional security for film premieres, corporate events, and public gatherings in Culver City venues.</p>
-                                </div>
-                            </div>
-                        </div>
+            <div class="culver-challenges-header">
+                <h2 class="culver-challenges-title">Culver City Security Challenges</h2>
+                <p class="culver-challenges-subtitle">As a major entertainment and media hub in the South Bay, Culver City presents unique security challenges that require specialized approaches:</p>
+            </div>
+            
+            <div class="culver-challenges-grid">
+                <div class="culver-challenge-card">
+                    <div class="culver-challenge-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <div class="culver-challenge-content">
+                        <h3>Studio facility protection</h3>
+                        <p>Securing film and television production facilities with access control and asset protection.</p>
+                    </div>
+                </div>
+                
+                <div class="culver-challenge-card">
+                    <div class="culver-challenge-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="culver-challenge-content">
+                        <h3>Retail center security</h3>
+                        <p>Protecting shopping centers and commercial districts from theft and ensuring customer safety.</p>
+                    </div>
+                </div>
+                
+                <div class="culver-challenge-card">
+                    <div class="culver-challenge-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="culver-challenge-content">
+                        <h3>Corporate campus safety</h3>
+                        <p>Comprehensive security for media companies and corporate headquarters in the area.</p>
+                    </div>
+                </div>
+                
+                <div class="culver-challenge-card">
+                    <div class="culver-challenge-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="culver-challenge-content">
+                        <h3>Residential property protection</h3>
+                        <p>Securing apartment complexes and residential communities throughout Culver City.</p>
+                    </div>
+                </div>
+                
+                <div class="culver-challenge-card culver-challenge-card-wide">
+                    <div class="culver-challenge-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="culver-challenge-content">
+                        <h3>Event security management</h3>
+                        <p>Professional security for film premieres, corporate events, and public gatherings in Culver City venues.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <style>
+        .culver-security-challenges-premium {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .culver-security-challenges-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23dee2e6" stroke-width="0.5" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.4;
+            z-index: 1;
+        }
+
+        .culver-security-challenges-premium .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .culver-challenges-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .culver-challenges-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1a3c64, #2d5a87, #1a3c64);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+            letter-spacing: 1px;
+        }
+
+        .culver-challenges-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #1a3c64, #d4af37, #1a3c64);
+            border-radius: 2px;
+        }
+
+        .culver-challenges-subtitle {
+            font-size: 1.3rem;
+            color: #495057;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .culver-challenges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .culver-challenge-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(26, 60, 100, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .culver-challenge-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1a3c64, #d4af37, #1a3c64);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .culver-challenge-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(26, 60, 100, 0.15);
+        }
+
+        .culver-challenge-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .culver-challenge-card-wide {
+            grid-column: 1 / -1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .culver-challenge-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #1a3c64, #2d5a87);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(26, 60, 100, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .culver-challenge-card:hover .culver-challenge-icon {
+            transform: scale(1.1) rotateY(180deg);
+            background: linear-gradient(135deg, #d4af37, #b8860b);
+        }
+
+        .culver-challenge-icon i {
+            font-size: 1.8rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .culver-challenge-content h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a3c64;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+        }
+
+        .culver-challenge-card:hover .culver-challenge-content h3 {
+            color: #d4af37;
+        }
+
+        .culver-challenge-content p {
+            font-size: 1rem;
+            color: #6c757d;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .culver-security-challenges-premium {
+                padding: 60px 0;
+            }
+
+            .culver-challenges-title {
+                font-size: 2.5rem;
+            }
+
+            .culver-challenges-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .culver-challenges-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .culver-challenge-card {
+                padding: 25px;
+            }
+
+            .culver-challenge-card-wide {
+                grid-column: 1;
+            }
+
+            .culver-challenge-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .culver-challenge-icon i {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .culver-challenges-title {
+                font-size: 2rem;
+            }
+
+            .culver-challenge-card {
+                padding: 20px;
+            }
+        }
+    </style>
 
     <!-- Testimonials Section -->
     <section class="testimonials">
