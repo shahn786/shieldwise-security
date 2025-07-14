@@ -861,41 +861,6 @@
     }
     </script>
 
-    <!-- ✅ Critical CSS Inline for Better Performance -->
-    <style>
-        /* Critical above-the-fold styles */
-        .hero-downtown { min-height: 60vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/img/compton-security-guards.jpg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; }
-        .hero-content { text-align: center; color: white; max-width: 800px; padding: 2rem; }
-        .hero-content h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
-        .hero-content h2 { font-size: 1.5rem; margin-bottom: 2rem; }
-        .btn-primary { background: #1a3c64; border: none; padding: 12px 30px; font-size: 18px; border-radius: 5px; }
-        .loaded { opacity: 1; transition: opacity 0.3s ease; }
-        img:not(.loaded) { opacity: 0; }
-    </style>
-
-    <!-- ✅ External CSS with Performance Optimization -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet"></noscript>
-    
-    <link rel="stylesheet" href="/css/style-cities.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="/css/style-cities.css"></noscript>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
-
-    <!-- ✅ Enhanced Favicon & App Icons -->
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#1a3c64">
-    <meta name="msapplication-TileImage" content="/img/mstile-144x144.png">
-    <meta name="msapplication-config" content="/browserconfig.xml">
-
     <!-- ✅ NEW: Rich Snippets Optimization -->
     <script type="application/ld+json">
     {
@@ -1022,6 +987,22 @@
     fbq('track', 'PageView');
     </script>
 
+    <!-- ✅ External CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style-cities.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- ✅ Enhanced Favicon & App Icons -->
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#1a3c64">
+    <meta name="msapplication-TileImage" content="/img/mstile-144x144.png">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
     <!-- ✅ NEW: Speed & Performance Optimization -->
     <link rel="preload" href="/js/main.js" as="script">
     <link rel="prefetch" href="/css/animations.css">
@@ -1040,11 +1021,11 @@
     <!-- Header Section -->
     <%- include('../partials/Header') %>
 
-    <!-- Hero Section with Background Image -->
+    <!-- Hero Section -->
     <section class="hero-downtown">
         <div class="hero-content">
             <h1>Compton Security Services</h1>
-            <h2>Professional Security Guards Protecting Compton Businesses & Properties</h2>
+            <h2>Professional security solutions for businesses, events, and properties in Compton</h2>
             <a href="/get-quote" class="btn btn-primary btn-lg">Get a Free Security Quote</a>
             <p class="mt-3"><a href="tel:+17147167430" class="text-white"><i class="fas fa-phone-alt mr-2"></i>(714) 716-7430</a> - Available 24/7</p>
         </div>
@@ -1053,23 +1034,14 @@
     <!-- Introduction Section -->
     <section class="downtown-security">
         <div class="container">
-            <h2 class="section-title">Trusted Security Guard Services in Compton</h2>
+            <h2 class="section-title">Comprehensive Security Solutions for Compton</h2>
             <div class="content-wrapper">
                 <div class="text-content">
-                    <p>ShieldWise Security provides <span class="highlight">professional security guard services</span> tailored specifically to the unique needs of Compton businesses, warehouses, and properties. With our extensive knowledge of Compton's security landscape, we deliver unmatched protection and peace of mind.</p>
-                    <p>Our team of highly trained, licensed and insured security professionals understands the diverse security requirements across different sectors in Compton, from industrial facilities to retail centers and residential areas. We combine advanced security protocols with a customer-focused approach to create security solutions that address your specific concerns.</p>
+                    <p>ShieldWise Security provides <span class="highlight">professional security guard services</span> tailored specifically to the unique needs of Compton businesses, properties, and events. With our extensive knowledge of the South Bay's security challenges and landscape, we deliver unmatched protection and peace of mind.</p>
+                    <p>Our team of highly trained and licensed security professionals understands the diverse security requirements across Compton. We combine advanced security protocols with a customer-focused approach to create security solutions that address your specific concerns.</p>
                 </div>
                 <div class="image-content">
-                    <picture>
-                        <source srcset="/img/shahn1.webp" type="image/webp">
-                        <source srcset="/img/shahn1.avif" type="image/avif">
-                        <img src="/img/shahn1.png" 
-                             alt="Professional licensed security guard in Compton providing 24/7 protection services for businesses and industrial facilities" 
-                             loading="lazy" 
-                             width="400" 
-                             height="300"
-                             fetchpriority="high">
-                    </picture>
+                    <img src="/img/shahn1.png" alt="Professional Security Guards in Compton" loading="lazy">
                 </div>
             </div>
         </div>
@@ -1079,49 +1051,56 @@
     <section class="our-services">
         <div class="container">
             <h2>Our Compton Security Services</h2>
-            <p>ShieldWise Security offers a comprehensive range of security services tailored to the unique needs of Compton businesses and properties. Our experienced team provides customized security solutions to address your specific concerns.</p>
+            <p>ShieldWise Security offers a comprehensive range of security services tailored to Compton's unique needs. Our experienced team provides customized security solutions to address your specific concerns.</p>
 
             <div class="services-grid">
-                <!-- Service 1 -->
+                <!-- Service Cards -->
                 <div class="service-item">
                     <i class="fas fa-industry"></i>
                     <h3>Industrial Security</h3>
                     <p>Specialized security for warehouses, manufacturing facilities, and industrial properties in Compton Industrial Park.</p>
                 </div>
 
-                <!-- Service 2 -->
                 <div class="service-item">
                     <i class="fas fa-building"></i>
                     <h3>Commercial Building Security</h3>
                     <p>Professional security for office buildings, retail centers, and commercial properties throughout Compton.</p>
                 </div>
 
-                <!-- Service 3 -->
                 <div class="service-item">
                     <i class="fas fa-store"></i>
                     <h3>Retail Security</h3>
                     <p>Combat theft and ensure a safe shopping environment with our retail security solutions for Compton stores.</p>
                 </div>
 
-                <!-- Service 4 -->
                 <div class="service-item">
                     <i class="fas fa-users"></i>
                     <h3>Event Security</h3>
                     <p>Comprehensive event security services for gatherings, concerts, and special events in Compton.</p>
                 </div>
 
-                <!-- Service 5 -->
                 <div class="service-item">
                     <i class="fas fa-home"></i>
                     <h3>Residential Security</h3>
                     <p>Professional security services for residential properties and complexes in Compton.</p>
                 </div>
 
-                <!-- Service 6 -->
                 <div class="service-item">
                     <i class="fas fa-car"></i>
                     <h3>Mobile Patrol</h3>
                     <p>Regular security patrols and rapid response throughout Compton with 2-hour emergency deployment.</p>
+                </div>
+
+                <div class="service-item">
+                    <i class="fas fa-hard-hat"></i>
+                    <h3>Construction Site Security</h3>
+                    <p>24/7 security for construction sites and equipment in Compton preventing theft and vandalism.</p>
+                </div>
+
+                <div class="service-item">
+                    <i class="fas fa-video"></i>
+                    <h3>Surveillance Systems</h3>
+                    <p>Advanced video monitoring and security system integration for comprehensive protection.</p>
                 </div>
             </div>
         </div>
@@ -1132,8 +1111,8 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h2 class="mb-4">Compton Security Challenges & Our Solutions</h2>
-                    <p>Compton's diverse industrial and commercial landscape presents unique security challenges. Our specialized approach addresses each sector's specific needs with proven strategies:</p>
+                    <h2 class="mb-4">Compton Security Challenges</h2>
+                    <p>Compton presents unique security challenges that require specialized approaches:</p>
                     <ul class="list-unstyled">
                         <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Industrial Complex Security - Compton Industrial Park houses over 200 warehouses and distribution centers</li>
                         <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Gateway Towne Center Protection - Specialized retail security and loss prevention</li>
@@ -1144,57 +1123,6 @@
                 <div class="col-lg-6">
                     <img src="/img/2.webp" alt="Compton Security Services California" class="img-fluid rounded shadow">
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ✅ NEW: Case Studies & Success Stories Section -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Compton Security Success Stories</h2>
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h3 class="h5 card-title text-primary">Industrial Park Theft Reduction</h3>
-                            <p class="card-text">Deployed armed security guards at a 500,000 sq ft distribution center in Compton Industrial Park. Result: <strong>87% reduction in theft incidents</strong> within 6 months.</p>
-                            <div class="text-muted small">
-                                <i class="fas fa-map-marker-alt mr-1"></i>Compton Industrial Park
-                                <span class="mx-2">|</span>
-                                <i class="fas fa-calendar mr-1"></i>6-month engagement
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h3 class="h5 card-title text-primary">Gateway Towne Center Protection</h3>
-                            <p class="card-text">Implemented comprehensive retail security solution including loss prevention and crowd control. Result: <strong>Zero major incidents</strong> during busy holiday seasons.</p>
-                            <div class="text-muted small">
-                                <i class="fas fa-map-marker-alt mr-1"></i>Gateway Towne Center
-                                <span class="mx-2">|</span>
-                                <i class="fas fa-calendar mr-1"></i>Ongoing since 2020
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h3 class="h5 card-title text-primary">Emergency Response Excellence</h3>
-                            <p class="card-text">Rapid deployment to warehouse break-in. Guards arrived within <strong>90 minutes</strong> and apprehended suspects, preventing $250,000 in inventory loss.</p>
-                            <div class="text-muted small">
-                                <i class="fas fa-map-marker-alt mr-1"></i>East Compton Warehouse
-                                <span class="mx-2">|</span>
-                                <i class="fas fa-clock mr-1"></i>Emergency response
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-4">
-                <a href="/get-quote" class="btn btn-primary btn-lg">Get Your Custom Security Assessment</a>
             </div>
         </div>
     </section>
@@ -1244,7 +1172,6 @@
             <h2>What Our Compton Clients Say</h2>
 
             <div class="testimonials-grid">
-                <!-- Testimonial 1 -->
                 <div class="testimonial">
                     <div class="stars">
                         <i class="fas fa-star"></i>
@@ -1258,7 +1185,6 @@
                     <div class="position">Operations Manager, Compton Industrial Park</div>
                 </div>
 
-                <!-- Testimonial 2 -->
                 <div class="testimonial">
                     <div class="stars">
                         <i class="fas fa-star"></i>
@@ -1272,7 +1198,6 @@
                     <div class="position">Regional Manager, Gateway Towne Center</div>
                 </div>
 
-                <!-- Testimonial 3 -->
                 <div class="testimonial">
                     <div class="stars">
                         <i class="fas fa-star"></i>
@@ -1296,7 +1221,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="accordion" id="comptonFAQ">
-                        <!-- FAQ Item 1 -->
+                        <!-- FAQ Items -->
                         <div class="card mb-3">
                             <div class="card-header" id="headingOne">
                                 <h3 class="mb-0 h5">
@@ -1307,12 +1232,11 @@
                             </div>
                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#comptonFAQ">
                                 <div class="card-body">
-                                    We offer comprehensive security services in Compton including: Industrial & warehouse security for Compton Industrial Park, Retail security for Gateway Towne Center, Commercial building security, Residential community security, Event security, and Mobile patrol services. All services are available 24/7 with rapid 2-hour response.
+                                    We offer comprehensive security services in Compton including: Industrial & warehouse security for Compton Industrial Park, Retail security for Gateway Towne Center, Commercial building security, Armed security guards, Residential community security, Event security, and Mobile patrol services. All services are available 24/7 with rapid 2-hour response.
                                 </div>
                             </div>
                         </div>
 
-                        <!-- FAQ Item 2 -->
                         <div class="card mb-3">
                             <div class="card-header" id="headingTwo">
                                 <h3 class="mb-0 h5">
@@ -1328,7 +1252,6 @@
                             </div>
                         </div>
 
-                        <!-- FAQ Item 3 -->
                         <div class="card mb-3">
                             <div class="card-header" id="headingThree">
                                 <h3 class="mb-0 h5">
@@ -1413,58 +1336,11 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- ✅ Optimized JavaScript Loading -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
-    
-    <!-- Critical Performance Script -->
-    <script>
-        // Immediate page speed optimization
-        document.addEventListener('DOMContentLoaded', function() {
-            // Lazy load images
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('loaded');
-                            imageObserver.unobserve(entry.target);
-                        }
-                    });
-                });
-                images.forEach(img => imageObserver.observe(img));
-            }
-            
-            // Preload critical resources on user interaction
-            let preloaded = false;
-            const preloadOnInteraction = () => {
-                if (!preloaded) {
-                    const link = document.createElement('link');
-                    link.rel = 'prefetch';
-                    link.href = '/get-quote';
-                    document.head.appendChild(link);
-                    preloaded = true;
-                }
-            };
-            
-            ['scroll', 'mousedown', 'touchstart'].forEach(event => {
-                document.addEventListener(event, preloadOnInteraction, { once: true, passive: true });
-            });
-        });
-    </script>
-    
-    <!-- Back to Top and Common Functionality - Deferred -->
-    <script src="/JS/back-to-top.js" defer></script>
-    
-    <!-- ✅ Voice Search Optimization Script -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "SpeakableSpecification",
-        "cssSelector": [".hero-content h1", ".hero-content h2", ".section-title", ".faq-question"],
-        "xpath": ["//h1", "//h2", "//h3[contains(@class, 'section-title')]"]
-    }
-    </script>
+    <!-- Bootstrap and jQuery JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Back to Top and Common Functionality -->
+    <script src="/JS/back-to-top.js"></script>
 </body>
 </html>
