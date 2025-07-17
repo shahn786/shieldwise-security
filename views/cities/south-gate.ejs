@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en-US" prefix="og: https://ogp.me/ns#" itemscope itemtype="https://schema.org/LocalBusiness">
 <head>
@@ -5,20 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+    <!-- ✅ Strengthened Content Security Policy -->
     <meta http-equiv="Content-Security-Policy" content="
-      default-src 'self' 'unsafe-inline' 'unsafe-eval' *.googleapis.com *.gstatic.com *.cloudflare.com *.jsdelivr.net www.google.com maps.googleapis.com maps.gstatic.com maps.google.com;
-      frame-src 'self' www.google.com maps.google.com;
+      default-src 'self';
+      script-src 'self' 'nonce-security-script' 
+        https://www.googletagmanager.com 
+        https://www.google-analytics.com 
+        https://code.jquery.com 
+        https://cdn.jsdelivr.net 
+        https://cdnjs.cloudflare.com 
+        https://stackpath.bootstrapcdn.com;
+      style-src 'self' 'nonce-security-style'
+        https://fonts.googleapis.com 
+        https://cdn.jsdelivr.net 
+        https://stackpath.bootstrapcdn.com 
+        https://cdnjs.cloudflare.com;
+      font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+      img-src 'self' data: https:;
+      connect-src 'self' https://www.google-analytics.com https://www.clarity.ms;
+      frame-src 'self' https://www.google.com https://maps.google.com;
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self';
+      upgrade-insecure-requests;
     ">
 
     <!-- ✅ Performance Optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://stackpath.bootstrapcdn.com">
 
-    <!-- ✅ Enhanced SEO Meta Tags - Optimized for CTR -->
-    <title>🛡️ #1 South Gate Security Guards | Industrial & Manufacturing Protection | ShieldWise Security</title>
+    <!-- ✅ Optimized SEO Meta Tags -->
+    <title>🛡️ South Gate Security Guards | Industrial Protection | ShieldWise</title>
     <meta name="description" content="★★★★★ Rated South Gate Security Guards. 2-hour emergency deployment! Industrial, Tweedy Mile, bilingual security services. Licensed, bonded, insured. Call (714) 716-7430!">
+    <meta name="keywords" content="South Gate security guards, industrial security South Gate, Tweedy Mile security, bilingual security guards, manufacturing security, commercial security South Gate, emergency security response, BSIS licensed security">
     <meta name="author" content="ShieldWise Security">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="theme-color" content="#1a3c64">
@@ -42,8 +66,11 @@
     <link rel="alternate" hreflang="en-US" href="https://shieldwisesecurity.com/los-angeles/south-gate">
     <link rel="alternate" hreflang="es-US" href="https://shieldwisesecurity.com/es/los-angeles/south-gate">
 
+    <!-- ✅ Sitemap Reference -->
+    <link rel="sitemap" type="application/xml" href="https://shieldwisesecurity.com/sitemap.xml">
+
     <!-- ✅ Enhanced Open Graph Meta Tags -->
-    <meta property="og:title" content="🛡️ #1 South Gate Security Guards | Industrial & Tweedy Mile Protection">
+    <meta property="og:title" content="🛡️ South Gate Security Guards | Industrial Protection">
     <meta property="og:description" content="★★★★★ Professional security services in South Gate. Immediate 2-hour deployment! Industrial, bilingual, Tweedy Mile security. Licensed & insured since 2010.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://shieldwisesecurity.com/los-angeles/south-gate">
@@ -59,13 +86,12 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@shieldwisesec">
     <meta name="twitter:creator" content="@shieldwisesec">
-    <meta name="twitter:title" content="🛡️ #1 South Gate Security Guards | 2-Hour Response Time">
+    <meta name="twitter:title" content="🛡️ South Gate Security Guards | 2-Hour Response">
     <meta name="twitter:description" content="★★★★★ Professional security guards in South Gate. Industrial, Tweedy Mile, bilingual protection. Emergency deployment in 2 hours. Call (714) 716-7430!">
     <meta name="twitter:image" content="https://shieldwisesecurity.com/img/south-gate-security-guards.jpg">
     <meta name="twitter:image:alt" content="Elite security team protecting South Gate businesses">
 
     <!-- ✅ Advanced SEO & Technical Tags -->
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1, max-preview:-1">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="copyright" content="© 2025 ShieldWise Security. All rights reserved.">
@@ -78,8 +104,38 @@
     <link rel="preload" href="/css/style-cities.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/css/style-cities.css"></noscript>
 
+    <!-- ✅ Critical Image Preloading with fetchpriority -->
+    <link rel="preload" as="image" href="/img/south-gate-security-guards.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="/img/shieldwise-logo.png" fetchpriority="high">
+
+    <!-- ✅ WebSite Schema Markup -->
+    <script type="application/ld+json" nonce="security-script">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "ShieldWise Security - South Gate",
+        "url": "https://shieldwisesecurity.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://shieldwisesecurity.com/search?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "ShieldWise Security Services",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://shieldwisesecurity.com/img/shieldwise-logo.png"
+            }
+        }
+    }
+    </script>
+
     <!-- ✅ Breadcrumb Schema -->
-    <script type="application/ld+json">
+    <script type="application/ld+json" nonce="security-script">
     {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -107,7 +163,7 @@
     </script>
 
     <!-- ✅ Enhanced SecurityService Schema -->
-    <script type="application/ld+json">
+    <script type="application/ld+json" nonce="security-script">
     {
         "@context": "https://schema.org",
         "@type": "SecurityService",
@@ -360,7 +416,7 @@
     </script>
 
     <!-- ✅ Enhanced LocalBusiness Schema -->
-    <script type="application/ld+json">
+    <script type="application/ld+json" nonce="security-script">
     {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -439,7 +495,7 @@
     </script>
 
     <!-- ✅ Enhanced FAQ Schema -->
-    <script type="application/ld+json">
+    <script type="application/ld+json" nonce="security-script">
     {
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -489,7 +545,7 @@
     </script>
 
     <!-- ✅ Article Schema -->
-    <script type="application/ld+json">
+    <script type="application/ld+json" nonce="security-script">
     {
         "@context": "https://schema.org",
         "@type": "Article",
@@ -521,10 +577,7 @@
     </script>
 
     <!-- ✅ Performance Optimization -->
-    <link rel="preload" href="/css/style-cities.css" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" as="style">
-    <link rel="preload" as="image" href="/img/south-gate-security-guards.jpg">
-    <link rel="preload" as="image" href="/img/shieldwise-logo.png">
 
     <!-- ✅ External CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -547,25 +600,6 @@
     <!-- ✅ Additional Meta for AI/Voice Search -->
     <meta name="voice-search-keywords" content="security guard near me, South Gate security, industrial security, Tweedy Mile security, bilingual security guards">
     <meta name="speakable" content="name,description,telephone">
-
-    <!-- ✅ Analytics & Tracking -->
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
-
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "YOUR_CLARITY_PROJECT_ID");
-    </script>
 </head>
 
 <body id="top" itemscope itemtype="https://schema.org/WebPage">
@@ -591,7 +625,7 @@
                     <p>Our security professionals are thoroughly trained in the unique requirements of South Gate's industrial districts, retail areas, and residential communities. We provide advanced security protocols combined with bilingual communication capabilities to serve this diverse community effectively.</p>
                 </div>
                 <div class="image-content">
-                    <img src="/img/shahn1.png" alt="Professional licensed security guards providing comprehensive protection services in South Gate, CA industrial districts and Tweedy Mile business areas" loading="lazy" width="500" height="300">
+                    <img src="/img/shahn1.png" alt="Professional licensed security guards providing comprehensive protection services in South Gate, CA industrial districts and Tweedy Mile business areas" loading="lazy" width="500" height="300" fetchpriority="high">
                 </div>
             </div>
         </div>
@@ -726,8 +760,6 @@
                         title="Map of South Gate, California showing ShieldWise Security service areas"
                       ></iframe>
                     </div>
-
-
                 </div>
             </div>
         </div>
@@ -784,10 +816,14 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- FAQ Section - Centered Title -->
     <section class="py-5 faq-section" id="faq">
         <div class="container">
-            <h2 class="text-center mb-5 fade-in">Frequently Asked Questions</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-5 fade-in">Frequently Asked Questions</h2>
+                </div>
+            </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="accordion fade-in" id="southGateFAQ">
@@ -930,17 +966,13 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- jQuery and Bootstrap JS - Fixed to match working Burbank configuration -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- JavaScript Libraries with nonce -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" nonce="security-script"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" nonce="security-script"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" nonce="security-script"></script>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script>
+    <!-- Optimized JavaScript -->
+    <script nonce="security-script">
         // Wait for DOM to be fully loaded
         document.addEventListener('DOMContentLoaded', function() {
             console.log('DOM loaded successfully');
@@ -992,31 +1024,14 @@
             // Initialize navbar scroll effect
             function initNavbar() {
                 const navbar = document.querySelector('.navbar');
-
-                window.addEventListener('scroll', function() {
-                    if (window.pageYOffset > 50) {
-                        navbar.classList.add('scrolled');
-                    } else {
-                        navbar.classList.remove('scrolled');
-                    }
-                });
-            }
-
-            // Test map loading
-            function testMapLoading() {
-                const mapIframe = document.querySelector('.embed-responsive iframe');
-                if (mapIframe) {
-                    console.log('Map iframe found, src:', mapIframe.src);
-
-                    mapIframe.addEventListener('load', function() {
-                        console.log('Map loaded successfully');
+                if (navbar) {
+                    window.addEventListener('scroll', function() {
+                        if (window.pageYOffset > 50) {
+                            navbar.classList.add('scrolled');
+                        } else {
+                            navbar.classList.remove('scrolled');
+                        }
                     });
-
-                    mapIframe.addEventListener('error', function(e) {
-                        console.error('Map failed to load:', e);
-                    });
-                } else {
-                    console.error('Map iframe not found');
                 }
             }
 
@@ -1024,7 +1039,6 @@
             initAnimations();
             initBackToTop();
             initNavbar();
-            testMapLoading();
         });
 
         // jQuery ready function for Bootstrap components
@@ -1044,11 +1058,6 @@
                 button.addClass('collapsed');
             });
 
-            // Test FAQ button clicks
-            $('[data-toggle="collapse"]').on('click', function() {
-                console.log('FAQ button clicked:', $(this).attr('data-target'));
-            });
-
             // Smooth scrolling for anchor links
             $('a[href^="#"]').on('click', function(event) {
                 const target = $(this.getAttribute('href'));
@@ -1066,7 +1075,6 @@
 
         // Fallback for older browsers
         if (typeof IntersectionObserver === 'undefined') {
-            // Fallback animation for older browsers
             window.addEventListener('scroll', function() {
                 const elements = document.querySelectorAll('.fade-in');
                 elements.forEach(element => {
@@ -1080,3 +1088,23 @@
             });
         }
     </script>
+
+    <!-- Analytics Scripts - Loaded asynchronously -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID" nonce="security-script"></script>
+    <script nonce="security-script">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
+    <!-- Microsoft Clarity - Loaded asynchronously -->
+    <script type="text/javascript" nonce="security-script">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "YOUR_CLARITY_PROJECT_ID");
+    </script>
+</body>
+</html>
