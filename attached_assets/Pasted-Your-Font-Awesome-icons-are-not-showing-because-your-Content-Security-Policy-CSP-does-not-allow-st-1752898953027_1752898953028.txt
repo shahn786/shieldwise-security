@@ -1,0 +1,70 @@
+Your Font Awesome icons are not showing because your Content Security Policy (CSP) does not allow stylesheets or fonts from the Font Awesome CDN. Even though you included the Font Awesome stylesheet and preloaded fonts, your CSP is blocking them.
+
+The Problem
+Your CSP for font-src is:
+
+html
+Copy
+Edit
+font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net;
+But your Font Awesome stylesheet and its fonts are served from cdnjs.cloudflare.com, specifically:
+
+CSS: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css
+
+Fonts: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/...
+
+So, the browser blocks Font Awesome fonts (woff2 files) because cdnjs.cloudflare.com isn’t in your font-src list.
+
+How to Fix
+1. Update Your CSP to Allow cdnjs.cloudflare.com
+Find this section in your <meta http-equiv="Content-Security-Policy"...> tag:
+
+html
+Copy
+Edit
+font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net;
+Change it to:
+
+html
+Copy
+Edit
+font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
+2. (Optional but Recommended) Allow Font Awesome’s CSS as Well
+Your style-src should already allow https://cdnjs.cloudflare.com, which is correct:
+
+html
+Copy
+Edit
+style-src 'self' 'nonce-security-style' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
+So you only need to add the font domain!
+
+3. Clear Your Cache and Refresh
+After updating your CSP, clear your browser cache and do a hard refresh (Ctrl+F5 or Cmd+Shift+R).
+
+Example: Corrected CSP Meta Tag
+html
+Copy
+Edit
+<meta http-equiv="Content-Security-Policy"
+  content="
+    default-src 'self';
+    script-src 'self' 'nonce-security-script' https://www.googletagmanager.com https://code.jquery.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.google-analytics.com;
+    style-src 'self' 'nonce-security-style' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
+    font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net **https://cdnjs.cloudflare.com**;
+    img-src 'self' data: https: *.google-analytics.com;
+    connect-src 'self' https://www.google-analytics.com;
+    frame-src 'self' https://www.google.com;
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    upgrade-insecure-requests;
+  ">
+(see the bolded new addition)
+
+TL;DR
+Add https://cdnjs.cloudflare.com to your font-src in your Content Security Policy.
+
+Save, clear cache, and reload.
+
+Your icons should now display perfectly!
+If they still don’t appear, let me know your browser and check your browser console for any remaining errors.
