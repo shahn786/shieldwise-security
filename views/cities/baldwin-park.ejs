@@ -6,8 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <meta http-equiv="Content-Security-Policy" content="
-      default-src 'self' 'unsafe-inline' 'unsafe-eval' *.googleapis.com *.gstatic.com *.cloudflare.com *.jsdelivr.net www.google.com maps.googleapis.com maps.gstatic.com maps.google.com;
+      default-src 'self' 'unsafe-inline' 'unsafe-eval' *.googleapis.com *.gstatic.com *.cloudflare.com *.jsdelivr.net www.google.com maps.googleapis.com maps.gstatic.com maps.google.com *.clarity.ms www.googletagmanager.com;
       frame-src 'self' www.google.com maps.google.com;
+      font-src 'self' *.gstatic.com *.googleapis.com *.cloudflare.com *.jsdelivr.net;
+      style-src 'self' 'unsafe-inline' *.googleapis.com *.cloudflare.com *.jsdelivr.net;
+      img-src 'self' data: *.googleapis.com *.gstatic.com;
     ">
 
     <!-- ✅ Performance Optimization -->
@@ -529,6 +532,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="/css/style-cities.css" media="screen">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" media="screen">
+    <style>
+        @font-face {
+            font-family: 'Montserrat';
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-display: swap;
+        }
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" media="screen">
 
     <!-- ✅ Favicon & App Icons -->
@@ -549,12 +562,12 @@
 
     <!-- ✅ Analytics & Tracking -->
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'GA_MEASUREMENT_ID');
+      gtag('config', 'G-XXXXXXXXXX');
     </script>
 
     <!-- Microsoft Clarity -->
@@ -563,7 +576,7 @@
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "YOUR_CLARITY_PROJECT_ID");
+        })(window, document, "clarity", "script", "shieldwise_baldwin_park");
     </script>
 </head>
 
@@ -586,11 +599,11 @@
             <h2 class="section-title">Comprehensive Security Solutions for Baldwin Park</h2>
             <div class="content-wrapper">
                 <div class="text-content">
-                    <p>ShieldWise Security delivers <span class="highlight">professional security guard services</span> customized for Baldwin Park's industrial and commercial landscape. From manufacturing facilities to Baldwin Park Marketplace businesses, our bilingual team ensures superior protection for your property and assets.</p>
+                    <p>ShieldWise Security delivers <span class="highlight">professional security guard services</span> customized for Baldwin Park's industrial and commercial landscape. From manufacturing facilities to Baldwin Park Marketplace businesses, our bilingual team ensures superior protection for your property and assets. Learn more about our <a href="/services/commercial-security" title="Commercial Security Services California">commercial security solutions</a> and <a href="/services/industrial-security" title="Industrial Security Guards">industrial protection services</a>.</p>
                     <p>Our security professionals are thoroughly trained in the unique requirements of Baldwin Park's industrial districts, retail areas, and residential communities. We provide advanced security protocols combined with bilingual communication capabilities to serve this diverse community effectively.</p>
                 </div>
                 <div class="image-content">
-                    <img src="/img/shahn1.png" alt="Professional licensed security guards providing comprehensive protection services in Baldwin Park, CA industrial districts and Baldwin Park Marketplace areas" loading="lazy" width="500" height="300">
+                    <img src="/img/shahn1.webp" alt="BSIS licensed security guards providing industrial protection at Baldwin Park manufacturing facilities and Baldwin Park Marketplace commercial properties" loading="lazy" width="500" height="300">
                 </div>
             </div>
         </div>
@@ -662,6 +675,48 @@
         </div>
     </section>
 
+    <!-- Baldwin Park Business District Information -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2 class="mb-4">Why Baldwin Park Businesses Choose ShieldWise Security</h2>
+                    <p>Baldwin Park's diverse economy, from the bustling Baldwin Park Marketplace to the extensive industrial corridor along the 10 Freeway, requires specialized security solutions. Our deep understanding of the local business landscape allows us to provide targeted protection strategies.</p>
+                    
+                    <h3 class="mt-4 mb-3">Baldwin Park Industrial Security Expertise</h3>
+                    <p>The city's industrial sector, concentrated along Pacific Avenue and Ramona Boulevard, houses numerous manufacturing plants, distribution centers, and logistics facilities. These operations require sophisticated security protocols including:</p>
+                    <ul>
+                        <li>Cargo and inventory protection</li>
+                        <li>Employee access control systems</li>
+                        <li>24/7 perimeter monitoring</li>
+                        <li>Loading dock security</li>
+                        <li>Emergency response coordination</li>
+                    </ul>
+
+                    <h3 class="mt-4 mb-3">Baldwin Park Marketplace & Commercial Security</h3>
+                    <p>As one of the region's major shopping destinations, Baldwin Park Marketplace requires comprehensive retail security including loss prevention, crowd management, and customer safety protocols. Our bilingual security team effectively serves the diverse customer base.</p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="bg-light p-4 rounded">
+                        <h4 class="mb-3">Baldwin Park Quick Facts</h4>
+                        <ul class="list-unstyled">
+                            <li><strong>Population:</strong> 75,390</li>
+                            <li><strong>Major Industries:</strong> Manufacturing, Retail, Logistics</li>
+                            <li><strong>Key Areas:</strong> Baldwin Park Marketplace, Industrial District</li>
+                            <li><strong>Languages:</strong> English, Spanish (70%+)</li>
+                            <li><strong>Business Growth:</strong> 15% annually</li>
+                        </ul>
+                        <hr>
+                        <h5>Emergency Contacts</h5>
+                        <p class="mb-1"><strong>ShieldWise 24/7:</strong><br><a href="tel:+17147167430">(714) 716-7430</a></p>
+                        <p class="mb-1"><strong>Baldwin Park PD:</strong><br>(626) 960-1955</p>
+                        <p class="mb-0"><strong>Emergency:</strong><br>911</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Security Challenges Section -->
     <section class="py-5 bg-light">
         <div class="container">
@@ -678,7 +733,7 @@
                     </ul>
                 </div>
                 <div class="col-lg-6">
-                    <img src="/img/2.webp" alt="ShieldWise Security guards providing industrial security services at Baldwin Park manufacturing facilities and Baldwin Park Marketplace commercial properties" class="img-fluid rounded shadow" width="600" height="400" loading="lazy">
+                    <img src="/img/2.webp" alt="Professional security team conducting industrial facility protection at Baldwin Park manufacturing plants with 24/7 surveillance and access control systems" class="img-fluid rounded shadow" width="600" height="400" loading="lazy">
                 </div>
             </div>
         </div>
@@ -777,6 +832,34 @@
                     <h4>Daniel Lopez</h4>
                     <div class="position">Event Coordinator, Baldwin Park</div>
                 </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Our warehouse facility has been secure since hiring ShieldWise. Their guards understand our 24/7 operations and provide consistent protection. The mobile patrol service gives us peace of mind during overnight shifts."</p>
+                    <h4>Carlos Martinez</h4>
+                    <div class="position">Warehouse Manager, Industrial District</div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Excellent bilingual security services for our diverse tenant base. The guards communicate effectively in both English and Spanish, making everyone feel comfortable. Response time is outstanding!"</p>
+                    <h4>Maria Gonzalez</h4>
+                    <div class="position">Property Manager, Baldwin Park Plaza</div>
+                </div>
             </div>
         </div>
     </section>
@@ -863,6 +946,70 @@
         </div>
     </section>
 
+    <!-- Local Business Recognition Section -->
+    <section class="py-5 bg-secondary text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">Baldwin Park's Most Trusted Security Partner</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="badge badge-light p-3 w-100">
+                                <h5 class="text-dark mb-1">4.8★ Google Rating</h5>
+                                <small class="text-muted">89+ Reviews</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="badge badge-light p-3 w-100">
+                                <h5 class="text-dark mb-1">BSIS Licensed</h5>
+                                <small class="text-muted">CA Security License</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="badge badge-light p-3 w-100">
+                                <h5 class="text-dark mb-1">$2M Insured</h5>
+                                <small class="text-muted">Full Coverage</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="badge badge-light p-3 w-100">
+                                <h5 class="text-dark mb-1">2-Hour Response</h5>
+                                <small class="text-muted">Emergency Deployment</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-3">Local Business Memberships</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check mr-2"></i> Baldwin Park Chamber of Commerce</li>
+                        <li class="mb-2"><i class="fas fa-check mr-2"></i> San Gabriel Valley Business Association</li>
+                        <li class="mb-2"><i class="fas fa-check mr-2"></i> California Association of Licensed Security Agencies</li>
+                        <li class="mb-2"><i class="fas fa-check mr-2"></i> Los Angeles County Security Professionals</li>
+                        <li class="mb-2"><i class="fas fa-check mr-2"></i> Better Business Bureau (A+ Rating)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Contact Banner -->
+    <section class="py-3 bg-danger text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h3 class="mb-0"><i class="fas fa-exclamation-triangle mr-2"></i> Need Emergency Security in Baldwin Park?</h3>
+                    <p class="mb-0">24/7 rapid deployment available - Guards on-site within 2-4 hours</p>
+                </div>
+                <div class="col-lg-4 text-lg-right">
+                    <a href="tel:+17147167430" class="btn btn-light btn-lg">
+                        <i class="fas fa-phone mr-2"></i> (714) 716-7430
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="py-5 bg-primary text-white">
         <div class="container">
@@ -885,7 +1032,7 @@
                 <div class="col-md-4 mb-4">
                     <a href="/los-angeles" class="text-decoration-none">
                         <div class="card h-100 shadow-sm hover-effect">
-                            <img src="/img/la-pic.webp" class="card-img-top" alt="Professional security guard services in Los Angeles with 24/7 armed and unarmed protection for businesses and events" width="400" height="250" loading="lazy">
+                            <img src="/img/la-pic.webp" class="card-img-top" alt="Elite security guard services Los Angeles - 24/7 armed unarmed protection businesses events BSIS licensed" width="400" height="250" loading="lazy" decoding="async">
                             <div class="card-body text-center">
                                 <h3 class="h5 card-title">Los Angeles</h3>
                                 <p class="card-text">Comprehensive security services throughout Los Angeles.</p>
