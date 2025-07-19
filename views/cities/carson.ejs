@@ -1,11 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en-US" itemscope itemtype="https://schema.org/WebPage">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://code.jquery.com https://stackpath.bootstrapcdn.com https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https:; frame-src 'self' https://www.google.com;">
+    <!-- Security Headers (Fixed - Removed unsafe-inline) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://stackpath.bootstrapcdn.com https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https:; frame-src 'self' https://www.google.com;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -29,21 +30,9 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" as="style">
     <link rel="preload" href="/img/carson-security-hero.webp" as="image" fetchpriority="high">
 
-    <!-- Enhanced SEO Meta Tags -->
+    <!-- Enhanced SEO Meta Tags (Removed outdated keywords meta tag) -->
     <title>Carson Security Guards | Professional 24/7 Security Services | ShieldWise Security | BSIS Licensed</title>
     <meta name="description" content="Award-winning security guard services in Carson, CA. Licensed BSIS guards, 24/7 armed & unarmed protection for businesses, events, properties. Emergency response 1-4 hours. Free consultation. $35-$95/hour.">
-    <meta name="keywords" content="Carson security guards, Carson security services, Carson security company, business security Carson, armed security Carson, unarmed security Carson, event security Carson, retail security Carson, professional security Carson, Los Angeles security patrol, commercial security Carson, security officers Carson, Carson patrol services, Carson security experts, BSIS licensed Carson, 24/7 security Carson">
-
-    <!-- AI Search Optimization Meta Tags -->
-    <meta name="ai-search-intent" content="Find professional security guard services in Carson, California">
-    <meta name="ai-search-service" content="Armed security guards, unarmed security guards, event security, retail security, commercial security, mobile patrol, construction site security">
-    <meta name="ai-search-price" content="$35-$95 per hour, competitive rates, free consultation, emergency deployment">
-    <meta name="ai-search-benefit" content="Crime reduction, 24/7 protection, BSIS licensed, rapid response, professional guards">
-    <meta name="ai-search-location" content="Carson, California, Los Angeles County, surrounding areas">
-    <meta name="ai-search-credentials" content="BSIS licensed, insured, bonded, background checked, trained professionals">
-
-    <!-- Voice Search Optimization -->
-    <meta name="speakable-sections" content="hero-section, services-overview, contact-info">
 
     <!-- Multilingual Support -->
     <link rel="alternate" hreflang="en-US" href="https://shieldwisesecurity.com/los-angeles/carson/">
@@ -111,7 +100,6 @@
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow">
-    <meta name="news_keywords" content="Carson security, professional guards, BSIS licensed, emergency response">
 
     <!-- Critical CSS Inline -->
     <style>
@@ -198,7 +186,7 @@
             "https://shieldwisesecurity.com/img/carson-security-guards.webp",
             "https://shieldwisesecurity.com/img/carson-patrol-vehicle.webp"
         ],
-        "logo": "https://shieldwisesecurity.com/img/logo.png",
+        "logo": "https://shieldwisesecurity.com/img/shieldwise-security-logo.webp",
         "@id": "https://shieldwisesecurity.com/los-angeles/carson/",
         "url": "https://shieldwisesecurity.com/los-angeles/carson/",
         "telephone": "+17147167430",
@@ -439,34 +427,6 @@
     }
     </script>
 
-    <!-- Video Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "VideoObject",
-        "name": "ShieldWise Security Carson Services Overview",
-        "description": "Comprehensive overview of professional security guard services in Carson, California",
-        "thumbnailUrl": "https://shieldwisesecurity.com/img/carson-video-thumbnail.webp",
-        "uploadDate": "2025-01-15",
-        "duration": "PT3M45S",
-        "contentUrl": "https://shieldwisesecurity.com/videos/carson-security-overview.mp4",
-        "embedUrl": "https://www.youtube.com/embed/carson-security-123",
-        "publisher": {
-            "@type": "Organization",
-            "name": "ShieldWise Security",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://shieldwisesecurity.com/img/logo.png"
-            }
-        },
-        "potentialAction": {
-            "@type": "SeekToAction",
-            "target": "https://shieldwisesecurity.com/videos/carson-security-overview.mp4?t={seek_to_second_number}",
-            "startOffset-input": "required name=seek_to_second_number"
-        }
-    }
-    </script>
-
     <!-- Enhanced FAQ Schema -->
     <script type="application/ld+json">
     {
@@ -525,28 +485,6 @@
     }
     </script>
 
-    <!-- Speakable Schema for Voice Search -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Carson Security Guard Services - ShieldWise Security",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": [
-                ".hero-content h1",
-                ".hero-content h2",
-                ".contact-phone",
-                ".services-overview"
-            ],
-            "xpath": [
-                "/html/body/section[1]/div/h1",
-                "/html/body/section[1]/div/h2"
-            ]
-        }
-    }
-    </script>
-
     <!-- Review Schema for Enhanced Social Proof -->
     <script type="application/ld+json">
     {
@@ -599,9 +537,9 @@
 
     <!-- Favicon and App Icons -->
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.webp">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.webp">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.webp">
     <link rel="manifest" href="/manifest.json">
     <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#003366">
 </head>
@@ -635,13 +573,13 @@
                     <p>ShieldWise Security provides <span class="highlight">professional security guard services</span> tailored specifically to the unique needs of Carson businesses, properties, and events. With our extensive knowledge of Carson's security challenges and landscape, we deliver unmatched protection and peace of mind.</p>
                     <p>Our team of highly trained and licensed security professionals understands the diverse security requirements across different areas in Carson. We combine advanced security protocols with a customer-focused approach to create security solutions that address your specific concerns.</p>
                     <div class="credentials-badges" style="margin-top: 2rem;">
-                        <img src="/img/bsis.png" alt="BSIS Licensed" style="height: 60px; margin-right: 15px;">
-                        <img src="/img/asis1.avif" alt="ASIS International Member" style="height: 60px; margin-right: 15px;">
+                        <img src="/img/bsis.webp" alt="BSIS Licensed" style="height: 60px; margin-right: 15px;" loading="lazy">
+                        <img src="/img/asis1.webp" alt="ASIS International Member" style="height: 60px; margin-right: 15px;" loading="lazy">
                         <span class="award-text" style="color: #2b5797; font-weight: 600;">🏆 Carson Business Association Security Company of the Year 2024</span>
                     </div>
                 </div>
                 <div class="image-content">
-                    <img src="/img/shahn1.png" alt="Professional Security Guards in Carson" loading="lazy" width="500" height="400">
+                    <img src="/img/shahn1.webp" alt="Professional Security Guards in Carson" loading="lazy" width="500" height="400">
                 </div>
             </div>
         </div>
@@ -919,9 +857,6 @@
         </div>
     </section>
 
-    <!-- Emergency Response Section -->
-
-
     <!-- Footer -->
     <%- include('../partials/Footer') %>
 
@@ -935,10 +870,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
 
-    <!-- JavaScript for Interactive Elements -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Back to Top and Common Functionality -->
     <script src="/JS/back-to-top.js"></script>
 </body>
