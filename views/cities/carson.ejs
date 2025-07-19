@@ -25,6 +25,7 @@
       img-src 'self' data: https:;
       connect-src 'self' https://www.google-analytics.com https://www.clarity.ms;
       frame-src 'self' https://www.google.com https://maps.google.com;
+      frame-ancestors 'none';
       object-src 'none';
       base-uri 'self';
       form-action 'self';
@@ -42,7 +43,6 @@
     <!-- ✅ Optimized SEO Meta Tags -->
     <title>🛡️ Carson Security Guards | Professional 24/7 Protection | ShieldWise</title>
     <meta name="description" content="★★★★★ Rated Carson Security Guards. 1-hour emergency deployment! Industrial, business, residential security services. Licensed, bonded, insured. Call (714) 716-7430!">
-    <meta name="keywords" content="Carson security guards, security services Carson, Carson security company, industrial security Carson, business security Carson, residential security Carson, emergency security response, BSIS licensed security">
     <meta name="author" content="ShieldWise Security">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="theme-color" content="#1a3c64">
@@ -106,7 +106,7 @@
 
     <!-- ✅ Critical Image Preloading with fetchpriority -->
     <link rel="preload" as="image" href="/img/shahn1.webp" fetchpriority="high">
-    <link rel="preload" as="image" href="/img/shieldwise-logo.png" fetchpriority="high">
+    <link rel="preload" as="image" href="/img/logo1.png" fetchpriority="high">
 
     <!-- ✅ WebSite Schema Markup -->
     <script type="application/ld+json" nonce="security-script">
@@ -593,7 +593,7 @@
     <link rel="manifest" href="/manifest.json">
 
     <!-- ✅ Security Headers -->
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 
@@ -625,7 +625,7 @@
                     <p>Our security professionals are thoroughly trained in the unique requirements of Carson's industrial districts, business areas, and residential communities. We provide advanced security protocols combined with rapid response capabilities to serve this thriving community effectively.</p>
                 </div>
                 <div class="image-content">
-                    <img src="/img/shahn1.png" alt="Professional licensed security guards providing comprehensive protection services in Carson, CA industrial districts and business areas" loading="lazy" width="500" height="300" fetchpriority="high">
+                    <img src="/img/shahn1.webp" alt="Professional licensed security guards providing comprehensive protection services in Carson, CA industrial districts and business areas" loading="lazy" width="500" height="300" fetchpriority="high">
                 </div>
             </div>
         </div>
