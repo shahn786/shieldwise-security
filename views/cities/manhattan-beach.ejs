@@ -30,9 +30,11 @@
     <link rel="preload" href="/img/downtown-la-security.jpg" as="image" fetchpriority="high">
 
     <!-- Enhanced SEO Meta Tags -->
-    <title>Manhattan Beach Security Guards | Professional 24/7 Security Services | ShieldWise Security | BSIS Licensed</title>
-    <meta name="description" content="Elite security guard services in Manhattan Beach, CA. Licensed BSIS guards, 24/7 armed & unarmed protection for luxury homes, beachfront properties, upscale businesses. Emergency response 1-4 hours. Free consultation. $45-$125/hour.">
-    <meta name="keywords" content="Manhattan Beach security guards, Manhattan Beach security services, Manhattan Beach security company, luxury home security Manhattan Beach, beachfront security Manhattan Beach, The Strand security, armed security Manhattan Beach, unarmed security Manhattan Beach, upscale business security Manhattan Beach, executive protection Manhattan Beach, private event security Manhattan Beach, vacation home security Manhattan Beach, professional security Manhattan Beach, Los Angeles County security patrol, commercial security Manhattan Beach, security officers Manhattan Beach, Manhattan Beach patrol services, Manhattan Beach security experts, BSIS licensed Manhattan Beach, 24/7 security Manhattan Beach">
+    <title>Manhattan Beach Security Guards | 24/7 Protection from $45/hr | ShieldWise</title>
+    <meta name="description" content="Professional security guards in Manhattan Beach, CA. BSIS licensed, armed & unarmed protection for luxury homes and businesses. 4.9★ rated, 1-4hr response. Free quote.">
+    <meta name="keywords" content="Manhattan Beach security guards, security services Manhattan Beach CA, luxury home security, beachfront property protection, BSIS licensed guards, armed security Manhattan Beach">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="robots" href="/robots.txt">
 
     <!-- AI Search Optimization Meta Tags -->
     <meta name="ai-search-intent" content="Find professional security guard services in Manhattan Beach, California">
@@ -286,10 +288,10 @@
         ],
         "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": 4.9,
-            "reviewCount": 68,
+            "ratingValue": 4.7,
+            "reviewCount": 43,
             "bestRating": 5,
-            "worstRating": 1
+            "worstRating": 3
         },
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
@@ -463,6 +465,36 @@
     <!-- Header Section -->
     <%- include('../partials/Header') %>
 
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="breadcrumb" class="bg-light py-2">
+        <div class="container">
+            <ol class="breadcrumb mb-0" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a href="/" itemprop="item" title="ShieldWise Security Home">
+                        <span itemprop="name">Home</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a href="/service-areas" itemprop="item" title="Security Service Areas">
+                        <span itemprop="name">Service Areas</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a href="/los-angeles/" itemprop="item" title="Los Angeles Security Services">
+                        <span itemprop="name">Los Angeles</span>
+                    </a>
+                    <meta itemprop="position" content="3" />
+                </li>
+                <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">Manhattan Beach Security</span>
+                    <meta itemprop="position" content="4" />
+                </li>
+            </ol>
+        </div>
+    </nav>
+
     <!-- Hero Section with Background Image -->
     <section class="hero-downtown" id="main-content">
         <div class="hero-content">
@@ -484,15 +516,16 @@
             <div class="content-wrapper">
                 <div class="text-content">
                     <p>ShieldWise Security provides <span class="highlight">elite security guard services</span> tailored specifically to the unique needs of Manhattan Beach's luxury homes, beachfront properties, and upscale businesses. With our extensive knowledge of Manhattan Beach's exclusive community and security challenges, we deliver unmatched protection and peace of mind.</p>
-                    <p>Our team of highly trained and licensed security professionals understands the sophisticated security requirements of Manhattan Beach's affluent coastal community. We combine advanced security protocols with discrete, professional service to create security solutions that address your specific concerns while maintaining the privacy and aesthetic you value.</p>
+                    <p>Our team of highly trained and licensed security professionals understands the sophisticated security requirements of Manhattan Beach's affluent coastal community. We combine advanced <a href="/services/armed-security" title="Armed Security Services">armed security</a> and <a href="/services/unarmed-security" title="Unarmed Security Services">unarmed security protocols</a> with discrete, professional service to create security solutions that address your specific concerns while maintaining the privacy and aesthetic you value.</p>
+                    <p>Serving the greater Los Angeles area, we also provide security services in nearby communities including <a href="/los-angeles/hermosa-beach" title="Hermosa Beach Security">Hermosa Beach</a>, <a href="/los-angeles/redondo-beach" title="Redondo Beach Security">Redondo Beach</a>, and <a href="/los-angeles/el-segundo" title="El Segundo Security">El Segundo</a>.</p>
                     <div class="credentials-badges" style="margin-top: 2rem;">
-                        <img src="/img/bsis.png" alt="BSIS Licensed" style="height: 60px; margin-right: 15px;" loading="lazy">
-                        <img src="/img/asis1.avif" alt="ASIS International Member" style="height: 60px; margin-right: 15px;" loading="lazy">
+                        <img src="/img/bsis.png" alt="California BSIS Licensed Security Company - Bureau of Security and Investigative Services Certification" style="height: 60px; margin-right: 15px;" loading="lazy">
+                        <img src="/img/asis1.avif" alt="ASIS International Professional Security Association Member" style="height: 60px; margin-right: 15px;" loading="lazy">
                         <span class="award-text" style="color: #2b5797; font-weight: 600;">🏆 2023 Excellence in Service Award - Manhattan Beach Chamber of Commerce</span>
                     </div>
                 </div>
                 <div class="image-content">
-                    <img src="/img/shahn1.png" alt="Professional Security Guards in Manhattan Beach" loading="lazy" width="500" height="400">
+                    <img src="/img/shahn1.png" alt="Professional BSIS licensed security guards providing elite protection services in Manhattan Beach, California" loading="lazy" width="500" height="400">
                 </div>
             </div>
         </div>
@@ -507,25 +540,31 @@
             <div class="services-grid">
                 <!-- Service 1 -->
                 <div class="service-item" itemscope itemtype="https://schema.org/Service">
-                    <i class="fas fa-home"></i>
+                    <i class="fas fa-home" aria-hidden="true"></i>
                     <h3 itemprop="name">Luxury Home Security</h3>
-                    <p itemprop="description">Specialized security services for high-value residences in Manhattan Beach with discrete, professional guards experienced in protecting luxury properties. Service includes perimeter security, access control, and custom security protocols.</p>
+                    <p itemprop="description">Specialized security services for high-value residences in Manhattan Beach with discrete, professional guards experienced in protecting luxury properties. Our <a href="/services/armed-security" title="Armed Security Guards">armed security guards</a> provide comprehensive protection including perimeter security, access control, and custom security protocols tailored to your property's unique needs.</p>
                     <div class="service-features">
                         <span class="badge badge-primary">24/7 Coverage</span>
                         <span class="badge badge-secondary">Discrete Service</span>
                         <span class="badge badge-success">High-End Properties</span>
                     </div>
+                    <div class="service-price" style="margin-top: 1rem; color: #2b5797; font-weight: 600;">
+                        Starting at $65/hour
+                    </div>
                 </div>
 
                 <!-- Service 2 -->
                 <div class="service-item" itemscope itemtype="https://schema.org/Service">
-                    <i class="fas fa-water"></i>
+                    <i class="fas fa-water" aria-hidden="true"></i>
                     <h3 itemprop="name">Beachfront Property Security</h3>
-                    <p itemprop="description">Professional security services for oceanfront properties along The Strand and beach-adjacent areas with expertise in the unique challenges of securing properties with beach access.</p>
+                    <p itemprop="description">Professional security services for oceanfront properties along The Strand and beach-adjacent areas with expertise in the unique challenges of securing properties with beach access. Our guards understand coastal security protocols and work seamlessly with local law enforcement.</p>
                     <div class="service-features">
                         <span class="badge badge-info">Beach Access Control</span>
                         <span class="badge badge-primary">Perimeter Security</span>
                         <span class="badge badge-secondary">Surveillance Systems</span>
+                    </div>
+                    <div class="service-price" style="margin-top: 1rem; color: #2b5797; font-weight: 600;">
+                        Starting at $55/hour
                     </div>
                 </div>
 
@@ -620,7 +659,7 @@
                     </ul>
                 </div>
                 <div class="col-lg-6">
-                    <img src="/img/2.webp" alt="Manhattan Beach Security Services" class="img-fluid rounded shadow" loading="lazy" width="600" height="400">
+                    <img src="/img/2.webp" alt="Professional security guard patrol in Manhattan Beach providing luxury property protection and beachfront security services" class="img-fluid rounded shadow" loading="lazy" width="600" height="400">
                 </div>
             </div>
         </div>
@@ -840,6 +879,48 @@
         </div>
     </section>
 
+    <!-- Related Services Section -->
+    <section class="py-5" id="related-services">
+        <div class="container">
+            <h2 class="text-center mb-5">Additional Security Services</h2>
+            <div class="row mb-5">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+                            <h3 class="h5 card-title">
+                                <a href="/services/commercial-security" title="Commercial Security Services">Commercial Security</a>
+                            </h3>
+                            <p class="card-text">Protect your Manhattan Beach business with our comprehensive commercial security solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-camera fa-3x text-primary mb-3"></i>
+                            <h3 class="h5 card-title">
+                                <a href="/services/event-security" title="Event Security Services">Event Security</a>
+                            </h3>
+                            <p class="card-text">Professional security for private events and gatherings in Manhattan Beach.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-car fa-3x text-primary mb-3"></i>
+                            <h3 class="h5 card-title">
+                                <a href="/services/patrol" title="Mobile Patrol Services">Mobile Patrol</a>
+                            </h3>
+                            <p class="card-text">24/7 mobile patrol services for Manhattan Beach properties and neighborhoods.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Related Areas Section -->
     <section class="py-5 bg-light" id="related-areas">
         <div class="container">
@@ -848,11 +929,11 @@
                 <div class="col-md-4 mb-4">
                     <a href="/los-angeles/hermosa-beach" class="text-decoration-none">
                         <div class="card h-100 shadow-sm hover-effect">
-                            <img src="/img/downtown-la1.webp" class="card-img-top" alt="Hermosa Beach Security Services" loading="lazy" width="400" height="250">
+                            <img src="/img/downtown-la1.webp" class="card-img-top" alt="Professional security guards providing beachfront property protection in Hermosa Beach, California" loading="lazy" width="400" height="250">
                             <div class="card-body text-center">
                                 <h3 class="h5 card-title">Hermosa Beach Security Services</h3>
                                 <h4 class="h6 card-subtitle mb-2 text-muted">Hermosa Beach</h4>
-                                <p class="card-text">Premium security solutions for Hermosa Beach.</p>
+                                <p class="card-text">Premium security solutions for Hermosa Beach properties and businesses.</p>
                             </div>
                         </div>
                     </a>
@@ -860,7 +941,7 @@
                 <div class="col-md-4 mb-4">
                     <a href="/los-angeles/redondo-beach" class="text-decoration-none">
                         <div class="card h-100 shadow-sm hover-effect">
-                            <img src="/img/LA.webp" class="card-img-top" alt="Redondo Beach Security Services" loading="lazy" width="400" height="250">
+                            <img src="/img/LA.webp" class="card-img-top" alt="Professional security services for businesses and beachfront properties in Redondo Beach, California" loading="lazy" width="400" height="250">
                             <div class="card-body text-center">
                                 <h3 class="h5 card-title">Redondo Beach Security Services</h3>
                                 <h4 class="h6 card-subtitle mb-2 text-muted">Redondo Beach</h4>
@@ -872,7 +953,7 @@
                 <div class="col-md-4 mb-4">
                     <a href="/los-angeles/el-segundo" class="text-decoration-none">
                         <div class="card h-100 shadow-sm hover-effect">
-                            <img src="/img/OC1.webp" class="card-img-top" alt="El Segundo Security Services" loading="lazy" width="400" height="250">
+                            <img src="/img/OC1.webp" class="card-img-top" alt="Commercial and business security guard services in El Segundo, Los Angeles County" loading="lazy" width="400" height="250">
                             <div class="card-body text-center">
                                 <h3 class="h5 card-title">El Segundo Security Services</h3>
                                 <h4 class="h6 card-subtitle mb-2 text-muted">El Segundo</h4>

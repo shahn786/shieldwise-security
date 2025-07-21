@@ -1,0 +1,31 @@
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://shieldwisesecurity.com/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Allow access to CSS and JS files
+Allow: /css/
+Allow: /js/
+Allow: /JS/
+Allow: /img/
+
+# Block access to sensitive areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /*.pdf$
+
+# Allow specific security service pages
+Allow: /services/
+Allow: /los-angeles/
+Allow: /orange-county/
+Allow: /san-diego/
+
+# Block duplicate content
+Disallow: /*?*sort=*
+Disallow: /*?*filter=*
