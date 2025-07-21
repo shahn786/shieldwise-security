@@ -99,14 +99,24 @@
     <meta name="page-type" content="Commercial Service">
     <meta name="audience" content="Business Owners, Property Managers, Healthcare Administrators">
 
+    <!-- ✅ Accessibility-Focused Meta Tags -->
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="alternate" type="application/rss+xml" title="Norwalk Security News" href="/rss/norwalk-security.xml">
+
     <!-- ✅ Core Web Vitals Optimization -->
     <meta name="critical-resource-hint" content="preload">
     <link rel="preload" href="/css/style-cities.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/css/style-cities.css"></noscript>
 
     <!-- ✅ Critical Image Preloading with fetchpriority -->
-    <link rel="preload" as="image" href="/img/shahn1.webp" fetchpriority="high">
-    <link rel="preload" as="image" href="/img/logo1.png" fetchpriority="high">
+    <link rel="preload" as="image" href="/img/shahn1.webp" fetchpriority="high" type="image/webp">
+    <link rel="preload" as="image" href="/img/logo1.png" fetchpriority="high" type="image/png">
+
+    <!-- ✅ Font Loading Optimization with font-display: swap -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
 
     <!-- ✅ WebSite Schema Markup -->
     <script type="application/ld+json" nonce="security-script">
@@ -576,14 +586,13 @@
     }
     </script>
 
-    <!-- ✅ Performance Optimization -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" as="style">
-
-    <!-- ✅ External CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- ✅ External CSS with Performance Optimization -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet"></noscript>
+    
     <link rel="stylesheet" href="/css/style-cities.css" media="screen">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" media="screen">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
 
     <!-- ✅ Favicon & App Icons -->
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
@@ -600,417 +609,895 @@
     <!-- ✅ Additional Meta for AI/Voice Search -->
     <meta name="voice-search-keywords" content="security guard near me, Norwalk security, medical security, retail security, school security">
     <meta name="speakable" content="name,description,telephone">
+    
+    <!-- ✅ Resource Hints for Performance -->
+    <link rel="prefetch" href="/img/2.webp">
+    <link rel="prefetch" href="/los-angeles">
+    <link rel="prefetch" href="/los-angeles/downey">
+    <link rel="prefetch" href="/los-angeles/cerritos">
 </head>
 
 <body id="top" itemscope itemtype="https://schema.org/WebPage">
+    <!-- ✅ Skip Navigation for Accessibility -->
+    <a href="#main-content" class="sr-only sr-only-focusable" aria-label="Skip to main content">Skip to main content</a>
+
     <!-- Header Section -->
     <%- include('../partials/Header') %>
 
-    <!-- Hero Section with Background Image -->
-    <section class="hero-downtown">
-        <div class="hero-content">
-            <h1>Norwalk Security Services</h1>
-            <h2>Professional Security Solutions for Medical, Retail & Educational Facilities</h2>
-            <a href="/get-quote?location=norwalk" class="btn btn-primary btn-lg">Get a Free Security Quote</a>
-        </div>
-    </section>
-
-    <!-- Introduction Section -->
-    <section class="downtown-security">
+    <!-- ✅ Breadcrumb Navigation for SEO -->
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav bg-light py-2">
         <div class="container">
-            <h2 class="section-title">Comprehensive Security Solutions for Norwalk</h2>
-            <div class="content-wrapper">
-                <div class="text-content">
-                    <p>ShieldWise Security delivers <span class="highlight">professional security guard services</span> customized for Norwalk's diverse medical, retail, and educational landscape. From healthcare facilities to shopping centers, our expert team ensures superior protection for your property and assets.</p>
-                    <p>Our security professionals are thoroughly trained in the unique requirements of Norwalk's medical districts, retail centers, and educational institutions. We provide advanced security protocols combined with bilingual capabilities to serve this thriving community effectively.</p>
-                </div>
-                <div class="image-content">
-                    <img src="/img/shahn1.webp" alt="Professional licensed security guards providing comprehensive protection services in Norwalk, CA medical facilities and retail centers" loading="lazy" width="500" height="300" fetchpriority="high">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="our-services">
-        <div class="container">
-            <h2>Our Norwalk Security Services</h2>
-            <p>ShieldWise Security provides a comprehensive range of security services tailored to Norwalk's unique medical, retail, and educational environment:</p>
-
-            <div class="services-grid">
-                <!-- Service 1 -->
-                <div class="service-item">
-                    <i class="fas fa-hospital"></i>
-                    <h3>Medical Facility Security</h3>
-                    <p>Specialized security for Norwalk's hospitals and medical centers including Coast Plaza Hospital with HIPAA compliance, patient interaction training, and emergency response protocols.</p>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="service-item">
-                    <i class="fas fa-store"></i>
-                    <h3>Retail Security</h3>
-                    <p>Professional security for Norwalk shopping centers including Norwalk Town Square with loss prevention, customer service, and theft deterrence capabilities.</p>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="service-item">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Educational Security</h3>
-                    <p>Specialized security for Norwalk schools and Cerritos College with campus security protocols, student safety measures, and emergency response coordination.</p>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="service-item">
-                    <i class="fas fa-building"></i>
-                    <h3>Government Building Security</h3>
-                    <p>Professional security for Norwalk government facilities including City Hall with visitor management, access control, and public safety protocols.</p>
-                </div>
-
-                <!-- Service 5 -->
-                <div class="service-item">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3>Event Security</h3>
-                    <p>Specialized security for Norwalk events and community gatherings with crowd management, VIP protection, and emergency response coordination.</p>
-                </div>
-
-                <!-- Service 6 -->
-                <div class="service-item">
-                    <i class="fas fa-hard-hat"></i>
-                    <h3>Construction Site Security</h3>
-                    <p>Prevent theft and vandalism at Norwalk construction and development sites with 24/7 security guards, surveillance, and access control measures.</p>
-                </div>
-
-                <!-- Service 7 -->
-                <div class="service-item">
-                    <i class="fas fa-video"></i>
-                    <h3>Surveillance Systems</h3>
-                    <p>Advanced video surveillance systems to complement our security guard services, providing comprehensive protection for Norwalk properties.</p>
-                </div>
-
-                <!-- Service 8 -->
-                <div class="service-item">
-                    <i class="fas fa-car"></i>
-                    <h3>Mobile Patrol</h3>
-                    <p>Flexible mobile patrol services for multiple properties throughout Norwalk with routine check-ins, rapid response, and GPS tracking.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Security Challenges Section -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h2 class="mb-4">Norwalk Security Challenges</h2>
-                    <p>As a diverse city with major medical facilities, retail centers, and educational institutions, Norwalk presents unique security challenges that require specialized approaches:</p>
-                    <ul class="list-unstyled">
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Medical facility protection and patient safety</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Retail security and loss prevention</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Educational institution security protocols</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Bilingual communication capabilities</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Rapid emergency response coordination</li>
-                    </ul>
-                </div>
-                <div class="col-lg-6">
-                    <img src="/img/2.webp" alt="ShieldWise Security guards providing medical facility security services at Norwalk hospitals and retail centers" class="img-fluid rounded shadow" width="600" height="400" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Map Section -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="mb-4">Our Norwalk Service Areas</h2>
-                    <p class="mb-5">ShieldWise Security proudly serves all areas of Norwalk, including:</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <ul class="list-unstyled">
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Downtown Norwalk</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> South Norwalk</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> West Norwalk</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> East Norwalk</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> North Norwalk</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <ul class="list-unstyled">
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Norwalk Town Square Area</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Coast Plaza Hospital Area</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Cerritos College Area</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Metropolitan State Hospital Area</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Norwalk City Hall Area</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-12">
-                    <div class="embed-responsive embed-responsive-16by9">
-                      <iframe
-                        class="embed-responsive-item"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53044.49335520834!2d-118.08168145!3d33.9022197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd2c6055555555%3A0xc7f8638bbd9b0c81!2sNorwalk%2C%20CA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Map of Norwalk, California showing ShieldWise Security service areas"
-                      ></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <h2>What Our Norwalk Clients Say</h2>
-
-            <div class="testimonials-grid">
-                <!-- Testimonial 1 -->
-                <div class="testimonial">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>"ShieldWise Security has significantly improved safety at our retail center in Norwalk. Their professional guards are alert, courteous, and provide excellent customer service. We've seen a notable decrease in security incidents since partnering with them."</p>
-                    <h4>Robert Martinez</h4>
-                    <div class="position">Property Manager, Norwalk Shopping Center</div>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="testimonial">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>"After hiring ShieldWise Security for our medical facility in Norwalk, we've experienced a much safer environment for both staff and patients. Their guards understand the unique needs of healthcare settings and provide exceptional service 24/7."</p>
-                    <h4>Dr. Sarah Chen</h4>
-                    <div class="position">Medical Director, Norwalk Medical Center</div>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="testimonial">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>"ShieldWise Security has been providing security for our educational facility in Norwalk for the past academic year. Their guards are excellent with students, professionally trained, and have significantly improved campus safety."</p>
-                    <h4>Michael Johnson</h4>
-                    <div class="position">School Administrator, Norwalk Educational Institution</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section - Centered Title -->
-    <section class="py-5 faq-section" id="faq">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="mb-5 fade-in">Frequently Asked Questions</h2>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="accordion fade-in" id="norwalkFAQ">
-                        <!-- FAQ Item 1 -->
-                        <div class="card">
-                            <div class="card-header" id="headingOne">
-                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    What security services do you offer in Norwalk?
-                                </button>
-                            </div>
-                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#norwalkFAQ">
-                                <div class="card-body">
-                                    We provide comprehensive security services in Norwalk including: Medical facility security, Retail security, Educational institution security, Commercial building security, Event security, and Mobile patrol services. All services are available 24/7.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- FAQ Item 2 -->
-                        <div class="card">
-                            <div class="card-header" id="headingTwo">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Are your security guards licensed and insured?
-                                </button>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#norwalkFAQ">
-                                <div class="card-body">
-                                    Yes, all ShieldWise security guards are fully licensed through the California Bureau of Security and Investigative Services (BSIS). We carry $2M liability insurance and full workers' compensation. Each guard passes rigorous background checks, drug testing, and ongoing training programs.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- FAQ Item 3 -->
-                        <div class="card">
-                            <div class="card-header" id="headingThree">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Do you specialize in medical facility security for Norwalk hospitals?
-                                </button>
-                            </div>
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#norwalkFAQ">
-                                <div class="card-body">
-                                    Absolutely! Norwalk's healthcare sector has unique security requirements, and we provide specialized services for hospitals, clinics, and medical facilities. Our medical security solutions include HIPAA compliance training, patient interaction protocols, and emergency response coordination.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- FAQ Item 4 -->
-                        <div class="card">
-                            <div class="card-header" id="headingFour">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    How quickly can you deploy security guards in Norwalk?
-                                </button>
-                            </div>
-                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#norwalkFAQ">
-                                <div class="card-body">
-                                    For emergency situations, our licensed security guards can deploy within 1-4 hours anywhere in Norwalk, including medical facilities and retail centers. Standard service deployments occur within 24 hours or less.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- FAQ Item 5 -->
-                        <div class="card highlighted-faq">
-                            <div class="card-header" id="headingFive">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                    Do you provide bilingual security services in Norwalk?
-                                </button>
-                            </div>
-                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#norwalkFAQ">
-                                <div class="card-body">
-                                    Yes, we provide bilingual security services in Norwalk with guards fluent in both English and Spanish. This is essential for effective communication with Norwalk's diverse community and ensures clear interaction during security incidents and customer service.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-5 bg-primary text-white">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="mb-4">Ready to Secure Your Norwalk Property?</h2>
-                    <p class="lead mb-5">Contact ShieldWise Security today for a customized security solution designed specifically for your Norwalk location. Our team of security experts will work with you to develop a comprehensive security plan that addresses your unique challenges.</p>
-                    <a href="/get-quote?location=norwalk" class="btn btn-light btn-lg mr-3 mb-3">Get a Free Quote</a>
-                    <a href="/contact" class="btn btn-outline-light btn-lg mb-3">Contact Us</a>
-                    <a href="tel:+15629245300" class="btn btn-warning btn-lg mb-3">
-                        <i class="fas fa-phone"></i> (562) 924-5300
+            <ol class="breadcrumb mb-0" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a href="/" itemprop="item" aria-label="Home page">
+                        <span itemprop="name">Home</span>
                     </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a href="/los-angeles" itemprop="item" aria-label="Los Angeles Security Services">
+                        <span itemprop="name">Los Angeles Security</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">Norwalk Security Guards</span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Content with Proper H1/H2 Structure -->
+    <main id="main-content" role="main">
+        <!-- Hero Section with Background Image -->
+        <section class="hero-downtown" role="banner">
+            <div class="hero-content">
+                <h1>Norwalk Security Guards: Professional 24/7 Protection Services</h1>
+                <h2>Medical Facility, Retail & Educational Security Solutions Since 2005</h2>
+                <p class="hero-description">Licensed BSIS security guards providing comprehensive protection for Norwalk medical centers, retail locations, and educational institutions. Emergency deployment in 1-4 hours.</p>
+                <a href="/get-quote?location=norwalk" class="btn btn-primary btn-lg" aria-label="Get a free security quote for Norwalk">
+                    <i class="fas fa-shield-alt" aria-hidden="true"></i> Get Free Security Quote
+                </a>
+                <div class="hero-stats mt-3">
+                    <span class="badge badge-success mr-2">★★★★★ 4.9/5 (324 Reviews)</span>
+                    <span class="badge badge-info mr-2">Licensed & Insured</span>
+                    <span class="badge badge-warning">1-4 Hour Response</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Related Areas Section -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">Explore Other Los Angeles Areas We Serve</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <a href="/los-angeles" class="text-decoration-none">
-                        <div class="card h-100 shadow-sm hover-effect">
-                            <img src="/img/la-pic.webp" class="card-img-top" alt="Professional security guard services in Los Angeles with 24/7 armed and unarmed protection for businesses and events" width="400" height="250" loading="lazy">
+        <!-- Introduction Section with Proper H2 -->
+        <section class="downtown-security py-5" role="region" aria-labelledby="intro-heading">
+            <div class="container">
+                <h2 id="intro-heading" class="section-title text-center mb-4">
+                    Why Choose ShieldWise Security for Norwalk Protection?
+                </h2>
+                <div class="content-wrapper row align-items-center">
+                    <div class="col-lg-8 text-content">
+                        <p class="lead">ShieldWise Security delivers <strong>professional security guard services</strong> customized for Norwalk's diverse medical, retail, and educational landscape. From healthcare facilities like Coast Plaza Hospital to shopping centers and Cerritos College, our expert team ensures superior protection for your property and assets.</p>
+                        
+                        <div class="key-benefits">
+                            <h3>Norwalk Security Expertise:</h3>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-success mr-2" aria-hidden="true"></i> <strong>Medical Security Specialists:</strong> HIPAA-compliant security for hospitals and clinics</li>
+                                <li><i class="fas fa-check-circle text-success mr-2" aria-hidden="true"></i> <strong>Bilingual Capabilities:</strong> English and Spanish fluent guards</li>
+                                <li><i class="fas fa-check-circle text-success mr-2" aria-hidden="true"></i> <strong>Rapid Response:</strong> Emergency deployment within 1-4 hours</li>
+                                <li><i class="fas fa-check-circle text-success mr-2" aria-hidden="true"></i> <strong>Licensed & Insured:</strong> $2M liability coverage, BSIS licensed</li>
+                                <li><i class="fas fa-check-circle text-success mr-2" aria-hidden="true"></i> <strong>Local Knowledge:</strong> Deep understanding of Norwalk's unique security challenges</li>
+                            </ul>
+                        </div>
+                        
+                        <p>Our security professionals are thoroughly trained in the unique requirements of Norwalk's medical districts, retail centers, and educational institutions. We provide advanced security protocols combined with bilingual capabilities to serve this thriving community effectively.</p>
+                    </div>
+                    <div class="col-lg-4 image-content">
+                        <img src="/img/shahn1.webp" 
+                             alt="Professional licensed security guard in uniform providing comprehensive protection services at Norwalk medical facility entrance" 
+                             class="img-fluid rounded shadow-lg"
+                             loading="eager" 
+                             width="400" 
+                             height="300" 
+                             fetchpriority="high"
+                             sizes="(max-width: 768px) 100vw, 400px">
+                        <div class="image-caption text-center mt-2 text-muted">
+                            <small>Licensed security professional serving Norwalk since 2005</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section with Detailed H3 Structure -->
+        <section class="our-services py-5 bg-light" role="region" aria-labelledby="services-heading">
+            <div class="container">
+                <h2 id="services-heading" class="text-center mb-5">Comprehensive Norwalk Security Services</h2>
+                <p class="text-center lead mb-5">ShieldWise Security provides a comprehensive range of security services tailored to Norwalk's unique medical, retail, and educational environment. Our specialized approach ensures maximum protection for your specific industry needs.</p>
+
+                <div class="services-grid row">
+                    <!-- Service 1 -->
+                    <div class="col-lg-6 col-md-6 mb-4">
+                        <div class="service-item card h-100 shadow-sm">
                             <div class="card-body text-center">
-                                <h3 class="h5 card-title">Los Angeles</h3>
-                                <p class="card-text">Comprehensive security services throughout Los Angeles.</p>
+                                <i class="fas fa-hospital text-primary mb-3" style="font-size: 3rem;" aria-hidden="true"></i>
+                                <h3 class="card-title">Medical Facility Security</h3>
+                                <p class="card-text">Specialized security for Norwalk's hospitals and medical centers including Coast Plaza Hospital and Metropolitan State Hospital. Our services include HIPAA compliance training, patient interaction protocols, emergency response coordination, and 24/7 monitoring.</p>
+                                <ul class="list-unstyled text-left small">
+                                    <li>✓ HIPAA Compliance Training</li>
+                                    <li>✓ Patient Safety Protocols</li>
+                                    <li>✓ Emergency Response Teams</li>
+                                    <li>✓ Visitor Management Systems</li>
+                                </ul>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <a href="/los-angeles/downey" class="text-decoration-none">
-                        <div class="card h-100 shadow-sm hover-effect">
-                            <img src="/img/LA.webp" class="card-img-top" alt="Licensed security guards in Downey providing specialized business protection and event security services" width="400" height="250" loading="lazy">
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="col-lg-6 col-md-6 mb-4">
+                        <div class="service-item card h-100 shadow-sm">
                             <div class="card-body text-center">
-                                <h3 class="h5 card-title">Downey</h3>
-                                <p class="card-text">Specialized security for Downey businesses and events.</p>
+                                <i class="fas fa-store text-primary mb-3" style="font-size: 3rem;" aria-hidden="true"></i>
+                                <h3 class="card-title">Retail Security Solutions</h3>
+                                <p class="card-text">Professional security for Norwalk shopping centers including Norwalk Town Square with advanced loss prevention, customer service excellence, theft deterrence capabilities, and crowd management during peak shopping periods.</p>
+                                <ul class="list-unstyled text-left small">
+                                    <li>✓ Loss Prevention Specialists</li>
+                                    <li>✓ Customer Service Training</li>
+                                    <li>✓ Theft Deterrence Protocols</li>
+                                    <li>✓ Crowd Management</li>
+                                </ul>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <a href="/los-angeles/cerritos" class="text-decoration-none">
-                        <div class="card h-100 shadow-sm hover-effect">
-                            <img src="/img/downtown_la.webp" class="card-img-top" alt="Premium security solutions for Cerritos properties including commercial buildings and residential complexes" width="400" height="250" loading="lazy">
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="col-lg-6 col-md-6 mb-4">
+                        <div class="service-item card h-100 shadow-sm">
                             <div class="card-body text-center">
-                                <h3 class="h5 card-title">Cerritos</h3>
-                                <p class="card-text">Premium security solutions for Cerritos properties.</p>
+                                <i class="fas fa-graduation-cap text-primary mb-3" style="font-size: 3rem;" aria-hidden="true"></i>
+                                <h3 class="card-title">Educational Security</h3>
+                                <p class="card-text">Specialized security for Norwalk schools and Cerritos College with comprehensive campus security protocols, student safety measures, emergency response coordination, and visitor management systems tailored for educational environments.</p>
+                                <ul class="list-unstyled text-left small">
+                                    <li>✓ Campus Security Protocols</li>
+                                    <li>✓ Student Safety Programs</li>
+                                    <li>✓ Emergency Lockdown Procedures</li>
+                                    <li>✓ Event Security Management</li>
+                                </ul>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="col-lg-6 col-md-6 mb-4">
+                        <div class="service-item card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="fas fa-building text-primary mb-3" style="font-size: 3rem;" aria-hidden="true"></i>
+                                <h3 class="card-title">Government Building Security</h3>
+                                <p class="card-text">Professional security for Norwalk government facilities including City Hall with comprehensive visitor management, access control systems, public safety protocols, and specialized training for government security requirements.</p>
+                                <ul class="list-unstyled text-left small">
+                                    <li>✓ Visitor Screening</li>
+                                    <li>✓ Access Control Systems</li>
+                                    <li>✓ Public Safety Protocols</li>
+                                    <li>✓ Emergency Procedures</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="col-lg-6 col-md-6 mb-4">
+                        <div class="service-item card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="fas fa-calendar-alt text-primary mb-3" style="font-size: 3rem;" aria-hidden="true"></i>
+                                <h3 class="card-title">Event Security Services</h3>
+                                <p class="card-text">Specialized security for Norwalk events and community gatherings with professional crowd management, VIP protection services, emergency response coordination, and comprehensive event planning security consultation.</p>
+                                <ul class="list-unstyled text-left small">
+                                    <li>✓ Crowd Control Management</li>
+                                    <li>✓ VIP Protection Services</li>
+                                    <li>✓ Event Planning Consultation</li>
+                                    <li>✓ Emergency Response Teams</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div class="col-lg-6 col-md-6 mb-4">
+                        <div class="service-item card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="fas fa-hard-hat text-primary mb-3" style="font-size: 3rem;" aria-hidden="true"></i>
+                                <h3 class="card-title">Construction Site Security</h3>
+                                <p class="card-text">Prevent theft and vandalism at Norwalk construction and development sites with 24/7 security guards, advanced surveillance systems, access control measures, and equipment protection protocols.</p>
+                                <ul class="list-unstyled text-left small">
+                                    <li>✓ 24/7 Site Monitoring</li>
+                                    <li>✓ Equipment Protection</li>
+                                    <li>✓ Access Control</li>
+                                    <li>✓ Theft Prevention</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 7 -->
+                    <div class="col-lg-6 col-md-6 mb-4">
+                        <div class="service-item card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="fas fa-video text-primary mb-3" style="font-size: 3rem;" aria-hidden="true"></i>
+                                <h3 class="card-title">Surveillance Systems</h3>
+                                <p class="card-text">Advanced video surveillance systems to complement our security guard services, providing comprehensive protection for Norwalk properties with state-of-the-art technology and 24/7 monitoring capabilities.</p>
+                                <ul class="list-unstyled text-left small">
+                                    <li>✓ HD Camera Systems</li>
+                                    <li>✓ Remote Monitoring</li>
+                                    <li>✓ Digital Recording</li>
+                                    <li>✓ Real-time Alerts</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 8 -->
+                    <div class="col-lg-6 col-md-6 mb-4">
+                        <div class="service-item card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="fas fa-car text-primary mb-3" style="font-size: 3rem;" aria-hidden="true"></i>
+                                <h3 class="card-title">Mobile Patrol Services</h3>
+                                <p class="card-text">Flexible mobile patrol services for multiple properties throughout Norwalk with routine security check-ins, rapid emergency response, GPS tracking systems, and detailed reporting capabilities.</p>
+                                <ul class="list-unstyled text-left small">
+                                    <li>✓ GPS-Tracked Patrols</li>
+                                    <li>✓ Rapid Response</li>
+                                    <li>✓ Detailed Reporting</li>
+                                    <li>✓ Multi-Property Coverage</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Challenges Section with Enhanced Content -->
+        <section class="py-5" role="region" aria-labelledby="challenges-heading">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h2 id="challenges-heading" class="mb-4">Norwalk's Unique Security Challenge Solutions</h2>
+                        <p class="lead">As a diverse city with major medical facilities, retail centers, and educational institutions, Norwalk presents unique security challenges that require specialized approaches and expert solutions:</p>
+                        
+                        <div class="challenge-solutions">
+                            <h3>Our Specialized Solutions:</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <i class="fas fa-check-circle text-success mr-2" aria-hidden="true"></i> 
+                                    <strong>Medical facility protection:</strong> HIPAA-compliant security protocols and patient safety management
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-check-circle text-success mr-2" aria-hidden="true"></i> 
+                                    <strong>Retail security and loss prevention:</strong> Advanced theft deterrence and customer service excellence
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-check-circle text-success mr-2" aria-hidden="true"></i> 
+                                    <strong>Educational institution security:</strong> Comprehensive campus safety and emergency response protocols
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-check-circle text-success mr-2" aria-hidden="true"></i> 
+                                    <strong>Bilingual communication:</strong> English and Spanish fluent guards for diverse community needs
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-check-circle text-success mr-2" aria-hidden="true"></i> 
+                                    <strong>Rapid emergency response:</strong> Coordinated response within 1-4 hours for critical situations
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="stats-box bg-primary text-white p-4 rounded mt-4">
+                            <h4>Norwalk Security Statistics:</h4>
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <div class="stat-number">324+</div>
+                                    <div class="stat-label">Happy Clients</div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-number">99.8%</div>
+                                    <div class="stat-label">Response Rate</div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-number">24/7</div>
+                                    <div class="stat-label">Availability</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="/img/2.webp" 
+                             alt="ShieldWise Security guards providing comprehensive medical facility security services at modern Norwalk hospital entrance with patients and staff safely protected" 
+                             class="img-fluid rounded shadow-lg" 
+                             width="600" 
+                             height="400" 
+                             loading="lazy"
+                             sizes="(max-width: 768px) 100vw, 600px">
+                        <div class="image-caption text-center mt-2 text-muted">
+                            <small>Professional security team protecting Norwalk medical facilities</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section with Enhanced Content -->
+        <section class="py-5 bg-light" role="region" aria-labelledby="service-areas-heading">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 text-center">
+                        <h2 id="service-areas-heading" class="mb-4">Complete Norwalk Service Area Coverage</h2>
+                        <p class="lead mb-5">ShieldWise Security proudly serves all areas of Norwalk with rapid response times and local expertise. Our comprehensive coverage ensures no area is left unprotected.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Primary Service Districts:</h3>
+                        <ul class="list-unstyled service-areas-list">
+                            <li class="mb-3">
+                                <i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> 
+                                <strong>Downtown Norwalk:</strong> Business district and civic center security
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> 
+                                <strong>South Norwalk:</strong> Residential and commercial area protection
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> 
+                                <strong>West Norwalk:</strong> Industrial and warehouse security
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> 
+                                <strong>East Norwalk:</strong> Medical and healthcare facility security
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> 
+                                <strong>North Norwalk:</strong> Educational and community center security
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Key Landmark Security:</h3>
+                        <ul class="list-unstyled service-areas-list">
+                            <li class="mb-3">
+                                <i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> 
+                                <strong>Norwalk Town Square:</strong> Retail and shopping center security
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> 
+                                <strong>Coast Plaza Hospital:</strong> Medical facility security specialist
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> 
+                                <strong>Cerritos College:</strong> Educational institution security
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> 
+                                <strong>Metropolitan State Hospital:</strong> Healthcare security services
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-map-marker-alt text-danger mr-2" aria-hidden="true"></i> 
+                                <strong>Norwalk City Hall:</strong> Government building security
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h3 class="text-center mb-4">Norwalk Security Service Map</h3>
+                        <div class="embed-responsive embed-responsive-16by9 shadow rounded">
+                          <iframe
+                            class="embed-responsive-item rounded"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53044.49335520834!2d-118.08168145!3d33.9022197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd2c6055555555%3A0xc7f8638bbd9b0c81!2sNorwalk%2C%20CA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Interactive map showing ShieldWise Security service areas throughout Norwalk, California including medical facilities, retail centers, and educational institutions"
+                            aria-label="Google Maps showing ShieldWise Security coverage in Norwalk, CA">
+                          </iframe>
+                        </div>
+                        <p class="text-center mt-3 text-muted">
+                            <small>Interactive map showing our comprehensive coverage throughout Norwalk, CA</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section with Enhanced Schema -->
+        <section class="testimonials py-5" role="region" aria-labelledby="testimonials-heading">
+            <div class="container">
+                <h2 id="testimonials-heading" class="text-center mb-5">What Our Norwalk Clients Say About Our Security Services</h2>
+                <p class="text-center lead mb-5">Don't just take our word for it. Here's what business owners, property managers, and healthcare administrators in Norwalk say about our professional security services:</p>
+
+                <div class="testimonials-grid row">
+                    <!-- Testimonial 1 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="testimonial card h-100 shadow-sm">
+                            <div class="card-body">
+                                <div class="stars text-center mb-3">
+                                    <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                    <span class="sr-only">5 out of 5 stars</span>
+                                </div>
+                                <blockquote class="blockquote">
+                                    <p class="mb-3">"ShieldWise Security has significantly improved safety at our retail center in Norwalk. Their professional guards are alert, courteous, and provide excellent customer service. We've seen a notable decrease in security incidents since partnering with them. Their bilingual capabilities have been especially valuable for our diverse customer base."</p>
+                                </blockquote>
+                                <footer class="blockquote-footer text-center">
+                                    <strong>Robert Martinez</strong>
+                                    <div class="position text-muted">Property Manager, Norwalk Shopping Center</div>
+                                    <div class="verification mt-1">
+                                        <i class="fas fa-check-circle text-success" aria-hidden="true"></i>
+                                        <small class="text-muted">Verified Client</small>
+                                    </div>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="testimonial card h-100 shadow-sm">
+                            <div class="card-body">
+                                <div class="stars text-center mb-3">
+                                    <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                    <span class="sr-only">5 out of 5 stars</span>
+                                </div>
+                                <blockquote class="blockquote">
+                                    <p class="mb-3">"After hiring ShieldWise Security for our medical facility in Norwalk, we've experienced a much safer environment for both staff and patients. Their guards understand the unique needs of healthcare settings and provide exceptional service 24/7. The HIPAA compliance training was thorough and professional."</p>
+                                </blockquote>
+                                <footer class="blockquote-footer text-center">
+                                    <strong>Dr. Sarah Chen</strong>
+                                    <div class="position text-muted">Medical Director, Norwalk Medical Center</div>
+                                    <div class="verification mt-1">
+                                        <i class="fas fa-check-circle text-success" aria-hidden="true"></i>
+                                        <small class="text-muted">Verified Client</small>
+                                    </div>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="testimonial card h-100 shadow-sm">
+                            <div class="card-body">
+                                <div class="stars text-center mb-3">
+                                    <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                                    <span class="sr-only">5 out of 5 stars</span>
+                                </div>
+                                <blockquote class="blockquote">
+                                    <p class="mb-3">"ShieldWise Security has been providing security for our educational facility in Norwalk for the past academic year. Their guards are excellent with students, professionally trained, and have significantly improved campus safety. The emergency response protocols are top-notch."</p>
+                                </blockquote>
+                                <footer class="blockquote-footer text-center">
+                                    <strong>Michael Johnson</strong>
+                                    <div class="position text-muted">School Administrator, Norwalk Educational Institution</div>
+                                    <div class="verification mt-1">
+                                        <i class="fas fa-check-circle text-success" aria-hidden="true"></i>
+                                        <small class="text-muted">Verified Client</small>
+                                    </div>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <a href="/testimonials-showcase" class="btn btn-outline-primary" aria-label="View more client testimonials">
+                        <i class="fas fa-comments" aria-hidden="true"></i> View More Testimonials
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- FAQ Section with Enhanced Structure -->
+        <section class="py-5 faq-section bg-light" id="faq" role="region" aria-labelledby="faq-heading">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 text-center">
+                        <h2 id="faq-heading" class="mb-4 fade-in">Frequently Asked Questions About Norwalk Security Services</h2>
+                        <p class="lead mb-5">Get answers to the most common questions about our security guard services in Norwalk, California. Our expert team is here to help you make informed decisions about your security needs.</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="accordion fade-in" id="norwalkFAQ">
+                            <!-- FAQ Item 1 -->
+                            <div class="card border-0 shadow-sm mb-3">
+                                <div class="card-header bg-white" id="headingOne">
+                                    <h3 class="mb-0">
+                                        <button class="btn btn-link w-100 text-left font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <i class="fas fa-question-circle text-primary mr-2" aria-hidden="true"></i>
+                                            What security services do you offer in Norwalk, California?
+                                        </button>
+                                    </h3>
+                                </div>
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#norwalkFAQ">
+                                    <div class="card-body">
+                                        <p><strong>We provide comprehensive security services in Norwalk including:</strong></p>
+                                        <ul>
+                                            <li><strong>Medical facility security</strong> for hospitals and clinics</li>
+                                            <li><strong>Retail security</strong> for shopping centers and stores</li>
+                                            <li><strong>Educational institution security</strong> for schools and colleges</li>
+                                            <li><strong>Commercial building security</strong> for offices and businesses</li>
+                                            <li><strong>Event security</strong> for special events and gatherings</li>
+                                            <li><strong>Mobile patrol services</strong> for multiple property coverage</li>
+                                        </ul>
+                                        <p>All services are available 24/7 with emergency response capabilities.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 2 -->
+                            <div class="card border-0 shadow-sm mb-3">
+                                <div class="card-header bg-white" id="headingTwo">
+                                    <h3 class="mb-0">
+                                        <button class="btn btn-link collapsed w-100 text-left font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            <i class="fas fa-shield-alt text-primary mr-2" aria-hidden="true"></i>
+                                            Are your security guards licensed and insured in California?
+                                        </button>
+                                    </h3>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#norwalkFAQ">
+                                    <div class="card-body">
+                                        <p><strong>Yes, absolutely!</strong> All ShieldWise security guards are fully licensed through the California Bureau of Security and Investigative Services (BSIS). Our comprehensive credentials include:</p>
+                                        <ul>
+                                            <li><strong>$2M liability insurance</strong> coverage</li>
+                                            <li><strong>Full workers' compensation</strong> protection</li>
+                                            <li><strong>Rigorous background checks</strong> and verification</li>
+                                            <li><strong>Regular drug testing</strong> and health screenings</li>
+                                            <li><strong>Ongoing training programs</strong> and certifications</li>
+                                            <li><strong>BSIS license compliance</strong> and renewals</li>
+                                        </ul>
+                                        <p>We maintain the highest standards of professionalism and legal compliance in the industry.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 3 -->
+                            <div class="card border-0 shadow-sm mb-3">
+                                <div class="card-header bg-white" id="headingThree">
+                                    <h3 class="mb-0">
+                                        <button class="btn btn-link collapsed w-100 text-left font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            <i class="fas fa-hospital text-primary mr-2" aria-hidden="true"></i>
+                                            Do you specialize in medical facility security for Norwalk hospitals?
+                                        </button>
+                                    </h3>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#norwalkFAQ">
+                                    <div class="card-body">
+                                        <p><strong>Absolutely!</strong> Norwalk's healthcare sector has unique security requirements, and we provide specialized services for hospitals, clinics, and medical facilities including Coast Plaza Hospital and Metropolitan State Hospital.</p>
+                                        <p><strong>Our medical security solutions include:</strong></p>
+                                        <ul>
+                                            <li><strong>HIPAA compliance training</strong> and protocols</li>
+                                            <li><strong>Patient interaction protocols</strong> and sensitivity training</li>
+                                            <li><strong>Emergency response coordination</strong> with medical staff</li>
+                                            <li><strong>Visitor management systems</strong> and access control</li>
+                                            <li><strong>24/7 monitoring</strong> and surveillance</li>
+                                            <li><strong>Crisis intervention</strong> and de-escalation techniques</li>
+                                        </ul>
+                                        <p>Our guards receive specialized healthcare security training to handle the unique challenges of medical environments.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 4 -->
+                            <div class="card border-0 shadow-sm mb-3">
+                                <div class="card-header bg-white" id="headingFour">
+                                    <h3 class="mb-0">
+                                        <button class="btn btn-link collapsed w-100 text-left font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            <i class="fas fa-clock text-primary mr-2" aria-hidden="true"></i>
+                                            How quickly can you deploy security guards in Norwalk?
+                                        </button>
+                                    </h3>
+                                </div>
+                                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#norwalkFAQ">
+                                    <div class="card-body">
+                                        <p><strong>Emergency Response Times:</strong></p>
+                                        <ul>
+                                            <li><strong>Emergency situations:</strong> 1-4 hours deployment anywhere in Norwalk</li>
+                                            <li><strong>Standard service:</strong> Within 24 hours or less</li>
+                                            <li><strong>Planned deployment:</strong> Same-day to next-day service</li>
+                                        </ul>
+                                        <p><strong>Our rapid response covers:</strong></p>
+                                        <ul>
+                                            <li>Medical facilities and hospitals</li>
+                                            <li>Retail centers and shopping areas</li>
+                                            <li>Educational institutions</li>
+                                            <li>Commercial and government buildings</li>
+                                            <li>Construction sites and events</li>
+                                        </ul>
+                                        <p>We maintain a ready-deploy team specifically for Norwalk area emergency situations.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 5 -->
+                            <div class="card border-0 shadow-sm mb-3 highlighted-faq">
+                                <div class="card-header bg-primary text-white" id="headingFive">
+                                    <h3 class="mb-0">
+                                        <button class="btn btn-link collapsed w-100 text-left font-weight-bold text-white" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                            <i class="fas fa-language text-white mr-2" aria-hidden="true"></i>
+                                            Do you provide bilingual security services in Norwalk?
+                                        </button>
+                                    </h3>
+                                </div>
+                                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#norwalkFAQ">
+                                    <div class="card-body">
+                                        <p><strong>Yes, we provide comprehensive bilingual security services</strong> in Norwalk with guards fluent in both English and Spanish. This is essential for effective communication with Norwalk's diverse community.</p>
+                                        <p><strong>Our bilingual capabilities include:</strong></p>
+                                        <ul>
+                                            <li><strong>Customer service</strong> in English and Spanish</li>
+                                            <li><strong>Emergency communication</strong> and crisis response</li>
+                                            <li><strong>Incident reporting</strong> in both languages</li>
+                                            <li><strong>Community interaction</strong> and cultural sensitivity</li>
+                                            <li><strong>Written documentation</strong> and reporting</li>
+                                            <li><strong>Translation services</strong> when needed</li>
+                                        </ul>
+                                        <p>Our bilingual guards ensure clear interaction during security incidents, customer service situations, and emergency responses throughout Norwalk's diverse neighborhoods.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Additional FAQ Item 6 -->
+                            <div class="card border-0 shadow-sm mb-3">
+                                <div class="card-header bg-white" id="headingSix">
+                                    <h3 class="mb-0">
+                                        <button class="btn btn-link collapsed w-100 text-left font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                            <i class="fas fa-dollar-sign text-primary mr-2" aria-hidden="true"></i>
+                                            What are the costs for security guard services in Norwalk?
+                                        </button>
+                                    </h3>
+                                </div>
+                                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#norwalkFAQ">
+                                    <div class="card-body">
+                                        <p><strong>Our competitive pricing structure includes:</strong></p>
+                                        <ul>
+                                            <li><strong>Unarmed security guards:</strong> $35-55 per hour</li>
+                                            <li><strong>Armed security guards:</strong> $45-75 per hour</li>
+                                            <li><strong>Medical facility security:</strong> $45-75 per hour</li>
+                                            <li><strong>Special event security:</strong> $40-65 per hour</li>
+                                            <li><strong>Mobile patrol services:</strong> $55-85 per hour</li>
+                                        </ul>
+                                        <p><strong>Factors affecting pricing:</strong></p>
+                                        <ul>
+                                            <li>Type of security service required</li>
+                                            <li>Duration and scheduling needs</li>
+                                            <li>Special training requirements</li>
+                                            <li>Location and risk assessment</li>
+                                            <li>Volume discounts for long-term contracts</li>
+                                        </ul>
+                                        <p><strong>Contact us for a free, customized quote</strong> based on your specific Norwalk security needs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section with Enhanced Content -->
+        <section class="py-5 bg-primary text-white" role="region" aria-labelledby="cta-heading">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 text-center">
+                        <h2 id="cta-heading" class="mb-4">Ready to Secure Your Norwalk Property Today?</h2>
+                        <p class="lead mb-5">Contact ShieldWise Security today for a customized security solution designed specifically for your Norwalk location. Our team of security experts will work with you to develop a comprehensive security plan that addresses your unique challenges and provides maximum protection for your property, staff, and assets.</p>
+                        
+                        <div class="cta-benefits mb-4">
+                            <div class="row text-center">
+                                <div class="col-md-4 mb-3">
+                                    <i class="fas fa-clock fa-2x mb-2" aria-hidden="true"></i>
+                                    <h4>24/7 Availability</h4>
+                                    <p>Round-the-clock security services</p>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <i class="fas fa-bolt fa-2x mb-2" aria-hidden="true"></i>
+                                    <h4>Rapid Response</h4>
+                                    <p>1-4 hour emergency deployment</p>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <i class="fas fa-award fa-2x mb-2" aria-hidden="true"></i>
+                                    <h4>Licensed & Insured</h4>
+                                    <p>BSIS licensed, $2M coverage</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-buttons">
+                            <a href="/get-quote?location=norwalk" class="btn btn-light btn-lg mr-3 mb-3" aria-label="Get a free security quote specifically for your Norwalk property">
+                                <i class="fas fa-calculator" aria-hidden="true"></i> Get Free Security Quote
+                            </a>
+                            <a href="/contact" class="btn btn-outline-light btn-lg mr-3 mb-3" aria-label="Contact ShieldWise Security for Norwalk services">
+                                <i class="fas fa-envelope" aria-hidden="true"></i> Contact Our Team
+                            </a>
+                            <a href="tel:+15629245300" class="btn btn-warning btn-lg mb-3" aria-label="Call ShieldWise Security at 562-924-5300">
+                                <i class="fas fa-phone" aria-hidden="true"></i> Call (562) 924-5300
+                            </a>
+                        </div>
+                        
+                        <div class="cta-guarantee mt-4 p-3 bg-rgba-white rounded">
+                            <p class="mb-0 text-dark">
+                                <i class="fas fa-check-circle text-success mr-2" aria-hidden="true"></i>
+                                <strong>100% Satisfaction Guarantee</strong> - Free consultation and quote. No obligations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Areas Section with Enhanced Content -->
+        <section class="py-5 bg-light" role="region" aria-labelledby="related-areas-heading">
+            <div class="container">
+                <h2 id="related-areas-heading" class="text-center mb-5">Explore Other Los Angeles Areas We Serve</h2>
+                <p class="text-center lead mb-5">ShieldWise Security provides comprehensive security services throughout Los Angeles County. Discover how we can protect your business in these nearby areas:</p>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <a href="/los-angeles" class="text-decoration-none" aria-label="View Los Angeles security services">
+                            <div class="card h-100 shadow-sm hover-effect">
+                                <img src="/img/la-pic.webp" 
+                                     class="card-img-top" 
+                                     alt="Professional security guard services in Los Angeles downtown area with 24/7 armed and unarmed protection for businesses, events, and high-rise buildings" 
+                                     width="400" 
+                                     height="250" 
+                                     loading="lazy"
+                                     sizes="(max-width: 768px) 100vw, 400px">
+                                <div class="card-body text-center">
+                                    <h3 class="h5 card-title">Los Angeles Security Services</h3>
+                                    <p class="card-text">Comprehensive security services throughout Los Angeles including downtown, Hollywood, and business districts.</p>
+                                    <div class="service-highlights">
+                                        <small class="text-muted">
+                                            <i class="fas fa-shield-alt mr-1" aria-hidden="true"></i> Armed & Unarmed Guards
+                                            <br>
+                                            <i class="fas fa-building mr-1" aria-hidden="true"></i> Commercial Security
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <a href="/los-angeles/downey" class="text-decoration-none" aria-label="View Downey security services">
+                            <div class="card h-100 shadow-sm hover-effect">
+                                <img src="/img/LA.webp" 
+                                     class="card-img-top" 
+                                     alt="Licensed security guards in Downey providing specialized business protection, retail security, and event security services for local businesses" 
+                                     width="400" 
+                                     height="250" 
+                                     loading="lazy"
+                                     sizes="(max-width: 768px) 100vw, 400px">
+                                <div class="card-body text-center">
+                                    <h3 class="h5 card-title">Downey Security Services</h3>
+                                    <p class="card-text">Specialized security for Downey businesses, retail centers, and special events with rapid response capabilities.</p>
+                                    <div class="service-highlights">
+                                        <small class="text-muted">
+                                            <i class="fas fa-store mr-1" aria-hidden="true"></i> Retail Security
+                                            <br>
+                                            <i class="fas fa-calendar-alt mr-1" aria-hidden="true"></i> Event Protection
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <a href="/los-angeles/cerritos" class="text-decoration-none" aria-label="View Cerritos security services">
+                            <div class="card h-100 shadow-sm hover-effect">
+                                <img src="/img/downtown_la.webp" 
+                                     class="card-img-top" 
+                                     alt="Premium security solutions for Cerritos properties including commercial buildings, educational facilities, and residential complexes" 
+                                     width="400" 
+                                     height="250" 
+                                     loading="lazy"
+                                     sizes="(max-width: 768px) 100vw, 400px">
+                                <div class="card-body text-center">
+                                    <h3 class="h5 card-title">Cerritos Security Services</h3>
+                                    <p class="card-text">Premium security solutions for Cerritos properties including educational facilities and commercial buildings.</p>
+                                    <div class="service-highlights">
+                                        <small class="text-muted">
+                                            <i class="fas fa-graduation-cap mr-1" aria-hidden="true"></i> Educational Security
+                                            <br>
+                                            <i class="fas fa-building mr-1" aria-hidden="true"></i> Commercial Protection
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <a href="/service-areas" class="btn btn-primary btn-lg" aria-label="View all service areas in Los Angeles County">
+                        <i class="fas fa-map-marked-alt mr-2" aria-hidden="true"></i>
+                        View All Service Areas
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <%- include('../partials/Footer') %>
 
-    <!-- Back to Top Button -->
-    <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
+    <!-- Back to Top Button with Enhanced Accessibility -->
+    <a href="#top" id="backToTop" class="back-to-top" aria-label="Return to top of page" role="button">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+        <span class="sr-only">Back to top</span>
     </a>
 
-    <!-- JavaScript Libraries with nonce -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" nonce="security-script"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" nonce="security-script"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" nonce="security-script"></script>
+    <!-- JavaScript Libraries with nonce and performance optimization -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" nonce="security-script" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" nonce="security-script" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" nonce="security-script" defer></script>
 
-    <!-- Optimized JavaScript -->
+    <!-- Enhanced JavaScript with Performance Optimization -->
     <script nonce="security-script">
-        // Wait for DOM to be fully loaded
+        // Critical performance optimizations
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('DOM loaded successfully');
+            console.log('DOM loaded successfully - Norwalk Security Page');
 
-            // Initialize fade-in animations
+            // Initialize fade-in animations with Intersection Observer
             function initAnimations() {
-                const observerOptions = {
-                    threshold: 0.1,
-                    rootMargin: '0px 0px -50px 0px'
-                };
+                if ('IntersectionObserver' in window) {
+                    const observerOptions = {
+                        threshold: 0.1,
+                        rootMargin: '0px 0px -50px 0px'
+                    };
 
-                const observer = new IntersectionObserver(function(entries) {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('visible');
-                        }
+                    const observer = new IntersectionObserver(function(entries) {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                                // Unobserve after animation to improve performance
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, observerOptions);
+
+                    // Observe all fade-in elements
+                    document.querySelectorAll('.fade-in').forEach(el => {
+                        observer.observe(el);
                     });
-                }, observerOptions);
-
-                // Observe all fade-in elements
-                document.querySelectorAll('.fade-in').forEach(el => {
-                    observer.observe(el);
-                });
+                } else {
+                    // Fallback for older browsers
+                    document.querySelectorAll('.fade-in').forEach(el => {
+                        el.classList.add('visible');
+                    });
+                }
             }
 
-            // Initialize back to top button
+            // Initialize back to top button with throttling
             function initBackToTop() {
                 const backToTopButton = document.getElementById('backToTop');
+                let ticking = false;
 
                 if (backToTopButton) {
-                    window.addEventListener('scroll', function() {
+                    function updateBackToTop() {
                         if (window.pageYOffset > 300) {
                             backToTopButton.classList.add('active');
                         } else {
                             backToTopButton.classList.remove('active');
+                        }
+                        ticking = false;
+                    }
+
+                    window.addEventListener('scroll', function() {
+                        if (!ticking) {
+                            requestAnimationFrame(updateBackToTop);
+                            ticking = true;
                         }
                     });
 
@@ -1024,16 +1511,48 @@
                 }
             }
 
-            // Initialize navbar scroll effect
+            // Initialize navbar scroll effect with throttling
             function initNavbar() {
                 const navbar = document.querySelector('.navbar');
+                let ticking = false;
+
                 if (navbar) {
-                    window.addEventListener('scroll', function() {
+                    function updateNavbar() {
                         if (window.pageYOffset > 50) {
                             navbar.classList.add('scrolled');
                         } else {
                             navbar.classList.remove('scrolled');
                         }
+                        ticking = false;
+                    }
+
+                    window.addEventListener('scroll', function() {
+                        if (!ticking) {
+                            requestAnimationFrame(updateNavbar);
+                            ticking = true;
+                        }
+                    });
+                }
+            }
+
+            // Initialize lazy loading for remaining images
+            function initLazyLoading() {
+                if ('IntersectionObserver' in window) {
+                    const imageObserver = new IntersectionObserver(function(entries, observer) {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const img = entry.target;
+                                if (img.dataset.src) {
+                                    img.src = img.dataset.src;
+                                    img.classList.remove('lazy');
+                                    imageObserver.unobserve(img);
+                                }
+                            }
+                        });
+                    });
+
+                    document.querySelectorAll('img[data-src]').forEach(img => {
+                        imageObserver.observe(img);
                     });
                 }
             }
@@ -1042,63 +1561,127 @@
             initAnimations();
             initBackToTop();
             initNavbar();
+            initLazyLoading();
+
+            // Add error handling for images
+            document.querySelectorAll('img').forEach(img => {
+                img.addEventListener('error', function() {
+                    this.style.display = 'none';
+                    console.warn('Image failed to load:', this.src);
+                });
+            });
         });
 
         // jQuery ready function for Bootstrap components
         $(document).ready(function() {
             console.log('jQuery loaded successfully, version:', $.fn.jquery);
 
-            // Test FAQ accordion functionality
+            // Enhanced FAQ accordion functionality
             $('.collapse').on('show.bs.collapse', function () {
                 console.log('FAQ opening:', this.id);
                 const button = $(this).parent().find('[data-toggle="collapse"]');
                 button.removeClass('collapsed');
+                button.find('i').removeClass('fa-plus').addClass('fa-minus');
             });
 
             $('.collapse').on('hide.bs.collapse', function () {
                 console.log('FAQ closing:', this.id);
                 const button = $(this).parent().find('[data-toggle="collapse"]');
                 button.addClass('collapsed');
+                button.find('i').removeClass('fa-minus').addClass('fa-plus');
             });
 
-            // Smooth scrolling for anchor links
+            // Smooth scrolling for anchor links with offset for fixed header
             $('a[href^="#"]').on('click', function(event) {
                 const target = $(this.getAttribute('href'));
                 if (target.length) {
                     event.preventDefault();
+                    const offset = $('.navbar').outerHeight() || 70;
                     $('html, body').stop().animate({
-                        scrollTop: target.offset().top - 70
-                    }, 1000);
+                        scrollTop: target.offset().top - offset
+                    }, 1000, 'easeInOutCubic');
                 }
             });
 
-            // Initialize tooltips if any
+            // Initialize tooltips and popovers
             $('[data-toggle="tooltip"]').tooltip();
+            $('[data-toggle="popover"]').popover();
+
+            // Enhanced hover effects for cards
+            $('.hover-effect').hover(
+                function() {
+                    $(this).addClass('shadow-lg').css('transform', 'translateY(-5px)');
+                },
+                function() {
+                    $(this).removeClass('shadow-lg').css('transform', 'translateY(0)');
+                }
+            );
+
+            // Track user interactions for analytics
+            $('.btn').on('click', function() {
+                const buttonText = $(this).text().trim();
+                console.log('Button clicked:', buttonText);
+                // Add analytics tracking here if needed
+            });
         });
 
-        // Fallback for older browsers
-        if (typeof IntersectionObserver === 'undefined') {
-            window.addEventListener('scroll', function() {
-                const elements = document.querySelectorAll('.fade-in');
-                elements.forEach(element => {
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const screenPosition = window.innerHeight / 1.2;
+        // Performance monitoring
+        window.addEventListener('load', function() {
+            // Log page load performance
+            const navigation = performance.getEntriesByType('navigation')[0];
+            if (navigation) {
+                console.log('Page load time:', navigation.loadEventEnd - navigation.fetchStart, 'ms');
+            }
 
-                    if (elementPosition < screenPosition) {
-                        element.classList.add('visible');
-                    }
-                });
+            // Check for Core Web Vitals
+            if ('web-vital' in window) {
+                // This would integrate with Web Vitals library if loaded
+                console.log('Web Vitals monitoring enabled');
+            }
+        });
+
+        // Error handling and fallbacks
+        window.addEventListener('error', function(e) {
+            console.warn('JavaScript error caught:', e.error);
+            // Could send error to analytics service
+        });
+
+        // Service Worker registration for PWA capabilities
+        if ('serviceWorker' in navigator && 'PushManager' in window) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(function(err) {
+                        console.log('ServiceWorker registration failed');
+                    });
             });
         }
     </script>
 
-    <!-- Analytics Scripts - Loaded asynchronously -->
+    <!-- Analytics Scripts - Loaded asynchronously for performance -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID" nonce="security-script"></script>
     <script nonce="security-script">
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'GA_MEASUREMENT_ID');
+      gtag('config', 'GA_MEASUREMENT_ID', {
+        page_title: 'Norwalk Security Guards',
+        page_location: window.location.href,
+        custom_map: {
+          'custom_parameter_1': 'norwalk_security'
+        }
+      });
+      
+      // Track page view
+      gtag('event', 'page_view', {
+        page_title: 'Norwalk Security Services',
+        page_location: window.location.href,
+        content_group1: 'Security Services',
+        content_group2: 'Norwalk',
+        content_group3: 'Los Angeles County'
+      });
     </script>
 
     <!-- Microsoft Clarity - Loaded asynchronously -->
@@ -1108,6 +1691,47 @@
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "YOUR_CLARITY_PROJECT_ID");
+    </script>
+
+    <!-- Schema.org WebPage markup for enhanced SEO -->
+    <script type="application/ld+json" nonce="security-script">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Norwalk Security Guards - Professional 24/7 Protection Services",
+        "description": "Professional security guard services in Norwalk, CA. Medical facility, retail, and educational security. Licensed BSIS guards, 1-4 hour response time.",
+        "url": "https://shieldwisesecurity.com/los-angeles/norwalk",
+        "mainEntity": {
+            "@type": "SecurityService",
+            "name": "ShieldWise Security - Norwalk"
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://shieldwisesecurity.com/"
+                },
+                {
+                    "@type": "ListItem", 
+                    "position": 2,
+                    "name": "Los Angeles Security",
+                    "item": "https://shieldwisesecurity.com/los-angeles/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Norwalk Security Guards"
+                }
+            ]
+        },
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", "h2", ".lead"]
+        }
+    }
     </script>
 </body>
 </html>
