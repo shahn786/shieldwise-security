@@ -63,17 +63,7 @@
     <meta name="yandex-verification" content="ab4d8f2e6c9a1b3e5d7f9a2c4e6g8h0j2"></meta>
 
     <!-- Performance Optimization - Critical CSS Inline -->
-    <style>
-        /* Critical above-the-fold styles */
-        body{margin:0;padding:0;font-family:Roboto,sans-serif}
-        .hero-downtown{background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('/img/redondo-beach-hero.avif') center/cover;background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),image-set(url('/img/redondo-beach-hero.avif') type('image/avif'),url('/img/redondo-beach-hero.webp') type('image/webp'),url('/img/redondo-beach-hero.jpg') type('image/jpeg'));height:100vh;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center}
-        .hero-content h1{font-size:3.5rem;font-weight:800;margin-bottom:1rem;text-shadow:2px 2px 4px rgba(0,0,0,0.7)}
-        .hero-content h2{font-size:1.5rem;font-weight:400;margin-bottom:2rem;text-shadow:1px 1px 2px rgba(0,0,0,0.7)}
-        .btn{padding:15px 30px;font-size:1.1rem;border-radius:5px;text-decoration:none;display:inline-block;transition:all 0.3s ease}
-        .btn-primary{background:#d12028;color:#fff;border:none}
-        .btn-primary:hover{background:#a71d2a;transform:translateY(-2px)}
-        @media(max-width:768px){.hero-content h1{font-size:2.5rem}.hero-content h2{font-size:1.2rem}}
-    </style>
+    
 
     <!-- Preload Critical Resources with Multiple Format Support -->
     <link rel="preload" href="/img/redondo-beach-hero.avif" as="image" type="image/avif" fetchpriority="high">
@@ -871,21 +861,7 @@
         </div>
     </section>
 
-    <!-- Emergency Response Section -->
-    <section class="emergency-response py-4 bg-danger text-white" role="region" aria-labelledby="emergency-heading">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-8">
-                    <h3 id="emergency-heading" class="mb-0"><i class="fas fa-exclamation-circle mr-3" aria-hidden="true"></i> Emergency Security Response in Redondo Beach</h3>
-                    <p class="lead mb-0">24/7 rapid deployment for urgent security needs. Our emergency response team can deploy to any Redondo Beach location within 2-4 hours with fully equipped, licensed security personnel.</p>
-                </div>
-                <div class="col-md-4 text-center text-md-right mt-3 mt-md-0">
-                    <a href="tel:+17147167430" class="btn btn-light btn-lg" aria-label="Call ShieldWise Security emergency line"><i class="fas fa-phone-alt mr-2" aria-hidden="true"></i> (714) 716-7430</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
+   
     <!-- Footer -->
     <%- include('../partials/Footer') %>
 
