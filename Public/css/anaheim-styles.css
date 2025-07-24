@@ -545,7 +545,7 @@
 .anaheim-service-item {
   background: white;
   border-radius: var(--border-radius);
-  padding: 40px 30px;
+  padding: 30px 25px;
   text-align: center;
   transition: var(--transition);
   box-shadow: var(--box-shadow);
@@ -560,6 +560,7 @@
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+  border: 1px solid #f0f0f0;
 }
 
 .anaheim-service-item.in-view {
@@ -598,43 +599,48 @@
 }
 
 .service-icon-wrapper {
-  width: 70px;
-  height: 70px;
-  background: linear-gradient(45deg, #f0f5ff, #e6f0ff);
-  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   transition: var(--transition);
 }
 
 .anaheim-service-item:hover .service-icon-wrapper {
-  background: linear-gradient(45deg, #d9e8ff, #c2dbff);
+  background: linear-gradient(45deg, #e3f2fd, #bbdefb);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
 }
 
 .anaheim-service-item i {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   color: var(--primary-color);
   transition: var(--transition);
 }
 
 .anaheim-service-item:hover i {
-  transform: scale(1.2);
+  transform: scale(1.1);
+  color: var(--primary-dark);
 }
 
 .anaheim-service-item h3 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   transition: var(--transition);
+  line-height: 1.3;
 }
 
 .anaheim-service-item p {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--text-medium);
-  line-height: 1.7;
-  margin-bottom: 20px;
+  line-height: 1.6;
+  margin-bottom: 15px;
   flex-grow: 1;
 }
 
