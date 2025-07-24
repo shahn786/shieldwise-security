@@ -107,51 +107,6 @@
     <meta name="bingbot" content="index, follow">
     <meta name="news_keywords" content="Manhattan Beach security, professional guards, BSIS licensed, emergency response">
 
-    <!-- Critical CSS Inline -->
-    <style>
-        /* Critical Above-the-Fold CSS for LCP Optimization */
-        .hero-downtown {
-            background: linear-gradient(135deg, rgba(26,60,100,0.9), rgba(45,90,135,0.9)), url('/img/downtown-la-security.jpg');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            padding: 120px 0;
-            text-align: center;
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .hero-content h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-        }
-        .hero-content h2 {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            font-weight: 400;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-        .btn-primary {
-            background-color: #2b5797;
-            border-color: #2b5797;
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            background-color: #1a3c64;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(43,87,151,0.3);
-        }
-        body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
-    </style>
-
     <!-- Breadcrumb Schema -->
     <script type="application/ld+json">
     {
@@ -466,34 +421,7 @@
     <%- include('../partials/Header') %>
 
     <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" class="bg-light py-2">
-        <div class="container">
-            <ol class="breadcrumb mb-0" itemscope itemtype="https://schema.org/BreadcrumbList">
-                <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a href="/" itemprop="item" title="ShieldWise Security Home">
-                        <span itemprop="name">Home</span>
-                    </a>
-                    <meta itemprop="position" content="1" />
-                </li>
-                <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a href="/service-areas" itemprop="item" title="Security Service Areas">
-                        <span itemprop="name">Service Areas</span>
-                    </a>
-                    <meta itemprop="position" content="2" />
-                </li>
-                <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a href="/los-angeles/" itemprop="item" title="Los Angeles Security Services">
-                        <span itemprop="name">Los Angeles</span>
-                    </a>
-                    <meta itemprop="position" content="3" />
-                </li>
-                <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <span itemprop="name">Manhattan Beach Security</span>
-                    <meta itemprop="position" content="4" />
-                </li>
-            </ol>
-        </div>
-    </nav>
+    
 
     <!-- Hero Section with Background Image -->
     <section class="hero-downtown" id="main-content">
