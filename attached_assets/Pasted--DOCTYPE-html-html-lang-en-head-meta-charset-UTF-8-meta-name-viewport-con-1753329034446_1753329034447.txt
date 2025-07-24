@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed FAQ Section</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .anaheim-faq-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .anaheim-faq-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .anaheim-faq-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #003366;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .anaheim-faq-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            border-radius: 2px;
+        }
+
+        .anaheim-faq-list {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .anaheim-faq-item {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .anaheim-faq-item:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            transition: all 0.3s ease;
+            border: none;
+            width: 100%;
+        }
+
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+
+        .faq-question h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #003366;
+            margin: 0;
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .faq-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-toggle i {
+            color: white;
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .anaheim-faq-item.active .faq-toggle {
+            background: linear-gradient(135deg, #28a745, #20c997);
+        }
+
+        .anaheim-faq-item.active .faq-toggle i {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            background: #f8f9fa;
+        }
+
+        .anaheim-faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 30px 30px 30px;
+        }
+
+        .faq-answer p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+            margin: 0;
+            padding-top: 10px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .anaheim-faq-section {
+                padding: 60px 0;
+            }
+
+            .anaheim-faq-container {
+                padding: 0 15px;
+            }
+
+            .anaheim-faq-section h2 {
+                font-size: 2rem;
+            }
+
+            .faq-question {
+                padding: 20px;
+            }
+
+            .faq-question h3 {
+                font-size: 1.1rem;
+                padding-right: 15px;
+            }
+
+            .anaheim-faq-item.active .faq-answer {
+                padding: 0 20px 25px 20px;
+            }
+
+            .faq-toggle {
+                width: 35px;
+                height: 35px;
+            }
+
+            .faq-toggle i {
+                font-size: 14px;
+            }
+        }
+
+        /* Animation for smooth entrance */
+        .anaheim-faq-item {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .anaheim-faq-item:nth-child(1) { animation-delay: 0.1s; }
+        .anaheim-faq-item:nth-child(2) { animation-delay: 0.2s; }
+        .anaheim-faq-item:nth-child(3) { animation-delay: 0.3s; }
+        .anaheim-faq-item:nth-child(4) { animation-delay: 0.4s; }
+        .anaheim-faq-item:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- FAQ Section -->
+<section class="anaheim-faq-section">
+    <div class="anaheim-faq-container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="anaheim-faq-list">
+            <div class="anaheim-faq-item">
+                <div class="faq-question">
+                    <h3>What security services do you provide in Anaheim?</h3>
+                    <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                </div>
+                <div class="faq-answer">
+                    <p>We offer a comprehensive range of security services in Anaheim including armed and unarmed security officers, mobile patrol services, event security (including conventions and sporting events), fire watch services, executive protection, retail security, and construction site protection.</p>
+                </div>
+            </div>
+
+            <div class="anaheim-faq-item">
+                <div class="faq-question">
+                    <h3>Are your security guards licensed and insured?</h3>
+                    <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, all ShieldWise security personnel are fully licensed, insured, and BSIS-certified. Our guards undergo rigorous background checks and receive extensive training in emergency response, conflict resolution, and customer service to ensure the highest level of professional security service.</p>
+                </div>
+            </div>
+
+            <div class="anaheim-faq-item">
+                <div class="faq-question">
+                    <h3>How quickly can you deploy security guards in Anaheim?</h3>
+                    <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                </div>
+                <div class="faq-answer">
+                    <p>We understand that security needs can arise quickly. In emergency situations, we can often deploy guards within hours. For standard service requests, we typically establish security coverage within 24-48 hours after completing an initial security assessment of your property or event venue.</p>
+                </div>
+            </div>
+
+            <div class="anaheim-faq-item">
+                <div class="faq-question">
+                    <h3>Do you provide security for corporate campuses in Anaheim?</h3>
+                    <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, we specialize in corporate campus security and regularly provide services throughout Anaheim's business districts. Our teams are experienced in handling access control, visitor management, employee safety, and coordinating with facility management teams.</p>
+                </div>
+            </div>
+
+            <div class="anaheim-faq-item">
+                <div class="faq-question">
+                    <h3>What makes ShieldWise different from other security companies in Anaheim?</h3>
+                    <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                </div>
+                <div class="faq-answer">
+                    <p>ShieldWise stands out through our local expertise, highly trained personnel, customized security solutions, advanced reporting systems, and exceptional customer service. We develop tailored security plans specific to each client's needs rather than offering one-size-fits-all solutions. Additionally, our management team is available 24/7 to address any concerns immediately.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all FAQ question elements
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const faqItem = this.closest('.anaheim-faq-item');
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all FAQ items first
+            document.querySelectorAll('.anaheim-faq-item').forEach(item => {
+                item.classList.remove('active');
+                const icon = item.querySelector('.faq-toggle i');
+                icon.className = 'fas fa-plus';
+            });
+            
+            // If the clicked item wasn't active, open it
+            if (!isActive) {
+                faqItem.classList.add('active');
+                const icon = this.querySelector('.faq-toggle i');
+                icon.className = 'fas fa-plus'; // Keep as plus, CSS rotation will make it look like X
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
