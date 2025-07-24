@@ -1059,10 +1059,9 @@
             </div>
         </section>
 
-         <!-- FAQ Section - New Addition -->
+         <!-- FAQ Section - Enhanced -->
                                 <section class="anaheim-faq-section">
                                     <div class="anaheim-faq-container">
-
                                         <h2>Frequently Asked Questions</h2>
                                         <div class="anaheim-faq-list">
                                             <div class="anaheim-faq-item">
@@ -1152,23 +1151,21 @@
                                           }, 800);
                                       });
 
-                                      // FAQ Toggles with accordion behavior
+                                      // Enhanced FAQ Toggles with proper animation
                                       $('.faq-question').on('click', function() {
                                           const $item = $(this).closest('.anaheim-faq-item');
                                           const $answer = $item.find('.faq-answer');
                                           const $toggle = $(this).find('.faq-toggle i');
-
-                                          // Check if this item is currently open by checking if it has been opened before
-                                          const isOpen = $answer.hasClass('faq-open');
+                                          const isActive = $item.hasClass('active');
 
                                           // Close all FAQ items first
-                                          $('.anaheim-faq-item .faq-answer').removeClass('faq-open').slideUp(300);
+                                          $('.anaheim-faq-item').removeClass('active');
                                           $('.anaheim-faq-item .faq-toggle i').removeClass('fa-minus').addClass('fa-plus');
 
-                                          // If this item wasn't open, open it
-                                          if (!isOpen) {
-                                              $answer.addClass('faq-open').slideDown(300);
-                                              $toggle.removeClass('fa-plus').addClass('fa-minus');
+                                          // If this item wasn't active, open it
+                                          if (!isActive) {
+                                              $item.addClass('active');
+                                              $toggle.removeClass('fa-plus').addClass('fa-plus'); // Keep as plus, CSS handles the rotation
                                           }
                                       });
 
