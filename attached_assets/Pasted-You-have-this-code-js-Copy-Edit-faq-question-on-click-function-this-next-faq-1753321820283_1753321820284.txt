@@ -1,0 +1,80 @@
+You have this code:
+
+js
+Copy
+Edit
+$('.faq-question').on('click', function() {
+    $(this).next('.faq-answer').slideToggle();
+    $(this).find('.faq-toggle i').toggleClass('fa-plus fa-minus');
+});
+But in your HTML, the .faq-answer is NOT a direct sibling of .faq-question—it's actually a child of the parent .anaheim-faq-item. So .next('.faq-answer') returns nothing.
+
+Why?
+$(this).next('.faq-answer') tries to find the immediate sibling after .faq-question.
+
+In your markup, you have:
+
+html
+Copy
+Edit
+<div class="anaheim-faq-item">
+  <div class="faq-question">...</div>
+  <div class="faq-answer">...</div>
+</div>
+So .faq-answer is a sibling, yes, but only if there are no spaces or text nodes between (which sometimes breaks things), and jQuery's .next() finds only the immediately next sibling node.
+
+How to Fix?
+Use .parent() to reach up, then .find() or .children() to reach down:
+
+Best, Robust Solution:
+js
+Copy
+Edit
+$('.faq-question').on('click', function() {
+    const $parent = $(this).closest('.anaheim-faq-item');
+    $parent.find('.faq-answer').slideToggle();
+    $(this).find('.faq-toggle i').toggleClass('fa-plus fa-minus');
+});
+OR (clean and simple):
+
+js
+Copy
+Edit
+$('.faq-question').on('click', function() {
+    $(this).siblings('.faq-answer').slideToggle();
+    $(this).find('.faq-toggle i').toggleClass('fa-plus fa-minus');
+});
+.siblings('.faq-answer') finds the .faq-answer inside the same parent, regardless of position.
+
+Replace this block in your JS:
+Original:
+js
+Copy
+Edit
+$('.faq-question').on('click', function() {
+    $(this).next('.faq-answer').slideToggle();
+    $(this).find('.faq-toggle i').toggleClass('fa-plus fa-minus');
+});
+With this:
+js
+Copy
+Edit
+$('.faq-question').on('click', function() {
+    $(this).siblings('.faq-answer').slideToggle();
+    $(this).find('.faq-toggle i').toggleClass('fa-plus fa-minus');
+});
+Bonus: Add Smooth Animation and Optional Close on Open
+If you want only one open at a time, you can do:
+
+js
+Copy
+Edit
+$('.faq-question').on('click', function() {
+    const $item = $(this).closest('.anaheim-faq-item');
+    // Close others
+    $('.faq-answer').not($item.find('.faq-answer')).slideUp();
+    $('.faq-toggle i').not($(this).find('i')).removeClass('fa-minus').addClass('fa-plus');
+    // Toggle current
+    $item.find('.faq-answer').slideToggle();
+    $(this).find('.faq-toggle i').toggleClass('fa-plus fa-minus');
+});
