@@ -1282,6 +1282,10 @@
   display: none;
 }
 
+.anaheim-faq-list .faq-answer {
+  display: none;
+}
+
 /* CTA Section */
 .anaheim-cta-section {
   padding: var(--section-padding);
