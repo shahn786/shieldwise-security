@@ -1,0 +1,112 @@
+Why Your FAQ Is Not Expanding:
+Problem:
+You have .anaheim-faq-item .faq-answer { display: none !important; } in your CSS.
+
+This means .slideDown() or .show() by JavaScript does nothing, because !important takes precedence.
+
+How to Fix This
+Option 1: Remove the !important in your CSS
+Replace:
+
+css
+Copy
+Edit
+.anaheim-faq-item .faq-answer {
+  display: none !important;
+}
+with:
+
+css
+Copy
+Edit
+.anaheim-faq-item .faq-answer {
+  display: none;
+}
+Now jQuery .slideDown() and .slideUp() will work!
+
+Option 2: Use the .show class in JavaScript
+If you want to keep !important, then update your JS:
+
+Replace your FAQ toggle JS:
+
+js
+Copy
+Edit
+$('.faq-question').on('click', function() {
+    const $item = $(this).closest('.anaheim-faq-item');
+    const $answer = $item.find('.faq-answer');
+    const $toggle = $(this).find('.faq-toggle i');
+    
+    const isOpen = $answer.is(':visible');
+    
+    // Close all
+    $('.anaheim-faq-item .faq-answer').slideUp(300);
+    $('.anaheim-faq-item .faq-toggle i').removeClass('fa-minus').addClass('fa-plus');
+    
+    if (!isOpen) {
+        $answer.slideDown(300);
+        $toggle.removeClass('fa-plus').addClass('fa-minus');
+    }
+});
+with:
+
+js
+Copy
+Edit
+$('.faq-question').on('click', function() {
+    const $item = $(this).closest('.anaheim-faq-item');
+    const $answer = $item.find('.faq-answer');
+    const $toggle = $(this).find('.faq-toggle i');
+    const isOpen = $answer.hasClass('show');
+    
+    // Close all
+    $('.anaheim-faq-item .faq-answer').removeClass('show');
+    $('.anaheim-faq-item .faq-toggle i').removeClass('fa-minus').addClass('fa-plus');
+    
+    // If not open, open it
+    if (!isOpen) {
+        $answer.addClass('show');
+        $toggle.removeClass('fa-plus').addClass('fa-minus');
+    }
+});
+And you can REMOVE .slideDown() and .slideUp() completely, just toggle the .show class.
+This matches your CSS and is clean.
+
+Quick Summary
+Your CSS is correct if you use the .show class approach.
+
+If you want to use slideDown/slideUp animation with jQuery, you must remove the !important from display: none.
+
+Recommended: Use Only One Approach
+Easiest fix for you:
+Remove !important from:
+
+css
+Copy
+Edit
+.anaheim-faq-item .faq-answer {
+  display: none !important;
+}
+Change to:
+
+css
+Copy
+Edit
+.anaheim-faq-item .faq-answer {
+  display: none;
+}
+Leave your JS as-is (using slideDown/slideUp).
+
+Alternative fix (no animation, pure class toggle):
+Keep your CSS as is.
+
+Change your JS FAQ toggle to toggle .show class as shown above.
+
+Let me know which style you want:
+
+Animation (slideDown/slideUp) — remove !important.
+
+Instant (class toggle, no animation) — update JS to use .show.
+
+If you want both (class and animation), let me know! I’ll give you a solution.
+
