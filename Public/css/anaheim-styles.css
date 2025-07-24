@@ -1279,12 +1279,7 @@
 
 /* Ensure FAQ answers are hidden by default */
 .anaheim-faq-item .faq-answer {
-  display: none !important;
-}
-
-/* Override when shown */
-.anaheim-faq-item .faq-answer.show {
-  display: block !important;
+  display: none;
 }
 
 /* CTA Section */
