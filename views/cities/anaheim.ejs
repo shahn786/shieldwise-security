@@ -859,16 +859,16 @@
                                           const $answer = $item.find('.faq-answer');
                                           const $toggle = $(this).find('.faq-toggle i');
                                           
-                                          // Check if this item is currently open
-                                          const isOpen = $answer.is(':visible');
+                                          // Check if this item is currently open by checking if it has been opened before
+                                          const isOpen = $answer.hasClass('faq-open');
                                           
                                           // Close all FAQ items first
-                                          $('.anaheim-faq-item .faq-answer').slideUp(300);
+                                          $('.anaheim-faq-item .faq-answer').removeClass('faq-open').slideUp(300);
                                           $('.anaheim-faq-item .faq-toggle i').removeClass('fa-minus').addClass('fa-plus');
                                           
                                           // If this item wasn't open, open it
                                           if (!isOpen) {
-                                              $answer.slideDown(300);
+                                              $answer.addClass('faq-open').slideDown(300);
                                               $toggle.removeClass('fa-plus').addClass('fa-minus');
                                           }
                                       });
