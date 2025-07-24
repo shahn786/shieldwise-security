@@ -1195,14 +1195,14 @@
   background-color: transparent;
   border-radius: 20px;
   padding: 40px;
-  color: #333333;
+  color: #000000;
 }
 
 .anaheim-cta-content h2 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #333333;
+  color: #000000;
   text-shadow: none;
 }
 
@@ -1213,7 +1213,7 @@
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  color: #333333;
+  color: #000000;
   text-shadow: none;
 }
 
