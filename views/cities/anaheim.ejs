@@ -857,15 +857,18 @@
                                           const $answer = $item.find('.faq-answer');
                                           const $toggle = $(this).find('.faq-toggle i');
                                           
-                                          // Close other open FAQ items (accordion behavior)
-                                          $('.anaheim-faq-item').not($item).each(function() {
-                                              $(this).find('.faq-answer').slideUp(300);
-                                              $(this).find('.faq-toggle i').removeClass('fa-minus').addClass('fa-plus');
-                                          });
+                                          // Check if this item is currently open
+                                          const isOpen = $answer.is(':visible');
                                           
-                                          // Toggle current item
-                                          $answer.slideToggle(300);
-                                          $toggle.toggleClass('fa-plus fa-minus');
+                                          // Close all FAQ items first
+                                          $('.anaheim-faq-item .faq-answer').slideUp(300);
+                                          $('.anaheim-faq-item .faq-toggle i').removeClass('fa-minus').addClass('fa-plus');
+                                          
+                                          // If this item wasn't open, open it
+                                          if (!isOpen) {
+                                              $answer.slideDown(300);
+                                              $toggle.removeClass('fa-plus').addClass('fa-minus');
+                                          }
                                       });
 
                                       // Intersection Observer for animation triggers
