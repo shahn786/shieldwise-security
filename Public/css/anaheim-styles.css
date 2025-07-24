@@ -1195,15 +1195,15 @@
   background-color: transparent;
   border-radius: 20px;
   padding: 40px;
-  color: #000000;
+  color: white;
 }
 
 .anaheim-cta-content h2 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #000000;
-  text-shadow: none;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .anaheim-cta-content p {
@@ -1213,8 +1213,8 @@
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  color: #000000;
-  text-shadow: none;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .anaheim-cta-buttons {
