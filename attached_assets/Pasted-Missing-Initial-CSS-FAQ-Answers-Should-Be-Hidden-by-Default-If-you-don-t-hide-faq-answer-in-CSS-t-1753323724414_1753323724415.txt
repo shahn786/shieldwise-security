@@ -1,0 +1,84 @@
+Missing Initial CSS: FAQ Answers Should Be Hidden by Default
+If you don’t hide .faq-answer in CSS, they’re always visible, so toggling won’t work.
+If they’re set to display:none !important, JS might not be able to show them.
+
+Add this to your CSS (if it’s not there):
+
+css
+Copy
+Edit
+.anaheim-faq-list .faq-answer {
+  display: none;
+}
+(If you want the first FAQ open, make just that one display:block with a class.)
+
+2. FAQ jQuery: Your code is fine!
+You have:
+
+js
+Copy
+Edit
+$('.faq-question').on('click', function() {
+    const $item = $(this).closest('.anaheim-faq-item');
+    const $answer = $item.find('.faq-answer');
+    const $toggle = $(this).find('.faq-toggle i');
+    
+    // Close others (accordion)
+    $('.anaheim-faq-item').not($item).each(function() {
+        $(this).find('.faq-answer').slideUp(300);
+        $(this).find('.faq-toggle i').removeClass('fa-minus').addClass('fa-plus');
+    });
+    
+    // Toggle current
+    $answer.slideToggle(300);
+    $toggle.toggleClass('fa-plus fa-minus');
+});
+This is 100% correct.
+
+3. Checklist for FAQ Issues
+✅ Are you hiding .faq-answer by default? (Add CSS above if not.)
+
+✅ Is there any conflicting CSS (like display:none !important)?
+
+✅ Do you have one jQuery on the page? (Sometimes duplicate libraries can break things.)
+
+✅ Is your custom script loaded after jQuery loads?
+
+You use jquery.slim.min.js. That’s fine for .slideToggle()!
+
+4. Quick Fix: Add This CSS (If Not Present)
+css
+Copy
+Edit
+.anaheim-faq-list .faq-answer {
+  display: none;
+}
+Put this in your <style> section or your /css/anaheim-styles.css.
+
+5. Test Your FAQ Now
+Reload the page.
+
+Click any FAQ question.
+
+The answer should slide down, and all others should slide up.
+
+6. If Still Not Working
+Open DevTools Console (F12):
+Look for any JavaScript errors.
+
+Check the markup:
+Your .faq-question and .faq-answer are siblings inside .anaheim-faq-item—perfect.
+
+7. Extra Touch: Accessible Markup
+For accessibility, you might want to use button for questions and aria-expanded.
+But for now, just make sure the CSS is set.
+
+Summary:
+The fix is to ensure .faq-answer is hidden by default with CSS:
+
+css
+Copy
+Edit
+.anaheim-faq-list .faq-answer { display: none; }
+Your JavaScript is correct and does not need to change.
+
