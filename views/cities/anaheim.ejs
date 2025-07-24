@@ -896,10 +896,21 @@
                                           }, 800);
                                       });
 
-                                      // FAQ Toggles
+                                      // FAQ Toggles with accordion behavior
                                       $('.faq-question').on('click', function() {
-                                          $(this).next('.faq-answer').slideToggle();
-                                          $(this).find('.faq-toggle i').toggleClass('fa-plus fa-minus');
+                                          const $item = $(this).closest('.anaheim-faq-item');
+                                          const $answer = $item.find('.faq-answer');
+                                          const $toggle = $(this).find('.faq-toggle i');
+                                          
+                                          // Close other open FAQ items (accordion behavior)
+                                          $('.anaheim-faq-item').not($item).each(function() {
+                                              $(this).find('.faq-answer').slideUp(300);
+                                              $(this).find('.faq-toggle i').removeClass('fa-minus').addClass('fa-plus');
+                                          });
+                                          
+                                          // Toggle current item
+                                          $answer.slideToggle(300);
+                                          $toggle.toggleClass('fa-plus fa-minus');
                                       });
 
                                       // Intersection Observer for animation triggers
