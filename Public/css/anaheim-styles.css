@@ -1795,6 +1795,149 @@
   }
 }
 
+/* Featured Content Styles */
+.anaheim-featured-content {
+  background: white;
+  padding: 50px;
+  margin: 40px 0;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.featured-snippet-content h3 {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin: 30px 0 15px 0;
+  font-weight: 600;
+}
+
+.featured-snippet-content ol, .featured-snippet-content ul {
+  margin: 20px 0;
+  padding-left: 25px;
+}
+
+.featured-snippet-content ol li, .featured-snippet-content ul li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.pricing-breakdown {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 8px;
+  margin: 20px 0;
+  border-left: 4px solid var(--primary-color);
+}
+
+/* Authority Indicators */
+.authority-indicators {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 40px;
+  margin: 30px 0;
+  border-radius: var(--border-radius);
+}
+
+.credentials h3 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.credentials-list {
+  list-style: none;
+  padding: 0;
+}
+
+.credentials-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.credentials-list i {
+  color: var(--secondary-color);
+  margin-right: 12px;
+  width: 20px;
+}
+
+/* Local Content Styles */
+.anaheim-local-content {
+  background: white;
+  padding: 50px;
+  margin: 40px 0;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin: 30px 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 25px;
+  background: linear-gradient(135deg, #f1f3f4, #e8eaed);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-medium);
+  line-height: 1.4;
+}
+
+.community-partnerships {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.community-partnerships ul {
+  margin-top: 15px;
+}
+
+.community-partnerships li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* Responsive Design for New Elements */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .anaheim-featured-content,
+  .anaheim-local-content,
+  .authority-indicators {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Print Styles */
 @media print {
   .anaheim-hero,
