@@ -1,3 +1,4 @@
+
 /**
  * Back to Top Button Functionality
  * Reusable script for all city pages
@@ -26,13 +27,39 @@ function initBackToTop() {
         backToTopButton.addEventListener('click', function(e) {
             e.preventDefault();
             console.log('Back to top clicked'); // Debug log
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            
+            // Multiple scroll methods for better compatibility
+            try {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            } catch (error) {
+                // Fallback for older browsers
+                console.log('Using fallback scroll method');
+                window.scrollTo(0, 0);
+                
+                // Manual smooth scroll animation
+                const scrollStep = -window.scrollY / (500 / 15);
+                const scrollInterval = setInterval(function(){
+                    if (window.scrollY !== 0) {
+                        window.scrollBy(0, scrollStep);
+                    } else {
+                        clearInterval(scrollInterval);
+                    }
+                }, 15);
+            }
         });
+
+        // Force initial state
+        if (window.pageYOffset <= 300) {
+            backToTopButton.style.display = 'none';
+        }
+
     } else {
         console.log('Back to top button NOT found'); // Debug log
+        console.log('Available elements with back-to-top class:', document.querySelectorAll('.back-to-top'));
+        console.log('Available elements with backToTop id:', document.querySelectorAll('#backToTop'));
     }
 }
 
@@ -76,7 +103,20 @@ function initWebVitalsMonitoring() {
 
 // Initialize all functionality when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM Content Loaded - Initializing back to top');
     initBackToTop();
     initServiceWorker();
     initWebVitalsMonitoring();
+});
+
+// Also initialize on window load as backup
+window.addEventListener('load', function() {
+    console.log('Window loaded - Backup initialization');
+    if (!document.getElementById('backToTop')?.hasAttribute('data-initialized')) {
+        initBackToTop();
+        const button = document.getElementById('backToTop');
+        if (button) {
+            button.setAttribute('data-initialized', 'true');
+        }
+    }
 });
