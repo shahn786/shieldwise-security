@@ -761,11 +761,11 @@
     grid-template-columns: 1fr;
     gap: 15px;
   }
-  
+
   .anaheim-service-item-compact {
     padding: 20px 15px;
   }
-  
+
   .anaheim-services-section-compact .anaheim-services-title {
     font-size: 1.8rem;
   }
@@ -983,8 +983,56 @@
   font-weight: 600;
 }
 
+/* Back to Top Button Styles */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #003366;
+    color: white;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
 
+.back-to-top:hover {
+    background-color: #2b5797;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
 
+.back-to-top.active {
+    display: flex !important;
+}
+
+.back-to-top i {
+    font-size: 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .back-to-top i {
+        font-size: 14px;
+    }
+}
 
 
 /* Testimonials Section */
@@ -1488,16 +1536,16 @@
   .breadcrumb-nav {
     padding: 8px 0;
   }
-  
+
   .breadcrumb {
     font-size: 12px;
   }
-  
+
   .anaheim-services-grid-enhanced {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
   .security-tips-grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -1967,11 +2015,11 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
-  
+
   .stat-number {
     font-size: 2rem;
   }
-  
+
   .anaheim-featured-content,
   .anaheim-local-content,
   .authority-indicators {

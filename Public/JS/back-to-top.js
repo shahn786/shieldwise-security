@@ -1,3 +1,4 @@
+
 /**
  * Back to Top Button Functionality
  * Reusable script for all city pages
@@ -6,13 +7,20 @@
 // Back to Top Button Handler
 function initBackToTop() {
     console.log('Initializing Back to Top'); // Debug log
+    
+    // Wait for DOM to be fully loaded
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initBackToTop);
+        return;
+    }
+    
     const backToTopButton = document.getElementById('backToTop');
 
     if (backToTopButton) {
         console.log('Back to top button found'); // Debug log
 
         // Show/hide button based on scroll position
-        window.addEventListener('scroll', function() {
+        function handleScroll() {
             if (window.pageYOffset > 300) {
                 backToTopButton.classList.add('active');
                 backToTopButton.style.display = 'flex'; // Use flex to match CSS
@@ -20,19 +28,37 @@ function initBackToTop() {
                 backToTopButton.classList.remove('active');
                 backToTopButton.style.display = 'none';
             }
-        });
+        }
+
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScroll);
 
         // Smooth scroll to top when clicked
         backToTopButton.addEventListener('click', function(e) {
             e.preventDefault();
             console.log('Back to top clicked'); // Debug log
+            
+            // Smooth scroll to top
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
+            
+            // Fallback for older browsers
+            if (window.scrollY > 0) {
+                setTimeout(() => {
+                    document.documentElement.scrollTop = 0;
+                    document.body.scrollTop = 0;
+                }, 100);
+            }
         });
+
+        // Initial check for scroll position
+        handleScroll();
+        
     } else {
         console.log('Back to top button NOT found'); // Debug log
+        console.log('Available elements with id:', document.querySelectorAll('[id*="back"]'));
     }
 }
 
@@ -75,8 +101,22 @@ function initWebVitalsMonitoring() {
 }
 
 // Initialize all functionality when DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+        initBackToTop();
+        initServiceWorker();
+        initWebVitalsMonitoring();
+    });
+} else {
+    // DOM is already loaded
     initBackToTop();
     initServiceWorker();
     initWebVitalsMonitoring();
-});
+}
+
+// Also try to initialize immediately
+try {
+    initBackToTop();
+} catch (error) {
+    console.log('Error initializing back to top:', error);
+}
