@@ -38,11 +38,27 @@ function initBackToTop() {
             e.preventDefault();
             console.log('Back to top clicked'); // Debug log
             
-            // Smooth scroll to top
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            // Check if we're using href="#top" or href="#"
+            const href = backToTopButton.getAttribute('href');
+            if (href === '#top') {
+                // Find element with id="top" or scroll to document top
+                const topElement = document.getElementById('top');
+                if (topElement) {
+                    topElement.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    // Fallback to document top
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            } else {
+                // Default behavior for href="#"
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
             
             // Fallback for older browsers
             if (window.scrollY > 0) {
