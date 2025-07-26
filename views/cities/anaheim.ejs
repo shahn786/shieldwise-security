@@ -602,7 +602,7 @@
     })(window,document,'script','dataLayer','GTM-WXYZ789');</script>
 </head>
 
-<body class="anaheim-page">
+<body id="top" class="anaheim-page">
 
     <!-- Header will be included via server-side template -->
     <%- include('../partials/Header') %>
@@ -1242,6 +1242,18 @@
 
         <!-- Back to Top and Common Functionality -->
         <script src="/JS/back-to-top.js"></script>
+        
+        <!-- Additional initialization to ensure back-to-top works -->
+        <script>
+            // Ensure back-to-top is initialized after all other scripts
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    if (typeof initBackToTop === 'function') {
+                        initBackToTop();
+                    }
+                });
+            }, 100);
+        </script>
 
         </body>
         </html>
