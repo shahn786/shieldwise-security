@@ -1,0 +1,83 @@
+Missing or Duplicate Element ID
+Your JavaScript looks for id="backToTop".
+
+If your Anaheim page does not have this button (or it’s misspelled, duplicated, or hidden by server-side templating), the script will not find it, and nothing will work.
+
+Check your Anaheim HTML:
+
+html
+Copy
+Edit
+<a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+</a>
+Make sure the ID matches exactly and is only used once on the page.
+
+2. Button is Hidden by CSS
+If the button is present in the DOM, but never appears, CSS might be keeping it hidden.
+
+Your CSS expects to toggle .active:
+
+css
+Copy
+Edit
+.back-to-top { display: none; }
+.back-to-top.active { display: flex !important; }
+Make sure you don’t have a conflicting CSS rule that overrides display (e.g., !important from another stylesheet).
+
+3. Script is Not Loaded or Runs Too Early
+If your Anaheim page’s script is missing, not loaded, or runs before the DOM, it won’t find the button.
+
+Make sure the <script> with your function is:
+
+Included on the Anaheim page (check for 404 or console errors).
+
+At the bottom of the HTML, or using DOMContentLoaded as in your code.
+
+4. JavaScript Error Before Initialization
+If any error occurs before your initBackToTop() runs, it will silently fail.
+
+Check Console:
+
+Open DevTools (F12) and look for any JavaScript errors (red text).
+
+Even unrelated errors can prevent your code from running.
+
+5. Element is Dynamically Loaded
+If Anaheim uses a template engine or JS framework that loads the button after your script runs, the element may not exist when the script runs.
+
+In this case, initialization happens too early.
+
+Your code attempts to fix this by checking document.readyState, but if the element is injected after that, it still won’t be found.
+
+Solution:
+
+Move your script after the HTML of the button in the page, or
+
+Use a MutationObserver or polling to check for the button if it's loaded later.
+
+How to Debug:
+Check the HTML of the Anaheim page in the browser:
+
+Is there a single element with id="backToTop"?
+
+Open the Console:
+
+Any errors?
+
+Try running document.getElementById('backToTop') in the Console. Is it null?
+
+Force Show the Button:
+
+In the Console, run:
+
+js
+Copy
+Edit
+document.getElementById('backToTop')?.classList.add('active');
+Does the button appear?
+
+Check if the script file is loaded:
+
+Open “Network” tab, reload the page, filter for .js. Is your script there?
+
