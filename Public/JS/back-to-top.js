@@ -7,53 +7,61 @@
 function initBackToTop() {
     console.log('Initializing Back to Top'); // Debug log
 
-    // Wait for DOM to be fully loaded
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initBackToTop);
-        return;
-    }
+    // Function to find and initialize the button
+    function findAndInitButton() {
+        const backToTopButton = document.getElementById('backToTop');
 
-    const backToTopButton = document.getElementById('backToTop');
+        if (backToTopButton) {
+            console.log('Back to top button found'); // Debug log
 
-    if (backToTopButton) {
-        console.log('Back to top button found'); // Debug log
-
-        // Show/hide button based on scroll position
-        function handleScroll() {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('active');
-                backToTopButton.style.display = 'flex'; // Use flex to match CSS
-            } else {
-                backToTopButton.classList.remove('active');
-                backToTopButton.style.display = 'none';
+            // Show/hide button based on scroll position
+            function handleScroll() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('active');
+                    backToTopButton.style.display = 'flex'; // Use flex to match CSS
+                } else {
+                    backToTopButton.classList.remove('active');
+                    backToTopButton.style.display = 'none';
+                }
             }
-        }
 
-        // Add scroll event listener
-        window.addEventListener('scroll', handleScroll);
+            // Add scroll event listener
+            window.addEventListener('scroll', handleScroll);
 
-        // Smooth scroll to top when clicked
-        backToTopButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            console.log('Back to top clicked'); // Debug log
+            // Smooth scroll to top when clicked
+            backToTopButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Back to top clicked'); // Debug log
 
-            // Always scroll to the very top of the page
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+                // Always scroll to the very top of the page
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+
+                // Additional fallback for older browsers
+                document.documentElement.scrollTop = 0;
+                document.body.scrollTop = 0;
             });
 
-            // Additional fallback for older browsers
-            document.documentElement.scrollTop = 0;
-            document.body.scrollTop = 0;
-        });
+            // Initial check for scroll position
+            handleScroll();
 
-        // Initial check for scroll position
-        handleScroll();
+        } else {
+            console.log('Back to top button NOT found'); // Debug log
+            console.log('Available elements with id:', document.querySelectorAll('[id*="back"]'));
+            
+            // Try again after a short delay in case element is loaded dynamically  
+            setTimeout(findAndInitButton, 100);
+        }
+    }
 
+    // Wait for DOM to be fully loaded
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', findAndInitButton);
     } else {
-        console.log('Back to top button NOT found'); // Debug log
-        console.log('Available elements with id:', document.querySelectorAll('[id*="back"]'));
+        // DOM is already loaded, find button immediately
+        findAndInitButton();
     }
 }
 
