@@ -1,4 +1,3 @@
-
 /**
  * Back to Top Button Functionality
  * Reusable script for all city pages
@@ -7,13 +6,13 @@
 // Back to Top Button Handler
 function initBackToTop() {
     console.log('Initializing Back to Top'); // Debug log
-    
+
     // Wait for DOM to be fully loaded
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initBackToTop);
         return;
     }
-    
+
     const backToTopButton = document.getElementById('backToTop');
 
     if (backToTopButton) {
@@ -37,41 +36,21 @@ function initBackToTop() {
         backToTopButton.addEventListener('click', function(e) {
             e.preventDefault();
             console.log('Back to top clicked'); // Debug log
-            
-            // Check if we're using href="#top" or href="#"
-            const href = backToTopButton.getAttribute('href');
-            if (href === '#top') {
-                // Find element with id="top" or scroll to document top
-                const topElement = document.getElementById('top');
-                if (topElement) {
-                    topElement.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                    // Fallback to document top
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                }
-            } else {
-                // Default behavior for href="#"
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            }
-            
-            // Fallback for older browsers
-            if (window.scrollY > 0) {
-                setTimeout(() => {
-                    document.documentElement.scrollTop = 0;
-                    document.body.scrollTop = 0;
-                }, 100);
-            }
+
+            // Always scroll to the very top of the page
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
+            // Additional fallback for older browsers
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
         });
 
         // Initial check for scroll position
         handleScroll();
-        
+
     } else {
         console.log('Back to top button NOT found'); // Debug log
         console.log('Available elements with id:', document.querySelectorAll('[id*="back"]'));

@@ -991,24 +991,30 @@
     width: 50px;
     height: 50px;
     background-color: #003366;
-    color: white;
+    color: white !important;
     border-radius: 50%;
     display: none;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
+    text-decoration: none !important;
     font-size: 18px;
-    z-index: 1000;
+    z-index: 9999;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 .back-to-top:hover {
-    background-color: #2b5797;
-    color: white;
-    text-decoration: none;
+    background-color: #2b5797 !important;
+    color: white !important;
+    text-decoration: none !important;
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
 }
 
 .back-to-top.active {
@@ -1017,6 +1023,17 @@
 
 .back-to-top i {
     font-size: 16px;
+    color: white !important;
+}
+
+/* Ensure back-to-top button works on mobile */
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
 }
 
 /* Responsive adjustments */
