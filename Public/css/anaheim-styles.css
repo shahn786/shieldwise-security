@@ -63,106 +63,115 @@
   letter-spacing: 1px;
 }
 
-/* Enhanced Hero Section */
+/* Enhanced Anaheim-Style Design */
 .anaheim-hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('/img/OC1.webp');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  height: 80vh;
-  min-height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  color: white;
-  text-align: center;
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 0;
 }
 
 .anaheim-hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(13,27,42,0.7));
+    z-index: 1;
 }
 
 .anaheim-hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-  padding: 0 20px;
-  text-align: center;
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 900px;
+    padding: 40px 30px;
+    margin: 0 auto;
 }
 
 .anaheim-hero-content h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 25px;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-  letter-spacing: 1px;
-  line-height: 1.2;
+    font-size: 3.8rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    line-height: 1.2;
+    padding: 0 15px;
 }
 
 .anaheim-hero-content p {
-  font-size: 1.5rem;
-  margin-bottom: 40px;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-  font-weight: 300;
-  line-height: 1.6;
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    opacity: 0.95;
+    line-height: 1.6;
+    padding: 0 20px;
 }
 
 .anaheim-cta-buttons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    padding: 0 20px;
 }
 
 .anaheim-cta-button {
-  background: var(--secondary-color);
-  color: white;
-  padding: 15px 30px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 50px;
-  border: none;
-  transition: var(--transition);
-  text-decoration: none;
-  display: inline-block;
-  box-shadow: 0 5px 20px rgba(209, 32, 40, 0.4);
-}
-
-.anaheim-cta-button-alt {
-  background: transparent;
-  color: white;
-  padding: 15px 30px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 50px;
-  border: 2px solid white;
-  transition: var(--transition);
-  text-decoration: none;
-  display: inline-block;
+    display: inline-block;
+    padding: 20px 40px;
+    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    box-shadow: 0 8px 25px rgba(211, 47, 47, 0.3);
+    min-width: 220px;
+    text-align: center;
 }
 
 .anaheim-cta-button:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(209, 32, 40, 0.5);
-  background: var(--secondary-dark);
-  color: white;
-  text-decoration: none;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(211, 47, 47, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.anaheim-cta-button-alt {
+    display: inline-block;
+    padding: 20px 40px;
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: 220px;
+    text-align: center;
 }
 
 .anaheim-cta-button-alt:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-5px);
-  color: white;
-  text-decoration: none;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background: white;
+    color: #222;
+    transform: translateY(-3px);
+    text-decoration: none;
 }
 
 .anaheim-hero-scroll-indicator {
@@ -185,35 +194,47 @@
   letter-spacing: 1px;
 }
 
-/* Main Content Styling */
+/* Main Content Section */
 .anaheim-main-content {
-  padding: var(--section-padding);
-  background-color: #f9f9f9;
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    padding: 100px 0;
+    position: relative;
+    margin-top: 0;
 }
 
 .anaheim-content-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
 }
 
 .anaheim-intro-section {
-  background: white;
-  border-radius: var(--border-radius);
-  padding: 50px;
-  margin-bottom: 50px;
-  box-shadow: var(--box-shadow);
-  position: relative;
-  overflow: hidden;
+    text-align: center;
+    margin-bottom: 80px;
+    padding: 40px 20px;
+}
+
+.section-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 35px;
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.2);
 }
 
 .anaheim-intro-section h1 {
-  color: var(--primary-color);
-  font-size: 2.5rem;
-  margin-bottom: 25px;
-  font-weight: 700;
-  position: relative;
-  line-height: 1.3;
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 40px;
+    line-height: 1.3;
+    padding: 0 20px;
 }
 
 .anaheim-intro-section h2 {
@@ -226,191 +247,187 @@
 }
 
 .anaheim-intro-rating {
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    display: inline-flex;
 }
 
 .anaheim-intro-rating .stars {
-  color: var(--accent-color);
-  font-size: 1.2rem;
-  margin-right: 10px;
+    color: #ffd700;
+    font-size: 1.3rem;
 }
 
 .anaheim-intro-rating span {
-  color: var(--text-medium);
-  font-size: 1rem;
+    font-weight: 600;
+    color: #555;
+    font-size: 1rem;
 }
 
 .anaheim-highlight-box {
-  display: flex;
-  gap: 30px;
-  background: linear-gradient(to right, #f9f9f9, white);
-  border-left: 5px solid var(--primary-color);
-  padding: 30px;
-  margin: 40px 0;
-  border-radius: 0 var(--border-radius) var(--border-radius) 0;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    background: white;
+    padding: 50px 45px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    text-align: left;
+    margin: 50px auto;
+    max-width: 950px;
+    border-left: 6px solid #d32f2f;
+    position: relative;
 }
 
 .highlight-icon {
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  flex-shrink: 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  width: 80px;
-}
-
-.highlight-content {
-  flex: 1;
+    position: absolute;
+    top: -22px;
+    left: 45px;
+    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    box-shadow: 0 6px 20px rgba(211, 47, 47, 0.3);
 }
 
 .highlight-content p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: var(--text-medium);
-  margin-bottom: 20px;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 25px;
+    padding: 0 10px;
 }
 
 .highlight-content p:last-child {
-  margin-bottom: 0;
-}
-
-.highlight-content p strong {
-  color: var(--text-dark);
-  font-weight: 600;
+    margin-bottom: 0;
 }
 
 /* Trust Badges */
 .anaheim-trust-badges {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  margin: 40px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin: 60px 0;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
 }
 
 .trust-badge {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(to bottom, #f9f9f9, #f1f1f1);
-  border-radius: var(--border-radius);
-  padding: 20px;
-  width: 200px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 25px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
+    text-align: left;
 }
 
 .trust-badge:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
 }
 
 .trust-badge i {
-  font-size: 2rem;
-  color: var(--primary-color);
-  margin-bottom: 15px;
+    color: #d32f2f;
+    font-size: 1.6rem;
+    flex-shrink: 0;
 }
 
 .trust-badge span {
-  font-weight: 600;
-  color: var(--text-dark);
+    font-weight: 600;
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.4;
 }
 
 /* Features Section */
 .anaheim-features-section {
-  padding: 50px 0;
-  position: relative;
-  margin-bottom: 30px;
+    padding: 100px 0;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    margin: 40px 0;
 }
 
 .anaheim-features-section h2 {
-  text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 50px;
-  color: var(--primary-color);
-  font-weight: 700;
-  position: relative;
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 70px;
+    position: relative;
+    padding: 0 20px;
 }
 
 .anaheim-features-section h2::after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background: var(--primary-color);
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 5px;
+    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+    border-radius: 3px;
 }
 
 .anaheim-features-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 45px;
 }
 
 .anaheim-feature-item {
-  background: white;
-  border-radius: var(--border-radius);
-  padding: 30px;
-  box-shadow: var(--box-shadow);
-  transition: var(--transition);
-  position: relative;
-  overflow: hidden;
-  text-align: left;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
-}
-
-.anaheim-feature-item.in-view {
-  opacity: 1;
-  transform: translateY(0);
+    background: white;
+    padding: 50px 35px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid #d32f2f;
+    position: relative;
 }
 
 .anaheim-feature-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-}
-
-.anaheim-feature-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  background: var(--primary-color);
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.12);
 }
 
 .anaheim-feature-item i {
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  margin-bottom: 25px;
-  display: inline-block;
-  transition: var(--transition);
-}
-
-.anaheim-feature-item:hover i {
-  transform: scale(1.1);
+    font-size: 3.5rem;
+    color: #d32f2f;
+    margin-bottom: 30px;
 }
 
 .anaheim-feature-item h3 {
-  font-size: 1.4rem;
-  margin-bottom: 20px;
-  color: var(--text-dark);
-  font-weight: 600;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 25px;
+    line-height: 1.3;
+    padding: 0 10px;
 }
 
 .anaheim-feature-item p {
-  font-size: 1rem;
-  color: var(--text-medium);
-  line-height: 1.7;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 0;
+    padding: 0 10px;
 }
 
 /* Banner Section with Parallax */
@@ -670,89 +687,79 @@
 
 /* Compact Professional Services Section */
 .anaheim-services-section-compact {
-  padding: 60px 0;
-  background: #f8f9fa;
-  text-align: center;
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    margin: 50px 0;
 }
 
-.anaheim-services-section-compact .anaheim-services-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+.anaheim-services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    text-align: center;
 }
 
-.anaheim-services-section-compact .anaheim-services-title {
-  font-size: 2.2rem;
-  margin-bottom: 15px;
-  color: var(--primary-color);
-  font-weight: 700;
+.anaheim-services-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
 }
 
-.anaheim-services-section-compact .anaheim-title-underline {
-  height: 3px;
-  width: 60px;
-  background: var(--primary-color);
-  margin: 0 auto 40px;
+.anaheim-title-underline {
+    width: 90px;
+    height: 5px;
+    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+    margin: 0 auto 70px;
+    border-radius: 3px;
 }
 
-.anaheim-services-grid-compact {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
+.anaheim-services-grid-enhanced {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
 }
 
-.anaheim-service-item-compact {
-  background: white;
-  border-radius: 8px;
-  padding: 25px 20px;
-  text-align: left;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-  text-decoration: none;
-  color: var(--text-dark);
-  border-left: 4px solid transparent;
-  position: relative;
-  overflow: hidden;
+.anaheim-service-item-enhanced {
+    background: white;
+    padding: 45px 35px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border-top: 5px solid #d32f2f;
+    position: relative;
+    display: block;
 }
 
-.anaheim-service-item-compact::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 0;
-  background: var(--primary-color);
-  transition: height 0.3s ease;
+.anaheim-service-item-enhanced:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+    text-decoration: none;
+    color: inherit;
 }
 
-.anaheim-service-item-compact:hover::before {
-  height: 100%;
+.anaheim-service-item-enhanced h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 20px;
+    text-align: left;
+    padding: 0 5px;
 }
 
-.anaheim-service-item-compact:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-  text-decoration: none;
-  color: var(--text-dark);
-  border-left-color: var(--primary-color);
-}
-
-.anaheim-service-item-compact h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: var(--primary-color);
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-.anaheim-service-item-compact p {
-  font-size: 0.95rem;
-  color: #666;
-  line-height: 1.5;
-  margin: 0;
+.anaheim-service-item-enhanced p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 25px;
+    text-align: left;
+    padding: 0 5px;
 }
 
 /* Responsive Design for Compact Services */
@@ -956,20 +963,6 @@
   color: white !important;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .cities-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .cities-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 
 /* Section Badge (optional style) */
 .section-badge {
@@ -1043,40 +1036,41 @@
     }
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 45px;
-        height: 45px;
-        font-size: 16px;
-    }
-
-    .back-to-top i {
-        font-size: 14px;
-    }
-}
-
-
 /* Testimonials Section */
 .anaheim-testimonials-section {
-  padding: var(--section-padding);
-  background-color: white;
-  text-align: center;
+    padding: 100px 0;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    position: relative;
+    margin: 60px 0;
 }
 
 .anaheim-testimonials-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    text-align: center;
 }
 
-.anaheim-testimonials-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 50px;
-  color: var(--primary-color);
-  font-weight: 700;
+.anaheim-testimonials-container h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 70px;
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.anaheim-testimonials-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 5px;
+    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+    border-radius: 3px;
 }
 
 .anaheim-testimonials-slider {
@@ -1494,42 +1488,43 @@
 
 /* Enhanced Service Grid */
 .anaheim-services-grid-enhanced {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
 }
 
 .anaheim-service-item-enhanced {
-  background: white;
-  padding: 30px;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
+    background: white;
+    padding: 45px 35px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border-top: 5px solid #d32f2f;
+    position: relative;
+    display: block;
 }
 
 .anaheim-service-item-enhanced:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-  border-color: var(--accent-color);
-  text-decoration: none;
-  color: inherit;
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+    text-decoration: none;
+    color: inherit;
 }
 
 .anaheim-service-item-enhanced h3 {
-  color: var(--primary-color);
-  font-size: 1.4em;
-  margin-bottom: 15px;
-  font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    font-weight: 600;
 }
 
 .anaheim-service-item-enhanced p {
-  color: var(--text-medium);
-  line-height: 1.6;
-  margin-bottom: 20px;
+    color: var(--text-medium);
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
 .service-pricing {
@@ -1557,23 +1552,540 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .breadcrumb-nav {
-    padding: 8px 0;
-  }
+    .anaheim-hero {
+        height: 90vh;
+        padding: 20px 0;
+    }
 
-  .breadcrumb {
-    font-size: 12px;
-  }
+    .anaheim-hero-content {
+        padding: 30px 20px;
+    }
 
-  .anaheim-services-grid-enhanced {
-    grid-template-columns: 1fr;
+    .anaheim-hero-content h1 {
+        font-size: 2.8rem;
+        margin-bottom: 25px;
+        padding: 0 10px;
+    }
+
+    .anaheim-hero-content p {
+        font-size: 1.3rem;
+        margin-bottom: 35px;
+        padding: 0 15px;
+    }
+
+    .anaheim-cta-buttons {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .anaheim-cta-button,
+    .anaheim-cta-button-alt {
+        width: 100%;
+        max-width: 280px;
+        padding: 18px 25px;
+        font-size: 1rem;
+    }
+
+    .anaheim-main-content {
+        padding: 80px 0;
+    }
+
+    .anaheim-content-container {
+        padding: 0 20px;
+    }
+
+    .anaheim-intro-section {
+        padding: 30px 15px;
+        margin-bottom: 60px;
+    }
+
+    .anaheim-intro-section h1 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+
+    .anaheim-highlight-box {
+        padding: 35px 25px;
+        margin: 40px 15px;
+    }
+
+    .anaheim-trust-badges {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 40px 0;
+        padding: 0 15px;
+    }
+
+    .anaheim-features-section {
+        padding: 80px 0;
+    }
+
+    .anaheim-features-section h2 {
+        font-size: 2.3rem;
+        margin-bottom: 50px;
+        padding: 0 15px;
+    }
+
+    .anaheim-features-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 0 20px;
+    }
+
+    .anaheim-feature-item {
+        padding: 40px 25px;
+    }
+
+    .anaheim-services-section-compact {
+        padding: 80px 0;
+    }
+
+    .anaheim-services-container {
+        padding: 0 20px;
+    }
+
+    .anaheim-services-title {
+        font-size: 2.3rem;
+        padding: 0 15px;
+    }
+
+    .anaheim-services-grid-enhanced {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .anaheim-service-item-enhanced {
+        padding: 35px 25px;
+    }
+
+    .anaheim-testimonials-section {
+        padding: 80px 0;
+    }
+
+    .anaheim-testimonials-container {
+        padding: 0 20px;
+    }
+
+    .anaheim-testimonials-container h2 {
+        font-size: 2.3rem;
+        margin-bottom: 50px;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .anaheim-hero-content h1 {
+        font-size: 2.3rem;
+    }
+
+    .anaheim-hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .anaheim-intro-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .anaheim-features-section h2,
+    .anaheim-services-title,
+    .anaheim-testimonials-container h2 {
+        font-size: 2rem;
+    }
+
+    .anaheim-highlight-box {
+        padding: 30px 20px;
+    }
+
+    .anaheim-feature-item,
+    .anaheim-service-item-enhanced {
+        padding: 30px 20px;
+    }
+}
+
+/* Featured Content Styles */
+.anaheim-featured-content {
+  background: white;
+  padding: 50px;
+  margin: 40px 0;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.featured-snippet-content h3 {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin: 30px 0 15px 0;
+  font-weight: 600;
+}
+
+.featured-snippet-content ol, .featured-snippet-content ul {
+  margin: 20px 0;
+  padding-left: 25px;
+}
+
+.featured-snippet-content ol li, .featured-snippet-content ul li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.pricing-breakdown {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 8px;
+  margin: 20px 0;
+  border-left: 4px solid var(--primary-color);
+}
+
+/* Authority Indicators */
+.authority-indicators {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 40px;
+  margin: 30px 0;
+  border-radius: var(--border-radius);
+}
+
+.credentials h3 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.credentials-list {
+  list-style: none;
+  padding: 0;
+}
+
+.credentials-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.credentials-list i {
+  color: var(--secondary-color);
+  margin-right: 12px;
+  width: 20px;
+}
+
+/* Local Content Styles */
+.anaheim-local-content {
+  background: white;
+  padding: 50px;
+  margin: 40px 0;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin: 30px 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 25px;
+  background: linear-gradient(135deg, #f1f3f4, #e8eaed);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-medium);
+  line-height: 1.4;
+}
+
+.community-partnerships {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.community-partnerships ul {
+  margin-top: 15px;
+}
+
+.community-partnerships li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* Responsive Design for New Elements */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
 
-  .security-tips-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .stat-number {
+    font-size: 2rem;
   }
+
+  .anaheim-featured-content,
+  .anaheim-local-content,
+  .authority-indicators {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .anaheim-hero,
+  .anaheim-banner-section,
+  .anaheim-cta-section,
+  .anaheim-testimonials-section {
+    background: white;
+    color: black;
+    padding: 20px 0;
+    margin: 20px 0;
+  }
+
+  .anaheim-hero-overlay,
+  .anaheim-banner-parallax,
+  .anaheim-cta-section::before {
+    display: none;
+  }
+
+  .anaheim-hero-content,
+  .anaheim-banner-content {
+    color: black;
+  }
+
+  .anaheim-cta-buttons,
+  .anaheim-banner-buttons,
+  .slider-navigation {
+    display: none;
+  }
+
+  .anaheim-service-item,
+  .anaheim-feature-item,
+  .anaheim-area-item,
+  .anaheim-testimonial-item,
+  .anaheim-faq-item {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    page-break-inside: avoid;
+  }
+
+  .anaheim-testimonial-item {
+    display: block;
+    opacity: 1;
+    transform: none;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .faq-answer {
+    display: block;
+  }
+
+  .trust-badge,
+  .service-icon-wrapper,
+  .anaheim-feature-item i {
+    color: black;
+    background: white;
+  }
+}
+
+/* Additional Enhancements */
+.cities-list:hover a:not(:hover) {
+  opacity: 0.7;
+}
+
+.anaheim-feature-item:nth-child(even)::before {
+  background: var(--secondary-color);
+}
+
+.anaheim-service-item:hover img {
+  transform: scale(1.03);
+  transition: transform 0.5s ease;
+}
+
+.area-learn-more i {
+  transition: transform 0.3s ease;
+}
+
+.area-learn-more:hover i {
+  transform: translateX(3px);
+}
+
+.anaheim-faq-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 768px) {
+    .anaheim-hero {
+        height: 90vh;
+        padding: 20px 0;
+    }
+
+    .anaheim-hero-content {
+        padding: 30px 20px;
+    }
+
+    .anaheim-hero-content h1 {
+        font-size: 2.8rem;
+        margin-bottom: 25px;
+        padding: 0 10px;
+    }
+
+    .anaheim-hero-content p {
+        font-size: 1.3rem;
+        margin-bottom: 35px;
+        padding: 0 15px;
+    }
+
+    .anaheim-cta-buttons {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .anaheim-cta-button,
+    .anaheim-cta-button-alt {
+        width: 100%;
+        max-width: 280px;
+        padding: 18px 25px;
+        font-size: 1rem;
+    }
+
+    .anaheim-main-content {
+        padding: 80px 0;
+    }
+
+    .anaheim-content-container {
+        padding: 0 20px;
+    }
+
+    .anaheim-intro-section {
+        padding: 30px 15px;
+        margin-bottom: 60px;
+    }
+
+    .anaheim-intro-section h1 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+
+    .anaheim-highlight-box {
+        padding: 35px 25px;
+        margin: 40px 15px;
+    }
+
+    .anaheim-trust-badges {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 40px 0;
+        padding: 0 15px;
+    }
+
+    .anaheim-features-section {
+        padding: 80px 0;
+    }
+
+    .anaheim-features-section h2 {
+        font-size: 2.3rem;
+        margin-bottom: 50px;
+        padding: 0 15px;
+    }
+
+    .anaheim-features-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 0 20px;
+    }
+
+    .anaheim-feature-item {
+        padding: 40px 25px;
+    }
+
+    .anaheim-services-section-compact {
+        padding: 80px 0;
+    }
+
+    .anaheim-services-container {
+        padding: 0 20px;
+    }
+
+    .anaheim-services-title {
+        font-size: 2.3rem;
+        padding: 0 15px;
+    }
+
+    .anaheim-services-grid-enhanced {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .anaheim-service-item-enhanced {
+        padding: 35px 25px;
+    }
+
+    .anaheim-testimonials-section {
+        padding: 80px 0;
+    }
+
+    .anaheim-testimonials-container {
+        padding: 0 20px;
+    }
+
+    .anaheim-testimonials-container h2 {
+        font-size: 2.3rem;
+        margin-bottom: 50px;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .anaheim-hero-content h1 {
+        font-size: 2.3rem;
+    }
+
+    .anaheim-hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .anaheim-intro-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .anaheim-features-section h2,
+    .anaheim-services-title,
+    .anaheim-testimonials-container h2 {
+        font-size: 2rem;
+    }
+
+    .anaheim-highlight-box {
+        padding: 30px 20px;
+    }
+
+    .anaheim-feature-item,
+    .anaheim-service-item-enhanced {
+        padding: 30px 20px;
+    }
 }
 
 /* CTA Section */
@@ -1815,304 +2327,6 @@
 
   .anaheim-banner-content h2 {
     font-size: 2.2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .anaheim-hero {
-    height: 600px;
-  }
-
-  .anaheim-hero-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .anaheim-hero-content p {
-    font-size: 1.1rem;
-  }
-
-  .anaheim-features-container, 
-  .anaheim-services-grid,
-  .anaheim-areas-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .anaheim-intro-section {
-    padding: 30px 20px;
-  }
-
-  .anaheim-intro-section h1 {
-    font-size: 2rem;
-  }
-
-  .anaheim-banner-content h2 {
-    font-size: 2rem;
-  }
-
-  .anaheim-banner-content p {
-    font-size: 1.1rem;
-  }
-
-  .anaheim-cta-buttons,
-  .anaheim-banner-buttons {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .trust-badge {
-    width: 100%;
-  }
-
-  .anaheim-testimonials-grid {
-    height: auto;
-  }
-
-  .anaheim-testimonial-item {
-    position: relative;
-  }
-}
-
-@media (max-width: 576px) {
-  .anaheim-hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .anaheim-hero-content p {
-    font-size: 1rem;
-  }
-
-  .anaheim-cta-button, 
-  .anaheim-cta-button-alt,
-  .anaheim-banner-button,
-  .anaheim-banner-button-alt,
-  .anaheim-cta-call,
-  .anaheim-cta-quote {
-    width: 100%;
-  }
-
-  .anaheim-services-title,
-  .anaheim-areas-section h2,
-  .anaheim-faq-section h2,
-  .anaheim-testimonials-section h2,
-  .anaheim-cta-content h2 {
-    font-size: 1.8rem;
-  }
-
-  .faq-question h3 {
-    font-size: 1rem;
-  }
-
-  .anaheim-feature-item,
-  .anaheim-service-item,
-  .anaheim-area-item,
-  .anaheim-testimonial-item {
-    padding: 25px 20px;
-  }
-
-  .anaheim-cta-content {
-    padding: 30px 20px;
-  }
-}
-
-/* Featured Content Styles */
-.anaheim-featured-content {
-  background: white;
-  padding: 50px;
-  margin: 40px 0;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-}
-
-.featured-snippet-content h3 {
-  color: var(--primary-color);
-  font-size: 1.4rem;
-  margin: 30px 0 15px 0;
-  font-weight: 600;
-}
-
-.featured-snippet-content ol, .featured-snippet-content ul {
-  margin: 20px 0;
-  padding-left: 25px;
-}
-
-.featured-snippet-content ol li, .featured-snippet-content ul li {
-  margin-bottom: 10px;
-  line-height: 1.6;
-}
-
-.pricing-breakdown {
-  background: #f8f9fa;
-  padding: 30px;
-  border-radius: 8px;
-  margin: 20px 0;
-  border-left: 4px solid var(--primary-color);
-}
-
-/* Authority Indicators */
-.authority-indicators {
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-  padding: 40px;
-  margin: 30px 0;
-  border-radius: var(--border-radius);
-}
-
-.credentials h3 {
-  color: var(--primary-color);
-  margin-bottom: 20px;
-  font-size: 1.3rem;
-}
-
-.credentials-list {
-  list-style: none;
-  padding: 0;
-}
-
-.credentials-list li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
-
-.credentials-list i {
-  color: var(--secondary-color);
-  margin-right: 12px;
-  width: 20px;
-}
-
-/* Local Content Styles */
-.anaheim-local-content {
-  background: white;
-  padding: 50px;
-  margin: 40px 0;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  margin: 30px 0;
-}
-
-.stat-item {
-  text-align: center;
-  padding: 25px;
-  background: linear-gradient(135deg, #f1f3f4, #e8eaed);
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--primary-color);
-  margin-bottom: 10px;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  color: var(--text-medium);
-  line-height: 1.4;
-}
-
-.community-partnerships {
-  background: #f8f9fa;
-  padding: 30px;
-  border-radius: 8px;
-  margin: 20px 0;
-}
-
-.community-partnerships ul {
-  margin-top: 15px;
-}
-
-.community-partnerships li {
-  margin-bottom: 8px;
-  line-height: 1.5;
-}
-
-/* Responsive Design for New Elements */
-@media (max-width: 768px) {
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .stat-number {
-    font-size: 2rem;
-  }
-
-  .anaheim-featured-content,
-  .anaheim-local-content,
-  .authority-indicators {
-    padding: 30px 20px;
-  }
-}
-
-@media (max-width: 576px) {
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Print Styles */
-@media print {
-  .anaheim-hero,
-  .anaheim-banner-section,
-  .anaheim-cta-section,
-  .anaheim-testimonials-section {
-    background: white;
-    color: black;
-    padding: 20px 0;
-    margin: 20px 0;
-  }
-
-  .anaheim-hero-overlay,
-  .anaheim-banner-parallax,
-  .anaheim-cta-section::before {
-    display: none;
-  }
-
-  .anaheim-hero-content,
-  .anaheim-banner-content {
-    color: black;
-  }
-
-  .anaheim-cta-buttons,
-  .anaheim-banner-buttons,
-  .slider-navigation {
-    display: none;
-  }
-
-  .anaheim-service-item,
-  .anaheim-feature-item,
-  .anaheim-area-item,
-  .anaheim-testimonial-item,
-  .anaheim-faq-item {
-    box-shadow: none;
-    border: 1px solid #ddd;
-    page-break-inside: avoid;
-  }
-
-  .anaheim-testimonial-item {
-    display: block;
-    opacity: 1;
-    transform: none;
-    position: relative;
-    margin-bottom: 20px;
-  }
-
-  .faq-answer {
-    display: block;
-  }
-
-  .trust-badge,
-  .service-icon-wrapper,
-  .anaheim-feature-item i {
-    color: black;
-    background: white;
   }
 }
 
