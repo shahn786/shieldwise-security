@@ -18,10 +18,8 @@ function initBackToTop() {
             function handleScroll() {
                 if (window.pageYOffset > 300) {
                     backToTopButton.classList.add('active');
-                    backToTopButton.style.display = 'flex'; // Use flex to match CSS
                 } else {
                     backToTopButton.classList.remove('active');
-                    backToTopButton.style.display = 'none';
                 }
             }
 
@@ -33,15 +31,11 @@ function initBackToTop() {
                 e.preventDefault();
                 console.log('Back to top clicked'); // Debug log
 
-                // Always scroll to the very top of the page
+                // Smooth scroll to top
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
                 });
-
-                // Additional fallback for older browsers
-                document.documentElement.scrollTop = 0;
-                document.body.scrollTop = 0;
             });
 
             // Initial check for scroll position
@@ -49,10 +43,9 @@ function initBackToTop() {
 
         } else {
             console.log('Back to top button NOT found'); // Debug log
-            console.log('Available elements with id:', document.querySelectorAll('[id*="back"]'));
             
             // Try again after a short delay in case element is loaded dynamically  
-            setTimeout(findAndInitButton, 100);
+            setTimeout(findAndInitButton, 500);
         }
     }
 

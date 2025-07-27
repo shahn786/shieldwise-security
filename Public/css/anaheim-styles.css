@@ -993,7 +993,7 @@
     background-color: #003366 !important;
     color: white !important;
     border-radius: 50% !important;
-    display: none !important;
+    display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     text-decoration: none !important;
@@ -1004,6 +1004,9 @@
     cursor: pointer !important;
     border: none !important;
     outline: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
 }
 
 .back-to-top:hover {
@@ -1020,7 +1023,9 @@
 }
 
 .back-to-top.active {
-    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
 }
 
 .back-to-top i {
