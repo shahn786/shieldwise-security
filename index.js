@@ -708,6 +708,10 @@ app.get('/orange-county', (req, res) => {
     res.render('cities/orange-county', { title: 'Orange County' });
 });
 
+app.get('/orange-county/buena-park', (req, res) => {
+    res.render('cities/buena-park', { title: 'Buena Park' });
+});
+
 app.get('/san-francisco', (req, res) => {
     res.render('cities/san-francisco', { title: 'San Francisco' });
 });
@@ -933,7 +937,7 @@ app.get('/services/hotel-security', (req, res) => {
       {
         number: 2,
         title: 'Custom Security Plan',
-        description: 'Development of tailored security protocols specific to your hotel layout, guest demographics, and hospitality standards.'
+        description: 'Development of tailored security protocols specific to your hotel layout,guest demographics, and hospitality standards.'
       },
       {
         number: 3,
