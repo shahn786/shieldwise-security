@@ -843,7 +843,16 @@ orangeCountyCities.forEach(city => {
     const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
     app.get(`/orange-county/${city}`, (req, res) => {
-        res.render(`cities/${city}`, { title: formattedCity, cityName: formattedCity });
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity, 
+                cityName: formattedCity,
+                pageUrl: `/orange-county/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
     });
 });
 

@@ -1156,9 +1156,9 @@
     <%- include('../partials/Footer') %>
 
     <!-- Back to Top Button -->
-    <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
+    <button type="button" id="backToTop" class="back-to-top" aria-label="Back to top" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 1000; background: #d12028; color: white; border: none; border-radius: 50%; width: 50px; height: 50px; cursor: pointer;">
         <i class="fas fa-arrow-up"></i>
-    </a>
+    </button>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -1298,6 +1298,26 @@
             color: #999;
         }
 
+        /* Ensure FAQ answers are hidden by default */
+        .anaheim-faq-item .faq-answer {
+            display: none;
+        }
+
+        .anaheim-faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Back to top button styling */
+        .back-to-top {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(209, 32, 40, 0.3);
+        }
+
+        .back-to-top:hover {
+            background: #a51920 !important;
+            transform: translateY(-2px);
+        }
+
         @media (max-width: 768px) {
             .hero-stats {
                 gap: 20px;
@@ -1328,16 +1348,19 @@
             // FAQ Toggles
             $('.faq-question').on('click', function() {
                 const $item = $(this).closest('.anaheim-faq-item');
+                const $answer = $item.find('.faq-answer');
                 const $toggle = $(this).find('.faq-toggle i');
                 const isActive = $item.hasClass('active');
 
                 // Close all FAQ items first
                 $('.anaheim-faq-item').removeClass('active');
+                $('.anaheim-faq-item .faq-answer').slideUp(300);
                 $('.anaheim-faq-item .faq-toggle i').removeClass('fa-minus').addClass('fa-plus');
 
                 // If this item wasn't active, open it
                 if (!isActive) {
                     $item.addClass('active');
+                    $answer.slideDown(300);
                     $toggle.removeClass('fa-plus').addClass('fa-minus');
                 }
             });
@@ -1412,10 +1435,26 @@
     </script>
 
     <!-- Back to Top Button Script -->
-    <script src="/JS/back-to-top.js"></script>
     <script>
-        // Initialize back to top immediately when script loads
-        initBackToTop();
+        // Back to Top Button Functionality
+        $(document).ready(function() {
+            // Show/hide back to top button based on scroll position
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) {
+                    $('#backToTop').fadeIn();
+                } else {
+                    $('#backToTop').fadeOut();
+                }
+            });
+
+            // Smooth scroll to top when button is clicked
+            $('#backToTop').on('click', function(e) {
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 600);
+            });
+        });
     </script>
 </body>
 </html>
