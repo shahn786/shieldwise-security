@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-US" itemscope itemtype="https://schema.org/LocalBusiness">
 <head>
@@ -573,20 +572,12 @@
 <meta name="msvalidate.01" content="xyz789abc123def456">
 <meta name="yandex-verification" content="123abc456def789ghi">
 
-<!-- Perfect Resource Loading with Resource Hints -->
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" media="print">
+<!-- External CSS with Performance Optimization -->
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"></noscript>
-
-<!-- Optimized Font Loading with font-display -->
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" media="print">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"></noscript>
-
-<!-- Non-Critical CSS - Perfect Loading -->
-<link rel="stylesheet" href="/css/style-cities.css" media="print" onload="this.media='all'; this.onload=null;">
-<noscript><link rel="stylesheet" href="/css/style-cities.css"></noscript>
-
-<!-- Font Awesome - Optimized Loading -->
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" media="print">
+<link rel="stylesheet" href="/css/style-cities.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
 <!-- Enhanced Performance Monitoring -->
@@ -1198,7 +1189,7 @@ window.addEventListener('load', () => {
             button.addEventListener('click', function() {
                 const target = document.querySelector(this.getAttribute('data-target'));
                 const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                
+
                 // Close all other FAQ items
                 faqButtons.forEach(otherButton => {
                     if (otherButton !== this) {
@@ -1207,7 +1198,7 @@ window.addEventListener('load', () => {
                         otherButton.setAttribute('aria-expanded', 'false');
                     }
                 });
-                
+
                 // Toggle current FAQ item
                 if (isExpanded) {
                     target.classList.remove('show');
@@ -1305,7 +1296,7 @@ window.addEventListener('load', () => {
         link.rel = 'stylesheet';
         link.href = href;
         document.head.appendChild(link);
-    }
+        }
 
     // Load Bootstrap after critical content
     setTimeout(() => {
