@@ -559,6 +559,30 @@
     <link rel="stylesheet" href="/css/style456.css">
     <!-- Buena Park specific styles using anaheim styles -->
     <link rel="stylesheet" href="/css/anaheim-styles.css">
+    
+    <!-- FAQ specific styles -->
+    <style>
+        .anaheim-faq-item .faq-answer {
+            display: none;
+        }
+        
+        .anaheim-faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .faq-question {
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .faq-toggle i {
+            transition: transform 0.3s ease;
+        }
+        
+        .anaheim-faq-item.active .faq-toggle i {
+            transform: rotate(180deg);
+        }
+    </style>
 
     <!-- ✅ Enhanced Analytics with Multiple Tracking -->
     <!-- Google Analytics 4 with Enhanced Ecommerce -->
@@ -1181,6 +1205,42 @@
                     $answer.slideDown(300);
                     $toggle.removeClass('fa-plus').addClass('fa-minus');
                 }
+            });
+
+            // Alternative click handler for better compatibility
+            document.querySelectorAll('.faq-question').forEach(function(question) {
+                question.addEventListener('click', function() {
+                    const item = this.closest('.anaheim-faq-item');
+                    const answer = item.querySelector('.faq-answer');
+                    const toggle = this.querySelector('.faq-toggle i');
+                    const isActive = item.classList.contains('active');
+
+                    // Close all FAQ items
+                    document.querySelectorAll('.anaheim-faq-item').forEach(function(faqItem) {
+                        faqItem.classList.remove('active');
+                        const faqAnswer = faqItem.querySelector('.faq-answer');
+                        const faqToggle = faqItem.querySelector('.faq-toggle i');
+                        if (faqAnswer) {
+                            faqAnswer.style.display = 'none';
+                        }
+                        if (faqToggle) {
+                            faqToggle.classList.remove('fa-minus');
+                            faqToggle.classList.add('fa-plus');
+                        }
+                    });
+
+                    // If this item wasn't active, open it
+                    if (!isActive) {
+                        item.classList.add('active');
+                        if (answer) {
+                            answer.style.display = 'block';
+                        }
+                        if (toggle) {
+                            toggle.classList.remove('fa-plus');
+                            toggle.classList.add('fa-minus');
+                        }
+                    }
+                });
             });
 
             // Intersection Observer for animation triggers
