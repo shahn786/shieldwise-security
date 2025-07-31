@@ -708,9 +708,7 @@ app.get('/orange-county', (req, res) => {
     res.render('cities/orange-county', { title: 'Orange County' });
 });
 
-app.get('/orange-county/buena-park', (req, res) => {
-    res.render('cities/buena-park', { title: 'Buena Park' });
-});
+
 
 app.get('/san-francisco', (req, res) => {
     res.render('cities/san-francisco', { title: 'San Francisco' });
