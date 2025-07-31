@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en-US" itemscope itemtype="https://schema.org/LocalBusiness">
 <head>
@@ -32,9 +33,6 @@
 <!-- Critical Font Preloading - Only Above-Fold Fonts -->
 <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459W1hyyTh89Y.woff2" as="font" type="font/woff2" crossorigin>
-
-<!-- Critical CSS Inlined - Further Optimized -->
-
 
 <!-- Hero Image Preload - Multiple Formats for Optimal Loading -->
 <link rel="preload" href="/img/placentia-security-guards-1200x630.avif" as="image" type="image/avif" fetchpriority="high" media="(min-width: 768px)">
@@ -539,7 +537,7 @@
 }
 </script>
 
-<!-- 7 ▸ Enhanced Security Headers - Perfect CSP -->
+<!-- 7 ▸ Enhanced Security Headers - Full CSP -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://cdn.jsdelivr.net https://code.jquery.com https://stackpath.bootstrapcdn.com https://www.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://vitals.vercel-insights.com; frame-src https://www.google.com https://www.google.com/maps; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
 <meta http-equiv="Strict-Transport-Security" content="max-age=63072000; includeSubDomains; preload">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -690,26 +688,15 @@ window.addEventListener('load', () => {
 
     <!-- Main content area -->
     <main id="main-content" role="main">
-        <!-- Hero Section -->
+        <!-- Hero Section with Background Image -->
         <section class="hero-downtown" role="banner">
             <div class="hero-content">
                 <h1>Professional Security Guards in Placentia, CA</h1>
                 <h2>24/7 BSIS Licensed Security Services</h2>
-                <p class="hero-subtitle">Protecting Placentia's businesses and communities with professional security solutions from $35/hour</p>
+                <p class="hero-subtitle">Protecting Placentia's businesses and communities since 2005 with professional security solutions from $35/hour</p>
                 <a href="/get-quote" class="btn btn-primary btn-lg">Get a Free Security Quote</a>
             </div>
         </section>
-
-        <!-- Emergency Response Section -->
-        <div class="emergency-response text-center text-white">
-            <div class="container">
-                <h3><i class="fas fa-shield-alt"></i> Emergency Security Response Available 24/7</h3>
-                <p class="lead">Immediate deployment of licensed security guards in Placentia</p>
-                <a href="tel:+18007443351" class="btn btn-light">
-                    <i class="fas fa-phone"></i> Call Emergency Line: 1-800-SHIELD-1
-                </a>
-            </div>
-        </div>
 
         <!-- Introduction Section -->
         <section class="downtown-security">
@@ -1128,7 +1115,7 @@ window.addEventListener('load', () => {
                                 </div>
                                 <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#placentiaFAQ">
                                     <div class="card-body">
-                                        Call us anytime—we're based right here in Orange County! Our rapid response team can deploy security personnel in as little as 1-3 hours to any location in Placentia. Just call <a href="tel:+18007443351">1-800-SHIELD-1</a> for immediate assistance.
+                                        Call us anytime—we're based right here in Orange County! Our rapid response team can deploy security personnel in as little as 1-3 hours to any location in Placentia. Just call <a href="tel:+18007443531">1-800-SHIELD-1</a> for immediate assistance.
                                     </div>
                                 </div>
                             </div>
@@ -1238,9 +1225,9 @@ window.addEventListener('load', () => {
         if (backToTopButton) {
             window.addEventListener('scroll', function() {
                 if (window.pageYOffset > 300) {
-                    backToTopButton.style.display = 'block';
+                    backToTopButton.classList.add('active');
                 } else {
-                    backToTopButton.style.display = 'none';
+                    backToTopButton.classList.remove('active');
                 }
             });
 
@@ -1277,20 +1264,39 @@ window.addEventListener('load', () => {
             observer.observe(element);
         });
 
-        // WebMention support for social proof
-        if ('IntersectionObserver' in window) {
-            const webmentionObserver = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // Track testimonial views for social proof
-                        console.log('Testimonial viewed:', entry.target.querySelector('h4')?.textContent);
+        // Core Web Vitals Monitoring for 2025
+        if ('PerformanceObserver' in window) {
+            // LCP Monitoring
+            new PerformanceObserver((entryList) => {
+                for (const entry of entryList.getEntries()) {
+                    if (entry.startTime < 2000) {
+                        console.log('LCP within target:', entry.startTime);
                     }
-                });
-            });
+                }
+            }).observe({entryTypes: ['largest-contentful-paint']});
 
-            document.querySelectorAll('.testimonial').forEach(testimonial => {
-                webmentionObserver.observe(testimonial);
-            });
+            // CLS Monitoring
+            let clsValue = 0;
+            new PerformanceObserver((entryList) => {
+                for (const entry of entryList.getEntries()) {
+                    if (!entry.hadRecentInput) {
+                        clsValue += entry.value;
+                    }
+                }
+                if (clsValue < 0.05) {
+                    console.log('CLS within target:', clsValue);
+                }
+            }).observe({entryTypes: ['layout-shift']});
+
+            // INP Monitoring
+            new PerformanceObserver((entryList) => {
+                for (const entry of entryList.getEntries()) {
+                    const inp = entry.processingStart - entry.startTime;
+                    if (inp < 150) {
+                        console.log('INP within target:', inp);
+                    }
+                }
+            }).observe({entryTypes: ['first-input', 'event']});
         }
     });
 
@@ -1310,35 +1316,29 @@ window.addEventListener('load', () => {
     }, 100);
     </script>
 
-    <!-- Performance monitoring -->
-    <script>
-    if ('PerformanceObserver' in window) {
-        // Monitor Core Web Vitals
-        const observer = new PerformanceObserver((list) => {
-            for (const entry of list.getEntries()) {
-                if (entry.entryType === 'largest-contentful-paint') {
-                    console.log('LCP:', entry.startTime);
-                }
-                if (entry.entryType === 'first-input') {
-                    console.log('FID:', entry.processingStart - entry.startTime);
-                }
-            }
-        });
-        
-        observer.observe({entryTypes: ['largest-contentful-paint', 'first-input']});
-        
-        // Monitor CLS
-        let clsValue = 0;
-        const clsObserver = new PerformanceObserver((list) => {
-            for (const entry of list.getEntries()) {
-                if (!entry.hadRecentInput) {
-                    clsValue += entry.value;
-                }
-            }
-        });
-        clsObserver.observe({entryTypes: ['layout-shift']});
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+    <!-- Back to Top and Common Functionality -->
+    <script src="/JS/back-to-top.js"></script>
+    <script src="/JS/performance-optimization.js" defer></script>
+
+    <!-- Structured Data for Voice Search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".speakable-intro",
+          ".speakable-services",
+          ".speakable-contact"
+        ]
+      },
+      "url": "https://shieldwisesecurity.com/placentia-security-guards"
     }
     </script>
 
 </body>
 </html>
+
