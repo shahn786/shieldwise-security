@@ -357,18 +357,25 @@
     }
     </script>
 
-    <!-- PreloadJS for Performance -->
-    <link rel="preload" href="/css/style-cities.css" as="style">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" as="style">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" as="style">
-    <link rel="preload" as="image" href="/img/moreno-valley-security.jpg">
-    <link rel="preload" as="image" href="/img/shieldwise-logo.png">
+    <!-- Enhanced Performance Optimization -->
+    <link rel="preload" href="/css/style-cities.min.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" as="style" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" as="style" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" as="style" crossorigin>
+    <link rel="preload" as="image" href="/img/moreno-valley-security.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/img/logo1.png" fetchpriority="high">
+    <link rel="dns-prefetch" href="//maps.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    
+    <!-- Core Web Vitals Optimization -->
+    <meta name="theme-color" content="#d12028">
+    <meta name="color-scheme" content="light dark">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/style-cities.css">
+    <link rel="stylesheet" href="/css/style-cities.min.css">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -405,9 +412,21 @@
                     <div class="text-content">
                         <p>ShieldWise Security provides <span class="highlight">professional security guard services</span> tailored specifically to the unique needs of Moreno Valley businesses, properties, and events. With our extensive knowledge of Moreno Valley's security challenges and landscape, we deliver unmatched protection and peace of mind.</p>
                         <p>Our team of highly trained and licensed security professionals understands the diverse security requirements across different areas in Moreno Valley, from commercial districts to residential communities and beyond. We combine advanced security protocols with a customer-focused approach to create security solutions that address your specific concerns.</p>
+                        <p><strong>Why Choose ShieldWise for Moreno Valley Security:</strong></p>
+                        <ul style="text-align: left; margin: 20px 0; color: #555;">
+                            <li><strong>Local Expertise:</strong> Deep understanding of Moreno Valley's unique security landscape and crime patterns</li>
+                            <li><strong>Rapid Response:</strong> Average 2-hour deployment time for emergency situations in Moreno Valley</li>
+                            <li><strong>Advanced Technology:</strong> GPS tracking, real-time reporting, and mobile patrol management systems</li>
+                            <li><strong>BSIS Licensed:</strong> All guards fully licensed through California Bureau of Security and Investigative Services</li>
+                            <li><strong>24/7 Availability:</strong> Round-the-clock security coverage and management support</li>
+                            <li><strong>Competitive Pricing:</strong> Transparent pricing with no hidden fees, starting at $24/hour</li>
+                        </ul>
                     </div>
                     <div class="image-content">
-                        <img src="/img/moreno-valley-security-guards.jpg" alt="Professional Security Guards in Moreno Valley, California" loading="lazy">
+                        <picture>
+                            <source srcset="/img/moreno-valley-security.webp" type="image/webp">
+                            <img src="/img/moreno-valley-security.jpg" alt="Professional Security Guards in Moreno Valley, California" loading="lazy" width="500" height="500">
+                        </picture>
                     </div>
                 </div>
             </div>
@@ -698,33 +717,94 @@
                                 <div class="col-lg-10">
                                     <div class="dtla_pricing_container">
                                         <h2 class="dtla_section_title">Understanding Security Costs in Moreno Valley</h2>
-                                        <p>Security pricing depends on various factors. Here's a general breakdown:</p>
+                                        <p>Security pricing depends on various factors. Here's a comprehensive breakdown for Moreno Valley businesses:</p>
 
                                         <div class="mt-4">
                                             <div class="dtla_price_item">
                                                 <i class="fas fa-dollar-sign"></i>
-                                                <strong>Armed Guards:</strong> Cost 25-35% more than unarmed guards
+                                                <strong>Unarmed Guards:</strong> $22-28/hour - Retail, office buildings, residential communities
                                             </div>
                                             <div class="dtla_price_item">
                                                 <i class="fas fa-dollar-sign"></i>
-                                                <strong>24/7 Contracts:</strong> Yield better hourly rates
+                                                <strong>Armed Guards:</strong> $30-40/hour - Banks, warehouses, high-value assets
                                             </div>
                                             <div class="dtla_price_item">
                                                 <i class="fas fa-dollar-sign"></i>
-                                                <strong>Specialized Services:</strong> Require premium fees
+                                                <strong>Mobile Patrol:</strong> $35-45/hour - Multiple property checks, patrol routes
                                             </div>
                                             <div class="dtla_price_item">
                                                 <i class="fas fa-dollar-sign"></i>
-                                                <strong>Additional Factors:</strong> Contract length, number of guards, and on-site equipment
+                                                <strong>Event Security:</strong> $25-35/hour - Festivals, concerts, corporate events
+                                            </div>
+                                            <div class="dtla_price_item">
+                                                <i class="fas fa-dollar-sign"></i>
+                                                <strong>Construction Security:</strong> $24-32/hour - Site protection, equipment monitoring
                                             </div>
                                         </div>
 
                                         <div class="text-center mt-4">
-                                            <p class="fw-bold">Average Moreno Valley guard rates:</p>
+                                            <p class="fw-bold">Average Moreno Valley Security Rates:</p>
                                             <div class="dtla_price_range">
-                                                $22–$40 per hour
+                                                $24–$40 per hour
                                             </div>
-                                            <p class="mt-2 small text-muted">Rates depend on scope and qualifications</p>
+                                            <p class="mt-2 small text-muted">Competitive rates with volume discounts available</p>
+                                            <a href="/get-quote" class="btn btn-primary mt-3">Get Custom Quote</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Detailed Service Information Section -->
+                    <section class="py-5">
+                        <div class="container">
+                            <h2 class="text-center mb-5">Complete Moreno Valley Security Solutions</h2>
+                            <div class="row">
+                                <div class="col-lg-6 mb-4">
+                                    <h3>Industries We Serve in Moreno Valley</h3>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success mr-2"></i> <strong>Warehouses & Distribution Centers:</strong> Major logistics hubs along the I-215 corridor</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success mr-2"></i> <strong>Retail Centers:</strong> Moreno Valley Mall, TownGate Memorial, shopping plazas</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success mr-2"></i> <strong>Residential Communities:</strong> Apartment complexes, gated communities, HOAs</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success mr-2"></i> <strong>Healthcare Facilities:</strong> Hospitals, medical centers, urgent care clinics</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success mr-2"></i> <strong>Educational Institutions:</strong> Schools, colleges, university campuses</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success mr-2"></i> <strong>Government Buildings:</strong> City facilities, courthouses, public offices</li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 mb-4">
+                                    <h3>Advanced Security Technology</h3>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary mr-2"></i> <strong>GPS Patrol Tracking:</strong> Real-time guard location monitoring</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary mr-2"></i> <strong>Digital Reporting:</strong> Instant incident reports and daily summaries</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary mr-2"></i> <strong>Access Control Integration:</strong> Keycard systems and visitor management</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary mr-2"></i> <strong>CCTV Monitoring:</strong> 24/7 surveillance and recording capabilities</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary mr-2"></i> <strong>Mobile Communication:</strong> Direct client communication portal</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary mr-2"></i> <strong>Emergency Response:</strong> Direct police and fire department coordination</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <div class="bg-light p-4 rounded">
+                                        <h3 class="mb-3">Why Moreno Valley Businesses Choose ShieldWise Security</h3>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h4 class="h6">Local Market Knowledge</h4>
+                                                <p class="small">Understanding of Moreno Valley's unique security challenges, from warehouse district crime patterns to residential community needs.</p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h4 class="h6">Rapid Response Times</h4>
+                                                <p class="small">Strategic positioning of guards and supervisors throughout Moreno Valley ensures quick emergency response and deployment.</p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h4 class="h6">Flexible Service Options</h4>
+                                                <p class="small">From single-guard assignments to comprehensive security programs, we scale our services to match your specific requirements.</p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h4 class="h6">Competitive Pricing</h4>
+                                                <p class="small">Transparent pricing structure with no hidden fees, volume discounts, and flexible contract terms to fit your budget.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -849,18 +929,69 @@
             </div>
         </section>
 
-        <!-- Related Areas Section -->
+        <!-- Enhanced Security Services Section -->
         <section class="py-5 bg-light">
             <div class="container">
-                <h2 class="text-center mb-5">Explore Other Areas We Serve</h2>
+                <h2 class="text-center mb-5">Specialized Security Services</h2>
+                <div class="row mb-5">
+                    <div class="col-md-3 mb-4">
+                        <a href="/services/armed-security" class="text-decoration-none">
+                            <div class="card h-100 shadow-sm hover-effect">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-shield-alt fa-3x text-danger mb-3"></i>
+                                    <h4 class="h6 card-title">Armed Security Guards</h4>
+                                    <p class="card-text small">High-level protection for valuable assets and high-risk locations in Moreno Valley.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <a href="/services/unarmed-security" class="text-decoration-none">
+                            <div class="card h-100 shadow-sm hover-effect">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-user-tie fa-3x text-primary mb-3"></i>
+                                    <h4 class="h6 card-title">Unarmed Security</h4>
+                                    <p class="card-text small">Professional security presence for retail and commercial properties.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <a href="/services/event-security" class="text-decoration-none">
+                            <div class="card h-100 shadow-sm hover-effect">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-calendar-check fa-3x text-success mb-3"></i>
+                                    <h4 class="h6 card-title">Event Security</h4>
+                                    <p class="card-text small">Comprehensive crowd control and event management services.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <a href="/services/construction-security" class="text-decoration-none">
+                            <div class="card h-100 shadow-sm hover-effect">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-hard-hat fa-3x text-warning mb-3"></i>
+                                    <h4 class="h6 card-title">Construction Security</h4>
+                                    <p class="card-text small">24/7 protection for construction sites and equipment.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <h2 class="text-center mb-5">Nearby Service Areas</h2>
                 <div class="row">
                     <div class="col-md-4 mb-4">
                         <a href="/riverside" class="text-decoration-none">
                             <div class="card h-100 shadow-sm hover-effect">
-                                <img src="https://images.unsplash.com/photo-1569959220744-ff553533f492" class="card-img-top" alt="Riverside Security Services">
+                                <picture>
+                                    <source srcset="/img/riverside.webp" type="image/webp">
+                                    <img src="/img/riverside.webp" class="card-img-top" alt="Riverside Security Services" loading="lazy" width="400" height="200">
+                                </picture>
                                 <div class="card-body text-center">
-                                    <h3 class="h5 card-title">Riverside</h3>
-                                    <p class="card-text">Comprehensive security services throughout Riverside.</p>
+                                    <h3 class="h5 card-title">Riverside Security Services</h3>
+                                    <p class="card-text">Professional security guards and patrol services throughout Riverside County.</p>
                                 </div>
                             </div>
                         </a>
@@ -868,10 +999,13 @@
                     <div class="col-md-4 mb-4">
                         <a href="/perris" class="text-decoration-none">
                             <div class="card h-100 shadow-sm hover-effect">
-                                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa" class="card-img-top" alt="Perris Security Services">
+                                <picture>
+                                    <source srcset="/img/perris.webp" type="image/webp">
+                                    <img src="/img/services-area.webp" class="card-img-top" alt="Perris Security Services" loading="lazy" width="400" height="200">
+                                </picture>
                                 <div class="card-body text-center">
-                                    <h3 class="h5 card-title">Perris</h3>
-                                    <p class="card-text">Specialized security for Perris businesses and events.</p>
+                                    <h3 class="h5 card-title">Perris Security Guards</h3>
+                                    <p class="card-text">Specialized security solutions for Perris businesses, events, and residential properties.</p>
                                 </div>
                             </div>
                         </a>
@@ -879,10 +1013,13 @@
                     <div class="col-md-4 mb-4">
                         <a href="/corona" class="text-decoration-none">
                             <div class="card h-100 shadow-sm hover-effect">
-                                <img src="https://images.unsplash.com/photo-1565402170291-8491f14678db" class="card-img-top" alt="Corona Security Services">
+                                <picture>
+                                    <source srcset="/img/corona.webp" type="image/webp">
+                                    <img src="/img/california_cities.webp" class="card-img-top" alt="Corona Security Services" loading="lazy" width="400" height="200">
+                                </picture>
                                 <div class="card-body text-center">
-                                    <h3 class="h5 card-title">Corona</h3>
-                                    <p class="card-text">Premium security solutions for Corona properties.</p>
+                                    <h3 class="h5 card-title">Corona Security Company</h3>
+                                    <p class="card-text">Premium security solutions for Corona commercial and residential properties.</p>
                                 </div>
                             </div>
                         </a>
@@ -1121,6 +1258,9 @@
 
 
 
+                                <!-- Performance Optimization Script -->
+                                <script src="/JS/performance-optimization.min.js" defer></script>
+                                
                                 <!-- JavaScript for Interactive Elements -->
                                 <script>
                                     document.addEventListener('DOMContentLoaded', function() {
