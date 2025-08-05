@@ -174,3 +174,30 @@ body {
 .table-of-contents a:hover {
     color: #0056b3;
 }
+
+/* Security guide section text visibility fixes */
+.dtla_header_section {
+    color: white !important;
+}
+
+.dtla_header_section h2,
+.dtla_header_section h3,
+.dtla_header_section p {
+    color: white !important;
+}
+
+.table-of-contents.bg-white {
+    background-color: white !important;
+}
+
+.table-of-contents.bg-white h4 {
+    color: #333 !important;
+}
+
+.table-of-contents.bg-white a {
+    color: #007bff !important;
+}
+
+.table-of-contents.bg-white a:hover {
+    color: #0056b3 !important;
+}
