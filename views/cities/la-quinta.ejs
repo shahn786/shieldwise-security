@@ -146,6 +146,22 @@
         .skip-link:focus {
             top: 6px;
         }
+        
+        /* FAQ Collapse Styles */
+        .collapse {
+            display: none;
+        }
+        
+        .collapse.show {
+            display: block;
+        }
+        
+        .collapsing {
+            position: relative;
+            height: 0;
+            overflow: hidden;
+            transition: height 0.35s ease;
+        }
     </style>
 
     <!-- Enhanced Organization Schema with Detailed La Quinta Focus -->
@@ -1264,6 +1280,11 @@
     <!-- Back to Top JavaScript -->
     <script src="/JS/back-to-top.js"></script>
 
+    <!-- Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+
     <!-- JavaScript for Enhanced Functionality -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -1286,29 +1307,36 @@
                 });
             });
 
-            // Enhanced Accordion Functionality for FAQ
-            const accordionButtons = document.querySelectorAll('[data-toggle="collapse"]');
-
-            accordionButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const target = document.querySelector(this.getAttribute('data-target'));
+            // FAQ Accordion functionality
+            const faqButtons = document.querySelectorAll('[data-toggle="collapse"]');
+            
+            faqButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('data-target');
+                    const target = document.querySelector(targetId);
                     const isExpanded = this.getAttribute('aria-expanded') === 'true';
-
-                    // Close all accordions
-                    accordionButtons.forEach(btn => {
-                        btn.setAttribute('aria-expanded', 'false');
-                        const btnTarget = document.querySelector(btn.getAttribute('data-target'));
-                        if (btnTarget) {
-                            btnTarget.classList.remove('show');
-                        }
-                    });
-
-                    // Open clicked accordion if it was closed
-                    if (!isExpanded) {
+                    
+                    // Toggle the current FAQ
+                    if (isExpanded) {
+                        this.setAttribute('aria-expanded', 'false');
+                        target.classList.remove('show');
+                    } else {
+                        // Close all other FAQs first
+                        faqButtons.forEach(btn => {
+                            if (btn !== this) {
+                                btn.setAttribute('aria-expanded', 'false');
+                                const btnTarget = document.querySelector(btn.getAttribute('data-target'));
+                                if (btnTarget) {
+                                    btnTarget.classList.remove('show');
+                                }
+                            }
+                        });
+                        
+                        // Open the clicked FAQ
                         this.setAttribute('aria-expanded', 'true');
-                        if (target) {
-                            target.classList.add('show');
-                        }
+                        target.classList.add('show');
                     }
                 });
             });
