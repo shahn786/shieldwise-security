@@ -36,7 +36,7 @@
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
 
     <!-- Enhanced SEO Meta Tags with La Quinta Local Focus -->
-    <title>Top-Rated Security Guards in La Quinta, CA | Golf Community & Resort Protection | Desert Guardian Security</title>
+    <title>La Quinta Security Guards | 24/7 Golf Community & Resort Protection | Desert Guardian</title>
     <meta name="description" content="Professional security guard services in La Quinta, CA. 24/7 protection for golf communities, luxury resorts, retail centers, and gated neighborhoods. Licensed guards with local expertise, rapid response, and custom security solutions for La Quinta properties.">
     <meta name="keywords" content="La Quinta security guards, security services La Quinta CA, golf community security La Quinta, resort security La Quinta, commercial security La Quinta, La Quinta retail security, residential security La Quinta, La Quinta HOA security, PGA West security, La Quinta Resort security, SilverRock security, Washington Street security, Highway 111 security, professional security guards La Quinta, armed security La Quinta, unarmed security La Quinta, security company near me">
     <meta name="author" content="Desert Guardian Security">
@@ -428,7 +428,8 @@
         "@type": "AggregateRating",
         "ratingValue": "4.9",
         "reviewCount": "127",
-        "bestRating": "5"
+        "bestRating": "5",
+        "worstRating": "1"
       },
       "knowsAbout": [
         "Golf Community Security Protocols",
@@ -605,12 +606,11 @@
     </script>
 
     <!-- Preload Critical Resources -->
+    <link rel="preload" href="/css/critical.css" as="style">
     <link rel="preload" href="/css/style-cities.css" as="style">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" as="style">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" as="style">
     <link rel="preload" href="/img/palm-springs-hero.webp" as="image">
     <link rel="preload" href="/img/shahn1.png" as="image">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap" as="style">
 
     <link rel="preload" href="/fonts/montserrat-v25-latin-700.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -620,8 +620,8 @@
 
     <link rel="stylesheet" href="/css/style-cities.css">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts with optimized loading -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -657,6 +657,18 @@
         <%- include('../partials/Header') %>
     </header>
 
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="breadcrumb" class="bg-light py-2">
+        <div class="container">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+                <li class="breadcrumb-item"><a href="/services" class="text-decoration-none">Services</a></li>
+                <li class="breadcrumb-item"><a href="/coachella-valley" class="text-decoration-none">Coachella Valley</a></li>
+                <li class="breadcrumb-item active" aria-current="page">La Quinta Security Services</li>
+            </ol>
+        </div>
+    </nav>
+
     <!-- Main Content with Semantic HTML -->
     <main id="main-content" role="main" aria-label="Main content">
         <!-- Hero Section with Background Image -->
@@ -674,13 +686,13 @@
                 <h2 class="section-title">Comprehensive Security Solutions for La Quinta</h2>
                 <div class="content-wrapper">
                     <div class="text-content">
-                        <p>Desert Guardian Security provides <span class="highlight">professional security guard services</span> tailored specifically to the unique needs of La Quinta golf communities, luxury resorts, retail centers, and residential neighborhoods. With our extensive knowledge of La Quinta's security challenges and landscape, we deliver unmatched protection and peace of mind.</p>
+                        <p>Desert Guardian Security provides <span class="highlight">professional security guard services</span> tailored specifically to the unique needs of La Quinta golf communities, luxury resorts, retail centers, and residential neighborhoods. With our extensive knowledge of La Quinta's security challenges and landscape, we deliver unmatched protection and peace of mind. Learn more about our <a href="/services/armed-security" class="text-decoration-none">armed security services</a> and <a href="/services/commercial-security" class="text-decoration-none">commercial protection</a>.</p>
                         <p>Our team of highly trained and licensed security professionals understands the diverse security requirements across different areas in La Quinta, from exclusive country clubs to retail districts. We combine advanced security protocols with a customer-focused approach to create security solutions that address your specific concerns.</p>
                     </div>
                     <div class="image-content">
                         <picture>
                             <source srcset="/img/shahn1.png" type="image/png">
-                            <img src="/img/shahn1.png" alt="Licensed BSIS security guard providing professional armed protection services at exclusive La Quinta golf resort entrance with luxury vehicle access control and member safety protocols" loading="lazy" width="400" height="300">
+                            <img src="/img/shahn1.png" alt="Licensed BSIS security guard monitoring luxury golf community entrance in La Quinta with professional access control and visitor management" loading="lazy" width="400" height="300">
                         </picture>
                     </div>
                 </div>
@@ -698,7 +710,13 @@
                     <article class="service-item">
                         <i class="fas fa-golf-ball" aria-hidden="true"></i>
                         <h3>Golf Community Security</h3>
-                        <p>Specialized security for La Quinta's premier golf communities including PGA West, La Quinta Resort, and SilverRock with trained personnel providing access control, visitor management, and comprehensive property protection.</p>
+                        <p>Specialized security for La Quinta's premier golf communities:</p>
+                        <ul class="list-unstyled">
+                            <li>• PGA West, La Quinta Resort, and SilverRock coverage</li>
+                            <li>• Access control and visitor management</li>
+                            <li>• Comprehensive property protection</li>
+                            <li>• Member relations training</li>
+                        </ul>
                     </article>
 
                     <!-- Service 2 -->
@@ -760,6 +778,27 @@
                     <h2 class="display-5 fw-bold mb-3">La Quinta Security Services</h2>
                     <h3 class="fs-5 fw-light mb-3">Your Comprehensive Professional Guide</h3>
                     <p>Last Updated: January 28, 2025</p>
+                    
+                    <!-- Table of Contents -->
+                    <div class="table-of-contents bg-light p-4 mt-4 rounded">
+                        <h4 class="h5 mb-3">Quick Navigation</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="#security-landscape" class="text-decoration-none">La Quinta Security Landscape</a></li>
+                                    <li><a href="#security-types" class="text-decoration-none">Types of Security Services</a></li>
+                                    <li><a href="#choosing-provider" class="text-decoration-none">Choosing the Right Provider</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="#service-areas" class="text-decoration-none">Service Areas</a></li>
+                                    <li><a href="#pricing" class="text-decoration-none">Security Pricing</a></li>
+                                    <li><a href="#faq" class="text-decoration-none">Frequently Asked Questions</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </header>
 
@@ -769,14 +808,14 @@
                         <div class="col-lg-10">
                             <p class="dtla_lead_text">Navigating security needs in La Quinta can be challenging due to the area's unique characteristics. This comprehensive guide covers everything you need to know about professional security services in La Quinta, from types of security guards to costs and how to choose the right provider for your specific needs.</p>
 
-                            <h3 class="dtla_section_title">Understanding La Quinta's Security Landscape</h3>
+                            <h3 id="security-landscape" class="dtla_section_title">Understanding La Quinta's Security Landscape</h3>
                             <p>La Quinta represents a diverse security environment, with distinct areas ranging from world-class golf communities and luxury resorts to retail centers and residential neighborhoods. Each area presents unique security challenges that require specialized approaches.</p>
 
                             <p>As a premier destination in the Coachella Valley with high-value properties and an affluent visitor population, La Quinta faces specific security concerns related to property protection, residential privacy, and maintaining an upscale atmosphere while ensuring thorough security measures.</p>
 
                             <div class="dtla_section_divider" role="separator"></div>
 
-                            <h3 class="dtla_section_title">Types of Security Services Available in La Quinta</h3>
+                            <h3 id="security-types" class="dtla_section_title">Types of Security Services Available in La Quinta</h3>
                             <p>When considering security options for your La Quinta property or business, it's important to understand the different types of services available:</p>
 
                             <div class="row mt-4">
@@ -831,7 +870,7 @@
 
                             <div class="dtla_section_divider" role="separator"></div>
 
-                            <h3 class="dtla_section_title">Choosing the Right Security Provider in La Quinta</h3>
+                            <h3 id="choosing-provider" class="dtla_section_title">Choosing the Right Security Provider in La Quinta</h3>
                             <p>Key criteria to evaluate your security vendor:</p>
 
                             <div class="mt-4">

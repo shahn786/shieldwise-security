@@ -85,3 +85,92 @@ body {
         font-size: 1.2rem;
     }
 }
+/* Critical CSS for La Quinta Security Page */
+body { 
+    margin: 0; 
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+    line-height: 1.6;
+}
+
+.hero-downtown { 
+    height: 100vh; 
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/img/palm-springs-hero.webp') center/cover; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    color: white; 
+}
+
+.hero-content h1 { 
+    font-size: 3rem; 
+    margin-bottom: 1rem; 
+    font-weight: 700;
+}
+
+.hero-content h2 { 
+    font-size: 1.5rem; 
+    margin-bottom: 2rem; 
+    font-weight: 300; 
+}
+
+.btn-primary { 
+    background: #d32f2f; 
+    border: none; 
+    padding: 1rem 2rem; 
+    font-size: 1.1rem; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    color: white; 
+    display: inline-block; 
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #b71c1c;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* Breadcrumb styling */
+.breadcrumb {
+    background: transparent;
+    padding: 0;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    color: #6c757d;
+}
+
+/* Table of contents styling */
+.table-of-contents {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.table-of-contents ul {
+    text-align: left;
+}
+
+.table-of-contents a {
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.table-of-contents a:hover {
+    color: #0056b3;
+}
