@@ -588,6 +588,44 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://cdn.jsdelivr.net https://code.jquery.com https://stackpath.bootstrapcdn.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com; frame-src https://www.google.com https://www.google.com/maps;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+    <!-- Critical CSS for immediate rendering -->
+    <style>
+    /* Critical CSS for immediate rendering */
+    body { 
+        margin: 0; 
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+        line-height: 1.6;
+    }
+    .hero-downtown { 
+        height: 100vh; 
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/img/coachella-hero.jpg') center/cover; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        text-align: center; 
+        color: white; 
+    }
+    .hero-content h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+    .btn-primary {
+        background-color: #d32f2f;
+        border-color: #d32f2f;
+        padding: 12px 30px;
+        font-size: 1.1rem;
+    }
+    </style>
+
     <!-- Enhanced Favicon Setup -->
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
@@ -612,17 +650,44 @@
           </div>
       </section>
 
+      <!-- Table of Contents -->
+      <div class="container mt-4">
+          <div class="table-of-contents bg-white p-4 mt-4 rounded shadow">
+              <h4 class="h5 mb-3 text-dark">Quick Navigation</h4>
+              <div class="row">
+                  <div class="col-md-6">
+                      <ul class="list-unstyled">
+                          <li><a href="#security-landscape" class="text-decoration-none text-primary">Coachella Security Landscape</a></li>
+                          <li><a href="#security-types" class="text-decoration-none text-primary">Types of Security Services</a></li>
+                          <li><a href="#choosing-provider" class="text-decoration-none text-primary">Choosing the Right Provider</a></li>
+                      </ul>
+                  </div>
+                  <div class="col-md-6">
+                      <ul class="list-unstyled">
+                          <li><a href="#service-areas" class="text-decoration-none text-primary">Service Areas</a></li>
+                          <li><a href="#pricing" class="text-decoration-none text-primary">Security Pricing</a></li>
+                          <li><a href="#faq" class="text-decoration-none text-primary">Frequently Asked Questions</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+
       <!-- Introduction Section -->
       <section class="downtown-security">
           <div class="container">
               <h2 class="section-title">Comprehensive Security Solutions for Coachella</h2>
               <div class="content-wrapper">
                   <div class="text-content">
-                      <p>Valley Shield Security provides <span class="highlight">professional security guard services</span> tailored specifically to the unique needs of Coachella agricultural properties, packing facilities, businesses, and residential communities. With our extensive knowledge of Coachella's security challenges and landscape, we deliver unmatched protection and peace of mind.</p>
+                      <p>Valley Shield Security provides <span class="highlight">professional security guard services</span> tailored specifically to the unique needs of Coachella agricultural properties, packing facilities, businesses, and residential communities. Learn more about our specialized <a href="/services/commercial-security" class="text-decoration-none">commercial security services</a> and <a href="/services/armed-security" class="text-decoration-none">armed protection solutions</a>. With our extensive knowledge of Coachella's security challenges and landscape, we deliver unmatched protection and peace of mind.</p>
                       <p>Our team of highly trained and licensed security professionals understands the diverse security requirements across different areas in Coachella, from farm properties to residential neighborhoods. We combine advanced security protocols with a customer-focused approach to create security solutions that address your specific concerns.</p>
                   </div>
                   <div class="image-content">
-                      <img src="/img/shahn1.png" alt="Professional Security Guards in Coachella" loading="lazy">
+                      <img src="/img/shahn1.png" 
+                           alt="Professional BSIS-licensed security guard monitoring Coachella agricultural property entrance with crop protection and farm equipment security protocols during harvest season patrol" 
+                           loading="lazy" 
+                           width="400" 
+                           height="300">
                   </div>
               </div>
           </div>
@@ -714,7 +779,7 @@
                               <p class="dtla_lead_text">Navigating security needs in Coachella can be challenging due to the area's unique characteristics. This comprehensive guide covers everything you need to know about professional security services in Coachella, from types of security guards to costs and how to choose the right provider for your specific needs.</p>
 
                               <!-- Security Landscape Section -->
-                              <h2 class="dtla_section_title">Understanding Coachella's Security Landscape</h2>
+                              <h2 id="security-landscape" class="dtla_section_title">Understanding Coachella's Security Landscape</h2>
                               <p>Coachella represents a diverse security environment, with distinct areas ranging from agricultural properties and packing facilities to commercial centers and residential communities. Each area presents unique security challenges that require specialized approaches.</p>
 
                               <p>As an agricultural hub in the Eastern Coachella Valley, the city faces specific security concerns related to crop protection, equipment security, and farm property monitoring, alongside traditional urban security needs for businesses and residential areas.</p>
@@ -722,7 +787,7 @@
                               <div class="dtla_section_divider"></div>
 
                               <!-- Security Services Section -->
-                              <h2 class="dtla_section_title">Types of Security Services Available in Coachella</h2>
+                              <h2 id="security-types" class="dtla_section_title">Types of Security Services Available in Coachella</h2>
                               <p>When considering security options for your Coachella property or business, it's important to understand the different types of services available:</p>
 
                               <div class="row mt-4">
@@ -782,7 +847,7 @@
                               <div class="dtla_section_divider"></div>
 
                               <!-- Choosing Provider Section -->
-                              <h2 class="dtla_section_title">Choosing the Right Security Provider in Coachella</h2>
+                              <h2 id="choosing-provider" class="dtla_section_title">Choosing the Right Security Provider in Coachella</h2>
                               <p>Key criteria to evaluate your security vendor:</p>
 
                               <div class="mt-4">
@@ -814,7 +879,7 @@
           </div>
 
       <!-- Map Section -->
-      <section class="py-5">
+      <section id="service-areas" class="py-5">
           <div class="container">
               <div class="row justify-content-center">
                   <div class="col-lg-8 text-center">
@@ -906,7 +971,7 @@
       <!--      new section    -->
 
                   <!-- Pricing Section With Background -->
-                  <section class="dtla_pricing_section">
+                  <section id="pricing" class="dtla_pricing_section">
                       <div class="container">
                           <div class="row justify-content-center">
                               <div class="col-lg-10">
@@ -1127,213 +1192,9 @@
 
         <%- include('../partials/Footer') %>
 
-        <!-- Enhanced Schema Markup for SEO -->
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": "What security services do you offer in Coachella?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "We offer a comprehensive range of security services in Coachella, including commercial building security, retail security, event security, construction site security, residential community security, and parking lot security. All our services are customized to meet the specific needs of each client in the Coachella area."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Are your security guards licensed and insured?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Yes, all our security guards are fully licensed, bonded, and insured in accordance with California state regulations. They undergo rigorous background checks, receive comprehensive training, and hold valid guard cards issued by the Bureau of Security and Investigative Services (BSIS)."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Do you provide armed security guards in Coachella?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Yes, we offer both armed and unarmed security guard services in Coachella. Our armed guards receive additional specialized training and certification and are deployed based on specific security needs and risk assessments of each property or event."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "How quickly can you deploy security guards in Coachella?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "We pride ourselves on quick response times. For standard security needs, we can typically deploy guards within 24-48 hours. For emergency situations in Coachella, we offer expedited service and can often provide security personnel within hours. Contact us for immediate assistance."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Do you offer mobile patrol services in Coachella?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Yes, we provide mobile patrol services throughout Coachella. Our patrol vehicles are clearly marked and equipped with GPS tracking. Mobile patrols offer a cost-effective security solution for properties that don't require a permanent security presence but benefit from regular security checks."
-                    }
-                }
-            ]
-        }
-        </script>
+        
 
-        <!-- Local Business Schema Markup -->
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "ShieldWise Security - Coachella",
-            "image": "/img/coachella-security.jpg",
-            "url": "https://shieldwisesecurity.com/riverside-county/coachella",
-            "telephone": "+1-951-555-7890",
-            "priceRange": "$$-$$$",
-            "description": "Professional security guard services in Coachella. We protect businesses, residential communities, and properties with trained and licensed security personnel available 24/7.",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "123 Coachella Blvd",
-                "addressLocality": "Coachella",
-                "addressRegion": "CA",
-                "postalCode": "92236",
-                "addressCountry": "US"
-            },
-            "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 33.6806,
-                "longitude": -116.1736
-            },
-            "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday",
-                    "Sunday"
-                ],
-                "opens": "00:00",
-                "closes": "23:59"
-            },
-            "sameAs": [
-                "https://www.facebook.com/shieldwisesecurity",
-                "https://twitter.com/shieldwisesecurity",
-                "https://www.instagram.com/shieldwisesecurity",
-                "https://www.linkedin.com/company/shieldwisesecurity"
-            ],
-            "areaServed": {
-                "@type": "City",
-                "name": "Coachella"
-            },
-            "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Security Services",
-                "itemListElement": [
-                    {
-                        "@type": "Offer",
-                        "itemOffered": {
-                            "@type": "Service",
-                            "name": "Commercial Building Security",
-                            "description": "Professional security services for commercial buildings in Coachella."
-                        }
-                    },
-                    {
-                        "@type": "Offer",
-                        "itemOffered": {
-                            "@type": "Service",
-                            "name": "Residential Community Security",
-                            "description": "Comprehensive security services for residential communities in Coachella."
-                        }
-                    },
-                    {
-                        "@type": "Offer",
-                        "itemOffered": {
-                            "@type": "Service",
-                            "name": "Retail Security",
-                            "description": "Specialized security solutions for retail stores in Coachella."
-                        }
-                    }
-                ]
-            },
-            "review": [
-                {
-                    "@type": "Review",
-                    "author": {
-                        "@type": "Person",
-                        "name": "Michael Thompson"
-                    },
-                    "reviewRating": {
-                        "@type": "Rating",
-                        "ratingValue": "5",
-                        "bestRating": "5"
-                    },
-                    "datePublished": "2023-10-15",
-                    "reviewBody": "ShieldWise Security has been providing security for our gated community in Coachella for over two years. Their guards are professional, attentive, and truly understand the unique needs of our neighborhood."
-                },
-                {
-                    "@type": "Review",
-                    "author": {
-                        "@type": "Person",
-                        "name": "Jessica Rodriguez"
-                    },
-                    "reviewRating": {
-                        "@type": "Rating",
-                        "ratingValue": "5",
-                        "bestRating": "5"
-                    },
-                    "datePublished": "2023-09-22",
-                    "reviewBody": "We've been using ShieldWise Security for our business location in Coachella for the past year. Their security personnel are always punctual, professional, and go above and beyond to protect our property."
-                }
-            ],
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "reviewCount": "76",
-                "bestRating": "5",
-                "worstRating": "1"
-            }
-        }
-        </script>
-
-        <!-- Service Schema Markup -->
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "serviceType": "Security Service",
-            "provider": {
-                "@type": "LocalBusiness",
-                "name": "ShieldWise Security",
-                "url": "https://shieldwisesecurity.com"
-            },
-            "areaServed": {
-                "@type": "City",
-                "name": "Coachella",
-                "containedInPlace": {
-                    "@type": "County",
-                    "name": "Riverside County",
-                    "containedInPlace": {
-                        "@type": "State",
-                        "name": "California"
-                    }
-                }
-            },
-            "serviceOutput": "Enhanced security and protection for businesses, residential communities, and properties",
-            "offers": {
-                "@type": "Offer",
-                "price": "26.00",
-                "priceCurrency": "USD",
-                "priceSpecification": {
-                    "@type": "UnitPriceSpecification",
-                    "price": "26.00",
-                    "priceCurrency": "USD",
-                    "unitText": "Hour"
-                },
-                "availability": "https://schema.org/InStock"
-            },
-            "termsOfService": "https://shieldwisesecurity.com/terms"
-        }
-        </script>
+        
 
         <!-- JavaScript for Interactive Elements -->
         <script>
