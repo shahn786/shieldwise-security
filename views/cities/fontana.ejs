@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://stackpath.bootstrapcdn.com">
 
     <!-- ✅ Critical CSS Preload -->
     <link rel="preload" href="/css/style-cities.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" fetchpriority="high">
@@ -18,17 +20,51 @@
     
     <!-- ✅ Critical Images Preload -->
     <link rel="preload" as="image" href="/img/shahn1.webp" fetchpriority="high" type="image/webp">
+    <link rel="preload" as="image" href="/img/logo1.png" fetchpriority="high" type="image/png">
+
+    <!-- ✅ Enhanced Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' 'unsafe-eval'
+        https://www.googletagmanager.com 
+        https://www.google-analytics.com 
+        https://code.jquery.com 
+        https://cdn.jsdelivr.net 
+        https://cdnjs.cloudflare.com 
+        https://stackpath.bootstrapcdn.com
+        https://www.clarity.ms;
+      style-src 'self' 'unsafe-inline'
+        https://fonts.googleapis.com 
+        https://cdn.jsdelivr.net 
+        https://stackpath.bootstrapcdn.com 
+        https://cdnjs.cloudflare.com;
+      font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+      img-src 'self' data: https: blob:;
+      connect-src 'self' https://www.google-analytics.com https://www.clarity.ms;
+      frame-src 'self' https://www.google.com;
+      frame-ancestors 'none';
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self';
+      upgrade-insecure-requests;
+    ">
 
     <!-- ✅ Optimized Title & Meta Description -->
-    <title>Fontana Security Guards | Transportation & Logistics Security | ShieldWise</title>
+    <title>Fontana Security Guards | Transportation & Logistics Protection | ShieldWise</title>
     <meta name="description" content="Professional security guards in Fontana, CA. Specialized transportation hub, logistics, and industrial security services. 1-hour emergency deployment. Licensed BSIS guards from $35/hr. Call (909) 822-4500.">
     
     <!-- ✅ Enhanced Keywords -->
-    <meta name="keywords" content="Fontana security guards, transportation security Fontana, logistics security Fontana, industrial security Fontana, warehouse security Fontana, emergency security guards Fontana, BSIS licensed security Fontana, armed guards Fontana, unarmed security Fontana, 24/7 security Fontana CA">
+    <meta name="keywords" content="Fontana security guards, transportation security Fontana, logistics security Fontana, industrial security Fontana, warehouse security Fontana, emergency security guards Fontana, BSIS licensed security Fontana, armed guards Fontana, unarmed security Fontana, 24/7 security Fontana CA, San Bernardino County security">
     
     <meta name="author" content="ShieldWise Security Services">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="theme-color" content="#1a3c64">
+
+    <!-- ✅ Enhanced AI Search Optimization -->
+    <meta name="ai-search-intent" content="Find professional security guards in Fontana California for transportation hubs, logistics centers, and industrial facilities">
+    <meta name="ai-search-service" content="Transportation security, logistics security, industrial security, warehouse security Fontana">
+    <meta name="ai-search-price" content="From $35/hour, affordable licensed security guards Fontana">
+    <meta name="ai-search-benefit" content="1-hour emergency response, BSIS licensed, 24/7 protection, specialized training">
 
     <!-- ✅ Geographic Meta Tags -->
     <meta name="geo.region" content="US-CA">
@@ -47,6 +83,14 @@
     <meta property="og:url" content="https://shieldwisesecurity.com/fontana">
     <meta property="og:image" content="https://shieldwisesecurity.com/img/fontana-security-guards.webp">
     <meta property="og:site_name" content="ShieldWise Security">
+    <meta property="og:locale" content="en_US">
+
+    <!-- ✅ Enhanced Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@shieldwisesec">
+    <meta name="twitter:title" content="Fontana Security Guards | Transportation Protection">
+    <meta name="twitter:description" content="Professional security guards in Fontana. Transportation, logistics, industrial protection. Emergency deployment in 1 hour. Call (909) 822-4500!">
+    <meta name="twitter:image" content="https://shieldwisesecurity.com/img/fontana-security-guards.webp">
 
     <!-- ✅ Enhanced SecurityService Schema -->
     <script type="application/ld+json">
@@ -98,9 +142,39 @@
     }
     </script>
 
+    <!-- ✅ FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What transportation security services do you offer in Fontana?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We provide comprehensive transportation security in Fontana including rail yard security, trucking terminal protection, logistics center security, and warehouse security. All services available 24/7 with rapid deployment."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How quickly can you deploy security guards in Fontana?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For emergency situations, our licensed security guards can deploy within 1-4 hours anywhere in Fontana. Standard service deployments occur within 24 hours or less."
+                }
+            }
+        ]
+    }
+    </script>
+
     <!-- ✅ External CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" media="screen">
+
+    <!-- ✅ Favicon & App Icons -->
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.webp">
 </head>
 
 <body id="top" itemscope itemtype="https://schema.org/WebPage">
@@ -181,6 +255,48 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="py-5 faq-section" id="faq">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-5">Frequently Asked Questions</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="fontanaFAQ">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    What transportation security services do you offer in Fontana?
+                                </button>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#fontanaFAQ">
+                                <div class="card-body">
+                                    We provide comprehensive transportation security in Fontana including rail yard security, trucking terminal protection, logistics center security, and warehouse security. All services available 24/7 with rapid deployment.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    How quickly can you deploy security guards in Fontana?
+                                </button>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#fontanaFAQ">
+                                <div class="card-body">
+                                    For emergency situations, our licensed security guards can deploy within 1-4 hours anywhere in Fontana. Standard service deployments occur within 24 hours or less.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="py-5 bg-primary text-white">
         <div class="container">
@@ -199,6 +315,11 @@
 
     <!-- Footer -->
     <%- include('../partials/Footer') %>
+
+    <!-- Back to Top Button -->
+    <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
     <!-- Bootstrap & jQuery JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>

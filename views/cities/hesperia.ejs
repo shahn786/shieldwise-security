@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en-US" prefix="og: https://ogp.me/ns#" itemscope itemtype="https://schema.org/SecurityService">
 <head>
@@ -10,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://stackpath.bootstrapcdn.com">
 
     <!-- ✅ Critical CSS Preload -->
     <link rel="preload" href="/css/style-cities.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" fetchpriority="high">
@@ -19,16 +22,49 @@
     <link rel="preload" as="image" href="/img/shahn1.webp" fetchpriority="high" type="image/webp">
     <link rel="preload" as="image" href="/img/logo1.png" fetchpriority="high" type="image/png">
 
+    <!-- ✅ Enhanced Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' 'unsafe-eval'
+        https://www.googletagmanager.com 
+        https://www.google-analytics.com 
+        https://code.jquery.com 
+        https://cdn.jsdelivr.net 
+        https://cdnjs.cloudflare.com 
+        https://stackpath.bootstrapcdn.com
+        https://www.clarity.ms;
+      style-src 'self' 'unsafe-inline'
+        https://fonts.googleapis.com 
+        https://cdn.jsdelivr.net 
+        https://stackpath.bootstrapcdn.com 
+        https://cdnjs.cloudflare.com;
+      font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+      img-src 'self' data: https: blob:;
+      connect-src 'self' https://www.google-analytics.com https://www.clarity.ms;
+      frame-src 'self' https://www.google.com;
+      frame-ancestors 'none';
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self';
+      upgrade-insecure-requests;
+    ">
+
     <!-- ✅ Optimized Title & Meta Description -->
-    <title>Hesperia Security Guards | Residential & Commercial Protection | ShieldWise</title>
-    <meta name="description" content="Professional security guards in Hesperia, CA. Specialized residential & commercial security services. 1-hour emergency deployment. Licensed BSIS guards from $35/hr. Call (760) 947-1000.">
+    <title>Hesperia Security Guards | High Desert Residential & Commercial Protection | ShieldWise</title>
+    <meta name="description" content="Professional security guards in Hesperia, CA. Specialized High Desert residential & commercial security services. 1-hour emergency deployment. Licensed BSIS guards from $35/hr. Call (760) 947-1000.">
     
     <!-- ✅ Enhanced Keywords -->
-    <meta name="keywords" content="Hesperia security guards, residential & commercial security Hesperia, emergency security guards Hesperia, BSIS licensed security Hesperia, armed guards Hesperia, unarmed security Hesperia, 24/7 security Hesperia CA">
+    <meta name="keywords" content="Hesperia security guards, High Desert security Hesperia, residential security Hesperia, commercial security Hesperia, emergency security guards Hesperia, BSIS licensed security Hesperia, armed guards Hesperia, unarmed security Hesperia, 24/7 security Hesperia CA, San Bernardino County security">
     
     <meta name="author" content="ShieldWise Security Services">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="theme-color" content="#1a3c64">
+
+    <!-- ✅ Enhanced AI Search Optimization -->
+    <meta name="ai-search-intent" content="Find professional security guards in Hesperia California for High Desert residential and commercial properties">
+    <meta name="ai-search-service" content="High Desert security, residential security, commercial security, event security Hesperia">
+    <meta name="ai-search-price" content="From $35/hour, affordable licensed security guards Hesperia">
+    <meta name="ai-search-benefit" content="1-hour emergency response, BSIS licensed, family community focus, 24/7 protection">
 
     <!-- ✅ Geographic Meta Tags -->
     <meta name="geo.region" content="US-CA">
@@ -41,11 +77,20 @@
     <link rel="alternate" hreflang="en-US" href="https://shieldwisesecurity.com/hesperia">
 
     <!-- ✅ Enhanced Open Graph Meta Tags -->
-    <meta property="og:title" content="Hesperia Security Guards | Professional Residential & Commercial Protection">
-    <meta property="og:description" content="Professional security services in Hesperia. Growing residential and commercial community security services. Emergency deployment in 1 hour. Call (760) 947-1000!">
+    <meta property="og:title" content="Hesperia Security Guards | Professional High Desert Protection">
+    <meta property="og:description" content="Professional security services in Hesperia. Growing High Desert residential and commercial community security services. Emergency deployment in 1 hour. Call (760) 947-1000!">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://shieldwisesecurity.com/hesperia">
+    <meta property="og:image" content="https://shieldwisesecurity.com/img/hesperia-security-guards.webp">
     <meta property="og:site_name" content="ShieldWise Security">
+    <meta property="og:locale" content="en_US">
+
+    <!-- ✅ Enhanced Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@shieldwisesec">
+    <meta name="twitter:title" content="Hesperia Security Guards | High Desert Protection">
+    <meta name="twitter:description" content="Professional security guards in Hesperia. High Desert residential and commercial security. Emergency deployment in 1 hour. Call (760) 947-1000!">
+    <meta name="twitter:image" content="https://shieldwisesecurity.com/img/hesperia-security-guards.webp">
 
     <!-- ✅ Enhanced SecurityService Schema -->
     <script type="application/ld+json">
@@ -53,10 +98,11 @@
         "@context": "https://schema.org",
         "@type": "SecurityService",
         "name": "ShieldWise Security - Hesperia",
-        "alternateName": ["Hesperia Security Guards", "Hesperia Residential & Commercial Security"],
-        "description": "Premier security guard services in Hesperia, CA. Growing residential and commercial community security services.",
+        "alternateName": ["Hesperia Security Guards", "High Desert Security Hesperia"],
+        "description": "Premier security guard services in Hesperia, CA. Growing High Desert residential and commercial community security services.",
         "address": {
             "@type": "PostalAddress",
+            "streetAddress": "15525 Main St, Suite 205",
             "addressLocality": "Hesperia",
             "addressRegion": "CA",
             "postalCode": "92345",
@@ -68,7 +114,7 @@
             "longitude": -117.3009
         },
         "url": "https://shieldwisesecurity.com/hesperia",
-        "telephone": "+1-7609471000",
+        "telephone": "+1-760-947-1000",
         "email": "hesperia@shieldwisesecurity.com",
         "priceRange": "$$-$$$",
         "openingHoursSpecification": [
@@ -82,22 +128,53 @@
         "areaServed": [
             {
                 "@type": "City",
-                "name": "Hesperia"
+                "name": "Hesperia",
+                "sameAs": "https://en.wikipedia.org/wiki/Hesperia,_California"
             }
         ],
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
-            "reviewCount": "125"
+            "reviewCount": "87"
         },
         "foundingDate": "2005",
-        "slogan": "Hesperia's Trusted Security Partner"
+        "slogan": "Hesperia's Trusted Family Community Security Partner"
+    }
+    </script>
+
+    <!-- ✅ FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What residential security services do you offer in Hesperia?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We provide comprehensive residential security in Hesperia including community patrol, residential property protection, event security, and commercial security. All services designed for the growing High Desert family community."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you understand Hesperia's family-oriented community needs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, our Hesperia team specializes in family-oriented community security with a focus on residential safety, community events, and commercial security that serves the growing High Desert population."
+                }
+            }
+        ]
     }
     </script>
 
     <!-- ✅ External CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" media="screen">
+
+    <!-- ✅ Favicon & App Icons -->
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.webp">
 </head>
 
 <body id="top" itemscope itemtype="https://schema.org/WebPage">
@@ -107,9 +184,9 @@
     <!-- Hero Section -->
     <section class="hero-downtown">
         <div class="hero-content">
-            <h1>Hesperia Security Guards | Residential & Commercial Protection</h1>
-            <h2>Licensed Residential & Commercial Security | 1-Hour Emergency Response</h2>
-            <p class="hero-description">★★★★★ Rated security guards in Hesperia, CA. Growing residential and commercial community security services. BSIS licensed, bonded, and insured.</p>
+            <h1>Hesperia Security Guards | High Desert Residential & Commercial Protection</h1>
+            <h2>Licensed High Desert Community Security | 1-Hour Emergency Response</h2>
+            <p class="hero-description">★★★★★ Rated security guards in Hesperia, CA. Growing High Desert residential and commercial community security services. BSIS licensed, bonded, and insured.</p>
             <a href="/get-quote?location=hesperia" class="btn btn-primary btn-lg" aria-label="Get free Hesperia security guard quote">Get a Free Security Quote</a>
             <a href="tel:+17609471000" class="btn btn-secondary btn-lg ml-2" aria-label="Call Hesperia security services">📞 (760) 947-1000</a>
         </div>
@@ -121,22 +198,22 @@
             <h2 class="section-title">Comprehensive Security Solutions for Hesperia, California</h2>
             <div class="content-wrapper">
                 <div class="text-content">
-                    <p>ShieldWise Security delivers <span class="highlight">professional security guard services</span> customized for Hesperia's unique security requirements. Growing residential and commercial community security services, our expert team ensures superior protection for your property and assets.</p>
+                    <p>ShieldWise Security delivers <span class="highlight">professional security guard services</span> customized for Hesperia's growing High Desert community. Specializing in residential, commercial, and community-focused security services, our expert team ensures superior protection for this family-oriented city.</p>
                     
                     <div class="key-benefits mt-4">
                         <h3>Why Choose ShieldWise Security in Hesperia?</h3>
                         <ul class="benefits-list">
-                            <li><strong>Residential & Commercial Expertise:</strong> Specialized security solutions</li>
+                            <li><strong>Community Focus:</strong> Specialized in family-oriented neighborhoods</li>
+                            <li><strong>Residential Security:</strong> Home and neighborhood protection services</li>
                             <li><strong>1-Hour Emergency Response:</strong> Rapid deployment throughout Hesperia</li>
                             <li><strong>BSIS Licensed & Insured:</strong> $2M liability coverage</li>
                             <li><strong>24/7 Availability:</strong> Round-the-clock protection services</li>
-                            <li><strong>Local Presence:</strong> Serving San Bernardino County</li>
-                            <li><strong>Advanced Technology:</strong> GPS tracking and surveillance systems</li>
+                            <li><strong>High Desert Knowledge:</strong> Understanding of local community needs</li>
                         </ul>
                     </div>
                 </div>
                 <div class="image-content">
-                    <img src="/img/shahn1.png" alt="Professional Hesperia security guards providing residential & commercial protection services" loading="lazy" width="500" height="300" title="Hesperia Security Guards - ShieldWise Security">
+                    <img src="/img/shahn1.png" alt="Professional Hesperia security guards providing High Desert residential and commercial protection services" loading="lazy" width="500" height="300" title="Hesperia Security Guards - ShieldWise Security">
                 </div>
             </div>
         </div>
@@ -148,28 +225,73 @@
             <h2>Our Hesperia Security Services</h2>
             <div class="services-grid">
                 <div class="service-item">
-                    <i class="fas fa-shield-alt"></i>
+                    <i class="fas fa-home"></i>
                     <h3>Residential Security</h3>
-                    <p>Professional residential security services for Hesperia with specialized training and protocols.</p>
-                    <a href="/services/commercial-security" class="service-link">Learn More</a>
+                    <p>Professional residential security services for Hesperia neighborhoods and family communities with specialized protocols.</p>
+                    <a href="/services/apartment-security" class="service-link">Learn More</a>
                 </div>
+
                 <div class="service-item">
                     <i class="fas fa-building"></i>
                     <h3>Commercial Security</h3>
-                    <p>Professional commercial security services for Hesperia with specialized training and protocols.</p>
+                    <p>Comprehensive commercial security for Hesperia businesses with customized protection plans and community awareness.</p>
                     <a href="/services/commercial-security" class="service-link">Learn More</a>
                 </div>
+
                 <div class="service-item">
-                    <i class="fas fa-warehouse"></i>
+                    <i class="fas fa-store"></i>
                     <h3>Retail Security</h3>
-                    <p>Professional retail security services for Hesperia with specialized training and protocols.</p>
+                    <p>Professional retail security services for Hesperia shopping centers and retail establishments serving families.</p>
                     <a href="/services/commercial-security" class="service-link">Learn More</a>
                 </div>
+
                 <div class="service-item">
-                    <i class="fas fa-car"></i>
+                    <i class="fas fa-calendar-alt"></i>
                     <h3>Event Security</h3>
-                    <p>Professional event security services for Hesperia with specialized training and protocols.</p>
-                    <a href="/services/commercial-security" class="service-link">Learn More</a>
+                    <p>Specialized event security for Hesperia community events, festivals, and family gatherings with crowd management.</p>
+                    <a href="/services/event-security" class="service-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5 faq-section" id="faq">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-5">Frequently Asked Questions</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="hesperiaFAQ">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    What residential security services do you offer in Hesperia?
+                                </button>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#hesperiaFAQ">
+                                <div class="card-body">
+                                    We provide comprehensive residential security in Hesperia including community patrol, residential property protection, event security, and commercial security. All services designed for the growing High Desert family community.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Do you understand Hesperia's family-oriented community needs?
+                                </button>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#hesperiaFAQ">
+                                <div class="card-body">
+                                    Yes, our Hesperia team specializes in family-oriented community security with a focus on residential safety, community events, and commercial security that serves the growing High Desert population.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -181,7 +303,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
                     <h2 class="mb-4">Ready to Secure Your Hesperia Property?</h2>
-                    <p class="lead mb-5">Contact ShieldWise Security today for professional residential & commercial security solutions in Hesperia.</p>
+                    <p class="lead mb-5">Contact ShieldWise Security today for professional High Desert residential and commercial security solutions in Hesperia.</p>
                     <a href="/get-quote?location=hesperia" class="btn btn-light btn-lg mr-3 mb-3">Get a Free Quote</a>
                     <a href="tel:+17609471000" class="btn btn-warning btn-lg mb-3">
                         <i class="fas fa-phone"></i> (760) 947-1000
@@ -193,6 +315,11 @@
 
     <!-- Footer -->
     <%- include('../partials/Footer') %>
+
+    <!-- Back to Top Button -->
+    <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
     <!-- Bootstrap & jQuery JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>

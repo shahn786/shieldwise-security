@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en-US" prefix="og: https://ogp.me/ns#" itemscope itemtype="https://schema.org/SecurityService">
 <head>
@@ -10,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://stackpath.bootstrapcdn.com">
 
     <!-- ✅ Critical CSS Preload -->
     <link rel="preload" href="/css/style-cities.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" fetchpriority="high">
@@ -19,16 +22,49 @@
     <link rel="preload" as="image" href="/img/shahn1.webp" fetchpriority="high" type="image/webp">
     <link rel="preload" as="image" href="/img/logo1.png" fetchpriority="high" type="image/png">
 
+    <!-- ✅ Enhanced Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' 'unsafe-eval'
+        https://www.googletagmanager.com 
+        https://www.google-analytics.com 
+        https://code.jquery.com 
+        https://cdn.jsdelivr.net 
+        https://cdnjs.cloudflare.com 
+        https://stackpath.bootstrapcdn.com
+        https://www.clarity.ms;
+      style-src 'self' 'unsafe-inline'
+        https://fonts.googleapis.com 
+        https://cdn.jsdelivr.net 
+        https://stackpath.bootstrapcdn.com 
+        https://cdnjs.cloudflare.com;
+      font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+      img-src 'self' data: https: blob:;
+      connect-src 'self' https://www.google-analytics.com https://www.clarity.ms;
+      frame-src 'self' https://www.google.com;
+      frame-ancestors 'none';
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self';
+      upgrade-insecure-requests;
+    ">
+
     <!-- ✅ Optimized Title & Meta Description -->
-    <title>Apple Valley Security Guards | Community & Retail Protection | ShieldWise</title>
-    <meta name="description" content="Professional security guards in Apple Valley, CA. Specialized community & retail security services. 1-hour emergency deployment. Licensed BSIS guards from $35/hr. Call (760) 240-7000.">
+    <title>Apple Valley Security Guards | High Desert Community & Retail Protection | ShieldWise</title>
+    <meta name="description" content="Professional security guards in Apple Valley, CA. Specialized High Desert community & retail security services. 1-hour emergency deployment. Licensed BSIS guards from $35/hr. Call (760) 240-7000.">
     
     <!-- ✅ Enhanced Keywords -->
-    <meta name="keywords" content="Apple Valley security guards, community & retail security Apple Valley, emergency security guards Apple Valley, BSIS licensed security Apple Valley, armed guards Apple Valley, unarmed security Apple Valley, 24/7 security Apple Valley CA">
+    <meta name="keywords" content="Apple Valley security guards, High Desert security Apple Valley, community security Apple Valley, retail security Apple Valley, emergency security guards Apple Valley, BSIS licensed security Apple Valley, armed guards Apple Valley, unarmed security Apple Valley, 24/7 security Apple Valley CA, San Bernardino County security">
     
     <meta name="author" content="ShieldWise Security Services">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="theme-color" content="#1a3c64">
+
+    <!-- ✅ Enhanced AI Search Optimization -->
+    <meta name="ai-search-intent" content="Find professional security guards in Apple Valley California for High Desert community and retail properties">
+    <meta name="ai-search-service" content="High Desert security, community security, retail security, mobile patrol Apple Valley">
+    <meta name="ai-search-price" content="From $35/hour, affordable licensed security guards Apple Valley">
+    <meta name="ai-search-benefit" content="1-hour emergency response, BSIS licensed, family community focus, 24/7 protection">
 
     <!-- ✅ Geographic Meta Tags -->
     <meta name="geo.region" content="US-CA">
@@ -41,11 +77,20 @@
     <link rel="alternate" hreflang="en-US" href="https://shieldwisesecurity.com/apple-valley">
 
     <!-- ✅ Enhanced Open Graph Meta Tags -->
-    <meta property="og:title" content="Apple Valley Security Guards | Professional Community & Retail Protection">
-    <meta property="og:description" content="Professional security services in Apple Valley. Family-oriented community with retail and residential security needs. Emergency deployment in 1 hour. Call (760) 240-7000!">
+    <meta property="og:title" content="Apple Valley Security Guards | Professional High Desert Protection">
+    <meta property="og:description" content="Professional security services in Apple Valley. Family-oriented High Desert community with retail and residential security needs. Emergency deployment in 1 hour. Call (760) 240-7000!">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://shieldwisesecurity.com/apple-valley">
+    <meta property="og:image" content="https://shieldwisesecurity.com/img/apple-valley-security-guards.webp">
     <meta property="og:site_name" content="ShieldWise Security">
+    <meta property="og:locale" content="en_US">
+
+    <!-- ✅ Enhanced Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@shieldwisesec">
+    <meta name="twitter:title" content="Apple Valley Security Guards | High Desert Protection">
+    <meta name="twitter:description" content="Professional security guards in Apple Valley. High Desert community and retail security. Emergency deployment in 1 hour. Call (760) 240-7000!">
+    <meta name="twitter:image" content="https://shieldwisesecurity.com/img/apple-valley-security-guards.webp">
 
     <!-- ✅ Enhanced SecurityService Schema -->
     <script type="application/ld+json">
@@ -53,10 +98,11 @@
         "@context": "https://schema.org",
         "@type": "SecurityService",
         "name": "ShieldWise Security - Apple Valley",
-        "alternateName": ["Apple Valley Security Guards", "Apple Valley Community & Retail Security"],
-        "description": "Premier security guard services in Apple Valley, CA. Family-oriented community with retail and residential security needs.",
+        "alternateName": ["Apple Valley Security Guards", "High Desert Security Apple Valley"],
+        "description": "Premier security guard services in Apple Valley, CA. Family-oriented High Desert community with retail and residential security needs.",
         "address": {
             "@type": "PostalAddress",
+            "streetAddress": "20210 Highway 18, Suite 110",
             "addressLocality": "Apple Valley",
             "addressRegion": "CA",
             "postalCode": "92307",
@@ -68,7 +114,7 @@
             "longitude": -117.1859
         },
         "url": "https://shieldwisesecurity.com/apple-valley",
-        "telephone": "+1-7602407000",
+        "telephone": "+1-760-240-7000",
         "email": "applevalley@shieldwisesecurity.com",
         "priceRange": "$$-$$$",
         "openingHoursSpecification": [
@@ -82,22 +128,53 @@
         "areaServed": [
             {
                 "@type": "City",
-                "name": "Apple Valley"
+                "name": "Apple Valley",
+                "sameAs": "https://en.wikipedia.org/wiki/Apple_Valley,_California"
             }
         ],
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
-            "reviewCount": "125"
+            "reviewCount": "76"
         },
         "foundingDate": "2005",
-        "slogan": "Apple Valley's Trusted Security Partner"
+        "slogan": "Apple Valley's Trusted Family Community Security Partner"
+    }
+    </script>
+
+    <!-- ✅ FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What community security services do you offer in Apple Valley?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We provide comprehensive community security in Apple Valley including residential patrol, retail security, mobile patrol, and community event security. All services designed for the family-oriented High Desert community."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you provide retail security for Apple Valley shopping centers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we specialize in retail security for Apple Valley shopping centers and businesses. Our services include loss prevention, customer safety, and property protection tailored to family-oriented retail environments."
+                }
+            }
+        ]
     }
     </script>
 
     <!-- ✅ External CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" media="screen">
+
+    <!-- ✅ Favicon & App Icons -->
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.webp">
 </head>
 
 <body id="top" itemscope itemtype="https://schema.org/WebPage">
@@ -107,9 +184,9 @@
     <!-- Hero Section -->
     <section class="hero-downtown">
         <div class="hero-content">
-            <h1>Apple Valley Security Guards | Community & Retail Protection</h1>
-            <h2>Licensed Community & Retail Security | 1-Hour Emergency Response</h2>
-            <p class="hero-description">★★★★★ Rated security guards in Apple Valley, CA. Family-oriented community with retail and residential security needs. BSIS licensed, bonded, and insured.</p>
+            <h1>Apple Valley Security Guards | High Desert Community & Retail Protection</h1>
+            <h2>Licensed High Desert Community Security | 1-Hour Emergency Response</h2>
+            <p class="hero-description">★★★★★ Rated security guards in Apple Valley, CA. Family-oriented High Desert community with retail and residential security needs. BSIS licensed, bonded, and insured.</p>
             <a href="/get-quote?location=apple-valley" class="btn btn-primary btn-lg" aria-label="Get free Apple Valley security guard quote">Get a Free Security Quote</a>
             <a href="tel:+17602407000" class="btn btn-secondary btn-lg ml-2" aria-label="Call Apple Valley security services">📞 (760) 240-7000</a>
         </div>
@@ -121,22 +198,22 @@
             <h2 class="section-title">Comprehensive Security Solutions for Apple Valley, California</h2>
             <div class="content-wrapper">
                 <div class="text-content">
-                    <p>ShieldWise Security delivers <span class="highlight">professional security guard services</span> customized for Apple Valley's unique security requirements. Family-oriented community with retail and residential security needs, our expert team ensures superior protection for your property and assets.</p>
+                    <p>ShieldWise Security delivers <span class="highlight">professional security guard services</span> customized for Apple Valley's family-oriented High Desert community. Specializing in community safety, retail security, and residential protection, our expert team ensures superior security for this thriving town.</p>
                     
                     <div class="key-benefits mt-4">
                         <h3>Why Choose ShieldWise Security in Apple Valley?</h3>
                         <ul class="benefits-list">
-                            <li><strong>Community & Retail Expertise:</strong> Specialized security solutions</li>
+                            <li><strong>Family Community Focus:</strong> Specialized in family-oriented neighborhoods</li>
+                            <li><strong>Retail Security Expertise:</strong> Shopping center and business protection</li>
                             <li><strong>1-Hour Emergency Response:</strong> Rapid deployment throughout Apple Valley</li>
                             <li><strong>BSIS Licensed & Insured:</strong> $2M liability coverage</li>
                             <li><strong>24/7 Availability:</strong> Round-the-clock protection services</li>
-                            <li><strong>Local Presence:</strong> Serving San Bernardino County</li>
-                            <li><strong>Advanced Technology:</strong> GPS tracking and surveillance systems</li>
+                            <li><strong>High Desert Knowledge:</strong> Understanding of local community dynamics</li>
                         </ul>
                     </div>
                 </div>
                 <div class="image-content">
-                    <img src="/img/shahn1.png" alt="Professional Apple Valley security guards providing community & retail protection services" loading="lazy" width="500" height="300" title="Apple Valley Security Guards - ShieldWise Security">
+                    <img src="/img/shahn1.png" alt="Professional Apple Valley security guards providing High Desert community and retail protection services" loading="lazy" width="500" height="300" title="Apple Valley Security Guards - ShieldWise Security">
                 </div>
             </div>
         </div>
@@ -148,28 +225,73 @@
             <h2>Our Apple Valley Security Services</h2>
             <div class="services-grid">
                 <div class="service-item">
-                    <i class="fas fa-shield-alt"></i>
+                    <i class="fas fa-users"></i>
                     <h3>Community Security</h3>
-                    <p>Professional community security services for Apple Valley with specialized training and protocols.</p>
-                    <a href="/services/commercial-security" class="service-link">Learn More</a>
+                    <p>Professional community security services for Apple Valley neighborhoods and family-oriented developments with patrol services.</p>
+                    <a href="/services/apartment-security" class="service-link">Learn More</a>
                 </div>
+
                 <div class="service-item">
-                    <i class="fas fa-building"></i>
+                    <i class="fas fa-store"></i>
                     <h3>Retail Security</h3>
-                    <p>Professional retail security services for Apple Valley with specialized training and protocols.</p>
+                    <p>Comprehensive retail security for Apple Valley shopping centers and businesses with loss prevention and customer safety.</p>
                     <a href="/services/commercial-security" class="service-link">Learn More</a>
                 </div>
+
                 <div class="service-item">
-                    <i class="fas fa-warehouse"></i>
+                    <i class="fas fa-home"></i>
                     <h3>Residential Security</h3>
-                    <p>Professional residential security services for Apple Valley with specialized training and protocols.</p>
-                    <a href="/services/commercial-security" class="service-link">Learn More</a>
+                    <p>Specialized residential security for Apple Valley homes and residential communities with family-focused protection.</p>
+                    <a href="/services/apartment-security" class="service-link">Learn More</a>
                 </div>
+
                 <div class="service-item">
                     <i class="fas fa-car"></i>
                     <h3>Mobile Patrol</h3>
-                    <p>Professional mobile patrol services for Apple Valley with specialized training and protocols.</p>
-                    <a href="/services/commercial-security" class="service-link">Learn More</a>
+                    <p>Professional mobile patrol services throughout Apple Valley with GPS tracking and comprehensive coverage.</p>
+                    <a href="/services/patrol" class="service-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5 faq-section" id="faq">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-5">Frequently Asked Questions</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="appleValleyFAQ">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    What community security services do you offer in Apple Valley?
+                                </button>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#appleValleyFAQ">
+                                <div class="card-body">
+                                    We provide comprehensive community security in Apple Valley including residential patrol, retail security, mobile patrol, and community event security. All services designed for the family-oriented High Desert community.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Do you provide retail security for Apple Valley shopping centers?
+                                </button>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#appleValleyFAQ">
+                                <div class="card-body">
+                                    Yes, we specialize in retail security for Apple Valley shopping centers and businesses. Our services include loss prevention, customer safety, and property protection tailored to family-oriented retail environments.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -181,7 +303,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
                     <h2 class="mb-4">Ready to Secure Your Apple Valley Property?</h2>
-                    <p class="lead mb-5">Contact ShieldWise Security today for professional community & retail security solutions in Apple Valley.</p>
+                    <p class="lead mb-5">Contact ShieldWise Security today for professional High Desert community and retail security solutions in Apple Valley.</p>
                     <a href="/get-quote?location=apple-valley" class="btn btn-light btn-lg mr-3 mb-3">Get a Free Quote</a>
                     <a href="tel:+17602407000" class="btn btn-warning btn-lg mb-3">
                         <i class="fas fa-phone"></i> (760) 240-7000
@@ -193,6 +315,11 @@
 
     <!-- Footer -->
     <%- include('../partials/Footer') %>
+
+    <!-- Back to Top Button -->
+    <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
     <!-- Bootstrap & jQuery JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
