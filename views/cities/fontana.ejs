@@ -26,6 +26,14 @@
     <!-- ✅ Enhanced Performance Optimization -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"></noscript>
+    
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+        .anaheim-hero{position:relative;min-height:100vh;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;color:white;text-align:center}
+        .anaheim-hero-content h1{font-size:3.5rem;font-weight:800;margin-bottom:1.5rem;text-shadow:2px 2px 4px rgba(0,0,0,0.7)}
+        .anaheim-hero-content p{font-size:1.5rem;margin-bottom:2rem;text-shadow:1px 1px 2px rgba(0,0,0,0.7)}
+        .anaheim-cta-button{background:#d32f2f;color:white;padding:15px 30px;border-radius:8px;text-decoration:none;font-weight:600;display:inline-block;margin:0 10px;transition:all 0.3s ease}
+    </style>
 
     <!-- ✅ Critical Resource Preloads -->
     <link rel="preload" href="/img/shahn1.png" as="image" importance="high">
@@ -530,7 +538,8 @@
 
     <!-- ✅ Stylesheets -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
     <link rel="stylesheet" href="/css/style.css">
     <!-- Fontana specific styles using Anaheim stylesheet for consistency -->
     <link rel="stylesheet" href="/css/anaheim-styles.css">
@@ -580,7 +589,7 @@
     <%- include('../partials/Header') %>
 
     <!-- Hero Section -->
-    <section class="anaheim-hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('/img/shahn1.png');" role="banner" aria-label="Professional security guards patrolling transportation facilities in Fontana California">
+    <section class="anaheim-hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('/img/shahn1.webp');" role="banner" aria-label="Professional security guards patrolling transportation facilities in Fontana California">
         <div class="anaheim-hero-overlay"></div>
         <div class="anaheim-hero-content">
             <h1 class="animate-fade-in">Fontana's Premier Transportation Security Solutions</h1>
@@ -597,7 +606,7 @@
         <div class="anaheim-content-container">
             <div class="anaheim-intro-section">
                 <div class="section-badge">Transportation Security Experts</div>
-                <h1>Premium Security Guard Services in Fontana, CA</h1>
+                <h2>Premium Security Guard Services in Fontana, CA</h2>
                 <div class="anaheim-intro-rating">
                     <div class="stars">
                         <i class="fas fa-star"></i>
@@ -612,7 +621,7 @@
                 <div class="anaheim-highlight-box">
                     <div class="highlight-icon"><i class="fas fa-shield-alt"></i></div>
                     <div class="highlight-content">
-                        <p><strong>ShieldWise Security</strong> delivers professional security guard services customized for Fontana's major transportation and logistics infrastructure. As a critical hub for Southern California's supply chain, our expert team ensures superior protection for transportation facilities, warehouses, and industrial properties.</p>
+                        <p><strong>ShieldWise Security</strong> delivers professional <a href="/services/commercial-security">security guard services</a> customized for Fontana's major transportation and logistics infrastructure. As a critical hub for Southern California's supply chain, our expert team ensures superior protection for <a href="/services/commercial-security">transportation facilities</a>, warehouses, and industrial properties.</p>
                         
                         <div class="transportation-security-section" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); padding: 3rem 2rem; border-radius: 15px; margin: 3rem 0; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-left: 5px solid #2b5797;">
                             <h3 style="color: #1a3c64; font-size: 2rem; font-weight: 700; margin-bottom: 2rem; position: relative; padding-bottom: 1rem;">
@@ -1031,7 +1040,7 @@
                         <p itemprop="reviewBody">ShieldWise has been protecting our logistics center in Fontana for over 2 years. Their guards understand the unique requirements of transportation hubs and provide excellent security coverage for our 24/7 operations.</p>
                         <div class="testimonial-author">
                             <div class="author-image">
-                                <img src="/img/testimonial-1.webp" alt="Michael Torres - Operations Manager at Fontana Logistics Center" width="60" height="60">
+                                <img src="/img/testimonial-1.webp" alt="Michael Torres - Operations Manager at Fontana Logistics Center" width="60" height="60" loading="lazy">
                             </div>
                             <div class="author-info">
                                 <h4 itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Michael Torres</span></h4>
@@ -1055,7 +1064,7 @@
                         <p itemprop="reviewBody">When our warehouse needed immediate security coverage, ShieldWise deployed guards within 2 hours. Their rapid response and professional service have made them our go-to security provider in Fontana.</p>
                         <div class="testimonial-author">
                             <div class="author-image">
-                                <img src="/img/testimonial-2.webp" alt="Sarah Chen - Facility Manager at Fontana Distribution" width="60" height="60">
+                                <img src="/img/testimonial-2.webp" alt="Sarah Chen - Facility Manager at Fontana Distribution" width="60" height="60" loading="lazy">
                             </div>
                             <div class="author-info">
                                 <h4 itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Sarah Chen</span></h4>
@@ -1079,7 +1088,7 @@
                         <p itemprop="reviewBody">ShieldWise provides top-notch security for our industrial facility in Fontana. Their guards are well-trained, professional, and understand the specific security challenges of our manufacturing operations.</p>
                         <div class="testimonial-author">
                             <div class="author-image">
-                                <img src="/img/testimonial-3.webp" alt="Robert Martinez - Plant Manager at Fontana Manufacturing" width="60" height="60">
+                                <img src="/img/testimonial-3.webp" alt="Robert Martinez - Plant Manager at Fontana Manufacturing" width="60" height="60" loading="lazy">
                             </div>
                             <div class="author-info">
                                 <h4 itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Robert Martinez</span></h4>
