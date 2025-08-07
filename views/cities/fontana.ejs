@@ -1,105 +1,206 @@
 
 <!DOCTYPE html>
-<html lang="en-US" prefix="og: https://ogp.me/ns#" itemscope itemtype="https://schema.org/SecurityService">
+<html lang="en-US" itemscope itemtype="https://schema.org/WebPage">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- ✅ Performance Critical Resource Hints -->
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://code.jquery.com https://stackpath.bootstrapcdn.com https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https:; frame-src 'self' https://www.google.com;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(self), microphone=(), camera=()">
+
+    <!-- Performance Optimization - Critical Resource Preconnections -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="https://stackpath.bootstrapcdn.com">
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 
-    <!-- ✅ Critical CSS Preload -->
-    <link rel="preload" href="/css/style-cities.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" fetchpriority="high">
-    <noscript><link rel="stylesheet" href="/css/style-cities.min.css"></noscript>
-    
-    <!-- ✅ Critical Images Preload -->
-    <link rel="preload" as="image" href="/img/shahn1.webp" fetchpriority="high" type="image/webp">
-    <link rel="preload" as="image" href="/img/logo1.png" fetchpriority="high" type="image/png">
+    <!-- DNS Prefetching -->
+    <link rel="dns-prefetch" href="//maps.googleapis.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//stackpath.bootstrapcdn.com">
 
-    <!-- ✅ Enhanced Content Security Policy -->
-    <meta http-equiv="Content-Security-Policy" content="
-      default-src 'self';
-      script-src 'self' 'unsafe-inline' 'unsafe-eval'
-        https://www.googletagmanager.com 
-        https://www.google-analytics.com 
-        https://code.jquery.com 
-        https://cdn.jsdelivr.net 
-        https://cdnjs.cloudflare.com 
-        https://stackpath.bootstrapcdn.com
-        https://www.clarity.ms;
-      style-src 'self' 'unsafe-inline'
-        https://fonts.googleapis.com 
-        https://cdn.jsdelivr.net 
-        https://stackpath.bootstrapcdn.com 
-        https://cdnjs.cloudflare.com;
-      font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
-      img-src 'self' data: https: blob:;
-      connect-src 'self' https://www.google-analytics.com https://www.clarity.ms;
-      frame-src 'self' https://www.google.com;
-      frame-ancestors 'none';
-      object-src 'none';
-      base-uri 'self';
-      form-action 'self';
-      upgrade-insecure-requests;
-    ">
+    <!-- Critical Resource Preloading -->
+    <link rel="preload" href="/css/style-cities.css" as="style" fetchpriority="high">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" as="style">
+    <link rel="preload" href="/img/shahn1.png" as="image" fetchpriority="high">
 
-    <!-- ✅ Optimized Title & Meta Description -->
+    <!-- Enhanced SEO Meta Tags -->
     <title>Fontana Security Guards | Transportation & Logistics Protection | ShieldWise</title>
-    <meta name="description" content="Professional security guards in Fontana, CA. Specialized transportation hub, logistics, and industrial security services. 1-hour emergency deployment. Licensed BSIS guards from $35/hr. Call (909) 822-4500.">
-    
-    <!-- ✅ Enhanced Keywords -->
+    <meta name="description" content="Professional security guard services in Fontana, CA. Specialized transportation hub, logistics, and industrial security services. 1-hour emergency deployment. Licensed BSIS guards from $35/hr. Call (909) 822-4500.">
     <meta name="keywords" content="Fontana security guards, transportation security Fontana, logistics security Fontana, industrial security Fontana, warehouse security Fontana, emergency security guards Fontana, BSIS licensed security Fontana, armed guards Fontana, unarmed security Fontana, 24/7 security Fontana CA, San Bernardino County security">
-    
-    <meta name="author" content="ShieldWise Security Services">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="theme-color" content="#1a3c64">
 
-    <!-- ✅ Enhanced AI Search Optimization -->
-    <meta name="ai-search-intent" content="Find professional security guards in Fontana California for transportation hubs, logistics centers, and industrial facilities">
-    <meta name="ai-search-service" content="Transportation security, logistics security, industrial security, warehouse security Fontana">
-    <meta name="ai-search-price" content="From $35/hour, affordable licensed security guards Fontana">
-    <meta name="ai-search-benefit" content="1-hour emergency response, BSIS licensed, 24/7 protection, specialized training">
+    <!-- Voice Search Optimization -->
+    <meta name="speakable-sections" content="hero-section, services-overview, contact-info">
 
-    <!-- ✅ Geographic Meta Tags -->
+    <!-- Multilingual Support -->
+    <link rel="alternate" hreflang="en-US" href="https://shieldwisesecurity.com/fontana/">
+    <link rel="alternate" hreflang="es-US" href="https://shieldwisesecurity.com/es/fontana/">
+    <link rel="alternate" hreflang="x-default" href="https://shieldwisesecurity.com/fontana/">
+
+    <!-- Enhanced Location Tags with NAP Information -->
     <meta name="geo.region" content="US-CA">
     <meta name="geo.placename" content="Fontana, California">
     <meta name="geo.position" content="34.0922;-117.4350">
     <meta name="ICBM" content="34.0922, -117.4350">
+    <meta name="author" content="ShieldWise Security">
+    <meta name="copyright" content="© 2025 ShieldWise Security. All rights reserved.">
+    <meta name="rating" content="General">
+    <meta name="revisit-after" content="7 days">
 
-    <!-- ✅ Canonical & Hreflang -->
-    <link rel="canonical" href="https://shieldwisesecurity.com/fontana">
-    <link rel="alternate" hreflang="en-US" href="https://shieldwisesecurity.com/fontana">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://shieldwisesecurity.com/fontana/">
 
-    <!-- ✅ Enhanced Open Graph Meta Tags -->
-    <meta property="og:title" content="Fontana Security Guards | Professional Transportation Security">
-    <meta property="og:description" content="Professional security services in Fontana. Transportation hub, logistics, and industrial security. Emergency deployment in 1 hour. Call (909) 822-4500!">
+    <!-- Enhanced Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Professional Security Guard Services in Fontana, CA | ShieldWise Security">
+    <meta property="og:description" content="Expert transportation hub and logistics security services for Fontana businesses. 24/7 armed and unarmed protection from the most trusted security team in Fontana. BSIS licensed, insured. Free consultation.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://shieldwisesecurity.com/fontana">
-    <meta property="og:image" content="https://shieldwisesecurity.com/img/fontana-security-guards.webp">
+    <meta property="og:url" content="https://shieldwisesecurity.com/fontana/">
+    <meta property="og:image" content="https://shieldwisesecurity.com/img/shahn1.png">
+    <meta property="og:image:alt" content="Professional security guards in Fontana, California specializing in transportation and logistics">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="ShieldWise Security">
     <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="es_US">
+    <meta property="og:street-address" content="16877 Valley Blvd, Suite 205">
+    <meta property="og:locality" content="Fontana">
+    <meta property="og:region" content="CA">
+    <meta property="og:postal-code" content="92335">
+    <meta property="og:country-name" content="USA">
+    <meta property="og:email" content="fontana@shieldwisesecurity.com">
+    <meta property="og:phone_number" content="+19098224500">
+    <meta property="og:price:amount" content="35">
+    <meta property="og:price:currency" content="USD">
+    <meta property="og:availability" content="instock">
 
-    <!-- ✅ Enhanced Twitter Card Tags -->
+    <!-- Enhanced Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@shieldwisesec">
-    <meta name="twitter:title" content="Fontana Security Guards | Transportation Protection">
-    <meta name="twitter:description" content="Professional security guards in Fontana. Transportation, logistics, industrial protection. Emergency deployment in 1 hour. Call (909) 822-4500!">
-    <meta name="twitter:image" content="https://shieldwisesecurity.com/img/fontana-security-guards.webp">
+    <meta name="twitter:site" content="@ShieldWiseSec">
+    <meta name="twitter:creator" content="@ShieldWiseSec">
+    <meta name="twitter:title" content="Professional Security Guard Services in Fontana, CA | ShieldWise Security">
+    <meta name="twitter:description" content="Expert transportation and logistics security solutions for Fontana. Protect your business with our licensed security guards. Available 24/7. Free security assessment.">
+    <meta name="twitter:image" content="https://shieldwisesecurity.com/img/shahn1.png">
+    <meta name="twitter:image:alt" content="Professional security team in Fontana, California">
+    <meta name="twitter:label1" content="Location">
+    <meta name="twitter:data1" content="Fontana, CA">
+    <meta name="twitter:label2" content="Price">
+    <meta name="twitter:data2" content="From $35/hour">
 
-    <!-- ✅ Enhanced SecurityService Schema -->
+    <!-- Search Engine Verification -->
+    <meta name="google-site-verification" content="your-google-verification-code">
+    <meta name="msvalidate.01" content="your-bing-verification-code">
+    <meta name="yandex-verification" content="your-yandex-verification-code">
+
+    <!-- Enhanced SEO Tags -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow">
+    <meta name="news_keywords" content="Fontana security, transportation guards, BSIS licensed, emergency response">
+
+    <!-- Critical CSS Inline -->
+    <style>
+        /* Critical Above-the-Fold CSS for LCP Optimization */
+        .hero-downtown {
+            background: linear-gradient(135deg, rgba(26,60,100,0.9), rgba(45,90,135,0.9)), url('/img/shahn1.png');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 120px 0;
+            text-align: center;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        .hero-content h2 {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 400;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        .btn-primary {
+            background-color: #2b5797;
+            border-color: #2b5797;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #1a3c64;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(43,87,151,0.3);
+        }
+        body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    </style>
+
+    <!-- Breadcrumb Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "SecurityService",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://shieldwisesecurity.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://shieldwisesecurity.com/services/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "San Bernardino County",
+                "item": "https://shieldwisesecurity.com/san-bernardino/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Fontana Security Services",
+                "item": "https://shieldwisesecurity.com/fontana/"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Enhanced Local Business Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": ["SecurityService", "LocalBusiness"],
         "name": "ShieldWise Security - Fontana",
-        "alternateName": ["Fontana Security Guards", "Fontana Transportation Security"],
-        "description": "Premier security guard services in Fontana, CA. Specializing in transportation hubs, logistics centers, and industrial facilities.",
+        "alternateName": ["Fontana Security Guards", "ShieldWise Fontana"],
+        "image": [
+            "https://shieldwisesecurity.com/img/shahn1.png",
+            "https://shieldwisesecurity.com/img/downtown-la1.webp",
+            "https://shieldwisesecurity.com/img/logo1.png"
+        ],
+        "logo": "https://shieldwisesecurity.com/img/logo1.png",
+        "@id": "https://shieldwisesecurity.com/fontana/",
+        "url": "https://shieldwisesecurity.com/fontana/",
+        "telephone": "+19098224500",
+        "priceRange": "$35-$95",
+        "currenciesAccepted": "USD",
+        "paymentAccepted": ["Cash", "Credit Card", "Check", "ACH", "Wire Transfer"],
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "16877 Valley Blvd, Suite 205",
@@ -113,36 +214,160 @@
             "latitude": 34.0922,
             "longitude": -117.4350
         },
-        "url": "https://shieldwisesecurity.com/fontana",
-        "telephone": "+1-909-822-4500",
-        "email": "fontana@shieldwisesecurity.com",
-        "priceRange": "$$-$$$",
-        "openingHoursSpecification": [
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                "opens": "00:00",
-                "closes": "23:59"
-            }
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+        },
+        "sameAs": [
+            "https://www.facebook.com/shieldwisesecurity",
+            "https://www.twitter.com/shieldwisesec",
+            "https://www.linkedin.com/company/shieldwise-security",
+            "https://www.instagram.com/shieldwisesecurity",
+            "https://www.yelp.com/biz/shieldwise-security-fontana"
+        ],
+        "description": "Professional security guard services in Fontana, CA. Specializing in transportation hubs, logistics centers, and industrial facilities since 2005. BSIS licensed, insured, and bonded.",
+        "slogan": "Fontana's Transportation Security Experts",
+        "foundingDate": "2005",
+        "awards": [
+            "2024 Best Security Company in Los Angeles County - LA Business Journal",
+            "2023 Transportation Security Excellence Award - Fontana Chamber of Commerce"
         ],
         "areaServed": [
             {
                 "@type": "City",
                 "name": "Fontana",
-                "sameAs": "https://en.wikipedia.org/wiki/Fontana,_California"
+                "containedInPlace": {
+                    "@type": "State",
+                    "name": "California",
+                    "@id": "https://en.wikipedia.org/wiki/California"
+                }
+            },
+            {
+                "@type": "City",
+                "name": "Rialto"
+            },
+            {
+                "@type": "City",
+                "name": "San Bernardino"
+            },
+            {
+                "@type": "City",
+                "name": "Rancho Cucamonga"
+            }
+        ],
+        "hasCredential": [
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "California BSIS License",
+                "credentialCategory": "license",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "California Bureau of Security and Investigative Services"
+                }
+            }
+        ],
+        "memberOf": [
+            {
+                "@type": "Organization",
+                "name": "ASIS International"
+            },
+            {
+                "@type": "Organization",
+                "name": "California Association of Licensed Security Agencies"
+            },
+            {
+                "@type": "Organization",
+                "name": "Fontana Chamber of Commerce"
             }
         ],
         "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "142"
+            "ratingValue": 4.9,
+            "reviewCount": 142,
+            "bestRating": 5,
+            "worstRating": 1
         },
-        "foundingDate": "2005",
-        "slogan": "Fontana's Transportation Security Experts"
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Fontana Security Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Transportation Hub Security",
+                        "description": "Specialized security for rail yards, trucking terminals, and logistics centers in Fontana, CA",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "ShieldWise Security"
+                        }
+                    },
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "price": "55-95",
+                        "priceCurrency": "USD",
+                        "unitCode": "HUR"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Warehouse Security",
+                        "description": "Professional warehouse and distribution center security personnel for Fontana logistics facilities",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "ShieldWise Security"
+                        }
+                    },
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "price": "35-65",
+                        "priceCurrency": "USD",
+                        "unitCode": "HUR"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Industrial Security",
+                        "description": "Specialized security services for manufacturing and industrial facilities"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Mobile Patrol Services",
+                        "description": "24/7 mobile patrol and rapid response services in Fontana"
+                    }
+                }
+            ]
+        },
+        "potentialAction": {
+            "@type": "ReserveAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://shieldwisesecurity.com/get-quote?location=fontana",
+                "inLanguage": "en-US",
+                "actionPlatform": [
+                    "http://schema.org/DesktopWebPlatform",
+                    "http://schema.org/IOSPlatform",
+                    "http://schema.org/AndroidPlatform"
+                ]
+            },
+            "result": {
+                "@type": "Reservation",
+                "name": "Security Consultation"
+            }
+        }
     }
     </script>
 
-    <!-- ✅ FAQ Schema -->
+    <!-- Enhanced FAQ Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -150,50 +375,93 @@
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "What transportation security services do you offer in Fontana?",
+                "name": "What transportation security services does ShieldWise offer in Fontana?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "We provide comprehensive transportation security in Fontana including rail yard security, trucking terminal protection, logistics center security, and warehouse security. All services available 24/7 with rapid deployment."
+                    "text": "ShieldWise Security offers comprehensive transportation security in Fontana including rail yard security, trucking terminal protection, logistics center security, and warehouse security. All services available 24/7 with rapid deployment. Our security personnel are specially trained for transportation hub environments and work closely with logistics operations to ensure seamless security integration."
                 }
             },
             {
                 "@type": "Question",
-                "name": "How quickly can you deploy security guards in Fontana?",
+                "name": "How quickly can ShieldWise deploy security guards in Fontana?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "For emergency situations, our licensed security guards can deploy within 1-4 hours anywhere in Fontana. Standard service deployments occur within 24 hours or less."
+                    "text": "For emergency situations, our licensed security guards can deploy within 1-4 hours anywhere in Fontana. Standard service deployments occur within 24 hours or less. We maintain a rapid response team specifically for the San Bernardino County area, ensuring quick deployment for urgent security needs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are ShieldWise security guards licensed and insured in Fontana?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, all ShieldWise security personnel are fully licensed, insured, and certified. Our guards undergo rigorous background checks and receive comprehensive training in transportation security, emergency response, conflict resolution, and customer service. We maintain a $2 million general liability insurance policy, and all of our armed security officers hold valid firearms permits with regular qualification requirements."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does ShieldWise provide warehouse and logistics security in Fontana?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, ShieldWise Security specializes in warehouse and logistics security throughout Fontana's major distribution centers. Our security teams are trained in inventory protection, access control, loading dock security, and supply chain protection. We provide both uniformed security personnel and implement comprehensive security protocols tailored to logistics operations."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What makes ShieldWise different from other security companies in Fontana?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ShieldWise Security stands apart through our specialized expertise in transportation and logistics security, which is crucial for Fontana's role as a major transportation hub. Unlike general security companies, we understand the unique challenges of rail yards, trucking terminals, and distribution centers. We provide customized security plans, advanced reporting systems, and maintain industry-leading training standards with twice the industry-standard training hours."
                 }
             }
         ]
     }
     </script>
 
-    <!-- ✅ External CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" media="screen">
+    <!-- Performance Optimized CSS Loading -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css"></noscript>
 
-    <!-- ✅ Favicon & App Icons -->
+    <link rel="stylesheet" href="/css/style-cities.css">
+
+    <!-- Google Fonts with Performance Optimization -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome with Performance Optimization -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></noscript>
+
+    <!-- Favicon and App Icons -->
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.webp">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#003366">
 </head>
+<body id="top">
+    <!-- Skip Link for Accessibility -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<body id="top" itemscope itemtype="https://schema.org/WebPage">
     <!-- Header Section -->
     <%- include('../partials/Header') %>
 
-    <!-- Hero Section -->
-    <section class="hero-downtown">
+    <!-- Hero Section with Background Image -->
+    <section class="hero-downtown" id="main-content">
         <div class="hero-content">
-            <h1>Fontana Security Guards | Transportation & Logistics Protection</h1>
-            <h2>Licensed Transportation Hub & Industrial Security | 1-Hour Emergency Response</h2>
+            <h1 itemprop="name">Fontana Security Guards | Transportation & Logistics Protection</h1>
+            <h2 class="services-overview">Licensed Transportation Hub & Industrial Security | 1-Hour Emergency Response</h2>
             <p class="hero-description">★★★★★ Rated security guards in Fontana, CA. Specializing in transportation hubs, logistics centers, and industrial facilities. BSIS licensed, bonded, and insured.</p>
-            <a href="/get-quote?location=fontana" class="btn btn-primary btn-lg" aria-label="Get free Fontana security guard quote">Get a Free Security Quote</a>
-            <a href="tel:+19098224500" class="btn btn-secondary btn-lg ml-2" aria-label="Call Fontana security services">📞 (909) 822-4500</a>
+            <div class="contact-phone" style="margin-bottom: 1rem;">
+                <a href="tel:+19098224500" style="color: #fff; text-decoration: none; font-size: 1.3rem; font-weight: 600;">
+                    <i class="fas fa-phone"></i> (909) 822-4500
+                </a>
+            </div>
+            <a href="/get-quote?location=fontana" class="btn btn-primary btn-lg">Get a Free Security Quote</a>
         </div>
     </section>
 
     <!-- Introduction Section -->
-    <section class="downtown-security">
+    <section class="downtown-security" itemscope itemtype="https://schema.org/Service">
         <div class="container">
             <h2 class="section-title">Comprehensive Security Solutions for Fontana, California</h2>
             <div class="content-wrapper">
@@ -211,66 +479,304 @@
                             <li><strong>Advanced Technology:</strong> GPS tracking and surveillance systems</li>
                         </ul>
                     </div>
+                    
+                    <div class="credentials-badges" style="margin-top: 2rem;">
+                        <img src="/img/bsis.png" alt="BSIS Licensed" style="height: 60px; margin-right: 15px;" loading="lazy">
+                        <img src="/img/asis1.avif" alt="ASIS International Member" style="height: 60px; margin-right: 15px;" loading="lazy">
+                        <span class="award-text" style="color: #2b5797; font-weight: 600;">🏆 2024 Best Security Company in Los Angeles County - LA Business Journal</span>
+                    </div>
                 </div>
                 <div class="image-content">
-                    <img src="/img/shahn1.png" alt="Professional Fontana security guards providing transportation hub and logistics center protection services" loading="lazy" width="500" height="300" title="Fontana Security Guards - ShieldWise Security">
+                    <img src="/img/shahn1.png" alt="Professional Security Guards in Fontana" loading="lazy" width="500" height="400">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="our-services">
+    <section class="our-services" id="security-services">
         <div class="container">
             <h2>Our Fontana Security Services</h2>
+            <p>ShieldWise Security offers specialized security services tailored to the unique needs of Fontana's transportation and logistics infrastructure. Our experienced team provides customized security solutions to address your specific concerns.</p>
+
             <div class="services-grid">
-                <div class="service-item">
+                <!-- Service 1 -->
+                <div class="service-item" itemscope itemtype="https://schema.org/Service">
                     <i class="fas fa-truck"></i>
-                    <h3>Transportation Hub Security</h3>
-                    <p>Comprehensive security for Fontana's major transportation facilities including rail yards, trucking terminals, and logistics centers.</p>
-                    <a href="/services/commercial-security" class="service-link">Learn More</a>
+                    <h3 itemprop="name">Transportation Hub Security</h3>
+                    <p itemprop="description">Comprehensive security for Fontana's major transportation facilities including rail yards, trucking terminals, and logistics centers with specialized training for transportation environments.</p>
+                    <div class="service-features">
+                        <span class="badge badge-primary">24/7 Coverage</span>
+                        <span class="badge badge-secondary">Access Control</span>
+                        <span class="badge badge-success">BSIS Licensed</span>
+                    </div>
                 </div>
 
-                <div class="service-item">
+                <!-- Service 2 -->
+                <div class="service-item" itemscope itemtype="https://schema.org/Service">
                     <i class="fas fa-warehouse"></i>
-                    <h3>Warehouse & Distribution Security</h3>
-                    <p>Professional security for distribution centers and warehouses with inventory protection and access control systems.</p>
-                    <a href="/services/commercial-security" class="service-link">Learn More</a>
+                    <h3 itemprop="name">Warehouse & Distribution Security</h3>
+                    <p itemprop="description">Professional security for distribution centers and warehouses with inventory protection, loading dock security, and comprehensive access control systems.</p>
+                    <div class="service-features">
+                        <span class="badge badge-primary">Inventory Protection</span>
+                        <span class="badge badge-secondary">Loading Dock Security</span>
+                        <span class="badge badge-info">Supply Chain Protection</span>
+                    </div>
                 </div>
 
-                <div class="service-item">
+                <!-- Service 3 -->
+                <div class="service-item" itemscope itemtype="https://schema.org/Service">
                     <i class="fas fa-industry"></i>
-                    <h3>Industrial Facility Security</h3>
-                    <p>Specialized security for manufacturing and industrial facilities with asset protection and perimeter security.</p>
-                    <a href="/services/commercial-security" class="service-link">Learn More</a>
+                    <h3 itemprop="name">Industrial Facility Security</h3>
+                    <p itemprop="description">Specialized security for manufacturing and industrial facilities with asset protection, perimeter security, and emergency response protocols.</p>
+                    <div class="service-features">
+                        <span class="badge badge-warning">Asset Protection</span>
+                        <span class="badge badge-primary">Perimeter Security</span>
+                        <span class="badge badge-secondary">Emergency Response</span>
+                    </div>
                 </div>
 
-                <div class="service-item">
+                <!-- Service 4 -->
+                <div class="service-item" itemscope itemtype="https://schema.org/Service">
                     <i class="fas fa-car"></i>
-                    <h3>Mobile Patrol Services</h3>
-                    <p>Flexible mobile patrol services covering multiple properties throughout Fontana with GPS tracking and real-time reporting.</p>
-                    <a href="/services/patrol" class="service-link">Learn More</a>
+                    <h3 itemprop="name">Mobile Patrol Services</h3>
+                    <p itemprop="description">Flexible mobile patrol services covering multiple properties throughout Fontana with GPS tracking, real-time reporting, and rapid response capabilities.</p>
+                    <div class="service-features">
+                        <span class="badge badge-danger">Rapid Response</span>
+                        <span class="badge badge-primary">GPS Tracking</span>
+                        <span class="badge badge-secondary">Real-time Reports</span>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-item" itemscope itemtype="https://schema.org/Service">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3 itemprop="name">Armed Security Guards</h3>
+                    <p itemprop="description">Highly trained armed security personnel for high-risk environments and valuable asset protection in Fontana's industrial and logistics facilities.</p>
+                    <div class="service-features">
+                        <span class="badge badge-success">Armed Protection</span>
+                        <span class="badge badge-primary">High Security</span>
+                        <span class="badge badge-secondary">Asset Protection</span>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-item" itemscope itemtype="https://schema.org/Service">
+                    <i class="fas fa-hard-hat"></i>
+                    <h3 itemprop="name">Construction Site Security</h3>
+                    <p itemprop="description">Prevent theft and vandalism at your Fontana construction sites with our 24/7 security guards, surveillance systems, and comprehensive access control measures.</p>
+                    <div class="service-features">
+                        <span class="badge badge-warning">Theft Prevention</span>
+                        <span class="badge badge-primary">Site Monitoring</span>
+                        <span class="badge badge-secondary">Equipment Protection</span>
+                    </div>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="service-item" itemscope itemtype="https://schema.org/Service">
+                    <i class="fas fa-video"></i>
+                    <h3 itemprop="name">Surveillance Systems</h3>
+                    <p itemprop="description">We design and implement advanced video surveillance systems to complement our security guard services, providing comprehensive protection for Fontana properties.</p>
+                    <div class="service-features">
+                        <span class="badge badge-info">HD Cameras</span>
+                        <span class="badge badge-primary">Remote Monitoring</span>
+                        <span class="badge badge-secondary">Recording Systems</span>
+                    </div>
+                </div>
+
+                <!-- Service 8 -->
+                <div class="service-item" itemscope itemtype="https://schema.org/Service">
+                    <i class="fas fa-clock"></i>
+                    <h3 itemprop="name">Emergency Security Response</h3>
+                    <p itemprop="description">1-hour emergency security deployment anywhere in Fontana with rapid response teams specially trained for urgent security situations.</p>
+                    <div class="service-features">
+                        <span class="badge badge-primary">1-Hour Response</span>
+                        <span class="badge badge-secondary">Emergency Teams</span>
+                        <span class="badge badge-success">24/7 Availability</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fontana Security Challenges Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">Fontana Security Challenges</h2>
+                    <p>Fontana's role as a major transportation and logistics hub presents unique security challenges. As one of Southern California's key distribution centers, Fontana requires specialized security approaches for its diverse industrial landscape.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Rail yards and trucking terminals requiring specialized security</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Warehouse and distribution centers with high-value inventory</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Industrial facilities requiring asset protection</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Transportation security coordination with federal agencies</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> 24/7 security needs for continuous operations</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/img/2.webp" alt="Fontana Transportation Security Services" class="img-fluid rounded shadow" loading="lazy" width="600" height="400">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-5" id="service-areas">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-4">Our Fontana Service Areas</h2>
+                    <p class="mb-5">ShieldWise Security proudly serves all areas of Fontana, including:</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> North Fontana Industrial Area</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> South Fontana Logistics District</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> East Fontana Transportation Hub</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> West Fontana Distribution Centers</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Downtown Fontana Commercial District</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Fontana Rail Yards</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Valley Boulevard Corridor</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Sierra Avenue Industrial Zone</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53011.97825007325!2d-117.4350!3d34.0922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c34d4ddbca0b47%3A0x3ccedee9dbfdf192!2sFontana%2C%20CA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" title="Fontana, CA Service Area Map"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>What Our Fontana Clients Say</h2>
+
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial" itemscope itemtype="https://schema.org/Review">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p itemprop="reviewBody">"ShieldWise Security has been protecting our logistics center in Fontana for over 2 years. Their guards understand the unique requirements of transportation hubs and provide excellent security coverage for our 24/7 operations."</p>
+                    <h4 itemprop="author">Michael Torres</h4>
+                    <div class="position">Operations Manager, Fontana Logistics Center</div>
+                    <meta itemprop="datePublished" content="2024-11-15">
+                    <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <meta itemprop="bestRating" content="5">
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial" itemscope itemtype="https://schema.org/Review">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p itemprop="reviewBody">"When our warehouse needed immediate security coverage, ShieldWise deployed guards within 2 hours. Their rapid response and professional service have made them our go-to security provider in Fontana."</p>
+                    <h4 itemprop="author">Sarah Chen</h4>
+                    <div class="position">Facility Manager, Fontana Distribution</div>
+                    <meta itemprop="datePublished" content="2024-10-20">
+                    <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <meta itemprop="bestRating" content="5">
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial" itemscope itemtype="https://schema.org/Review">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p itemprop="reviewBody">"ShieldWise provides top-notch security for our industrial facility in Fontana. Their guards are well-trained, professional, and understand the specific security challenges of our manufacturing operations."</p>
+                    <h4 itemprop="author">Robert Martinez</h4>
+                    <div class="position">Plant Manager, Fontana Manufacturing</div>
+                    <meta itemprop="datePublished" content="2024-09-30">
+                    <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <meta itemprop="bestRating" content="5">
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial" itemscope itemtype="https://schema.org/Review">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p itemprop="reviewBody">"Our trucking terminal has been secure since hiring ShieldWise. Their mobile patrol service provides comprehensive coverage, and their reporting system keeps us informed of all security activities."</p>
+                    <h4 itemprop="author">David Rodriguez</h4>
+                    <div class="position">Terminal Manager, Fontana Transport</div>
+                    <meta itemprop="datePublished" content="2024-08-15">
+                    <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <meta itemprop="bestRating" content="5">
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial" itemscope itemtype="https://schema.org/Review">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p itemprop="reviewBody">"ShieldWise Security's transportation expertise sets them apart. They understand the unique challenges of rail yard security and provide specialized services that other security companies simply can't match."</p>
+                    <h4 itemprop="author">Jennifer Kim</h4>
+                    <div class="position">Security Director, Fontana Rail Services</div>
+                    <meta itemprop="datePublished" content="2024-07-20">
+                    <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <meta itemprop="bestRating" content="5">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section class="py-5 faq-section" id="faq">
+    <section class="py-5" id="faq">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="mb-5">Frequently Asked Questions</h2>
-                </div>
-            </div>
+            <h2 class="text-center mb-5">Frequently Asked Questions</h2>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="accordion" id="fontanaFAQ">
-                        <div class="card">
+                        <!-- FAQ Item 1 -->
+                        <div class="card mb-3">
                             <div class="card-header" id="headingOne">
-                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    What transportation security services do you offer in Fontana?
-                                </button>
+                                <h3 class="mb-0 h5">
+                                    <button class="btn btn-link btn-block text-left text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        What transportation security services do you offer in Fontana?
+                                    </button>
+                                </h3>
                             </div>
                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#fontanaFAQ">
                                 <div class="card-body">
@@ -279,15 +785,66 @@
                             </div>
                         </div>
 
-                        <div class="card">
+                        <!-- FAQ Item 2 -->
+                        <div class="card mb-3">
                             <div class="card-header" id="headingTwo">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    How quickly can you deploy security guards in Fontana?
-                                </button>
+                                <h3 class="mb-0 h5">
+                                    <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        How quickly can you deploy security guards in Fontana?
+                                    </button>
+                                </h3>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#fontanaFAQ">
                                 <div class="card-body">
                                     For emergency situations, our licensed security guards can deploy within 1-4 hours anywhere in Fontana. Standard service deployments occur within 24 hours or less.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 3 -->
+                        <div class="card mb-3">
+                            <div class="card-header" id="headingThree">
+                                <h3 class="mb-0 h5">
+                                    <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Do you provide warehouse and logistics security in Fontana?
+                                    </button>
+                                </h3>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#fontanaFAQ">
+                                <div class="card-body">
+                                    Yes, we specialize in warehouse and logistics security services in Fontana. Our security professionals are trained in inventory protection, supply chain security, and managing security in busy logistics environments.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 4 -->
+                        <div class="card mb-3">
+                            <div class="card-header" id="headingFour">
+                                <h3 class="mb-0 h5">
+                                    <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Are your security guards licensed and insured?
+                                    </button>
+                                </h3>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#fontanaFAQ">
+                                <div class="card-body">
+                                    Yes, all our security guards are fully licensed, bonded, and insured in accordance with California state regulations. They undergo rigorous background checks, receive comprehensive training, and hold valid guard cards issued by the Bureau of Security and Investigative Services (BSIS).
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 5 -->
+                        <div class="card">
+                            <div class="card-header" id="headingFive">
+                                <h3 class="mb-0 h5">
+                                    <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        What makes ShieldWise different for transportation security?
+                                    </button>
+                                </h3>
+                            </div>
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#fontanaFAQ">
+                                <div class="card-body">
+                                    ShieldWise Security specializes in transportation and logistics security, understanding the unique challenges of rail yards, trucking terminals, and distribution centers. We provide specialized training, rapid emergency response, and comprehensive security protocols tailored to transportation infrastructure.
                                 </div>
                             </div>
                         </div>
@@ -298,15 +855,63 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-5 bg-primary text-white">
+    <section class="py-5 bg-primary text-white" id="contact-cta">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
                     <h2 class="mb-4">Ready to Secure Your Fontana Property?</h2>
-                    <p class="lead mb-5">Contact ShieldWise Security today for specialized transportation and logistics security solutions in Fontana.</p>
-                    <a href="/get-quote?location=fontana" class="btn btn-light btn-lg mr-3 mb-3">Get a Free Quote</a>
-                    <a href="tel:+19098224500" class="btn btn-warning btn-lg mb-3">
-                        <i class="fas fa-phone"></i> (909) 822-4500
+                    <p class="lead mb-5">Contact ShieldWise Security today for specialized transportation and logistics security solutions in Fontana. Our team of security experts will work with you to develop a comprehensive security plan that addresses your unique transportation and industrial challenges.</p>
+                    <div class="cta-buttons">
+                        <a href="/get-quote?location=fontana" class="btn btn-light btn-lg mr-3 mb-3">Get a Free Quote</a>
+                        <a href="/contact" class="btn btn-outline-light btn-lg mb-3">Contact Us</a>
+                        <a href="tel:+19098224500" class="btn btn-warning btn-lg mb-3">
+                            <i class="fas fa-phone"></i> (909) 822-4500
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Areas Section -->
+    <section class="py-5 bg-light" id="related-areas">
+        <div class="container">
+            <h2 class="text-center mb-5">Explore Other San Bernardino County Areas We Serve</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <a href="/san-bernardino" class="text-decoration-none">
+                        <div class="card h-100 shadow-sm hover-effect">
+                            <img src="/img/sanbardino12.webp" class="card-img-top" alt="San Bernardino Security Services" loading="lazy" width="400" height="250">
+                            <div class="card-body text-center">
+                                <h3 class="h5 card-title">San Bernardino Security Services</h3>
+                                <h4 class="h6 card-subtitle mb-2 text-muted">San Bernardino</h4>
+                                <p class="card-text">Comprehensive security services throughout San Bernardino.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="/rancho-cucamonga" class="text-decoration-none">
+                        <div class="card h-100 shadow-sm hover-effect">
+                            <img src="/img/riverside.webp" class="card-img-top" alt="Rancho Cucamonga Security Services" loading="lazy" width="400" height="250">
+                            <div class="card-body text-center">
+                                <h3 class="h5 card-title">Rancho Cucamonga Security Services</h3>
+                                <h4 class="h6 card-subtitle mb-2 text-muted">Rancho Cucamonga</h4>
+                                <p class="card-text">Specialized security for Rancho Cucamonga businesses and events.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="/rialto" class="text-decoration-none">
+                        <div class="card h-100 shadow-sm hover-effect">
+                            <img src="/img/OC1.webp" class="card-img-top" alt="Rialto Security Services" loading="lazy" width="400" height="250">
+                            <div class="card-body text-center">
+                                <h3 class="h5 card-title">Rialto Security Services</h3>
+                                <h4 class="h6 card-subtitle mb-2 text-muted">Rialto</h4>
+                                <p class="card-text">Premium security solutions for Rialto properties.</p>
+                            </div>
+                        </div>
                     </a>
                 </div>
             </div>
@@ -317,14 +922,48 @@
     <%- include('../partials/Footer') %>
 
     <!-- Back to Top Button -->
-    <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
+    <a href="#" id="backToTop" class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- Bootstrap & jQuery JavaScript -->
+    <!-- Back to Top Button Script -->
+    <script src="/JS/back-to-top.js"></script>
+
+    <!-- Performance Optimized JavaScript Loading -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
-    <script src="/JS/back-to-top.js"></script>
+
+    <script>
+        // Service Worker Registration for PWA Performance
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => console.log('SW registered'))
+                    .catch(error => console.log('SW registration failed'));
+            });
+        }
+
+        // Core Web Vitals Monitoring
+        (function() {
+            // LCP monitoring
+            new PerformanceObserver((entryList) => {
+                for (const entry of entryList.getEntries()) {
+                    console.log('LCP:', entry.startTime);
+                }
+            }).observe({entryTypes: ['largest-contentful-paint']});
+
+            // CLS monitoring
+            let clsValue = 0;
+            new PerformanceObserver((entryList) => {
+                for (const entry of entryList.getEntries()) {
+                    if (!entry.hadRecentInput) {
+                        clsValue += entry.value;
+                    }
+                }
+                console.log('CLS:', clsValue);
+            }).observe({entryTypes: ['layout-shift']});
+        })();
+    </script>
 </body>
 </html>
