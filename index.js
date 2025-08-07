@@ -782,25 +782,24 @@ riversideCountyCities.forEach(city => {
 
 // San Bernardino County cities routes
 const sanBernardinoCities = [
-    'corona', 'moreno-valley', 'riverside', 'fontana', 'rancho-cucamonga',
-    'ontario', 'victorville', 'hesperia', 'apple-valley', 'redlands',
-    'highland', 'colton', 'rialto', 'upland', 'montclair',
-    'chino', 'chino-hills', 'barstow', 'big-bear-lake', 'twentynine-palms'
+    'fontana', 'rancho-cucamonga', 'ontario', 'victorville', 'hesperia', 
+    'apple-valley', 'redlands', 'highland', 'colton', 'rialto', 
+    'upland', 'montclair', 'chino', 'chino-hills', 'barstow', 
+    'big-bear-lake', 'twentynine-palms', 'san-bernardino'
 ];
 
 sanBernardinoCities.forEach(city => {
     const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
     app.get(`/${city}`, (req, res) => {
-        // Check if we have a specific template for this city, otherwise use a generic template
         try {
-            res.render(`cities/${city}`, { title: formattedCity });
-        } catch (error) {
-            // If the specific city template doesn't exist, render a generic city page
-            res.render('cities/san-bernardino', { 
+            res.render(`cities/${city}`, { 
                 title: formattedCity,
                 cityName: formattedCity,
-                isGeneric: true 
+                pageUrl: `/${city}`
             });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
         }
     });
 });
