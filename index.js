@@ -742,6 +742,10 @@ app.get('/alameda', (req, res) => {
     res.render('cities/alameda', { title: 'Alameda' });
 });
 
+app.get('/san-jose', (req, res) => {
+    res.render('cities/san-jose', { title: 'San Jose' });
+});
+
 // Los Angeles area routes
 const losAngelesAreas = [
     'downtown', 'hollywood', 'beverly-hills', 'santa-monica', 'pasadena',
