@@ -193,240 +193,12 @@
             transition:all 0.2s ease;
         }
         
-        /* Enhanced District Section Styling */
-        .district-section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        
-        .section-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: linear-gradient(135deg, #d12028, #b71c1c);
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 15px rgba(209, 32, 40, 0.3);
-        }
-        
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-        
-        .district-header {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .district-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            color: white;
-            flex-shrink: 0;
-        }
-        
-        .financial-district .district-icon {
-            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-        }
-        
-        .tech-district .district-icon {
-            background: linear-gradient(135deg, #059669, #10b981);
-        }
-        
-        .biotech-district .district-icon {
-            background: linear-gradient(135deg, #7c3aed, #a855f7);
-        }
-        
-        .federal-district .district-icon {
-            background: linear-gradient(135deg, #dc2626, #ef4444);
-        }
-        
-        .district-info h3 {
-            margin: 0 0 0.5rem 0;
-            font-size: 1.4rem;
-            font-weight: 700;
-        }
-        
-        .district-tag {
-            background: #f3f4f6;
-            color: #374151;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-        
-        .district-content {
-            padding-left: 0;
-        }
-        
-        .district-description {
-            margin-bottom: 2rem;
-            line-height: 1.6;
-            color: #555;
-        }
-        
-        .services-list {
-            margin-bottom: 2rem;
-        }
-        
-        .service-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #f3f4f6;
-        }
-        
-        .service-item:last-child {
-            border-bottom: none;
-        }
-        
-        .service-item i {
-            color: #d12028;
-            width: 20px;
-            text-align: center;
-            font-size: 1rem;
-        }
-        
-        .service-item span {
-            color: #374151;
-            font-weight: 500;
-        }
-        
-        .district-stats {
-            display: flex;
-            gap: 2rem;
-            padding-top: 1.5rem;
-            border-top: 2px solid #f3f4f6;
-        }
-        
-        .stat {
-            text-align: center;
-        }
-        
-        .stat-number {
-            display: block;
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #d12028;
-            line-height: 1;
-        }
-        
-        .stat-label {
-            font-size: 0.8rem;
-            color: #6b7280;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .district-cta {
-            background: linear-gradient(135deg, #1a3c64, #2563eb);
-            border-radius: 20px;
-            padding: 3rem;
-            text-align: center;
-            margin-top: 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .district-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='20' cy='20' r='2'/%3E%3C/g%3E%3C/svg%3E");
-        }
-        
-        .cta-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .district-cta h3 {
-            color: white;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        
-        .district-cta p {
-            color: #e2e8f0;
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: #d12028;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(209, 32, 40, 0.3);
-        }
-        
-        .cta-button:hover {
-            background: #b71c1c;
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(209, 32, 40, 0.4);
-            color: white;
-            text-decoration: none;
-        }
-        
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .district-security-section{padding:3rem 0;}
             .district-security-section h2{font-size:2.2rem;}
             .districts-grid{grid-template-columns:1fr;gap:1.5rem;}
             .district-card{padding:2rem;}
-            
-            .district-header {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-            }
-            
-            .district-stats {
-                justify-content: center;
-                gap: 1rem;
-            }
-            
-            .district-cta {
-                padding: 2rem;
-                margin-top: 3rem;
-            }
-            
-            .district-cta h3 {
-                font-size: 1.5rem;
-            }
-            
-            .service-item {
-                padding: 0.5rem 0;
-            }
         }
 </style>
 
@@ -998,181 +770,43 @@
     <!-- San Francisco District-Specific Security Services -->
     <section class="district-security-section">
         <div class="container">
-            <div class="district-section-header">
-                <div class="section-badge">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>District Specialization</span>
-                </div>
-                <h2>Specialized Security for San Francisco Districts</h2>
-                <p class="section-subtitle">Tailored protection strategies for each of San Francisco's unique business districts, addressing specific security challenges and regulatory requirements.</p>
-            </div>
-            
+            <h2>Specialized Security for San Francisco Districts</h2>
             <div class="districts-grid">
-                <div class="district-card financial-district">
-                    <div class="district-header">
-                        <div class="district-icon">
-                            <i class="fas fa-university"></i>
-                        </div>
-                        <div class="district-info">
-                            <h3>Financial District (FiDi)</h3>
-                            <span class="district-tag">Banking & Finance</span>
-                        </div>
-                    </div>
-                    <div class="district-content">
-                        <p class="district-description">Banking security, investment firm protection, and regulatory compliance for Montgomery Street corridor and surrounding financial institutions.</p>
-                        <div class="services-list">
-                            <div class="service-item">
-                                <i class="fas fa-building"></i>
-                                <span>Bank branch security and ATM monitoring</span>
-                            </div>
-                            <div class="service-item">
-                                <i class="fas fa-user-shield"></i>
-                                <span>Executive protection for financial executives</span>
-                            </div>
-                            <div class="service-item">
-                                <i class="fas fa-clipboard-check"></i>
-                                <span>Compliance with federal banking regulations</span>
-                            </div>
-                        </div>
-                        <div class="district-stats">
-                            <div class="stat">
-                                <span class="stat-number">250+</span>
-                                <span class="stat-label">Banks Protected</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-number">99.9%</span>
-                                <span class="stat-label">Compliance Rate</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="district-card">
+                    <h3>Financial District (FiDi)</h3>
+                    <p>Banking security, investment firm protection, and regulatory compliance for Montgomery Street corridor and surrounding financial institutions.</p>
+                    <ul>
+                        <li>Bank branch security and ATM monitoring</li>
+                        <li>Executive protection for financial executives</li>
+                        <li>Compliance with federal banking regulations</li>
+                    </ul>
                 </div>
-
-                <div class="district-card tech-district">
-                    <div class="district-header">
-                        <div class="district-icon">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <div class="district-info">
-                            <h3>South of Market (SOMA)</h3>
-                            <span class="district-tag">Tech Innovation</span>
-                        </div>
-                    </div>
-                    <div class="district-content">
-                        <p class="district-description">Tech company security, startup protection, and intellectual property safeguarding for the innovation corridor.</p>
-                        <div class="services-list">
-                            <div class="service-item">
-                                <i class="fas fa-server"></i>
-                                <span>Data center and server room security</span>
-                            </div>
-                            <div class="service-item">
-                                <i class="fas fa-id-badge"></i>
-                                <span>Visitor management for tech campuses</span>
-                            </div>
-                            <div class="service-item">
-                                <i class="fas fa-lock"></i>
-                                <span>Trade secret and IP protection protocols</span>
-                            </div>
-                        </div>
-                        <div class="district-stats">
-                            <div class="stat">
-                                <span class="stat-number">180+</span>
-                                <span class="stat-label">Tech Companies</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-number">100%</span>
-                                <span class="stat-label">IP Protection</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="district-card">
+                    <h3>South of Market (SOMA)</h3>
+                    <p>Tech company security, startup protection, and intellectual property safeguarding for the innovation corridor.</p>
+                    <ul>
+                        <li>Data center and server room security</li>
+                        <li>Visitor management for tech campuses</li>
+                        <li>Trade secret and IP protection protocols</li>
+                    </ul>
                 </div>
-
-                <div class="district-card biotech-district">
-                    <div class="district-header">
-                        <div class="district-icon">
-                            <i class="fas fa-microscope"></i>
-                        </div>
-                        <div class="district-info">
-                            <h3>Mission Bay</h3>
-                            <span class="district-tag">Biotech & Medical</span>
-                        </div>
-                    </div>
-                    <div class="district-content">
-                        <p class="district-description">Biotech and pharmaceutical security, research facility protection, and hospital security services.</p>
-                        <div class="services-list">
-                            <div class="service-item">
-                                <i class="fas fa-flask"></i>
-                                <span>Laboratory and research facility security</span>
-                            </div>
-                            <div class="service-item">
-                                <i class="fas fa-hospital"></i>
-                                <span>Medical campus protection (UCSF)</span>
-                            </div>
-                            <div class="service-item">
-                                <i class="fas fa-pills"></i>
-                                <span>Pharmaceutical storage security</span>
-                            </div>
-                        </div>
-                        <div class="district-stats">
-                            <div class="stat">
-                                <span class="stat-number">50+</span>
-                                <span class="stat-label">Research Labs</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-number">24/7</span>
-                                <span class="stat-label">Medical Coverage</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="district-card">
+                    <h3>Mission Bay</h3>
+                    <p>Biotech and pharmaceutical security, research facility protection, and hospital security services.</p>
+                    <ul>
+                        <li>Laboratory and research facility security</li>
+                        <li>Medical campus protection (UCSF)</li>
+                        <li>Pharmaceutical storage security</li>
+                    </ul>
                 </div>
-
-                <div class="district-card federal-district">
-                    <div class="district-header">
-                        <div class="district-icon">
-                            <i class="fas fa-flag-usa"></i>
-                        </div>
-                        <div class="district-info">
-                            <h3>Presidio</h3>
-                            <span class="district-tag">Federal & Parks</span>
-                        </div>
-                    </div>
-                    <div class="district-content">
-                        <p class="district-description">Federal facility security, park protection, and historic preservation site monitoring.</p>
-                        <div class="services-list">
-                            <div class="service-item">
-                                <i class="fas fa-security"></i>
-                                <span>Federal building security clearance</span>
-                            </div>
-                            <div class="service-item">
-                                <i class="fas fa-tree"></i>
-                                <span>Park and recreational facility monitoring</span>
-                            </div>
-                            <div class="service-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <span>Special event security for federal events</span>
-                            </div>
-                        </div>
-                        <div class="district-stats">
-                            <div class="stat">
-                                <span class="stat-number">15+</span>
-                                <span class="stat-label">Federal Sites</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-number">Security</span>
-                                <span class="stat-label">Clearance Ready</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="district-cta">
-                <div class="cta-content">
-                    <h3>Ready to Secure Your District?</h3>
-                    <p>Get a customized security assessment for your specific San Francisco location</p>
-                    <a href="tel:7147167430" class="cta-button">
-                        <i class="fas fa-phone"></i>
-                        Call (714) 716-7430
-                    </a>
+                <div class="district-card">
+                    <h3>Presidio</h3>
+                    <p>Federal facility security, park protection, and historic preservation site monitoring.</p>
+                    <ul>
+                        <li>Federal building security clearance</li>
+                        <li>Park and recreational facility monitoring</li>
+                        <li>Special event security for federal events</li>
+                    </ul>
                 </div>
             </div>
         </div>
