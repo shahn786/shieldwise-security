@@ -976,6 +976,31 @@
   font-weight: 600;
 }
 
+/* White Text Styling for Better Readability */
+.white-text, .white-text h1, .white-text h2, .white-text h3, .white-text h4, .white-text h5, .white-text h6, .white-text p, .white-text span, .white-text div, .white-text li, .white-text a {
+    color: white !important;
+}
+
+.hero-content, .hero-content h1, .hero-content h2, .hero-content p, .hero-content span {
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) !important;
+}
+
+.anaheim-hero-content, .anaheim-hero-content h1, .anaheim-hero-content h2, .anaheim-hero-content p {
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) !important;
+}
+
+.anaheim-banner-content, .anaheim-banner-content h2, .anaheim-banner-content p {
+    color: white !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8) !important;
+}
+
+.anaheim-cta-section .anaheim-cta-content, .anaheim-cta-section .anaheim-cta-content h2, .anaheim-cta-section .anaheim-cta-content p {
+    color: white !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8) !important;
+}
+
 /* Back to Top Button Styles */
 .back-to-top {
     position: fixed !important;
