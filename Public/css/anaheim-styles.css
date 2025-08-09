@@ -2062,12 +2062,12 @@
     grid-template-columns: 1fr;
     gap: 25px;
   }
-  
+
   .partnership-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
   }
-  
+
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -2079,29 +2079,29 @@
     padding: 40px 25px;
     margin: 40px 0;
   }
-  
+
   .anaheim-local-content h2 {
     font-size: 2rem;
     margin-bottom: 35px;
   }
-  
+
   .anaheim-local-content h3 {
     font-size: 1.5rem;
     margin: 30px 0 20px 0;
   }
-  
+
   .news-item {
     padding: 25px 20px;
   }
-  
+
   .partnership-item {
     padding: 25px 20px;
   }
-  
+
   .partnership-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .stats-grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -2116,11 +2116,11 @@
   .authority-indicators {
     padding: 30px 20px;
   }
-  
+
   .local-statistics {
     padding: 35px 25px;
   }
-  
+
   .community-partnerships {
     padding: 30px 20px;
   }
@@ -2130,274 +2130,34 @@
   .anaheim-local-content {
     padding: 30px 20px;
   }
-  
+
   .anaheim-local-content h2 {
     font-size: 1.8rem;
   }
-  
+
   .anaheim-local-content h3 {
     font-size: 1.3rem;
   }
-  
+
   .news-item h4 {
     font-size: 1.2rem;
   }
-  
+
   .partnership-item h4 {
     font-size: 1.1rem;
   }
-  
+
   .stat-item {
     padding: 25px 20px;
   }
-  
+
   .stat-number {
     font-size: 2.2rem;
   }
-  
+
   .local-statistics {
     padding: 25px 20px;
   }
-}
-
-/* Print Styles */
-@media print {
-  .anaheim-hero,
-  .anaheim-banner-section,
-  .anaheim-cta-section,
-  .anaheim-testimonials-section {
-    background: white;
-    color: black;
-    padding: 20px 0;
-    margin: 20px 0;
-  }
-
-  .anaheim-hero-overlay,
-  .anaheim-banner-parallax,
-  .anaheim-cta-section::before {
-    display: none;
-  }
-
-  .anaheim-hero-content,
-  .anaheim-banner-content {
-    color: black;
-  }
-
-  .anaheim-cta-buttons,
-  .anaheim-banner-buttons,
-  .slider-navigation {
-    display: none;
-  }
-
-  .anaheim-service-item,
-  .anaheim-feature-item,
-  .anaheim-area-item,
-  .anaheim-testimonial-item,
-  .anaheim-faq-item {
-    box-shadow: none;
-    border: 1px solid #ddd;
-    page-break-inside: avoid;
-  }
-
-  .anaheim-testimonial-item {
-    display: block;
-    opacity: 1;
-    transform: none;
-    position: relative;
-    margin-bottom: 20px;
-  }
-
-  .faq-answer {
-    display: block;
-  }
-
-  .trust-badge,
-  .service-icon-wrapper,
-  .anaheim-feature-item i {
-    color: black;
-    background: white;
-  }
-}
-
-/* Additional Enhancements */
-.cities-list:hover a:not(:hover) {
-  opacity: 0.7;
-}
-
-.anaheim-feature-item:nth-child(even)::before {
-  background: var(--secondary-color);
-}
-
-.anaheim-service-item:hover img {
-  transform: scale(1.03);
-  transition: transform 0.5s ease;
-}
-
-.area-learn-more i {
-  transition: transform 0.3s ease;
-}
-
-.area-learn-more:hover i {
-  transform: translateX(3px);
-}
-
-.anaheim-faq-item:last-child {
-  margin-bottom: 0;
-}
-
-/* Enhanced Responsive Design */
-@media (max-width: 768px) {
-    .anaheim-hero {
-        height: 90vh;
-        padding: 20px 0;
-    }
-
-    .anaheim-hero-content {
-        padding: 30px 20px;
-    }
-
-    .anaheim-hero-content h1 {
-        font-size: 2.8rem;
-        margin-bottom: 25px;
-        padding: 0 10px;
-    }
-
-    .anaheim-hero-content p {
-        font-size: 1.3rem;
-        margin-bottom: 35px;
-        padding: 0 15px;
-    }
-
-    .anaheim-cta-buttons {
-        flex-direction: column;
-        gap: 20px;
-        padding: 0 15px;
-    }
-
-    .anaheim-cta-button,
-    .anaheim-cta-button-alt {
-        width: 100%;
-        max-width: 280px;
-        padding: 18px 25px;
-        font-size: 1rem;
-    }
-
-    .anaheim-main-content {
-        padding: 80px 0;
-    }
-
-    .anaheim-content-container {
-        padding: 0 20px;
-    }
-
-    .anaheim-intro-section {
-        padding: 30px 15px;
-        margin-bottom: 60px;
-    }
-
-    .anaheim-intro-section h1 {
-        font-size: 2.5rem;
-        margin-bottom: 30px;
-        padding: 0 10px;
-    }
-
-    .anaheim-highlight-box {
-        padding: 35px 25px;
-        margin: 40px 15px;
-    }
-
-    .anaheim-trust-badges {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        margin: 40px 0;
-        padding: 0 15px;
-    }
-
-    .anaheim-features-section {
-        padding: 80px 0;
-    }
-
-    .anaheim-features-section h2 {
-        font-size: 2.3rem;
-        margin-bottom: 50px;
-        padding: 0 15px;
-    }
-
-    .anaheim-features-container {
-        grid-template-columns: 1fr;
-        gap: 35px;
-        padding: 0 20px;
-    }
-
-    .anaheim-feature-item {
-        padding: 40px 25px;
-    }
-
-    .anaheim-services-section-compact {
-        padding: 80px 0;
-    }
-
-    .anaheim-services-container {
-        padding: 0 20px;
-    }
-
-    .anaheim-services-title {
-        font-size: 2.3rem;
-        padding: 0 15px;
-    }
-
-    .anaheim-services-grid-enhanced {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        margin-top: 40px;
-    }
-
-    .anaheim-service-item-enhanced {
-        padding: 35px 25px;
-    }
-
-    .anaheim-testimonials-section {
-        padding: 80px 0;
-    }
-
-    .anaheim-testimonials-container {
-        padding: 0 20px;
-    }
-
-    .anaheim-testimonials-container h2 {
-        font-size: 2.3rem;
-        margin-bottom: 50px;
-        padding: 0 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .anaheim-hero-content h1 {
-        font-size: 2.3rem;
-    }
-
-    .anaheim-hero-content p {
-        font-size: 1.2rem;
-    }
-
-    .anaheim-intro-section h1 {
-        font-size: 2.2rem;
-    }
-
-    .anaheim-features-section h2,
-    .anaheim-services-title,
-    .anaheim-testimonials-container h2 {
-        font-size: 2rem;
-    }
-
-    .anaheim-highlight-box {
-        padding: 30px 20px;
-    }
-
-    .anaheim-feature-item,
-    .anaheim-service-item-enhanced {
-        padding: 30px 20px;
-    }
 }
 
 /* CTA Section */
