@@ -1,0 +1,160 @@
+What to fix first (highest ROI)
+1) Correct factual claims (E-E-A-T) — HIGH
+
+Title/description say “California’s second-largest city.” That’s incorrect. Use “San Diego County’s second-largest city.”
+
+Why: factual errors undermine trust and can ding quality signals.
+
+2) Remove risky AggregateRating until you have verifiable reviews — HIGH
+
+Current block ("ratingValue":"4.9","reviewCount":"150") can trigger manual actions if not backed by on-site reviews and clear source.
+
+Fix: delete the block, or implement Review items with visible, crawlable testimonials and a policy page describing ratings sourcing.
+
+3) Replace outdated/low-value meta & geo tags — HIGH
+
+Remove <meta name="keywords">, geo.*, and ICBM. They don’t help; they clutter.
+
+Keep canonical (looks good).
+
+4) Make LCP bulletproof — HIGH
+
+Your hero is a CSS background, which can delay LCP. Either:
+
+Keep the preload and add fetchpriority="high" to an actual <img> used in the hero, or
+
+Convert hero to <img> in markup and style it with object-fit:cover.
+
+Also add width/height to all images and decoding="async". You did this for one image—apply everywhere.
+
+5) Fix FAQ UI/Schema parity — MEDIUM
+
+Page has 5 FAQs; your FAQPage JSON-LD includes only 2. Either include all 5 in the JSON-LD or remove extras on-page.
+
+JS is selecting .accordion-button, but your buttons use btn btn-link. That handler never runs—clean it up or rely solely on Bootstrap collapse.
+
+6) Add WebSite schema with SearchAction — MEDIUM
+
+Increases chance of sitelinks search box on branded queries.
+
+7) LocalBusiness completeness — MEDIUM
+
+Add openingHours, priceRange (e.g., "$" or "$$"), logo, and image. If this page serves a service area, consider serviceArea (Place/GeoShape).
+
+8) Performance & security headers — MEDIUM
+
+Use rel=preconnect to https://fonts.gstatic.com (keeps CLS down).
+
+Consider self-hosting fonts or cutting to 1 family to reduce FOIT/CLS.
+
+Your CSP allows 'unsafe-inline' for style and script. If possible, replace inline with hashed styles/scripts and drop unsafe directives.
+
+9) OG type — LOW
+
+og:type: business.business is uncommon unless you also provide a Facebook Business object. website is safer.
+
+10) Minor internal linking & accessibility — LOW
+
+Add internal links to related service detail pages (you did a couple—add 1–2 more).
+
+Ensure every <img> has concise, scannable alt (yours are a bit long).
+
+Quick copy fixes (E-E-A-T safe)
+Title:
+Chula Vista Security Guards | Commercial Business Protection | BSIS Licensed | ShieldWise Security
+
+Meta description (≤160 chars, factual):
+BSIS-licensed security guards in Chula Vista, San Diego County’s second-largest city. 24/7 coverage with 2-hour emergency response. Free quote: (714) 716-7430.
+
+Code snippets (drop-in)
+Remove risky/obsolete meta
+
+html
+Copy
+Edit
+<!-- Remove -->
+<meta name="keywords" content="...">
+<meta name="geo.region" content="US-CA">
+<meta name="geo.placename" content="Chula Vista, San Diego County, California">
+<meta name="geo.position" content="32.6401;-117.0842">
+<meta name="ICBM" content="32.6401, -117.0842">
+Safer OG
+
+html
+Copy
+Edit
+<meta property="og:type" content="website">
+Hero LCP improvement (option A: keep background + fetchpriority)
+
+html
+Copy
+Edit
+<link rel="preload" href="/img/chula-vista-hero.jpg" as="image" imagesrcset="/img/chula-vista-hero.jpg 1200w" fetchpriority="high">
+(Better: real <img> hero)
+
+html
+Copy
+Edit
+<section class="hero-downtown">
+  <img src="/img/chula-vista-hero.jpg" alt="" fetchpriority="high" decoding="async" width="1920" height="1080" class="hero-bg">
+  <div class="hero-content">...</div>
+</section>
+Fonts: preconnect
+
+html
+Copy
+Edit
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+WebSite + SearchAction JSON-LD
+
+html
+Copy
+Edit
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"WebSite",
+ "url":"https://shieldwisesecurity.com/",
+ "name":"ShieldWise Security",
+ "potentialAction":{
+   "@type":"SearchAction",
+   "target":"https://shieldwisesecurity.com/search?q={query}",
+   "query-input":"required name=query"
+ }
+}
+</script>
+LocalBusiness enhancements (remove AggregateRating unless verified)
+
+html
+Copy
+Edit
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":["LocalBusiness","SecurityService","ProfessionalService"],
+ "name":"ShieldWise Security - Chula Vista",
+ "url":"https://shieldwisesecurity.com/california/chula-vista",
+ "telephone":"+1-714-716-7430",
+ "address":{"@type":"PostalAddress","streetAddress":"275 H St, Suite 200","addressLocality":"Chula Vista","addressRegion":"CA","postalCode":"91910","addressCountry":"US"},
+ "image":"https://shieldwisesecurity.com/img/chula-vista-security-guards.jpg",
+ "logo":"https://shieldwisesecurity.com/img/logo.png",
+ "priceRange":"$$",
+ "openingHours":["Mo-Su 00:00-23:59"],
+ "serviceArea":{"@type":"GeoCircle","geoMidpoint":{"@type":"GeoCoordinates","latitude":32.6401,"longitude":-117.0842},"geoRadius":20000}
+}
+</script>
+FAQ parity (include all 5, short answers)
+Duplicate your on-page 5 Q&As inside the FAQPage JSON-LD, or reduce on-page to match your current 2 (I recommend adding all 5).
+
+JS cleanup
+
+Remove the custom .accordion-button handler (doesn’t match DOM) or change selector to .btn[data-toggle="collapse"].
+
+Tiny polish (optional)
+One clear <h1> only (you currently have two H1s reading “Chula Vista Security Services”). Make the hero h1, and use h2 later.
+
+Add loading="lazy" decoding="async" width height to every <img>.
+
+Add rel="noopener" to external links.
+
+If you want, I can apply these changes to your EJS file directly and return a cleaned version with the schema/JS fixes baked in.
