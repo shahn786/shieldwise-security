@@ -859,6 +859,44 @@ venturaCountyCities.forEach(city => {
     });
 });
 
+// San Diego County cities routes
+const sanDiegoCountyCities = [
+    'chula-vista', 'oceanside', 'escondido', 'carlsbad', 'el-cajon',
+    'vista', 'san-marcos', 'encinitas', 'national-city', 'la-mesa',
+    'santee', 'poway', 'coronado', 'imperial-beach', 'lemon-grove',
+    'solana-beach', 'del-mar'
+];
+
+sanDiegoCountyCities.forEach(city => {
+    const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    app.get(`/california/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/california/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    // Also create routes without /california prefix for SEO
+    app.get(`/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+});
+
 // Orange County cities routes - all files at views/cities/[CityName].ejs
 const orangeCountyCities = [
     'anaheim', 'irvine', 'santa-ana', 'newport-beach', 'huntington-beach',
