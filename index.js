@@ -718,6 +718,14 @@ app.get('/san-diego', (req, res) => {
     res.render('cities/san-diego', { title: 'San Diego' });
 });
 
+app.get('/carlsbad', (req, res) => {
+    res.render('cities/carlsbad', { 
+        title: 'Carlsbad',
+        cityName: 'Carlsbad',
+        pageUrl: '/carlsbad'
+    });
+});
+
 app.get('/riverside-county', (req, res) => {
     res.render('cities/riverside-county', { title: 'Riverside County' });
 });
