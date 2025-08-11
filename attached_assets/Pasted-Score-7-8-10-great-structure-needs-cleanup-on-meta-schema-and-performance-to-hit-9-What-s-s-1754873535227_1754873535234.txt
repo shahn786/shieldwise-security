@@ -1,0 +1,137 @@
+Score
+7.8 / 10 (great structure; needs cleanup on meta, schema, and performance to hit 9+)
+
+What’s strong
+Clear local intent in title/desc + canonical.
+
+OG/Twitter present; FAQ + Breadcrumb JSON-LD included.
+
+Solid internal linking (“Areas We Serve”, nearby cities).
+
+Performance hints (preconnect, preload, inline critical CSS).
+
+Fix now (highest impact)
+Title & meta description length
+
+Current title is long; target ≤60–65 chars. Description ≤155–160.
+
+html
+Copy
+Edit
+<title>Carlsbad Security Guards | BSIS-Licensed 24/7 | ShieldWise</title>
+<meta name="description" content="BSIS-licensed guards in Carlsbad for resorts, tech campuses & luxury communities. 24/7 coverage and 2-hour emergency response. Free quote: (714) 716-7430.">
+One H1 only
+
+You have two H1s (hero + intro). Make the intro one an H2.
+
+Remove obsolete/ineffective meta
+
+Delete: keywords, both revisit-after, rating, expires, distribution, duplicate language, ICBM, DC.title. They don’t help and add noise.
+
+Security headers via HTML don’t work
+
+These must be HTTP response headers, not <meta http-equiv>. Move:
+Strict-Transport-Security, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, X-XSS-Protection to the server config.
+
+OG type
+
+Use a generic page type:
+
+html
+Copy
+Edit
+<meta property="og:type" content="website">
+JSON-LD: simplify & de-risk
+
+Use one primary type ("SecurityService"). Don’t include AggregateRating/Review unless the same ratings/reviews are visible on the page and truly collected by you. Also worstRating must be "1", not "4".
+
+Keep name, URL, logo/image, telephone, address, opening hours, areaServed, sameAs. Drop excessive claims (awards, memberOf, catalogs) unless you’ll maintain them.
+
+html
+Copy
+Edit
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SecurityService",
+  "name":"ShieldWise Security – Carlsbad",
+  "url":"https://shieldwisesecurity.com/california/carlsbad",
+  "image":"https://shieldwisesecurity.com/img/carlsbad-security-guards-og-2025.jpg",
+  "telephone":"+1-714-716-7430",
+  "address":{"@type":"PostalAddress","streetAddress":"2975 Roosevelt St, Suite 150","addressLocality":"Carlsbad","addressRegion":"CA","postalCode":"92008","addressCountry":"US"},
+  "openingHours":"Mo-Su 00:00-23:59",
+  "areaServed":["Carlsbad","Oceanside","Encinitas","Vista"],
+  "sameAs":["https://www.facebook.com/ShieldWiseSecurity","https://www.linkedin.com/company/shieldwise-security","https://www.instagram.com/shieldwise_security"]
+}
+</script>
+Performance/CWV
+
+font-display: swap inside body{} does nothing—remove it (Google Fonts URL already has display=swap).
+
+background-attachment: fixed hurts paint on mobile; you partially disable it—good. Consider disabling under 1024px everywhere it’s used.
+
+Drop jQuery + Popper + Bootstrap if only used for toggles/slider; replace with tiny vanilla JS to save ~100KB.
+
+Only use modulepreload if /js/critical.js and /js/lazy-loading.js are ES modules. Otherwise use preload or defer.
+
+Add width/height to all <img> and loading="lazy" to non-hero images.
+
+Minor consistency
+
+CSS import anaheim-styles.css on a Carlsbad page—rename to a neutral/shared file (or carlsbad-styles.css).
+
+Ensure the phone link is href="tel:+17147167430".
+
+Ensure all “area” URLs exist (no 404s).
+
+Add visible NAP near the footer + a small embedded map; it helps local trust.
+
+Breadcrumbs
+
+You have schema; also render HTML breadcrumbs users can click.
+
+Accessibility
+
+Add aria-label to icon-only buttons/links; ensure color contrast on gradient CTAs.
+
+Quick diff (head cleanup)
+html
+Copy
+Edit
+<!-- Remove these -->
+<meta name="keywords">
+<meta name="revisit-after">
+<meta name="rating">
+<meta name="expires">
+<meta name="distribution">
+<meta name="language"> <!-- keep only html lang -->
+<meta name="ICBM">
+<meta name="DC.title">
+<meta http-equiv="Strict-Transport-Security">
+<meta http-equiv="X-Frame-Options">
+<meta http-equiv="X-Content-Type-Options">
+<meta http-equiv="Referrer-Policy">
+<meta http-equiv="Permissions-Policy">
+<meta http-equiv="X-XSS-Protection">
+
+<!-- Change -->
+<meta property="og:type" content="website">
+Nice-to-have
+Add og:updated_time when you refresh content.
+
+Add internal links to service detail anchors (e.g., /services#executive-protection) where relevant.
+
+Use a single JSON-LD block for the business; keep FAQPage as a separate block (that’s fine).
+
+TL;DR
+Trim the title/description, keep one H1, remove obsolete meta, move security headers to server, simplify JSON-LD (or make reviews visibly match), lighten JS, and fix minor consistency. Do these and you’ll land around 9.2–9.4 / 10. Want me to hand you a cleaned, drop-in .ejs head + minimal JSON-LD snippet for Carlsbad?
+
+
+
+
+
+
+
+
+
+Ask ChatGPT
