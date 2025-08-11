@@ -5,16 +5,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <!-- Primary SEO -->
-  <title>Carlsbad Security Guards | Luxury Property Protection | BSIS Licensed | ShieldWise Security</title>
-  <meta name="description" content="Professional security guard services in Carlsbad, CA since 2015. Luxury resorts and high-tech business parks. 24/7 BSIS-licensed guards with 2-hour response. Free quote: (714) 716-7430.">
+  <title>Carlsbad Security Guards | Luxury Property | ShieldWise</title>
+  <meta name="description" content="Premium security guards in Carlsbad, CA. Luxury resort & tech facility protection. BSIS licensed, 24/7 service. Free quote: (714) 716-7430.">
   <meta name="author" content="ShieldWise Security - Professional Security Services">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://shieldwisesecurity.com/california/carlsbad">
-  <!-- Optional self-referential hreflang (single-locale site) -->
-  <link rel="alternate" hreflang="en-us" href="https://shieldwisesecurity.com/california/carlsbad">
+  <!-- Hreflang with proper casing -->
+  <link rel="alternate" hreflang="en-US" href="https://shieldwisesecurity.com/california/carlsbad">
   <link rel="alternate" hreflang="x-default" href="https://shieldwisesecurity.com/california/carlsbad">
 
+  <!-- Geographic Meta Tags -->
+  <meta name="geo.region" content="US-CA">
+  <meta name="geo.placename" content="Carlsbad">
+  <meta name="geo.position" content="33.1581;-117.3506">
+  <meta name="ICBM" content="33.1581, -117.3506">
+
   <!-- Performance: keep only what we actually use -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
   <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -43,16 +51,17 @@
     .animate-fade-in-delay-2{opacity:0;animation:fadeIn 1s ease-out .6s forwards}
     @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
     @media (max-width:768px){
-      .carlsbad-hero{height:90vh;background-attachment:scroll}
+      .carlsbad-hero{height:100dvh;background-attachment:scroll}
       .carlsbad-hero-content{padding:30px 20px}
       .carlsbad-cta-buttons{flex-direction:column;gap:20px;padding:0 15px}
       .carlsbad-cta-button,.carlsbad-cta-button-alt{width:100%;max-width:280px;padding:18px 25px}
       .container{padding:0 10px}
+      .anaheim-banner-section,.anaheim-cta-section{background-attachment:scroll !important}
     }
   </style>
 
   <!-- LCP image priority hint (hero background is CSS; this helps discovery/priority) -->
-  <link rel="preload" href="/img/2.webp" as="image" imagesrcset="/img/2.webp 1200w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" href="/img/2.webp" as="image" type="image/webp" imagesrcset="/img/2.webp 1200w" imagesizes="100vw" fetchpriority="high">
 
   <!-- Theme / mobile -->
   <meta name="theme-color" content="#003366">
@@ -74,6 +83,8 @@
   <meta property="og:image:alt" content="Professional security guards protecting luxury and high-tech properties in Carlsbad, California">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="ShieldWise Security - Professional Security Services">
+  <meta property="article:published_time" content="2025-01-15">
+  <meta property="article:modified_time" content="2025-01-15">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -183,6 +194,38 @@
   }
   </script>
 
+  <!-- JSON-LD: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ShieldWise Security - Carlsbad",
+    "image": "https://shieldwisesecurity.com/img/carlsbad-security-guards-og-2025.jpg",
+    "@id": "https://shieldwisesecurity.com/california/carlsbad",
+    "url": "https://shieldwisesecurity.com/california/carlsbad",
+    "telephone": "+1-714-716-7430",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2975 Roosevelt St, Suite 150",
+      "addressLocality": "Carlsbad",
+      "addressRegion": "CA",
+      "postalCode": "92008",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 33.1581,
+      "longitude": -117.3506
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  }
+  </script>
+
   <!-- CSS (site) -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -194,6 +237,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABCD123456"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function(){dataLayer.push(arguments);};
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-ABCD123456', {
@@ -206,17 +250,18 @@
 </head>
 
 
+    <body id="top" class="carlsbad-page">
     <%- include('../partials/Header') %>
 
     <!-- Hero Section -->
     <section class="carlsbad-hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('/img/2.webp');" role="banner" aria-label="Professional security guards protecting luxury properties and high-tech facilities in Carlsbad California">
         <div class="carlsbad-hero-overlay"></div>
         <div class="carlsbad-hero-content">
-            <h1 class="animate-fade-in">Carlsbad's Premier Luxury Security Solutions</h1>
+            <h2 class="animate-fade-in">Carlsbad's Premier Luxury Security Solutions</h2>
             <p class="animate-fade-in-delay">Protecting luxury resorts, high-tech facilities, and upscale communities in North County's premier coastal city</p>
             <div class="carlsbad-cta-buttons">
                 <a href="#contact-sec" class="carlsbad-cta-button animate-fade-in-delay-2" onclick="gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Hero Security Consultation'});">Get Your Free Security Assessment</a>
-                <a href="tel:7147167430" class="carlsbad-cta-button-alt animate-fade-in-delay-2" onclick="gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Hero Phone Call'});"><i class="fas fa-phone"></i> (714) 716-7430</a>
+                <a href="tel:+17147167430" class="carlsbad-cta-button-alt animate-fade-in-delay-2" onclick="gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Hero Phone Call'});"><i class="fas fa-phone"></i> (714) 716-7430</a>
             </div>
         </div>
     </section>
@@ -225,7 +270,7 @@
     <section class="anaheim-main-content">
         <div class="anaheim-content-container">
             <div class="anaheim-intro-section">
-                <div class="section-badge">Luxury Security Specialists</div>
+                <div class="section-badge">Security Specialists</div>
                 <h1>Professional Security Guard Services in Carlsbad, CA</h1>
 
                 <div class="anaheim-intro-rating">
@@ -239,12 +284,22 @@
                     <span>4.9/5 from 150+ reviews</span>
                 </div>
 
+                <!-- Breadcrumb Navigation -->
+                <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/california">California</a></li>
+                        <li class="breadcrumb-item"><a href="/california/san-diego-county">San Diego County</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Carlsbad Security</li>
+                    </ol>
+                </nav>
+
                 <div class="anaheim-highlight-box">
-                    <div class="highlight-icon"><i class="fas fa-gem"></i></div>
+                    <div class="highlight-icon"><i class="fas fa-shield-alt"></i></div>
                     <div class="highlight-content">
-                        <p><strong>ShieldWise Security</strong> is Carlsbad's leading provider of comprehensive security solutions for luxury properties and high-tech facilities. Our highly trained security professionals deliver specialized protection services for resorts, technology companies, and upscale communities throughout San Diego County.</p>
-                        <p>Carlsbad's unique position as an upscale coastal city with luxury resorts, major high-tech business parks, and exclusive residential communities presents distinctive security challenges - from protecting luxury resort guests and high-value technology assets to securing exclusive neighborhoods and business facilities. Our deep understanding of luxury and technology environments allows us to deliver tailored protection strategies that address the specific vulnerabilities of each client.</p>
-                        <p>With over 10 years serving San Diego County, we understand the evolving security landscape in Carlsbad's luxury hospitality and technology sectors. Our approach combines traditional security excellence with cutting-edge technology integration, including AI-powered surveillance systems and real-time threat intelligence platforms designed specifically for luxury and high-tech environments.</p>
+                        <p><strong>ShieldWise Security</strong> is Carlsbad's leading provider of comprehensive security solutions for high-end properties and tech facilities. Our trained security professionals deliver specialized protection services for resorts, technology companies, and upscale communities throughout San Diego County.</p>
+                        <p>Carlsbad's unique position as a coastal city with resorts, major tech business parks, and exclusive residential communities like the Village District, near Flower Fields and Legoland, presents distinctive security challenges. Our deep understanding of hospitality and technology environments allows us to deliver tailored protection strategies.</p>
+                        <p>With over 10 years serving San Diego County, we understand the evolving security landscape in Carlsbad's hospitality and technology sectors. Our approach combines traditional security excellence with cutting-edge technology integration, including AI-powered surveillance systems designed for modern business environments.</p>
                     </div>
                 </div>
 
@@ -381,7 +436,7 @@
             <h2>Protect Your Carlsbad Property</h2>
             <p>Our security experts specialize in luxury and technology environments and are ready to design a customized security solution for your Carlsbad protection needs.</p>
             <div class="anaheim-banner-buttons">
-                <a href="tel:7147167430" class="anaheim-banner-button" onclick="gtag('event', 'click', {'event_category': 'Contact', 'event_label': 'Banner Phone'});"><i class="fas fa-phone-alt"></i> (714) 716-7430</a>
+                <a href="tel:+17147167430" class="anaheim-banner-button" onclick="gtag('event', 'click', {'event_category': 'Contact', 'event_label': 'Banner Phone'});"><i class="fas fa-phone-alt"></i> (714) 716-7430</a>
                 <a href="/get-quote" class="anaheim-banner-button-alt" onclick="gtag('event', 'click', {'event_category': 'Contact', 'event_label': 'Banner Quote Request'});"><i class="fas fa-clipboard-list"></i> Request a Quote</a>
             </div>
         </div>
@@ -569,20 +624,17 @@
                 </div>
 
                 <div class="anaheim-testimonials-grid">
-                    <div class="anaheim-testimonial-item active" itemscope itemtype="https://schema.org/Review">
-                        <meta itemprop="datePublished" content="2024-12-15">
+                    <div class="anaheim-testimonial-item active">
                         <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
-                        <p itemprop="reviewBody">ShieldWise Security has provided exceptional luxury property security services for our Carlsbad resort for over four years. Their guards understand the unique security requirements of upscale coastal properties and provide professional, discreet protection for our guests and facilities.</p>
+                        <p>ShieldWise Security has provided exceptional property security services for our Carlsbad resort for over four years. Their guards understand the unique security requirements of coastal properties and provide professional, discreet protection for our guests and facilities.</p>
                         <div class="testimonial-author">
                             <div class="author-image">
-                                <img src="/img/testimonial-1.webp" alt="Jennifer Martinez - Resort General Manager" width="60" height="60">
+                                <img src="/img/testimonial-1.webp" alt="Jennifer Martinez - Resort General Manager" width="60" height="60" loading="lazy" decoding="async">
                             </div>
                             <div class="author-info">
-                                <h4 itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Jennifer Martinez</span></h4>
+                                <h4>Jennifer Martinez</h4>
                                 <p>Resort General Manager</p>
-                                <div class="author-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                                    <meta itemprop="ratingValue" content="5">
-                                    <meta itemprop="bestRating" content="5">
+                                <div class="author-stars">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -593,20 +645,17 @@
                         </div>
                     </div>
 
-                    <div class="anaheim-testimonial-item" itemscope itemtype="https://schema.org/Review">
-                        <meta itemprop="datePublished" content="2024-12-02">
+                    <div class="anaheim-testimonial-item">
                         <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
-                        <p itemprop="reviewBody">Outstanding high-tech facility security services in Carlsbad. The team's expertise in technology security protocols and their rapid emergency response capabilities make them our trusted security partner for our research and development facility.</p>
+                        <p>Outstanding high-tech facility security services in Carlsbad. The team's expertise in technology security protocols and their rapid emergency response capabilities make them our trusted security partner for our research and development facility.</p>
                         <div class="testimonial-author">
                             <div class="author-image">
-                                <img src="/img/testimonial-2.webp" alt="David Chen - Technology Company CEO" width="60" height="60">
+                                <img src="/img/testimonial-2.webp" alt="David Chen - Technology Company CEO" width="60" height="60" loading="lazy" decoding="async">
                             </div>
                             <div class="author-info">
-                                <h4 itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">David Chen</span></h4>
+                                <h4>David Chen</h4>
                                 <p>Technology Company CEO</p>
-                                <div class="author-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                                    <meta itemprop="ratingValue" content="5">
-                                    <meta itemprop="bestRating" content="5">
+                                <div class="author-stars">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -617,20 +666,17 @@
                         </div>
                     </div>
 
-                    <div class="anaheim-testimonial-item" itemscope itemtype="https://schema.org/Review">
-                        <meta itemprop="datePublished" content="2024-11-18">
+                    <div class="anaheim-testimonial-item">
                         <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
-                        <p itemprop="reviewBody">As the manager of a luxury residential community in Carlsbad, I can't recommend ShieldWise Security enough. Their guards provide consistent, reliable service and understand the unique security needs of upscale residential environments. Their detailed reporting and professional demeanor give our residents peace of mind.</p>
+                        <p>As the manager of a residential community in Carlsbad, I can't recommend ShieldWise Security enough. Their guards provide consistent, reliable service and understand the unique security needs of residential environments. Their detailed reporting and professional demeanor give our residents peace of mind.</p>
                         <div class="testimonial-author">
                             <div class="author-image">
-                                <img src="/img/testimonial-3.webp" alt="Michael Rodriguez - Community Manager" width="60" height="60">
+                                <img src="/img/testimonial-3.webp" alt="Michael Rodriguez - Community Manager" width="60" height="60" loading="lazy" decoding="async">
                             </div>
                             <div class="author-info">
-                                <h4 itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Michael Rodriguez</span></h4>
-                                <p>Community Manager, Luxury Residential</p>
-                                <div class="author-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                                    <meta itemprop="ratingValue" content="5">
-                                    <meta itemprop="bestRating" content="5">
+                                <h4>Michael Rodriguez</h4>
+                                <p>Community Manager, Residential</p>
+                                <div class="author-stars">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -715,7 +761,7 @@
                 <h2>Ready to Secure Your Carlsbad Property?</h2>
                 <p>Contact ShieldWise Security today for a free, no-obligation security assessment tailored to your luxury property or technology facility needs.</p>
                 <div class="anaheim-cta-buttons">
-                    <a href="tel:7147167430" class="anaheim-cta-call" onclick="gtag('event', 'click', {'event_category': 'Contact', 'event_label': 'Footer Phone'});"><i class="fas fa-phone-alt"></i> (714) 716-7430</a>
+                    <a href="tel:+17147167430" class="anaheim-cta-call" onclick="gtag('event', 'click', {'event_category': 'Contact', 'event_label': 'Footer Phone'});"><i class="fas fa-phone-alt"></i> (714) 716-7430</a>
                     <a href="/get-quote" class="anaheim-cta-quote" onclick="gtag('event', 'click', {'event_category': 'Contact', 'event_label': 'Footer Quote'});"><i class="fas fa-clipboard-check"></i> Request a Quote</a>
                 </div>
             </div>
@@ -731,7 +777,17 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
-    <script src="/JS/back-to-top.js"></script>
+    <script src="/JS/back-to-top.js" defer></script>
+
+    <style>
+    .breadcrumb-nav{margin:20px 0;font-size:14px}
+    .breadcrumb{background:none;padding:0;margin:0;display:flex;list-style:none}
+    .breadcrumb-item{color:#666}
+    .breadcrumb-item + .breadcrumb-item::before{content:"/";padding:0 8px;color:#999}
+    .breadcrumb-item a{color:#003366;text-decoration:none}
+    .breadcrumb-item a:hover{text-decoration:underline}
+    .breadcrumb-item.active{color:#333;font-weight:500}
+    </style>
 
     <script>
         $(document).ready(function() {
