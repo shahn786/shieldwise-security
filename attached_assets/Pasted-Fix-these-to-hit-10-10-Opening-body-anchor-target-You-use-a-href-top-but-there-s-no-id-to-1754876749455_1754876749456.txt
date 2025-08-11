@@ -1,0 +1,142 @@
+Fix these to hit 10/10
+Opening <body> + anchor target
+
+You use <a href="#top"> but there’s no id="top" and I don’t see an opening <body>.
+
+Fix: start the page with
+
+html
+Copy
+Edit
+<body id="top" class="carlsbad-page">
+(Keep the </body></html> you already have.)
+
+Single, focused H1
+
+You have two H1s: the hero (Carlsbad's Premier Luxury Security Solutions) and the intro (Professional Security Guard Services in Carlsbad, CA).
+
+Fix: keep one H1 (ideally the intro as H1), make the hero line an H2 or a styled <p>.
+
+Hreflang casing
+
+Use the standard casing en-US.
+
+html
+Copy
+Edit
+<link rel="alternate" hreflang="en-US" href="https://shieldwisesecurity.com/california/carlsbad">
+Background images & mobile performance
+
+You use background-attachment: fixed in a few places; this janks on mobile and can hurt CLS/scroll perf.
+
+Fix: disable on mobile:
+
+css
+Copy
+Edit
+@media (max-width:768px){
+  .carlsbad-hero,
+  .anaheim-banner-section,
+  .anaheim-cta-section { background-attachment: scroll !important; }
+}
+Image attributes for CLS & bandwidth
+
+Add width, height, and loading="lazy" to all non-hero images (icons can be aria-hidden="true").
+
+html
+Copy
+Edit
+<img src="/img/testimonial-1.webp" alt="Jennifer Martinez - Resort General Manager" width="60" height="60" loading="lazy" decoding="async">
+Keep hero as-is (LCP) and ensure OG/Twitter images are ≤200 KB (WebP/AVIF if possible).
+
+Analytics hygiene
+
+Your GA loads async—good. Add a tiny guard so gtag calls don’t error if GA is blocked:
+
+html
+Copy
+Edit
+<script>window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){dataLayer.push(arguments)};</script>
+jQuery/Bootstrap payload
+
+You’re loading jQuery slim, Popper, and Bootstrap from CDNs. For a speed bump:
+
+Remove jQuery if you can (your code is mostly vanilla already).
+
+If you keep it, load from one CDN and add integrity + crossorigin.
+
+Defer your own script too: <script src="/JS/back-to-top.js" defer></script>
+
+Testimonials markup (avoid invalid review rich results)
+
+Google won’t show review snippets for self-serving LocalBusiness/Organization reviews.
+
+You can keep testimonials for users, but remove the Review microdata (itemscope itemtype="https://schema.org/Review") to avoid mixed signals. Keep it as plain HTML or attach reviews to a third-party source with links.
+
+FAQ structured data: match Q&A exactly
+
+Your JSON-LD matches the on-page FAQ—great. Keep it that way and avoid pricing guarantees in the schema (you did).
+
+Telephone links
+
+Use E.164 format for tel links:
+
+html
+Copy
+Edit
+<a href="tel:+17147167430"> (714) 716-7430 </a>
+Breadcrumb parity
+
+You provide BreadcrumbList JSON-LD—nice. Also render a small HTML breadcrumb nav for users (tiny UX + SEO win).
+
+Minor polish
+
+Add rel="noopener" on any target="_blank" links (if you have them).
+
+Consider height:100dvh for hero to better fit mobile toolbars:
+
+css
+Copy
+Edit
+.carlsbad-hero { height: 100dvh; }
+Quick patch snippets
+Body + top anchor
+
+html
+Copy
+Edit
+<body id="top" class="carlsbad-page">
+H1 hierarchy
+
+html
+Copy
+Edit
+<!-- Hero -->
+<h2 class="animate-fade-in">Carlsbad's Premier Luxury Security Solutions</h2>
+
+<!-- Main intro -->
+<h1>Professional Security Guard Services in Carlsbad, CA</h1>
+Hreflang + tel
+
+html
+Copy
+Edit
+<link rel="alternate" hreflang="en-US" href="https://shieldwisesecurity.com/california/carlsbad">
+<a href="tel:+17147167430">(714) 716-7430</a>
+Mobile background fix
+
+css
+Copy
+Edit
+@media (max-width:768px){
+  .carlsbad-hero,
+  .anaheim-banner-section,
+  .anaheim-cta-section { background-attachment: scroll !important; }
+}
+Lazy images
+
+html
+Copy
+Edit
+<img src="/img/testimonial-2.webp" alt="David Chen - Technology Company CEO"
+     width="60" height="60" loading="lazy" decoding="async"
