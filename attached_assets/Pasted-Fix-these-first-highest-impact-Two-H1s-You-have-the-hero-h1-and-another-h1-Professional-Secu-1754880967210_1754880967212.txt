@@ -1,0 +1,170 @@
+Fix these first (highest impact)
+Two H1s
+You have the hero <h1> and another <h1> (“Professional Security Guard Services…”). Keep one H1; make the second an <h2>.
+
+Obsolete/ignored meta tags
+Remove: keywords, both revisit-after (duplicate too), rating, expires, generator, distribution, geo.*, ICBM, DC.title, duplicate language. They add noise.
+
+Security headers in HTML
+HSTS, X-Frame-Options, Permissions-Policy, etc. do nothing in <meta http-equiv>. Set them on the server response, not in markup.
+
+Hero LCP is a CSS background
+Browsers can’t prioritize it well. Use a real <img>/<picture> in the hero with fetchpriority="high" + width/height to avoid CLS. Keep your gradient overlay with a pseudo-element.
+
+html
+Copy
+Edit
+<picture class="hero-media">
+  <source srcset="/img/2-1600.webp 1600w, /img/2-1200.webp 1200w" type="image/webp" sizes="100vw">
+  <img src="/img/2.webp" alt="Oceanside beachfront at sunset" width="1600" height="900" fetchpriority="high" decoding="async">
+</picture>
+JSON-LD correctness
+
+aggregateRating + review: only include if those reviews are rendered on-page and are yours. Avoid listing Google/Yelp as publisher.
+
+"elevation" is not valid for GeoCoordinates → remove.
+
+priceSpecification.price must be a number, not "35-65". Use separate Offers or a minimum price.
+
+Add separate Organization and WebSite graphs (keep your LocalBusiness/SecurityService node).
+
+Preload / fonts mismatch
+You preload Inter, but body uses a system stack. Either add Inter to font-family or drop the preload. Also, font-display: swap belongs in @font-face, not on body (you can ignore if using Google Fonts’ display=swap param—which you have ✅).
+
+OG meta close tag error
+<meta> is a void element. Change:
+
+html
+Copy
+Edit
+<meta property="og:description" content="..."></meta>
+to
+
+html
+Copy
+Edit
+<meta property="og:description" content="...">
+Performance & UX tweaks
+Background parallax / background-attachment: fixed hurts paint, especially on mobile. You already turn it off ≤768px—consider dropping it entirely or using a light transform-based effect.
+
+jQuery + Bootstrap + Font Awesome are heavy. If possible, replace with tiny, self-hosted CSS and SVG icons. If keeping them, self-host and preload critical CSS.
+
+Add width/height and loading="lazy" to all non-hero images to prevent CLS.
+
+modulepreload only if /js/critical.js and /js/lazy-loading.js are ES modules. Otherwise use:
+
+html
+Copy
+Edit
+<link rel="preload" href="/js/critical.js" as="script">
+IntersectionObserver selector bug: you observe .anaheim-service-item, but your cards use .anaheim-service-item-enhanced. Update the selector so animations actually fire.
+
+Local & link hygiene
+Canonical ✅. Add hreflang self + x-default if you’ll have variants:
+
+html
+Copy
+Edit
+<link rel="alternate" hreflang="en-US" href="https://shieldwisesecurity.com/california/oceanside">
+<link rel="alternate" hreflang="x-default" href="https://shieldwisesecurity.com/california/oceanside">
+Normalize phone links: use tel:+17147167430 everywhere (you mix tel:714... and +1714...).
+
+Ensure OG/Twitter images actually exist at those URLs and are 1200×630 with safe margins.
+
+Safer Schema (minimal patch)
+Keep your strong local signals; just fix risky bits.
+
+json
+Copy
+Edit
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://shieldwisesecurity.com/#org",
+      "name": "ShieldWise Security",
+      "url": "https://shieldwisesecurity.com",
+      "logo": "https://shieldwisesecurity.com/img/shieldwise-logo-2025.png",
+      "sameAs": [
+        "https://www.facebook.com/ShieldWiseSecurity",
+        "https://www.linkedin.com/company/shieldwise-security",
+        "https://www.instagram.com/shieldwise_security"
+      ]
+    },
+    {
+      "@type": ["LocalBusiness","SecurityService"],
+      "@id": "https://shieldwisesecurity.com/california/oceanside#business",
+      "name": "ShieldWise Security – Oceanside",
+      "url": "https://shieldwisesecurity.com/california/oceanside",
+      "image": ["https://shieldwisesecurity.com/img/oceanside-security-guards-hero.webp"],
+      "telephone": "+17147167430",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1956 Mission Ave, Suite 100",
+        "addressLocality": "Oceanside",
+        "addressRegion": "CA",
+        "postalCode": "92058",
+        "addressCountry": "US"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 33.1959, "longitude": -117.3795 },
+      "priceRange": "$$",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Oceanside Security Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Beachfront Business Security",
+            "priceCurrency": "USD",
+            "price": 35,
+            "availability": "https://schema.org/InStock",
+            "itemOffered": { "@type": "Service", "name": "Beachfront Business Security" }
+          }
+        ]
+      }
+      /* Keep reviews ONLY if identical content is visibly on-page and first-party */
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://shieldwisesecurity.com/#website",
+      "url": "https://shieldwisesecurity.com",
+      "name": "ShieldWise Security",
+      "publisher": { "@id": "https://shieldwisesecurity.com/#org" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://shieldwisesecurity.com/search?q={query}",
+        "query-input": "required name=query"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://shieldwisesecurity.com/"},
+        {"@type":"ListItem","position":2,"name":"California","item":"https://shieldwisesecurity.com/california"},
+        {"@type":"ListItem","position":3,"name":"San Diego County","item":"https://shieldwisesecurity.com/california/san-diego-county"},
+        {"@type":"ListItem","position":4,"name":"Oceanside","item":"https://shieldwisesecurity.com/california/oceanside"}
+      ]
+    }
+  ]
+}
+Tiny checklist to reach 10/10
+ One <h1> only.
+
+ Remove obsolete meta tags + fix og:description closing.
+
+ Move security headers to server.
+
+ Convert hero background to <picture> with fetchpriority="high".
+
+ Fix JSON-LD: numeric prices, remove elevation, avoid third-party publisher on reviews, add Organization + WebSite.
+
+ Consistent tel:+17147167430.
+
+ Add hreflang self + x-default (if applicable).
+
+ Add explicit width/height + loading="lazy" on all non-hero images.
+
+ Verify selectors for IO animations (.anaheim-service-item-enhanced).
+
+ Consider trimming jQuery/Bootstrap/FA or self-hosting for speed.
