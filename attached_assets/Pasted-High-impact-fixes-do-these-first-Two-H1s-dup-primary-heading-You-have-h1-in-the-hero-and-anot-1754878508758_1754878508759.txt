@@ -1,0 +1,156 @@
+High-impact fixes (do these first)
+Two H1s (dup primary heading)
+
+You have <h1> in the hero and another <h1> in the intro. Keep one.
+• Change the hero to <h2> (or keep hero as H1 and make the intro a styled <h2>).
+
+Remove noisy/ignored meta tags
+
+Delete: meta keywords, revisit-after, rating, expires, generator, distribution, language (duplicated), audience, category, coverage, identifier-URL. They don’t help and add bloat.
+
+Legacy geo metas
+
+Remove: geo.region, geo.placename, geo.position, ICBM, DC.title. Use schema + visible NAP instead.
+
+Open Graph / Twitter copy
+
+Drop emojis/all-caps and hype symbols in OG/Twitter titles/descriptions (hurts professionalism/E-E-A-T). Keep clean, human language.
+
+Server headers ≠ meta
+
+X-Frame-Options, HSTS, Permissions-Policy, Referrer-Policy, X-Content-Type-Options, X-XSS-Protection must be sent by the server, not via <meta http-equiv>. Remove from HTML and set in your server/proxy.
+
+Schema: pick a primary type and trim
+
+Using ["@type":["LocalBusiness","SecurityService","ProfessionalService"]] is noisy. Make SecurityService the primary (or LocalBusiness), not all three.
+
+Keep aggregateRating realistic (worstRating: "1" not "4").
+
+Avoid unverifiable “awards” unless true (risk in rich results).
+
+If you include reviews in JSON-LD, ensure the same text appears on the page (yours does—good).
+
+Add an @id with a fragment that matches a real DOM anchor if you reference it later (e.g., "#service").
+
+Breadcrumb/FAQ anchors
+
+Your Breadcrumb and FAQ JSON-LD don’t have matching DOM IDs. Add:
+
+html
+Copy
+Edit
+<nav id="breadcrumbs" aria-label="Breadcrumb">…</nav>
+<section id="faq">…</section>
+LCP: background image hero
+
+Background images don’t get LCP priority reliably. Prefer a real <img> hero (with fetchpriority="high" and width/height) or keep CSS background but add a prominent <img> above the fold. Also avoid background-attachment: fixed on mobile—it harms scrolling and paint time.
+
+Font loading
+
+You preconnect + preload the Google Fonts stylesheet—good—but font-display: swap in body is ineffective (belongs in @font-face). It’s already in the Google CSS via &display=swap, so remove font-display:swap from body.
+
+Keep only the preconnects you use (you’re using Google Fonts, so keep those; don’t add extra).
+
+Telephone link consistency
+
+Use E.164 everywhere: tel:+17147167430 (some places miss the +1).
+
+Price ranges
+
+In visible HTML your “Starting at $25–50/hour” is fine, but in schema use numeric PriceSpecification (you did) and avoid broad ranges for primary entity (priceRange:"$$" is fine).
+
+Nice-to-have improvements
+Hreflang: add en-US and x-default alternates for this URL like your other pages.
+
+SRI: add integrity and crossorigin="anonymous" to CDN CSS/JS.
+
+Inline NAP: show address/phone in the footer (not just schema).
+
+Internal links in paragraphs: add 1–2 contextual links within body text to key service pages (not only cards/grids).
+
+Vanilla JS: replace jQuery where easy (smooth scroll/FAQ) to reduce JS bytes.
+
+Copy-paste patches
+A. Clean up metas + OG
+
+html
+Copy
+Edit
+<!-- Remove these (noise/ignored) -->
+<meta name="keywords">
+<meta name="revisit-after">
+<meta name="rating">
+<meta name="expires">
+<meta name="generator">
+<meta name="distribution">
+<meta name="language"> <!-- you have it twice -->
+<meta name="audience">
+<meta name="category">
+<meta name="coverage">
+<meta name="identifier-URL">
+<meta name="geo.region">
+<meta name="geo.placename">
+<meta name="geo.position">
+<meta name="ICBM">
+<meta name="DC.title">
+
+<!-- Keep OG/Twitter clean (example) -->
+<meta property="og:title" content="Oceanside Security Guards | Beachfront Business Protection | ShieldWise Security">
+<meta property="og:description" content="Professional security guard services for Oceanside’s beachfront businesses, marinas, and resorts. BSIS-licensed, 24/7, rapid response. Free quote: (714) 716-7430.">
+<meta name="twitter:title" content="Oceanside Security Guards | Beachfront Business Protection">
+<meta name="twitter:description" content="BSIS-licensed guards for Oceanside beachfront, marina & resort security. 24/7 with rapid response. Free quote: (714) 716-7430.">
+B. Fix anchors + single H1
+
+html
+Copy
+Edit
+<!-- Hero heading as H2 (keep only one H1 on page) -->
+<h2 class="animate-fade-in">Oceanside's Premier Coastal Security Solutions</h2>
+
+<!-- Add IDs for schema parity -->
+<nav id="breadcrumbs" aria-label="Breadcrumb">…</nav>
+<section class="anaheim-faq-section" id="faq">…</section>
+C. Schema (make SecurityService primary, realistic ratings)
+
+html
+Copy
+Edit
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SecurityService",
+  "@id":"https://shieldwisesecurity.com/california/oceanside#service",
+  "name":"ShieldWise Security – Oceanside",
+  "url":"https://shieldwisesecurity.com/california/oceanside",
+  "image":"https://shieldwisesecurity.com/img/oceanside-security-guards-og-2025.jpg",
+  "telephone":"+1-714-716-7430",
+  "priceRange":"$$",
+  "address":{"@type":"PostalAddress","streetAddress":"1956 Mission Ave, Suite 100","addressLocality":"Oceanside","addressRegion":"CA","postalCode":"92058","addressCountry":"US"},
+  "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"}],
+  "areaServed":{"@type":"City","name":"Oceanside"},
+  "sameAs":["https://www.facebook.com/ShieldWiseSecurity","https://www.linkedin.com/company/shieldwise-security","https://www.instagram.com/shieldwise_security"],
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"150","bestRating":"5","worstRating":"1"}
+}
+</script>
+D. Hero LCP tweak (optional but strong for CWV)
+
+html
+Copy
+Edit
+<!-- Put this near top of <main> -->
+<img
+  src="/img/2.webp"
+  alt="Oceanside beachfront businesses and marina area"
+  width="1920" height="1080"
+  fetchpriority="high"
+  style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-1"
+/>
+(Then remove background-attachment: fixed on .oceanside-hero for mobile.)
+
+E. Tel links consistency
+
+html
+Copy
+Edit
+<a href="tel:+17147167430"> (714) 716-7430</a>
+If you want, I can spit out a cleaned <head> block for copy-paste with all fixes applied.
