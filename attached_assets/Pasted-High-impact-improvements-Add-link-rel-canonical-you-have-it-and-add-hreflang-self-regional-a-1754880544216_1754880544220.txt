@@ -1,0 +1,131 @@
+High-impact improvements
+Add link rel="canonical" (you have it ✅) and add hreflang self + regional alternates if you’ll have variants:
+
+html
+Copy
+Edit
+<link rel="alternate" hreflang="en-US" href="https://shieldwisesecurity.com/california/oceanside">
+<link rel="alternate" hreflang="x-default" href="https://shieldwisesecurity.com/california/oceanside">
+Add a WebSite graph with SearchAction, and a top-level Organization graph (logo, sameAs).
+
+Mark all inline/inline-block images with loading="lazy" and decoding="async"; add width & height to prevent CLS.
+
+Replace jQuery + Bootstrap 4.5 + FA 6 (heavy) with light, tree-shaken icons + minimal CSS. If you keep them, self-host and preload your critical CSS instead of three external styles.
+
+Use requestAnimationFrame for scroll/parallax and add {passive:true} for scroll listeners.
+
+Ensure every major section has an internal link anchor; you have good internal links already — keep it consistent.
+
+Safer/cleaner JSON-LD (sketch)
+Replace just the risky parts; keep your good local specifics.
+
+json
+Copy
+Edit
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://shieldwisesecurity.com/#org",
+      "name": "ShieldWise Security",
+      "url": "https://shieldwisesecurity.com",
+      "logo": "https://shieldwisesecurity.com/img/shieldwise-logo-2025.png",
+      "sameAs": ["https://www.facebook.com/ShieldWiseSecurity", "https://www.linkedin.com/company/shieldwise-security", "https://www.instagram.com/shieldwise_security"]
+    },
+    {
+      "@type": ["LocalBusiness","SecurityService"],
+      "@id": "https://shieldwisesecurity.com/california/oceanside#business",
+      "name": "ShieldWise Security – Oceanside",
+      "url": "https://shieldwisesecurity.com/california/oceanside",
+      "image": ["https://shieldwisesecurity.com/img/oceanside-security-guards-hero.webp"],
+      "telephone": "+17147167430",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1956 Mission Ave, Suite 100",
+        "addressLocality": "Oceanside",
+        "addressRegion": "CA",
+        "postalCode": "92058",
+        "addressCountry": "US"
+      },
+      "priceRange": "$$",
+      "geo": { "@type": "GeoCoordinates", "latitude": 33.1959, "longitude": -117.3795 },
+      "areaServed": ["Oceanside","Carlsbad","Encinitas","Vista"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Oceanside Security Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Beachfront Business Security",
+            "priceCurrency": "USD",
+            "price": 35,
+            "itemOffered": { "@type": "Service", "name": "Beachfront Business Security" },
+            "availability": "https://schema.org/InStock"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://shieldwisesecurity.com/#website",
+      "url": "https://shieldwisesecurity.com",
+      "name": "ShieldWise Security",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://shieldwisesecurity.com/search?q={query}",
+        "query-input": "required name=query"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://shieldwisesecurity.com/"},
+        {"@type":"ListItem","position":2,"name":"California","item":"https://shieldwisesecurity.com/california"},
+        {"@type":"ListItem","position":3,"name":"San Diego County","item":"https://shieldwisesecurity.com/california/san-diego-county"},
+        {"@type":"ListItem","position":4,"name":"Oceanside","item":"https://shieldwisesecurity.com/california/oceanside"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://shieldwisesecurity.com/california/oceanside#faq",
+      "mainEntity": [/* keep your Q&As (they’re rendered on page) */]
+    }
+  ]
+}
+Quick head cleanup (drop-in)
+Replace noisy/ignored tags and fix hero LCP:
+
+html
+Copy
+Edit
+<!-- Keep: charset, viewport, title, meta description, robots, canonical, OG, Twitter -->
+<link rel="preload" as="image" href="/img/2.webp" imagesrcset="/img/2-800.webp 800w, /img/2-1600.webp 1600w" imagesizes="100vw" fetchpriority="high">
+<!-- Use an actual img in hero -->
+<picture>
+  <source srcset="/img/2-1600.webp 1600w, /img/2-800.webp 800w" type="image/webp" sizes="100vw">
+  <img src="/img/2.webp" alt="Oceanside beachfront security" width="1600" height="900" fetchpriority="high" decoding="async">
+</picture>
+Content & UX notes
+Your copy is strong and “Oceanside” intent is clear. Consider a short NAP block (Name/Address/Phone) above the footer for local relevance.
+
+Add FAQ jump links at top (“Rates • Response Time • Services • Licensing”) for UX and sitelinks eligibility.
+
+Ensure all icon <i> tags have aria-hidden="true" and buttons/links have discernible text.
+
+Tiny fixes checklist
+ Remove stray = before <!DOCTYPE html>.
+
+ One <h1> only (make hero h1, change the second to h2).
+
+ Remove obsolete meta tags + invalid http-equiv security headers.
+
+ Convert hero background to real <img>/<picture> LCP with fetchpriority="high".
+
+ Fix JSON-LD: numeric price, remove elevation, avoid third-party “publisher” in reviews, add WebSite/Organization.
+
+ Add hreflang self + x-default.
+
+ Add width/height + loading="lazy" to all content images.
+
+ Consider trimming Bootstrap/jQuery/FA or self-host + defer
