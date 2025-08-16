@@ -1,0 +1,242 @@
+Prompt: Build & Optimize @views/cities/ventura.ejs (2025 SEO 10/10 + UX Upgrades)
+Goal:
+Create a production-ready Ventura city page at views/cities/ventura.ejs that matches our city-page system, achieves 2025 best-practice SEO (10/10 target), and adds conversion-driving features. Use EJS, Tailwind (if applicable in project), and our existing component partials. Keep page blazing fast, accessible, and easy to maintain.
+
+Inputs / Context
+Company: ShieldWise Security (BSIS-licensed, 24/7, ~2-hour response)
+
+City: Ventura, CA (coastal city, Ventura Harbor Village, Ventura Pier/Promenade, Downtown Main St., Channel Islands access; mixed residential, retail, hospitality, marina, construction, HOAs)
+
+File path: views/cities/ventura.ejs
+
+Route slug: /california/ventura
+
+Canonical: https://shieldwisesecurity.com/california/ventura
+
+Phone: (714) 716-7430
+
+Primary CTA: Get a Free Quote + Call Now (tel link)
+
+Deliverables
+New EJS page using our shared city layout (header/footer/partials).
+
+Fully filled meta + structured data, internal links, and content tailored to Ventura.
+
+UX features listed below implemented and working.
+
+Performance & a11y pass (see acceptance at bottom).
+
+Page Structure (EJS)
+<head>:
+
+<title>: Ventura Security Guards | Coastal & Marina Protection | BSIS Licensed | ShieldWise
+
+<meta name="description"> (145–165 chars; mention Ventura Harbor, hotels, retail, HOAs, 24/7)
+
+<link rel="canonical" href="https://shieldwisesecurity.com/california/ventura">
+
+robots: index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1
+
+Open Graph: og:title, og:description, og:type=website, og:url, og:image (1200×630)
+
+Twitter Card: summary_large_image
+
+Hreflang: en-US self-ref
+
+Preconnect only to domains we actually use (e.g., fonts, analytics). No unused hints.
+
+Preload the hero image (as image/avif + fallback image/webp), and the critical font if self-hosted (swap).
+
+Inline critical CSS if our stack supports it; otherwise keep CSS minimal.
+
+Hero / Above the Fold
+
+H1: Ventura Security Guards — Coastal, Marina & Community Protection
+
+Subcopy: 1–2 lines highlighting 24/7 coverage, BSIS-licensed, ~2-hour response.
+
+Primary CTA buttons: Get a Free Quote (scrolls to form) and Call (714) 716-7430 (tel link).
+
+Trust row: BSIS-licensed badge, “Locally managed”, “Rapid Response”.
+
+Lighthouse-friendly background image with proper alt, lazy for non-critical assets.
+
+Services Grid (City-relevant)
+
+Cards for: Armed/Unarmed Guards, Mobile Patrol, Fire Watch, Construction Site, Retail & Malls, Hotel & Hospitality, Marina & Waterfront, HOA & Residential, Event Security.
+
+Each card: short benefit bullets + Learn More anchor to in-page sections.
+
+Ventura Spotlight Section
+
+Short paragraph on risk profile: marina areas, waterfront night activity, hotel corridors, downtown events, parking structures, construction near coastal zones.
+
+Compliance & coordination with property management/HOAs and marina regulations.
+
+Differentiators
+
+24/7 dispatch, GPS-tracked patrols, incident reporting with photo proof, body-cam compliance on request, supervisor drop-ins.
+
+SLAs: response targets, escalation protocol highlights.
+
+Feature Section: Live Patrol Log Sample
+
+Static sample (no PII) screenshot or stylized card explaining what clients receive: timestamps, geo-pins, incident tags.
+
+Quote Form (Lead Form)
+
+Fields: Name, Company, Phone, Email, Property Type (select), Address/ZIP, Coverage Hours (select), Start Date, Notes.
+
+hCaptcha/reCAPTCHA, honeypot, server-side validation.
+
+Success message + thank-you event for analytics.
+
+Neighborhoods / Service Areas Internal Links
+
+Link out to nearby city pages (Oxnard, Camarillo, Santa Barbara, Thousand Oaks) and Ventura neighborhoods/districts (Downtown, Midtown, Pierpont, Harbor Village). Use descriptive anchor text.
+
+FAQ (Accordion)
+
+6–8 Qs tailored to Ventura: marina patrol specifics, hotel night audits, HOA gatehouse coverage, fire watch timeframes, construction tool theft prevention, insurance/COI.
+
+Markup with schema (FAQPage).
+
+Review & Badges
+
+3–5 short client quotes (no personal details) + average rating badge.
+
+Link to Reviews page. Include “No fake reviews” policy note.
+
+Final CTA Banner
+
+“Protect your Ventura property today — BSIS-licensed guards on standby.”
+
+Buttons: Get Quote / Call Now.
+
+Footer Enhancements
+
+NAP block consistent with GMB/GBP.
+
+Business hours and emergency line note.
+
+SEO (2025) Checklist — Implement
+Unique, city-specific title & meta description (no duplicates across site).
+
+Canonical set to Ventura slug.
+
+OpenGraph/Twitter complete with valid image.
+
+Schema (JSON-LD) — include all below in one or multiple scripts:
+
+LocalBusiness (type: SecurityService) with NAP, areaServed “Ventura, California”, serviceArea geo-shape if available, openingHoursSpecification, telephone, sameAs (socials), hasOfferCatalog (list major services).
+
+BreadcrumbList (Home → California → Ventura).
+
+Service entities for key offerings (Armed/Unarmed, Mobile Patrol, Fire Watch, Construction, Marina).
+
+FAQPage for the FAQ accordions.
+
+Optional Review/AggregateRating if policy-compliant.
+
+Internal links to parent (California), sibling city pages, and main Services pages.
+
+Image SEO: descriptive filenames, alt, width/height, AVIF/WebP with JPG fallback, proper loading (lazy except hero), fetchpriority=high for hero.
+
+Content: 900–1,400 words total, scannable headings (H2/H3), bullet points, city terms naturally (no stuffing).
+
+Robots: allow indexing; no duplicate meta.
+
+Sitemaps: ensure Ventura slug is auto-included by our generator (if applicable).
+
+New UX/Conversion Features — Add
+Sticky bottom bar on mobile: Call | Get Quote.
+
+Floating “Get Quote” button (non-intrusive, respects CLS).
+
+Trust strip (BSIS, Insured, 24/7 Dispatch, Rapid Response).
+
+Scroll-to-section deep links from Services grid.
+
+Back-to-Top button (reduced motion for a11y).
+
+Lightweight review carousel (no jQuery).
+
+Incident report sample modal (explains deliverables).
+
+Analytics & Events: track CTA clicks, form start/complete, phone clicks.
+
+Schema-driven FAQ rendered from one source of truth to avoid drift.
+
+Accessibility: focus states, ARIA for accordions, color-contrast AA+, skip link.
+
+Performance Requirements
+Core Web Vitals on mobile: LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1.
+
+Total JS on this page ≤ 90KB gzip (aim minimal). Tree-shake components.
+
+Use defer for scripts, no render-blocking except critical CSS.
+
+Serve images as AVIF/WebP with responsive srcset.
+
+No unused CSS/JS. Remove third-party bloat.
+
+Example JSON-LD Skeleton (fill real data)
+html
+Copy
+Edit
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SecurityService",
+  "name":"ShieldWise Security",
+  "url":"https://shieldwisesecurity.com/california/ventura",
+  "telephone":"+1-714-716-7430",
+  "areaServed": {"@type":"City","name":"Ventura","addressRegion":"CA","addressCountry":"US"},
+  "address":{"@type":"PostalAddress","addressLocality":"Ventura","addressRegion":"CA","addressCountry":"US"},
+  "serviceArea":{"@type":"AdministrativeArea","name":"Ventura County"},
+  "hasOfferCatalog":{
+    "@type":"OfferCatalog",
+    "name":"Security Services",
+    "itemListElement":[
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Armed & Unarmed Guards"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Mobile Patrol"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Fire Watch"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Construction Site Security"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Marina & Waterfront Security"}}
+    ]
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://shieldwisesecurity.com/"},
+    {"@type":"ListItem","position":2,"name":"California","item":"https://shieldwisesecurity.com/california"},
+    {"@type":"ListItem","position":3,"name":"Ventura","item":"https://shieldwisesecurity.com/california/ventura"}
+  ]
+}
+</script>
+Copy Blocks to Generate (short, punchy)
+Hero subline (≤ 18 words): “BSIS-licensed guards for Ventura’s marinas, hotels, HOAs & jobsites. 24/7 coverage. ~2-hour response.”
+
+Services card blurbs: 18–26 words each; include 1 benefit + 1 proof point.
+
+Ventura spotlight paragraph: 80–120 words on local risk profile & our approach.
+
+FAQ answers: 60–90 words each, practical and policy-aligned.
+
+Final CTA: 1 line, action-oriented.
+
+Acceptance Criteria
+SEO: Title/description unique; schema validates in Rich Results; no Lighthouse SEO errors; correct canonical; OG/Twitter preview ok.
+
+Performance: Lighthouse Performance ≥ 90 mobile; meets CWV thresholds listed above.
+
+A11y: Lighthouse Accessibility ≥ 95; keyboard-navigable accordions; alt text present.
+
+Content: 900–1,400 words, Ventura-specific, no duplication; internal links to at least 4 relevant pages.
+
+Conversion: Working Quote form with validation; tel link; sticky mobile bar; events tracked.
