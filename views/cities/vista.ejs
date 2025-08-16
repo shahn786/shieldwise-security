@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="https://schema.org/SecurityService">
 <head>
@@ -248,22 +249,13 @@
           "sameAs": "https://en.wikipedia.org/wiki/Escondido,_California"
         }
       ],
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-          "opens": "00:00",
-          "closes": "23:59",
-          "description": "24/7 Emergency Response Available"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-          "opens": "08:00",
-          "closes": "18:00",
-          "description": "Business Office Hours"
-        }
-      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "00:00",
+        "closes": "23:59",
+        "description": "24/7 Emergency Response Available"
+      },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
@@ -571,7 +563,7 @@
             <div class="anaheim-intro-section">
                 <div class="section-badge">Growth-Focused Security</div>
                 <h2>Professional Security Guard Services in Vista, CA</h2>
-
+                
                 <div class="anaheim-intro-rating">
                     <div class="stars">
                         <i class="fas fa-star"></i>
@@ -581,14 +573,6 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <span>4.9/5 from 150+ reviews</span>
-                </div>
-
-                <div class="content-freshness" style="margin: 15px 0; padding: 10px; background: #f8f9fa; border-left: 4px solid #003366; border-radius: 5px;">
-                    <p style="margin: 0; font-size: 0.9rem; color: #666;">
-                        <i class="fas fa-clock" style="color: #003366; margin-right: 5px;"></i>
-                        <strong>Last Updated:</strong> January 2025 | 
-                        <strong>Content Verified:</strong> <span id="last-updated">January 20, 2025</span>
-                    </p>
                 </div>
 
                 <div class="anaheim-highlight-box">
@@ -617,25 +601,6 @@
                     <div class="trust-badge">
                         <i class="fas fa-award"></i>
                         <span>Top Rated Security</span>
-                    </div>
-                </div>
-
-                <!-- Social Sharing Buttons -->
-                <div class="social-sharing" style="margin: 20px 0; padding: 15px; background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; text-align: center;">
-                    <h4 style="margin-bottom: 15px; color: #003366; font-size: 1.1rem;">Share Our Vista Security Services</h4>
-                    <div class="share-buttons" style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://shieldwisesecurity.com/california/vista" target="_blank" class="share-btn facebook" style="display: inline-flex; align-items: center; padding: 8px 15px; background: #1877f2; color: white; text-decoration: none; border-radius: 5px; font-size: 0.9rem;">
-                            <i class="fab fa-facebook-f" style="margin-right: 5px;"></i> Share
-                        </a>
-                        <a href="https://twitter.com/intent/tweet?url=https://shieldwisesecurity.com/california/vista&text=Professional Vista Security Guards - Business Park Protection by ShieldWise Security" target="_blank" class="share-btn twitter" style="display: inline-flex; align-items: center; padding: 8px 15px; background: #1da1f2; color: white; text-decoration: none; border-radius: 5px; font-size: 0.9rem;">
-                            <i class="fab fa-twitter" style="margin-right: 5px;"></i> Tweet
-                        </a>
-                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://shieldwisesecurity.com/california/vista" target="_blank" class="share-btn linkedin" style="display: inline-flex; align-items: center; padding: 8px 15px; background: #0077b5; color: white; text-decoration: none; border-radius: 5px; font-size: 0.9rem;">
-                            <i class="fab fa-linkedin-in" style="margin-right: 5px;"></i> Share
-                        </a>
-                        <a href="mailto:?subject=Vista Security Services&body=Check out ShieldWise Security's professional security services in Vista: https://shieldwisesecurity.com/california/vista" class="share-btn email" style="display: inline-flex; align-items: center; padding: 8px 15px; background: #666; color: white; text-decoration: none; border-radius: 5px; font-size: 0.9rem;">
-                            <i class="fas fa-envelope" style="margin-right: 5px;"></i> Email
-                        </a>
                     </div>
                 </div>
 
@@ -685,19 +650,19 @@
                     <div class="anaheim-feature-item">
                         <i class="fas fa-briefcase"></i>
                         <h4>Business Park Security</h4>
-                        <p>Our security teams have specialized training in <a href="/services/commercial-security" style="color: #d32f2f; text-decoration: none;">corporate security protocols</a>, business environment protection, and professional office building security unique to business environments. Learn more about our <a href="/services/commercial-security" style="color: #d32f2f; text-decoration: none;">commercial security services</a>.</p>
+                        <p>Our security teams have specialized training in corporate security protocols, business environment protection, and professional office building security unique to business environments.</p>
                     </div>
 
                     <div class="anaheim-feature-item">
                         <i class="fas fa-home"></i>
                         <h4>Family Community Security</h4>
-                        <p>Comprehensive security solutions for family-oriented residential communities with guards trained in neighborhood protection and family safety procedures. Explore our <a href="/services/apartment-security" style="color: #d32f2f; text-decoration: none;">residential security options</a>.</p>
+                        <p>Comprehensive security solutions for family-oriented residential communities with guards trained in neighborhood protection and family safety procedures.</p>
                     </div>
 
                     <div class="anaheim-feature-item">
                         <i class="fas fa-shield-alt"></i>
                         <h4>Corporate Security</h4>
-                        <p>Specialized security for corporate offices and business facilities with guards trained in <a href="/services/executive-protection" style="color: #d32f2f; text-decoration: none;">corporate protection and executive security</a> throughout Vista. See our <a href="/services/executive-protection" style="color: #d32f2f; text-decoration: none;">executive protection services</a>.</p>
+                        <p>Specialized security for corporate offices and business facilities with guards trained in corporate protection and executive security throughout Vista.</p>
                     </div>
 
                     <div class="anaheim-feature-item">
@@ -739,104 +704,14 @@
                 </div>
             </section>
 
-            <!-- Vista Security Industry Data -->
-            <section class="anaheim-security-data" style="background: #f8f9fa; padding: 30px; border-radius: 10px; margin: 30px 0;">
-                <h3 style="color: #003366; margin-bottom: 25px; text-align: center;">Vista Security Industry Data & Statistics</h3>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
-                    <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #d32f2f;">
-                        <h4 style="color: #003366; margin-bottom: 15px;">Business Park Security Statistics</h4>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 10px;"><strong>78%</strong> reduction in security incidents at Vista business parks with professional security</li>
-                            <li style="margin-bottom: 10px;"><strong>$2.3M</strong> average value of assets protected per Vista business facility</li>
-                            <li style="margin-bottom: 10px;"><strong>15%</strong> increase in Vista business park development (2023-2024)</li>
-                            <li style="margin-bottom: 10px;"><strong>2-hour</strong> average emergency response time improvement with private security</li>
-                        </ul>
-                    </div>
-
-                    <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #003366;">
-                        <h4 style="color: #003366; margin-bottom: 15px;">Corporate Security Trends in Vista</h4>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 10px;"><strong>35%</strong> of Vista corporations increased security budgets in 2024</li>
-                            <li style="margin-bottom: 10px;"><strong>89%</strong> of businesses prefer locally-based security teams</li>
-                            <li style="margin-bottom: 10px;"><strong>$45-75/hour</strong> average cost for professional corporate security in Vista</li>
-                            <li style="margin-bottom: 10px;"><strong>24/7</strong> monitoring preferred by 92% of Vista business parks</li>
-                        </ul>
-                    </div>
+            <!-- Local Security Challenges -->
+            <section class="anaheim-local-insights">
+                <h3>Understanding Vista's Business Security Landscape</h3>
+                <div class="insights-content">
+                    <p>Our analysis of Vista security trends shows that comprehensive business security programs reduce corporate incidents by 38% and property-related security issues by 42%. The business district sees unique challenges with corporate traffic, while residential areas require enhanced family protection services.</p>
+                    <p>Major business developments and corporate expansions create fluctuating security demands. Our scalable team approach allows us to provide enhanced coverage during business growth periods while maintaining cost-effective baseline protection for ongoing corporate and residential operations.</p>
                 </div>
             </section>
-
-            <!-- Local Security Challenges -->
-                <section class="anaheim-local-insights" style="background: linear-gradient(135deg, #003366, #004488); color: white; padding: 40px; border-radius: 15px; margin: 40px 0; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: 0; right: 0; width: 200px; height: 200px; background: rgba(255,255,255,0.05); border-radius: 50%; transform: translate(50%, -50%);"></div>
-                    <div style="position: absolute; bottom: 0; left: 0; width: 150px; height: 150px; background: rgba(255,255,255,0.03); border-radius: 50%; transform: translate(-30%, 30%);"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <h3 style="color: white; font-size: 2rem; font-weight: 700; margin-bottom: 25px; display: flex; align-items: center;">
-                            <i class="fas fa-chart-line" style="color: #f8b133; margin-right: 15px; font-size: 1.5rem;"></i>
-                            Understanding Vista's Business Security Landscape
-                        </h3>
-                        <div class="insights-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
-                            <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
-                                <h4 style="color: #f8b133; font-size: 1.2rem; margin-bottom: 15px; display: flex; align-items: center;">
-                                    <i class="fas fa-trending-down" style="margin-right: 10px;"></i>
-                                    Incident Reduction Statistics
-                                </h4>
-                                <p style="color: rgba(255,255,255,0.9); line-height: 1.6; margin: 0;">Our analysis of Vista security trends shows that comprehensive business security programs reduce corporate incidents by <strong style="color: #f8b133;">38%</strong> and property-related security issues by <strong style="color: #f8b133;">42%</strong>. The business district sees unique challenges with corporate traffic, while residential areas require enhanced family protection services.</p>
-                            </div>
-                            <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
-                                <h4 style="color: #f8b133; font-size: 1.2rem; margin-bottom: 15px; display: flex; align-items: center;">
-                                    <i class="fas fa-expand-arrows-alt" style="margin-right: 10px;"></i>
-                                    Scalable Security Solutions
-                                </h4>
-                                <p style="color: rgba(255,255,255,0.9); line-height: 1.6; margin: 0;">Major business developments and corporate expansions create fluctuating security demands. Our scalable team approach allows us to provide enhanced coverage during business growth periods while maintaining cost-effective baseline protection for ongoing corporate and residential operations.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-        </div>
-    </div>
-</section>
-
-<!-- Vista Security News & Insights Section -->
-<section class="anaheim-news-section" style="background: #fff; padding: 50px 0; border-top: 1px solid #e0e0e0;">
-    <div class="container">
-        <h2 style="text-align: center; color: #003366; margin-bottom: 40px;">Vista Security News & Insights</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-            <article style="background: #f8f9fa; padding: 25px; border-radius: 10px; border-left: 4px solid #d32f2f;">
-                <h3 style="color: #003366; margin-bottom: 15px; font-size: 1.2rem;">Vista Business District Security Update</h3>
-                <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">
-                    <i class="fas fa-calendar" style="margin-right: 5px;"></i>
-                    January 15, 2025
-                </p>
-                <p>New security protocols implemented for Vista's expanding business corridors. Enhanced corporate protection measures now standard for major business parks.</p>
-                <a href="/vista/business-district-security-update" style="color: #d32f2f; text-decoration: none; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
-
-            <article style="background: #f8f9fa; padding: 25px; border-radius: 10px; border-left: 4px solid #003366;">
-                <h3 style="color: #003366; margin-bottom: 15px; font-size: 1.2rem;">2025 Vista Corporate Security Trends</h3>
-                <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">
-                    <i class="fas fa-calendar" style="margin-right: 5px;"></i>
-                    January 10, 2025
-                </p>
-                <p>Analysis of emerging security technologies and their impact on Vista business protection strategies. AI-enhanced surveillance gaining adoption.</p>
-                <a href="/vista/corporate-security-trends-2025" style="color: #d32f2f; text-decoration: none; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
-
-            <article style="background: #f8f9fa; padding: 25px; border-radius: 10px; border-left: 4px solid #f8b133;">
-                <h3 style="color: #003366; margin-bottom: 15px; font-size: 1.2rem;">Vista Family Community Safety Tips</h3>
-                <p style="color: #666; margin-bottom: 15px; font-size: 0.9rem;">
-                    <i class="fas fa-calendar" style="margin-right: 5px;"></i>
-                    January 5, 2025
-                </p>
-                <p>Essential security measures for Vista's growing family communities. Best practices for residential security and neighborhood watch programs.</p>
-                <a href="/vista/family-community-safety-tips" style="color: #d32f2f; text-decoration: none; font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
-        </div>
-
-        <div style="text-align: center; margin-top: 30px;">
-            <a href="/vista/security-news" style="display: inline-block; padding: 15px 30px; background: #003366; color: white; text-decoration: none; border-radius: 5px; font-weight: 600;">
-                View All Vista Security News <i class="fas fa-arrow-right" style="margin-left: 5px;"></i>
-            </a>
         </div>
     </div>
 </section>
@@ -873,7 +748,7 @@
                     <span>✓ Visitor Management Focus</span>
                 </div>
             </a>
-
+            
             <a href="/services#mobile-patrol" class="anaheim-service-item-enhanced">
                 <h3>Mobile Patrol Services</h3>
                 <p>GPS-tracked patrol vehicles conducting scheduled and random security checks across business properties and corporate facilities. Cost-effective solution for large Vista properties.</p>
@@ -1084,36 +959,6 @@
             <p>Join our growing list of satisfied Vista business and community clients</p>
             <a href="/reviews" class="testimonial-link" onclick="gtag('event', 'click', {'event_category': 'Reviews', 'event_label': 'Read More Reviews'});">Read More Client Reviews <i class="fas fa-long-arrow-alt-right"></i></a>
         </div>
-
-        <!-- Related Services Topic Cluster -->
-        <div class="related-services" style="margin-top: 40px; padding: 30px; background: #f8f9fa; border-radius: 10px;">
-            <h3 style="text-align: center; color: #003366; margin-bottom: 25px;">Related Vista Security Services</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                <a href="/services/commercial-security" style="display: block; padding: 20px; background: white; border-radius: 8px; text-decoration: none; color: #333; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
-                    <i class="fas fa-building" style="color: #d32f2f; font-size: 1.5rem; margin-bottom: 10px;"></i>
-                    <h4 style="color: #003366; margin-bottom: 10px;">Commercial Security</h4>
-                    <p style="font-size: 0.9rem; margin: 0;">Professional security for Vista businesses and commercial properties.</p>
-                </a>
-
-                <a href="/services/executive-protection" style="display: block; padding: 20px; background: white; border-radius: 8px; text-decoration: none; color: #333; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
-                    <i class="fas fa-user-shield" style="color: #d32f2f; font-size: 1.5rem; margin-bottom: 10px;"></i>
-                    <h4 style="color: #003366; margin-bottom: 10px;">Executive Protection</h4>
-                    <p style="font-size: 0.9rem; margin: 0;">Discreet protection services for Vista business executives and VIPs.</p>
-                </a>
-
-                <a href="/services/event-security" style="display: block; padding: 20px; background: white; border-radius: 8px; text-decoration: none; color: #333; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
-                    <i class="fas fa-calendar-check" style="color: #d32f2f; font-size: 1.5rem; margin-bottom: 10px;"></i>
-                    <h4 style="color: #003366; margin-bottom: 10px;">Event Security</h4>
-                    <p style="font-size: 0.9rem; margin: 0;">Specialized security for Vista corporate events and gatherings.</p>
-                </a>
-
-                <a href="/california/san-marcos" style="display: block; padding: 20px; background: white; border-radius: 8px; text-decoration: none; color: #333; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
-                    <i class="fas fa-map-marker-alt" style="color: #d32f2f; font-size: 1.5rem; margin-bottom: 10px;"></i>
-                    <h4 style="color: #003366; margin-bottom: 10px;">San Marcos Security</h4>
-                    <p style="font-size: 0.9rem; margin: 0;">Nearby security services in San Marcos with similar business focus.</p>
-                </a>
-            </div>
-        </div>
     </div>
 </section>
 
@@ -1169,46 +1014,6 @@
                 </div>
                 <div class="faq-answer">
                     <p>Yes, all our security guards are licensed through the California Bureau of Security and Investigative Services (BSIS) and receive additional specialized training for business and corporate security requirements including business park protocols, corporate security, and professional environment protection.</p>
-                </div>
-            </div>
-
-            <div class="anaheim-faq-item">
-                <div class="faq-question">
-                    <h3>How much does security cost for business parks in Vista?</h3>
-                    <div class="faq-toggle"><i class="fas fa-plus"></i></div>
-                </div>
-                <div class="faq-answer">
-                    <p>Business park security costs in Vista typically range from $35-$65 per hour for unarmed guards and $45-$75 per hour for armed security officers. Factors affecting pricing include property size, required services, guard qualifications, and contract duration. We offer customized quotes based on your specific business park security needs.</p>
-                </div>
-            </div>
-
-            <div class="anaheim-faq-item">
-                <div class="faq-question">
-                    <h3>What makes Vista business parks require specialized security?</h3>
-                    <div class="faq-toggle"><i class="fas fa-plus"></i></div>
-                </div>
-                <div class="faq-answer">
-                    <p>Vista's rapidly growing business sector presents unique security challenges including high-value corporate assets, sensitive business information, executive protection needs, and complex visitor management requirements. Our guards receive specialized training in corporate protocols, business etiquette, and professional environment security procedures.</p>
-                </div>
-            </div>
-
-            <div class="anaheim-faq-item">
-                <div class="faq-question">
-                    <h3>Do you provide 24-hour security coverage for Vista properties?</h3>
-                    <div class="faq-toggle"><i class="fas fa-plus"></i></div>
-                </div>
-                <div class="faq-answer">
-                    <p>Absolutely! We provide round-the-clock security coverage for Vista business parks, corporate facilities, and residential communities. Our 24/7 services include overnight security guards, weekend coverage, holiday protection, and emergency response capabilities with local Vista-based security teams.</p>
-                </div>
-            </div>
-
-            <div class="anaheim-faq-item">
-                <div class="faq-question">
-                    <h3>Can you help with Vista corporate event security?</h3>
-                    <div class="faq-toggle"><i class="fas fa-plus"></i></div>
-                </div>
-                <div class="faq-answer">
-                    <p>Yes, we specialize in corporate event security for Vista businesses including company meetings, product launches, executive gatherings, and business conferences. Our event security team understands corporate environments and provides discreet, professional protection while maintaining the professional atmosphere your business requires.</p>
                 </div>
             </div>
         </div>
@@ -1359,37 +1164,6 @@
                 'event_label': 'Corporate Security Services'
             });
         });
-
-        // Track social sharing interactions
-        $('.share-btn').on('click', function() {
-            const platform = $(this).attr('class').split(' ').find(cls => cls !== 'share-btn');
-            gtag('event', 'share', {
-                'method': platform,
-                'content_type': 'Vista Security Services',
-                'content_id': 'vista-security-page'
-            });
-        });
-
-        // Track related services clicks
-        $('a[href*="/services/"]').on('click', function() {
-            const serviceName = $(this).find('h4').text() || 'Unknown Service';
-            gtag('event', 'click', {
-                'event_category': 'Related Services',
-                'event_label': serviceName
-            });
-        });
-
-        // Update last modified timestamp
-        function updateLastModified() {
-            const now = new Date();
-            const options = { 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric'
-            };
-            $('#last-updated').text(now.toLocaleDateString('en-US', options));
-        }
-        updateLastModified();
     });
 </script>
 
