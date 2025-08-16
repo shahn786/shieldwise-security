@@ -60,6 +60,199 @@
         .santee-cta-button,.santee-cta-button-alt{width:100%;max-width:280px;padding:18px 25px}
         .container{padding:0 10px}
     }
+    /* Santee Case Studies Styles */
+    .santee-case-studies {
+        padding: var(--section-padding);
+        background-color: #f9f9f9;
+    }
+    .santee-case-studies h3 {
+        color: var(--primary-color);
+        margin-bottom: 2.5rem;
+    }
+    .case-studies-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+    .case-study-item {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+    }
+    .case-study-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+    .case-study-item h4 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-dark);
+        margin-bottom: 15px;
+        line-height: 1.3;
+    }
+    .case-study-stats {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+    .case-study-stats .stat {
+        background-color: var(--primary-light);
+        color: #fff;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+    .case-study-item p {
+        flex-grow: 1; /* Allows paragraph to take available space */
+        margin-bottom: 25px;
+        color: var(--text-medium);
+        line-height: 1.7;
+    }
+    .case-study-link {
+        display: inline-block;
+        margin-top: auto; /* Pushes link to the bottom */
+        color: var(--secondary-color);
+        text-decoration: none;
+        font-weight: 700;
+        transition: color 0.3s ease;
+    }
+    .case-study-link:hover {
+        color: var(--secondary-dark);
+        text-decoration: underline;
+    }
+    .case-study-link i {
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+    }
+    .case-study-link:hover i {
+        transform: translateX(5px);
+    }
+
+    /* Santee News & Insights Styles */
+    .santee-news-insights {
+        padding: var(--section-padding);
+        background-color: #fff;
+    }
+    .santee-news-insights h3 {
+        color: var(--primary-color);
+        margin-bottom: 2.5rem;
+    }
+    .news-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+    .news-item {
+        background-color: #f9f9f9;
+        padding: 25px;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+    }
+    .news-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+    .news-date {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--text-medium);
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    .news-date i {
+        color: var(--secondary-color);
+    }
+    .news-item h4 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        line-height: 1.4;
+    }
+    .news-item h4 a {
+        color: var(--primary-dark);
+        text-decoration: none;
+    }
+    .news-item h4 a:hover {
+        color: var(--secondary-color);
+        text-decoration: underline;
+    }
+    .news-item p {
+        flex-grow: 1;
+        margin-bottom: 20px;
+        color: var(--text-medium);
+        line-height: 1.7;
+    }
+    .news-link {
+        display: inline-block;
+        margin-top: auto;
+        color: var(--secondary-color);
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+    .news-link:hover {
+        color: var(--secondary-dark);
+        text-decoration: underline;
+    }
+    .news-link i {
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+    }
+    .news-link:hover i {
+        transform: translateX(3px);
+    }
+    .news-cta {
+        text-align: center;
+        margin-top: 30px;
+    }
+    .news-view-all {
+        display: inline-block;
+        padding: 15px 30px;
+        background-color: var(--primary-dark);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+    }
+    .news-view-all:hover {
+        background-color: var(--primary-color);
+        color: #fff;
+        text-decoration: none;
+    }
+    .news-view-all i {
+        margin-left: 10px;
+    }
+
+    /* Responsive adjustments for new sections */
+    @media (max-width: 768px) {
+        .case-studies-grid, .news-grid {
+            grid-template-columns: 1fr;
+        }
+        .case-study-item, .news-item {
+            padding: 20px;
+        }
+        .case-study-item h4, .news-item h4 {
+            font-size: 1.2rem;
+        }
+        .case-study-stats {
+            flex-direction: column;
+            gap: 10px;
+        }
+        .case-study-stats .stat {
+            padding: 6px 12px;
+        }
+    }
     </style>
 
     <!-- ✅ Enhanced Performance Optimization -->
@@ -719,11 +912,86 @@
             </section>
 
             <!-- Local Security Challenges -->
-            <section class="anaheim-local-insights">
-                <h3>Understanding Santee's Suburban Security Landscape</h3>
-                <div class="insights-content">
-                    <p>Our analysis of Santee security trends shows that comprehensive suburban security programs reduce community incidents by 45% and residential security issues by 40%. The recreational areas see unique challenges with youth activities, while residential communities require enhanced family protection services.</p>
-                    <p>Major community events and recreational activities create fluctuating security demands. Our scalable team approach allows us to provide enhanced coverage during high-activity periods while maintaining cost-effective baseline protection for ongoing community and residential operations.</p>
+                <section class="anaheim-local-insights">
+                    <h3>Understanding Santee's Suburban Security Landscape</h3>
+                    <div class="insights-content">
+                        <p>Our analysis of Santee security trends shows that comprehensive suburban security programs reduce community incidents by 45% and residential security issues by 40%. The recreational areas see unique challenges with youth activities, while residential communities require enhanced family protection services.</p>
+                        <p>Major community events and recreational activities create fluctuating security demands. Our scalable team approach allows us to provide enhanced coverage during high-activity periods while maintaining cost-effective baseline protection for ongoing community and residential operations.</p>
+                    </div>
+                </section>
+
+                <!-- Santee Case Studies Section -->
+                <section class="santee-case-studies">
+                    <h3>Santee Security Success Stories</h3>
+                    <div class="case-studies-grid">
+                        <div class="case-study-item">
+                            <h4>Santee Lakes Recreation Preserve - Family Safety Enhancement</h4>
+                            <div class="case-study-stats">
+                                <span class="stat">85% reduction in incidents</span>
+                                <span class="stat">24/7 family-friendly patrols</span>
+                            </div>
+                            <p>ShieldWise Security implemented comprehensive recreational facility security at Santee Lakes, focusing on family safety protocols and youth activity monitoring. Our specialized guards reduced security incidents by 85% while maintaining the family-friendly atmosphere that makes Santee Lakes a community favorite.</p>
+                            <a href="/case-studies/santee-lakes-security" class="case-study-link">Read Full Case Study <i class="fas fa-arrow-right"></i></a>
+                        </div>
+
+                        <div class="case-study-item">
+                            <h4>Residential Community Association - Neighborhood Protection</h4>
+                            <div class="case-study-stats">
+                                <span class="stat">92% resident satisfaction</span>
+                                <span class="stat">Zero break-ins since deployment</span>
+                            </div>
+                            <p>A 300-home community in Santee experienced recurring property crimes before partnering with ShieldWise. Our suburban community specialists implemented access control, mobile patrols, and resident communication protocols, resulting in zero break-ins and 92% resident satisfaction rating.</p>
+                            <a href="/case-studies/santee-residential-community" class="case-study-link">Read Full Case Study <i class="fas fa-arrow-right"></i></a>
+                        </div>
+
+                        <div class="case-study-item">
+                            <h4>Town Center Commercial District - Business Security</h4>
+                            <div class="case-study-stats">
+                                <span class="stat">60% reduction in theft</span>
+                                <span class="stat">Improved customer confidence</span>
+                            </div>
+                            <p>Santee's growing commercial district needed professional security that balanced protection with customer service. Our commercial security specialists reduced theft by 60% while enhancing the shopping experience through professional, approachable security presence.</p>
+                            <a href="/case-studies/santee-commercial-district" class="case-study-link">Read Full Case Study <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </section>
+
+            <!-- Santee Security News & Insights -->
+            <section class="santee-news-insights">
+                <h3>Santee Security News & Insights</h3>
+                <div class="news-grid">
+                    <article class="news-item">
+                        <div class="news-date">
+                            <i class="fas fa-calendar"></i>
+                            <time datetime="2025-01-15">January 15, 2025</time>
+                        </div>
+                        <h4><a href="/news/santee-community-security-update">Santee Community Security Update</a></h4>
+                        <p>New security protocols implemented for Santee's expanding residential communities. Enhanced family protection measures now standard for major neighborhood developments.</p>
+                        <a href="/news/santee-community-security-update" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </article>
+
+                    <article class="news-item">
+                        <div class="news-date">
+                            <i class="fas fa-calendar"></i>
+                            <time datetime="2025-01-10">January 10, 2025</time>
+                        </div>
+                        <h4><a href="/news/2025-santee-suburban-security-trends">2025 Santee Suburban Security Trends</a></h4>
+                        <p>Analysis of emerging security technologies and their impact on Santee suburban protection strategies. AI-enhanced surveillance gaining adoption in residential communities.</p>
+                        <a href="/news/2025-santee-suburban-security-trends" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </article>
+
+                    <article class="news-item">
+                        <div class="news-date">
+                            <i class="fas fa-calendar"></i>
+                            <time datetime="2025-01-05">January 5, 2025</time>
+                        </div>
+                        <h4><a href="/news/santee-family-community-safety-tips">Santee Family Community Safety Tips</a></h4>
+                        <p>Essential security measures for Santee's growing family communities. Best practices for residential security and neighborhood watch programs.</p>
+                        <a href="/news/santee-family-community-safety-tips" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </article>
+                </div>
+                <div class="news-cta">
+                    <a href="/news/santee-security" class="news-view-all">View All Santee Security News <i class="fas fa-long-arrow-alt-right"></i></a>
                 </div>
             </section>
         </div>
@@ -1137,7 +1405,7 @@
                 });
             }, { threshold: 0.1 });
 
-            document.querySelectorAll('.anaheim-feature-item, .anaheim-service-item, .anaheim-area-item, .anaheim-testimonial-item, .anaheim-faq-item').forEach(item => {
+            document.querySelectorAll('.anaheim-feature-item, .anaheim-service-item, .anaheim-area-item, .anaheim-testimonial-item, .anaheim-faq-item, .case-study-item, .news-item').forEach(item => {
                 observer.observe(item);
             });
         }
