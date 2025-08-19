@@ -13,7 +13,7 @@
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
     <!-- ✅ Optimized SEO Meta Tags -->
-    <title>Ventura County Security Guards (BSIS) | 24/7 Patrol & Armed/Unarmed</title>
+    <title>Ventura County Security Guards (BSIS) | 24/7 Patrol & Armed/Unarmed | ShieldWise</title>
     <meta name="description" content="BSIS-licensed security guards for Ventura County: armed/unarmed, mobile patrol, coastal & agricultural sites. Fast deployment and free quote at (714) 716-7430.">
     
     <!-- Core Business Information -->
@@ -24,6 +24,7 @@
     <!-- ✅ Canonical & Hreflang -->
     <link rel="canonical" href="https://shieldwisesecurity.com/ventura-county" />
     <link rel="alternate" hreflang="en-US" href="https://shieldwisesecurity.com/ventura-county" />
+    <link rel="alternate" hreflang="x-default" href="https://shieldwisesecurity.com/ventura-county" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="theme-color" content="#1a3c64">
 
@@ -93,6 +94,7 @@
         .trust-signals h4{color:#1a3c64;margin-bottom:1rem}
         .trust-signals p{margin-bottom:0.5rem}
         @media(max-width:768px){.overlay-sec h1{font-size:2.5rem}.stats-container{grid-template-columns:repeat(2,1fr)}.features-container,.services-grid{grid-template-columns:1fr}}
+        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     </style>
     
     <!-- ✅ Enhanced Structured Data with Stable IDs and Correct Types -->
@@ -134,7 +136,20 @@
             "https://www.instagram.com/shieldwisesecurity",
             "https://www.linkedin.com/company/shieldwise-security"
           ],
+          "contactPoint": [{
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "telephone": "+1-714-716-7430",
+            "areaServed": "US-CA",
+            "availableLanguage": ["English","Spanish"]
+          }],
           "foundingDate": "2015",
+          "numberOfEmployees": "150",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "127"
+          },
           "knowsAbout": [
             "armed security","unarmed security","mobile patrol",
             "fire watch","coastal security","agricultural security"
@@ -252,6 +267,7 @@
 
     <!-- ✅ Critical Resource Preloading for Performance -->
     <link rel="preload" href="/img/ventura.webp" as="image" fetchpriority="high">
+    <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2" crossorigin>
     
     <!-- ✅ Optimized Font Loading -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
@@ -272,7 +288,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
 </head>
 
-<body id="top" itemscope itemtype="https://schema.org/WebPage">
+<body id="top">
     <!-- Header Section -->
     <%- include('../partials/Header') %>
 
@@ -358,41 +374,41 @@
                 <h3>Complete Security Solutions for Ventura County</h3>
                 <div class="features-container">
                     <div class="feature-item">
-                        <i class="fas fa-seedling icon-large" aria-label="Agricultural Security Icon" loading="lazy"></i>
-                        <h4>Agricultural Facility Security</h4>
+                        <i class="fas fa-seedling icon-large" aria-hidden="true"></i>
+                        <h4><span class="sr-only">Service:</span> Agricultural Facility Security</h4>
                         <p>Expert protection for farms, processing plants, and agricultural operations with specialized rural security protocols. Our guards understand seasonal security needs and equipment protection requirements unique to Ventura County's $2.1 billion agricultural industry.</p>
                         <a href="/services/agricultural-security" title="Learn more about agricultural security">Learn More →</a>
                     </div>
 
                     <div class="feature-item">
-                        <i class="fas fa-building icon-large" aria-label="Commercial Security Icon"></i>
-                        <h4>Commercial Building Security</h4>
+                        <i class="fas fa-building icon-large" aria-hidden="true"></i>
+                        <h4><span class="sr-only">Service:</span> Commercial Building Security</h4>
                         <p>Professional security for office buildings, retail centers, and business complexes with comprehensive protection protocols. Serving over 500 commercial properties throughout Ventura County with customized security plans.</p>
                         <a href="/services/commercial-security" title="Commercial security services">Learn More →</a>
                     </div>
 
                     <div class="feature-item">
-                        <i class="fas fa-water icon-large" aria-label="Coastal Security Icon"></i>
+                        <i class="fas fa-water icon-large" aria-hidden="true"></i>
                         <h4>Coastal & Marina Security</h4>
                         <p>Specialized security for Ventura County's 42 miles of coastline including marina facilities, harbor properties, and beachfront businesses. Expert waterfront security protocols and vessel monitoring services.</p>
                         <a href="/services/coastal-security" title="Coastal security services">Learn More →</a>
                     </div>
 
                     <div class="feature-item">
-                        <i class="fas fa-user-shield icon-large" aria-label="Licensed Guards Icon"></i>
+                        <i class="fas fa-user-shield icon-large" aria-hidden="true"></i>
                         <h4>BSIS Licensed & Professionally Trained</h4>
                         <p>All guards hold current BSIS certification with extensive training in commercial, agricultural, and coastal security scenarios. Continuous education ensures compliance with California security regulations.</p>
                         <a href="/about-our-guards" title="About our security guards">Learn More →</a>
                     </div>
 
                     <div class="feature-item">
-                        <i class="fas fa-shield-alt icon-large" aria-label="Armed Security Icon"></i>
+                        <i class="fas fa-shield-alt icon-large" aria-hidden="true"></i>
                         <h4>Armed & Unarmed Security Options</h4>
                         <p>Flexible security solutions tailored to specific facility needs including <a href="/services/armed-security" title="Armed security guards">armed security guards</a> for high-risk environments and <a href="/services/unarmed-security" title="Unarmed security services">unarmed security officers</a> for general protection.</p>
                     </div>
 
                     <div class="feature-item">
-                        <i class="fas fa-calendar-check icon-large" aria-label="24/7 Service Icon"></i>
+                        <i class="fas fa-calendar-check icon-large" aria-hidden="true"></i>
                         <h4>24/7 Emergency Response & Mobile Patrols</h4>
                         <p>Round-the-clock protection with rapid response to security threats and emergency situations. <a href="/services/patrol" title="Mobile patrol services">Mobile patrol services</a> provide cost-effective security coverage for multiple locations.</p>
                     </div>
@@ -446,32 +462,32 @@
             
             <div class="services-grid">
                 <a href="/services/armed-security" class="service-item" title="Armed Security Guards Ventura County - BSIS Licensed Professional Protection">
-                    <i class="fas fa-user-shield icon-large" aria-label="Armed Security Guards Icon"></i>
+                    <i class="fas fa-user-shield icon-large" aria-hidden="true"></i>
                     <h4>Armed Security Guards</h4>
                     <p>Licensed armed officers for high-risk facilities including cannabis dispensaries, banks, and industrial sites throughout Ventura County.</p>
                 </a>
                 <a href="/services/unarmed-security" class="service-item" title="Unarmed Security Services Ventura County - Cost-Effective Professional Protection">
-                    <i class="fas fa-user-tie icon-large"></i>
+                    <i class="fas fa-user-tie icon-large" aria-hidden="true"></i>
                     <h4>Unarmed Security Services</h4>
                     <p>Professional unarmed guards for general protection, access control, and customer service in retail and office environments.</p>
                 </a>
                 <a href="/services/fire-watch" class="service-item" title="Fire Watch Services Ventura County - 24/7 Fire Safety Compliance">
-                    <i class="fas fa-fire-extinguisher icon-large"></i>
+                    <i class="fas fa-fire-extinguisher icon-large" aria-hidden="true"></i>
                     <h4>Fire Watch Services</h4>
                     <p>OSHA compliant fire watch for construction sites, maintenance projects, and buildings with compromised fire systems.</p>
                 </a>
                 <a href="/services/patrol" class="service-item" title="Mobile Patrol Security Ventura County - Random Security Patrols">
-                    <i class="fas fa-car icon-large"></i>
+                    <i class="fas fa-car icon-large" aria-hidden="true"></i>
                     <h4>Mobile Patrol Services</h4>
                     <p>Random security patrols for multiple locations providing cost-effective coverage for large properties and business parks.</p>
                 </a>
                 <a href="/services/event-security" class="service-item" title="Event Security Guards Ventura County - Professional Event Protection">
-                    <i class="fas fa-calendar-check icon-large"></i>
+                    <i class="fas fa-calendar-check icon-large" aria-hidden="true"></i>
                     <h4>Event Security</h4>
                     <p>Professional event security for concerts, festivals, corporate events, and special occasions throughout Ventura County.</p>
                 </a>
                 <a href="/services/executive-protection" class="service-item" title="Executive Protection Services Ventura County - VIP Security">
-                    <i class="fas fa-user-secret icon-large"></i>
+                    <i class="fas fa-user-secret icon-large" aria-hidden="true"></i>
                     <h4>Executive Protection</h4>
                     <p>Personal protection services for executives, VIPs, and high-profile individuals requiring discreet professional security.</p>
                 </a>
