@@ -845,16 +845,31 @@ const venturaCountyCities = [
 
 venturaCountyCities.forEach(city => {
     const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-    app.get(`/${city}`, (req, res) => {
+    
+    // Create routes for both /ventura-county/city and /city
+    app.get(`/ventura-county/${city}`, (req, res) => {
         try {
-            res.render(`cities/${city}`, { title: formattedCity });
-        } catch (error) {
-            // If the specific city template doesn't exist, render a generic city page
-            res.render('cities/ventura', { 
+            res.render(`cities/${city}`, { 
                 title: formattedCity,
                 cityName: formattedCity,
-                isGeneric: true 
+                pageUrl: `/ventura-county/${city}`
             });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    app.get(`/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
         }
     });
 });
