@@ -1,0 +1,122 @@
+Fix these for a 9.6–10/10
+1) Structured data: use stable IDs, correct types, and truthful NAP (critical)
+
+Your Service.provider references #organization, but the Organization node doesn’t define an @id. Add one and reference it.
+
+Prefer @type: ["LocalBusiness","SecurityService","Organization"] (or at least ["LocalBusiness","SecurityService"]) to reflect a security guard company.
+
+Replace the placeholder street (“456 Main St”) with your real business address (or omit address if you truly operate statewide/virtual). Inconsistent NAP hurts local rankings.
+
+Add hasOfferCatalog or makesOffer (Offer) for key services, and areaServed per city as you did—good!
+
+If you show reviews on page, add AggregateRating (only if verifiable).
+
+Patch:
+
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["LocalBusiness","SecurityService","Organization"],
+      "@id": "https://shieldwisesecurity.com/ventura-county#org",
+      "name": "ShieldWise Security - Ventura County",
+      "url": "https://shieldwisesecurity.com/ventura-county",
+      "logo": "https://shieldwisesecurity.com/img/logo.webp",
+      "image": "https://shieldwisesecurity.com/img/ventura.webp",
+      "telephone": "+1-714-716-7430",
+      "priceRange": "$$-$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ventura",
+        "addressRegion": "CA",
+        "postalCode": "93001",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://www.facebook.com/ShieldWiseSecurity",
+        "https://www.instagram.com/shieldwisesecurity",
+        "https://www.linkedin.com/company/shieldwise-security"
+      ],
+      "areaServed": [
+        {"@type":"AdministrativeArea","name":"Ventura County"},
+        {"@type":"City","name":"Oxnard"},
+        {"@type":"City","name":"Thousand Oaks"},
+        {"@type":"City","name":"Ventura"},
+        {"@type":"City","name":"Simi Valley"}
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://shieldwisesecurity.com/ventura-county#svc",
+      "serviceType": "Security Guard Services",
+      "provider": {"@id": "https://shieldwisesecurity.com/ventura-county#org"},
+      "areaServed": {"@type":"AdministrativeArea","name":"Ventura County, CA"}
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://shieldwisesecurity.com/#website",
+      "url": "https://shieldwisesecurity.com",
+      "name": "ShieldWise Security"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://shieldwisesecurity.com/ventura-county#breadcrumb",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://shieldwisesecurity.com/"},
+        {"@type":"ListItem","position":2,"name":"Service Areas","item":"https://shieldwisesecurity.com/service-areas"},
+        {"@type":"ListItem","position":3,"name":"Ventura County","item":"https://shieldwisesecurity.com/ventura-county"}
+      ]
+    }
+  ]
+}
+
+2) Hreflang consistency (medium)
+
+You declare og:locale:alternate = es_US but there’s no Spanish hreflang. Either add:
+
+<link rel="alternate" hreflang="es-US" href="https://shieldwisesecurity.com/es/ventura-county" />
+
+
+…or remove the OG alternate until the Spanish page exists.
+
+3) Fonts & preconnect (small but measurable)
+
+You preconnect to fonts.gstatic.com but load CSS from fonts.googleapis.com. Add:
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+
+
+Consider display=swap (already present) + self-hosting fonts for best CLS/LCP.
+
+4) CWV/lazy-loading & CLS hardening (medium)
+
+Add loading="lazy" to non-hero images (service icons/images when applicable).
+
+Define explicit width/height (or aspect-ratio) for any raster images (logo, future inline images) to reduce CLS.
+
+For Font Awesome icons, consider an inline SVG set to avoid FOIT/FOUT; or preload FA CSS.
+
+5) E-E-A-T / Local proof (high for YMYL services)
+
+Add a licensing badge and license number in body (you do), and mirror it in schema ("hasCredential" on Organization, optional).
+
+Link to a real GMB/GBP Place URL (the current Google Maps link looks generic). Use your exact place URL.
+
+Add Case Studies/Clients (even short) and team/management snippets; link them internally.
+
+6) Minor metadata polish (nice-to-have)
+
+Add manifest.json since you declare PWA meta:
+
+<link rel="manifest" href="/manifest.webmanifest">
+
+
+Add og:image:secure_url (same URL via https), and twitter:site only if that handle exists.
+
+Ensure canonical path matches route normalization (with/without trailing slash).
+
+7) Internal linking & anchors (quick wins)
+
+Add breadcrumbs visibly on page (not only JSON-LD).
+
+From city cards, link to unique city pages with target keywords already (you do—good). Ensure each target page has reciprocal links back to Ventura County pillar where relevant.
