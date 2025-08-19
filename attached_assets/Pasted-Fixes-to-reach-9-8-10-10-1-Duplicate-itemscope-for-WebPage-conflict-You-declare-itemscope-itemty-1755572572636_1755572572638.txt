@@ -1,0 +1,112 @@
+Fixes to reach 9.8–10/10
+1) Duplicate itemscope for WebPage (conflict)
+
+You declare itemscope itemtype="https://schema.org/WebPage" on both <html> and <body>. Keep it only once (on <html>).
+Fix: remove itemscope itemtype from <body>.
+
+<body id="top">
+
+2) Hreflang alignment (consistency)
+
+You only have en-US—great. Make sure there’s a self-referencing x-default to help Google pick a default, or add it later when you localize.
+
+<link rel="alternate" hreflang="x-default" href="https://shieldwisesecurity.com/ventura-county">
+
+3) GBP/NAP authority (local SEO/E-E-A-T)
+
+Swap your Google Maps link to the exact Google Business Profile Place URL and mirror the same NAP everywhere (site footer, JSON-LD).
+
+Add a ContactPoint in Organization JSON-LD for local trust:
+
+{
+  "@type": "ContactPoint",
+  "contactType": "customer service",
+  "telephone": "+1-714-716-7430",
+  "areaServed": "US-CA",
+  "availableLanguage": ["English","Spanish"]
+}
+
+
+…and add it to sameAs/GBP accuracy.
+
+4) CLS hardening (small but real)
+
+You set width/height for the hero image (good). Do the same for all other images/icons that render as <img> (logo, any future cards).
+
+Font Awesome <i> icons can’t have loading="lazy" (not an image). If any icons are inline <img>, add explicit width/height or style="aspect-ratio: …".
+
+5) Icon accessibility & perf
+
+Mark decorative FA icons aria-hidden="true" and add visible labels:
+
+<i class="fas fa-user-shield icon-large" aria-hidden="true"></i>
+<h4><span class="sr-only">Service:</span> Armed Security Guards</h4>
+
+
+Consider replacing FA with inline SVGs for a tiny LCP/FOIT win.
+
+6) Title branding & CTR nudge
+
+Current title is strong for intent. Consider appending brand for brand queries/CTR:
+
+<title>Ventura County Security Guards (BSIS) | 24/7 Patrol & Armed/Unarmed | ShieldWise</title>
+
+7) JSON-LD minor enrichments (truthful only)
+
+Add "founder"/"employee" count if you can substantiate (“150+ officers”) or "numberOfEmployees".
+
+If you surface reviews on page, add "AggregateRating" (only if you actually show the rating/snippets on this page).
+
+"aggregateRating": {
+  "@type": "AggregateRating",
+  "ratingValue": "4.9",
+  "ratingCount": "127"
+}
+
+8) CWV quick wins
+
+Keep only one render-blocking CSS (Bootstrap) and consider moving site CSS to a single minified file.
+
+Preload your webfont file (WOFF2) to cut LCP:
+
+<link rel="preload" as="font" type="font/woff2" href="/fonts/montserrat-700.woff2" crossorigin>
+
+
+(If you self-host fonts; otherwise, you’re fine with current Google Fonts + preconnect.)
+
+9) Canonical normalization
+
+Ensure internal links and sitemap use the same trailing-slash policy as your canonical (/ventura-county vs /ventura-county/). Keep it consistent everywhere.
+
+Tiny copy edits (optional, trust)
+
+Avoid hard promises like “zero incidents in 18 months” unless you can back them up—Google’s reviews policy and users look for credibility.
+
+Add an “Industries we secure” list with anchor links for longer dwell time and site search convenience.
+
+Patch snippets you can paste
+
+Remove duplicate microdata on <body>
+
+<body id="top">
+
+
+Add x-default hreflang
+
+<link rel="alternate" hreflang="x-default" href="https://shieldwisesecurity.com/ventura-county">
+
+
+ContactPoint in Organization JSON-LD
+
+"contactPoint": [{
+  "@type": "ContactPoint",
+  "contactType": "customer service",
+  "telephone": "+1-714-716-7430",
+  "areaServed": "US-CA",
+  "availableLanguage": ["English","Spanish"]
+}]
+
+
+Accessible, decorative icon
+
+<i class="fas fa-calendar-check icon-large" aria-hidden="true"></i>
