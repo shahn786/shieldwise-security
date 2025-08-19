@@ -1,0 +1,208 @@
+Issues hurting score (and why)
+
+Legacy/ignored meta tags
+keywords, revisit-after, rating, city/state/zipcode/coordinates/ICBM/region/locality offer no benefit and add noise.
+
+**Possible schema misuse
+
+You use @type: LocalBusiness with a serviceArea array of “City” objects. For LocalBusiness the correct property is areaServed (Place | AdministrativeArea | GeoShape | Text).
+
+Consider declaring both LocalBusiness and a Service entity in an @graph.
+
+AggregateRating on LocalBusiness can be ineligible for review stars and may trigger quality scrutiny if reviews are first-party. Better attach rating to Service (optional) or omit.
+
+Title/description length + redundancy
+
+Title is a bit long and repeats “Professional/BSIS Licensed.”
+
+Description exceeds optimal snippet width and reads like a keyword dump.
+
+Open Graph type
+og:type="business.business" is fine for a place, but this is a landing page; using website (or article if longform) usually yields more consistent previews.
+
+Fonts & blocking resources
+
+You include Google Fonts twice (preload + regular link) which can be redundant.
+
+Bootstrap/Font Awesome lack SRI (subresource integrity).
+
+Two font families with many weights can increase CLS/LCP.
+
+Hero as CSS background
+Background images don’t reserve space → potential CLS. Preloading helps, but a responsive <picture> with width/height (or aspect-ratio) is better.
+
+Canonical/slug clarity
+Canonical is /ventura but the page targets Ventura County. If you also have a city page for Ventura (you do), consider /ventura-county to avoid ambiguity/cannibalization.
+
+E-E-A-T signals
+No visible BSIS license #, office NAP consistency, or link to your Google Business Profile. These help trust and local rankings.
+
+Quick wins (do these first)
+
+Head cleanup
+
+<!-- REMOVE these: -->
+<meta name="keywords">
+<meta name="rating">
+<meta name="revisit-after">
+<meta name="city"><meta name="state"><meta name="country">
+<meta name="zipcode"><meta name="coordinates"><meta name="region">
+<meta name="locality"><meta name="ICBM">
+
+
+Tighten title + description
+
+<title>Ventura County Security Guards (BSIS) | 24/7 Patrol & Armed/Unarmed</title>
+<meta name="description" content="BSIS-licensed security guards for Ventura County: armed/unarmed, mobile patrol, coastal & agricultural sites. Fast deployment and free quote at (714) 716-7430.">
+
+
+Hreflang + canonical (county-specific)
+
+<link rel="canonical" href="https://shieldwisesecurity.com/ventura-county">
+<link rel="alternate" hreflang="en-US" href="https://shieldwisesecurity.com/ventura-county">
+
+
+Resource integrity & fonts (reduce blocking)
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  integrity="sha384-LtrjvnR4Twt/qOuYxQswR8QKtxFf5Q4Z5iE2FqYF4c5iB5c5l2uAMdQ1Yk7ARi6E"
+  crossorigin="anonymous">
+
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  integrity="sha384-<ADD_REAL_SRI_HASH>"
+  crossorigin="anonymous">
+
+
+Drop Roboto or Montserrat to one family to cut weight.
+
+Open Graph
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_US">
+
+Structured data: safer, richer @graph
+
+Replace your LocalBusiness block with this (keep your FAQ block as-is):
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization","LocalBusiness"],
+      "name": "ShieldWise Security - Ventura County",
+      "url": "https://shieldwisesecurity.com/ventura-county",
+      "logo": "https://shieldwisesecurity.com/img/logo.webp",
+      "image": "https://shieldwisesecurity.com/img/ventura.webp",
+      "telephone": "+1-714-716-7430",
+      "email": "ventura@shieldwisesecurity.com",
+      "priceRange": "$$-$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "456 Main St",
+        "addressLocality": "Ventura",
+        "addressRegion": "CA",
+        "postalCode": "93001",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {"@type":"AdministrativeArea","name":"Ventura County"},
+        {"@type":"City","name":"Oxnard"},
+        {"@type":"City","name":"Thousand Oaks"},
+        {"@type":"City","name":"Ventura"},
+        {"@type":"City","name":"Simi Valley"}
+      ],
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "00:00", "closes": "23:59"
+      }],
+      "sameAs": [
+        "https://www.google.com/maps?cid=<your_GBP_cid>",
+        "https://www.facebook.com/<yourpage>",
+        "https://www.instagram.com/<yourhandle>",
+        "https://www.linkedin.com/company/<yourcompany>"
+      ],
+      "foundingDate": "2015",
+      "knowsAbout": [
+        "armed security","unarmed security","mobile patrol",
+        "fire watch","coastal security","agricultural security"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://shieldwisesecurity.com",
+      "name": "ShieldWise Security",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://shieldwisesecurity.com/search?q={query}",
+        "query-input": "required name=query"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://shieldwisesecurity.com/"},
+        {"@type":"ListItem","position":2,"name":"Service Areas","item":"https://shieldwisesecurity.com/service-areas"},
+        {"@type":"ListItem","position":3,"name":"Ventura County","item":"https://shieldwisesecurity.com/ventura-county"}
+      ]
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Security Guard Services",
+      "provider": {"@id": "https://shieldwisesecurity.com/ventura-county#id"},
+      "areaServed": {"@type":"AdministrativeArea","name":"Ventura County, CA"}
+      /* Optional: attach aggregateRating here if sourced properly */
+    }
+  ]
+}
+</script>
+
+
+Why: fixes serviceArea → areaServed, avoids self-serving ratings on LocalBusiness, adds WebSite + BreadcrumbList, and clarifies county targeting.
+
+Core Web Vitals improvements
+
+Hero image as real element to reserve space:
+
+<section class="hero-sec">
+  <picture>
+    <source srcset="/img/ventura.webp" type="image/webp">
+    <img src="/img/ventura.jpg" alt="Security patrol overlooking Ventura Harbor"
+         width="1920" height="1080" fetchpriority="high" loading="eager"
+         style="object-fit:cover; width:100%; height:100%; aspect-ratio:16/9;">
+  </picture>
+  <div class="overlay-sec">...</div>
+</section>
+
+
+Then remove the CSS background. This reduces CLS and often improves LCP.
+
+Lazy-load noncritical images/icons:
+Add loading="lazy" decoding="async" to below-the-fold images.
+
+Reduce font weight variants: keep Montserrat 500/700 only.
+
+Content & trust (Local SEO)
+
+Add BSIS license #, insurance details, and service footprint (dispatch hours).
+
+Add a short About / team summary + link to Google reviews (don’t mark up first-party reviews on LocalBusiness).
+
+Ensure NAP on this page matches your GBP and footer.
+
+Minor polish
+
+Switch og:url and all internal references to the final county slug.
+
+Add twitter:site with your handle.
+
+Ensure CDN files include SRI (add real hashes).
+
+Keep a single Google Fonts link (remove the extra preload, or convert preload to rel="preload" as="style" onload="this.rel='stylesheet'" and keep only one effective stylesheet).
