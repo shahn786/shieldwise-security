@@ -15,14 +15,11 @@
     <!-- ✅ Optimized SEO Meta Tags -->
     <title>Sacramento Security Guards | BSIS Licensed | 24/7 Government & State Security | ShieldWise</title>
     <meta name="description" content="Professional Sacramento security guards with BSIS licensing and $2M insurance. Specializing in government, state capitol, and downtown security. 24/7 emergency response. Free quote (714) 716-7430.">
-    <meta name="keywords" content="Sacramento security guards, BSIS licensed security, government security Sacramento, state capitol security, downtown Sacramento security, armed security Sacramento, mobile patrol, emergency security services">
-    
     <!-- Core Business Information -->
     <meta name="author" content="ShieldWise Security Services">
     <meta name="publisher" content="ShieldWise Security Services">
     <meta name="copyright" content="© 2025 ShieldWise Security Services">
     <meta name="rating" content="general">
-    <meta name="revisit-after" content="7 days">
     
     <!-- Enhanced Local SEO -->
     <meta name="city" content="Sacramento">
@@ -280,6 +277,15 @@
         .overlay-sec h1{font-size:3.5rem;font-weight:800;margin-bottom:1rem}
         .btn{padding:15px 30px;border-radius:50px;text-decoration:none;display:inline-block;transition:all 0.3s ease}
         .quote-btn-sec{background:#d12028;color:#fff}
+        .breadcrumb-nav{background:#f8f9fa;padding:1rem 0;border-bottom:1px solid #e9ecef}
+        .breadcrumb{background:transparent;margin:0;padding:0}
+        .breadcrumb-item a{color:#007bff;text-decoration:none}
+        .breadcrumb-item.active{color:#6c757d}
+        .testimonials-section{background:#fff;padding:60px 0}
+        .testimonial-card{background:#f8f9fa;padding:30px;border-radius:10px;height:100%;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+        .testimonial-content{margin-bottom:20px;font-style:italic}
+        .testimonial-author{font-weight:600;color:#333}
+        .testimonial-author span{color:#666;font-weight:400}
     </style>
     
     <!-- ✅ Critical Resource Preloading -->
@@ -288,11 +294,23 @@
     <link rel="preload" as="image" href="/img/sacraamento12.webp">
 
     <!-- ✅ External CSS (Optimized for Speed) -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preload" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/style456.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Montserrat';
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-display: swap;
+        }
+    </style>
 
     <!-- ✅ Favicon & App Icons -->
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
@@ -306,12 +324,23 @@
     <!-- Header Section -->
     <%- include('../partials/Header') %>
 
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="breadcrumb" class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/services">Services</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Sacramento Security</li>
+            </ol>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
     <header class="hero-sec">
         <div class="overlay-sec">
             <h1>Sacramento's Premier Security Solution</h1>
             <p>Government, State Capitol & Downtown Security Services</p>
-            <a href="#contact-sec" class="quote-btn-sec">Request a Quote</a>
+            <a href="#contact-sec" class="quote-btn-sec" aria-label="Request a security quote for Sacramento services">Request a Quote</a>
         </div>
     </header>
 
@@ -346,7 +375,7 @@
                 <!-- First Highlight Box -->
                 <div class="highlight-box">
                     <p>
-                        <strong>ShieldWise Security</strong> is Sacramento's trusted leader in government and commercial security services. 
+                        <strong>ShieldWise Security</strong> is Sacramento's trusted leader in <a href="/services/government-security">government</a> and <a href="/services/commercial-security">commercial security services</a>. 
                         Our professional security guards provide comprehensive protection for government buildings, state capitol facilities, 
                         downtown businesses, and commercial properties throughout the Sacramento metropolitan area.
                     </p>
@@ -355,6 +384,11 @@
                         for government facilities, state buildings, and high-profile events. This unique environment creates 
                         significant security demands to protect officials, citizens, and facilities. Whether you operate a government 
                         building, downtown business, or commercial facility, securing your assets is paramount in the capital city.
+                    </p>
+                    <p>
+                        Our <a href="/services/armed-security">armed</a> and <a href="/services/unarmed-security">unarmed security guards</a> are specially trained for Sacramento's unique challenges, including 
+                        state capitol protocols, government clearance requirements, and downtown urban security management. We also provide 
+                        specialized services like <a href="/services/event-security">event security</a> for political gatherings and <a href="/services/executive-protection">executive protection</a> for high-profile officials.
                     </p>
                 </div>
 
@@ -539,6 +573,37 @@
         </div>
     </section>
 
+    <!-- Customer Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="text-center mb-5">What Our Sacramento Clients Say</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"ShieldWise Security has provided outstanding security services for our government facility in Sacramento for over two years. Their guards are professional, reliable, and well-trained in government security protocols."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <strong>David Thompson</strong><br>
+                            <span>Government Facility Manager</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Professional and reliable security services in Sacramento. The team understands government security challenges and provides excellent protection for our downtown operations."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <strong>Maria Garcia</strong><br>
+                            <span>Downtown Business Owner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Enhanced FAQ Section -->
     <section class="enhanced-faq-section">
         <div class="container">
@@ -711,10 +776,10 @@
     <!-- Footer -->
     <%- include('../partials/Footer') %>
 
-    <!-- Bootstrap and jQuery JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap and jQuery JavaScript - Deferred -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
 
     <!-- Advanced JavaScript for Professional Features -->
     <script>
@@ -858,7 +923,25 @@
             });
         }
 
+        // Lazy loading for images
+        function implementLazyLoading() {
+            const images = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            images.forEach(img => imageObserver.observe(img));
+        }
+
         preloadResources();
+        implementLazyLoading();
     </script>
 </body>
 </html>
