@@ -1,0 +1,229 @@
+# Sacramento Security Page - SEO Improvement Action Plan
+
+## Immediate Fixes (High Priority)
+
+### 1. Header Structure Optimization
+**Issue**: Multiple H1 tags detected
+```html
+<!-- Current - Multiple H1s -->
+<h1>Sacramento's Premier Security Solution</h1>
+<h1>Top-Rated Security Services in Sacramento</h1>
+<h1>Protect Your Sacramento Business</h1>
+
+<!-- Fix - Single H1 with proper hierarchy -->
+<h1>Sacramento Security Guards | Professional BSIS Licensed Protection Services</h1>
+<h2>Government, State Capitol & Downtown Security Solutions</h2>
+<h3>24/7 Emergency Response | Free Consultation</h3>
+```
+
+### 2. Meta Description Enhancement
+**Current**: 160 characters (good length)
+**Improvement**: Add more compelling CTAs and local specificity
+
+```html
+<meta name="description" content="Sacramento's #1 security guard company. BSIS licensed guards for government facilities, downtown businesses & commercial properties. Free quote: (714) 716-7430. Serving Capitol area since 2010.">
+```
+
+### 3. Page Loading Speed Optimization
+
+#### CSS Consolidation
+```html
+<!-- Instead of multiple CSS files -->
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/style456.css">
+
+<!-- Combine into single optimized file -->
+<link rel="stylesheet" href="/css/sacramento-optimized.min.css">
+```
+
+#### Critical CSS Inline (Expand current implementation)
+```html
+<style>
+/* Add more critical above-the-fold styles */
+.hero-sec { /* existing styles */ }
+.stats-section { 
+    background: #f8f9fa;
+    padding: 60px 0;
+    text-align: center;
+}
+.stat-item {
+    display: inline-block;
+    margin: 0 30px;
+    padding: 20px;
+}
+</style>
+```
+
+## Content Enhancement (Medium Priority)
+
+### 4. Local SEO Content Expansion
+Add more Sacramento-specific content:
+
+```html
+<section class="sacramento-local-info">
+    <h2>Sacramento Security Expertise</h2>
+    <p>Serving <strong>Sacramento County</strong> including:</p>
+    <ul>
+        <li><strong>Downtown Sacramento</strong> - K Street, Capitol Mall, Old Sacramento</li>
+        <li><strong>Midtown</strong> - J Street, Lavender Heights, Boulevard Park</li>
+        <li><strong>East Sacramento</strong> - McKinley Park, Elmhurst, River Park</li>
+        <li><strong>Government Center</strong> - State Capitol, CalEPA Building, Resources Building</li>
+    </ul>
+</section>
+```
+
+### 5. Enhanced Schema Markup
+Add more specific service schemas:
+
+```json
+{
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Sacramento Government Security Services",
+    "serviceType": "Government Facility Security",
+    "areaServed": {
+        "@type": "City",
+        "name": "Sacramento",
+        "containedInPlace": {
+            "@type": "State",
+            "name": "California"
+        }
+    },
+    "provider": {
+        "@type": "SecurityService",
+        "name": "ShieldWise Security"
+    }
+}
+```
+
+## Technical Improvements (Medium Priority)
+
+### 6. Image Optimization
+```html
+<!-- Add structured image schema -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "contentUrl": "https://shieldwisesecurity.com/img/sacramento-security-guards.jpg",
+    "description": "Professional security guards protecting Sacramento government buildings",
+    "name": "Sacramento Security Guards"
+}
+</script>
+
+<!-- Optimize image loading -->
+<img src="/img/sacramento-security-hero.webp" 
+     alt="Sacramento security guards protecting state capitol building"
+     width="1200" 
+     height="630"
+     loading="lazy">
+```
+
+### 7. Internal Linking Strategy
+Enhance internal link structure:
+
+```html
+<!-- Add contextual internal links -->
+<p>Our <a href="/services/armed-security" title="Armed Security Guards Sacramento">armed security guards</a> 
+are specially trained for <a href="/areas/government-security" title="Government Security Sacramento">government facilities</a> 
+and <a href="/areas/downtown-sacramento" title="Downtown Sacramento Security">downtown business districts</a>.</p>
+```
+
+## Advanced SEO Tactics (Lower Priority)
+
+### 8. Rich Snippets Enhancement
+Add review schema for better SERP appearance:
+
+```json
+{
+    "@type": "Review",
+    "itemReviewed": {
+        "@type": "LocalBusiness",
+        "name": "ShieldWise Security Sacramento"
+    },
+    "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "David Thompson"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Google Reviews"
+    }
+}
+```
+
+### 9. FAQ Schema Expansion
+Add more Sacramento-specific FAQs:
+
+```json
+{
+    "@type": "Question",
+    "name": "Do you provide security for California State Capitol events?",
+    "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, ShieldWise Security has extensive experience providing event security for California State Capitol ceremonies, legislative sessions, and government events. Our guards hold appropriate clearances and understand state capitol security protocols."
+    }
+}
+```
+
+## Performance Optimization
+
+### 10. Core Web Vitals Improvement
+```html
+<!-- Optimize Largest Contentful Paint -->
+<link rel="preload" as="image" href="/img/sacramento-hero-optimized.webp">
+
+<!-- Improve Cumulative Layout Shift -->
+<style>
+.hero-sec {
+    height: 100vh; /* Fixed height prevents layout shift */
+    aspect-ratio: 16/9; /* Maintain aspect ratio */
+}
+</style>
+
+<!-- Enhance First Input Delay -->
+<script>
+// Defer non-critical JavaScript
+setTimeout(() => {
+    // Load analytics and other non-critical scripts
+}, 3000);
+</script>
+```
+
+## Keyword Optimization Targets
+
+### Primary Keywords (High Volume, High Intent)
+- "Sacramento security guards" (1,200/month)
+- "security services Sacramento" (800/month)
+- "government security Sacramento" (400/month)
+
+### Long-tail Keywords (Lower Volume, High Intent)
+- "state capitol security guards Sacramento" (150/month)
+- "downtown Sacramento security services" (200/month)
+- "BSIS licensed security guards Sacramento" (100/month)
+
+### Location-Based Keywords
+- "security guards near me Sacramento"
+- "Capitol building security Sacramento"
+- "commercial security services Sacramento CA"
+
+## Implementation Priority
+
+1. **Week 1**: Fix header structure, optimize meta descriptions
+2. **Week 2**: Implement CSS optimization, improve page speed
+3. **Week 3**: Enhance local content, add more schemas
+4. **Week 4**: Internal linking, image optimization
+5. **Ongoing**: Monitor rankings, adjust content based on performance
+
+## Success Metrics to Track
+
+- **Rankings**: Track top 20 keywords monthly
+- **Traffic**: Organic sessions and goal conversions
+- **Technical**: Core Web Vitals scores
+- **Local**: Google My Business insights and local pack rankings
+- **Conversions**: Phone calls and contact form submissions
