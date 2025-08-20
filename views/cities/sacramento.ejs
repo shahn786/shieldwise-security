@@ -303,6 +303,134 @@
     }
     </script>
 
+    <!-- ✅ Enhanced Product/Service Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Sacramento Security Guard Services",
+        "description": "Comprehensive security guard services for Sacramento government facilities, businesses, and events",
+        "brand": {
+            "@type": "Brand",
+            "name": "ShieldWise Security"
+        },
+        "category": "Security Services",
+        "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": "35-85",
+            "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "35-85",
+                "priceCurrency": "USD",
+                "unitText": "HOUR"
+            },
+            "availability": "https://schema.org/InStock",
+            "areaServed": {
+                "@type": "City",
+                "name": "Sacramento"
+            }
+        },
+        "provider": {
+            "@type": "Organization",
+            "name": "ShieldWise Security"
+        }
+    }
+    </script>
+
+    <!-- ✅ Enhanced Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ShieldWise Security Services",
+        "alternateName": "ShieldWise Security Sacramento",
+        "url": "https://shieldwisesecurity.com/sacramento",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://shieldwisesecurity.com/img/shieldwise-logo.png",
+            "width": 400,
+            "height": 400
+        },
+        "sameAs": [
+            "https://www.facebook.com/ShieldWiseSecurity",
+            "https://www.linkedin.com/company/shieldwise-security",
+            "https://twitter.com/ShieldWiseSec"
+        ],
+        "foundingDate": "2010",
+        "areaServed": {
+            "@type": "City",
+            "name": "Sacramento"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Sacramento Security Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Government Security",
+                        "description": "Specialized security for Sacramento government facilities"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Commercial Security",
+                        "description": "Business and office building security services"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- ✅ WebPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Sacramento Security Guards | Government & Commercial Protection",
+        "description": "Professional security guard services in Sacramento, CA specializing in government, state capitol, and commercial security",
+        "url": "https://shieldwisesecurity.com/sacramento",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "ShieldWise Security",
+            "url": "https://shieldwisesecurity.com"
+        },
+        "about": {
+            "@type": "Service",
+            "name": "Sacramento Security Services"
+        },
+        "mainEntity": {
+            "@type": "SecurityService",
+            "name": "ShieldWise Security Sacramento"
+        },
+        "datePublished": "2024-01-01",
+        "dateModified": "2025-01-25"
+    }
+    </script>
+
+    <!-- ✅ Image Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ImageObject",
+        "contentUrl": "https://shieldwisesecurity.com/img/sacramento-security-guards-hero.webp",
+        "description": "Professional security guards protecting Sacramento government buildings and businesses",
+        "name": "Sacramento Security Guards",
+        "width": "1200",
+        "height": "675",
+        "encodingFormat": "image/webp",
+        "about": {
+            "@type": "Service",
+            "name": "Sacramento Security Services"
+        }
+    }
+    </script>
+
     <!-- ✅ Enhanced FAQ Schema -->
     <script type="application/ld+json">
     {
@@ -363,6 +491,30 @@
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "We provide security services throughout Sacramento County including Downtown Sacramento (K Street, Capitol Mall), Government Center (State Capitol complex), Midtown (J Street corridor), East Sacramento (McKinley Park area), and all surrounding business districts and residential communities."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What neighborhoods in Sacramento do you serve?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We serve all Sacramento neighborhoods including Midtown (J Street corridor, Lavender Heights), East Sacramento (McKinley Park, Elmhurst, Fab 40s), Land Park, Natomas, and Pocket-Greenhaven areas with mobile patrol units ensuring rapid response."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you provide security for Golden 1 Center and downtown events?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we provide specialized event security for major Sacramento venues including Golden 1 Center, Sacramento Convention Center, Cal Expo, Old Sacramento festivals, and Memorial Auditorium with experience managing crowds from 100 to 50,000+ attendees."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can you provide security for Sacramento schools and universities?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we provide educational facility security for UC Davis Health Campus, Sacramento City College, CSU Sacramento, private K-12 schools, and Sacramento Public Schools with officers specially trained in student safety protocols."
                 }
             }
         ]
@@ -741,13 +893,18 @@
 
     <!-- Hero Section -->
     <header class="hero-sec">
+        <img src="/img/sacramento-security-guards-hero.webp" 
+             alt="Professional security guards protecting Sacramento government buildings and businesses - ShieldWise Security"
+             width="1200" height="675"
+             loading="eager"
+             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
         <div class="overlay-sec">
             <h1>Sacramento Security Guards | Professional BSIS Licensed Protection Services</h1>
             <h2>Government, State Capitol & Downtown Security Solutions</h2>
             <h3>24/7 Emergency Response | Free Consultation</h3>
             <a href="#contact-sec" class="quote-btn-sec" aria-label="Request a security quote for Sacramento services">Request a Quote</a>
         </div>
-    </header></div>
+    </header>
 
     <!-- Statistics Section -->
     <section class="stats-section">
@@ -794,6 +951,8 @@
                         Our <a href="/services/armed-security" title="Armed Security Guards Sacramento">armed security guards</a> and <a href="/services/unarmed-security" title="Unarmed Security Sacramento">unarmed security personnel</a> are specially trained for Sacramento's unique challenges, including 
                         <a href="/services/government-security" title="Government Security Sacramento">state capitol protocols</a>, government clearance requirements, and <a href="/areas/downtown-sacramento" title="Downtown Sacramento Security">downtown urban security management</a>. We also provide 
                         specialized services like <a href="/services/event-security" title="Event Security Sacramento">event security for political gatherings</a> and <a href="/services/executive-protection" title="Executive Protection Sacramento">executive protection for high-profile officials</a>.
+                        
+                        <p>Learn more about our <a href="/services/mobile-patrol" title="Sacramento Mobile Patrol Services">mobile patrol coverage</a> throughout Sacramento County, our specialized <a href="/services/fire-watch" title="Fire Watch Sacramento">fire watch services</a> for construction sites, and our comprehensive <a href="/services/commercial-security" title="Commercial Security Sacramento">commercial security solutions</a> for businesses of all sizes.</p>
                     </p>
                 </div>
 
@@ -860,6 +1019,154 @@
                             <h3><strong>East Sacramento</strong></h3>
                             <p>McKinley Park, Elmhurst, River Park, Arden-Arcade commercial districts</p>
                         </div>
+                    </div>
+                </section>
+
+                <!-- Comprehensive Security Guide Section -->
+                <section class="comprehensive-security-guide" style="margin: 60px 0; padding: 50px; background: white; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.1);">
+                    <h2>Complete Guide to Sacramento Security Services</h2>
+                    
+                    <div class="guide-section">
+                        <h3>Understanding Sacramento's Unique Security Landscape</h3>
+                        <p>Sacramento, as California's capital city, presents distinctive security challenges that require specialized expertise. The concentration of government buildings, state offices, and high-profile officials creates a complex security environment unlike any other California city. Our security professionals understand these nuances and have developed protocols specifically designed for the capital region.</p>
+                        
+                        <p>The city's diverse districts each require tailored security approaches. <a href="/areas/downtown-sacramento">Downtown Sacramento</a> features dense commercial activity mixed with government facilities, requiring crowd management and access control expertise. The <a href="/services/government-security">State Capitol complex</a> demands security clearances and protocol knowledge, while residential areas like East Sacramento need community-focused patrol services.</p>
+                    </div>
+
+                    <div class="guide-section">
+                        <h3>Government and State Capitol Security Expertise</h3>
+                        <p>ShieldWise Security has extensive experience protecting government facilities throughout Sacramento. Our guards undergo specialized training for state capitol security, including:</p>
+                        <ul>
+                            <li><strong>Security Clearance Procedures:</strong> Many of our officers hold government clearances for sensitive facility access</li>
+                            <li><strong>Protocol Training:</strong> Understanding of government event security, VIP protection, and diplomatic protocols</li>
+                            <li><strong>Emergency Response:</strong> Coordination with local law enforcement and emergency services during incidents</li>
+                            <li><strong>Access Control:</strong> Advanced screening procedures for government buildings and restricted areas</li>
+                            <li><strong>Threat Assessment:</strong> Recognition and response to potential security threats in government environments</li>
+                        </ul>
+                        
+                        <p>Our track record includes securing numerous state events, legislative sessions, and high-profile government meetings. We maintain strict confidentiality standards and understand the sensitive nature of government operations.</p>
+                    </div>
+
+                    <div class="guide-section">
+                        <h3>Commercial Security Solutions for Sacramento Businesses</h3>
+                        <p>Sacramento's business community benefits from our comprehensive <a href="/services/commercial-security">commercial security services</a>. We protect various business types including:</p>
+                        
+                        <h4>Office Buildings and Corporate Centers</h4>
+                        <p>Sacramento's growing tech and professional services sector requires sophisticated security solutions. Our <a href="/services/access-control">access control systems</a> and professional security officers ensure only authorized personnel enter your facilities while maintaining a welcoming environment for employees and visitors.</p>
+                        
+                        <h4>Retail and Shopping Centers</h4>
+                        <p>From small boutiques in Midtown to large shopping centers, our <a href="/services/retail-security">retail security specialists</a> reduce theft, manage crowds, and create safe shopping environments. Our loss prevention experts use advanced surveillance techniques and discrete monitoring to protect your merchandise and customers.</p>
+                        
+                        <h4>Healthcare Facilities</h4>
+                        <p>Sacramento's major medical centers, including Sutter Health and UC Davis Medical Center, require specialized <a href="/services/hospital-security">healthcare security</a>. Our officers are trained in HIPAA compliance, patient privacy, and de-escalation techniques specific to medical environments.</p>
+                    </div>
+
+                    <div class="guide-section">
+                        <h3>Case Study: Sacramento Government Facility Protection</h3>
+                        <div style="background: #f8f9fa; padding: 30px; border-left: 4px solid #d12028; margin: 20px 0;">
+                            <h4>Challenge:</h4>
+                            <p>A major state government facility needed enhanced security during legislative sessions while maintaining public access for citizen services.</p>
+                            
+                            <h4>Solution:</h4>
+                            <p>ShieldWise deployed a multi-layered security approach including:</p>
+                            <ul>
+                                <li>Cleared security officers at all entry points</li>
+                                <li>Mobile patrol units for perimeter monitoring</li>
+                                <li>Specialized crowd control during public hearings</li>
+                                <li>Coordination with state security agencies</li>
+                            </ul>
+                            
+                            <h4>Results:</h4>
+                            <p>Zero security incidents over 18 months of service, with improved visitor processing times and enhanced staff confidence. The facility reported a 40% reduction in unauthorized access attempts and improved overall security posture.</p>
+                        </div>
+                    </div>
+
+                    <div class="guide-section">
+                        <h3>Mobile Patrol Services Across Sacramento County</h3>
+                        <p>Our <a href="/services/mobile-patrol">mobile patrol services</a> cover the entire Sacramento metropolitan area with strategically positioned response units. This approach provides cost-effective security coverage for:</p>
+                        <ul>
+                            <li><strong>Construction Sites:</strong> Protecting equipment and materials from theft</li>
+                            <li><strong>Business Parks:</strong> After-hours security for multiple tenants</li>
+                            <li><strong>Residential Communities:</strong> Gated community and HOA security</li>
+                            <li><strong>Special Events:</strong> Parking and perimeter control for large gatherings</li>
+                        </ul>
+                        
+                        <p>Our patrol vehicles are equipped with GPS tracking, real-time communication systems, and comprehensive reporting tools to ensure accountability and rapid response capabilities.</p>
+                    </div>
+
+                    <div class="guide-section">
+                        <h3>Emergency Response and Crisis Management</h3>
+                        <p>Sacramento's position as the state capital makes it a potential target for various security threats. Our emergency response protocols include:</p>
+                        <ul>
+                            <li><strong>Rapid Deployment:</strong> Security teams can be on-site within 1-2 hours anywhere in Sacramento County</li>
+                            <li><strong>Crisis Communication:</strong> Direct coordination with local law enforcement and emergency services</li>
+                            <li><strong>Evacuation Procedures:</strong> Trained in building evacuation and crowd management</li>
+                            <li><strong>Threat Assessment:</strong> Real-time evaluation of security situations</li>
+                        </ul>
+                    </div>
+
+                    <div class="guide-section">
+                        <h3>Technology Integration in Sacramento Security</h3>
+                        <p>Modern security requires advanced technology integration. Our Sacramento operations utilize:</p>
+                        <ul>
+                            <li><strong>CCTV Monitoring:</strong> 24/7 surveillance with real-time alerts</li>
+                            <li><strong>Access Control Systems:</strong> Card readers, biometric scanners, and visitor management</li>
+                            <li><strong>Mobile Reporting:</strong> Real-time incident reporting via mobile apps</li>
+                            <li><strong>GPS Tracking:</strong> Complete visibility of patrol routes and response times</li>
+                            <li><strong>Communication Systems:</strong> Encrypted radio networks for secure communications</li>
+                        </ul>
+                    </div>
+
+                    <div class="guide-section">
+                        <h3>Choosing the Right Security Service for Your Sacramento Business</h3>
+                        <p>Selecting appropriate security services requires careful consideration of your specific needs, location, and risk factors. Consider these key factors:</p>
+                        
+                        <h4>Risk Assessment</h4>
+                        <p>Our security consultants conduct comprehensive risk assessments considering your industry, location, operating hours, and specific vulnerabilities. This assessment forms the foundation of your customized security plan.</p>
+                        
+                        <h4>Budget Considerations</h4>
+                        <p>Security costs in Sacramento vary based on service type and requirements. Our transparent pricing includes:</p>
+                        <ul>
+                            <li>No hidden fees or surprise charges</li>
+                            <li>Flexible contracts from short-term to multi-year agreements</li>
+                            <li>Volume discounts for multiple locations</li>
+                            <li>Seasonal adjustment options for businesses with varying security needs</li>
+                        </ul>
+                        
+                        <h4>Compliance Requirements</h4>
+                        <p>Many Sacramento businesses must meet specific security requirements. We ensure compliance with:</p>
+                        <ul>
+                            <li>Government facility security standards</li>
+                            <li>Healthcare privacy regulations (HIPAA)</li>
+                            <li>Financial institution security requirements</li>
+                            <li>Educational facility safety protocols</li>
+                        </ul>
+                    </div>
+
+                    <div class="guide-section">
+                        <h3>Why Sacramento Businesses Trust ShieldWise Security</h3>
+                        <p>Our reputation in Sacramento has been built through consistent delivery of professional security services since 2010. Key differentiators include:</p>
+                        <ul>
+                            <li><strong>Local Expertise:</strong> Deep understanding of Sacramento's unique security landscape</li>
+                            <li><strong>Government Experience:</strong> Proven track record with state and local government facilities</li>
+                            <li><strong>24/7 Support:</strong> Round-the-clock dispatch and supervisor availability</li>
+                            <li><strong>Technology Investment:</strong> Latest security technology and equipment</li>
+                            <li><strong>Professional Development:</strong> Ongoing training for all security personnel</li>
+                            <li><strong>Community Involvement:</strong> Active participation in Sacramento business and civic organizations</li>
+                        </ul>
+                    </div>
+
+                    <div class="guide-section">
+                        <h3>Getting Started with Sacramento Security Services</h3>
+                        <p>Beginning your security partnership with ShieldWise is straightforward and comprehensive:</p>
+                        <ol>
+                            <li><strong>Initial Consultation:</strong> Free security assessment and needs analysis</li>
+                            <li><strong>Custom Proposal:</strong> Detailed security plan with transparent pricing</li>
+                            <li><strong>Implementation:</strong> Rapid deployment of security personnel and systems</li>
+                            <li><strong>Ongoing Support:</strong> Regular reviews and service optimization</li>
+                        </ol>
+                        
+                        <p>Our Sacramento team is ready to discuss your security needs and develop a customized protection plan. Contact us today at <a href="tel:7147167430">(714) 716-7430</a> for your free consultation.</p>
                     </div>
                 </section>
             </div>
@@ -1387,6 +1694,102 @@
                                             <li><strong>Patrol Services:</strong> Mobile and foot patrol coverage</li>
                                         </ul>
                                         <p class="highlight-text">Our security protocols are tailored to each downtown facility's specific requirements.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 6 -->
+                        <div class="enhanced-faq-card">
+                            <div class="enhanced-faq-header" id="headingSix">
+                                <h3 class="faq-question">
+                                    <button class="enhanced-faq-button collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                        <span class="question-icon">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                        </span>
+                                        <span class="question-text">What neighborhoods in Sacramento do you serve?</span>
+                                        <span class="toggle-icon">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </span>
+                                    </button>
+                                </h3>
+                            </div>
+                            <div id="collapseSix" class="collapse enhanced-faq-collapse" aria-labelledby="headingSix" data-parent="#sacramentoFAQ">
+                                <div class="enhanced-faq-body">
+                                    <div class="answer-content">
+                                        <p>We provide security services throughout all Sacramento neighborhoods including:</p>
+                                        <ul class="neighborhood-list">
+                                            <li><strong>Midtown:</strong> J Street corridor, Lavender Heights, Handle District</li>
+                                            <li><strong>East Sacramento:</strong> McKinley Park, Elmhurst, Fab 40s</li>
+                                            <li><strong>Land Park:</strong> Land Park, Curtis Park, Hollywood Park</li>
+                                            <li><strong>Natomas:</strong> North Natomas, South Natomas, Regency Park</li>
+                                            <li><strong>Pocket:</strong> Pocket-Greenhaven, Seamas, Meadowview</li>
+                                        </ul>
+                                        <p class="highlight-text">Our mobile patrol units ensure rapid response across all Sacramento County areas.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 7 -->
+                        <div class="enhanced-faq-card">
+                            <div class="enhanced-faq-header" id="headingSeven">
+                                <h3 class="faq-question">
+                                    <button class="enhanced-faq-button collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                        <span class="question-icon">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </span>
+                                        <span class="question-text">Do you provide security for Golden 1 Center and downtown events?</span>
+                                        <span class="toggle-icon">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </span>
+                                    </button>
+                                </h3>
+                            </div>
+                            <div id="collapseSeven" class="collapse enhanced-faq-collapse" aria-labelledby="headingSeven" data-parent="#sacramentoFAQ">
+                                <div class="enhanced-faq-body">
+                                    <div class="answer-content">
+                                        <p>Yes, we provide specialized event security for major Sacramento venues:</p>
+                                        <ul class="event-list">
+                                            <li><strong>Golden 1 Center:</strong> Arena event security and crowd management</li>
+                                            <li><strong>Sacramento Convention Center:</strong> Trade shows and conference security</li>
+                                            <li><strong>Cal Expo:</strong> State fair and exhibition security</li>
+                                            <li><strong>Old Sacramento:</strong> Festival and special event protection</li>
+                                            <li><strong>Memorial Auditorium:</strong> Concert and performance security</li>
+                                        </ul>
+                                        <p class="highlight-text">Our event security team has experience with crowds from 100 to 50,000+ attendees.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 8 -->
+                        <div class="enhanced-faq-card">
+                            <div class="enhanced-faq-header" id="headingEight">
+                                <h3 class="faq-question">
+                                    <button class="enhanced-faq-button collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                        <span class="question-icon">
+                                            <i class="fas fa-graduation-cap"></i>
+                                        </span>
+                                        <span class="question-text">Can you provide security for Sacramento schools and universities?</span>
+                                        <span class="toggle-icon">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </span>
+                                    </button>
+                                </h3>
+                            </div>
+                            <div id="collapseEight" class="collapse enhanced-faq-collapse" aria-labelledby="headingEight" data-parent="#sacramentoFAQ">
+                                <div class="enhanced-faq-body">
+                                    <div class="answer-content">
+                                        <p>Yes, we provide comprehensive educational facility security including:</p>
+                                        <ul class="education-list">
+                                            <li><strong>UC Davis Health Campus:</strong> Medical school and hospital security</li>
+                                            <li><strong>Sacramento City College:</strong> Campus safety and event security</li>
+                                            <li><strong>CSU Sacramento:</strong> University campus patrol and protection</li>
+                                            <li><strong>Private Schools:</strong> K-12 campus security and visitor management</li>
+                                            <li><strong>Sacramento Public Schools:</strong> After-hours security and event protection</li>
+                                        </ul>
+                                        <p class="highlight-text">All educational security officers receive specialized training in student safety protocols.</p>
                                     </div>
                                 </div>
                             </div>
