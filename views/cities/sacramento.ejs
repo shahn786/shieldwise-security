@@ -841,12 +841,315 @@
                 max-width: 280px;
             }
         }
+        /* Enhanced Consultation Banner Styling - Rebuilt */
+        .consultation-banner {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e293b 75%, #0f172a 100%);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            margin: 80px 0;
+            border-top: 4px solid #d12028;
+            border-bottom: 4px solid #d12028;
+        }
+
+        .consultation-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(209, 32, 40, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(209, 32, 40, 0.1) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.02) 50%, transparent 70%);
+            animation: subtleShimmer 8s ease-in-out infinite;
+        }
+
+        @keyframes subtleShimmer {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        .consultation-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .consultation-content h2 {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 40px;
+            line-height: 1.1;
+            text-shadow: 
+                0 2px 4px rgba(0, 0, 0, 0.5),
+                0 4px 8px rgba(0, 0, 0, 0.3),
+                0 8px 16px rgba(0, 0, 0, 0.2);
+            letter-spacing: -0.03em;
+            position: relative;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .consultation-content h2::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 8px;
+            background: linear-gradient(90deg, transparent, #d12028, #ff4757, #d12028, transparent);
+            border-radius: 4px;
+            box-shadow: 0 0 20px rgba(209, 32, 40, 0.5);
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { 
+                opacity: 0.7;
+                transform: translateX(-50%) scaleX(1);
+            }
+            50% { 
+                opacity: 1;
+                transform: translateX(-50%) scaleX(1.1);
+            }
+        }
+
+        .consultation-content .underline {
+            width: 200px;
+            height: 8px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                #d12028 20%, 
+                #ff4757 50%, 
+                #d12028 80%, 
+                transparent 100%);
+            margin: 40px auto 50px;
+            border-radius: 4px;
+            box-shadow: 0 4px 20px rgba(209, 32, 40, 0.4);
+            position: relative;
+        }
+
+        .consultation-content .underline::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            border-radius: 4px;
+            animation: slideShine 4s ease-in-out infinite;
+        }
+
+        @keyframes slideShine {
+            0% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .consultation-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .phone-button {
+            background: linear-gradient(135deg, #d12028 0%, #e53935 25%, #f44336 50%, #e53935 75%, #d12028 100%);
+            color: #ffffff;
+            padding: 25px 50px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-size: 1.6rem;
+            font-weight: 800;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 
+                0 10px 30px rgba(209, 32, 40, 0.4),
+                0 4px 15px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .phone-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.3), 
+                transparent);
+            transition: left 0.6s ease;
+        }
+
+        .phone-button::after {
+            content: '📞';
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .phone-button:hover {
+            transform: translateY(-8px) scale(1.08);
+            box-shadow: 
+                0 20px 40px rgba(209, 32, 40, 0.6),
+                0 8px 25px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            text-decoration: none;
+            border-color: rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, #e53935 0%, #f44336 25%, #ff5722 50%, #f44336 75%, #e53935 100%);
+        }
+
+        .phone-button:hover::before {
+            left: 100%;
+        }
+
+        .phone-button:hover::after {
+            transform: translateY(-50%) rotate(15deg) scale(1.2);
+        }
+
+        .phone-button:active {
+            transform: translateY(-4px) scale(1.04);
+        }
+
+        /* Decorative elements */
+        .consultation-banner::after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(209, 32, 40, 0.2), rgba(255, 71, 87, 0.1));
+            border-radius: 50%;
+            animation: floatDecor 6s ease-in-out infinite;
+        }
+
+        @keyframes floatDecor {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.6;
+            }
+            50% { 
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 1;
+            }
+        }
+
+        /* Additional security-themed decorative elements */
+        .consultation-content::before {
+            content: '🛡️';
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            opacity: 0.3;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { 
+                transform: translateX(-50%) scale(1);
+                opacity: 0.3;
+            }
+            50% { 
+                transform: translateX(-50%) scale(1.1);
+                opacity: 0.6;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .consultation-banner {
+                padding: 80px 0;
+                margin: 60px 0;
+            }
+
+            .consultation-content h2 {
+                font-size: 2.8rem;
+                margin-bottom: 30px;
+                line-height: 1.2;
+            }
+
+            .consultation-content .underline {
+                width: 150px;
+                height: 6px;
+                margin: 30px auto 40px;
+            }
+
+            .consultation-buttons {
+                gap: 20px;
+                margin-top: 40px;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .phone-button {
+                padding: 20px 40px;
+                font-size: 1.3rem;
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .consultation-banner {
+                padding: 60px 0;
+                margin: 40px 0;
+            }
+
+            .consultation-content {
+                padding: 0 20px;
+            }
+
+            .consultation-content h2 {
+                font-size: 2.2rem;
+                line-height: 1.3;
+            }
+
+            .consultation-content .underline {
+                width: 120px;
+                height: 5px;
+            }
+
+            .phone-button {
+                padding: 18px 35px;
+                font-size: 1.2rem;
+                letter-spacing: 0.5px;
+            }
+
+            .phone-button::after {
+                left: 15px;
+                font-size: 1rem;
+            }
+        }
     </style>
 
     <!-- ✅ Critical Resource Preloading -->
     <link rel="preload" href="/css/style456.css" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" as="style">
-    <link rel="preload" as="image" href="/img/sacraamento12.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/img/sacramento-security-guards-hero.webp" fetchpriority="high">
     <link rel="preload" as="font" href="https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2" type="font/woff2" crossorigin>
 
     <!-- ✅ External CSS (Optimized for Speed) -->
@@ -951,7 +1254,7 @@
                         Our <a href="/services/armed-security" title="Armed Security Guards Sacramento">armed security guards</a> and <a href="/services/unarmed-security" title="Unarmed Security Sacramento">unarmed security personnel</a> are specially trained for Sacramento's unique challenges, including 
                         <a href="/services/government-security" title="Government Security Sacramento">state capitol protocols</a>, government clearance requirements, and <a href="/areas/downtown-sacramento" title="Downtown Sacramento Security">downtown urban security management</a>. We also provide 
                         specialized services like <a href="/services/event-security" title="Event Security Sacramento">event security for political gatherings</a> and <a href="/services/executive-protection" title="Executive Protection Sacramento">executive protection for high-profile officials</a>.
-                        
+
                         <p>Learn more about our <a href="/services/mobile-patrol" title="Sacramento Mobile Patrol Services">mobile patrol coverage</a> throughout Sacramento County, our specialized <a href="/services/fire-watch" title="Fire Watch Sacramento">fire watch services</a> for construction sites, and our comprehensive <a href="/services/commercial-security" title="Commercial Security Sacramento">commercial security solutions</a> for businesses of all sizes.</p>
                     </p>
                 </div>
@@ -1025,11 +1328,11 @@
                 <!-- Comprehensive Security Guide Section -->
                 <section class="comprehensive-security-guide" style="margin: 60px 0; padding: 50px; background: white; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.1);">
                     <h2>Complete Guide to Sacramento Security Services</h2>
-                    
+
                     <div class="guide-section">
                         <h3>Understanding Sacramento's Unique Security Landscape</h3>
                         <p>Sacramento, as California's capital city, presents distinctive security challenges that require specialized expertise. The concentration of government buildings, state offices, and high-profile officials creates a complex security environment unlike any other California city. Our security professionals understand these nuances and have developed protocols specifically designed for the capital region.</p>
-                        
+
                         <p>The city's diverse districts each require tailored security approaches. <a href="/areas/downtown-sacramento">Downtown Sacramento</a> features dense commercial activity mixed with government facilities, requiring crowd management and access control expertise. The <a href="/services/government-security">State Capitol complex</a> demands security clearances and protocol knowledge, while residential areas like East Sacramento need community-focused patrol services.</p>
                     </div>
 
@@ -1043,20 +1346,20 @@
                             <li><strong>Access Control:</strong> Advanced screening procedures for government buildings and restricted areas</li>
                             <li><strong>Threat Assessment:</strong> Recognition and response to potential security threats in government environments</li>
                         </ul>
-                        
+
                         <p>Our track record includes securing numerous state events, legislative sessions, and high-profile government meetings. We maintain strict confidentiality standards and understand the sensitive nature of government operations.</p>
                     </div>
 
                     <div class="guide-section">
                         <h3>Commercial Security Solutions for Sacramento Businesses</h3>
                         <p>Sacramento's business community benefits from our comprehensive <a href="/services/commercial-security">commercial security services</a>. We protect various business types including:</p>
-                        
+
                         <h4>Office Buildings and Corporate Centers</h4>
                         <p>Sacramento's growing tech and professional services sector requires sophisticated security solutions. Our <a href="/services/access-control">access control systems</a> and professional security officers ensure only authorized personnel enter your facilities while maintaining a welcoming environment for employees and visitors.</p>
-                        
+
                         <h4>Retail and Shopping Centers</h4>
                         <p>From small boutiques in Midtown to large shopping centers, our <a href="/services/retail-security">retail security specialists</a> reduce theft, manage crowds, and create safe shopping environments. Our loss prevention experts use advanced surveillance techniques and discrete monitoring to protect your merchandise and customers.</p>
-                        
+
                         <h4>Healthcare Facilities</h4>
                         <p>Sacramento's major medical centers, including Sutter Health and UC Davis Medical Center, require specialized <a href="/services/hospital-security">healthcare security</a>. Our officers are trained in HIPAA compliance, patient privacy, and de-escalation techniques specific to medical environments.</p>
                     </div>
@@ -1066,7 +1369,7 @@
                         <div style="background: #f8f9fa; padding: 30px; border-left: 4px solid #d12028; margin: 20px 0;">
                             <h4>Challenge:</h4>
                             <p>A major state government facility needed enhanced security during legislative sessions while maintaining public access for citizen services.</p>
-                            
+
                             <h4>Solution:</h4>
                             <p>ShieldWise deployed a multi-layered security approach including:</p>
                             <ul>
@@ -1075,7 +1378,7 @@
                                 <li>Specialized crowd control during public hearings</li>
                                 <li>Coordination with state security agencies</li>
                             </ul>
-                            
+
                             <h4>Results:</h4>
                             <p>Zero security incidents over 18 months of service, with improved visitor processing times and enhanced staff confidence. The facility reported a 40% reduction in unauthorized access attempts and improved overall security posture.</p>
                         </div>
@@ -1090,7 +1393,7 @@
                             <li><strong>Residential Communities:</strong> Gated community and HOA security</li>
                             <li><strong>Special Events:</strong> Parking and perimeter control for large gatherings</li>
                         </ul>
-                        
+
                         <p>Our patrol vehicles are equipped with GPS tracking, real-time communication systems, and comprehensive reporting tools to ensure accountability and rapid response capabilities.</p>
                     </div>
 
@@ -1120,10 +1423,10 @@
                     <div class="guide-section">
                         <h3>Choosing the Right Security Service for Your Sacramento Business</h3>
                         <p>Selecting appropriate security services requires careful consideration of your specific needs, location, and risk factors. Consider these key factors:</p>
-                        
+
                         <h4>Risk Assessment</h4>
                         <p>Our security consultants conduct comprehensive risk assessments considering your industry, location, operating hours, and specific vulnerabilities. This assessment forms the foundation of your customized security plan.</p>
-                        
+
                         <h4>Budget Considerations</h4>
                         <p>Security costs in Sacramento vary based on service type and requirements. Our transparent pricing includes:</p>
                         <ul>
@@ -1132,7 +1435,7 @@
                             <li>Volume discounts for multiple locations</li>
                             <li>Seasonal adjustment options for businesses with varying security needs</li>
                         </ul>
-                        
+
                         <h4>Compliance Requirements</h4>
                         <p>Many Sacramento businesses must meet specific security requirements. We ensure compliance with:</p>
                         <ul>
@@ -1165,7 +1468,7 @@
                             <li><strong>Implementation:</strong> Rapid deployment of security personnel and systems</li>
                             <li><strong>Ongoing Support:</strong> Regular reviews and service optimization</li>
                         </ol>
-                        
+
                         <p>Our Sacramento team is ready to discuss your security needs and develop a customized protection plan. Contact us today at <a href="tel:7147167430">(714) 716-7430</a> for your free consultation.</p>
                     </div>
                 </section>
@@ -1174,7 +1477,7 @@
     </section>
 
     <!-- Free Security Consultation Banner -->
-    <section id="security-consultation" class="consultation-banner">
+    <section class="consultation-banner">
         <div class="consultation-content">
             <h2>Protect Your Sacramento Business<br>— Get Your Free Security Consultation Now!</h2>
             <div class="underline"></div>
@@ -1326,7 +1629,7 @@
                     <span class="rating-text">4.9/5 from 142+ Sacramento Reviews</span>
                 </div>
             </div>
-            
+
             <div class="testimonials-grid">
                 <!-- Testimonial 1 -->
                 <div class="premium-testimonial-card">
