@@ -1,0 +1,123 @@
+Fix these now (highest impact)
+
+Title too long
+Keep ≤ 60–65 chars and front-load the location.
+Suggested: Downtown Sacramento Security Guards | Armed & BSIS | ShieldWise
+
+Meta description is long & repeats “government”
+Target ~150–160 chars, no repetition.
+Suggested:
+BSIS-licensed armed & unarmed guards in Downtown Sacramento. 24/7 patrol, fire watch, corporate & event security. Fast response. Free quote: (714) 716-7430.
+
+Multiple <h1>s
+Use a single H1. Demote the second H1 to H2.
+
+LocalBusiness schema fixes
+
+Add "@id" and "url".
+
+Use E.164 phone (+17147167430).
+
+Add streetAddress (if you have one) or switch to a service-area business pattern.
+
+Make rating numbers actual numbers (not strings) and set worstRating: 1. If ratings aren’t independently published, consider removing aggregateRating to avoid “self-serving” review issues.
+
+Add sameAs (GBP, Facebook, LinkedIn, Instagram, Yelp).
+
+Robots meta: remove unsupported directive
+max-preview:-1 isn’t a valid directive—drop it.
+
+Meta keywords + geo/ICBM
+<meta name="keywords">, geo.*, and ICBM are ignored; remove to reduce bloat.
+
+Hero image & LCP
+Background images aren’t indexable and can hurt LCP/CLS. Prefer an <img> for the hero (or keep background but ensure you’ve got a real <img> above the fold with fetchpriority="high" and defined width/height).
+
+Internal linking
+Add contextual links to nearby pages (Midtown, Natomas, Elk Grove, Convention Center/Golden 1 event security). Improves topical authority and crawl paths.
+
+Accessibility on FAQ
+Use <button> with aria-expanded/aria-controls for toggles (helps Core Web Vitals/INP and accessibility).
+
+Claims
+Phrases like “78% reduction in property crime” and “zero security breaches” should be cited or softened; YMYL pages can be sensitive to unverifiable claims.
+
+Ready-to-paste patches
+1) Meta (title/description/robots)
+<title>Downtown Sacramento Security Guards | Armed & BSIS | ShieldWise</title>
+<meta name="description" content="BSIS-licensed armed & unarmed guards in Downtown Sacramento. 24/7 patrol, fire watch, corporate & event security. Fast response. Free quote: (714) 716-7430.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+2) Single H1 structure
+<!-- Keep this as the ONLY H1 -->
+<h1>Downtown Sacramento Security Guards — Armed & BSIS-Licensed</h1>
+
+<!-- Change the second former H1 to H2 -->
+<h2>Premium Security Guard Services in Downtown Sacramento, CA</h2>
+
+3) Corrected LocalBusiness JSON-LD (minimal, safe)
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":["LocalBusiness","SecurityService","ProfessionalService"],
+  "@id":"https://shieldwisesecurity.com/sacramento-county/downtown-sacramento#localbusiness",
+  "url":"https://shieldwisesecurity.com/sacramento-county/downtown-sacramento",
+  "name":"ShieldWise Security - Downtown Sacramento",
+  "description":"BSIS-licensed armed & unarmed guards, mobile patrol, fire watch, and event security in Downtown Sacramento.",
+  "image":"https://shieldwisesecurity.com/img/downtown-sacramento-security-guards-hero.webp",
+  "logo":"https://shieldwisesecurity.com/img/shieldwise-logo-2024.png",
+  "priceRange":"$$",
+  "telephone":"+17147167430",
+  "address":{
+    "@type":"PostalAddress",
+    "addressLocality":"Sacramento",
+    "addressRegion":"CA",
+    "postalCode":"95814",
+    "addressCountry":"US"
+  },
+  "areaServed":[{"@type":"City","name":"Sacramento"}],
+  "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"}],
+  "sameAs":[
+    "https://www.google.com/maps?cid=YOUR_GBP_CID",
+    "https://www.facebook.com/ShieldWiseSecurity",
+    "https://www.instagram.com/ShieldWiseSecurity",
+    "https://www.linkedin.com/company/shieldwise-security",
+    "https://www.yelp.com/biz/SHIELDWISE-YELP-SLUG"
+  ]
+}
+</script>
+
+
+If you keep aggregateRating, ensure:
+
+"aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":187,"bestRating":5,"worstRating":1}
+
+4) OG cleanup
+<meta property="og:type" content="website">
+<meta property="og:title" content="Downtown Sacramento Security Guards | Armed & BSIS | ShieldWise">
+<meta property="og:description" content="Armed & unarmed guards, patrol & fire watch. 24/7 in Downtown Sacramento. Free quote: (714) 716-7430.">
+
+5) Hero LCP improvement (option)
+<link rel="preload" as="image" href="/img/sacramento.webp" imagesrcset="/img/sacramento.webp 1200w" fetchpriority="high">
+
+
+Or render the hero image as:
+
+<img src="/img/sacramento.webp" alt="Security patrol in Downtown Sacramento" width="1600" height="900" fetchpriority="high" decoding="async" />
+
+6) FAQ toggle (accessible)
+<button class="faq-question" aria-expanded="false" aria-controls="faq-what-services">
+  <h3>What security services do you provide in Downtown Sacramento?</h3>
+  <span class="faq-toggle" aria-hidden="true"><i class="fas fa-plus"></i></span>
+</button>
+<div id="faq-what-services" class="faq-answer" hidden>...</div>
+<script>
+document.querySelectorAll('.faq-question').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', !expanded);
+    const ans = document.getElementById(btn.getAttribute('aria-controls'));
+    ans.hidden = expanded;
+  });
+});
+</script>
