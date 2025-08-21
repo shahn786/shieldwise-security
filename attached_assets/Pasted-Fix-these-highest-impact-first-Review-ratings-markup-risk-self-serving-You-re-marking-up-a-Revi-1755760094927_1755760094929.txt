@@ -1,0 +1,159 @@
+Fix these (highest impact first)
+
+Review/ratings markup risk (self-serving)
+You’re marking up a Review and an AggregateRating for your own business. Google has long limited/starved review snippets for LocalBusiness/Organization, and “self-serving reviews” can be ignored or create quality risk.
+Action: remove @type: Review and aggregateRating from the LocalBusiness block unless sourced from a third-party you don’t control (and cite it).
+
+LocalBusiness schema missing full NAP
+Your address lacks a streetAddress and hasMap, and phone lacks E.164 format in JSON-LD.
+Action: add streetAddress, and format phone as +17147167430. Optionally add sameAs to official profiles and hasMap (GMB map URL).
+
+Meta keywords + heavy “Zoo” repetition = over-optimization signals
+<meta name="keywords"> is obsolete and you repeat “Sacramento Zoo / William Land Park / Southside Park” a lot.
+Action: remove the keywords tag; keep place mentions, but reduce duplicates (aim for natural density).
+
+jQuery ordering can break the inline script
+You load jQuery with defer, then run $(document).ready() inline. If the inline executes before deferred jQuery, $ is undefined.
+Action (pick one):
+
+Remove defer from jQuery or
+
+Move your inline FAQ script into an external file loaded after jQuery with defer or
+
+Rewrite the toggles in vanilla DOMContentLoaded.
+
+Inconsistent page theming / classes
+Body class and CSS file names say “anaheim” on a Midtown page—minor quality signal + maintainability.
+Action: rename classes/files to “midtown” to avoid template footprint and CSS bloat.
+
+Background-image hero lacks an <img> for alt text
+Search can’t “see” text in CSS backgrounds.
+Action: include a decorative <img> (with proper alt) or add a visible <figure> with an <img> for the hero visual further down.
+
+Multiple CSS files + Bootstrap
+Three custom stylesheets + Bootstrap can inflate CSS and CLS.
+Action: purge unused Bootstrap components or self-host a reduced build; combine your custom CSS where possible.
+
+Minor canonical/phone consistency
+Meta description phone uses 1-714…; elsewhere +1 714….
+Action: unify to +1 (714) 716-7430 (and E.164 in JSON-LD).
+
+Deprecated/low-value geo meta
+geo.* and ICBM don’t help modern SEO.
+Action: safe to remove; keep JSON-LD for geo/local signals.
+
+Copy-paste improvements
+A) Safer, cleaner LocalBusiness / SecurityService block
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness","SecurityService"],
+  "name": "ShieldWise Security — Midtown Sacramento",
+  "description": "BSIS-licensed armed & unarmed guards, mobile patrol, and fire watch in Midtown Sacramento.",
+  "image": [
+    "https://shieldwisesecurity.com/img/midtown-security-guards-hero.webp",
+    "https://shieldwisesecurity.com/img/midtown-armed-security-team.webp",
+    "https://shieldwisesecurity.com/img/midtown-security-patrol.webp"
+  ],
+  "logo": "https://shieldwisesecurity.com/img/shieldwise-logo-2024.png",
+  "telephone": "+17147167430",
+  "email": "contact@shieldwisesecurity.com",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1234 Example St",
+    "addressLocality": "Sacramento",
+    "addressRegion": "CA",
+    "postalCode": "95816",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Sacramento" },
+    { "@type": "AdministrativeArea", "name": "Sacramento County" }
+  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  }],
+  "sameAs": [
+    "https://www.facebook.com/YourPage",
+    "https://www.instagram.com/YourPage",
+    "https://www.linkedin.com/company/YourPage"
+  ],
+  "hasMap": "https://maps.google.com/?q=Midtown+Sacramento"
+}
+</script>
+
+
+Removed Review + aggregateRating, added street address, sameAs, hasMap, E.164 phone.
+
+B) Service schema → use Offer or PriceSpecification
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Armed Security Guard Services",
+  "provider": { "@type": "Organization", "name": "ShieldWise Security" },
+  "areaServed": "Midtown Sacramento, CA",
+  "offers": {
+    "@type": "Offer",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "priceCurrency": "USD",
+      "price": "45-85",
+      "unitText": "hour"
+    },
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+
+C) Remove obsolete/over-tuned meta
+<!-- Remove this -->
+<!-- <meta name="keywords" content="..."> -->
+
+<!-- Keep robots but simplify -->
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+D) Make the FAQ toggles non-fragile (vanilla JS)
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.anaheim-faq-item .faq-question').forEach(q => {
+    q.addEventListener('click', toggle);
+    q.addEventListener('keypress', (e) => { if (e.key === 'Enter') toggle.call(q); });
+  });
+  function toggle() {
+    const item = this.closest('.anaheim-faq-item');
+    const open = item.classList.contains('active');
+    document.querySelectorAll('.anaheim-faq-item').forEach(i => i.classList.remove('active'));
+    document.querySelectorAll('.anaheim-faq-item .faq-question').forEach(el => el.setAttribute('aria-expanded','false'));
+    if (!open) { item.classList.add('active'); this.setAttribute('aria-expanded','true'); }
+  }
+});
+</script>
+
+E) Provide an image element for the hero (accessibility + image SEO)
+<!-- Place this near the hero for crawlable alt -->
+<figure class="visually-hidden">
+  <img src="/img/sacramento.webp" alt="Armed security team serving Midtown Sacramento businesses and venues">
+</figure>
+
+Perf & UX quick wins
+
+Fonts: self-host Inter or add &text= subset if you know your charset; consider preloading only the weights you use.
+
+CSS bloat: merge /css/style.css, /css/style456.css, /css/anaheim-styles.css where possible; purge unused Bootstrap.
+
+Images: add real responsive sources for hero images (<img srcset/sizes> in content sections) and lazy-load non-critical images (loading="lazy").
+
+CLS: set explicit width/height on critical images/icons; reserve space for the back-to-top button.
+
+Content tuning (E-E-A-T + on-page)
+
+Add a Local “About/Trust” block: BSIS license number, insurance details, service radius map, and named supervisor with credentials.
+
+Add a Case study or sample post order (blur sensitive data) for Midtown—unique proof beats generic claims.
+
+Tweak headings to avoid repetition: keep “Midtown Sacramento” in H1, then use variations (“R Street Corridor retail security,” etc.) in H2/H3.
