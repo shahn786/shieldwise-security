@@ -1,0 +1,104 @@
+Quick wins to hit 9.7–10
+
+Trim non-influential meta tags
+These add bloat without ranking value—remove:
+
+<meta name="publisher"> 
+<meta name="copyright">
+<meta name="rating">
+<meta name="distribution">
+
+
+(Keep legal text in the footer instead.)
+
+JSON-LD: use the most specific service type
+Change the service node from generic Service to SecurityService (a more specific type).
+
+{
+  "@type": "SecurityService",
+  "@id": "https://shieldwisesecurity.com/security-guards-sacramento#service",
+  "name": "Sacramento Security Guard Services",
+  "provider": { "@id": "https://shieldwisesecurity.com/security-guards-sacramento#local" },
+  "areaServed": "Sacramento County, CA",
+  "serviceType": ["Armed Security","Unarmed Security","Mobile Patrol","Event Security","Fire Watch","Executive Protection","Construction Security","Retail Security","Corporate Security"],
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "priceSpecification": { "@type": "PriceSpecification", "minPrice": 35, "maxPrice": 85, "unitCode": "HUR" },
+    "availability": "https://schema.org/InStock",
+    "url": "https://shieldwisesecurity.com/security-guards-sacramento#contact"
+  }
+}
+
+
+Make sure hreflang is reciprocal
+Add the same three tags (en-US, es-US, x-default) on the Spanish page pointing back to EN. (You’ve done your side correctly here.)
+
+CDN assets: performance + security
+
+Prefer Bootstrap 5 (no jQuery dependency). If you must keep BS4: add defer on all scripts and SRI + crossorigin on CDN CSS/JS, or self-host to avoid third-party blocking.
+
+Current scripts load at the end but still execute synchronously. Switching to defer avoids long INP (responsiveness) spikes:
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
+<script src="/JS/back-to-top.js" defer></script>
+
+
+Merge CSS and drop duplicates
+Combine /css/critical.css, /css/style.css, /css/style456.css, /css/anaheim-styles.css → /css/bundle.min.css.
+Keep only one Bootstrap CSS (or self-host). Then:
+
+<link rel="preload" href="/css/bundle.min.css" as="style">
+<link rel="stylesheet" href="/css/bundle.min.css">
+
+
+Images: CLS & LCP care
+
+Preload the hero image (largest above-the-fold visual):
+
+<link rel="preload" as="image" href="/images/security-guards-sacramento.jpg" imagesrcset="/images/security-guards-sacramento.jpg 1200w" imagesizes="100vw">
+
+
+For all below-the-fold <img>: loading="lazy" decoding="async" and fixed width/height attributes to eliminate layout shift.
+
+OG extras (optional, but nice)
+
+You already have og:image:alt. Consider adding a WebP and og:image:type if you serve it.
+
+FAQ parity
+Your FAQ JSON-LD matches visible content—great. Keep them exactly in sync to preserve eligibility for rich results.
+
+Thin OG business contact tags
+Your business:contact_data:* OG tags are rarely consumed. Not harmful, but you can remove them to simplify (your JSON-LD already covers contact info perfectly).
+
+E-E-A-T guardrails
+You’ve softened bold claims (nice). If you later reintroduce stats (reviews, “largest team”, etc.), show proof (logos with permission, case-study pages, or on-page review widgets) and consider Review/AggregateRating schema only if rendered.
+
+Final polish (copy-paste mini-patches)
+
+Head cleanup:
+
+<!-- remove these -->
+<meta name="publisher">
+<meta name="copyright">
+<meta name="rating">
+<meta name="distribution">
+
+
+Defer scripts (order preserved):
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
+<script src="/JS/back-to-top.js" defer></script>
+
+
+CSS bundling (after merging):
+
+<link rel="preload" href="/css/bundle.min.css" as="style">
+<link rel="stylesheet" href="/css/bundle.min.css">
+
+
+Service node change (JSON-LD): switch @type → SecurityService (snippet above).
