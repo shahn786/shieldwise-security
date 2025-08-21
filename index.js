@@ -693,6 +693,59 @@ const startServer = (port) => {
 // Start the server directly
 startServer(PORT);
 
+// Sacramento County cities routes
+const sacramentoCountyCities = [
+    'downtown-sacramento', 'midtown', 'natomas', 'elk-grove', 'rancho-cordova',
+    'citrus-heights', 'west-sacramento', 'land-park', 'east-sacramento',
+    'pocket', 'fair-oaks', 'carmichael', 'folsom', 'roseville', 'davis', 'woodland'
+];
+
+sacramentoCountyCities.forEach(city => {
+    const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    
+    // Routes for both /sacramento-county/city and /sacramento/city patterns
+    app.get(`/sacramento-county/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/sacramento-county/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    // Add the /sacramento/city pattern that you were trying to access
+    app.get(`/sacramento/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/sacramento/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+});
+
+// Special route for /sacramento/downtown to map to downtown-sacramento
+app.get('/sacramento/downtown', (req, res) => {
+    try {
+        res.render('cities/downtown-sacramento', { 
+            title: 'Downtown Sacramento',
+            cityName: 'Downtown Sacramento',
+            pageUrl: '/sacramento/downtown'
+        });
+    } catch (error) {
+        console.error('Error rendering downtown sacramento page:', error);
+        res.status(500).send('Page not found');
+    }
+});
+
 // Generic route for city pages
 app.get('/city/:name', (req, res) => {
     const cityName = req.params.name.toLowerCase();
