@@ -1,0 +1,160 @@
+Fix these (highest impact)
+
+Self-serving ratings/reviews → remove
+You include both a standalone Review block and an aggregateRating in LocalBusiness. Google can ignore or downrank self-serving reviews.
+Action: remove the Review block and the aggregateRating unless sourced from an independent site you don’t control.
+
+Service schema pricing is invalid
+"priceRange": "$28-85/hour" isn’t valid for Offer.
+Action: use UnitPriceSpecification with min/max prices:
+
+"offers": {
+  "@type": "Offer",
+  "priceSpecification": {
+    "@type": "UnitPriceSpecification",
+    "priceCurrency": "USD",
+    "minPrice": 28,
+    "maxPrice": 85,
+    "unitText": "hour"
+  },
+  "availability": "https://schema.org/InStock"
+}
+
+
+NAP completeness + E.164 phone
+JSON-LD phone is "7147167430" (missing +1), and address lacks a street. Also, Natomas is a neighborhood; use Sacramento for addressLocality.
+Action: use:
+
+"telephone": "+17147167430",
+"address": {
+  "@type": "PostalAddress",
+  "streetAddress": "1234 Example St",
+  "addressLocality": "Sacramento",
+  "addressRegion": "CA",
+  "postalCode": "95833",
+  "addressCountry": "US"
+}
+
+
+Add:
+
+"sameAs": ["https://www.facebook.com/...", "https://www.instagram.com/...", "https://www.linkedin.com/company/..."],
+"hasMap": "https://maps.google.com/?q=Natomas+Sacramento"
+
+
+jQuery load order risk
+You load jQuery Slim with defer but run $(document).ready() in an inline script. Inline may execute before deferred jQuery → $ undefined.
+Action (pick one):
+
+Remove defer from jQuery, or
+
+Move the inline script to an external file that loads after jQuery, or
+
+Rewrite to vanilla DOMContentLoaded (recommended) and drop jQuery/Popper/Bootstrap JS if not used.
+
+Template footprint / CSS weight
+body.anaheim-page and anaheim-* classes on a Natomas page + 3 custom CSS files + Bootstrap.
+Action: rename to natomas-*, merge/purge CSS, or ship a reduced Bootstrap build.
+
+Breadcrumbs only in JSON-LD
+Great for rich results, but no visible breadcrumbs.
+Action: add a simple visible breadcrumb nav (also helps internal linking).
+
+Consistency of phone format
+Keep visible numbers formatted the same across page (e.g., (714) 716-7430) while tel: uses tel:+17147167430.
+
+Missed preconnects
+You preload Google Fonts but don’t preconnect to fonts.googleapis.com / fonts.gstatic.com.
+Action: add:
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+Hero background not crawlable
+CSS background images aren’t “seen.”
+Action: include a visually-hidden <img> near the hero with descriptive alt, explicit width/height, and fetchpriority="high" (you did this on a prior page—do it here too).
+
+Copy-paste JSON-LD (safe baseline)
+
+LocalBusiness/SecurityService (replace placeholders):
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness","SecurityService"],
+  "name": "ShieldWise Security — Natomas",
+  "description": "BSIS-licensed armed & unarmed guards, mobile patrol, and fire watch in Natomas (Sacramento).",
+  "image": [
+    "https://shieldwisesecurity.com/img/natomas-security-guards-hero.webp",
+    "https://shieldwisesecurity.com/img/natomas-armed-security-team.webp",
+    "https://shieldwisesecurity.com/img/natomas-security-patrol.webp"
+  ],
+  "logo": "https://shieldwisesecurity.com/img/shieldwise-logo-2024.png",
+  "telephone": "+17147167430",
+  "email": "contact@shieldwisesecurity.com",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1234 Example St",
+    "addressLocality": "Sacramento",
+    "addressRegion": "CA",
+    "postalCode": "95833",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {"@type":"City","name":"Sacramento"},
+    {"@type":"AdministrativeArea","name":"Sacramento County"}
+  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  }],
+  "sameAs": [
+    "https://www.facebook.com/YourPage",
+    "https://www.instagram.com/YourPage",
+    "https://www.linkedin.com/company/YourPage"
+  ],
+  "hasMap": "https://maps.google.com/?q=Natomas+Sacramento"
+}
+</script>
+
+
+Service (fixed pricing):
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Armed Security Guard Services",
+  "provider": { "@type": "Organization", "name": "ShieldWise Security" },
+  "areaServed": "Natomas, Sacramento, CA",
+  "description": "Professional armed security guards for Natomas businesses and residential facilities.",
+  "offers": {
+    "@type": "Offer",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "priceCurrency": "USD",
+      "minPrice": 28,
+      "maxPrice": 85,
+      "unitText": "hour"
+    },
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+
+
+Remove the standalone Review block and any aggregateRating unless it references third-party sources.
+
+Extra quick wins
+
+Lazy-load all noncritical images (loading="lazy") and set width/height to reduce CLS.
+
+Internal links: add links to related Sacramento pages (Downtown, Midtown, West Sacramento) inside relevant sections (you already did some; add 1–2 more contextual links).
+
+E-E-A-T: add visible BSIS license #, insurance proof statement, and a short case study for a Natomas client (even redacted).
+
+Drop unused JS: if you don’t use Bootstrap components, remove jQuery/Popper/Bootstrap JS.
