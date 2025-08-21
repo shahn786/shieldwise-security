@@ -1,0 +1,242 @@
+What’s hurting (and how to fix fast)
+
+Title is too long (likely truncates).
+Aim ~55–60 chars.
+Fix (recommended):
+
+<title>Sacramento Security Guards | Armed & Unarmed 24/7</title>
+
+
+Alt longer brand variant:
+
+<title>Sacramento Security Guards | 24/7 Armed & Unarmed | ShieldWise</title>
+
+
+Meta keywords + legacy geo tags = noise.
+meta name="keywords", geo.*, ICBM, locality, region, country-name don’t help and add bloat.
+Remove those tags entirely.
+
+Security headers via <meta http-equiv> don’t work.
+X-Frame-Options, X-XSS-Protection, Permissions-Policy, Referrer-Policy must be sent by the server, not HTML.
+Action: move to server config (Nginx/Apache/Cloudflare). Keep HTML clean.
+
+Open Graph type
+business.business is poorly supported.
+Fix:
+
+<meta property="og:type" content="website">
+
+
+(Keep a separate LocalBusiness JSON-LD for local signals—which you already have.)
+
+Hreflang set is incomplete.
+You have en-US and es-US, but no x-default. Also ensure the Spanish page points back with reciprocal tags.
+Fix:
+
+<link rel="alternate" hreflang="en-US" href="https://shieldwisesecurity.com/security-guards-sacramento">
+<link rel="alternate" hreflang="es-US" href="https://shieldwisesecurity.com/es/guardias-seguridad-sacramento">
+<link rel="alternate" hreflang="x-default" href="https://shieldwisesecurity.com/security-guards-sacramento">
+
+
+Multiple <h1>s.
+You have an H1 in the hero and another “Top Security Guard Services in Sacramento”. Use one H1.
+Fix: keep the hero as <h1>, change the inner one to <h2>.
+
+Schema clean-up & strengthening
+
+Your LocalBusiness uses @id pointing to /#organization, but your Organization doesn’t expose the same @id. Link them.
+
+areaServed entries show "@type": "City" with string containedInPlace. Use Places or just strings.
+
+aggregateRating requires review evidence on page. If you don’t render ~198 reviews/ratings, remove or reduce claims.
+
+Add hasMap, knowsAbout, and connect entities with @id.
+
+Drop-in JSON-LD (replace your 3 blocks with this consolidated set):
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://shieldwisesecurity.com/#org",
+      "name": "ShieldWise Security",
+      "url": "https://shieldwisesecurity.com",
+      "logo": "https://shieldwisesecurity.com/images/logo.png",
+      "foundingDate": "2015",
+      "sameAs": [
+        "https://www.facebook.com/ShieldWiseSecuritySacramento",
+        "https://www.linkedin.com/company/shieldwise-security",
+        "https://twitter.com/ShieldWiseSec",
+        "https://www.instagram.com/shieldwisesecurity"
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://shieldwisesecurity.com/security-guards-sacramento#local",
+      "name": "ShieldWise Security - Sacramento",
+      "image": [
+        "https://shieldwisesecurity.com/images/security-guards-sacramento.jpg",
+        "https://shieldwisesecurity.com/images/armed-guards-sacramento.jpg",
+        "https://shieldwisesecurity.com/images/event-security-sacramento.jpg"
+      ],
+      "url": "https://shieldwisesecurity.com/security-guards-sacramento",
+      "telephone": "+1-916-555-7890",
+      "email": "sacramento@shieldwisesecurity.com",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "789 Capitol Mall",
+        "addressLocality": "Sacramento",
+        "addressRegion": "CA",
+        "postalCode": "95814",
+        "addressCountry": "US"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 38.5767, "longitude": -121.4934 },
+      "hasMap": "https://maps.google.com/?q=789+Capitol+Mall+Sacramento+CA+95814",
+      "areaServed": [
+        "Downtown Sacramento","Midtown","Natomas","Elk Grove","Rancho Cordova","Citrus Heights","West Sacramento","Land Park","East Sacramento","Pocket","Fair Oaks","Carmichael","Folsom","Roseville","Davis","Woodland"
+      ],
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "00:00","closes": "23:59"
+      }],
+      "parentOrganization": { "@id": "https://shieldwisesecurity.com/#org" },
+      "knowsAbout": [
+        "Armed security guards","Unarmed security guards","Mobile patrol","Event security",
+        "Fire watch","Executive protection","Construction site security","Retail security","Corporate security"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://shieldwisesecurity.com/security-guards-sacramento#service",
+      "name": "Sacramento Security Guard Services",
+      "provider": { "@id": "https://shieldwisesecurity.com/security-guards-sacramento#local" },
+      "areaServed": "Sacramento County, CA",
+      "serviceType": ["Armed Security","Unarmed Security","Mobile Patrol","Event Security","Fire Watch","Executive Protection","Construction Security","Retail Security","Corporate Security"],
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "priceSpecification": { "@type": "PriceSpecification", "minPrice": 35, "maxPrice": 85, "unitCode": "HUR" },
+        "availability": "https://schema.org/InStock",
+        "url": "https://shieldwisesecurity.com/security-guards-sacramento#contact"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://shieldwisesecurity.com/security-guards-sacramento#faq",
+      "mainEntity": [ /* keep your existing Q&A here verbatim */ ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://shieldwisesecurity.com/security-guards-sacramento#breadcrumbs",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://shieldwisesecurity.com/"},
+        {"@type":"ListItem","position":2,"name":"California","item":"https://shieldwisesecurity.com/california"},
+        {"@type":"ListItem","position":3,"name":"Sacramento Security Guards","item":"https://shieldwisesecurity.com/security-guards-sacramento"}
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://shieldwisesecurity.com/#website",
+      "url": "https://shieldwisesecurity.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://shieldwisesecurity.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+</script>
+
+
+Claims need proof (E-E-A-T).
+Statements like “zero incidents,” “98% patient satisfaction,” “198 reviews,” “largest team,” can trigger quality checks.
+Action: either (a) render evidence (logos with permissions, case-study pages, testimonial schema), or (b) soften language (“including…”, “such as…”, “rated highly by clients”).
+
+Performance / CWV
+
+Combine /css/style.css, /css/style456.css, /css/anaheim-styles.css to 1 minified file; keep only one Bootstrap (or drop Bootstrap if you’re not using much).
+
+Preload hero image and set fetchpriority="high"; add loading="lazy" and decoding="async" to below-the-fold images.
+
+Add font-display: swap to your font CSS.
+
+Defer non-critical JS. Use defer for Bootstrap/Popper; jQuery can often be removed with native JS.
+Fix (snippets):
+
+<link rel="preload" as="image" href="/images/security-guards-sacramento.jpg" fetchpriority="high">
+<link rel="stylesheet" href="/css/bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js" defer></script>
+<script src="/JS/back-to-top.js" defer></script>
+
+
+And remove jQuery/Popper if your components don’t truly need them. If you keep them, add SRI + defer.
+
+NAP in body
+You’ve got NAP in schema, not visibly. Add a footer block (helps local trust & conversions).
+Snippet:
+
+<address class="nap">
+  ShieldWise Security — Sacramento<br>
+  789 Capitol Mall, Sacramento, CA 95814<br>
+  <a href="tel:+19165557890">(916) 555-7890</a> ·
+  <a href="mailto:sacramento@shieldwisesecurity.com">sacramento@shieldwisesecurity.com</a>
+</address>
+
+
+Internal linking enhancements
+Link service bullets in the features/FAQ to the same anchors you use in the Services grid (keyword-rich, but natural). Add a small “Related services in nearby cities” block with 3–5 links to reduce bounce and pass equity.
+
+Accessibility & semantics
+
+Give the hero CTA a rel="nofollow"? (No—keep it a normal link; but ensure it’s a button or anchor with clear text, which you have.)
+
+Add aria-expanded toggling via JS for the accordion (Bootstrap handles this).
+
+Make sure color contrast meets WCAG (e.g., light text on gradients).
+
+Polished head (compact + compliant)
+
+Use this as a cleaner baseline head (swap into your file and then re-add any brand-specific bits you need):
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+  <title>Sacramento Security Guards | 24/7 Armed & Unarmed | ShieldWise</title>
+  <meta name="description" content="Licensed Sacramento security guards for government, healthcare, commercial & events. Armed/unarmed, mobile patrol, fire watch. 24/7 fast response. Free quote.">
+
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+  <link rel="canonical" href="https://shieldwisesecurity.com/security-guards-sacramento">
+  <link rel="alternate" hreflang="en-US" href="https://shieldwisesecurity.com/security-guards-sacramento">
+  <link rel="alternate" hreflang="es-US" href="https://shieldwisesecurity.com/es/guardias-seguridad-sacramento">
+  <link rel="alternate" hreflang="x-default" href="https://shieldwisesecurity.com/security-guards-sacramento">
+
+  <meta property="og:title" content="Sacramento Security Guards | ShieldWise Security">
+  <meta property="og:description" content="Armed & unarmed guards, mobile patrol, fire watch. 24/7 in Sacramento. Free quote.">
+  <meta property="og:url" content="https://shieldwisesecurity.com/security-guards-sacramento">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://shieldwisesecurity.com/images/security-guards-sacramento.jpg">
+  <meta property="og:site_name" content="ShieldWise Security">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sacramento Security Guards | ShieldWise Security">
+  <meta name="twitter:description" content="24/7 armed & unarmed guards across Sacramento. Free quote.">
+  <meta name="twitter:image" content="https://shieldwisesecurity.com/images/security-guards-sacramento.jpg">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#007bff">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="/css/bundle.min.css" as="style">
+  <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/bundle.min.css">
+</head>
