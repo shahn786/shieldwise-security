@@ -1,0 +1,138 @@
+Issues hurting you (fix these first)
+
+NAP/Location inconsistencies
+
+Street: 2750 Gateway Oaks Dr is Sacramento, not Elk Grove, but your locality is set to “Elk Grove.”
+
+Hero uses /img/sacramento.webp on an Elk Grove page.
+Impact: Local pack trust + E-E-A-T signals can drop due to mismatched location signals.
+
+Schema correctness
+
+aggregateRating.worstRating is "4" (should be "1").
+
+Review JSON-LD (“Jennifer Martinez…”) must reflect a visible on-page review with the same text; otherwise remove or convert to AggregateRating only.
+
+Service.offers.priceRange is non-standard inside Offer; prefer priceSpecification or move a simple priceRange to the business entity.
+
+Deprecated/low-value metas
+
+<meta name="keywords">, geo.*, ICBM — ignored by Google; can be removed to reduce noise.
+
+Over-optimized / repetitive phrasing
+
+Repetition like “residential & family security, residential, education…” in description and body looks keyword-stuffed. Tighten phrasing.
+
+Multiple CSS files
+
+/css/style.css, /css/style456.css, /css/anaheim-styles.css + Bootstrap → increase CSS weight & FCP/CLS risk. Consolidate and inline above-the-fold critical CSS.
+
+Potential social handle mismatch
+
+@ShieldWiseSec—ensure it exists and matches brand; otherwise remove.
+
+Quick-win fixes (copy/paste ready)
+1) Clean up metas (remove noise, fix hero)
+<!-- Replace hero preload with the correct city image -->
+<link rel="preload" href="/img/elk-grove-hero.webp" as="image" fetchpriority="high">
+<!-- Remove these entirely -->
+<!-- <meta name="keywords">, <meta name="geo.region">, <meta name="geo.placename">, <meta name="geo.position">, <meta name="ICBM"> -->
+
+2) Tighten title/description (reduce redundancy, keep CTR hooks)
+<title>Elk Grove Security Guards (BSIS) | Armed & Unarmed | ShieldWise Security</title>
+<meta name="description" content="BSIS-licensed security guards in Elk Grove, CA: armed & unarmed, mobile patrol, fire watch, residential & commercial. 24/7 response. Free quote: (714) 716-7430.">
+
+3) Fix LocalBusiness JSON-LD (NAP + ratings)
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":["LocalBusiness","SecurityService","ProfessionalService"],
+  "@id":"https://shieldwisesecurity.com/#elk-grove",
+  "url":"https://shieldwisesecurity.com/sacramento-county/elk-grove",
+  "name":"ShieldWise Security - Elk Grove",
+  "description":"BSIS-licensed armed & unarmed security in Elk Grove, CA. Mobile patrol, fire watch, and 24/7 response.",
+  "image":[
+    "https://shieldwisesecurity.com/img/elk-grove-security-guards-hero.webp"
+  ],
+  "logo":"https://shieldwisesecurity.com/img/shieldwise-logo-2024.png",
+  "priceRange":"$$",
+  "telephone":"+1-714-716-7430",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"2750 Gateway Oaks Dr",
+    "addressLocality":"Sacramento",
+    "addressRegion":"CA",
+    "postalCode":"95833",
+    "addressCountry":"US"
+  },
+  "geo":{"@type":"GeoCoordinates","latitude":38.5986,"longitude":-121.5132},
+  "areaServed":{"@type":"City","name":"Elk Grove"},
+  "openingHoursSpecification":[{
+    "@type":"OpeningHoursSpecification",
+    "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens":"00:00","closes":"23:59"
+  }],
+  "aggregateRating":{
+    "@type":"AggregateRating",
+    "ratingValue":"4.9",
+    "reviewCount":"187",
+    "bestRating":"5",
+    "worstRating":"1"
+  }
+}
+</script>
+
+
+Notes:
+
+If you truly have an Elk Grove office with a local address/phone, replace the above with that exact NAP. Otherwise, keep Sacramento and emphasize service area: Elk Grove (as shown).
+
+Coordinates updated to match the Sacramento address; update to your real coordinates if different.
+
+4) Review schema: keep only if the exact review is visible
+
+If you keep the single Review, render the same quote & author in HTML. If not, remove the Review block to avoid structured-data mismatch warnings.
+
+5) Service schema (use priceSpecification or simplify)
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Service",
+  "name":"Armed Security Guard Services",
+  "provider":{"@type":"Organization","name":"ShieldWise Security"},
+  "areaServed":"Elk Grove, CA",
+  "description":"Armed guards for businesses and residential communities in Elk Grove.",
+  "offers":{
+    "@type":"Offer",
+    "priceSpecification":{
+      "@type":"UnitPriceSpecification",
+      "price":"45",
+      "priceCurrency":"USD",
+      "unitText":"HOUR"
+    }
+  }
+}
+</script>
+
+
+(Or drop pricing entirely if it fluctuates.)
+
+6) Social cards: point to Elk Grove assets
+<meta property="og:image" content="https://shieldwisesecurity.com/img/elk-grove-security-guards-og-2025.webp">
+<meta name="twitter:image" content="https://shieldwisesecurity.com/img/elk-grove-security-guards-twitter-2025.webp">
+
+7) Performance hygiene
+
+Combine your custom CSS into one file and remove unused Bootstrap components if possible.
+
+Add explicit width/height on hero and testimonial images to cut CLS.
+
+Defer non-critical icons (Font Awesome) or subset icons to reduce payload.
+
+Nice-to-have upgrades
+
+Add Organization/Website JSON-LD with a SearchAction.
+
+Add BreadcrumbList @ids to match visible breadcrumbs (you already have it—good!).
+
+Add internal links to nearby Elk Grove neighborhoods pages (Laguna, Laguna Creek, Stonelake) if you plan to create them.
