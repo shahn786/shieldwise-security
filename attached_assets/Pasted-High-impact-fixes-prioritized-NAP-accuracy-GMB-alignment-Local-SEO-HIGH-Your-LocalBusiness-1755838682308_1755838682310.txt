@@ -1,0 +1,232 @@
+High-impact fixes (prioritized)
+
+NAP accuracy + GMB alignment (Local SEO) — HIGH
+
+Your LocalBusiness JSON-LD uses a placeholder address ("1234 Security Blvd"). If it doesn’t exactly match your Google Business Profile (name, address, phone), you lose local trust and can trigger conflicting NAP signals.
+
+Fix: Replace with your real NAP; add "url" and a persistent "@id":
+
+"@id": "https://shieldwisesecurity.com/#natomas",
+"url": "https://shieldwisesecurity.com/sacramento-county/natomas",
+"telephone": "+1-714-716-7430"
+
+
+Add "geo" and "hasMap" with the real Google Maps Place URL, not a generic query link.
+
+Breadcrumbs: mirror visible nav + add item URLs — HIGH
+
+Your BreadcrumbList is good, but make sure a visible breadcrumb exists and matches the schema. You commented out the visible crumbs.
+
+Fix: Render a <nav aria-label="Breadcrumb">…</nav> list that mirrors the JSON-LD labels and URLs.
+
+Heading semantics & keywords — HIGH
+
+H1 is “Natomas's Premier Security Solutions” (apostrophe + possessive). Safer: Natomas Security Guard Services (Armed & Unarmed) to align with the title, reduce ambiguity, and improve query match.
+
+Ensure a logical H2/H3 hierarchy (no skips) and include Natomas, Sacramento County variants naturally in section headings.
+
+Service/Offer schema normalization — HIGH
+
+You’re using a single Offer with UnitPriceSpecification and min/max price. For ranges, AggregateOffer is clearer:
+
+"offers": {
+  "@type": "AggregateOffer",
+  "priceCurrency": "USD",
+  "lowPrice": 28,
+  "highPrice": 85,
+  "offerCount": 4
+}
+
+
+Add "availability": "https://schema.org/InStock" to the AggregateOffer if you like, but it’s optional for services.
+
+FAQ parity & duplication — MED-HIGH
+
+Your FAQ schema questions largely match visible FAQs—good. Keep exact text parity (letter-for-letter) to avoid validation/worthlessness.
+
+Avoid repeating the same FAQ block twice (you have one in schema and another visible that’s slightly longer). Edit for consistency.
+
+Performance: CSS & JS ordering / payload — MED
+
+You load three CSS files plus Bootstrap + Font Awesome. That’s render-blocking and could hurt LCP/FID.
+
+Fix:
+
+Inline critical CSS for hero/top fold; defer the rest:
+
+Add media="print" onload="this.media='all'" on non-critical CSS.
+
+Move Font Awesome to deferred/async alternative, or self-host a subset.
+
+Add defer to all JS (incl. jQuery/Bootstrap) and place before </body> (you already do; add defer for safety).
+
+Consider dropping jQuery slim altogether and write the FAQ toggle in vanilla JS to reduce JS weight.
+
+Image loading discipline — MED
+
+LCP hero image is preloaded—great—but you also add a hidden <img> of the same asset positioned off-screen. That triggers double fetch risk in some setups.
+
+Fix:
+
+Remove the hidden <img>; instead, set the hero background-image and provide a real, visible <img> (or a <picture>) in the DOM inside the hero for crawlability, but not duplicated. Alternatively add role="img" + proper aria-label to the hero if you keep it as CSS background.
+
+Add imagesizes="(min-width: 1200px) 1200px, 100vw" to match your imagesrcset.
+
+Body class & file naming consistency — MED
+
+You’re using anaheim- classes on a Natomas page (class="anaheim-page"). This is a weak signal and can confuse maintainers and templating logic.
+
+Fix: Rename to natomas-… consistently.
+
+E-E-A-T / Claims risk — MED
+
+Phrases like “proven track record of zero security breaches” can be flagged as unsubstantiated. Either cite or soften:
+
+“No reported breaches across our Natomas client portfolio over the last 24 months.”
+
+Accessibility & UX — MED
+
+FAQ toggles: ensure keyboard support (Enter/Space), ARIA relationships (aria-controls, id on answers), and status announcements.
+
+Add alt text on all decorative icons (or aria-hidden="true").
+
+Twitter handle & social links — LOW
+
+@ShieldWiseSec—make sure this handle exists. If not, remove twitter:site/creator to avoid broken graph previews.
+
+Hreflang (if multilingual) — LOW
+
+If you have Farsi/Spanish versions, add proper hreflang alternates and self-referential x-default.
+
+Sitemaps / robots — LOW
+
+Ensure sitemap.xml linked in robots.txt and the Natomas URL is included.
+
+Fixed snippets you can paste
+a) Improved <title> & <h1>
+<title>Natomas Security Guard Services (Sacramento, CA) | Armed & Unarmed | ShieldWise</title>
+...
+<h1>Natomas Security Guard Services – Armed & Unarmed (Sacramento, CA)</h1>
+
+b) LocalBusiness JSON-LD (clean, GBP-friendly)
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness","SecurityService"],
+  "@id": "https://shieldwisesecurity.com/#natomas",
+  "name": "ShieldWise Security – Natomas",
+  "url": "https://shieldwisesecurity.com/sacramento-county/natomas",
+  "image": [
+    "https://shieldwisesecurity.com/img/natomas-security-guards-hero.webp"
+  ],
+  "logo": "https://shieldwisesecurity.com/img/shieldwise-logo-2024.png",
+  "priceRange": "$$",
+  "telephone": "+1-714-716-7430",
+  "email": "contact@shieldwisesecurity.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "REAL STREET HERE",
+    "addressLocality": "Sacramento",
+    "addressRegion": "CA",
+    "postalCode": "95833",
+    "addressCountry": "US"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 38.65, "longitude": -121.52 },
+  "areaServed": ["Natomas","Sacramento County"],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  }],
+  "sameAs": [
+    "https://www.facebook.com/ShieldWiseSecurity",
+    "https://www.instagram.com/shieldwisesecurity",
+    "https://www.linkedin.com/company/shieldwise-security"
+  ],
+  "hasMap": "REAL_GOOGLE_MAPS_PLACE_URL"
+}
+</script>
+
+c) AggregateOffer for the Service schema
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Security Guard Services (Natomas)",
+  "provider": { "@type": "Organization", "name": "ShieldWise Security", "url": "https://shieldwisesecurity.com" },
+  "areaServed": "Natomas, Sacramento, CA",
+  "description": "Armed & unarmed guards, mobile patrol, fire watch, and HOA/commercial protection.",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "lowPrice": 28,
+    "highPrice": 85,
+    "offerCount": 4
+  }
+}
+</script>
+
+d) CSS/JS loading pattern
+<!-- Non-critical CSS -->
+<link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="/css/natomas.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+
+<!-- Defer JS -->
+<script src="/JS/back-to-top.js" defer></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
+
+
+(Drop jQuery if you can; otherwise load it defer and host locally.)
+
+e) FAQ toggle (vanilla, accessible)
+<button class="faq-question" aria-expanded="false" aria-controls="a1" id="q1">
+  <h3>What security services do you provide in Natomas?</h3>
+  <span class="faq-toggle" aria-hidden="true">+</span>
+</button>
+<div class="faq-answer" id="a1" role="region" aria-labelledby="q1" hidden>...</div>
+<script defer>
+document.querySelectorAll('.faq-question').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    const ans = document.getElementById(btn.getAttribute('aria-controls'));
+    document.querySelectorAll('.faq-question').forEach(b=>{
+      b.setAttribute('aria-expanded','false');
+      document.getElementById(b.getAttribute('aria-controls')).hidden = true;
+    });
+    btn.setAttribute('aria-expanded', String(!expanded));
+    ans.hidden = expanded;
+  });
+});
+</script>
+
+Quick pass on content
+
+Great local landmarks (Airport, Town Center, Regional Park). Add two 100–150-word blurbs on neighborhood-level risks (North Natomas vs. South Natomas), seasonal issues (holiday retail theft), and property types (multi-family, logistics yards). This increases topical authority and long-tail coverage.
+
+Swap generic stats (“78% reduction…”) with case-study numbers you can substantiate or phrase as “up to X%” with timeframe.
+
+Final checklist
+
+ Replace placeholder NAP with your real address + GBP map link.
+
+ Update H1 and headings to exact keyword phrasing.
+
+ Add visible breadcrumbs to match your JSON-LD.
+
+ Convert Service Offer → AggregateOffer.
+
+ Remove hidden duplicate LCP image; add imagesizes.
+
+ Defer/minify CSS/JS; consider dropping jQuery.
+
+ Tighten FAQ parity (schema ↔ visible).
+
+ Rename anaheim- classes to natomas-.
+
+ Adjust bold claims → cite or soften.
+
+ Confirm @ShieldWiseSec handle (or remove).
+
+If you want, paste your real NAP + maps link, and I’ll drop in the exact, validated JSON-LD and breadcrumb markup tailored to it.
