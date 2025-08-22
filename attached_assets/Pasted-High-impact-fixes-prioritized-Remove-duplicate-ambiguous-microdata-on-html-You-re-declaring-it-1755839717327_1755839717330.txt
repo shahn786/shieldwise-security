@@ -1,0 +1,165 @@
+High-impact fixes (prioritized)
+
+Remove duplicate/ambiguous microdata on <html>
+
+You’re declaring itemscope itemtype="https://schema.org/LocalBusiness" on the <html> element and providing JSON-LD for LocalBusiness. Mixed/duplicate markup can cause conflicts.
+
+Fix: remove itemscope itemtype from <html>.
+
+Make NAP visibly crawlable on the page (not just in JSON-LD)
+
+Your phone is visible, but the full address isn’t. For local SEO/E-E-A-T, render a footer NAP block with the same address/phone as schema.
+
+Fix (example):
+
+<address class="footer-nap">
+  ShieldWise Security — Natomas<br>
+  2750 Gateway Oaks Dr, Sacramento, CA 95833<br>
+  <a href="tel:+17147167430">(714) 716-7430</a>
+</address>
+
+
+Verify/replace placeholder claims & identifiers
+
+“BSIS License #PPO-12345”, “4.9/5 from 187 reviews”, “no reported breaches”, case-study stats: these are powerful for conversion, but risky if not verifiable. Inaccurate claims can trigger trust issues and manual reviews.
+
+Fix: use the real BSIS number and cite the review source (no Review schema—Google disallows self-serving reviews for LocalBusiness). Consider linking to the 3P profile.
+
+Consolidate and load CSS more efficiently
+
+4 CSS files (style.css, style456.css, natomas-styles.css + Bootstrap) create extra requests. The media="print" onload trick can cause FOUC and complicate render paths.
+
+Fix: merge your custom CSS into one file, preload critical CSS or inline the above-the-fold rules, then load the rest normally.
+
+Also: consider self-hosting Bootstrap to reduce third-party latency + ensure SRI.
+
+Improve LCP reliability of the hero
+
+LCP is likely the background image in .anaheim-hero. Backgrounds aren’t great for LCP measurement and can shift CLS if heights aren’t fixed.
+
+Fix: Use an <img> or <picture> element in the hero with explicit width/height + priority loading, or ensure the hero has a fixed min-height to avoid CLS. Keep the existing preload but add an actual element the browser can mark as LCP.
+
+Tighten JSON-LD details
+
+hasMap should point to a map of your business location, not the general Natomas area.
+
+openingHoursSpecification: consider using an array with separate entries or keep single object but ensure it mirrors the visible 24/7 claim.
+
+Add "serviceType": "Security guard services" to the Service node for clarity.
+
+Example adjustments:
+
+{
+  "@type":"Service",
+  "serviceType":"Security guard services",
+  "areaServed":"Natomas, Sacramento, CA"
+}
+
+{
+  "@type":"LocalBusiness",
+  "hasMap":"https://maps.google.com/?q=2750+Gateway+Oaks+Dr+Sacramento+CA+95833"
+}
+
+
+Breadcrumbs: align URLs and trailing slashes
+
+Your canonical has no trailing slash. Ensure all breadcrumb item URLs match that convention site-wide to avoid mixed signals.
+
+Preload fonts correctly (minor)
+
+You’re preloading the Google Fonts CSS, which is fine, but consider preloading the font files (WOFF2) with crossorigin for maximum benefit, or self-host Inter to eliminate third-party hops.
+
+Add Website + SearchAction schema (site-wide enhancement)
+
+Helpful for branded SERPs and sitelinks search box:
+
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "url":"https://shieldwisesecurity.com/",
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":"https://shieldwisesecurity.com/search?q={search_term_string}",
+    "query-input":"required name=search_term_string"
+  }
+}
+
+
+Reduce inline styles and move to CSS
+
+Inline styles in hero/CTA sections hurt maintainability and can bloat HTML. Moving them to your CSS also reduces diff noise across city pages.
+
+Smaller polish items (nice-to-have)
+
+Drop X-UA-Compatible (IE-edge) — obsolete.
+
+format-detection=telephone=yes is fine; also ensure every phone instance uses tel: (you did).
+
+jQuery slim + Bootstrap 4.5: if you rely on AJAX anywhere, slim omits it. If not, you’re fine; otherwise switch to full jQuery or upgrade to a modern stack.
+
+Hreflang: if you’ll have Spanish versions (common for CA), add proper hreflang alternates.
+
+Security headers: not SEO, but helps CWV/qual—add CSP, COEP/COOP, Permissions-Policy server-side.
+
+Validity sanity checks (to run before deploying)
+
+Test JSON-LD with Google Rich Results + Schema.org validators.
+
+Lighthouse (mobile): check LCP (<2.5s), CLS (<0.1), make sure the hero is recognized as LCP.
+
+Verify the BSIS license number and review counts are accurate and consistent across the site and 3P profiles.
+
+Quick code patches
+
+Remove microdata on <html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+LocalBusiness hasMap and Service serviceType
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":["LocalBusiness","SecurityService"],
+  "@id":"https://shieldwisesecurity.com/#natomas",
+  "name":"ShieldWise Security - Natomas",
+  "hasMap":"https://maps.google.com/?q=2750+Gateway+Oaks+Dr+Sacramento+CA+95833",
+  ...
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Service",
+  "name":"Security Guard Services (Natomas)",
+  "serviceType":"Security guard services",
+  ...
+}
+</script>
+
+
+Visible NAP block in footer (match schema)
+
+<footer>
+  <address class="footer-nap" itemscope itemtype="https://schema.org/PostalAddress">
+    <strong>ShieldWise Security — Natomas</strong><br>
+    <span itemprop="streetAddress">2750 Gateway Oaks Dr</span>,
+    <span itemprop="addressLocality">Sacramento</span>,
+    <span itemprop="addressRegion">CA</span> <span itemprop="postalCode">95833</span><br>
+    <a href="tel:+17147167430">(714) 716-7430</a>
+  </address>
+</footer>
+
+
+Hero LCP (swap background for element)
+
+<picture class="hero-media">
+  <source type="image/webp" srcset="/img/sacramento.webp" />
+  <img src="/img/sacramento.jpg" alt="" width="1600" height="900" fetchpriority="high" />
+</picture>
+
+
+(Then apply the gradient with CSS over the <picture>.)
