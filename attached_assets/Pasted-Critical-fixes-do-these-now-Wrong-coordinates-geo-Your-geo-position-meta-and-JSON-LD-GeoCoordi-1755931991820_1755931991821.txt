@@ -1,0 +1,98 @@
+Critical fixes (do these now)
+
+Wrong coordinates (geo). Your geo.position meta and JSON-LD GeoCoordinates point to Sacramento (38.5767,-121.4934), not Citrus Heights. Use your actual business lat/long (approx 38.6797, -121.2722, or exact for your address).
+
+Phone formatting. Use E.164 everywhere: tel:+17147167430 and "telephone": "+1-714-716-7430" for JSON-LD.
+
+Meta keywords, geo/ICBM tags. meta keywords, geo.position, and ICBM are ignored/deprecated. Remove to reduce noise.
+
+OG type. og:type="business.business" is rarely helpful unless you add all required OG business properties. Use website (or ensure full OG business fields).
+
+AggregateRating policy risk. Google restricts self-serving review rich results for LocalBusiness. If you keep aggregateRating, make sure those ratings are visible on the page, from a verifiable source you own, or consider removing to avoid snippet suppression.
+
+LCP image as CSS background. Your hero is a CSS background, so you can’t set fetchpriority. Consider an inline <img> (visually hidden behind gradient) for reliable LCP with fetchpriority="high" and width/height to prevent CLS.
+
+Pricing typos. “Starting at $s25-55/hour” → “$25–55/hour” (and ensure numbers match JSON-LD).
+
+City naming in classes/headings. Lots of anaheim- class names on a Citrus Heights page (not harmful to ranking, but sloppy). Also fix H1 grammar: “Citrus Heights’ Premier…” or better, keyword-rich: “Citrus Heights Security Guards & Mobile Patrol (BSIS Licensed)”.
+
+High-impact enhancements (next 1–2 passes)
+
+Add WebSite schema with SearchAction on the homepage; keep this page focused on LocalBusiness/SecurityService.
+
+Add sameAs in JSON-LD to GBP, Facebook, Instagram, LinkedIn, Yelp—consistent NAP across profiles.
+
+Visible NAP block (company name, address, phone, hours) in footer or sidebar for stronger local signals.
+
+Breadcrumb UI to match your BreadcrumbList JSON-LD (nice UX + internal links).
+
+SRI on CDN scripts/styles (integrity + crossorigin) for security & trust.
+
+Trim unused preconnects. If GTM/GA aren’t actually loaded, remove those preconnects.
+
+Reduce JS weight. If possible, drop jQuery/Bootstrap on content pages; pure CSS + a few lines of vanilla JS will improve INP.
+
+Hreflang only if you truly serve multiple languages/regions.
+
+Tiny patch (paste & tweak)
+
+Fix the biggest issues in your head + JSON-LD:
+
+<!-- Replace OG type & remove deprecated metas -->
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://shieldwisesecurity.com/sacramento-county/citrus-heights">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<!-- Remove these (deprecated/ignored):
+<meta name="keywords" ...>
+<meta name="geo.position" ...>
+<meta name="ICBM" ...>
+-->
+
+<!-- Phone in E.164 everywhere -->
+<meta name="format-detection" content="telephone=yes">
+
+<!-- Example hero image for better LCP (optional but recommended) -->
+<img src="/img/sacramento.webp" alt="Security guards in Citrus Heights, CA"
+     width="1600" height="900" fetchpriority="high" style="position:absolute;inset:0;opacity:0;pointer-events:none;">
+
+<!-- JSON-LD (only the changed pieces) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness","SecurityService","ProfessionalService"],
+  "@id": "https://shieldwisesecurity.com/sacramento-county/citrus-heights#organization",
+  "name": "ShieldWise Security - Citrus Heights",
+  "telephone": "+1-714-716-7430",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Citrus Heights",
+    "addressRegion": "CA",
+    "postalCode": "95610",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 38.6797,
+    "longitude": -121.2722
+  },
+  "sameAs": [
+    "https://www.google.com/maps?cid=YOUR_GBP_CID",
+    "https://www.facebook.com/YourPage",
+    "https://www.instagram.com/ShieldWiseSec",
+    "https://www.linkedin.com/company/YourCompany",
+    "https://yelp.com/biz/YourListing"
+  ]
+}
+</script>
+
+Micro content tweaks (quick wins)
+
+Title: keep under ~60 chars and lead with the city + service — yours is good.
+
+Meta description: include “Citrus Heights security guards”, “mobile patrol”, and 24/7 (you already do—nice).
+
+H1: include the primary keyword and city explicitly.
+
+Internal links: you have a few—add 2–3 contextual links in paragraphs (e.g., to Fire Watch, Mobile Patrol service pages).
+
+Claims: qualify stats like “85% reduction” (e.g., “up to 85%… based on internal incident reports 2023–2025”) or remove.
