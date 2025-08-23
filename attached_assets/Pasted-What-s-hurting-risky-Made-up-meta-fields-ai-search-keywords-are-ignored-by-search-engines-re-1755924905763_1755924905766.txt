@@ -1,0 +1,153 @@
+What’s hurting / risky
+
+Made-up meta fields (ai-search-*, keywords) are ignored by search engines—remove to reduce bloat.
+
+Over-promisey/emoji titles & OG (“#1”, stars, emojis) can hurt trust and rich result eligibility; tone down.
+
+Geodata mismatch — your JSON-LD lat/long points to downtown Sacramento, not Rancho Cordova.
+
+Schema nits
+
+AggregateRating.worstRating should be "1" (or omit).
+
+Add @id and url to your primary entity; use stable IDs to join graphs.
+
+containedInPlace expects a Place (object/URL), not plain text.
+
+Don’t mix both price and priceSpecification redundantly on Offers.
+
+Thin/duplicative CSS — multiple site CSS files + Bootstrap + FA; merge/minify to improve LCP/INP.
+
+Location consistency — page classes/filenames say “anaheim-…”, but city is Rancho Cordova (weak signal).
+
+Claims without sources (e.g., “78% reduction”, “187 reviews”) can trigger quality/manual review. Either cite or soften.
+
+OG/Twitter images — ensure real hosted 1200×630 assets; add og:image:alt (you did—good), consider og:image:type.
+
+Drop-in improved <head> (lean, compliant, AI-search friendly without fake tags)
+<head>
+  <!-- Charset + Viewport -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Primary SEO -->
+  <title>Security Guards in Rancho Cordova, CA | Armed & Unarmed | ShieldWise</title>
+  <meta name="description" content="BSIS-licensed security guards in Rancho Cordova, CA. Armed & unarmed officers, mobile patrol, and 24/7 fire watch. Fast deployment. Free quote: (714) 716-7430.">
+  <link rel="canonical" href="https://shieldwisesecurity.com/sacramento-county/rancho-cordova">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <!-- Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"></noscript>
+  <link rel="preload" href="/img/rancho-cordova-hero.webp" as="image" imagesrcset="/img/rancho-cordova-hero.webp 1x" fetchpriority="high">
+  <link rel="modulepreload" href="/js/critical.js">
+
+  <!-- PWA / Mobile -->
+  <meta name="theme-color" content="#003366">
+  <meta name="color-scheme" content="light dark">
+  <meta name="format-detection" content="telephone=yes">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Security Guard Services in Rancho Cordova, CA | ShieldWise Security">
+  <meta property="og:description" content="Armed & unarmed guards, mobile patrol, and 24/7 fire watch. BSIS-licensed. Fast deployment in Rancho Cordova. Free quote: (714) 716-7430.">
+  <meta property="og:url" content="https://shieldwisesecurity.com/sacramento-county/rancho-cordova">
+  <meta property="og:type" content="local.business">
+  <meta property="og:image" content="https://shieldwisesecurity.com/img/rancho-cordova-security-guards-og-1200x630.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ShieldWise Security guards serving businesses in Rancho Cordova, CA">
+  <meta property="og:site_name" content="ShieldWise Security">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Security Guard Services | Rancho Cordova, CA">
+  <meta name="twitter:description" content="BSIS-licensed armed & unarmed guards, mobile patrol, 24/7 fire watch. Fast deployment. Free quote: (714) 716-7430">
+  <meta name="twitter:image" content="https://shieldwisesecurity.com/img/rancho-cordova-security-guards-og-1200x630.jpg">
+
+  <!-- JSON-LD (primary entity with stable @id + corrected geocoords for Rancho Cordova) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness","SecurityService"],
+    "@id": "https://shieldwisesecurity.com/#rancho-cordova",
+    "url": "https://shieldwisesecurity.com/sacramento-county/rancho-cordova",
+    "name": "ShieldWise Security — Rancho Cordova",
+    "description": "Security guard services in Rancho Cordova, CA: armed & unarmed officers, mobile patrol, and 24/7 fire watch. BSIS-licensed.",
+    "image": [
+      "https://shieldwisesecurity.com/img/rancho-cordova-security-guards-hero.webp"
+    ],
+    "logo": "https://shieldwisesecurity.com/img/shieldwise-logo-2024.png",
+    "telephone": "+1-714-716-7430",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Rancho Cordova",
+      "addressRegion": "CA",
+      "postalCode": "95670",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 38.589,
+      "longitude": -121.302
+    },
+    "areaServed": [
+      {"@type":"City","name":"Rancho Cordova","sameAs":"https://en.wikipedia.org/wiki/Rancho_Cordova,_California"}
+    ],
+    "sameAs": [
+      "https://www.facebook.com/ShieldWiseSecurity",
+      "https://www.instagram.com/shieldwisesecurity",
+      "https://www.linkedin.com/company/shieldwise-security"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Rancho Cordova Security Services",
+      "itemListElement": [
+        {"@type":"Offer","name":"Armed Security Guards","priceCurrency":"USD","price":"45.00"},
+        {"@type":"Offer","name":"Unarmed Security Guards","priceCurrency":"USD","price":"35.00"},
+        {"@type":"Offer","name":"Mobile Patrol Services","priceCurrency":"USD","price":"60.00"}
+      ]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "187"
+    }
+  }
+  </script>
+
+  <!-- FAQ & Breadcrumbs (unchanged structure, ensure on-page content matches) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://shieldwisesecurity.com/"},
+      {"@type":"ListItem","position":2,"name":"California Security Services","item":"https://shieldwisesecurity.com/california"},
+      {"@type":"ListItem","position":3,"name":"Sacramento County","item":"https://shieldwisesecurity.com/sacramento-county"},
+      {"@type":"ListItem","position":4,"name":"Rancho Cordova","item":"https://shieldwisesecurity.com/sacramento-county/rancho-cordova"}
+    ]
+  }
+  </script>
+</head>
+
+Priority fixes to apply in your full page
+
+Remove all meta name="keywords" and ai-search-* tags. They don’t help.
+
+Normalize naming: replace anaheim-* classes/filenames with rancho-cordova-*.
+
+Consolidate CSS/JS: merge /css/style.css, style456.css, and anaheim-styles.css; defer non-critical JS; keep Bootstrap only if you actually use it.
+
+Tone down superlatives in visible copy and OG/Twitter (#1, star emojis). Keep it professional; emphasize specifics (BSIS license, SLA, sectors).
+
+Back claims (reviews, response times) with a linked proof page or remove numbers.
+
+Use city-specific media and filenames (you preloaded /img/sacramento.webp; switch to a Rancho Cordova hero and match the preload href to the actual hero).
+
+Add internal links to nearby service/city pages (Folsom, Citrus Heights, Elk Grove) to strengthen local topical authority.
+
+Optional: Add Organization‐level JSON-LD on the homepage and reference it via "@id" here (entity consolidation).
