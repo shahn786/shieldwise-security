@@ -1,0 +1,161 @@
+Fix these (quick wins)
+
+Remove obsolete/ignored meta
+keywords, rating, revisit-after, city/state/country/zipcode/coordinates/region/locality, ICBM, geo.* → not used for rankings and add noise.
+
+Duplicate/odd meta
+author appears twice; keep one. publisher meta is nonstandard—prefer JSON-LD publisher.
+
+H1 structure
+You have an H1 in hero and later (“#1 Rated…”). Keep one <h1>; make others <h2>.
+
+Speakable schema
+Very limited support (mainly news). Safe to remove or scope to a minimal summary paragraph to avoid validation noise.
+
+JSON-LD: add a primary LocalBusiness node
+You currently have SecurityService items and a WebPage. Add a single, canonical LocalBusiness (or Organization + LocalBusiness) node with stable @id, NAP, sameAs, and hasOfferCatalog/makesOffer.
+
+Keep SecurityService entries but link them via provider or makesOffer.
+
+Ensure prices are numbers in UnitPriceSpecification (no ranges as a single string). Use multiple Offers or minPrice/maxPrice in PriceSpecification.
+
+AggregateRating/Review: only keep if the exact reviews/ratings are visible on the page and follow Google’s review schema policies; otherwise remove to avoid a rich-result penalty.
+
+OG consistency
+og:type = website (or organization). business.business is rare; use website for a landing page.
+
+Performance polish
+
+Consolidate CSS; you load /css/style.css and /css/style456.css plus Bootstrap + Font Awesome. Merge/inline critical, defer the rest.
+
+For Google Fonts preload: add onload swap pattern and <noscript> fallback.
+
+Add loading="lazy" and decoding="async" to all non-LCP images; add explicit width/height to avoid CLS.
+
+Consider self-hosting Font Awesome subset to cut blocking CSS.
+
+Accessibility & CTR
+
+Ensure hero background has sufficient text contrast; include a real CTA button with tel: and href="#contact-sec".
+
+Add organization logo via <link rel="icon"> is fine; also include JSON-LD logo.
+
+Content claims
+Stats like “5,000+ tech companies / $180B+” should be sourced on page (small footnote) or softened (“thousands of tech firms”) to avoid trust issues.
+
+Local signals
+
+Add NAP in the footer matching your Google Business Profile.
+
+Add sameAs to GBP, Apple Maps, Bing Places, LinkedIn, Yelp (if used).
+
+Consider hasMap with a Google Maps Place URL.
+
+Minimal head cleanup (drop noise + tighten performance)
+<!-- Keep, improved -->
+<title>Santa Clara Security Guards | Silicon Valley Tech & Corporate Security | ShieldWise</title>
+<meta name="description" content="BSIS-licensed security guards in Santa Clara. Tech campuses, corporate offices, R&D sites. $2M insured. 24/7 response. Free quote: (408) 716-7430.">
+<link rel="canonical" href="https://shieldwisesecurity.com/santa-clara">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#1a3c64">
+
+<!-- Preconnect / Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"></noscript>
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Santa Clara Security Guards | Silicon Valley Tech & Corporate Protection | ShieldWise">
+<meta property="og:description" content="Tech campus, corporate, and R&D security with BSIS-licensed guards. 24/7 response.">
+<meta property="og:url" content="https://shieldwisesecurity.com/santa-clara">
+<meta property="og:image" content="https://shieldwisesecurity.com/img/santa-clara-security-guards.webp">
+<meta property="og:site_name" content="ShieldWise Security">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Santa Clara Security Guards | Silicon Valley Tech & Corporate Security">
+<meta name="twitter:description" content="Professional security for tech campuses, corporates, and R&D in Santa Clara.">
+<meta name="twitter:image" content="https://shieldwisesecurity.com/img/santa-clara-security-guards.webp">
+
+Primary LocalBusiness JSON-LD (replace/add alongside your BreadcrumbList)
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"LocalBusiness",
+  "@id":"https://shieldwisesecurity.com/#santa-clara",
+  "name":"ShieldWise Security – Santa Clara",
+  "image":"https://shieldwisesecurity.com/img/shieldwise-logo.png",
+  "url":"https://shieldwisesecurity.com/santa-clara",
+  "telephone":"+1-408-716-7430",
+  "priceRange":"$$-$$$",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"456 Main St",
+    "addressLocality":"Santa Clara",
+    "addressRegion":"CA",
+    "postalCode":"95050",
+    "addressCountry":"US"
+  },
+  "geo":{"@type":"GeoCoordinates","latitude":37.3541,"longitude":-121.9552},
+  "areaServed":[{"@type":"City","name":"Santa Clara"},{"@type":"Place","name":"Silicon Valley"}],
+  "sameAs":[
+    "https://www.google.com/maps?cid=YOUR_PLACE_CID",
+    "https://www.facebook.com/YOUR_PAGE",
+    "https://www.linkedin.com/company/YOUR_COMPANY",
+    "https://www.apple.com/maps/?address=..." 
+  ],
+  "hasOfferCatalog":{
+    "@type":"OfferCatalog",
+    "name":"Security Services",
+    "itemListElement":[
+      {
+        "@type":"Offer",
+        "itemOffered":{
+          "@type":"SecurityService",
+          "name":"Unarmed Security",
+          "areaServed":{"@type":"City","name":"Santa Clara"}
+        },
+        "priceSpecification":{
+          "@type":"PriceSpecification",
+          "priceCurrency":"USD",
+          "minPrice":45,
+          "maxPrice":65
+        }
+      },
+      {
+        "@type":"Offer",
+        "itemOffered":{
+          "@type":"SecurityService",
+          "name":"Armed Security",
+          "areaServed":{"@type":"City","name":"Santa Clara"}
+        },
+        "priceSpecification":{
+          "@type":"PriceSpecification",
+          "priceCurrency":"USD",
+          "minPrice":65,
+          "maxPrice":95
+        }
+      }
+    ]
+  }
+}
+</script>
+
+
+Keep your FAQPage JSON-LD only if the same Q&A appears in visible HTML (it does—good). Remove AggregateRating/Review unless the exact reviews and star rating are printed on the page with names/dates.
+
+Technical trims (1–2 hours of cleanup)
+
+CSS/JS: merge site CSS; add defer to noncritical JS (jquery, bootstrap, your scripts) and place at bottom.
+
+Icons: load only needed icons or self-host a subset to reduce CSS.
+
+Images: add width/height, loading="lazy", fetchpriority="high" on LCP image if you swap hero to <img> instead of background-image.
+
+404 hygiene: ensure all preloaded resources exist (fonts/css/images).
+
+If you want, I can output a ready-to-paste head and final JSON-LD bundle adopting all fixes above (and ditching the deprecated tags) for this exact page.
+
+Is this conversation helpful so far?
