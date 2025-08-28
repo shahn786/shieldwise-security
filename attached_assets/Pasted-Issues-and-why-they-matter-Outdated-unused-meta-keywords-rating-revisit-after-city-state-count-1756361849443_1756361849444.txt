@@ -1,0 +1,201 @@
+Issues (and why they matter)
+
+Outdated/unused meta
+keywords, rating, revisit-after, city/state/country/zipcode/coordinates/region/locality, ICBM offer no ranking value and add noise.
+
+Duplicate/contradictory metadata
+Two author tags; HTML root uses itemtype="LocalBusiness" but your primary JSON-LD centers on SecurityService—pick one primary entity and reference the others via @id/@graph.
+
+OG type
+og:type="business.business" is rarely used and under-documented; use website (or article if it’s content-heavy) to maximize compatibility.
+
+Speakable
+SpeakableSpecification has limited support and mainly for news; safe to remove unless you’re targeting eligible surfaces.
+
+Schema offer pricing
+price: "45-85" and UnitPriceSpecification.price: "45-85" are invalid (must be numbers). Use priceSpecification with minPrice/maxPrice or surface only priceRange at the business level.
+
+Review/aggregateRating policy risk
+If the reviews/ratings aren’t verifiable and on your page, Google may ignore the markup. Avoid synthetic reviewer names/titles; ensure reviews are visible on page.
+
+Multiple H1s
+You have an H1 in the hero and another later. It’s valid HTML5, but for clarity and snippet generation, prefer one primary H1.
+
+Fonts/CSS performance
+
+You preload Google Fonts as as="style"—good—but also include the same stylesheet later. Ensure no duplicate fetch and add display=swap.
+
+Font Awesome + Bootstrap 4.5.2 are heavy; consider self-hosting or deferring non-critical CSS.
+
+Accessibility/INP
+100vh hero + heavy animations can hurt LCP/INP on mobile; ensure the hero image is preloaded and sized with explicit width/height, and keep initial JS light.
+
+NAP consistency
+The phone number uses a placeholder (510) 555-0123. If your GMB/GBP lists a different number, consistency matters.
+
+High-impact quick fixes (5–15 min)
+
+Remove: keywords, rating, revisit-after, city/state/..., ICBM, extra author, Speakable block (optional).
+
+Change og:type → website.
+
+Make one JSON-LD the primary (LocalBusiness or SecurityService) and reference service nodes via @graph.
+
+Fix price schema with priceCurrency + minPrice/maxPrice or use priceRange only.
+
+Ensure one H1; demote others to H2/H3.
+
+Add font-display=swap (via the Google Fonts URL) and dedupe font links.
+
+Add sameAs with real profiles; add hasMap to your Google Maps share URL.
+
+Preconnect your own domain/CDN; keep preconnects minimal.
+
+Cleaned-up, 2025-ready <head> (drop-in)
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Alameda Security Guards | Waterfront & Community Protection | ShieldWise</title>
+  <meta name="description" content="BSIS-licensed security guards in Alameda, CA. Waterfront, marina, historic district & island community protection. $2M insured. 24/7 response. Free quote." />
+  <link rel="canonical" href="https://shieldwisesecurity.com/alameda" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="theme-color" content="#1a3c64" />
+
+  <!-- Networking & performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="/css/style456.css" as="style">
+  <link rel="preload" as="image" href="/img/alamendsa1.webp" imagesrcset="/img/alamendsa1.webp 1200w" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Core CSS (consider bundling/minifying to 1–2 files) -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style456.css">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Alameda Security Guards | Bay Area Waterfront & Community Protection | ShieldWise" />
+  <meta property="og:description" content="Professional security in Alameda: waterfront, marina, and historic districts. 24/7 response, BSIS-licensed." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://shieldwisesecurity.com/alameda" />
+  <meta property="og:image" content="https://shieldwisesecurity.com/img/alameda-security-guards.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="ShieldWise Security" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Alameda Security Guards | Waterfront & Community Protection" />
+  <meta name="twitter:description" content="BSIS-licensed guards, $2M insured, 24/7 response. Free quote." />
+  <meta name="twitter:image" content="https://shieldwisesecurity.com/img/alameda-security-guards.webp" />
+
+  <!-- JSON-LD: make one primary LocalBusiness/SecurityService and link service nodes -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SecurityService",
+        "@id": "https://shieldwisesecurity.com/#brand",
+        "name": "ShieldWise Security",
+        "url": "https://shieldwisesecurity.com/alameda",
+        "image": "https://shieldwisesecurity.com/img/shieldwise-logo.png",
+        "logo": "https://shieldwisesecurity.com/img/shieldwise-logo.png",
+        "telephone": "+1-510-555-0123",
+        "priceRange": "$$-$$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "2200 Central Ave",
+          "addressLocality": "Alameda",
+          "addressRegion": "CA",
+          "postalCode": "94501",
+          "addressCountry": "US"
+        },
+        "geo": {"@type":"GeoCoordinates","latitude":37.7652,"longitude":-122.2416},
+        "areaServed": [{"@type":"City","name":"Alameda"}],
+        "sameAs": [
+          "https://www.facebook.com/yourpage",
+          "https://www.linkedin.com/company/yourcompany",
+          "https://www.yelp.com/biz/yourlisting",
+          "https://maps.google.com/?q=ShieldWise+Security+Alameda"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Security Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "Unarmed Guard (per hour)",
+              "priceCurrency": "USD",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "USD",
+                "minPrice": 45,
+                "maxPrice": 65
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "Armed Guard (per hour)",
+              "priceCurrency": "USD",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "USD",
+                "minPrice": 65,
+                "maxPrice": 85
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://shieldwisesecurity.com"},
+          {"@type":"ListItem","position":2,"name":"Services","item":"https://shieldwisesecurity.com/services"},
+          {"@type":"ListItem","position":3,"name":"Alameda Security","item":"https://shieldwisesecurity.com/alameda"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://shieldwisesecurity.com/alameda#faq",
+        "mainEntity": [
+          {
+            "@type":"Question",
+            "name":"How much does a security guard cost in Alameda?",
+            "acceptedAnswer":{"@type":"Answer","text":"Unarmed: $45–$65/hr; Armed: $65–$85/hr. Call for a tailored quote."}
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Favicons/PWA -->
+  <link rel="icon" href="/img/favicon.ico" sizes="any">
+  <link rel="manifest" href="/manifest.json">
+</head>
+
+Content tweaks
+
+Keep island/waterfront focus, but avoid unverifiable stats (“1,200 marinas”) unless you cite or soften (“hundreds of …”).
+
+Convert the second H1 to an H2.
+
+Ensure every decorative icon has aria-hidden="true" and meaningful headings have accessible text.
+
+Add internal links to /alameda/marina-security, /alameda/historic-district-security, etc., to deepen topical authority.
+
+Performance checklist
+
+Set explicit width/height on hero image; keep CLS < 0.1.
+
+Defer non-critical JS; consider removing jQuery/Bootstrap if not essential.
+
+Combine /css/style.css + /css/style456.css; inline only critical styles.
+
+Add loading="lazy" to non-hero images and fetchpriority="high" to the hero image.
+
+If you want, I can refactor your JSON-LD to a single, validated graph for this exact page and adjust the partials so your service pages inherit the same 2025-ready head automatically.
+
+ChatGPT can make mista
