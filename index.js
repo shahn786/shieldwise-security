@@ -779,6 +779,14 @@ app.get('/carlsbad', (req, res) => {
     });
 });
 
+app.get('/fresno', (req, res) => {
+    res.render('cities/fresno', { 
+        title: 'Fresno',
+        cityName: 'Fresno',
+        pageUrl: '/fresno'
+    });
+});
+
 app.get('/riverside-county', (req, res) => {
     res.render('cities/riverside-county', { title: 'Riverside County' });
 });
