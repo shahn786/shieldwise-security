@@ -1008,12 +1008,28 @@ const centralValleyCities = [
 
 centralValleyCities.forEach(city => {
     const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    
+    // Main city route
     app.get(`/${city}`, (req, res) => {
         try {
             res.render(`cities/${city}`, { 
                 title: formattedCity,
                 cityName: formattedCity,
                 pageUrl: `/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+
+    // Central Valley prefix route for SEO
+    app.get(`/central-valley/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/central-valley/${city}`
             });
         } catch (error) {
             console.error(`Error rendering ${city} page:`, error);
