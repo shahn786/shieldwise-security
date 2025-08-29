@@ -1022,6 +1022,21 @@ centralValleyCities.forEach(city => {
     });
 });
 
+// Additional route for Fresno (already exists in Central Valley cities)
+// This provides an alternative /fresno route pattern for consistency
+app.get('/central-valley/fresno', (req, res) => {
+    try {
+        res.render('cities/fresno', { 
+            title: 'Fresno',
+            cityName: 'Fresno',
+            pageUrl: '/central-valley/fresno'
+        });
+    } catch (error) {
+        console.error('Error rendering Fresno page:', error);
+        res.status(500).send('Page not found');
+    }
+});
+
 const shoppingCenterSecurityRoute = require('./routes/shopping-center-security');
 
 // Use routes
