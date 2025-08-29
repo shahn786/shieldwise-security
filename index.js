@@ -702,7 +702,7 @@ const sacramentoCountyCities = [
 
 sacramentoCountyCities.forEach(city => {
     const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-    
+
     // Routes for both /sacramento-county/city and /sacramento/city patterns
     app.get(`/sacramento-county/${city}`, (req, res) => {
         try {
@@ -716,7 +716,7 @@ sacramentoCountyCities.forEach(city => {
             res.status(500).send('Page not found');
         }
     });
-    
+
     // Add the /sacramento/city pattern that you were trying to access
     app.get(`/sacramento/${city}`, (req, res) => {
         try {
@@ -779,12 +779,9 @@ app.get('/carlsbad', (req, res) => {
     });
 });
 
+// Fresno route
 app.get('/fresno', (req, res) => {
-    res.render('cities/fresno', { 
-        title: 'Fresno',
-        cityName: 'Fresno',
-        pageUrl: '/fresno'
-    });
+    res.render('cities/fresno', { title: 'Fresno' });
 });
 
 app.get('/riverside-county', (req, res) => {
@@ -906,7 +903,7 @@ const venturaCountyCities = [
 
 venturaCountyCities.forEach(city => {
     const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-    
+
     // Create routes for both /ventura-county/city and /city
     app.get(`/ventura-county/${city}`, (req, res) => {
         try {
@@ -920,7 +917,7 @@ venturaCountyCities.forEach(city => {
             res.status(500).send('Page not found');
         }
     });
-    
+
     app.get(`/${city}`, (req, res) => {
         try {
             res.render(`cities/${city}`, { 
@@ -957,7 +954,7 @@ sanDiegoCountyCities.forEach(city => {
             res.status(500).send('Page not found');
         }
     });
-    
+
     // Also create routes without /california prefix for SEO
     app.get(`/${city}`, (req, res) => {
         try {
@@ -1209,5 +1206,28 @@ app.get('/services/hotel-security', (req, res) => {
 app.use('/services/shopping-center-security', shoppingCenterSecurityRoute);
 app.use('/services/special-event-security', require('./routes/special-event-security'));
 app.use('/services/unarmed-security', require('./routes/unarmed-security'));
+
+// Central Valley Security Service Areas routes
+const centralValleyCities = [
+    'clovis', 'madera', 'visalia', 'tulare', 'hanford', 
+    'porterville', 'merced', 'modesto', 'stockton', 
+    'bakersfield', 'delano'
+];
+
+centralValleyCities.forEach(city => {
+    const formattedCity = city.charAt(0).toUpperCase() + city.slice(1);
+    app.get(`/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+});
 
 // Start the server
