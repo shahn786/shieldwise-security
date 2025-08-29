@@ -350,6 +350,41 @@
         .success-story{background:#f8f9fa;padding:2rem;border-radius:10px;border-left:4px solid #d12028;margin-bottom:2rem}
         .success-story h3{color:#1a3c64;margin-bottom:1rem}
         .highlight{background:#fff3cd;padding:2px 6px;border-radius:3px;font-weight:bold}
+
+        /* Enhanced Contact Section Styles */
+        .enhanced-contact-section{position:relative;background:linear-gradient(135deg,#1a3c64 0%,#2c5282 50%,#1a3c64 100%);padding:80px 0;overflow:hidden}
+        .contact-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:url('/img/quot.webp') center/cover;opacity:0.1;z-index:1}
+        .enhanced-contact-container{position:relative;max-width:1200px;margin:0 auto;padding:0 20px;z-index:2}
+        .enhanced-contact-content{text-align:center;color:#fff}
+        .enhanced-section-badge{display:inline-block;background:rgba(255,255,255,0.15);color:#ffd166;padding:8px 20px;border-radius:25px;font-size:0.9rem;font-weight:600;margin-bottom:20px;border:1px solid rgba(255,209,102,0.3)}
+        .enhanced-contact-title{font-size:3rem;font-weight:700;margin-bottom:20px;text-shadow:2px 2px 4px rgba(0,0,0,0.3)}
+        .enhanced-contact-subtitle{font-size:1.2rem;margin-bottom:50px;color:#e9ecef;max-width:800px;margin-left:auto;margin-right:auto;line-height:1.6}
+        .enhanced-contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-bottom:50px}
+        .enhanced-contact-item{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.2);border-radius:15px;padding:35px 25px;transition:all 0.3s ease;text-align:center}
+        .enhanced-contact-item:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(0,0,0,0.3);background:rgba(255,255,255,0.15)}
+        .enhanced-contact-icon{width:70px;height:70px;background:linear-gradient(135deg,#d12028,#a51920);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 8px 25px rgba(209,32,40,0.3)}
+        .enhanced-contact-icon i{font-size:1.8rem;color:#fff}
+        .enhanced-contact-details h3{font-size:1.4rem;font-weight:600;margin-bottom:10px;color:#ffd166}
+        .enhanced-contact-link{color:#fff;text-decoration:none;font-size:1.2rem;font-weight:600;transition:all 0.3s ease;display:block;margin-bottom:8px}
+        .enhanced-contact-link:hover{color:#ffd166;text-decoration:none}
+        .enhanced-contact-text{color:#fff;font-size:1.2rem;font-weight:600;display:block;margin-bottom:8px}
+        .contact-availability{color:#b0b8c4;font-size:0.9rem;font-style:italic}
+        .enhanced-cta-section{text-align:center;margin-top:40px}
+        .enhanced-cta-button{position:relative;display:inline-block;background:linear-gradient(135deg,#d12028,#a51920);color:#fff;padding:20px 50px;border-radius:50px;text-decoration:none;font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;transition:all 0.3s ease;overflow:hidden;box-shadow:0 10px 30px rgba(209,32,40,0.4);margin-bottom:25px}
+        .enhanced-cta-button:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(209,32,40,0.6);color:#fff;text-decoration:none}
+        .enhanced-cta-button i{margin-right:10px;font-size:1.1rem}
+        .button-glow{position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);transition:left 0.6s ease}
+        .enhanced-cta-button:hover .button-glow{left:100%}
+        .cta-features{display:flex;justify-content:center;gap:30px;flex-wrap:wrap}
+        .feature-item{color:#b0b8c4;font-size:1rem;display:flex;align-items:center;gap:8px}
+        .feature-item i{color:#28a745;font-size:0.9rem}
+
+        @media (max-width: 768px) {
+            .enhanced-contact-title{font-size:2.2rem}
+            .enhanced-contact-grid{grid-template-columns:1fr;gap:20px}
+            .enhanced-contact-item{padding:25px 20px}
+            .cta-features{flex-direction:column;gap:15px}
+        }
     </style>
     
     <!-- ✅ Critical Resource Preloading -->
@@ -990,46 +1025,61 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact-sec" class="contact-section">
-        <div class="contact-container">
-            <div class="contact-content">
-                <div class="section-badge">Get Started Today</div>
-                <h2>Contact ShieldWise Security in Fresno</h2>
-                <p>Ready to enhance your security? Contact us today for a free consultation and customized security assessment.</p>
+    <!-- Enhanced Contact Section -->
+    <section id="contact-sec" class="enhanced-contact-section">
+        <div class="contact-overlay"></div>
+        <div class="enhanced-contact-container">
+            <div class="enhanced-contact-content">
+                <div class="enhanced-section-badge">Get Started Today</div>
+                <h2 class="enhanced-contact-title">Contact ShieldWise Security in Fresno</h2>
+                <p class="enhanced-contact-subtitle">Ready to enhance your security? Contact us today for a free consultation and customized security assessment.</p>
                 
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
+                <div class="enhanced-contact-grid">
+                    <div class="enhanced-contact-item">
+                        <div class="enhanced-contact-icon">
+                            <i class="fas fa-phone-alt"></i>
                         </div>
-                        <div class="contact-details">
+                        <div class="enhanced-contact-details">
                             <h3>Call Us</h3>
-                            <p><a href="tel:7147167430">(714) 716-7430</a></p>
+                            <a href="tel:7147167430" class="enhanced-contact-link">(714) 716-7430</a>
+                            <span class="contact-availability">24/7 Emergency Response</span>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
+                    
+                    <div class="enhanced-contact-item">
+                        <div class="enhanced-contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <div class="contact-details">
+                        <div class="enhanced-contact-details">
                             <h3>Email Us</h3>
-                            <p><a href="mailto:fresno@shieldwisesecurity.com">fresno@shieldwisesecurity.com</a></p>
+                            <a href="mailto:fresno@shieldwisesecurity.com" class="enhanced-contact-link">fresno@shieldwisesecurity.com</a>
+                            <span class="contact-availability">Response within 2 hours</span>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
+                    
+                    <div class="enhanced-contact-item">
+                        <div class="enhanced-contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <div class="contact-details">
+                        <div class="enhanced-contact-details">
                             <h3>Service Area</h3>
-                            <p>Fresno & Central Valley</p>
+                            <span class="enhanced-contact-text">Fresno & Central Valley</span>
+                            <span class="contact-availability">50+ Mile Coverage Area</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="cta-buttons">
-                    <a href="/get-quote" class="cta-button"><i class="fas fa-clipboard-list"></i> Request a Quote</a>
+                <div class="enhanced-cta-section">
+                    <a href="/get-quote" class="enhanced-cta-button">
+                        <i class="fas fa-clipboard-list"></i>
+                        <span>Request Free Quote</span>
+                        <div class="button-glow"></div>
+                    </a>
+                    <div class="cta-features">
+                        <span class="feature-item"><i class="fas fa-check"></i> Free Consultation</span>
+                        <span class="feature-item"><i class="fas fa-check"></i> Custom Assessment</span>
+                        <span class="feature-item"><i class="fas fa-check"></i> No Obligation</span>
+                    </div>
                 </div>
             </div>
         </div>
