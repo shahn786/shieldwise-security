@@ -702,7 +702,7 @@ const sacramentoCountyCities = [
 
 sacramentoCountyCities.forEach(city => {
     const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-    
+
     // Routes for both /sacramento-county/city and /sacramento/city patterns
     app.get(`/sacramento-county/${city}`, (req, res) => {
         try {
@@ -716,7 +716,7 @@ sacramentoCountyCities.forEach(city => {
             res.status(500).send('Page not found');
         }
     });
-    
+
     // Add the /sacramento/city pattern that you were trying to access
     app.get(`/sacramento/${city}`, (req, res) => {
         try {
@@ -906,7 +906,7 @@ const venturaCountyCities = [
 
 venturaCountyCities.forEach(city => {
     const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-    
+
     // Create routes for both /ventura-county/city and /city
     app.get(`/ventura-county/${city}`, (req, res) => {
         try {
@@ -920,7 +920,7 @@ venturaCountyCities.forEach(city => {
             res.status(500).send('Page not found');
         }
     });
-    
+
     app.get(`/${city}`, (req, res) => {
         try {
             res.render(`cities/${city}`, { 
@@ -957,7 +957,7 @@ sanDiegoCountyCities.forEach(city => {
             res.status(500).send('Page not found');
         }
     });
-    
+
     // Also create routes without /california prefix for SEO
     app.get(`/${city}`, (req, res) => {
         try {
@@ -983,7 +983,7 @@ const orangeCountyCities = [
 ];
 
 orangeCountyCities.forEach(city => {
-    // Format city name for display (e.g., 'santa-ana' becomes 'Santa Ana')
+    // Format city name for display (e.g., 'santa-ana') becomes 'Santa Ana')
     const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
     app.get(`/orange-county/${city}`, (req, res) => {
@@ -992,6 +992,28 @@ orangeCountyCities.forEach(city => {
                 title: formattedCity, 
                 cityName: formattedCity,
                 pageUrl: `/orange-county/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+});
+
+// Central Valley cities routes
+const centralValleyCities = [
+    'clovis', 'madera', 'visalia', 'tulare', 'hanford', 'porterville', 
+    'merced', 'modesto', 'stockton', 'bakersfield', 'delano'
+];
+
+centralValleyCities.forEach(city => {
+    const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    app.get(`/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/${city}`
             });
         } catch (error) {
             console.error(`Error rendering ${city} page:`, error);
