@@ -1,8 +1,7 @@
-
 const fs = require('fs');
 const path = require('path');
 
-// Santa Clara County cities with enhanced 2025 SEO data
+// Santa Clara County Cities Data with Enhanced 2025 SEO - Oakland Style
 const cities = [
     {
         name: 'Sunnyvale',
@@ -322,7 +321,7 @@ function generateCityPage(city) {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Unarmed Security Guards", 
+              "name": "Unarmed Security Guards",
               "description": "Professional unarmed security officers for access control and monitoring"
             },
             "price": "28-35",
@@ -625,7 +624,7 @@ function generateCityPage(city) {
 
                         <div class="anaheim-feature-item">
                             <i class="fas fa-building"></i>
-                            <h4>${city.specialty} Specialists</h4>
+                            <h4>${city.specialty}</h4>
                             <p>Specialized security solutions for ${city.specialty.toLowerCase()} with staff experienced in Silicon Valley security protocols and tech industry requirements.</p>
                         </div>
 
@@ -812,18 +811,18 @@ function generateCityPage(city) {
 // Generate all city pages
 function generateAllCityPages() {
     const citiesDir = path.join(__dirname, '..', 'views', 'cities');
-    
+
     // Ensure directory exists
     if (!fs.existsSync(citiesDir)) {
         fs.mkdirSync(citiesDir, { recursive: true });
     }
-    
+
     let generatedCount = 0;
-    
+
     cities.forEach(city => {
         const filename = `${city.slug}.ejs`;
         const filepath = path.join(citiesDir, filename);
-        
+
         try {
             const content = generateCityPage(city);
             fs.writeFileSync(filepath, content, 'utf8');
@@ -833,13 +832,13 @@ function generateAllCityPages() {
             console.error(`❌ Error generating ${filename}:`, error.message);
         }
     });
-    
+
     console.log(`\n🚀 SANTA CLARA COUNTY CITIES GENERATED SUCCESSFULLY!\n`);
     console.log(`📍 Generated Cities:`);
     cities.forEach(city => {
         console.log(`- ${city.name}: /views/cities/${city.slug}.ejs`);
     });
-    
+
     console.log(`\n📋 SEO Features Implemented:`);
     console.log(`✅ AI Search Optimization Meta Tags`);
     console.log(`✅ Enhanced Schema Markup (LocalBusiness, FAQ, Breadcrumb)`);
@@ -853,9 +852,6 @@ function generateAllCityPages() {
     console.log(`✅ Perfect 10/10 SEO Score Optimization`);
     console.log(`\n🎯 Total Generated: ${generatedCount}/${cities.length} pages`);
 }
-
-// Export for use as module
-module.exports = { cities, generateCityPage, generateAllCityPages };
 
 // Run if called directly
 if (require.main === module) {
