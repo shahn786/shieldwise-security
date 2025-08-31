@@ -877,9 +877,47 @@ sanBernardinoCities.forEach(city => {
     });
 });
 
-// Bay Area cities routes
+// Santa Clara County cities routes
+const santaClaraCities = [
+    'sunnyvale', 'mountain-view', 'cupertino', 'palo-alto', 'milpitas',
+    'campbell', 'los-gatos', 'morgan-hill', 'gilroy', 'san-jose'
+];
+
+santaClaraCities.forEach(city => {
+    const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    
+    // Routes for both /santa-clara-county/city and /city patterns
+    app.get(`/santa-clara-county/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/santa-clara-county/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+
+    // Also create routes without /santa-clara-county prefix for SEO
+    app.get(`/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+});
+
+// Bay Area cities routes (keeping existing for compatibility)
 const bayAreaCities = [
-    'fremont', 'berkeley', 'palo-alto', 'oakland'
+    'fremont', 'berkeley', 'oakland'
 ];
 
 bayAreaCities.forEach(city => {
