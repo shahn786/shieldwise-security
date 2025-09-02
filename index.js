@@ -971,6 +971,33 @@ venturaCountyCities.forEach(city => {
             res.status(500).send('Page not found');
         }
     });
+
+    // Add routes for -security suffix
+    app.get(`/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/${city}-security`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+
+    app.get(`/ventura-county/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/ventura-county/${city}-security`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
 });
 
 // San Diego County cities routes
