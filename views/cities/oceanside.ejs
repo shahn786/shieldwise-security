@@ -1076,7 +1076,14 @@
     <!-- Back to Top Button Script -->
     <script src="/JS/back-to-top.js"></script>
     <script>
-        // Initialize back to top immediately when script loads
+        // Ensure back-to-top button is properly initialized
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof initBackToTop === 'function') {
+                initBackToTop();
+            }
+        });
+        
+        // Also try immediate initialization
         if (typeof initBackToTop === 'function') {
             initBackToTop();
         }
