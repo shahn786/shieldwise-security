@@ -343,14 +343,14 @@
         body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#1e293b;font-size:16px;overflow-x:hidden;background-color:var(--white)}
         
         .fremont-hero{position:relative;height:100vh;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;margin-bottom:0}
-        .fremont-hero-overlay{position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(30,58,138,0.85),rgba(59,130,246,0.75));z-index:1}
+        .fremont-hero-overlay{position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(15,15,15,0.85),rgba(30,30,30,0.75));z-index:1}
         .fremont-hero-content{position:relative;z-index:2;color:var(--white);max-width:900px;padding:40px 30px;margin:0 auto}
         .fremont-hero-content h1{font-size:clamp(2.8rem,5vw,4.2rem);font-weight:800;margin-bottom:30px;text-shadow:2px 2px 4px rgba(0,0,0,0.3);line-height:1.2;padding:0 15px}
         .fremont-hero-content p{font-size:clamp(1.3rem,3vw,1.6rem);margin-bottom:40px;text-shadow:1px 1px 2px rgba(0,0,0,0.2);opacity:0.95;line-height:1.6;padding:0 20px}
         
         .fremont-cta-buttons{display:flex;gap:25px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:15px;padding:0 20px}
-        .fremont-cta-button{display:inline-block;padding:20px 40px;background:var(--gradient-accent);color:var(--white);text-decoration:none;border-radius:50px;font-weight:700;font-size:clamp(1rem,2.5vw,1.2rem);transition:all .3s ease;text-transform:uppercase;letter-spacing:1px;border:none;box-shadow:0 8px 25px rgba(249,115,22,0.4);min-width:220px;text-align:center}
-        .fremont-cta-button:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(249,115,22,0.5);color:var(--white);text-decoration:none;background:linear-gradient(135deg, #ea580c, #dc2626)}
+        .fremont-cta-button{display:inline-block;padding:20px 40px;background:linear-gradient(135deg, #1a1a1a, #333333);color:var(--white);text-decoration:none;border-radius:50px;font-weight:700;font-size:clamp(1rem,2.5vw,1.2rem);transition:all .3s ease;text-transform:uppercase;letter-spacing:1px;border:none;box-shadow:0 8px 25px rgba(26,26,26,0.4);min-width:220px;text-align:center}
+        .fremont-cta-button:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(26,26,26,0.5);color:var(--white);text-decoration:none;background:linear-gradient(135deg, #333333, #555555)}
         .fremont-cta-button-alt{display:inline-block;padding:20px 40px;background:transparent;color:var(--white);text-decoration:none;border:2px solid var(--white);border-radius:50px;font-weight:700;font-size:clamp(1rem,2.5vw,1.2rem);transition:all .3s ease;text-transform:uppercase;letter-spacing:1px;min-width:220px;text-align:center}
         .fremont-cta-button-alt:hover{background:var(--white);color:var(--primary-blue);transform:translateY(-3px);text-decoration:none;box-shadow:0 8px 25px rgba(255,255,255,0.3)}
         
@@ -375,12 +375,12 @@
         
         .faq-question{padding:28px 35px;background:linear-gradient(135deg, rgba(30,58,138,0.08), rgba(59,130,246,0.05));cursor:pointer;transition:all 0.3s ease;border-bottom:2px solid rgba(30,58,138,0.12);display:flex;justify-content:space-between;align-items:center}
         .faq-question:hover{background:linear-gradient(135deg, rgba(30,58,138,0.12), rgba(59,130,246,0.08))}
-        .faq-question h4{color:#1e3a8a;font-weight:700;font-size:1.2rem;margin:0;line-height:1.5;flex:1;padding-right:20px}
-        .faq-toggle{background:var(--gradient-primary);color:var(--white);width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;box-shadow:0 6px 15px rgba(30,58,138,0.3);font-size:1.1rem;font-weight:bold}
-        .faq-toggle:hover{transform:scale(1.15);box-shadow:0 8px 20px rgba(30,58,138,0.4)}
-        .anaheim-faq-item.active .faq-toggle{background:var(--gradient-accent);transform:rotate(45deg)}
+        .faq-question h4{color:#1a1a1a;font-weight:700;font-size:1.2rem;margin:0;line-height:1.5;flex:1;padding-right:20px}
+        .faq-toggle{background:linear-gradient(135deg, #1a1a1a, #333333);color:var(--white);width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;box-shadow:0 6px 15px rgba(26,26,26,0.3);font-size:1.1rem;font-weight:bold}
+        .faq-toggle:hover{transform:scale(1.15);box-shadow:0 8px 20px rgba(26,26,26,0.4)}
+        .anaheim-faq-item.active .faq-toggle{background:linear-gradient(135deg, #333333, #555555);transform:rotate(45deg)}
         
-        .faq-answer{padding:0 35px 35px;color:#334155;line-height:1.8;font-size:1.05rem;background:rgba(248,250,252,0.5)}
+        .faq-answer{padding:0 35px 35px;color:#2d2d2d;line-height:1.8;font-size:1.05rem;background:rgba(248,250,252,0.5);margin-bottom:20px}
         .faq-answer p{margin:0;font-weight:500}
         
         @media (max-width: 768px) {
@@ -424,7 +424,7 @@
         <div class="anaheim-content-container">
             <div class="anaheim-intro-section">
                 <div class="section-badge">Silicon Valley Security Experts</div>
-                <h2>Premium Security Guard Services in Fremont, CA</h2>
+                <h2 style="color: #1a1a1a; font-weight: 700;">Premium Security Guard Services in Fremont, CA</h2>
                 <div class="anaheim-intro-rating">
                     <div class="stars">
                         <i class="fas fa-star"></i>
@@ -467,7 +467,7 @@
 
                 <!-- Local Content -->
                 <section class="anaheim-local-content">
-                    <h3>Why Fremont Businesses Choose ShieldWise Security</h3>
+                    <h3 style="color: #1a1a1a; font-weight: 700;">Why Fremont Businesses Choose ShieldWise Security</h3>
                     <div class="local-statistics">
                         <h4>Fremont Security Statistics & Insights</h4>
                         <div class="stats-grid">
@@ -493,7 +493,7 @@
 
                 <!-- Enhanced Features Section -->
                 <section class="anaheim-features-section">
-                    <h3>Why Choose ShieldWise Security in Fremont?</h3>
+                    <h3 style="color: #1a1a1a; font-weight: 700;">Why Choose ShieldWise Security in Fremont?</h3>
                     <div class="anaheim-features-container">
                         <div class="anaheim-feature-item">
                             <i class="fas fa-shield-alt"></i>
@@ -549,50 +549,50 @@
     </section>
 
     <!-- Compact Professional Services Section -->
-    <section class="anaheim-services-section-compact">
+    <section class="anaheim-services-section-compact" style="background: #f8f9fa; padding: 80px 0; margin: 60px 0;">
         <div class="anaheim-services-container">
-            <div class="section-badge">Our Services</div>
-            <h3 class="anaheim-services-title">Security Services We Provide in Fremont</h3>
+            <div class="section-badge" style="background: #1a1a1a; color: white;">Our Services</div>
+            <h3 class="anaheim-services-title" style="color: #1a1a1a; font-weight: 700; margin-bottom: 50px;">Security Services We Provide in Fremont</h3>
 
-            <div class="anaheim-services-grid-enhanced">
-                <div class="anaheim-service-item-enhanced">
-                    <h4>Armed Security Officers</h4>
-                    <p>BSIS-licensed armed guards with firearms permits provide maximum security presence for high-risk environments and valuable assets.</p>
-                    <div class="service-pricing">Starting at $45-85/hour</div>
-                    <div class="service-benefits">
-                        <span>✓ Firearm certified</span>
-                        <span>✓ Threat assessment</span>
-                        <span>✓ Emergency response</span>
+            <div class="anaheim-services-grid-enhanced" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-top: 40px;">
+                <div class="anaheim-service-item-enhanced" style="background: white; padding: 40px 30px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border: 2px solid #e9ecef; margin-bottom: 30px;">
+                    <h4 style="color: #1a1a1a; font-weight: 700; font-size: 1.3rem; margin-bottom: 20px;">Armed Security Officers</h4>
+                    <p style="color: #4a4a4a; line-height: 1.6; margin-bottom: 25px;">BSIS-licensed armed guards with firearms permits provide maximum security presence for high-risk environments and valuable assets.</p>
+                    <div class="service-pricing" style="color: #1a1a1a; font-weight: 700; font-size: 1.1rem; margin-bottom: 20px;">Starting at $45-85/hour</div>
+                    <div class="service-benefits" style="display: flex; flex-direction: column; gap: 8px;">
+                        <span style="color: #2d2d2d; font-weight: 500;">✓ Firearm certified</span>
+                        <span style="color: #2d2d2d; font-weight: 500;">✓ Threat assessment</span>
+                        <span style="color: #2d2d2d; font-weight: 500;">✓ Emergency response</span>
                     </div>
                 </div>
-                <div class="anaheim-service-item-enhanced">
-                    <h4>Unarmed Security Guards</h4>
-                    <p>Professional unarmed officers focus on access control, customer service, and incident prevention for automotive, manufacturing, technology, retail facilities.</p>
-                    <div class="service-pricing">Starting at $28-35/hour</div>
-                    <div class="service-benefits">
-                        <span>✓ Customer service trained</span>
-                        <span>✓ De-escalation experts</span>
-                        <span>✓ Report documentation</span>
+                <div class="anaheim-service-item-enhanced" style="background: white; padding: 40px 30px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border: 2px solid #e9ecef; margin-bottom: 30px;">
+                    <h4 style="color: #1a1a1a; font-weight: 700; font-size: 1.3rem; margin-bottom: 20px;">Unarmed Security Guards</h4>
+                    <p style="color: #4a4a4a; line-height: 1.6; margin-bottom: 25px;">Professional unarmed officers focus on access control, customer service, and incident prevention for automotive, manufacturing, technology, retail facilities.</p>
+                    <div class="service-pricing" style="color: #1a1a1a; font-weight: 700; font-size: 1.1rem; margin-bottom: 20px;">Starting at $28-35/hour</div>
+                    <div class="service-benefits" style="display: flex; flex-direction: column; gap: 8px;">
+                        <span style="color: #2d2d2d; font-weight: 500;">✓ Customer service trained</span>
+                        <span style="color: #2d2d2d; font-weight: 500;">✓ De-escalation experts</span>
+                        <span style="color: #2d2d2d; font-weight: 500;">✓ Report documentation</span>
                     </div>
                 </div>
-                <div class="anaheim-service-item-enhanced">
-                    <h4>Automotive Manufacturing & Tech Security</h4>
-                    <p>Specialized security solutions designed specifically for automotive manufacturing & tech security and Fremont's unique business environment.</p>
-                    <div class="service-pricing">Starting at $35-65/hour</div>
-                    <div class="service-benefits">
-                        <span>✓ Industry expertise</span>
-                        <span>✓ Custom protocols</span>
-                        <span>✓ Silicon Valley trained</span>
+                <div class="anaheim-service-item-enhanced" style="background: white; padding: 40px 30px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border: 2px solid #e9ecef; margin-bottom: 30px;">
+                    <h4 style="color: #1a1a1a; font-weight: 700; font-size: 1.3rem; margin-bottom: 20px;">Automotive Manufacturing & Tech Security</h4>
+                    <p style="color: #4a4a4a; line-height: 1.6; margin-bottom: 25px;">Specialized security solutions designed specifically for automotive manufacturing & tech security and Fremont's unique business environment.</p>
+                    <div class="service-pricing" style="color: #1a1a1a; font-weight: 700; font-size: 1.1rem; margin-bottom: 20px;">Starting at $35-65/hour</div>
+                    <div class="service-benefits" style="display: flex; flex-direction: column; gap: 8px;">
+                        <span style="color: #2d2d2d; font-weight: 500;">✓ Industry expertise</span>
+                        <span style="color: #2d2d2d; font-weight: 500;">✓ Custom protocols</span>
+                        <span style="color: #2d2d2d; font-weight: 500;">✓ Silicon Valley trained</span>
                     </div>
                 </div>
-                <div class="anaheim-service-item-enhanced">
-                    <h4>Mobile Patrol Services</h4>
-                    <p>GPS-tracked patrol vehicles conduct scheduled and random security checks across multiple properties in Fremont.</p>
-                    <div class="service-pricing">Starting at $50-70/hour</div>
-                    <div class="service-benefits">
-                        <span>✓ GPS tracking</span>
-                        <span>✓ Multi-site coverage</span>
-                        <span>✓ Real-time reporting</span>
+                <div class="anaheim-service-item-enhanced" style="background: white; padding: 40px 30px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border: 2px solid #e9ecef; margin-bottom: 30px;">
+                    <h4 style="color: #1a1a1a; font-weight: 700; font-size: 1.3rem; margin-bottom: 20px;">Mobile Patrol Services</h4>
+                    <p style="color: #4a4a4a; line-height: 1.6; margin-bottom: 25px;">GPS-tracked patrol vehicles conduct scheduled and random security checks across multiple properties in Fremont.</p>
+                    <div class="service-pricing" style="color: #1a1a1a; font-weight: 700; font-size: 1.1rem; margin-bottom: 20px;">Starting at $50-70/hour</div>
+                    <div class="service-benefits" style="display: flex; flex-direction: column; gap: 8px;">
+                        <span style="color: #2d2d2d; font-weight: 500;">✓ GPS tracking</span>
+                        <span style="color: #2d2d2d; font-weight: 500;">✓ Multi-site coverage</span>
+                        <span style="color: #2d2d2d; font-weight: 500;">✓ Real-time reporting</span>
                     </div>
                 </div>
             </div>
@@ -603,7 +603,7 @@
     <section class="anaheim-faq-section">
         <div class="anaheim-faq-container">
             <div class="section-badge">Common Questions</div>
-            <h3>Frequently Asked Questions</h3>
+            <h3 style="color: #1a1a1a; font-weight: 700;">Frequently Asked Questions</h3>
             <div class="anaheim-faq-list">
                 <div class="anaheim-faq-item">
                     <div class="faq-question">
