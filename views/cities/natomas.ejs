@@ -175,11 +175,11 @@
     <section class="natomas-hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('/img/sacramento.webp');" role="banner" aria-label="Professional security guards patrolling commercial property in Natomas Sacramento California">
         <div class="natomas-hero-overlay"></div>
         <div class="natomas-hero-content">
-            <h1 class="animate-fade-in">Natomas Sacramento's Premier Security Solutions</h1>
-            <p class="animate-fade-in-delay">Professional northern Sacramento security services protecting Natomas businesses and communities</p>
+            <h1 class="animate-fade-in" style="color: #ff6600; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); font-weight: 800;">Natomas Sacramento's Premier Security Solutions</h1>
+            <p class="animate-fade-in-delay" style="color: #ffffff; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);">Professional northern Sacramento security services protecting Natomas businesses and communities</p>
             <div class="natomas-cta-buttons">
-                <a href="#contact-sec" class="natomas-cta-button animate-fade-in-delay-2">Get Your Free Security Consultation</a>
-                <a href="tel:7147167430" class="natomas-cta-button-alt animate-fade-in-delay-2"><i class="fas fa-phone"></i> (714) 716-7430</a>
+                <a href="#contact-sec" class="natomas-cta-button animate-fade-in-delay-2" style="background: linear-gradient(135deg, #ff6600, #cc5200); color: #ffffff; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; border: 2px solid #ff6600; transition: all 0.3s ease;">Get Your Free Security Consultation</a>
+                <a href="tel:7147167430" class="natomas-cta-button-alt animate-fade-in-delay-2" style="background: transparent; color: #ff6600; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; border: 2px solid #ff6600; transition: all 0.3s ease;"><i class="fas fa-phone"></i> (714) 716-7430</a>
             </div>
         </div>
     </section>
@@ -546,8 +546,8 @@
                 function() {
                     $(this).css({
                         'transform': 'translateY(-5px)',
-                        'box-shadow': '0 10px 25px rgba(0, 255, 136, 0.3)',
-                        'border-color': '#00ff88'
+                        'box-shadow': '0 10px 25px rgba(255, 102, 0, 0.3)',
+                        'border-color': '#ff6600'
                     });
                 },
                 function() {
@@ -555,6 +555,43 @@
                         'transform': 'translateY(0)',
                         'box-shadow': 'none',
                         'border-color': '#444'
+                    });
+                }
+            );
+
+            // Add hover effects for CTA buttons
+            $('.natomas-cta-button').hover(
+                function() {
+                    $(this).css({
+                        'background': 'linear-gradient(135deg, #cc5200, #993d00)',
+                        'transform': 'translateY(-2px)',
+                        'box-shadow': '0 8px 20px rgba(255, 102, 0, 0.4)'
+                    });
+                },
+                function() {
+                    $(this).css({
+                        'background': 'linear-gradient(135deg, #ff6600, #cc5200)',
+                        'transform': 'translateY(0)',
+                        'box-shadow': 'none'
+                    });
+                }
+            );
+
+            $('.natomas-cta-button-alt').hover(
+                function() {
+                    $(this).css({
+                        'background': '#ff6600',
+                        'color': '#ffffff',
+                        'transform': 'translateY(-2px)',
+                        'box-shadow': '0 8px 20px rgba(255, 102, 0, 0.4)'
+                    });
+                },
+                function() {
+                    $(this).css({
+                        'background': 'transparent',
+                        'color': '#ff6600',
+                        'transform': 'translateY(0)',
+                        'box-shadow': 'none'
                     });
                 }
             );
