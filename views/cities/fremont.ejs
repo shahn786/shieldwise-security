@@ -324,31 +324,73 @@
 
     <!-- ✅ Enhanced Core Web Vitals Critical CSS -->
     <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --secondary-blue: #3b82f6;
+            --accent-orange: #f97316;
+            --accent-green: #10b981;
+            --dark-navy: #0f172a;
+            --light-gray: #f8fafc;
+            --medium-gray: #64748b;
+            --white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            --gradient-accent: linear-gradient(135deg, #f97316, #ea580c);
+            --shadow-lg: 0 10px 25px rgba(30, 58, 138, 0.15);
+            --shadow-xl: 0 20px 50px rgba(30, 58, 138, 0.25);
+        }
+        
         *{box-sizing:border-box;margin:0;padding:0}
-        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#333;font-size:16px;overflow-x:hidden}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#1e293b;font-size:16px;overflow-x:hidden;background-color:var(--white)}
+        
         .fremont-hero{position:relative;height:100vh;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;margin-bottom:0}
-        .fremont-hero-overlay{position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(0,0,0,0.6),rgba(13,27,42,0.7));z-index:1}
-        .fremont-hero-content{position:relative;z-index:2;color:#fff;max-width:900px;padding:40px 30px;margin:0 auto}
-        .fremont-hero-content h1{font-size:clamp(2.8rem,5vw,4.2rem);font-weight:800;margin-bottom:30px;text-shadow:2px 2px 4px rgba(0,0,0,0.5);line-height:1.2;padding:0 15px}
-        .fremont-hero-content p{font-size:clamp(1.3rem,3vw,1.6rem);margin-bottom:40px;text-shadow:1px 1px 2px rgba(0,0,0,0.5);opacity:0.95;line-height:1.6;padding:0 20px}
+        .fremont-hero-overlay{position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(30,58,138,0.85),rgba(59,130,246,0.75));z-index:1}
+        .fremont-hero-content{position:relative;z-index:2;color:var(--white);max-width:900px;padding:40px 30px;margin:0 auto}
+        .fremont-hero-content h1{font-size:clamp(2.8rem,5vw,4.2rem);font-weight:800;margin-bottom:30px;text-shadow:2px 2px 4px rgba(0,0,0,0.3);line-height:1.2;padding:0 15px}
+        .fremont-hero-content p{font-size:clamp(1.3rem,3vw,1.6rem);margin-bottom:40px;text-shadow:1px 1px 2px rgba(0,0,0,0.2);opacity:0.95;line-height:1.6;padding:0 20px}
+        
         .fremont-cta-buttons{display:flex;gap:25px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:15px;padding:0 20px}
-        .fremont-cta-button{display:inline-block;padding:20px 40px;background:linear-gradient(135deg,#d32f2f,#b71c1c);color:#fff;text-decoration:none;border-radius:50px;font-weight:700;font-size:clamp(1rem,2.5vw,1.2rem);transition:all .3s ease;text-transform:uppercase;letter-spacing:1px;border:none;box-shadow:0 8px 25px rgba(211,47,47,0.3);min-width:220px;text-align:center}
-        .fremont-cta-button:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(211,47,47,0.4);color:#fff;text-decoration:none}
-        .fremont-cta-button-alt{display:inline-block;padding:20px 40px;background:transparent;color:#fff;text-decoration:none;border:2px solid #fff;border-radius:50px;font-weight:700;font-size:clamp(1rem,2.5vw,1.2rem);transition:all .3s ease;text-transform:uppercase;letter-spacing:1px;min-width:220px;text-align:center}
-        .fremont-cta-button-alt:hover{background:#fff;color:#222;transform:translateY(-3px);text-decoration:none}
+        .fremont-cta-button{display:inline-block;padding:20px 40px;background:var(--gradient-accent);color:var(--white);text-decoration:none;border-radius:50px;font-weight:700;font-size:clamp(1rem,2.5vw,1.2rem);transition:all .3s ease;text-transform:uppercase;letter-spacing:1px;border:none;box-shadow:0 8px 25px rgba(249,115,22,0.4);min-width:220px;text-align:center}
+        .fremont-cta-button:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(249,115,22,0.5);color:var(--white);text-decoration:none;background:linear-gradient(135deg, #ea580c, #dc2626)}
+        .fremont-cta-button-alt{display:inline-block;padding:20px 40px;background:transparent;color:var(--white);text-decoration:none;border:2px solid var(--white);border-radius:50px;font-weight:700;font-size:clamp(1rem,2.5vw,1.2rem);transition:all .3s ease;text-transform:uppercase;letter-spacing:1px;min-width:220px;text-align:center}
+        .fremont-cta-button-alt:hover{background:var(--white);color:var(--primary-blue);transform:translateY(-3px);text-decoration:none;box-shadow:0 8px 25px rgba(255,255,255,0.3)}
+        
         .container{max-width:1200px;margin:0 auto;padding:0 15px;width:100%}
-        .section-title{font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:2rem;text-align:center;color:#003366;position:relative}
-        .section-title::after{content:'';width:60px;height:4px;background:linear-gradient(135deg,#d32f2f,#b71c1c);display:block;margin:15px auto;border-radius:2px}
+        .section-title{font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:2rem;text-align:center;color:var(--primary-blue);position:relative}
+        .section-title::after{content:'';width:60px;height:4px;background:var(--gradient-accent);display:block;margin:15px auto;border-radius:2px}
+        
+        .section-badge{background:var(--gradient-primary);color:var(--white);padding:8px 20px;border-radius:25px;font-size:0.9rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;display:inline-block;margin-bottom:1rem;box-shadow:var(--shadow-lg)}
+        
         .animate-fade-in{opacity:0;animation:fadeIn 1s ease-out forwards}
         .animate-fade-in-delay{opacity:0;animation:fadeIn 1s ease-out 0.3s forwards}
         .animate-fade-in-delay-2{opacity:0;animation:fadeIn 1s ease-out 0.6s forwards}
         @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+        
+        /* Enhanced FAQ Styling */
+        .anaheim-faq-section{background:linear-gradient(135deg, var(--light-gray), var(--white));padding:80px 0;position:relative}
+        .anaheim-faq-section::before{content:'';position:absolute;top:0;left:0;right:0;height:100px;background:linear-gradient(to bottom, rgba(30,58,138,0.05), transparent)}
+        
+        .anaheim-faq-item{background:var(--white);border-radius:15px;margin-bottom:20px;box-shadow:var(--shadow-lg);overflow:hidden;border:1px solid rgba(30,58,138,0.1);transition:all 0.3s ease}
+        .anaheim-faq-item:hover{box-shadow:var(--shadow-xl);transform:translateY(-2px)}
+        .anaheim-faq-item.active{border-color:var(--accent-orange)}
+        
+        .faq-question{padding:25px 30px;background:linear-gradient(135deg, rgba(30,58,138,0.05), rgba(59,130,246,0.03));cursor:pointer;transition:all 0.3s ease;border-bottom:1px solid rgba(30,58,138,0.08)}
+        .faq-question:hover{background:linear-gradient(135deg, rgba(30,58,138,0.08), rgba(59,130,246,0.05))}
+        .faq-question h4{color:var(--primary-blue);font-weight:600;font-size:1.1rem;margin:0;line-height:1.4}
+        .faq-toggle{background:var(--gradient-primary);color:var(--white);width:35px;height:35px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;box-shadow:0 4px 12px rgba(30,58,138,0.2)}
+        .faq-toggle:hover{transform:scale(1.1);box-shadow:0 6px 16px rgba(30,58,138,0.3)}
+        .anaheim-faq-item.active .faq-toggle{background:var(--gradient-accent)}
+        
+        .faq-answer{padding:0 30px 30px;color:var(--medium-gray);line-height:1.7;font-size:1rem}
+        .faq-answer p{margin:0}
+        
         @media (max-width: 768px) {
             .fremont-hero{height:90vh;background-attachment:scroll}
             .fremont-hero-content{padding:30px 20px}
             .fremont-cta-buttons{flex-direction:column;gap:20px;padding:0 15px}
             .fremont-cta-button,.fremont-cta-button-alt{width:100%;max-width:280px;padding:18px 25px}
             .container{padding:0 10px}
+            .faq-question{padding:20px 25px}
+            .faq-answer{padding:0 25px 25px}
         }
     </style>
 
@@ -590,6 +632,76 @@
                     </div>
                     <div class="faq-answer">
                         <p>We understand that security needs can arise quickly. In emergency situations, we can often deploy guards within 1 hour in Fremont. For standard service requests, we typically establish security coverage within 24-48 hours after completing an initial security assessment.</p>
+                    </div>
+                </div>
+
+                <div class="anaheim-faq-item">
+                    <div class="faq-question">
+                        <h4>What makes ShieldWise Security different from other companies in Fremont?</h4>
+                        <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>ShieldWise Security stands out with our specialized Silicon Valley expertise, 15+ years of automotive and tech industry experience, and deep understanding of Fremont's unique business environment. We provide cutting-edge technology integration, 24/7 command center support, and guards who are specifically trained for tech manufacturing environments.</p>
+                    </div>
+                </div>
+
+                <div class="anaheim-faq-item">
+                    <div class="faq-question">
+                        <h4>Do you provide security for Tesla Factory and other manufacturing facilities?</h4>
+                        <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we specialize in automotive manufacturing and technology facility security. Our guards are trained in industrial security protocols, understand manufacturing environments, and can handle the unique challenges of large-scale production facilities in Fremont.</p>
+                    </div>
+                </div>
+
+                <div class="anaheim-faq-item">
+                    <div class="faq-question">
+                        <h4>What areas of Fremont do you serve?</h4>
+                        <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We serve all areas of Fremont including Ardenwood, Central Park area, Warm Springs, Mission San Jose, and the industrial zones. Our local knowledge ensures we understand the specific security needs of each neighborhood and business district.</p>
+                    </div>
+                </div>
+
+                <div class="anaheim-faq-item">
+                    <div class="faq-question">
+                        <h4>What technology do you use for security monitoring in Fremont?</h4>
+                        <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We utilize advanced technology including GPS-enabled guard tracking, mobile reporting apps, real-time communication systems, and integration with existing security infrastructure. Our 24/7 command center monitors all activities and provides immediate backup support when needed.</p>
+                    </div>
+                </div>
+
+                <div class="anaheim-faq-item">
+                    <div class="faq-question">
+                        <h4>How much do security services cost in Fremont?</h4>
+                        <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Security guard services in Fremont typically range from $28-$85 per hour depending on the type of service. Unarmed guards start at $28-35/hour, while armed security ranges from $45-85/hour. We provide customized quotes based on your specific needs and offer competitive rates for long-term contracts.</p>
+                    </div>
+                </div>
+
+                <div class="anaheim-faq-item">
+                    <div class="faq-question">
+                        <h4>Do you offer 24/7 security coverage in Fremont?</h4>
+                        <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we provide round-the-clock security coverage 365 days a year. Our guards work in shifts to ensure continuous protection, and our 24/7 command center is always available for emergency response and support.</p>
+                    </div>
+                </div>
+
+                <div class="anaheim-faq-item">
+                    <div class="faq-question">
+                        <h4>What training do your guards receive for tech industry security?</h4>
+                        <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our guards receive specialized training for technology environments including corporate security protocols, intellectual property protection, visitor management systems, emergency evacuation procedures, and understanding of sensitive technology areas. This training is essential for serving Fremont's tech-focused business community.</p>
                     </div>
                 </div>
             </div>
