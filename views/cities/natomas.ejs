@@ -164,10 +164,9 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/style456.css">
     <link rel="stylesheet" href="/css/anaheim-styles.css">
-    <link rel="stylesheet" href="/css/natomas-styles.css">
 </head>
 
-<body id="top" class="natomas-page">
+<body id="top" class="anaheim-page">
 
     <%- include('../partials/Header') %>
 
@@ -269,69 +268,6 @@
                             <i class="fas fa-users"></i>
                             <h4>Trained Professionals</h4>
                             <p>BSIS licensed and certified security professionals with ongoing training in customer service, emergency response, and conflict resolution.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Natomas Sacramento Statistics Section -->
-                <section class="natomas-statistics">
-                    <h3>Natomas Sacramento Security by the Numbers</h3>
-                    <h4>Protecting Sacramento's Premier Planned Community</h4>
-                    <div class="natomas-stats-grid">
-                        <div class="natomas-stat-item">
-                            <div class="natomas-stat-number">8+</div>
-                            <div class="natomas-stat-label">Years Serving Sacramento County</div>
-                        </div>
-                        <div class="natomas-stat-item">
-                            <div class="natomas-stat-number">150+</div>
-                            <div class="natomas-stat-label">BSIS Licensed Security Guards</div>
-                        </div>
-                        <div class="natomas-stat-item">
-                            <div class="natomas-stat-number">24/7</div>
-                            <div class="natomas-stat-label">Emergency Response Coverage</div>
-                        </div>
-                        <div class="natomas-stat-item">
-                            <div class="natomas-stat-number">99%</div>
-                            <div class="natomas-stat-label">Client Satisfaction Rate</div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Natomas Service Areas Section -->
-                <section class="natomas-service-areas">
-                    <h3>Natomas Sacramento Areas We Serve</h3>
-                    <div class="natomas-areas-grid">
-                        <div class="natomas-area-item">
-                            <i class="fas fa-shopping-center"></i>
-                            <span>Natomas Town Center</span>
-                        </div>
-                        <div class="natomas-area-item">
-                            <i class="fas fa-building"></i>
-                            <span>Sleep Train Arena</span>
-                        </div>
-                        <div class="natomas-area-item">
-                            <i class="fas fa-home"></i>
-                            <span>Natomas Park</span>
-                        </div>
-                        <div class="natomas-area-item">
-                            <i class="fas fa-store"></i>
-                            <span>Natomas Marketplace</span>
-                        </div>
-                        <div class="natomas-area-item">
-                            <i class="fas fa-plane"></i>
-                            <span>Near Sacramento Airport</span>
-                        </div>
-                        <div class="natomas-area-item">
-                            <i class="fas fa-school"></i>
-                            <span>Natomas School District</span>
-                        </div>
-                        <div class="natomas-area-item">
-                            <i class="fas fa-water"></i>
-                            <span>American River Area</span>
-                        </div>
-                        <div class="natomas-area-item">
-                            <i class="fas fa-building-columns"></i>
-                            <span>Business Parks</span>
                         </div>
                     </div>
                 </section>
@@ -524,29 +460,6 @@
                     $item.addClass('active');
                     $toggle.removeClass('fa-plus').addClass('fa-minus');
                 }
-            });
-
-            // Smooth scrolling for anchor links
-            $('a[href^="#"]').on('click', function(e) {
-                e.preventDefault();
-                const target = $(this.getAttribute('href'));
-                if (target.length) {
-                    $('html, body').animate({
-                        scrollTop: target.offset().top - 80
-                    }, 500);
-                }
-            });
-
-            // Add animation classes on scroll for Natomas sections
-            $(window).on('scroll', function() {
-                $('.natomas-stat-item, .natomas-area-item').each(function() {
-                    const elementTop = $(this).offset().top;
-                    const windowBottom = $(window).scrollTop() + $(window).height();
-                    
-                    if (elementTop < windowBottom - 100) {
-                        $(this).addClass('animate-in');
-                    }
-                });
             });
         });
     </script>
