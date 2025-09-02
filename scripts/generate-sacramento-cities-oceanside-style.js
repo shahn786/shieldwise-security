@@ -1,4 +1,3 @@
-
 const fs = require('fs');
 const path = require('path');
 
@@ -160,6 +159,115 @@ const cities = [
     }
 ];
 
+// Testimonials data
+const testimonialsData = {
+    'Midtown': [
+        { name: 'Alice Johnson', title: 'Restaurant Owner', location: 'Midtown', review: 'ShieldWise provided excellent security for our restaurant. Their guards are professional and discreet, ensuring a safe environment for our patrons and staff.', date: '2024-12-15' },
+        { name: 'Ben Carter', title: 'Retail Store Manager', location: 'Midtown', review: 'Top-notch security services! ShieldWise helped us deter shoplifting and maintain a secure shopping experience in the heart of Midtown.', date: '2024-11-28' }
+    ],
+    'Natomas': [
+        { name: 'David Lee', title: 'Office Building Manager', location: 'Natomas', review: 'We rely on ShieldWise for our business park security. Their proactive approach and quick response have been invaluable in maintaining a safe and productive environment.', date: '2024-12-10' },
+        { name: 'Emily Davis', title: 'Hotel General Manager', location: 'Natomas', review: 'ShieldWise Security offers exceptional service for the hospitality industry. Their guards are courteous and vigilant, providing peace of mind for our guests.', date: '2024-11-20' }
+    ],
+    'Elk Grove': [
+        { name: 'Fiona Miller', title: 'Community Association President', location: 'Elk Grove', review: 'ShieldWise Security has been instrumental in enhancing the safety of our residential community in Elk Grove. Their patrols are consistent and their communication is excellent.', date: '2024-12-05' },
+        { name: 'George Wilson', title: 'School Administrator', location: 'Elk Grove', review: 'We trust ShieldWise Security to protect our school campus. Their presence deters unwanted activity and ensures the safety of our students and staff.', date: '2024-10-30' }
+    ],
+    'Rancho Cordova': [
+        { name: 'Hannah Brown', title: 'Warehouse Operations Manager', location: 'Rancho Cordova', review: 'ShieldWise Security provides robust security solutions for our industrial facility. Their understanding of logistics and warehouse operations is impressive.', date: '2024-12-01' },
+        { name: 'Isaac Taylor', title: 'Technology Firm CEO', location: 'Rancho Cordova', review: 'For our technology company in Rancho Cordova, ShieldWise offers specialized security that meets our high standards. They are reliable and professional.', date: '2024-11-15' }
+    ],
+    'Citrus Heights': [
+        { name: 'Jessica Garcia', title: 'Shopping Center Manager', location: 'Citrus Heights', review: 'ShieldWise Security has significantly improved the safety and security of our shopping center. Their guards are attentive and professional.', date: '2024-11-25' },
+        { name: 'Kevin Rodriguez', title: 'Senior Living Facility Director', location: 'Citrus Heights', review: 'The security provided by ShieldWise for our senior community is outstanding. They are respectful, vigilant, and create a secure environment.', date: '2024-10-20' }
+    ],
+    'West Sacramento': [
+        { name: 'Laura Martinez', title: 'Logistics Manager', location: 'West Sacramento', review: 'ShieldWise Security offers reliable security for our waterfront industrial property. Their team is efficient and understands the unique challenges of our location.', date: '2024-11-30' },
+        { name: 'Mark Hernandez', title: 'Government Building Supervisor', location: 'West Sacramento', review: 'We have been using ShieldWise Security for our government facility for years. Their professionalism and dedication to security are unparalleled.', date: '2024-10-25' }
+    ],
+    'Land Park': [
+        { name: 'Nancy Lopez', title: 'Historic Homeowner', location: 'Land Park', review: 'ShieldWise Security provides peace of mind for our historic neighborhood. Their guards are discreet and effective.', date: '2024-12-12' },
+        { name: 'Oscar Perez', title: 'Zoo Operations Manager', location: 'Land Park', review: 'The security services ShieldWise provides for our zoo are top-notch. They ensure the safety of our visitors and staff with professionalism.', date: '2024-11-01' }
+    ],
+    'East Sacramento': [
+        { name: 'Patricia Adams', title: 'Residential Property Owner', location: 'East Sacramento', review: 'ShieldWise Security offers excellent service for upscale residential areas like East Sacramento. Their guards are highly professional and maintain a strong presence.', date: '2024-11-22' },
+        { name: 'Quentin Baker', title: 'Medical Office Manager', location: 'East Sacramento', review: 'We trust ShieldWise Security to protect our medical practice. Their security measures are thorough and ensure patient confidentiality and safety.', date: '2024-10-18' }
+    ],
+    'Pocket': [
+        { name: 'Rachel Scott', title: 'Waterfront Property Manager', location: 'Pocket', review: 'ShieldWise Security provides essential protection for our waterfront properties. Their team is knowledgeable and responsive to our needs.', date: '2024-11-05' },
+        { name: 'Steve Green', title: 'Golf Course Manager', location: 'Pocket', review: 'Excellent security services for our golf course. ShieldWise ensures the safety of our members and property with their professional guards.', date: '2024-10-15' }
+    ],
+    'Fair Oaks': [
+        { name: 'Tina White', title: 'Equestrian Property Owner', location: 'Fair Oaks', review: 'ShieldWise Security understands the unique needs of equestrian properties. Their guards are reliable and provide excellent care for our assets.', date: '2024-11-18' },
+        { name: 'Ursula Black', title: 'Rural Estate Manager', location: 'Fair Oaks', review: 'We appreciate the professional security ShieldWise offers for our country estate. Their presence is reassuring and their service is top-quality.', date: '2024-10-10' }
+    ],
+    'Carmichael': [
+        { name: 'Victor Gray', title: 'Community Center Director', location: 'Carmichael', review: 'ShieldWise Security has been a great partner for our community center. Their guards are friendly yet vigilant, ensuring a safe space for everyone.', date: '2024-11-29' },
+        { name: 'Wendy King', title: 'Retail Business Owner', location: 'Carmichael', review: 'Reliable and professional security for our retail business. ShieldWise provides consistent service that helps us maintain a safe environment for our customers.', date: '2024-10-05' }
+    ],
+    'Folsom': [
+        { name: 'Xavier Wright', title: 'Tech Company Security Lead', location: 'Folsom', review: 'ShieldWise Security offers specialized security for technology campuses like ours in Folsom. Their expertise in handling sensitive environments is commendable.', date: '2024-12-08' },
+        { name: 'Yvonne Hall', title: 'Historic District Business Owner', location: 'Folsom', review: 'The security provided by ShieldWise is excellent for preserving the charm and safety of our historic district.', date: '2024-11-12' }
+    ],
+    'Roseville': [
+        { name: 'Zack Adams', title: 'Mall Management', location: 'Roseville', review: 'ShieldWise Security is a trusted partner for mall security. Their comprehensive approach ensures the safety of shoppers and retailers in Roseville.', date: '2024-11-17' },
+        { name: 'Amy Clark', title: 'Healthcare Facility Administrator', location: 'Roseville', review: 'We count on ShieldWise Security for our healthcare facility. Their professionalism and attention to detail are vital for patient safety and privacy.', date: '2024-10-22' }
+    ],
+    'Davis': [
+        { name: 'Brian Walker', title: 'University Department Head', location: 'Davis', review: 'ShieldWise Security provides essential security for our university campus. Their guards are knowledgeable about campus protocols and safety measures.', date: '2024-12-02' },
+        { name: 'Chloe Baker', title: 'Research Facility Manager', location: 'Davis', review: 'The security solutions ShieldWise offers for our research facility are exemplary. They ensure the protection of our assets and personnel with utmost professionalism.', date: '2024-11-08' }
+    ]
+};
+
+// Function to generate testimonials for a city
+function generateTestimonials(city) {
+    const cityTestimonials = testimonialsData[city.name] || [
+        { name: 'Default User', title: 'Client', location: city.name, review: `ShieldWise Security provides exceptional service in ${city.name}. Highly recommend!`, date: '2024-12-01' }
+    ];
+    // Ensure we have at least 3 testimonials for the slider, padding with defaults if necessary
+    while (cityTestimonials.length < 3) {
+        cityTestimonials.push({
+            name: `Satisfied Client ${cityTestimonials.length + 1}`,
+            title: 'Client',
+            location: city.name,
+            review: `ShieldWise Security offers reliable protection in ${city.name}. We are very satisfied with their services.`,
+            date: `2024-11-${20 + cityTestimonials.length}`
+        });
+    }
+    return cityTestimonials.slice(0, 3); // Return only the first 3 for the slider
+}
+
+// Function to generate FAQs for a city
+function generateFaqs(city) {
+    return [
+        {
+            question: `What ${city.name} security guard services do you provide?`,
+            answer: `ShieldWise Security offers comprehensive ${city.name} security guard services including ${city.specialty.toLowerCase()}, ${city.industries.join(', ').toLowerCase()} protection, mobile patrol services, and emergency response. Our ${city.name} security guards are BSIS licensed with specialized training for ${city.name}'s unique security requirements.`
+        },
+        {
+            question: `How quickly can you deploy ${city.name} security guards?`,
+            answer: `We offer rapid ${city.name} security guard deployment with emergency response in 2-4 hours and standard deployment within 24-48 hours. Our local ${city.name} security team ensures quick response times throughout ${city.name} and surrounding Sacramento County communities. For urgent situations, call ${city.phone} for immediate assistance.`
+        },
+        {
+            question: `What are ${city.name} security guard rates and pricing?`,
+            answer: `${city.name} security guard rates typically range from $35-$75 per hour depending on the scope and requirements. Armed guards cost 25-35% more than unarmed guards, and long-term contracts yield better hourly rates. Contact us for a customized quote based on your specific ${city.name} security guard needs.`
+        },
+        {
+            question: `Are your ${city.name} security guards licensed in California?`,
+            answer: `Yes, all our ${city.name} security guards are licensed through the California Bureau of Security and Investigative Services (BSIS) and receive additional specialized training for ${city.specialty.toLowerCase()} requirements in ${city.name}.`
+        },
+        {
+            question: `Do you offer specialized ${city.specialty.toLowerCase()} in ${city.name}?`,
+            answer: `Absolutely. ShieldWise Security specializes in ${city.specialty.toLowerCase()} for businesses and properties in ${city.name}. Our guards are trained to handle the specific security needs associated with ${city.specialty.toLowerCase()}.`
+        },
+        {
+            question: `What types of industries do you serve in ${city.name}?`,
+            answer: `In ${city.name}, we serve a wide range of industries including ${city.industries.join(', ').toLowerCase()}. Our adaptable security solutions cater to the diverse needs of businesses and organizations in the area.`
+        }
+    ];
+}
+
+
 function generateCityPage(city) {
     return `<!DOCTYPE html>
 <html lang="en-US" itemscope itemtype="https://schema.org/SecurityService">
@@ -171,7 +279,7 @@ function generateCityPage(city) {
     <!-- ✅ 2025 AI-OPTIMIZED TITLE & META TAGS -->
     <title>${city.name} Security Guards CA | #1 ${city.specialty} | BSIS Licensed</title>
     <meta name="description" content="⭐ TOP-RATED ${city.name} Security Guards since 2015 ⭐ ${city.specialty} ⭐ 24/7 Armed Guards ⭐ ${city.industries.join(' & ')} Protection ⭐ BSIS Licensed ⭐ 2-Hr Response ⭐ FREE Quote ${city.phone}">
-    
+
     <!-- ✅ ENHANCED Long-tail Keywords for AI Search -->
     <meta name="keywords" content="${city.name} security guards, ${city.specialty.toLowerCase()}, ${city.industries.join(', ').toLowerCase()}, 24/7 security guards California, BSIS licensed security company, armed security guards ${city.name}, unarmed security guards, mobile patrol ${city.name}, fire watch services Sacramento, emergency security response Sacramento County">
 
@@ -269,7 +377,7 @@ function generateCityPage(city) {
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=()">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
-    
+
     <!-- ✅ SEO Resources -->
     <link rel="robots" href="/robots.txt">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -450,30 +558,16 @@ function generateCityPage(city) {
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
+        ${generateFaqs(city).map((faq, index) => `
         {
           "@type": "Question",
-          "name": "What security services does ShieldWise Security offer in ${city.name}?",
+          "name": "${faq.question}",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ShieldWise Security offers comprehensive security services in ${city.name} including ${city.specialty.toLowerCase()}, ${city.industries.join(', ').toLowerCase()} protection, mobile patrol services, and emergency response. We provide both armed and unarmed guards, all BSIS licensed with specialized training for ${city.name}'s unique security requirements."
+            "text": "${faq.answer}"
           }
-        },
-        {
-          "@type": "Question",
-          "name": "How quickly can you deploy security guards in ${city.name}?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We offer rapid deployment in ${city.name} with emergency response in 2-4 hours and standard deployment within 24-48 hours. Our local team ensures quick response times throughout ${city.name} and surrounding Sacramento County communities."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What are your security guard rates in ${city.name}?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Security guard rates in ${city.name} typically range from $35-$75 per hour depending on the scope and requirements. Armed guards cost 25-35% more than unarmed guards, and long-term contracts yield better hourly rates. Contact us for a customized quote based on your specific ${city.name} security needs."
-          }
-        }
+        }${index < generateFaqs(city).length - 1 ? ',' : ''}
+        `).join('')}
       ]
     }
     </script>
@@ -876,79 +970,31 @@ function generateCityPage(city) {
                 <button class="slider-next" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
             </div>
 
-            <div class="anaheim-testimonials-grid">
-                <div class="anaheim-testimonial-item active" itemscope itemtype="https://schema.org/Review">
-                    <meta itemprop="datePublished" content="2024-12-15">
-                    <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
-                    <p itemprop="reviewBody">ShieldWise Security has provided exceptional ${city.specialty.toLowerCase()} for our ${city.name} facility for over three years. Their guards understand ${city.name}'s unique security challenges and provide professional, reliable protection for our property and staff.</p>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="/img/testimonial-1.webp" alt="Michael Chen" width="60" height="60">
-                        </div>
-                        <div class="author-info">
-                            <h5 itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Michael Chen</span></h5>
-                            <p>Property Manager, ${city.name}</p>
-                            <div class="author-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                                <meta itemprop="ratingValue" content="5">
-                                <meta itemprop="bestRating" content="5">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
+            ${generateTestimonials(city).map((testimonial, index) => `
+            <div class="anaheim-testimonial-item ${index === 0 ? 'active' : ''}" itemscope itemtype="https://schema.org/Review">
+                <meta itemprop="datePublished" content="${testimonial.date}">
+                <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                <p itemprop="reviewBody">${testimonial.review}</p>
+                <div class="testimonial-author">
+                    <div class="author-image">
+                        <img src="/img/testimonial-${index + 1}.webp" alt="${testimonial.name}" width="60" height="60">
                     </div>
-                </div>
-
-                <div class="anaheim-testimonial-item" itemscope itemtype="https://schema.org/Review">
-                    <meta itemprop="datePublished" content="2024-11-28">
-                    <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
-                    <p itemprop="reviewBody">Outstanding ${city.specialty.toLowerCase()} in ${city.name}. The team's expertise and rapid emergency response capabilities make them our preferred security partner for our ${city.industries[0].toLowerCase()}.</p>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="/img/testimonial-2.webp" alt="Sarah Williams" width="60" height="60">
-                        </div>
-                        <div class="author-info">
-                            <h5 itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Sarah Williams</span></h5>
-                            <p>Security Manager, ${city.name}</p>
-                            <div class="author-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                                <meta itemprop="ratingValue" content="5">
-                                <meta itemprop="bestRating" content="5">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="anaheim-testimonial-item" itemscope itemtype="https://schema.org/Review">
-                    <meta itemprop="datePublished" content="2024-10-12">
-                    <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
-                    <p itemprop="reviewBody">As a business owner in ${city.name}, I can't recommend ShieldWise Security enough. Their guards provide consistent, reliable service and understand the unique security needs of our ${city.description}. Their detailed reporting keeps me informed about our facility's security status.</p>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="/img/testimonial-3.webp" alt="Robert Johnson" width="60" height="60">
-                        </div>
-                        <div class="author-info">
-                            <h5 itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Robert Johnson</span></h5>
-                            <p>Business Owner, ${city.name}</p>
-                            <div class="author-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                                <meta itemprop="ratingValue" content="5">
-                                <meta itemprop="bestRating" content="5">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
+                    <div class="author-info">
+                        <h5 itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">${testimonial.name}</span></h5>
+                        <p>${testimonial.title}, ${testimonial.location}</p>
+                        <div class="author-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            <meta itemprop="ratingValue" content="5">
+                            <meta itemprop="bestRating" content="5">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                     </div>
                 </div>
             </div>
+            `).join('')}
         </div>
 
         <div class="testimonial-cta">
@@ -963,45 +1009,17 @@ function generateCityPage(city) {
     <div class="anaheim-faq-container">
         <h3>Frequently Asked Questions</h3>
         <div class="anaheim-faq-list" itemscope itemtype="https://schema.org/FAQPage">
+            ${generateFaqs(city).map((faq, index) => `
             <div class="anaheim-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                 <div class="faq-question">
-                    <h4 itemprop="name">What ${city.name} security guard services do you provide?</h4>
+                    <h4 itemprop="name">${faq.question}</h4>
                     <div class="faq-toggle"><i class="fas fa-plus"></i></div>
                 </div>
                 <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p itemprop="text">ShieldWise Security offers comprehensive ${city.name} security guard services including ${city.specialty.toLowerCase()}, ${city.industries.join(', ').toLowerCase()} protection, mobile patrol services, and emergency response. Our ${city.name} security guards are BSIS licensed with specialized training for ${city.name}'s unique security requirements.</p>
+                    <p itemprop="text">${faq.answer}</p>
                 </div>
             </div>
-
-            <div class="anaheim-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <div class="faq-question">
-                    <h4 itemprop="name">How quickly can you deploy ${city.name} security guards?</h4>
-                    <div class="faq-toggle"><i class="fas fa-plus"></i></div>
-                </div>
-                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p itemprop="text">We offer rapid ${city.name} security guard deployment with emergency response in 2-4 hours and standard deployment within 24-48 hours. Our local ${city.name} security team ensures quick response times throughout ${city.name} and surrounding Sacramento County communities. For urgent situations, call ${city.phone} for immediate assistance.</p>
-                </div>
-            </div>
-
-            <div class="anaheim-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <div class="faq-question">
-                    <h4 itemprop="name">What are ${city.name} security guard rates and pricing?</h4>
-                    <div class="faq-toggle"><i class="fas fa-plus"></i></div>
-                </div>
-                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p itemprop="text">${city.name} security guard rates typically range from $35-$75 per hour depending on the scope and requirements. Armed guards cost 25-35% more than unarmed guards, and long-term contracts yield better hourly rates. Contact us for a customized quote based on your specific ${city.name} security guard needs.</p>
-                </div>
-            </div>
-
-            <div class="anaheim-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <div class="faq-question">
-                    <h4 itemprop="name">Are your ${city.name} security guards licensed in California?</h4>
-                    <div class="faq-toggle"><i class="fas fa-plus"></i></div>
-                </div>
-                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p itemprop="text">Yes, all our ${city.name} security guards are licensed through the California Bureau of Security and Investigative Services (BSIS) and receive additional specialized training for ${city.specialty.toLowerCase()} requirements in ${city.name}.</p>
-                </div>
-            </div>
+            `).join('')}
         </div>
     </div>
 </section>
@@ -1147,7 +1165,7 @@ function generateCityPage(city) {
 // Generate all city pages
 function generateAllCityPages() {
     const citiesDir = path.join(__dirname, '..', 'views', 'cities');
-    
+
     // Ensure directory exists
     if (!fs.existsSync(citiesDir)) {
         fs.mkdirSync(citiesDir, { recursive: true });
@@ -1158,7 +1176,7 @@ function generateAllCityPages() {
     cities.forEach(city => {
         const filename = `${city.slug}.ejs`;
         const filepath = path.join(citiesDir, filename);
-        
+
         try {
             const content = generateCityPage(city);
             fs.writeFileSync(filepath, content, 'utf8');
@@ -1168,13 +1186,13 @@ function generateAllCityPages() {
             console.error(`❌ Error generating ${filename}:`, error.message);
         }
     });
-    
+
     console.log(`\n🚀 SACRAMENTO COUNTY CITIES GENERATED SUCCESSFULLY!\n`);
     console.log(`📍 Generated Cities:`);
     cities.forEach(city => {
         console.log(`- ${city.name}: /views/cities/${city.slug}.ejs`);
     });
-    
+
     console.log(`\n📋 SEO Features Implemented:`);
     console.log('✅ 2025 AI Search Optimization Meta Tags');
     console.log('✅ Enhanced Schema Markup (LocalBusiness, FAQ, Breadcrumb)');
