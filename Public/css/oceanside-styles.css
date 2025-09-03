@@ -336,10 +336,10 @@ body {
 
 /* ===== LOCAL CONTENT ===== */
 .anaheim-local-content {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    padding: 60px 0;
     margin: 40px 0;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-radius: 15px;
-    padding: 40px;
+    border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     position: relative;
     overflow: hidden;
@@ -350,144 +350,225 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #1a3c6e, #2d5a96, #1a3c6e);
+    background: linear-gradient(90deg, #1a3c6e, #2d5a96, #D4AF37);
 }
 
 .anaheim-local-content h3 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    font-weight: 800;
     color: #1a3c6e;
-    margin-bottom: 25px;
-    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
     position: relative;
-    padding-bottom: 15px;
+    padding-bottom: 20px;
 }
 
 .anaheim-local-content h3::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background: #2d5a96;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #D4AF37, #B8860B);
     border-radius: 2px;
 }
 
-.anaheim-local-content h4 {
-    font-size: 1.5rem;
-    color: #1a3c6e;
-    margin: 30px 0 15px;
-    font-weight: 600;
+.local-statistics {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.anaheim-local-content p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #444;
-    margin-bottom: 20px;
+.local-statistics h4 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2d5a96;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
 }
 
-.security-considerations {
+.stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
 }
 
-.consideration-item {
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    border-left: 4px solid #2d5a96;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.stat-item {
+    background: #ffffff;
+    padding: 40px 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(26, 60, 110, 0.1);
 }
 
-.consideration-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+.stat-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #1a3c6e, #D4AF37);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
 }
 
-.consideration-item h5 {
-    font-size: 1.3rem;
+.stat-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(26, 60, 110, 0.15);
+}
+
+.stat-item:hover::before {
+    transform: scaleX(1);
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 900;
     color: #1a3c6e;
     margin-bottom: 15px;
-    font-weight: 600;
+    line-height: 1;
+    background: linear-gradient(135deg, #1a3c6e, #2d5a96);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.consideration-item p {
-    font-size: 1rem;
-    line-height: 1.7;
+.stat-label {
+    font-size: 1.1rem;
     color: #555;
-    margin-bottom: 0;
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0;
 }
 
+/* Community Partnerships Section */
 .community-partnerships {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     margin-top: 40px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e9ecef;
+    border-left: 5px solid #D4AF37;
 }
 
 .community-partnerships h4 {
+    font-size: 1.8rem;
+    font-weight: 700;
     color: #1a3c6e;
-    font-size: 1.4rem;
     margin-bottom: 20px;
-    font-weight: 600;
+    text-align: left;
 }
 
 .community-partnerships p {
     font-size: 1.1rem;
-    color: #444;
-    margin-bottom: 15px;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: 500;
 }
 
 .community-partnerships ul {
     list-style: none;
     padding: 0;
-    margin: 20px 0 0;
+    margin: 0;
 }
 
-.community-partnerships ul li {
+.community-partnerships li {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
     position: relative;
-    padding-left: 25px;
-    margin-bottom: 12px;
+    padding-left: 30px;
     font-size: 1rem;
     color: #555;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
-.community-partnerships ul li::before {
+.community-partnerships li:last-child {
+    border-bottom: none;
+}
+
+.community-partnerships li::before {
     content: '✓';
     position: absolute;
     left: 0;
-    top: 0;
-    color: #2d5a96;
+    top: 12px;
+    color: #D4AF37;
     font-weight: bold;
     font-size: 1.1rem;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
     .anaheim-local-content {
-        padding: 25px 20px;
-        margin: 30px 0;
+        padding: 40px 0;
+        margin: 20px 0;
+        border-radius: 15px;
     }
 
-    .security-considerations {
+    .anaheim-local-content h3 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .local-statistics h4 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+
+    .stats-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+        margin-bottom: 30px;
     }
 
-    .consideration-item {
-        padding: 20px;
+    .stat-item {
+        padding: 30px 20px;
+    }
+
+    .stat-number {
+        font-size: 2.8rem;
+    }
+
+    .stat-label {
+        font-size: 1rem;
     }
 
     .community-partnerships {
-        padding: 25px 20px;
+        padding: 25px;
+        margin-top: 25px;
+    }
+
+    .community-partnerships h4 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .local-statistics {
+        padding: 0 15px;
+    }
+
+    .anaheim-local-content h3 {
+        font-size: 1.8rem;
+        padding: 0 15px;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .community-partnerships {
+        padding: 20px;
     }
 }
 
