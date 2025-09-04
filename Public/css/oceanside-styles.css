@@ -792,12 +792,14 @@ body {
 }
 
 .landscape-header h3 {
-    font-size: clamp(2.2rem, 4vw, 3rem);
+    font-size: clamp(2.4rem, 4vw, 3.2rem);
     font-weight: 700;
     color: var(--primary-color);
-    margin-bottom: 15px;
-    line-height: 1.2;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.02em;
+    text-rendering: optimizeLegibility;
 }
 
 .header-accent {
@@ -811,39 +813,43 @@ body {
 .landscape-content {
     background: white;
     border-radius: 16px;
-    padding: 50px 40px;
+    padding: 60px 50px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid #e9ecef;
+    text-align: left;
 }
 
 .landscape-intro {
-    font-size: 1.25rem;
-    line-height: 1.8;
-    color: var(--text-medium);
-    margin-bottom: 40px;
-    text-align: center;
-    font-weight: 500;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 50px;
+    font-size: 1.3rem;
+    line-height: 1.75;
+    color: #444;
+    margin-bottom: 45px;
+    font-weight: 400;
+    max-width: 100%;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    text-align: justify;
+    hyphens: auto;
+    word-spacing: 0.05em;
+    letter-spacing: 0.01em;
 }
 
 .security-considerations h4 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 35px;
+    text-align: left;
+    margin-bottom: 40px;
     position: relative;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.01em;
+    padding-bottom: 15px;
 }
 
 .security-considerations h4::after {
     content: '';
     position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 0;
+    left: 0;
     width: 60px;
     height: 3px;
     background: var(--secondary-color);
@@ -852,20 +858,22 @@ body {
 
 .considerations-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+    align-items: start;
 }
 
 .consideration-item {
     display: flex;
     align-items: flex-start;
     gap: 20px;
-    padding: 25px;
+    padding: 30px 25px;
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     border-radius: 12px;
     border: 1px solid #e9ecef;
     transition: all 0.3s ease;
+    height: 100%;
 }
 
 .consideration-item:hover {
@@ -884,6 +892,7 @@ body {
     justify-content: center;
     flex-shrink: 0;
     transition: all 0.3s ease;
+    margin-top: 2px;
 }
 
 .consideration-item:hover .consideration-icon {
@@ -896,20 +905,28 @@ body {
     color: white;
 }
 
+.consideration-text {
+    flex: 1;
+}
+
 .consideration-text h5 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: var(--primary-color);
-    margin-bottom: 8px;
-    line-height: 1.3;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.01em;
 }
 
 .consideration-text p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--text-medium);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #555;
     margin: 0;
     font-weight: 400;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    text-align: left;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
@@ -925,28 +942,55 @@ body {
     
     .mountain-view-security-landscape {
         padding: 60px 0;
+        margin: 40px 0;
+    }
+    
+    .landscape-header h3 {
+        font-size: clamp(1.8rem, 5vw, 2.4rem);
+        margin-bottom: 15px;
     }
     
     .landscape-content {
-        padding: 30px 20px;
+        padding: 40px 25px;
         border-radius: 12px;
+        text-align: left;
+    }
+    
+    .landscape-intro {
+        font-size: 1.15rem;
+        line-height: 1.7;
+        margin-bottom: 35px;
+        text-align: left;
+    }
+    
+    .security-considerations h4 {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+        text-align: left;
     }
     
     .considerations-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+        margin-top: 25px;
     }
     
     .consideration-item {
-        padding: 20px;
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
+        padding: 25px 20px;
+        flex-direction: row;
+        text-align: left;
+        gap: 18px;
+        align-items: flex-start;
     }
     
-    .landscape-intro {
-        font-size: 1.1rem;
-        margin-bottom: 35px;
+    .consideration-text h5 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+    
+    .consideration-text p {
+        font-size: 1rem;
+        line-height: 1.6;
     }
 }
 
@@ -966,10 +1010,48 @@ body {
     
     .landscape-header h3 {
         font-size: 1.8rem;
+        line-height: 1.3;
+        padding: 0 10px;
+    }
+    
+    .landscape-content {
+        padding: 30px 20px;
+    }
+    
+    .landscape-intro {
+        font-size: 1.1rem;
+        line-height: 1.65;
+        margin-bottom: 30px;
     }
     
     .security-considerations h4 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        margin-bottom: 25px;
+    }
+    
+    .consideration-item {
+        padding: 20px 15px;
+        gap: 15px;
+    }
+    
+    .consideration-icon {
+        width: 45px;
+        height: 45px;
+        margin-top: 0;
+    }
+    
+    .consideration-icon i {
+        font-size: 18px;
+    }
+    
+    .consideration-text h5 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+    
+    .consideration-text p {
+        font-size: 0.95rem;
+        line-height: 1.6;
     }
 }
 
