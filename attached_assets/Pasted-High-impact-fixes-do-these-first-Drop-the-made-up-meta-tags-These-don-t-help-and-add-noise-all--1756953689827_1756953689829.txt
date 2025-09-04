@@ -1,0 +1,153 @@
+High-impact fixes (do these first)
+
+Drop the made-up meta tags.
+These don’t help and add noise: all ai-*, service-category, business-type, target-audience, coverage, rating, distribution, audience, language (duplicate), content-language (duplicate), business-hours, service-radius, etc. Keep it lean.
+
+Security headers: set on the server, not in HTML.
+Strict-Transport-Security, X-Frame-Options, X-Content-Type-Options, Permissions-Policy must be HTTP response headers. The meta versions are ignored. Keep only a standard HTML robots + (optionally) <meta name="referrer" …>.
+
+CSP meta weakens itself.
+You’re using Content-Security-Policy and allowing 'unsafe-inline' + many externals. Either enforce a strict CSP via headers with nonces/hashes, or remove the meta to avoid a false sense of security.
+
+jQuery Slim breaks your code.
+You call $.animate() and other effects, but jQuery 3.6 slim removes effects. Replace:
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+
+
+(Non-slim build) — or rewrite animations in vanilla JS/CSS.
+
+Title length + repetition.
+Current title is long/repetitive. Aim 55–65 chars, unique value prop:
+
+Mountain View Security Guards | Google Campus & Innovation District
+
+
+OG type.
+Use og:type=website for a city landing page (safer cross-platform). Keep the business contact info in JSON-LD.
+
+AggregateRating & on-page reviews.
+Google generally won’t show review stars for LocalBusiness self-served reviews; misused ratings can be ignored or risky. If you can’t substantiate them, remove AggregateRating and the Review item markup.
+
+NAP accuracy.
+Make sure the postal address is your real staffed location for MV. If not, remove to avoid NAP inconsistency.
+
+File/path issues + CWV.
+
+Preload uses /img/san jose.webp (space). Rename to /img/san-jose.webp.
+
+Prefer <img fetchpriority="high"> on the hero image (and explicit width/height) over preloading it by URL.
+
+Add loading="lazy" decoding="async" to non-hero images.
+
+Schema scoping & WebSite node.
+
+Don’t attach itemscope/itemtype to <html>/<body>; keep JSON-LD only.
+
+Your WebSite node should use the root site URL (https://shieldwisesecurity.com/) and live sitewide, not the city URL.
+
+Nice-to-have cleanups
+
+Remove prefix="og …" (not needed).
+
+Remove redundant bot directives (slurp/duckduckbot/yandexbot/applebot). One robots meta is enough.
+
+Avoid emoji in Twitter titles for a professional tone.
+
+Rename oceanside-* / anaheim-* classes to mv-* for maintainability.
+
+Ensure FAQs in JSON-LD exactly match visible FAQ text (word-for-word).
+
+Quick “fixed” head (lean & compliant)
+
+Use this as a reference to trim yours (keep your existing CSS/JS links as needed):
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Mountain View Security Guards | Google Campus & Innovation District</title>
+  <meta name="description" content="BSIS-licensed security guards in Mountain View, CA. Google Campus & Innovation District security, mobile patrol, and 24/7 response for Santa Clara County. Call (714) 716-7430.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#1a3c6e" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#2d5a96" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <meta name="format-detection" content="telephone=yes">
+
+  <!-- Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"></noscript>
+
+  <!-- Canonical / hreflang -->
+  <link rel="canonical" href="https://shieldwisesecurity.com/santa-clara-county/mountain-view">
+  <link rel="alternate" hreflang="en-us" href="https://shieldwisesecurity.com/santa-clara-county/mountain-view">
+  <link rel="alternate" hreflang="es-us" href="https://shieldwisesecurity.com/es/santa-clara-county/mountain-view">
+  <link rel="alternate" hreflang="x-default" href="https://shieldwisesecurity.com/santa-clara-county/mountain-view">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mountain View Security Guards | Google Campus & Innovation District Security">
+  <meta property="og:description" content="Professional Mountain View security for tech campuses and businesses. 24/7 response.">
+  <meta property="og:url" content="https://shieldwisesecurity.com/santa-clara-county/mountain-view">
+  <meta property="og:image" content="https://shieldwisesecurity.com/img/mountain-view-security-guards-og-2025.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mountain View Security Guards | Google Campus & Innovation District">
+  <meta name="twitter:description" content="BSIS-licensed guards, rapid response, Silicon Valley expertise.">
+
+  <!-- Sitemaps -->
+  <link rel="robots" href="/robots.txt">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="all">
+  <link rel="stylesheet" href="/css/style.css" media="all">
+  <link rel="stylesheet" href="/css/mountain-view.css" media="all">
+
+  <!-- JSON-LD: keep LocalBusiness/Service, FAQ, Breadcrumbs. Move WebSite to root URL sitewide. Remove AggregateRating unless fully eligible. -->
+</head>
+
+JS/CWV tweaks
+
+Swap to jQuery non-slim or remove jQuery animations.
+
+For the hero image, set it directly on <img> in the hero with:
+
+<img src="/img/mountain-view-hero.webp" alt="Security guards in Mountain View, CA"
+     width="1920" height="1080" fetchpriority="high" decoding="async">
+
+
+and remove the preload for /img/san jose.webp (and the space in the filename).
+
+Ensure all other images have explicit width/height to reduce CLS.
+
+Final checklist (quick wins)
+
+ Remove nonstandard/duplicate meta (AI, geo.*, distribution, etc.).
+
+ Convert OG type to website.
+
+ Fix jQuery slim → full, or remove jQuery effects.
+
+ Remove/relocate security headers to server config.
+
+ Trim title/description; avoid keyword repetition and emoji in titles.
+
+ Verify NAP or remove address.
+
+ Remove AggregateRating unless compliant.
+
+ Fix file paths with spaces; add image dimensions & loading="lazy" where appropriate.
+
+ Move WebSite JSON-LD to the root and use the root URL.
+
+Want me to output a fully minified, production-safe <head> + JSON-LD bundle (with the ratings removed, WebSite fixed, and class names normalized to mv-*)?
