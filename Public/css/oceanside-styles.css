@@ -820,29 +820,47 @@ body {
 }
 
 .landscape-intro {
-    font-size: 1.3rem;
-    line-height: 1.75;
-    color: #444;
-    margin-bottom: 45px;
-    font-weight: 400;
+    font-size: 1.35rem;
+    line-height: 1.8;
+    color: #2c3e50;
+    margin-bottom: 50px;
+    font-weight: 450;
     max-width: 100%;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    text-align: justify;
-    hyphens: auto;
-    word-spacing: 0.05em;
-    letter-spacing: 0.01em;
+    text-align: left;
+    word-spacing: 0.02em;
+    letter-spacing: 0.005em;
+    background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
+    padding: 35px 40px;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+.landscape-intro::before {
+    content: '"';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    opacity: 0.2;
+    font-family: Georgia, serif;
+    line-height: 1;
 }
 
 .security-considerations h4 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
     color: var(--primary-color);
     text-align: left;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
     position: relative;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    letter-spacing: -0.01em;
-    padding-bottom: 15px;
+    letter-spacing: -0.02em;
+    padding-bottom: 20px;
+    line-height: 1.3;
 }
 
 .security-considerations h4::after {
@@ -850,10 +868,11 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 60px;
-    height: 3px;
-    background: var(--secondary-color);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, var(--secondary-color), #c53030);
     border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(209, 32, 40, 0.3);
 }
 
 .considerations-grid {
@@ -930,23 +949,24 @@ body {
 }
 
 .consideration-text h5 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: var(--primary-color);
-    margin-bottom: 12px;
-    line-height: 1.4;
+    margin-bottom: 15px;
+    line-height: 1.3;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
 }
 
 .consideration-text p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: #4a5568;
     margin: 0;
-    font-weight: 400;
+    font-weight: 450;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     text-align: left;
+    word-spacing: 0.02em;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
@@ -977,16 +997,29 @@ body {
     }
     
     .landscape-intro {
-        font-size: 1.15rem;
+        font-size: 1.2rem;
         line-height: 1.7;
-        margin-bottom: 35px;
+        margin-bottom: 40px;
         text-align: left;
+        padding: 25px 30px;
+    }
+    
+    .landscape-intro::before {
+        font-size: 2.8rem;
+        top: 10px;
+        left: 10px;
     }
     
     .security-considerations h4 {
-        font-size: 1.6rem;
-        margin-bottom: 30px;
+        font-size: 1.8rem;
+        margin-bottom: 35px;
         text-align: left;
+        padding-bottom: 15px;
+    }
+    
+    .security-considerations h4::after {
+        width: 60px;
+        height: 3px;
     }
     
     .considerations-grid {
@@ -1004,13 +1037,13 @@ body {
     }
     
     .consideration-text h5 {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
+        font-size: 1.25rem;
+        margin-bottom: 12px;
     }
     
     .consideration-text p {
-        font-size: 1rem;
-        line-height: 1.6;
+        font-size: 1.05rem;
+        line-height: 1.65;
     }
 }
 
@@ -1039,14 +1072,27 @@ body {
     }
     
     .landscape-intro {
-        font-size: 1.1rem;
-        line-height: 1.65;
-        margin-bottom: 30px;
+        font-size: 1.15rem;
+        line-height: 1.7;
+        margin-bottom: 35px;
+        padding: 20px 25px;
+    }
+    
+    .landscape-intro::before {
+        font-size: 2.5rem;
+        top: 8px;
+        left: 8px;
     }
     
     .security-considerations h4 {
-        font-size: 1.4rem;
-        margin-bottom: 25px;
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+        padding-bottom: 12px;
+    }
+    
+    .security-considerations h4::after {
+        width: 50px;
+        height: 3px;
     }
     
     .consideration-item {
@@ -1065,13 +1111,13 @@ body {
     }
     
     .consideration-text h5 {
-        font-size: 1.1rem;
-        margin-bottom: 8px;
+        font-size: 1.15rem;
+        margin-bottom: 10px;
     }
     
     .consideration-text p {
-        font-size: 0.95rem;
-        line-height: 1.6;
+        font-size: 1rem;
+        line-height: 1.65;
     }
 }
 
