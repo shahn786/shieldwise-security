@@ -829,6 +829,248 @@ body {
     }
 }
 
+/* ✅ ENHANCED WINE COUNTRY EXPERTISE SECTION */
+.unique-expertise-enhanced {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 40px 0;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(26, 60, 110, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.unique-expertise-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), #c53030);
+}
+
+.expertise-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.expertise-tagline {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.expertise-tagline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, var(--secondary-color), #c53030);
+    border-radius: 2px;
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.expertise-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(26, 60, 110, 0.08);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 280px;
+}
+
+.expertise-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.expertise-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(26, 60, 110, 0.15);
+    border-color: var(--primary-color);
+}
+
+.expertise-card:hover::before {
+    transform: scaleX(1);
+}
+
+.expertise-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(26, 60, 110, 0.2);
+}
+
+.expertise-icon i {
+    font-size: 2rem;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.expertise-card:hover .expertise-icon {
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(26, 60, 110, 0.3);
+}
+
+.expertise-card:hover .expertise-icon i {
+    transform: scale(1.1);
+}
+
+.expertise-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.expertise-content h5 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    line-height: 1.3;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.expertise-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.expertise-highlight {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--secondary-color), #c53030);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: auto;
+    box-shadow: 0 4px 12px rgba(209, 32, 40, 0.3);
+    transition: all 0.3s ease;
+}
+
+.expertise-card:hover .expertise-highlight {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(209, 32, 40, 0.4);
+}
+
+/* Responsive Design for Expertise Section */
+@media (max-width: 1200px) {
+    .expertise-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+    
+    .unique-expertise-enhanced {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .expertise-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .expertise-card {
+        min-height: 260px;
+        padding: 25px 20px;
+    }
+    
+    .expertise-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .expertise-icon i {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .expertise-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .unique-expertise-enhanced {
+        padding: 25px 20px;
+        margin: 30px 0;
+    }
+    
+    .expertise-card {
+        min-height: 240px;
+        padding: 20px 15px;
+    }
+    
+    .expertise-tagline {
+        font-size: 1.1rem;
+    }
+    
+    .expertise-content h5 {
+        font-size: 1.2rem;
+    }
+    
+    .expertise-content p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .expertise-card {
+        min-height: 220px;
+    }
+    
+    .expertise-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .expertise-icon i {
+        font-size: 1.5rem;
+    }
+}
+
 .consideration-item {
     display: flex;
     align-items: flex-start;
