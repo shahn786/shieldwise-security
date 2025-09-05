@@ -595,6 +595,288 @@
         .trust-badge i, .anaheim-feature-item i, .area-icon i, .consideration-icon i {
             margin-right: 8px;
         }
+
+        /* ===== SECURITY LANDSCAPE SECTION ===== */
+        .hayward-security-landscape {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hayward-security-landscape::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('/img/alamendsa1.webp') center/cover;
+            opacity: 0.03;
+            z-index: 1;
+        }
+
+        .landscape-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .landscape-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .landscape-header .section-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #1a3c6e, #2d5a96);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .landscape-header h3 {
+            font-size: clamp(2.2rem, 4vw, 3rem);
+            color: #1a3c6e;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .header-accent {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        .landscape-intro-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 60px;
+            border-left: 5px solid #1a3c6e;
+        }
+
+        .intro-icon {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1a3c6e, #2d5a96);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .intro-content {
+            flex: 1;
+        }
+
+        .landscape-intro {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .intro-content p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .intro-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .security-considerations {
+            margin-top: 40px;
+        }
+
+        .considerations-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .considerations-header h4 {
+            font-size: 2.2rem;
+            color: #1a3c6e;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .considerations-header h4 i {
+            color: #ff6b35;
+            font-size: 2rem;
+        }
+
+        .considerations-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .considerations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .consideration-item {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .consideration-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .consideration-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .consideration-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .consideration-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #1a3c6e, #2d5a96);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .consideration-item:hover .consideration-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+        }
+
+        .consideration-text h5 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .consideration-text p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .consideration-highlight {
+            margin-top: 20px;
+        }
+
+        .consideration-highlight span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #e8f5e8, #f0f8f0);
+            color: #27ae60;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(39, 174, 96, 0.2);
+        }
+
+        .consideration-highlight i {
+            font-size: 0.8rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hayward-security-landscape {
+                padding: 60px 0;
+            }
+
+            .landscape-container {
+                padding: 0 15px;
+            }
+
+            .landscape-intro-box {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 25px;
+                gap: 20px;
+            }
+
+            .intro-icon {
+                align-self: center;
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .considerations-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .consideration-item {
+                padding: 25px 20px;
+            }
+
+            .consideration-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .considerations-header h4 {
+                flex-direction: column;
+                gap: 10px;
+                font-size: 1.8rem;
+            }
+        }
     </style>
 
     <!-- ✅ ENHANCED ANALYTICS -->
@@ -762,18 +1044,30 @@
                 <section class="hayward-security-landscape">
                     <div class="landscape-container">
                         <div class="landscape-header">
+                            <div class="section-badge">Security Expertise</div>
                             <h3>Understanding Hayward's Security Landscape</h3>
                             <div class="header-accent"></div>
                         </div>
                         <div class="landscape-content">
                             <div class="landscape-main">
-                                <p class="landscape-intro">Alameda County's industrial hub presents unique security challenges that require specialized expertise and adaptive solutions.</p>
-                                
-                                <p>From manufacturing operations to educational institutions, this dynamic environment demands security services that understand both traditional protection needs and the specific requirements of industrial facilities.</p>
-                                
-                                <p>Our comprehensive approach integrates seamlessly with your operations, providing robust protection while supporting the productive environment essential to industrial success.</p>
+                                <div class="landscape-intro-box">
+                                    <div class="intro-icon">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div class="intro-content">
+                                        <p class="landscape-intro"><strong>Alameda County's industrial hub</strong> presents unique security challenges that require specialized expertise and adaptive solutions.</p>
+                                        
+                                        <p>From manufacturing operations to educational institutions, this dynamic environment demands security services that understand both traditional protection needs and the specific requirements of industrial facilities.</p>
+                                        
+                                        <p>Our comprehensive approach integrates seamlessly with your operations, providing robust protection while supporting the productive environment essential to industrial success.</p>
+                                    </div>
+                                </div>
+
                                 <div class="security-considerations">
-                                    <h4>Key Security Considerations</h4>
+                                    <div class="considerations-header">
+                                        <h4><i class="fas fa-cogs"></i> Key Security Considerations</h4>
+                                        <p>Specialized solutions for Hayward's unique industrial and educational environment</p>
+                                    </div>
                                     <div class="considerations-grid">
                                         <div class="consideration-item">
                                             <div class="consideration-icon">
@@ -782,6 +1076,9 @@
                                             <div class="consideration-text">
                                                 <h5>Industrial Facility Protection</h5>
                                                 <p>Safeguarding manufacturing equipment during production cycles, managing controlled access for high-security zones, and coordinating with facility security teams</p>
+                                                <div class="consideration-highlight">
+                                                    <span><i class="fas fa-check"></i> 24/7 Production Support</span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="consideration-item">
@@ -791,6 +1088,9 @@
                                             <div class="consideration-text">
                                                 <h5>Asset Protection</h5>
                                                 <p>Implementing multi-layered protection for valuable equipment and inventory, ensuring compliance with industry security standards, and managing theft prevention protocols</p>
+                                                <div class="consideration-highlight">
+                                                    <span><i class="fas fa-check"></i> Multi-Layer Security</span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="consideration-item">
@@ -800,6 +1100,9 @@
                                             <div class="consideration-text">
                                                 <h5>Employee Safety</h5>
                                                 <p>Balancing industrial security needs with employee accessibility in areas where manufacturing districts meet commercial and residential neighborhoods</p>
+                                                <div class="consideration-highlight">
+                                                    <span><i class="fas fa-check"></i> Safety First Approach</span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="consideration-item">
@@ -809,6 +1112,9 @@
                                             <div class="consideration-text">
                                                 <h5>Shift Coverage</h5>
                                                 <p>Delivering flexible security solutions that adapt to industrial schedules, shift changes, and Alameda County's demanding 24/7 manufacturing cycle</p>
+                                                <div class="consideration-highlight">
+                                                    <span><i class="fas fa-check"></i> Flexible Scheduling</span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="consideration-item">
@@ -818,6 +1124,9 @@
                                             <div class="consideration-text">
                                                 <h5>Educational Security</h5>
                                                 <p>Coordinating protection for California State University East Bay, student events, campus activities, and maintaining safe educational environments</p>
+                                                <div class="consideration-highlight">
+                                                    <span><i class="fas fa-check"></i> Campus Expertise</span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="consideration-item">
@@ -827,6 +1136,9 @@
                                             <div class="consideration-text">
                                                 <h5>Infrastructure Protection</h5>
                                                 <p>Securing critical industrial infrastructure, distribution centers, and transportation networks that support Alameda County's industrial ecosystem</p>
+                                                <div class="consideration-highlight">
+                                                    <span><i class="fas fa-check"></i> Critical Infrastructure</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
