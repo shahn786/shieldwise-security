@@ -20,7 +20,6 @@
     <!-- ✅ CRITICAL RESOURCE PRELOADS -->
     <link rel="preload" href="/img/san jose.webp" as="image" fetchpriority="high" media="(min-width: 768px)">
     <link rel="preload" href="/css/oceanside-styles.css" as="style">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
 
@@ -495,7 +494,7 @@
 
     <!-- ✅ ENHANCED STYLESHEETS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" media="all">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="all" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="all">
     <link rel="stylesheet" href="/css/style.css" media="all">
     <link rel="stylesheet" href="/css/oceanside-styles.css" media="all">
 
@@ -574,50 +573,24 @@
         }
         
         /* Font Awesome Icon Display Fix */
-        .fas, .fab, .far, .fa {
-            font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Pro', 'Font Awesome 6 Solid' !important;
-            font-weight: 900 !important;
-            display: inline-block !important;
-            font-style: normal !important;
-            font-variant: normal !important;
-            text-rendering: auto !important;
-            line-height: 1 !important;
-            vertical-align: baseline !important;
+        .fas, .fab, .far {
+            font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Brands' !important;
+            font-weight: 900;
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            line-height: 1;
         }
         
         .fab {
             font-family: 'Font Awesome 6 Brands' !important;
-            font-weight: 400 !important;
-        }
-        
-        .far {
-            font-weight: 400 !important;
-        }
-        
-        /* Force icon visibility */
-        i[class*="fa-"] {
-            display: inline-block !important;
-            width: auto !important;
-            height: auto !important;
-            font-size: inherit !important;
+            font-weight: 400;
         }
         
         /* Ensure all icons in various sections display properly */
         .trust-badge i, .anaheim-feature-item i, .area-icon i, .consideration-icon i {
             margin-right: 8px;
-        }
-        
-        /* Specific icon fixes */
-        .fa-phone-alt:before, .fa-phone:before {
-            content: "\f879" !important;
-        }
-        
-        .fa-shield-alt:before {
-            content: "\f3ed" !important;
-        }
-        
-        .fa-star:before {
-            content: "\f005" !important;
         }
     </style>
 
