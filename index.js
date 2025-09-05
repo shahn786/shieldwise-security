@@ -917,7 +917,7 @@ santaClaraCities.forEach(city => {
 
 // Bay Area cities routes (keeping existing for compatibility)
 const bayAreaCities = [
-    'fremont', 'berkeley', 'oakland'
+    'fremont', 'berkeley', 'oakland', 'hayward'
 ];
 
 bayAreaCities.forEach(city => {
