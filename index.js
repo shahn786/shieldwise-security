@@ -885,7 +885,7 @@ const santaClaraCities = [
 
 santaClaraCities.forEach(city => {
     const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-    
+
     // Routes for both /santa-clara-county/city and /city patterns
     app.get(`/santa-clara-county/${city}`, (req, res) => {
         try {
@@ -928,6 +928,71 @@ bayAreaCities.forEach(city => {
                 title: formattedCity,
                 cityName: formattedCity,
                 pageUrl: `/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+});
+
+// Alameda County cities routes
+const alamedaCountyCities = [
+    'oakland', 'berkeley', 'fremont', 'hayward', 'san-leandro', 'castro-valley', 
+    'san-lorenzo', 'dublin', 'pleasanton', 'union-city', 'newark'
+];
+
+alamedaCountyCities.forEach(city => {
+    const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+
+    // Main city route
+    app.get(`/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+
+    // Alameda County prefix route
+    app.get(`/alameda-county/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/alameda-county/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+
+    // Security suffix routes
+    app.get(`/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: `${formattedCity} Security`,
+                cityName: formattedCity,
+                pageUrl: `/${city}-security`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+
+    app.get(`/alameda-county/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: `${formattedCity} Security`,
+                cityName: formattedCity,
+                pageUrl: `/alameda-county/${city}-security`
             });
         } catch (error) {
             console.error(`Error rendering ${city} page:`, error);
@@ -1073,7 +1138,7 @@ const centralValleyCities = [
 
 centralValleyCities.forEach(city => {
     const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-    
+
     // Main city route
     app.get(`/${city}`, (req, res) => {
         try {
