@@ -939,7 +939,7 @@ bayAreaCities.forEach(city => {
 // Alameda County cities routes
 const alamedaCountyCities = [
     'oakland', 'berkeley', 'fremont', 'hayward', 'san-leandro', 'castro-valley', 
-    'san-lorenzo', 'dublin', 'pleasanton', 'union-city', 'newark', 'emeryville'
+    'san-lorenzo', 'dublin', 'pleasanton', 'union-city', 'newark'
 ];
 
 alamedaCountyCities.forEach(city => {

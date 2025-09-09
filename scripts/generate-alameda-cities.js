@@ -145,19 +145,6 @@ const alamedaCities = [
         landmarks: ['NewPark Mall', 'Thornton Avenue', 'Ardenwood Boulevard'],
         industries: ['manufacturing', 'logistics', 'retail', 'residential'],
         description: 'Newark industrial and retail facilities requiring professional security protection'
-    },
-    {
-        name: 'Emeryville',
-        slug: 'emeryville',
-        zip: '94608',
-        phone: '(714) 716-7430',
-        lat: 37.8314,
-        lng: -122.2853,
-        image: 'sacramento.webp',
-        specialty: 'Tech Campus Security',
-        landmarks: ['Bay Street Shopping Center', 'Emery Bay', 'Pixar Animation Studios'],
-        industries: ['technology', 'biotech', 'commercial', 'residential'],
-        description: 'Emeryville tech and biotech companies requiring specialized corporate security services'
     }
 ];
 
