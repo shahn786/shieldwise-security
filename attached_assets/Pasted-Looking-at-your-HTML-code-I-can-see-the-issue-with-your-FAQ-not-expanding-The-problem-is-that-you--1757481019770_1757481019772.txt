@@ -1,0 +1,149 @@
+Looking at your HTML code, I can see the issue with your FAQ not expanding. The problem is that you have the JavaScript/jQuery code for the FAQ functionality, but you're missing the corresponding CSS styles that control the visual states and animations.
+Here are the main issues and solutions:
+Missing CSS Styles
+You need to add these CSS styles to make the FAQ work properly:
+css/* FAQ Section Styles */
+.anaheim-faq-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-question {
+    padding: 20px;
+    background: #f8f9fa;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background: #e9ecef;
+}
+
+.faq-question h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.faq-toggle {
+    font-size: 1.2rem;
+    color: #666;
+    transition: transform 0.3s ease;
+}
+
+.anaheim-faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0 20px;
+    background: white;
+    display: none; /* Initially hidden */
+}
+
+.faq-answer p {
+    padding: 20px 0;
+    margin: 0;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* FAQ Container */
+.anaheim-faq-section {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.anaheim-faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.anaheim-faq-list {
+    margin-top: 40px;
+}
+jQuery Loading Issue
+Your jQuery is loaded with defer, but you're trying to use it immediately. Either:
+
+Remove the defer attribute from jQuery:
+
+html<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+Or wrap your jQuery code in a document ready that waits for deferred scripts:
+
+javascriptdocument.addEventListener('DOMContentLoaded', function() {
+    // Wait a bit more for deferred jQuery to load
+    setTimeout(function() {
+        if (typeof $ !== 'undefined') {
+            // Your existing jQuery FAQ code here
+            $('.faq-question').on('click', function() {
+                // ... rest of your code
+            });
+        }
+    }, 100);
+});
+Alternative Pure JavaScript Solution
+If you want to avoid jQuery dependency issues, here's a pure JavaScript version:
+javascriptdocument.addEventListener('DOMContentLoaded', function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(function(question) {
+        question.addEventListener('click', function() {
+            const item = this.closest('.anaheim-faq-item');
+            const toggle = this.querySelector('.faq-toggle i');
+            const answer = item.querySelector('.faq-answer');
+            const isActive = item.classList.contains('active');
+            
+            // Close all FAQ items first
+            document.querySelectorAll('.anaheim-faq-item').forEach(function(faqItem) {
+                faqItem.classList.remove('active');
+                const faqToggle = faqItem.querySelector('.faq-toggle i');
+                const faqAnswer = faqItem.querySelector('.faq-answer');
+                faqToggle.classList.remove('fa-minus');
+                faqToggle.classList.add('fa-plus');
+                faqAnswer.style.display = 'none';
+            });
+            
+            // If this item wasn't active, open it
+            if (!isActive) {
+                item.classList.add('active');
+                toggle.classList.remove('fa-plus');
+                toggle.classList.add('fa-minus');
+                answer.style.display = 'block';
+            }
+        });
+    });
+});
+Quick Fix
+The fastest solution is to add this CSS to your existing styles and remove the defer attribute from jQuery:
+css.faq-answer {
+    display: none;
+    padding: 20px;
+    background: white;
+}
+
+.anaheim-faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-question {
+    cursor: pointer;
+    padding: 20px;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question h4 {
+    margin: 0;
+}
+The main issue is that without proper CSS, the FAQ answers are always visible and the JavaScript can't properly hide/show them.
