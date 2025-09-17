@@ -1133,7 +1133,7 @@ orangeCountyCities.forEach(city => {
 // Central Valley cities routes
 const centralValleyCities = [
     'clovis', 'madera', 'visalia', 'tulare', 'hanford', 'porterville', 
-    'merced', 'modesto', 'stockton', 'bakersfield', 'delano'
+    'merced', 'modesto', 'stockton', 'bakersfield', 'delano', 'lemoore'
 ];
 
 centralValleyCities.forEach(city => {
