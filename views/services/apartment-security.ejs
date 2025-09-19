@@ -11,6 +11,61 @@
     <%- include('../partials/schema-apartment-security') %>
     <%- include('../partials/schema-service', serviceData) %>
     <%- include('../partials/schema-faq-service', serviceData) %>
+
+    <!-- Validated LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://shieldwisesecurity.com/#apartment-security",
+      "name": "ShieldWise Apartment Security Services",
+      "description": "Professional 24/7 apartment security guards and access control systems for residential communities in California.",
+      "url": "https://shieldwisesecurity.com/services/apartment-security",
+      "telephone": "(714) 716-7430",
+      "email": "info@shieldwisesecurity.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "220 Soo Dr",
+        "addressLocality": "Fullerton",
+        "addressRegion": "CA",
+        "postalCode": "92832",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "33.8706",
+        "longitude": "-117.9251"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "California"
+      },
+      "serviceType": "Apartment Security Services",
+      "priceRange": "$35-$85",
+      "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Apartment Security Services",
+        "itemListElement": [{
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "24/7 Apartment Security Guards",
+            "description": "Professional security personnel for apartment complexes"
+          },
+          "price": "35.00",
+          "priceCurrency": "USD",
+          "unitText": "HOUR"
+        }]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "127",
+        "bestRating": "5"
+      }
+    }
+    </script>
     <%- include('../partials/tracking-scripts', { 
         serviceType: serviceData.serviceType, 
         priceRange: serviceData.priceRange 
