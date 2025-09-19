@@ -109,23 +109,6 @@
                   ]
                 }
                 </script>
-                <!-- ✅ Breadcrumbs for Los Angeles (Hidden from users but SEO-friendly) -->
-                <nav aria-label="Breadcrumb" style="position: absolute; left: -9999px; visibility: hidden;">
-                  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                      <a itemprop="item" href="https://shieldwisesecurity.com"><span itemprop="name">Home</span></a>
-                      <meta itemprop="position" content="1" />
-                    </li>
-                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                      <a itemprop="item" href="/services"><span itemprop="name">Services</span></a>
-                      <meta itemprop="position" content="2" />
-                    </li>
-                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                      <span itemprop="name">Los Angeles Security</span>
-                      <meta itemprop="position" content="3" />
-                    </li>
-                  </ol>
-                </nav>
 
 
 
@@ -167,7 +150,13 @@
 
     <%- include('../partials/Header') %>
 
-
+    <!-- Breadcrumb Navigation -->
+    <%- include('../partials/breadcrumb', { 
+        breadcrumbs: [
+            { name: 'Service Areas', url: '/service-areas' },
+            { name: 'Los Angeles Security Guards', url: null }
+        ]
+    }) %>
 
     <header class="hero-sec">
         <div class="overlay-sec">

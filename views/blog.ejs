@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/WebPage">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO Meta Tags -->
+    <title>Security Industry Blog | Tips, News & Insights | ShieldWise Security</title>
+    <meta name="description" content="Stay informed with the latest security industry news, tips, and insights from ShieldWise Security experts. Learn about security best practices, industry trends, and safety advice for businesses and properties.">
+    <meta name="keywords" content="security blog, security tips, industry news, security best practices, business security, property protection, security trends, safety advice">
+    <meta name="author" content="ShieldWise Security">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://shieldwisesecurity.com/blog">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Security Industry Blog | ShieldWise Security">
+    <meta property="og:description" content="Expert insights on security trends, tips, and best practices from California's premier security company.">
+    <meta property="og:url" content="https://shieldwisesecurity.com/blog">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://shieldwisesecurity.com/img/blog-hero.jpg">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Security Industry Blog | ShieldWise Security">
+    <meta name="twitter:description" content="Expert insights on security trends, tips, and best practices from California's premier security company.">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <style>
+        .blog-hero {
+            background: linear-gradient(135deg, #003366, #0066cc);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .blog-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .blog-content {
+            padding: 80px 0;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .blog-card-content {
+            padding: 30px;
+        }
+        
+        .blog-meta {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .blog-title {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .blog-excerpt {
+            color: #495057;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .read-more-btn {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .read-more-btn:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('partials/Header') %>
+
+    <!-- Breadcrumb Navigation -->
+    <%- include('partials/breadcrumb', { 
+        breadcrumbs: [
+            { name: 'Security Blog', url: null }
+        ]
+    }) %>
+
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1>Security Industry Blog</h1>
+            <p class="lead">Expert insights, tips, and news from California's premier security professionals</p>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="blog-content">
+        <div class="container">
+            <div class="row">
+                <!-- Blog Post 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <article class="blog-card">
+                        <img src="/img/commercial-security.png" alt="Commercial security best practices">
+                        <div class="blog-card-content">
+                            <div class="blog-meta">
+                                <i class="fas fa-calendar"></i> December 15, 2024 | 
+                                <i class="fas fa-user"></i> Security Experts
+                            </div>
+                            <h2 class="blog-title">5 Essential Commercial Security Best Practices for 2025</h2>
+                            <p class="blog-excerpt">
+                                Discover the most effective commercial security strategies that California businesses are implementing to protect their assets, employees, and customers in the new year.
+                            </p>
+                            <a href="/blog/commercial-security-best-practices-2025" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <article class="blog-card">
+                        <img src="/img/apartment-security-.png" alt="Apartment security planning">
+                        <div class="blog-card-content">
+                            <div class="blog-meta">
+                                <i class="fas fa-calendar"></i> December 10, 2024 | 
+                                <i class="fas fa-user"></i> Security Experts
+                            </div>
+                            <h2 class="blog-title">Complete Guide to Apartment Complex Security Planning</h2>
+                            <p class="blog-excerpt">
+                                Learn how to create a comprehensive security plan for residential properties that balances resident safety with community comfort and accessibility.
+                            </p>
+                            <a href="/blog/apartment-security-planning-guide" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Blog Post 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <article class="blog-card">
+                        <img src="/img/eventsecurity.png" alt="Event security management">
+                        <div class="blog-card-content">
+                            <div class="blog-meta">
+                                <i class="fas fa-calendar"></i> December 5, 2024 | 
+                                <i class="fas fa-user"></i> Security Experts
+                            </div>
+                            <h2 class="blog-title">Event Security: What Every Event Planner Should Know</h2>
+                            <p class="blog-excerpt">
+                                Essential event security considerations for corporate events, concerts, and private gatherings to ensure guest safety and event success.
+                            </p>
+                            <a href="/blog/event-security-guide" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Blog Post 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <article class="blog-card">
+                        <img src="/img/constructionsecurity.webp" alt="Construction site security">
+                        <div class="blog-card-content">
+                            <div class="blog-meta">
+                                <i class="fas fa-calendar"></i> November 28, 2024 | 
+                                <i class="fas fa-user"></i> Security Experts
+                            </div>
+                            <h2 class="blog-title">Why Construction Sites Need 24/7 Security Protection</h2>
+                            <p class="blog-excerpt">
+                                Construction sites face unique security challenges. Learn why professional security services are essential for protecting valuable equipment and materials.
+                            </p>
+                            <a href="/blog/construction-site-security-importance" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Blog Post 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <article class="blog-card">
+                        <img src="/img/firewatch.webp" alt="Fire watch services">
+                        <div class="blog-card-content">
+                            <div class="blog-meta">
+                                <i class="fas fa-calendar"></i> November 20, 2024 | 
+                                <i class="fas fa-user"></i> Security Experts
+                            </div>
+                            <h2 class="blog-title">Understanding Fire Watch Services: When and Why You Need Them</h2>
+                            <p class="blog-excerpt">
+                                Fire watch services ensure safety compliance when fire systems are offline. Learn about regulations, requirements, and professional implementation.
+                            </p>
+                            <a href="/blog/fire-watch-services-guide" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Blog Post 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <article class="blog-card">
+                        <img src="/img/armsecurity.png" alt="Armed vs unarmed security">
+                        <div class="blog-card-content">
+                            <div class="blog-meta">
+                                <i class="fas fa-calendar"></i> November 15, 2024 | 
+                                <i class="fas fa-user"></i> Security Experts
+                            </div>
+                            <h2 class="blog-title">Armed vs Unarmed Security: Choosing the Right Protection</h2>
+                            <p class="blog-excerpt">
+                                Understand the differences between armed and unarmed security services and learn which option best fits your specific security needs and budget.
+                            </p>
+                            <a href="/blog/armed-vs-unarmed-security-guide" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Newsletter Subscription -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="bg-light p-5 rounded text-center">
+                        <h3>Stay Updated with Security Insights</h3>
+                        <p>Subscribe to our newsletter for the latest security tips, industry news, and expert advice.</p>
+                        <form class="form-inline justify-content-center">
+                            <input type="email" class="form-control mr-3" placeholder="Enter your email address" style="width: 300px;">
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('partials/Footer') %>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -2049,3 +2049,32 @@ html, body {
         left: 20px;
     }
 }
+
+/* Related Services Note Styling */
+.related-services-note {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-left: 4px solid #007bff;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.related-services-note p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #495057;
+    line-height: 1.6;
+}
+
+.related-services-note a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.related-services-note a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}

@@ -28,6 +28,14 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
     <%- include('../partials/Header') %>
+
+    <!-- Breadcrumb Navigation -->
+    <%- include('../partials/breadcrumb', { 
+        breadcrumbs: [
+            { name: 'Services', url: '/services' },
+            { name: 'Armed Security Guards', url: null }
+        ]
+    }) %>
     
     <main id="main-content">
         <!-- Hero Section -->

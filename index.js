@@ -241,6 +241,10 @@ app.get("/service-areas", (req, res) => {
   res.render("service-areas");
 });
 
+app.get("/blog", (req, res) => {
+  res.render("blog");
+});
+
 app.get("/register", (req, res) => {
   const loggedIn = req.isAuthenticated ? req.isAuthenticated() : false;
   res.render("register", { loggedIn, error: null, success: null });
