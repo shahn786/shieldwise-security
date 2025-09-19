@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en-US" itemscope itemtype="https://schema.org/WebPage">
 <head>
@@ -7,8 +8,8 @@
 
     <!-- CSS Resources -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="/css/apartment-security.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="/css/apartment-security.css" rel="stylesheet">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,9 +23,8 @@
         serviceType: serviceData.serviceType,
         priceRange: serviceData.priceRange
     }) %>
-
-   
 </head>
+
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
@@ -48,36 +48,36 @@
                 Premier Fire Watch Security Services for Complete Safety Compliance
             </h2>
             <p class="speakable-services" style="font-size:20px; line-height:1.8; margin-bottom:0;">
-                <strong>ShieldWise Security</strong> delivers nonstop fire watch protection through fully licensed and bonded guards stationed on-site around the clock, proactively identifying risks during any system outages to keep your property compliant and secure. Our teams carry out comprehensive <strong style="color:#bf9e5b;">fire hazard assessments</strong> and conduct methodical inspections, logging every finding in real time so issues are documented and addressed without delay.
+                <strong>ShieldWise Security</strong> delivers comprehensive fire watch protection through fully licensed and bonded guards stationed on-site around the clock, proactively identifying risks during any system outages to keep your property compliant and secure. Our teams carry out comprehensive <strong style="color:#bf9e5b;">fire hazard assessments</strong> and conduct methodical inspections, logging every finding in real time so issues are documented and addressed without delay.
             </p>
             <div class="speakable-contact" style="margin-top:20px; font-size:18px;">
-                <strong>Emergency Hotline:</strong> <%= serviceData.emergencyPhone %> |
+                <strong>Call This Number:</strong> <%= serviceData.emergencyPhone %> |
                 <strong>Email:</strong> <%= serviceData.serviceEmail %>
             </div>
         </div>
 
         <!-- Fire Watch Features Section -->
-        <section id="features" class="firewatch-features-section">
+        <section id="features" class="apartment-features-section">
             <div class="container">
-                <h2 class="section-title">Comprehensive Fire Watch Protection Services</h2>
+                <h2 class="section-title">Comprehensive Fire Watch Protection Features</h2>
                 <p class="section-subtitle">Advanced fire safety solutions designed for critical protection</p>
 
-                <div class="firewatch-grid">
+                <div class="apartment-grid">
                     <% serviceData.features.forEach(feature => { %>
-                    <div class="firewatch-card">
-                        <div class="firewatch-icon">
+                    <div class="apartment-card">
+                        <div class="apartment-icon">
                             <i class="<%= feature.icon %>" aria-hidden="true"></i>
                         </div>
-                        <h3 class="firewatch-title"><%= feature.title %></h3>
-                        <p class="firewatch-description"><%= feature.description %></p>
+                        <h3 class="apartment-title"><%= feature.title %></h3>
+                        <p class="apartment-description"><%= feature.description %></p>
                     </div>
                     <% }); %>
                 </div>
             </div>
         </section>
 
-        <!-- Compliance Process Section -->
-        <section class="compliance-section">
+        <!-- Security Process Section -->
+        <section class="security-process-section">
             <div class="container">
                 <h2 class="section-title">Our Fire Watch Compliance Process</h2>
                 <p class="section-subtitle">Systematic approach to fire safety and code compliance</p>
@@ -85,9 +85,9 @@
                 <div class="row">
                     <% serviceData.processSteps.forEach(step => { %>
                     <div class="col-md-3">
-                        <div class="compliance-step">
-                            <div class="compliance-number"><%= step.number %></div>
-                            <h3 class="compliance-title"><%= step.title %></h3>
+                        <div class="process-step">
+                            <div class="process-number"><%= step.number %></div>
+                            <h3 class="process-title"><%= step.title %></h3>
                             <p><%= step.description %></p>
                         </div>
                     </div>
@@ -96,18 +96,18 @@
             </div>
         </section>
 
-        <!-- Emergency Response Section -->
-        <section class="emergency-section">
+        <!-- Benefits Section -->
+        <section class="benefits-section">
             <div class="container">
-                <h2 class="section-title">Emergency Response Capabilities</h2>
+                <h2 class="section-title">Why Choose ShieldWise for Fire Watch Security</h2>
                 <div class="row">
                     <div class="col-md-6">
                         <% serviceData.benefits.slice(0, 3).forEach(benefit => { %>
-                        <div class="emergency-item">
-                            <div class="emergency-icon">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
                                 <i class="<%= benefit.icon %>" aria-hidden="true"></i>
                             </div>
-                            <div class="emergency-content">
+                            <div class="benefit-content">
                                 <h4><%= benefit.title %></h4>
                                 <p><%= benefit.description %></p>
                             </div>
@@ -115,12 +115,12 @@
                         <% }); %>
                     </div>
                     <div class="col-md-6">
-                        <% serviceData.benefits.slice(3, 6).forEach(benefit => { %>
-                        <div class="emergency-item">
-                            <div class="emergency-icon">
+                        <% serviceData.benefits.slice(3).forEach(benefit => { %>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
                                 <i class="<%= benefit.icon %>" aria-hidden="true"></i>
                             </div>
-                            <div class="emergency-content">
+                            <div class="benefit-content">
                                 <h4><%= benefit.title %></h4>
                                 <p><%= benefit.description %></p>
                             </div>
@@ -193,7 +193,7 @@
                 <h2 class="mb-4">Need Immediate Fire Watch Coverage?</h2>
                 <p class="mb-4">Contact us for rapid deployment fire watch services and compliance solutions</p>
                 <button class="btn btn-custom" aria-label="Get emergency fire watch quote" onclick="trackFireWatchConsultation()">
-                    <i class="fas fa-fire-extinguisher"></i> Get Emergency Fire Watch Quote
+                    Get Emergency Fire Watch Quote
                 </button>
             </div>
         </section>
@@ -222,9 +222,88 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" defer></script>
 
-    <!-- Fire Watch Specific JavaScript -->
+    <!-- Optimized JavaScript -->
     <script>
-        // Enhanced tracking for fire watch services
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.apartment-card, .service-card, .process-step, .benefit-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Counter Animation for Statistics
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                const displayValue = Math.floor(current);
+                const originalText = element.textContent;
+                if (originalText.includes('+')) {
+                    element.textContent = displayValue + '+';
+                } else if (originalText.includes('%')) {
+                    element.textContent = displayValue + '%';
+                } else if (originalText.includes('/')) {
+                    element.textContent = displayValue + '/7';
+                } else {
+                    element.textContent = displayValue;
+                }
+            }, 20);
+        }
+
+        // Trigger counter animation when in view
+        const statObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const value = parseInt(statNumber.textContent.replace(/[^\d]/g, ''));
+                    if (value && value > 0) {
+                        animateCounter(statNumber, value);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-card').forEach(el => {
+            statObserver.observe(el);
+        });
+
+        // Track consultation requests
         function trackFireWatchConsultation() {
             gtag('event', 'generate_lead', {
                 'event_category': 'Fire Watch Services',
@@ -243,83 +322,6 @@
             // Redirect to quote page
             window.location.href = '/get-quote';
         }
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.querySelectorAll('.firewatch-card, .service-card, .compliance-step, .emergency-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
-        });
-
-        // Counter animation for statistics
-        function animateCounter(element, target) {
-            let current = 0;
-            const increment = target / 100;
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                const displayValue = Math.floor(current);
-                const originalText = element.textContent;
-                if (originalText.includes('+')) {
-                    element.textContent = displayValue + '+';
-                } else if (originalText.includes('%')) {
-                    element.textContent = displayValue + '%';
-                } else {
-                    element.textContent = displayValue;
-                }
-            }, 20);
-        }
-
-        // Trigger counter animation when stats come into view
-        const statObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-                    entry.target.classList.add('animated');
-                    const statNumber = entry.target.querySelector('.stat-number');
-                    const value = parseInt(statNumber.textContent.replace(/[^\d]/g, ''));
-                    if (value && value > 0) {
-                        animateCounter(statNumber, value);
-                    }
-                }
-            });
-        }, { threshold: 0.5 });
-
-        document.querySelectorAll('.stat-card').forEach(el => {
-            statObserver.observe(el);
-        });
     </script>
 
     <!-- Deferred Tracking Scripts -->
