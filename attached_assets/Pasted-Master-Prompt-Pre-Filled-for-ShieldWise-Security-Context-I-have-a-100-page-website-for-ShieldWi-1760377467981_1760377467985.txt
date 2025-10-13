@@ -1,0 +1,197 @@
+Master Prompt (Pre-Filled for ShieldWise Security)
+
+Context:
+I have a 100+ page website for ShieldWise Security (shieldwisesecurity.com). The codebase lives here: https://replit.com/@FnuShahnawaz/ShieldWise-Security. I want you to audit, clean, and optimize the entire site for production hosting, SEO (Google/Bing), and AI indexing—while preserving my current look and layout unless a change is essential for performance, accessibility, or SEO.
+
+Inputs:
+
+Repo/Codebase: https://replit.com/@FnuShahnawaz/ShieldWise-Security
+
+Domain: shieldwisesecurity.com
+
+Tech stack: “All” (the project contains HTML/CSS/JS and may include Node/EJS or other)
+
+Hosting target: (to confirm—see questions below)
+
+Primary service area: All cities in California (multi-city pages exist)
+
+Business NAP (canonical):
+
+Name: ShieldWise Security
+
+Phone: +1-714-716-7430
+
+Address: (Please normalize to one exact street address for all pages/schema—ask me if missing)
+
+Priority pages: Homepage, Services, City pages, Contact / Get a Quote
+
+Analytics/Webmaster tools: GA4 / Google Search Console / Bing Webmaster Tools (IDs to be provided)
+
+1) Goals (Definition of Done)
+
+Production-ready build: clean, organized, minified, cacheable, and deployable.
+
+SEO-ready: correct metadata, internal linking, structured data, sitemaps, robots, canonicalization.
+
+AI-search-ready: clear entities (security services), FAQs/Q&A blocks, strong LocalBusiness schema.
+
+Performance: Mobile Core Web Vitals targets — LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1.
+
+Accessibility: WCAG 2.1 AA essentials without changing visual style unless necessary.
+
+Security: HTTPS, sane security headers, no secrets in repo.
+
+Local SEO: Consistent NAP, per-city unique value, correct schema.
+
+2) Hard Constraints
+
+Do not change design/branding unless absolutely required for SEO/perf/a11y.
+
+Remove only truly unused assets (images/CSS/JS).
+
+Do not break existing URLs; if a change is needed, create 301 redirects.
+
+No lorem ipsum. Keep tone aligned to a professional security company.
+
+3) Deliverables
+
+Cleaned production build with:
+
+Purged/treeshaken CSS & JS; minified assets; proper caching; hashed filenames.
+
+Optimized images: responsive sizes, srcset, WebP/AVIF variants, lazy-load below fold.
+
+SEO/AI package for all indexable pages:
+
+Unique titles and meta descriptions (click-through friendly).
+
+Open Graph & Twitter cards; favicon & web manifest.
+
+Structured data (JSON-LD):
+
+Organization + WebSite (+ SearchAction)
+
+LocalBusiness / SecurityService (global + per city/service page)
+
+BreadcrumbList
+
+Service (per service page)
+
+FAQPage where relevant
+
+Review/AggregateRating (only if we have real, verifiable data)
+
+XML sitemaps (split by pages / cities / images) + robots.txt tuned for crawl budget.
+
+Canonical tags everywhere; hreflang if applicable later.
+
+Internal linking map (services ↔ industries ↔ city pages ↔ blog/resources).
+
+Reports & Handover:
+
+Before/after Lighthouse (mobile) + Core Web Vitals notes.
+
+SEO_issues.csv (URL, Issue, Priority, Fix).
+
+Redirect map (if any).
+
+Deployment checklist (headers, redirects, cache rules).
+
+Instructions to verify GA4, GSC, Bing and submit sitemaps.
+
+4) Detailed Tasks
+A) Information Architecture & Content
+
+Normalize templates for Services, City pages, About, Contact/Quote, FAQs.
+
+Strengthen E-E-A-T: licensing, insurance, service coverage, industries served, testimonials (if permitted), privacy/terms.
+
+Ensure unique, local content on each California city page (no thin/duplicate content).
+
+Enforce NAP consistency site-wide (footer, Contact, schema).
+
+B) On-Page SEO
+
+One H1 per page; semantic H2/H3.
+
+Titles ≤ 60 chars; meta descriptions 140–160 chars; descriptive alt text.
+
+Visible breadcrumbs + JSON-LD.
+
+Preserve current slugs; add redirects if any slug must change.
+
+C) Technical SEO & AI Indexing
+
+Build /sitemap.xml that points to split sitemaps (pages, cities, images).
+
+Author robots.txt to allow key sections, disallow duplicates/admin/build artifacts; include sitemap pointer.
+
+Add Service and LocalBusiness JSON-LD to key pages; validate with Rich Results.
+
+Add FAQPage JSON-LD to service/city pages where Q&A exists.
+
+Make core offerings explicit: armed/unarmed guards, mobile patrol, construction site security, fire watch, neighborhood security, school/campus, retail, events, etc.
+
+D) Performance
+
+Convert large images to WebP/AVIF; responsive sizes; defer non-critical JS; reduce 3P scripts.
+
+Inline critical CSS only if it materially improves LCP.
+
+Use preconnect/preload for fonts/critical assets where beneficial.
+
+Strong cache headers for static assets; Brotli/Gzip on host.
+
+E) Accessibility
+
+Semantic landmarks (header/nav/main/footer), form labels, focus states, contrast fixes only if failing.
+
+Keyboard navigation (no traps).
+
+F) Security & Reliability
+
+Enforce HTTPS; add HSTS, X-Content-Type-Options, X-Frame-Options/COOP/COEP, and CSP if feasible.
+
+Remove secrets/comments/dev endpoints.
+
+Friendly 404; 410 where appropriate.
+
+5) Process
+
+Phase 1 — Audit & Plan: Provide prioritized plan (P0/P1/P2) with concrete examples from my site.
+
+Phase 2 — Implement: Apply fixes in a branch/PR or a zipped build. Include diffs/notes.
+
+Preserve design unless a change is essential.
+
+6) Acceptance Criteria
+
+Mobile Lighthouse ≥ 90 (Performance, SEO, Best Practices, Accessibility) for homepage + top services + one city page.
+
+GSC & Bing verified; sitemaps submitted; no major coverage errors; key pages indexed.
+
+Structured data validates cleanly (no critical errors).
+
+No broken links or regressions; canonicalization correct; NAP consistent.
+
+Questions to Clarify (answer briefly so work can start)
+
+Hosting target (pick one): Vercel / Netlify / cPanel (shared) / VPS / Replit / Other.
+
+Actual stack in use: Is the live code purely static HTML/CSS/JS, or does it also use Node/EJS (templates) or another framework in that Replit?
+
+Canonical street address (exact address to use everywhere + in schema).
+
+Google Business Profile URL (if you have it).
+
+GA4 + GSC + Bing IDs/emails (or confirm you want placeholders added so you can verify later).
+
+Forms: Where should Contact/Get a Quote submit? (Email service / API endpoint). Do you want reCAPTCHA?
+
+Reviews: Do you have verifiable reviews/ratings we can mark up (source + rating count)?
+
+Image policy: Approve converting large images to WebP/AVIF and adding lazy-loading and responsive srcset?
+
+City list: Provide the authoritative list of California cities you serve so we can standardize city pages and internal links.
+
+Any legacy URLs that must stay live? (We’ll add 301s if slugs change.)
