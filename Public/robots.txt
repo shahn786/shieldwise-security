@@ -1,28 +1,86 @@
-User-agent: *
-Allow: /
+# ShieldWise Security - Robots.txt for Production
+# Optimized for Google, Bing, Safari, and AI Crawlers
 
-# Specific rules for major search engines
-User-agent: Googlebot
+# Global Rules
+User-agent: *
 Allow: /
 Crawl-delay: 1
 
+# Google Crawlers
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: Googlebot-Image
+Allow: /img/
+Allow: /Public/img/
+
+# Bing Crawler
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 2
+Crawl-delay: 1
 
+# AI Search Engine Crawlers
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 1
+
+User-agent: CCBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: anthropic-ai
+Allow: /
+Crawl-delay: 1
+
+User-agent: Claude-Web
+Allow: /
+Crawl-delay: 1
+
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: cohere-ai
+Allow: /
+Crawl-delay: 1
+
+# Social Media Crawlers
 User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
 Allow: /
 
 # Disallow admin and private areas
 Disallow: /admin/
 Disallow: /private/
-Disallow: *.json$
+Disallow: /login
+Disallow: /register
+Disallow: /*.json$
 Disallow: /attached_assets/
+Disallow: /routes/
+Disallow: /models/
+Disallow: /config/
+Disallow: /scripts/
 
-# Allow important resources
+# Allow important resources for crawlers
 Allow: /css/
 Allow: /js/
+Allow: /JS/
 Allow: /img/
 Allow: /Public/
+Allow: /services/
+Allow: /blog
+Allow: /contact
+Allow: /get-quote
 
+# Sitemap location
 Sitemap: https://shieldwisesecurity.com/sitemap.xml
