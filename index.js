@@ -118,7 +118,7 @@ app.use((req, res, next) => {
     "style-src 'self' 'unsafe-inline' https://stackpath.bootstrapcdn.com https://cdnjs.cloudflare.com https://fonts.googleapis.com; " +
     "img-src 'self' data: https: http:; " +
     "font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; " +
-    "connect-src 'self' https://www.google-analytics.com https://*.hotjar.com https://*.hotjar.io wss://*.hotjar.com https://www.clarity.ms https://www.facebook.com https://connect.facebook.net; " +
+    "connect-src 'self' https://www.google-analytics.com https://*.hotjar.com https://*.hotjar.io wss://*.hotjar.com https://www.clarity.ms https://www.facebook.com https://connect.facebook.net https://px.ads.linkedin.com; " +
     "frame-src 'self' https://www.google.com https://vars.hotjar.com; " +
     "worker-src 'self' blob:;"
   );
