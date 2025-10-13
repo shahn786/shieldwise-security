@@ -856,7 +856,11 @@
 
                 <!-- Image on the right -->
                 <div class="why-choose-image">
-                    <img src="/img/car-logo.png" alt="ShieldWise Security Guards providing professional security services in California" itemprop="image" loading="lazy" width="800" height="600" fetchpriority="high">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="/img/car-logo-mobile.webp" type="image/webp">
+                        <source media="(min-width: 769px)" srcset="/img/car-logo.webp" type="image/webp">
+                        <img src="/img/car-logo.png" alt="ShieldWise Security Guards providing professional security services in California" itemprop="image" loading="lazy" width="800" height="600" fetchpriority="high">
+                    </picture>
                 </div>
             </div>
         </section>
@@ -988,12 +992,16 @@
                 </div>
 
                 <div class="professionals-image" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-                    <img src="/img/main2.png" 
-                         alt="Professional Security Officer | ShieldWise Security Services" 
-                         itemprop="url"
-                         loading="lazy"
-                         width="800"
-                         height="600">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="/img/main2-mobile.webp" type="image/webp">
+                        <source media="(min-width: 769px)" srcset="/img/main2.webp" type="image/webp">
+                        <img src="/img/main2.png" 
+                             alt="Professional Security Officer | ShieldWise Security Services" 
+                             itemprop="url"
+                             loading="lazy"
+                             width="800"
+                             height="600">
+                    </picture>
                     <meta itemprop="width" content="800">
                     <meta itemprop="height" content="600">
                 </div>
