@@ -536,7 +536,7 @@
 </script>
 
 <!-- 7 ▸ Enhanced Security Headers - Full CSP -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://cdn.jsdelivr.net https://code.jquery.com https://stackpath.bootstrapcdn.com https://www.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://vitals.vercel-insights.com; frame-src https://www.google.com https://www.google.com/maps; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
+<!-- CSP managed via HTTP headers in index.js -->
 <meta http-equiv="Strict-Transport-Security" content="max-age=63072000; includeSubDomains; preload">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
@@ -632,14 +632,7 @@ window.addEventListener('load', () => {
   });
 </script>
 
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "CLARITY-PROJECT-ID");
-</script>
+<!-- Microsoft Clarity disabled (CSP compliance) -->
 
 <!-- Enhanced Accessibility -->
 <meta name="accessibility" content="AA">

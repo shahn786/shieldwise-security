@@ -5,13 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <meta http-equiv="Content-Security-Policy" content="
-      default-src 'self' 'unsafe-inline' 'unsafe-eval' *.googleapis.com *.gstatic.com *.cloudflare.com *.jsdelivr.net www.google.com maps.googleapis.com maps.gstatic.com maps.google.com *.clarity.ms www.googletagmanager.com;
-      frame-src 'self' www.google.com maps.google.com;
-      font-src 'self' *.gstatic.com *.googleapis.com *.cloudflare.com *.jsdelivr.net;
-      style-src 'self' 'unsafe-inline' *.googleapis.com *.cloudflare.com *.jsdelivr.net;
-      img-src 'self' data: *.googleapis.com *.gstatic.com;
-    ">
+    <!-- CSP managed via HTTP headers in index.js -->
 
     <!-- ✅ Performance Optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -570,14 +564,7 @@
       gtag('config', 'G-XXXXXXXXXX');
     </script>
 
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "shieldwise_baldwin_park");
-    </script>
+    <!-- Microsoft Clarity disabled (CSP compliance) -->
 </head>
 
 <body id="top" itemscope itemtype="https://schema.org/WebPage">

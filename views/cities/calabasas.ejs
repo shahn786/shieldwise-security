@@ -7,29 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- ✅ Strengthened Content Security Policy -->
-    <meta http-equiv="Content-Security-Policy" content="
-      default-src 'self';
-      script-src 'self' 'nonce-security-script' 
-        https://www.googletagmanager.com 
-        https://www.google-analytics.com 
-        https://code.jquery.com 
-        https://cdn.jsdelivr.net 
-        https://cdnjs.cloudflare.com 
-        https://stackpath.bootstrapcdn.com;
-      style-src 'self' 'nonce-security-style'
-        https://fonts.googleapis.com 
-        https://cdn.jsdelivr.net 
-        https://stackpath.bootstrapcdn.com 
-        https://cdnjs.cloudflare.com;
-      font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
-      img-src 'self' data: https:;
-      connect-src 'self' https://www.google-analytics.com https://www.clarity.ms;
-      frame-src 'self' https://www.google.com https://maps.google.com;
-      object-src 'none';
-      base-uri 'self';
-      form-action 'self';
-      upgrade-insecure-requests;
-    ">
+    <!-- CSP managed via HTTP headers in index.js -->
 
     <!-- ✅ Performance Optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
