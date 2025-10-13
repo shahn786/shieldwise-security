@@ -126,38 +126,8 @@ const optimizedKeywords = generateDynamicKeywords(serviceKeywords, serviceType);
 <meta name="mobile-web-app-capable" content="yes">
 
 <!-- Enhanced Security Headers for 2025 -->
-<meta http-equiv="Content-Security-Policy" content="
-  default-src 'self';
-  script-src 'self' 'unsafe-inline' 'unsafe-eval'
-    https://www.googletagmanager.com
-    https://www.google-analytics.com
-    https://connect.facebook.net
-    https://cdn.jsdelivr.net
-    https://code.jquery.com
-    https://stackpath.bootstrapcdn.com
-    https://cdnjs.cloudflare.com;
-  style-src 'self' 'unsafe-inline'
-    https://fonts.googleapis.com
-    https://cdn.jsdelivr.net
-    https://stackpath.bootstrapcdn.com
-    https://cdnjs.cloudflare.com
-    https://fonts.gstatic.com;
-  font-src 'self'
-    https://fonts.gstatic.com
-    https://cdnjs.cloudflare.com
-    https://fonts.googleapis.com;
-  img-src 'self' data: https: blob:;
-  connect-src 'self' 
-    https://www.google-analytics.com
-    https://analytics.google.com
-    https://www.googletagmanager.com;
-  frame-src https://www.google.com 
-    https://www.google.com/maps
-    https://www.youtube.com;
-  object-src 'none';
-  base-uri 'self';
-  upgrade-insecure-requests;
-  block-all-mixed-content;">
+<!-- CSP moved to HTTP headers in index.js for better control and analytics support -->
+<!-- <meta http-equiv="Content-Security-Policy" content="..."> -->
 
 <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
