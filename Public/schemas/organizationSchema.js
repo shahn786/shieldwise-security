@@ -3,12 +3,14 @@
 // Engineered for maximum search visibility and AI search engine dominance
 // Incorporates all 2025 schema best practices and high-value security keywords
 
+const NAP = require('../../config/nap-config');
+
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "SecurityService",
-  "@id": "https://shieldwisesecurity.com/#organization",
-  "name": "ShieldWise Security Guard Services",
-  "legalName": "ShieldWise Security Services, Inc.",
+  "@id": `${NAP.website.url}/#organization`,
+  "name": NAP.companyName,
+  "legalName": NAP.legalName,
   "alternateName": [
     "ShieldWise Security",
     "Shield Wise Security Guards",
@@ -62,13 +64,13 @@ const organizationSchema = {
       "caption": "BSIS Licensed Security Guard Team - ShieldWise Security"
     }
   ],
-  "telephone": "(714) 716-7430",
+  "telephone": NAP.phone.primaryFormatted,
   "faxNumber": "+1-800-SHIELD-2",
-  "email": "info@shieldwisesecurity.com",
+  "email": NAP.email.general,
   "contactPoint": [
     {
       "@type": "ContactPoint",
-      "telephone": "(714) 716-7430",
+      "telephone": NAP.phone.primaryFormatted,
       "contactType": "customer service",
       "contactOption": ["TollFree", "HearingImpairedSupported"],
       "areaServed": ["US", "CA"],
@@ -82,7 +84,7 @@ const organizationSchema = {
     },
     {
       "@type": "ContactPoint",
-      "telephone": "(714) 716-7430",
+      "telephone": NAP.phone.emergency24x7,
       "contactType": "emergency",
       "contactOption": "TollFree",
       "areaServed": "CA",
@@ -91,21 +93,21 @@ const organizationSchema = {
     },
     {
       "@type": "ContactPoint",
-      "telephone": "(714) 716-7430",
+      "telephone": NAP.phone.primaryFormatted,
       "contactType": "sales",
       "areaServed": "Los Angeles",
       "availableLanguage": "en"
     },
     {
       "@type": "ContactPoint",
-      "telephone": "(714) 716-7430",
+      "telephone": NAP.phone.primaryFormatted,
       "contactType": "sales",
       "areaServed": "Orange County",
       "availableLanguage": "en"
     },
     {
       "@type": "ContactPoint",
-      "telephone": "(714) 716-7430",
+      "telephone": NAP.phone.primaryFormatted,
       "contactType": "sales",
       "areaServed": "San Francisco",
       "availableLanguage": "en"
@@ -113,31 +115,31 @@ const organizationSchema = {
   ],
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "123 Security Boulevard, Suite 100",
-    "addressLocality": "Los Angeles",
-    "addressRegion": "CA",
-    "postalCode": "90001",
-    "addressCountry": "US"
+    "streetAddress": `${NAP.address.street}, ${NAP.address.suite}`,
+    "addressLocality": NAP.address.city,
+    "addressRegion": NAP.address.state,
+    "postalCode": NAP.address.zip,
+    "addressCountry": NAP.address.country
   },
   "location": [
     {
       "@type": "Place",
-      "name": "ShieldWise Security Los Angeles Headquarters",
+      "name": `${NAP.companyName} ${NAP.address.city} Headquarters`,
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "123 Security Boulevard, Suite 100",
-        "addressLocality": "Los Angeles",
-        "addressRegion": "CA",
-        "postalCode": "90001",
-        "addressCountry": "US"
+        "streetAddress": `${NAP.address.street}, ${NAP.address.suite}`,
+        "addressLocality": NAP.address.city,
+        "addressRegion": NAP.address.state,
+        "postalCode": NAP.address.zip,
+        "addressCountry": NAP.address.country
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "34.0522",
-        "longitude": "-118.2437"
+        "latitude": NAP.address.latitude,
+        "longitude": NAP.address.longitude
       },
-      "hasMap": "https://maps.google.com/?cid=1234567890",
-      "telephone": "(714) 716-7430"
+      "hasMap": NAP.address.mapsUrl,
+      "telephone": NAP.phone.primaryFormatted
     },
     {
       "@type": "Place",
