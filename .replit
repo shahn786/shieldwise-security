@@ -22,8 +22,9 @@ pattern = "**/{*.js,*.jsx,*.ts,*.tsx}"
   start = ["typescript-language-server", "--stdio"]
 
 [deployment]
-run = ["npm", "start"]
-deploymentTarget = "cloudrun"
+run = ["node", "index.js"]
+deploymentTarget = "autoscale"
+build = ["npm", "install", "--production"]
 
 [workflows]
 runButton = "Project"

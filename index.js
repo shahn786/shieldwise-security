@@ -102,18 +102,54 @@ app.use(
   }),
 );
 
+// Security and Performance Headers
+app.use((req, res, next) => {
+  // Security Headers
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+  res.setHeader('X-XSS-Protection', '1; mode=block');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.setHeader('Permissions-Policy', 'geolocation=(), microphone=(), camera=()');
+  
+  // Content Security Policy
+  res.setHeader('Content-Security-Policy', 
+    "default-src 'self'; " +
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://code.jquery.com https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://www.google.com https://www.gstatic.com https://www.googletagmanager.com; " +
+    "style-src 'self' 'unsafe-inline' https://stackpath.bootstrapcdn.com https://cdnjs.cloudflare.com https://fonts.googleapis.com; " +
+    "img-src 'self' data: https: http:; " +
+    "font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; " +
+    "connect-src 'self' https://www.google-analytics.com; " +
+    "frame-src 'self' https://www.google.com;"
+  );
+  
+  // Performance Headers - Enable Compression
+  res.setHeader('Vary', 'Accept-Encoding');
+  
+  // Cache Control for Static Assets
+  if (req.url.match(/\.(css|js|jpg|jpeg|png|gif|webp|woff|woff2|ttf|svg|ico)$/)) {
+    res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+  } else if (req.url.match(/\.(html|ejs)$/)) {
+    res.setHeader('Cache-Control', 'no-cache, must-revalidate');
+  }
+  
+  next();
+});
+
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// Serve static files from the Public directory
-app.use(express.static(path.join(__dirname, "Public")));
-app.use('/schemas', express.static('Public/schemas'));
-app.set("view engine", "ejs");
-app.set("views", "./views");
-app.set("views", path.join(__dirname, "views"));
 
-// Static files
-app.use(express.static(path.join(__dirname, "public")));
+// Serve static files from the Public directory
+app.use(express.static(path.join(__dirname, "Public"), {
+  maxAge: '1y',
+  etag: true,
+  lastModified: true
+}));
+app.use('/schemas', express.static('Public/schemas'));
+
+// View engine setup
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
 // Passport Configuration
 passport.use(
