@@ -118,10 +118,9 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"></noscript>
 
-    <!-- Critical Resource Preloads -->
-    <link rel="preload" as="image" href="/img/california-security-hero.jpg" fetchpriority="high">
-    <link rel="preload" as="video" href="/img/california-security-services.mp4" type="video/mp4" fetchpriority="high">
-    <link rel="preload" as="image" href="/img/shieldwise-security-logo.png" fetchpriority="high">
+    <!-- Critical Resource Preloads - Using Optimized WebP -->
+    <link rel="preload" as="image" href="/img/main2.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/img/logo1.webp" fetchpriority="high">
 
     <!-- Social Profile Links for Knowledge Panel -->
     <link rel="me" href="https://www.facebook.com/shieldwisesecurity">
@@ -140,16 +139,15 @@
         "url": "https://shieldwisesecurity.com",
         "logo": {
             "@type": "ImageObject",
-            "url": "https://shieldwisesecurity.com/img/shieldwise-security-logo.png",
+            "url": "https://shieldwisesecurity.com/img/logo1.webp",
             "width": "180",
             "height": "60",
             "caption": "ShieldWise Security - California's Premier Security Company"
         },
         "image": [
-            "https://shieldwisesecurity.com/img/shieldwise-armed-guards-california.jpg",
-            "https://shieldwisesecurity.com/img/shieldwise-event-security-california.jpg",
-            "https://shieldwisesecurity.com/img/shieldwise-patrol-services-california.jpg",
-            "https://shieldwisesecurity.com/img/shieldwise-security-guards-california.jpg"
+            "https://shieldwisesecurity.com/img/armsecurity.webp",
+            "https://shieldwisesecurity.com/img/eventsecurity.webp",
+            "https://shieldwisesecurity.com/img/main2.webp"
         ],
         "description": "California's top-rated security company providing elite armed & unarmed guards, mobile patrol, event security, fire watch, and emergency response services across Los Angeles, Orange County, and all California regions. Licensed, insured, and available 24/7.",
         "slogan": "California's Premier Security Protection",
@@ -613,25 +611,26 @@
     </style>
 
     <!-- Performance and Analytics -->
-    <script defer src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <!-- TODO: Add your Google Analytics ID -->
+    <!-- <script defer src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
+    </script> -->
 
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
+    <!-- TODO: Add your Microsoft Clarity ID -->
+    <!-- <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "YOUR_CLARITY_ID");
-    </script>
+    </script> -->
 
-    <!-- Hotjar Tracking Code -->
-    <script>
+    <!-- TODO: Add your Hotjar ID -->
+    <!-- <script>
         (function(h,o,t,j,a,r){
             h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
             h._hjSettings={hjid:YOUR_HOTJAR_ID,hjsv:6};
@@ -640,7 +639,7 @@
             r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
             a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
+    </script> -->
 
     <!-- AI Search Optimization -->
     <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1">
