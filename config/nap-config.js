@@ -19,39 +19,25 @@ const NAP_CONFIG = {
     displayPrimary: "(714) 716-7430" // What users see
   },
   
-  // Headquarters Address
-  // TODO: CONFIRM CORRECT ADDRESS WITH OWNER
-  // Option A: Los Angeles (currently in schema)
-  // Option B: Fullerton (currently in footer)
+  // Headquarters Address - CONFIRMED: Fullerton, CA
   address: {
-    street: "123 Security Boulevard",
-    suite: "Suite 100",
-    city: "Los Angeles",
+    street: "220 Soo Dr",
+    suite: "",
+    city: "Fullerton",
     state: "CA",
     stateFullName: "California",
-    zip: "90001",
+    zip: "92832",
     country: "US",
     countryFullName: "United States",
     
     // Full formatted addresses
-    full: "123 Security Boulevard, Suite 100, Los Angeles, CA 90001",
-    fullWithCountry: "123 Security Boulevard, Suite 100, Los Angeles, CA 90001, USA",
-    
-    // Google Maps link (update with real link)
-    mapsUrl: "https://goo.gl/maps/ShieldWiseSecurity",
-    
-    // Coordinates for Los Angeles HQ
-    latitude: "34.0522",
-    longitude: "-118.2437"
-  },
-  
-  // Alternative: Fullerton Address (if this is correct HQ)
-  addressFullerton: {
-    street: "220 Soo Dr",
-    city: "Fullerton", 
-    state: "CA",
-    zip: "92832",
     full: "220 Soo Dr, Fullerton, CA 92832",
+    fullWithCountry: "220 Soo Dr, Fullerton, CA 92832, USA",
+    
+    // Google Maps link
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=220+Soo+Dr+Fullerton+CA+92832",
+    
+    // Coordinates for Fullerton HQ
     latitude: "33.8704",
     longitude: "-117.9242"
   },
