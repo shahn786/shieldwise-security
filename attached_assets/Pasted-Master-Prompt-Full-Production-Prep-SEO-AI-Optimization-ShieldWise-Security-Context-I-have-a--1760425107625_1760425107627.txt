@@ -1,0 +1,268 @@
+Master Prompt — Full Production Prep & SEO/AI Optimization (ShieldWise Security)
+
+Context:
+I have a 100+ page website for ShieldWise Security at shieldwisesecurity.com. The codebase is here: https://replit.com/@FnuShahnawaz/ShieldWise-Security.
+I want you to re-check and improve the entire site (all pages, all files, all code). Make it production ready and one of the best security company websites on the internet.
+Do not change the look/branding unless a change is absolutely required for performance, accessibility, or SEO.
+
+Inputs / Facts:
+
+Domain: shieldwisesecurity.com
+
+Codebase: Replit project (source of truth)
+
+Tech stack: Primarily HTML/CSS/JS (may include Node/EJS or other).
+
+Hosting target: [confirm best option and provide config files for that host].
+
+Service area: All cities in California (many city/location pages)
+
+NAP (Canonical):
+
+Name: ShieldWise Security
+
+Phone: +1-714-716-7430
+
+Address: [Provide exact street address for schema and footer]
+
+Priority sections: Homepage, Services, City/Location pages, Contact / Get a Quote
+
+Search/Analytics: GA4 + Google Search Console + Bing Webmaster Tools (IDs to be set or placeholders added)
+
+🎯 Goals (Definition of Done)
+
+Production-level quality: clean, organized, minified, cacheable, deployable with confidence.
+
+SEO + AI indexing excellence: best-practice metadata, schema, internal linking, sitemaps, robots, canonicalization, and AI-retrieval friendly content patterns.
+
+Performance: Mobile Core Web Vitals targets — LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1.
+
+Accessibility: WCAG 2.1 AA essentials without altering brand look unnecessarily.
+
+Security: HTTPS, headers, no secrets, hardened forms.
+
+Reliability: solid error handling, 404/500 pages, robust redirects.
+
+Local SEO: perfect NAP consistency, per-city uniqueness, correct schema.
+
+🚫 Hard Constraints
+
+Preserve current visual style/layout. Only change if strictly necessary for perf/SEO/a11y.
+
+Do not break URLs. If a change is unavoidable, add 301 redirects.
+
+Remove only truly unused assets (images/CSS/JS/fonts).
+
+No lorem ipsum. Keep a professional security-company voice.
+
+📦 Deliverables
+
+Cleaned production build (zipped):
+
+Purged/treeshaken & minified CSS/JS; hashed filenames; HTTP caching; Brotli/Gzip.
+
+Images optimized: responsive sizes, srcset, WebP/AVIF variants, lazy-loading, proper width/height.
+
+Fonts reduced to essential families/weights; WOFF2; font-display: swap; preconnect/preload where justified.
+
+SEO/AI optimization pack for all indexable pages:
+
+Unique, CTR-smart titles and meta descriptions.
+
+Open Graph + Twitter cards; favicons + web manifest.
+
+Structured data (JSON-LD):
+
+Organization, WebSite (+SearchAction), BreadcrumbList
+
+LocalBusiness / SecurityService (global + per city & per service)
+
+Service (for each service page)
+
+FAQPage where relevant
+
+Review/AggregateRating only if real & verifiable
+
+JobPosting if hiring
+
+XML sitemaps split by type (pages, cities, images) + robots.txt tuned for crawl budget.
+
+Canonical tags; hreflang if needed later.
+
+A smart internal-linking map (services ↔ industries ↔ cities ↔ blog/resources).
+
+Reports & Handover (in /reports):
+
+audit-before.md & audit-after.md with Lighthouse mobile scores.
+
+core-web-vitals.md (targets vs. results).
+
+seo-issues.csv (URL, Issue, Priority, Fix).
+
+redirects.csv (From → To → Reason).
+
+deployment-checklist.md (headers, redirects, cache rules, sitemap submission).
+
+Config for host (choose best option + include files):
+
+Vercel: vercel.json (headers, redirects, caching).
+
+Netlify: _headers / _redirects.
+
+Apache/cPanel: .htaccess.
+
+Nginx/VPS: server block snippets.
+
+Replit: web server config + caching headers.
+
+CI/CD (optional but preferred):
+
+GitHub Actions to build, run checks (ESLint, stylelint, tests, axe), and deploy.
+
+🔍 Exact Tasks
+1) Full Crawl & Inventory
+
+Crawl the entire site (dev tree + rendered pages). Generate a URL inventory with status, title, h1, word count, indexability, canonical, inlinks/outlinks, images count, schema presence, and Core Web Vitals estimates.
+
+Identify duplicates, near-duplicates, thin pages, orphan pages, 404s, and redirected chains.
+
+2) Codebase Cleanup
+
+Remove unused images, sprites, SVGs, icon sets, CSS, JS, fonts, and commented-out code.
+
+PurgeCSS (or equivalent) to remove unused CSS safely.
+
+Split/minify bundles; defer/async non-critical JS; remove unused libraries.
+
+Normalize path casing; fix broken relative paths.
+
+Convert heavy images → WebP/AVIF; keep JPG/PNG as fallback via <picture>.
+
+Implement responsive srcset, sizes, lazy-loading, decoding="async", and intrinsic dimensions for CLS.
+
+3) Information Architecture & Content Quality
+
+Normalize templates for: Services, City pages, About, Contact/Quote, FAQs, Industries served, Case studies/Patrol logs (if any).
+
+Enforce E-E-A-T: licensing, insurance, coverage areas, certifications, leadership, privacy/terms.
+
+Ensure unique local content per city (local risks/needs, response times, landmarks, tailored benefits).
+
+Tighten headings: single H1, logical H2/H3; meaningful alt text (no stuffing).
+
+4) Technical SEO & AI Indexing
+
+Canonicals on every page (no loops).
+
+Robots.txt: allow key sections; disallow admin/build/params; add Sitemap: pointers.
+
+Sitemaps: /sitemap.xml → split children (pages/cities/images).
+
+Schema coverage (see Deliverables). Validate with rich results.
+
+AI-retrieval friendly content blocks: clear Q&A, definitions (e.g., “What is Fire Watch?”), checklists/SOP summaries, comparison tables.
+
+Build a /resources or /knowledge-base hub if present; interlink from service/city pages.
+
+Ensure breadcrumbs (visible + JSON-LD).
+
+5) Performance Engineering
+
+Optimize critical path: inline critical CSS only if it materially improves LCP.
+
+Preconnect/preload key assets (fonts, hero image) where justified by measurements.
+
+Reduce third-party scripts; load non-critical ones after interaction.
+
+Strong cache-control for static assets; hashed filenames; HTML short-cache.
+
+6) Accessibility (WCAG 2.1 AA essentials)
+
+Landmarks (header/nav/main/footer), skip links.
+
+Labels & error text for forms; focus states; keyboard access.
+
+Contrast ≥ 4.5:1 for text. If any fail, fix with minimal visual impact.
+
+7) Forms & Conversion
+
+Ensure Contact/Quote forms post to the right endpoint; add spam protection (reCAPTCHA/hCaptcha).
+
+Add conversion tracking hooks for GA4.
+
+Validate client/server side with friendly messages.
+
+8) Security & Reliability
+
+Enforce HTTPS; add HSTS, X-Content-Type-Options, X-Frame-Options/frame-ancestors, Referrer-Policy, Permissions-Policy, and CSP (start with report-only if needed).
+
+Remove secrets, dev endpoints, stack traces.
+
+Custom 404 and 500 pages; use 410 for intentionally removed content.
+
+Add .well-known/security.txt.
+
+9) Local SEO Must-Haves
+
+Consistent NAP site-wide (footer, Contact, schema).
+
+LocalBusiness per location/city page with areaServed, geo, hasMap, openingHours.
+
+Link to Google Business Profile; embed map or driving directions.
+
+If real reviews exist, surface a subset and consider Review/AggregateRating schema (only if verifiable).
+
+10) Legal & Compliance
+
+Privacy Policy, Terms, Cookie/Tracking disclosure; consent banner if tracking across regions.
+
+Basic ADA compliance covered under Accessibility.
+
+11) Monitoring & QA
+
+Add Lighthouse CI (mobile) to CI/CD; save reports.
+
+Add Playwright smoke tests for top flows (home → service → city → quote form).
+
+Add axe-core a11y checks to CI.
+
+Optional: hook Sentry for front-end error monitoring and uptime pings.
+
+✅ Output & Handover Requirements
+
+Provide a zipped production build.
+
+Provide a PR / commit with clear messages grouped by area (perf/SEO/a11y/cleanup).
+
+Include /reports and all config files for chosen hosting.
+
+Confirm GA4/GSC/Bing verification and submit sitemaps (document steps if I need to click verify).
+
+Provide a 1-page runbook: “How to deploy,” “How to add a new city/service page correctly,” and “How to keep Core Web Vitals green.”
+
+🔁 Work Plan
+
+Phase 1 — Audit & Plan: Crawl, measure, and produce a P0/P1/P2 roadmap with examples.
+Phase 2 — Implement: Apply fixes, generate build & reports, open PR, and hand off.
+
+❓Clarifications (answer briefly; use defaults if not provided)
+
+Hosting to target (choose one): Vercel / Netlify / cPanel / VPS / Replit / Other.
+
+Canonical street address to use everywhere (footer + schema).
+
+Google Business Profile URL.
+
+GA4 / GSC / Bing IDs or add placeholders.
+
+Form endpoints + whether to add reCAPTCHA/hCaptcha.
+
+Approve converting heavy images to WebP/AVIF and adding srcset + lazy-load.
+
+Provide the authoritative California cities list you serve (CSV or list) for sitemap & schema.
+
+Any legacy URLs that must remain (so we add 301 redirects if slugs change).
+
+🔚 Final Instruction
+
+Proceed now. Re-check every page and file, optimize thoroughly per the above, preserve the site’s look, and deliver a production-ready, SEO/AI-optimized build with reports and configs.
