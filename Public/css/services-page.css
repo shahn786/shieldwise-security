@@ -1,0 +1,460 @@
+
+/* Services Page - Professional Modern Design */
+
+/* Hero Section */
+.services-hero {
+    background: linear-gradient(135deg, #1a3c6e 0%, #0d2b54 100%);
+    padding: 120px 0 80px;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.services-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.services-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.services-hero .lead {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    opacity: 0.95;
+}
+
+/* Video Container */
+.services-video-wrapper {
+    width: 100%;
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.services-video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    background: #000;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.services-video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Trust Section */
+.services-trust-section {
+    background: #ffffff;
+    padding: 80px 0;
+}
+
+.trust-banner {
+    background: linear-gradient(135deg, #1a3c6e 0%, #0d2b54 100%);
+    border-radius: 20px;
+    padding: 60px;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(26, 60, 110, 0.2);
+}
+
+.trust-banner::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.trust-headline {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.trust-message {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    opacity: 0.95;
+}
+
+.trust-message strong {
+    color: #ffd700;
+}
+
+.trust-badges {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.badge-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+}
+
+.badge-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: #ffffff;
+}
+
+.badge-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Services Overview */
+.services-overview-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.services-section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #1a3c6e;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.services-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: #1a3c6e;
+}
+
+.services-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.services-image-col {
+    position: relative;
+}
+
+.services-featured-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.image-overlay-badge {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, rgba(26, 60, 110, 0.95), rgba(13, 43, 84, 0.95));
+    padding: 20px;
+    border-radius: 12px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.services-text-content h3 {
+    font-size: 1.8rem;
+    color: #1a3c6e;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    border-left: 4px solid #1a3c6e;
+}
+
+.services-text-content p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.services-text-content strong {
+    color: #1a3c6e;
+    font-weight: 600;
+}
+
+/* Service Items Grid */
+.service-items-section {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+.service-item {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 50px;
+    margin-bottom: 60px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+}
+
+.service-title {
+    font-size: 2.2rem;
+    color: #1a3c6e;
+    font-weight: 700;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.service-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: #1a3c6e;
+}
+
+.service-description {
+    font-size: 1.15rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.service-description strong {
+    color: #1a3c6e;
+    font-weight: 600;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+}
+
+.service-features li {
+    padding: 12px 0 12px 35px;
+    position: relative;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.service-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 24px;
+    height: 24px;
+    background: #1a3c6e;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.service-image-container {
+    position: relative;
+    margin: 30px 0;
+}
+
+.service-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.service-link {
+    display: inline-block;
+    background: #1a3c6e;
+    color: #ffffff;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.service-link:hover {
+    background: #0d2b54;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(26, 60, 110, 0.3);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.related-services-note {
+    background: #f8f9fa;
+    border-left: 4px solid #1a3c6e;
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 8px;
+}
+
+.related-services-note p {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.related-services-note a {
+    color: #1a3c6e;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.related-services-note a:hover {
+    text-decoration: underline;
+}
+
+/* CTA Section */
+.services-cta-section {
+    background: linear-gradient(135deg, #1a3c6e 0%, #0d2b54 100%);
+    padding: 80px 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+.services-cta-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #ffd700;
+    color: #1a3c6e;
+    padding: 18px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255,215,0,0.4);
+    color: #1a3c6e;
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .services-hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .services-content-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-item {
+        padding: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-hero {
+        padding: 80px 0 60px;
+    }
+    
+    .services-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .services-hero .lead {
+        font-size: 1.1rem;
+    }
+    
+    .trust-banner {
+        padding: 40px 30px;
+    }
+    
+    .trust-headline {
+        font-size: 2rem;
+    }
+    
+    .trust-badges {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .service-title {
+        font-size: 1.8rem;
+    }
+    
+    .service-item {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .services-section-title {
+        font-size: 2rem;
+    }
+    
+    .services-cta-section h2 {
+        font-size: 1.8rem;
+    }
+}
