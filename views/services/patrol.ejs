@@ -3,7 +3,7 @@
 <head>
   <!-- CRITICAL CSS INLINE -->
   <style>
-
+    
     body{font-family:system-ui,-apple-system,sans-serif;margin:0;padding:0}
     .hero{background:#1a3c6e;color:white;padding:60px 20px;text-align:center}
     .hero h1{font-size:2.5rem;margin:0 0 20px;font-weight:700}
@@ -42,7 +42,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Vehicle Patrol Security California | ShieldWise Security</title>
   <meta name="description" content="Professional vehicle patrol security services across California. 24/7 mobile patrols with GPS tracking and rapid response. Serving LA, Orange County, San Diego. Get your free quote today!">
-
+  
 
   <!-- ENHANCED SEO META -->
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1, max-translation-length:-1">
@@ -55,7 +55,7 @@
   <meta name="rating" content="general">
   <meta name="distribution" content="global">
 
-
+  
 
   <!-- ENHANCED GEO & LOCAL META -->
   <meta name="geo.region" content="US-CA">
@@ -137,7 +137,7 @@
 
   <!-- PRELOAD CRITICAL RESOURCES -->
   <script>
-
+    
     const criticalResources = [
       '/js/main.js',
       '/img/hero-background.webp'
@@ -838,30 +838,62 @@
     ]
   }
   </script>
-
-  <!-- Back to Top Button CSS -->
-  <style>
-    #back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: none;
-      background-color: #007bff;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 5px;
-      text-decoration: none;
-      z-index: 1000;
-      transition: opacity 0.3s ease-in-out;
-    }
-    #back-to-top:hover {
-      opacity: 0.8;
-    }
-  </style>
 </head>
-<body id="top">
-    <!-- Include the header -->
-    <%- include('../partials/Header') %>
+<body>
+    <!-- Your website content goes here -->
+
+    <!-- Bootstrap and jQuery Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="/JS/header-fix.js"></script>
+
+    <!-- Additional tracking scripts -->
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+    <script>
+   
+    document.addEventListener('DOMContentLoaded', function() {
+    
+      const faqItems = document.querySelectorAll('.faq-item');
+
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+
+        question.addEventListener('click', () => {
+          
+          item.classList.toggle('active');
+
+          
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.classList.remove('active');
+            }
+          });
+        });
+      });
+    });
+    </script>
+</head>
+<body>
+  <!-- Include the header -->
+  <%- include('../partials/Header') %>
 
 <!-- Hero Banner -->
 <section class="hero">
@@ -1093,7 +1125,7 @@
       <p class="gallery-caption">24/7 Night Patrol Coverage</p>
     </div>
     <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-15859096952847-32d2985ac9c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Security officer checking electronic access control system at a secure facility" class="img-responsive" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1585909695284-32d2985ac9c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Security officer checking electronic access control system at a secure facility" class="img-responsive" loading="lazy">
       <p class="gallery-caption">Access Control Monitoring</p>
     </div>
   </div>
@@ -1222,32 +1254,5 @@
 
   <!-- Include Footer -->
   <%- include('../partials/Footer') %>
-
-  <!-- Back to Top Button Script -->
-  <script>
-    window.onscroll = function() {
-      scrollFunction();
-    };
-
-    function scrollFunction() {
-      var button = document.getElementById("back-to-top");
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        button.style.display = "block";
-      } else {
-        button.style.display = "none";
-      }
-    }
-
-    document.getElementById("back-to-top").addEventListener("click", function(event) {
-      event.preventDefault();
-      document.body.scrollTop = 0; // For Safari
-      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    });
-  </script>
-
-  <!-- Back to Top Button HTML -->
-  <a href="#top" id="back-to-top">
-    <i class="fas fa-arrow-up"></i> 
-  </a>
 </body>
 </html>
