@@ -11,9 +11,9 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// MongoDB Atlas Database Connection - Using a simpler connection string
+// MongoDB Atlas Database Connection - Using environment variable for security
 
-const uri = "mongodb+srv://shahnawazkarimi2014:No0708156402@cluster0.y5o4d.mongodb.net/?retryWrites=true&w=majority";
+const uri = process.env.MONGODB_URI || "mongodb+srv://shahnawazkarimi2014:No0708156402@cluster0.y5o4d.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.connect(uri, {
   serverSelectionTimeoutMS: 5000,
