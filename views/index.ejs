@@ -112,7 +112,6 @@
     <link rel="preload" href="/css/style.css" as="style">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/back-to.css">
-    <link rel="stylesheet" href="/css/hero-video.css">
 
     <!-- Font Preloading -->
     <link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2" as="font" type="font/woff2" crossorigin>
@@ -578,7 +577,7 @@
             line-height: 1.6; 
         }
         .hero-section { 
-            background: #000000;
+            background: linear-gradient(rgba(0,51,102,0.8), rgba(0,51,102,0.8)), url('/img/california-security-hero.jpg'); 
             background-size: cover; 
             background-position: center; 
             min-height: 100vh; 
@@ -664,25 +663,26 @@
         <!-- Hero Video Section (Fixed for Better Visibility) -->
         <!-- Hero Video Section -->
         <section class="hero-section" aria-label="ShieldWise Security services showcase">
-        <div class="video-container">
-        <video autoplay muted loop playsinline id="hero-video" poster="/img/california-security-hero.jpg">
-        <source src="/img/shieldwise-security.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-        </video>
-        <div class="hero-overlay">
-        <div class="container">
-        <div class="hero-content">
-        <h1 class="hero-title">Protecting What Matters Most</h1>
-        <p class="hero-subtitle">Professional Security Services Across California</p>
-        <div class="hero-buttons">
-        <a href="/get-quote" class="primary-button">Get a Free Quote</a>
-        <a href="/services" class="secondary-button">Explore Services</a>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
+          <div class="video-container">
+            <video autoplay muted loop playsinline id="hero-video" poster="/img/california-security-hero.jpg">
+              <source src="/img/video1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="hero-overlay">
+              <div class="container">
+                <div class="hero-content">
+                  <h1 class="hero-title">Protecting What Matters Most</h1>
+                  <p class="hero-subtitle">Professional Security Services Across California</p>
+                  <div class="hero-buttons">
+                    <a href="/get-quote" class="primary-button">Get a Free Quote</a>
+                    <a href="/services" class="secondary-button">Explore Services</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
+
 
 
 
