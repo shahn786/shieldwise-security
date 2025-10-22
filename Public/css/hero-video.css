@@ -3,6 +3,7 @@
     position: relative;
     width: 100%;
     overflow: hidden;
+    margin-bottom: 0;
 }
 
 .video-container {
@@ -11,6 +12,7 @@
     height: 60vh;
     min-height: 450px;
     background: #F5F5F0;
+    overflow: hidden;
 }
 
 #hero-video {
@@ -28,6 +30,9 @@
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     padding: 60px 20px;
     text-align: center;
+    margin-top: 0;
+    position: relative;
+    z-index: 10;
 }
 
 .hero-content-below .container {
