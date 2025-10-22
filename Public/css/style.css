@@ -42,18 +42,19 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: transparent;
+  background: none;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2;
+  pointer-events: none;
 }
 
 /* Content Styling */
 .hero-content {
   max-width: 800px;
   color: white;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
   padding: 40px;
   border-radius: 10px;
   position: absolute;
@@ -63,6 +64,7 @@ html, body {
   width: 90%;
   text-align: center;
   z-index: 3;
+  pointer-events: auto;
 }
 
 .hero-title {
