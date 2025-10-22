@@ -19,8 +19,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 127%;
-    height: 127%;
+    width: 147%;
+    height: 147%;
     transform: translate(-50%, -50%);
     object-fit: contain;
     z-index: 1;
@@ -130,8 +130,8 @@
     }
 
     #hero-video {
-        width: 133.5%;
-        height: 133.5%;
+        width: 153.5%;
+        height: 153.5%;
     }
 
     .hero-content-below {
