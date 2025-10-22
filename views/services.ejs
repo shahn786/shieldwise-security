@@ -18,6 +18,9 @@
     <!-- Services Page CSS -->
     <link rel="stylesheet" href="/css/services-page.css">
     
+    <!-- Hero Video CSS -->
+    <link rel="stylesheet" href="/css/hero-video.css">
+    
     <!-- Back to Top CSS -->
     <link rel="stylesheet" href="/css/back-to.css">
     
@@ -37,11 +40,25 @@
 <body id="top">
     <%- include('partials/Header') %>
 
-    <!-- Hero Section -->
-    <section class="services-hero">
-        <div class="container text-center">
-            <h1>California's Premier Security Services</h1>
-            <p class="lead">Professional protection solutions for businesses, events, and communities across 186+ California cities</p>
+    <!-- Hero Video Section -->
+    <section class="hero-section" aria-label="ShieldWise Security services showcase">
+        <div class="video-container">
+            <video autoplay muted loop playsinline id="hero-video" poster="/img/california-security-hero.jpg">
+                <source src="/img/shieldwise-security.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-overlay">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Protecting What Matters Most</h1>
+                        <p class="hero-subtitle">Professional Security Services Across California</p>
+                        <div class="hero-buttons">
+                            <a href="/get-quote" class="primary-button">Get a Free Quote</a>
+                            <a href="/services" class="secondary-button">Explore Services</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
