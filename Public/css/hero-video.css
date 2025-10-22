@@ -2,8 +2,8 @@
 .hero-section {
     position: relative;
     width: 100%;
-    height: 100vh;
-    min-height: 600px;
+    height: 70vh;
+    min-height: 500px;
     overflow: hidden;
 }
 
@@ -11,18 +11,17 @@
     position: relative;
     width: 100%;
     height: 100%;
+    background: #000;
 }
 
 #hero-video {
     position: absolute;
     top: 50%;
     left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     transform: translate(-50%, -50%);
-    object-fit: cover;
+    object-fit: contain;
     z-index: 1;
 }
 
@@ -136,8 +135,8 @@
 /* Tablet Responsive */
 @media (max-width: 992px) {
     .hero-section {
-        height: 80vh;
-        min-height: 500px;
+        height: 60vh;
+        min-height: 450px;
     }
 
     .hero-title {
@@ -158,8 +157,8 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .hero-section {
-        height: 70vh;
-        min-height: 450px;
+        height: 50vh;
+        min-height: 400px;
     }
 
     .hero-title {
@@ -190,8 +189,8 @@
 /* Small Mobile */
 @media (max-width: 480px) {
     .hero-section {
-        height: 60vh;
-        min-height: 400px;
+        height: 45vh;
+        min-height: 350px;
     }
 
     .hero-title {
@@ -215,10 +214,9 @@
     }
 }
 
-/* Ensure video plays smoothly on mobile */
+/* Ensure video displays properly on mobile */
 @media (max-width: 768px) {
     #hero-video {
-        /* On mobile, ensure video covers properly */
         object-position: center center;
     }
 }
