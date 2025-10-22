@@ -9,11 +9,12 @@
 
 .video-container {
     position: relative;
-    width: 100%;
+    width: 90%;
     height: 60vh;
     min-height: 450px;
     background: #ffffff;
     overflow: hidden;
+    margin: 0 auto;
 }
 
 #hero-video {
