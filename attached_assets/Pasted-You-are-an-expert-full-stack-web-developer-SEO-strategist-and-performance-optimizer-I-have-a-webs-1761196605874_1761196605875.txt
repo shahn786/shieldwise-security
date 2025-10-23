@@ -1,0 +1,69 @@
+You are an expert full-stack web developer, SEO strategist, and performance optimizer.
+I have a website that I want to make 100% production-ready and rank highly across Google, Bing, and AI search.
+Review my entire project (HTML, CSS, JS, images, and videos) and make the following improvements:
+
+1. SEO Optimization
+
+Add perfect meta titles and descriptions for every page (based on content).
+
+Improve heading structure (H1–H3) for keyword relevance and readability.
+
+Implement canonical tags, Open Graph, and Twitter meta tags.
+
+Add schema markup (LocalBusiness, Organization, Article, FAQ, etc.).
+
+Optimize for both traditional and AI search (Google SGE, Perplexity, Bing Copilot).
+
+Suggest target keywords, alt tags, and internal linking improvements.
+
+2. Performance & Core Web Vitals
+
+Optimize images (convert to WebP, lazy-load, responsive sizing).
+
+Compress and minify CSS, JS, and HTML files.
+
+Add preload/preconnect for fonts, icons, and scripts.
+
+Audit and remove unused CSS/JS.
+
+Improve page speed and Lighthouse score to 90+ on both mobile and desktop.
+
+3. Visual & Media Enhancement
+
+Suggest or generate high-quality, royalty-free images and videos that fit my website’s theme.
+
+Adjust layout and spacing for a clean, modern, professional look.
+
+Ensure consistent color palette and typography.
+
+Improve contrast and accessibility (WCAG 2.1 compliance).
+
+4. Technical & Security Setup
+
+Add a sitemap.xml and robots.txt.
+
+Ensure all internal links use HTTPS and correct relative paths.
+
+Add proper favicon and social sharing preview.
+
+Recommend or implement security headers (CSP, X-Frame-Options, etc.).
+
+Prepare for smooth deployment to my hosting (Vercel, Netlify, or VPS).
+
+5. AI-Assisted Enhancements
+
+Suggest content rewrites that sound natural, trustworthy, and SEO-rich.
+
+Add relevant structured data for AI discovery.
+
+Recommend keyword clustering and topic coverage for authority building.
+
+After reviewing everything, provide:
+
+A list of specific fixes (with file names and reasons).
+
+The optimized code snippets or replacements.
+
+A final report on SEO, performance, accessibility, and best practices.
+
+Goal: Make my website look professional, rank higher, load faster, and meet 2025 AI-SEO standards.
