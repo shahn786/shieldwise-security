@@ -1,5 +1,6 @@
 // Service Worker for ShieldWise Security - Enhanced Performance & Offline Support
-const CACHE_NAME = 'shieldwise-security-v2025.1';
+const CACHE_VERSION = 'v2-compressed';
+const CACHE_NAME = `shieldwise-${CACHE_VERSION}`;
 const OFFLINE_URL = '/offline.html';
 
 // Resources to cache for optimal performance
@@ -17,6 +18,9 @@ const CACHE_URLS = [
   '/fonts/inter-var.woff2',
   '/img/logo.png',
   '/img/hero-security-service.webp',
+  // Added compressed video assets to cache
+  '/videos/shieldwise-promo-compressed.mp4',
+  '/videos/shieldwise-promo-compressed.webm',
   '/manifest.json',
   OFFLINE_URL
 ];
@@ -85,6 +89,10 @@ self.addEventListener('fetch', event => {
               if (event.request.url.includes('/img/') && fetchResponse.status === 404) {
                 return caches.match('/img/favicon.ico') || fetchResponse;
               }
+              // For video files that fail, return the offline page
+              if (event.request.url.includes('/videos/') && fetchResponse.status !== 200) {
+                return caches.match(OFFLINE_URL);
+              }
               return fetchResponse;
             }
 
@@ -107,6 +115,10 @@ self.addEventListener('fetch', event => {
             // For missing images, return favicon as fallback
             if (event.request.url.includes('/img/')) {
               return caches.match('/img/favicon.ico');
+            }
+            // For video files that fail to fetch, return the offline page
+            if (event.request.url.includes('/videos/')) {
+              return caches.match(OFFLINE_URL);
             }
           });
       })

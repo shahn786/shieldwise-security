@@ -1,4 +1,3 @@
-
 <%
 // Meta tags base helper functions
 function truncateTitle(title) {
@@ -97,13 +96,13 @@ const optimizedKeywords = generateDynamicKeywords(serviceKeywords, serviceType);
 <meta name="duckduckbot" content="index, follow">
 
 <!-- Content Classification & Language -->
-<meta name="content-language" content="en-US">
-<meta name="language" content="English">
-<meta name="author" content="ShieldWise Security Services">
-<meta name="publisher" content="ShieldWise Security Services">
-<meta name="copyright" content="© 2025 ShieldWise Security Services. All rights reserved.">
-<meta name="rating" content="general">
-<meta name="distribution" content="global">
+<meta content="en-US" name="content-language">
+<meta content="English" name="language">
+<meta content="ShieldWise Security Services" name="author">
+<meta content="ShieldWise Security Services" name="publisher">
+<meta content="© 2025 ShieldWise Security Services. All rights reserved." name="copyright">
+<meta content="general" name="rating">
+<meta content="global" name="distribution">
 
 <!-- Geographic & Local SEO Meta Tags -->
 <meta name="geo.region" content="US-CA">
@@ -122,8 +121,14 @@ const optimizedKeywords = generateDynamicKeywords(serviceKeywords, serviceType);
 <!-- Format Detection & Contact Info -->
 <meta name="format-detection" content="telephone=yes, email=yes, address=yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="mobile-web-app-capable" content="yes">
+
+<!-- AI Search Optimization (ChatGPT, Claude, Perplexity, Bing Copilot) -->
+<meta name="ai-content-declaration" content="human-created">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="bingbot" content="index, follow">
+<meta name="googlebot" content="index, follow">
+<meta name="slurp" content="index, follow">
 
 <!-- Enhanced Security Headers for 2025 -->
 <!-- CSP moved to HTTP headers in index.js for better control and analytics support -->

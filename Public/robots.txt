@@ -29,14 +29,6 @@ User-agent: ChatGPT-User
 Allow: /
 Crawl-delay: 1
 
-User-agent: CCBot
-Allow: /
-Crawl-delay: 1
-
-User-agent: anthropic-ai
-Allow: /
-Crawl-delay: 1
-
 User-agent: Claude-Web
 Allow: /
 Crawl-delay: 1
