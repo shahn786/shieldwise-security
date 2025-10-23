@@ -1,0 +1,59 @@
+ROLE
+You are a senior full-stack engineer and SEO/A11y specialist. Your job is to modify the ShieldWise Security website to be PRODUCTION-READY. The project is HTML/CSS/JS with a Node.js backend (no CMS). There are 100+ pages. Apply every change below across the codebase, then self-test and produce artifacts (reports, sitemaps, configs).
+
+CONSTRAINTS
+- Preserve brand/content; do NOT remove real copy or contact info.
+- Prefer small, safe, incremental changes per file with clear commit messages.
+- If a guideline conflicts with existing code, pick the more performant/secure/accessible option.
+- Assume project root = PROJECT_ROOT.
+- If a page is duplicated, consolidate with templates/partials.
+
+====================================================
+A) FRONT-END PERFORMANCE & RESPONSIVENESS (UI/UX)
+====================================================
+
+A1. Responsiveness & Cross-Browser Consistency
+- Ensure pixel-perfect layouts at common breakpoints: 360, 414, 768, 1024, 1280, 1440, 1920.
+- Fix duplicated header/Menu contact info (appears twice). Keep a single authoritative block (prefer top bar or footer; not both).
+- Validate on Chrome, Safari (incl. iOS), Firefox, Edge. If needed, add vendor prefixes for Flexbox/Grid (autoprefixer or fallback CSS).
+
+A2. Navigation & Mobile Menu
+- Implement a mobile hamburger menu with:
+  - Touch + keyboard support (Enter/Space to toggle).
+  - Focus trap when open; ESC closes; body scroll locked.
+  - ARIA: button [aria-expanded], menu [role="menu"], items [role="menuitem"].
+- Ensure all pages are reachable from the menu (Home, Services, Contact, etc.).
+- Remove any repeated contact details inside the nav. One source of truth.
+
+A3. Performance Optimization
+- In each HTML head:
+  - Inline **critical CSS** for above-the-fold content (home & top landing pages). Move remaining CSS to external files; preload if very small or defer render otherwise.
+  - Add `defer` or `async` to non-critical JS. No render-blocking scripts.
+  - Remove unused CSS/JS and legacy libraries not in use.
+- Images:
+  - Replace large JPG/PNG with **WebP** or **AVIF** equivalents at correct display size(s).
+  - Add `loading="lazy"` to all non-critical images; add explicit width/height.
+  - Provide `srcset/sizes` for responsive images.
+- HTTP optimizations:
+  - Ensure gzip/Brotli enabled (server config), long-lived cache headers for static assets, and immutable file naming (content hash) where feasible.
+- Perceived speed:
+  - Ensure visible loading states where actions take time (the submit “Loading” indicator must function and be consistently styled).
+  - Optional: lightweight skeletons for any content that populates after load.
+
+A4. Accessibility (A11y)
+- Alt text:
+  - Add descriptive `alt` to informative images; use `alt=""` on decorative images.
+  - Remove “Image” placeholder alts.
+- Keyboard:
+  - All interactive controls operable with keyboard (Tab/Shift+Tab/Enter/Space/Escape).
+  - Maintain visible focus styles (don’t remove outlines).
+  - “Skip to content” must jump to `<main id="main">` or appropriate landmark.
+- Semantics/ARIA:
+  - Use `<header>`, `<nav>`, `<main>`, `<footer>` landmarks.
+  - Forms: explicit `<label for>` or `aria-label` for every input; associate correctly.
+  - Fix heading hierarchy: exactly one H1 per page; remove duplicate H1 on Services page and any others.
+- Color contrast: adjust CSS to meet WCAG AA.
+- Run automated audits (Axe/WAVE/Lighthouse) and fix violations.
+
+Deliverables:
+- `reports/a11y-audit.md` with summary of fixes and remaining minor issues.
