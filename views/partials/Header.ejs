@@ -1,6 +1,6 @@
 <!-- Navbar Header -->
 <header class="site-header">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-2 navbar-main">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-2 navbar-main" role="navigation" aria-label="Main navigation">
     <div class="container">
       <a class="navbar-brand" href="/">
         <div class="company-name">
@@ -8,50 +8,68 @@
           <div class="company-tagline">Security</div>
         </div>
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <button class="navbar-toggler" 
+              type="button" 
+              data-toggle="collapse" 
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation menu">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <ul class="navbar-nav ml-auto" role="menubar">
+          <li class="nav-item" role="none"><a class="nav-link" href="/" role="menuitem">Home</a></li>
 
           <!-- Services Dropdown -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-toggle="dropdown">Services</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="/services#armed-security">Armed Security</a>
-              <a class="dropdown-item" href="/services#unarmed-security">Unarmed Security</a>
-              <a class="dropdown-item" href="/services#fire-watch">Fire Watch</a>
-              <a class="dropdown-item" href="/services#mobile-patrol">Mobile Patrol</a>
-              <a class="dropdown-item" href="/services#executive-protection">Executive Protection</a>
-              <a class="dropdown-item" href="/services#event-security">Event Security</a>
-              <a class="dropdown-item" href="/services#commercial-security">Commercial Security</a>
-              <a class="dropdown-item" href="/services#construction-security">Construction Security</a>
-              <a class="dropdown-item" href="/services#educational-campus">School & Campus Security</a>
+          <li class="nav-item dropdown" role="none">
+            <a class="nav-link dropdown-toggle" 
+               href="#" 
+               id="servicesDropdown" 
+               role="menuitem" 
+               aria-haspopup="true"
+               aria-expanded="false"
+               data-toggle="dropdown">Services</a>
+            <div class="dropdown-menu" role="menu" aria-labelledby="servicesDropdown">
+              <a class="dropdown-item" href="/services#armed-security" role="menuitem">Armed Security</a>
+              <a class="dropdown-item" href="/services#unarmed-security" role="menuitem">Unarmed Security</a>
+              <a class="dropdown-item" href="/services#fire-watch" role="menuitem">Fire Watch</a>
+              <a class="dropdown-item" href="/services#mobile-patrol" role="menuitem">Mobile Patrol</a>
+              <a class="dropdown-item" href="/services#executive-protection" role="menuitem">Executive Protection</a>
+              <a class="dropdown-item" href="/services#event-security" role="menuitem">Event Security</a>
+              <a class="dropdown-item" href="/services#commercial-security" role="menuitem">Commercial Security</a>
+              <a class="dropdown-item" href="/services#construction-security" role="menuitem">Construction Security</a>
+              <a class="dropdown-item" href="/services#educational-campus" role="menuitem">School & Campus Security</a>
             </div>
           </li>
 
           <!-- Service Areas Dropdown -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="areasDropdown" role="button" data-toggle="dropdown">Service Areas</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="/los-angeles">Los Angeles</a>
-              <a class="dropdown-item" href="/orange-county">Orange County</a>
-              <a class="dropdown-item" href="/riverside-county">Riverside County</a>
-              <a class="dropdown-item" href="/san-bernardino">San Bernardino</a>
-              <a class="dropdown-item" href="/san-francisco">San Francisco</a>
-              <a class="dropdown-item" href="/san-diego">San Diego</a>
-              <a class="dropdown-item" href="/ventura">Ventura</a>
-              <a class="dropdown-item" href="/sacramento">Sacramento</a>
-              <a class="dropdown-item" href="/santa-clara">Santa Clara</a>
-              <a class="dropdown-item" href="/alameda">Alameda</a>
-              <a class="dropdown-item" href="/fresno">Fresno</a>
+          <li class="nav-item dropdown" role="none">
+            <a class="nav-link dropdown-toggle" 
+               href="#" 
+               id="areasDropdown" 
+               role="menuitem"
+               aria-haspopup="true"
+               aria-expanded="false"
+               data-toggle="dropdown">Service Areas</a>
+            <div class="dropdown-menu" role="menu" aria-labelledby="areasDropdown">
+              <a class="dropdown-item" href="/los-angeles" role="menuitem">Los Angeles</a>
+              <a class="dropdown-item" href="/orange-county" role="menuitem">Orange County</a>
+              <a class="dropdown-item" href="/riverside-county" role="menuitem">Riverside County</a>
+              <a class="dropdown-item" href="/san-bernardino" role="menuitem">San Bernardino</a>
+              <a class="dropdown-item" href="/san-francisco" role="menuitem">San Francisco</a>
+              <a class="dropdown-item" href="/san-diego" role="menuitem">San Diego</a>
+              <a class="dropdown-item" href="/ventura" role="menuitem">Ventura</a>
+              <a class="dropdown-item" href="/sacramento" role="menuitem">Sacramento</a>
+              <a class="dropdown-item" href="/santa-clara" role="menuitem">Santa Clara</a>
+              <a class="dropdown-item" href="/alameda" role="menuitem">Alameda</a>
+              <a class="dropdown-item" href="/fresno" role="menuitem">Fresno</a>
 
             </div>
           </li>
 
-          <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="/login">Careers</a></li>
+          <li class="nav-item" role="none"><a class="nav-link" href="/contact" role="menuitem">Contact</a></li>
+          <li class="nav-item" role="none"><a class="nav-link" href="/login" role="menuitem">Careers</a></li>
         </ul>
         <a href="/get-quote" class="btn btn-danger ml-3">Get a Quote</a>
       </div>
@@ -59,10 +77,12 @@
   </nav>
 </header>
 
-<style>
-/* Enhanced Professional Header Styling */
+<!-- jQuery and Bootstrap JS for Dropdown Functionality (no defer - needed for inline scripts) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
-/* JS Script for Navbar scroll effect */
+<!-- Navbar scroll effect script -->
+<script>
 document.addEventListener('DOMContentLoaded', function() {
     var navbar = document.querySelector('.navbar-main');
 
@@ -80,11 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("✅ jQuery Loaded - Dropdowns Active");
     }
 });
-</style>
-
-<!-- jQuery and Bootstrap JS for Dropdown Functionality -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</script>
 
 <script>
   $(document).ready(function() {
@@ -137,39 +153,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 </script>
 
-<!-- SEO-Optimized Schema Markup -->
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "ShieldWise Security",
-    "url": "https://shieldwisesecurity.com",
-    "description": "ShieldWise Security offers professional security solutions, including mobile patrol, event security, and fire watch in California.",
-    "telephone": "+1-714-716-7430",
-    "email": "info@shieldwisesecurity.com",
-    "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "123 Main St",
-        "addressLocality": "Los Angeles",
-        "addressRegion": "CA",
-        "postalCode": "92832",
-        "addressCountry": "US"
-    },
-    "serviceArea": {
-        "@type": "Place",
-        "name": "California"
-    },
-    "sameAs": [
-        "https://www.facebook.com/shieldwisesecurity",
-        "https://twitter.com/shieldwisesecurity",
-        "https://www.instagram.com/shieldwisesecurity",
-        "https://www.linkedin.com/company/shieldwisesecurity"
-    ]
-}
-</script>
-
 <link rel="stylesheet" href="/css/header-fix.css">
 <script src="/JS/header-fix.js" defer></script>
+<script src="/JS/accessible-nav.js" defer></script>
 
 <!-- Skip Navigation for Accessibility -->
 <a href="#main-content" class="skip-nav visually-hidden-focusable">Skip to main content</a>

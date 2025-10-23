@@ -146,7 +146,7 @@
           <!-- Include Header -->
           <%- include('partials/Header') %>
 
-          <main>
+          <main id="main-content" role="main">
               <!-- Page Title and Intro Section -->
               <div class="page-intro">
                   <div class="container">
@@ -158,31 +158,33 @@
               <div class="contact-container">
                   <!-- Contact Form Section -->
                   <div class="contact-box">
-                      <h2 class="section-header">Get In Touch With Us</h2>
-                      <div id="form-alert" class="alert d-none"></div>
+                      <h2 id="contact-form-heading" class="section-header">Get In Touch With Us</h2>
+                      <div id="form-alert" class="alert d-none" role="alert" aria-live="polite"></div>
 
-                      <form id="contact-form" class="contact-form" method="POST" action="/submit_form">
+                      <form id="contact-form" class="contact-form" method="POST" action="/submit_form" aria-labelledby="contact-form-heading">
                           <div class="form-group">
                               <label for="name">Your Name</label>
-                              <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" required>
+                              <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" required aria-required="true">
                           </div>
                           <div class="form-group">
                               <label for="email">Email Address</label>
-                              <input type="email" class="form-control" id="email" name="email" placeholder="your@email.com" required>
+                              <input type="email" class="form-control" id="email" name="email" placeholder="your@email.com" required aria-required="true" aria-describedby="email-help">
+                              <small id="email-help" class="form-text text-muted" style="display:none;">We'll never share your email with anyone else.</small>
                           </div>
                           <div class="form-group">
                               <label for="contact_number">Contact Number</label>
-                              <input type="tel" class="form-control" id="contact_number" name="contact_number" placeholder="1234567890" maxlength="10" required>
+                              <input type="tel" class="form-control" id="contact_number" name="contact_number" placeholder="1234567890" maxlength="10" required aria-required="true" pattern="[0-9]{10}" aria-describedby="phone-help">
+                              <small id="phone-help" class="form-text text-muted" style="display:none;">Please enter a 10-digit phone number.</small>
                           </div>
                           <div class="form-group">
                               <label for="best_time">Best Time to Reach You</label>
-                              <input type="text" class="form-control" id="best_time" name="best_time" placeholder="e.g. Afternoons, Evenings" required>
+                              <input type="text" class="form-control" id="best_time" name="best_time" placeholder="e.g. Afternoons, Evenings" required aria-required="true">
                           </div>
                           <div class="form-group">
                               <label for="message">Your Message</label>
-                              <textarea class="form-control" id="message" name="message" rows="4" placeholder="Tell us about your security needs..." required></textarea>
+                              <textarea class="form-control" id="message" name="message" rows="4" placeholder="Tell us about your security needs..." required aria-required="true"></textarea>
                           </div>
-                          <button type="submit" class="btn">Submit Request</button>
+                          <button type="submit" class="btn" aria-label="Submit contact form">Submit Request</button>
                       </form>
                   </div>
 
