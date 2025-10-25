@@ -1,0 +1,114 @@
+Prompt: Clean Up Duplicate Service Files in views/services/
+Task Overview
+You have two files for each service in the views/services/ directory. Your task is to:
+
+Identify and remove the useless/unused file for each service
+Keep only the file that follows the Advanced SEO & AI/LLM Ranking Strategy outlined below
+Ensure the remaining files are fully optimized according to SEO requirements
+
+
+Criteria for Which File to KEEP
+The file you keep must have ALL of the following:
+✅ Technical SEO (C1)
+
+ No broken links or empty href="#"
+ Valid image references (no 404s)
+ Canonical tag: <link rel="canonical" href="https://www.shieldwisesecurity.com/services/<service-name>/" />
+ Clean URLs (no staging domains, no hash fragments like /#top)
+
+✅ On-Page SEO (C2)
+
+ Unique page title (55-60 chars) with target keywords
+
+Example: "Armed Security Guards in California | ShieldWise Security"
+
+
+ Meta description (150-160 chars) that's compelling and unique
+ Proper heading structure:
+
+ONE <h1> tag with primary keyword
+Logical <h2>/<h3> hierarchy
+Keywords used naturally (no stuffing)
+
+
+ Rich content:
+
+Multiple paragraphs describing the service
+Details about guard vetting/training processes
+NO placeholder text like "Hello World" or "Lorem ipsum"
+Real, substantive information (minimum 300-500 words)
+
+
+
+✅ Structured Data (C3)
+
+ JSON-LD markup for:
+
+Service schema with service details
+Links back to LocalBusiness schema (NAP: Fullerton address, phone, hours)
+
+
+ Social meta tags:
+
+Open Graph tags (og:title, og:description, og:image)
+Twitter Card tags
+
+
+ E-E-A-T signals:
+
+Mentions of licensing/certifications
+Professional language establishing expertise
+
+
+
+
+Criteria for Which File to DELETE
+Remove the file if it has ANY of:
+❌ Placeholder/dummy content
+❌ Missing or generic title/meta tags
+❌ No canonical tag
+❌ Broken links or 404 images
+❌ Empty sections or "Coming Soon" text
+❌ No structured data
+❌ Duplicate content from another page
+❌ Old/legacy code that's not being used
+❌ Missing H1 or improper heading hierarchy
+
+Action Steps
+For each service in views/services/:
+
+Compare both files side-by-side
+Run this checklist against each file
+Keep the file that scores highest on the criteria above
+Delete the inferior file immediately
+Verify the kept file includes all required elements:
+
+Canonical URL
+Unique title + meta description
+H1 + structured headings
+Rich, original content (no placeholders)
+JSON-LD structured data
+Social meta tags
+
+
+Document your cleanup in reports/seo-audit.md:
+
+markdown   ## Service Files Cleanup
+   - Armed Guards: Kept `armed-guards-v2.ejs`, removed `armed-guards-old.ejs` (missing structured data)
+   - Patrol Services: Kept `patrol-services.ejs`, removed `patrol-v1.ejs` (placeholder content)
+
+Final Validation
+After cleanup, each service page must:
+
+✅ Be indexable with proper canonical tag
+✅ Have unique, keyword-optimized title (55-60 chars)
+✅ Have compelling meta description (150-160 chars)
+✅ Use ONE H1 and logical H2/H3 structure
+✅ Contain rich, original content (300+ words)
+✅ Include JSON-LD structured data
+✅ Have Open Graph + Twitter Card meta tags
+✅ Be listed in sitemap.xml
+✅ Have no broken links or 404 errors
+
+
+Goal: One clean, SEO-optimized file per service that maximizes visibility in search engines and AI/LLM results.

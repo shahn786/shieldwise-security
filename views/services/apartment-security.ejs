@@ -4,16 +4,6 @@
     <%- include('../partials/meta-tags-service') %>
     <%- include('../partials/performance-optimization') %>
     <%- include('../partials/mobile-app-meta') %>
-    
-    <!-- Comprehensive SEO: Canonical, Open Graph, Twitter Cards, JSON-LD Schemas, Analytics -->
-    <%- include("../partials/seo-head", { 
-      canonicalPath: "/services/apartment-security",
-      pageTitle: serviceData.pageTitle || "Apartment Security Services California | ShieldWise",
-      pageDescription: serviceData.pageDescription || "Professional apartment security services with 24/7 guards, access control, and CCTV monitoring for residential communities in California.",
-      pageImage: "https://shieldwisesecurity.com/img/apartmentsecurity.webp",
-      includeFAQ: false
-    }) %>
-    
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link href="/css/apartment-security.css" rel="stylesheet">
@@ -49,9 +39,9 @@
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color:#1c1c1c; max-width:960px; margin:60px auto;
             box-shadow:0 10px 30px rgba(0,0,0,0.1); border:1px solid #e0e0e0;">
-            <h2 style="font-size:38px; margin-bottom:28px; color:#152f45;">
+            <h1 style="font-size:38px; margin-bottom:28px; color:#152f45;">
                 Premier Apartment Security Services for Complete Residential Protection
-            </h2>
+            </h1>
             <p class="speakable-services" style="font-size:20px; line-height:1.8; margin-bottom:0;">
                 <strong>ShieldWise Security</strong> understands that effective apartment security combines a warm, community-first approach with uncompromising protection. We employ state-of-the-art <strong style="color:#bf9e5b;">access control</strong> systems, high-definition cameras with <strong style="color:#bf9e5b;">24/7 video monitoring</strong>, reinforced <strong style="color:#bf9e5b;">perimeter defenses</strong>, and customized <strong style="color:#bf9e5b;">emergency response plans</strong> to ensure comprehensive protection for your residential community.
             </p>
@@ -328,7 +318,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="testimonial-card">
-                            <img loading="lazy" src="/img/james.png" alt="Sarah Johnson, Property Manager" class="client-image">
+                            <img src="/img/james.png" alt="Sarah Johnson, Property Manager" class="client-image">
                             <h4>Sarah Johnson</h4>
                             <p class="text-muted">Property Manager</p>
                             <p>"ShieldWise transformed our apartment complex's security. Resident satisfaction has increased significantly since their implementation."</p>
@@ -336,7 +326,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="testimonial-card">
-                            <img loading="lazy" src="/img/samanta.png" alt="Michael Chen, Building Manager" class="client-image">
+                            <img src="/img/samanta.png" alt="Michael Chen, Building Manager" class="client-image">
                             <h4>Michael Chen</h4>
                             <p class="text-muted">Building Manager</p>
                             <p>"Professional, courteous security staff who understand the residential environment. Our residents feel much safer."</p>
@@ -344,7 +334,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="testimonial-card">
-                            <img loading="lazy" src="/img/shahn1.png" alt="Emily Rodriguez, Resident Council President" class="client-image">
+                            <img src="/img/shahn1.png" alt="Emily Rodriguez, Resident Council President" class="client-image">
                             <h4>Emily Rodriguez</h4>
                             <p class="text-muted">Resident Council President</p>
                             <p>"The security team is friendly yet professional. They've created a secure environment while maintaining our community feel."</p>
@@ -400,7 +390,7 @@
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({
-                        behavior: 'smooth",
+                        behavior: 'smooth',
                         block: 'start'
                     });
                 }
@@ -463,8 +453,8 @@
         // Track consultation requests
         function trackConsultationRequest() {
             gtag('event', 'generate_lead', {
-                'event_category': 'Security Services",
-                'event_label': 'apartment",
+                'event_category': 'Security Services',
+                'event_label': 'apartment',
                 'value': 1
             });
             fbq('track', 'Lead');
