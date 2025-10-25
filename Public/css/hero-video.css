@@ -19,11 +19,11 @@ body, html {
 .video-container {
     position: relative;
     width: 100%;
-    height: 85vh;
-    min-height: 650px;
+    height: 95vh;
+    min-height: 800px;
     background: #ffffff !important;
     overflow: hidden;
-    margin-bottom: 80px;
+    margin-bottom: 120px;
 }
 
 #hero-video {
@@ -39,8 +39,8 @@ body, html {
 /* Hero Content Section - Below Video */
 .hero-content-section {
     width: 100%;
-    padding: 120px 40px;
-    margin-top: 60px;
+    padding: 140px 40px;
+    margin-top: 100px;
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     position: relative;
     overflow: hidden;
@@ -213,14 +213,14 @@ body, html {
 /* Tablet Responsive */
 @media (max-width: 992px) {
     .video-container {
-        height: 70vh;
-        min-height: 500px;
-        margin-bottom: 60px;
+        height: 80vh;
+        min-height: 600px;
+        margin-bottom: 80px;
     }
 
     .hero-content-section {
-        padding: 100px 30px;
-        margin-top: 40px;
+        padding: 120px 30px;
+        margin-top: 60px;
     }
 
     .hero-title {
@@ -235,14 +235,14 @@ body, html {
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .video-container {
-        height: 60vh;
-        min-height: 400px;
-        margin-bottom: 50px;
+        height: 70vh;
+        min-height: 500px;
+        margin-bottom: 70px;
     }
 
     .hero-content-section {
-        padding: 80px 25px;
-        margin-top: 30px;
+        padding: 100px 25px;
+        margin-top: 50px;
     }
 
     .hero-title {
