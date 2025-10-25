@@ -1,0 +1,27 @@
+<!-- BreadcrumbList Structured Data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://shieldwisesecurity.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://shieldwisesecurity.com/services"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "<%= serviceName %>",
+            "item": "https://shieldwisesecurity.com/services/<%= serviceName.toLowerCase().replace(/\s+/g, '-') %>"
+        }
+    ]
+}
+</script>

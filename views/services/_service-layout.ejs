@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title><%= data.pageTitle || data.serviceName + ' in California | ShieldWise Security' %></title>
+    <meta name="description" content="<%= data.metaDescription %>">
+    <meta name="keywords" content="<%= data.serviceKeywords %>">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="<%= data.canonicalUrl %>">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<%= data.canonicalUrl %>">
+    <meta property="og:title" content="<%= data.pageTitle || data.serviceName + ' in California | ShieldWise Security' %>">
+    <meta property="og:description" content="<%= data.metaDescription %>">
+    <meta property="og:image" content="https://shieldwisesecurity.com/img/<%= data.serviceImage || 'security-services-california.webp' %>">
+    <meta property="og:site_name" content="ShieldWise Security">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<%= data.pageTitle || data.serviceName + ' in California' %>">
+    <meta name="twitter:description" content="<%= data.metaDescription %>">
+    <meta name="twitter:image" content="https://shieldwisesecurity.com/img/<%= data.serviceImage || 'security-services-california.webp' %>">
+    
+    <%- include('../partials/performance-optimization') %>
+    <%- include('../partials/mobile-app-meta') %>
+    
+    <!-- CSS Resources -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="/css/service-page.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data / Schema.org -->
+    <%- include('../partials/schema-localbusiness') %>
+    <%- include('../partials/schema-service', { service: data }) %>
+    <%- include('../partials/schema-breadcrumbs', { serviceName: data.serviceName }) %>
+    <% if (data.faqs && data.faqs.length > 0) { %>
+        <%- include('../partials/schema-faq', { faqs: data.faqs }) %>
+    <% } %>
+    
+    <%- include('../partials/tracking-scripts', {
+        serviceType: data.serviceType,
+        priceRange: data.priceRange
+    }) %>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <%- include('../partials/Header') %>
+    
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/services"><span itemprop="name">Services</span></a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name"><%= data.serviceName %></span>
+                    <meta itemprop="position" content="3" />
+                </li>
+            </ol>
+        </div>
+    </nav>
+    
+    <main id="main-content" class="service-page">
+        <!-- Hero Section with AI Summary -->
+        <section class="service-hero">
+            <div class="container">
+                <div class="hero-badge"><i class="fas fa-shield-alt"></i> California Licensed & Insured</div>
+                <h1 class="hero-title"><%= data.serviceName %> in California</h1>
+                
+                <!-- AI-Friendly Summary (2-3 sentences) -->
+                <div class="ai-summary speakable-content">
+                    <p><%= data.aiSummary %></p>
+                </div>
+                
+                <!-- Quick USPs -->
+                <div class="hero-usp">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="usp-item">
+                                <i class="fas fa-certificate"></i>
+                                <span>BSIS Licensed & Insured</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="usp-item">
+                                <i class="fas fa-clock"></i>
+                                <span>24/7 Dispatch & Rapid Response</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="usp-item">
+                                <i class="fas fa-user-shield"></i>
+                                <span>Trained, Vetted, Professional Guards</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-cta">
+                    <a href="tel:+17147167430" class="btn btn-primary btn-lg">
+                        <i class="fas fa-phone-alt"></i> Call (714) 716-7430
+                    </a>
+                    <a href="/contact" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-file-alt"></i> Get a Quote
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Service Overview Section -->
+        <section class="service-overview">
+            <div class="container">
+                <h2>Overview</h2>
+                <div class="overview-content">
+                    <%= data.overview %>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Use Cases Section -->
+        <% if (data.useCases && data.useCases.length > 0) { %>
+        <section class="use-cases">
+            <div class="container">
+                <h2>Common Use Cases</h2>
+                <p class="section-subtitle">When you need <%= data.serviceName.toLowerCase() %> in California</p>
+                <div class="row">
+                    <% data.useCases.forEach(useCase => { %>
+                    <div class="col-md-4 mb-4">
+                        <article class="use-case-card">
+                            <div class="use-case-icon">
+                                <i class="<%= useCase.icon %>"></i>
+                            </div>
+                            <h3><%= useCase.title %></h3>
+                            <p><%= useCase.description %></p>
+                        </article>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </section>
+        <% } %>
+        
+        <!-- Credentials & Vetting Section -->
+        <section class="credentials">
+            <div class="container">
+                <h2>Licensing, Vetting & Training</h2>
+                <div class="credentials-content">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <p><%= data.credentials %></p>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="credential-badges">
+                                <div class="badge-item">
+                                    <i class="fas fa-id-card"></i>
+                                    <span>BSIS Licensed</span>
+                                </div>
+                                <div class="badge-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Fully Insured & Bonded</span>
+                                </div>
+                                <div class="badge-item">
+                                    <i class="fas fa-user-check"></i>
+                                    <span>Background Checked</span>
+                                </div>
+                                <div class="badge-item">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span>Professionally Trained</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Pricing/Engagement Models -->
+        <% if (data.pricingModels && data.pricingModels.length > 0) { %>
+        <section class="pricing-models">
+            <div class="container">
+                <h2>Flexible Engagement Options</h2>
+                <div class="row">
+                    <% data.pricingModels.forEach(model => { %>
+                    <div class="col-md-4 mb-4">
+                        <div class="pricing-card">
+                            <div class="pricing-icon">
+                                <i class="<%= model.icon %>"></i>
+                            </div>
+                            <h3><%= model.title %></h3>
+                            <p><%= model.description %></p>
+                            <% if (model.features && model.features.length > 0) { %>
+                            <ul class="pricing-features">
+                                <% model.features.forEach(feature => { %>
+                                <li><i class="fas fa-check"></i> <%= feature %></li>
+                                <% }); %>
+                            </ul>
+                            <% } %>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </section>
+        <% } %>
+        
+        <!-- California Coverage Section -->
+        <section class="service-coverage">
+            <div class="container">
+                <h2>Statewide Coverage Across California</h2>
+                <p class="coverage-intro">ShieldWise Security provides <%= data.serviceName.toLowerCase() %> throughout California with rapid deployment and local expertise in major metropolitan areas and cities statewide.</p>
+                
+                <div class="coverage-grid">
+                    <% if (data.cities && data.cities.length > 0) { %>
+                        <% data.cities.forEach(city => { %>
+                            <a href="<%= city.url %>" class="city-link"><%= city.name %></a>
+                        <% }); %>
+                    <% } else { %>
+                        <!-- Default California Cities -->
+                        <a href="/los-angeles" class="city-link">Los Angeles</a>
+                        <a href="/orange-county/irvine" class="city-link">Orange County</a>
+                        <a href="/san-diego" class="city-link">San Diego</a>
+                        <a href="/san-jose" class="city-link">San Jose</a>
+                        <a href="/san-francisco" class="city-link">San Francisco</a>
+                        <a href="/sacramento" class="city-link">Sacramento</a>
+                        <a href="/fresno" class="city-link">Fresno</a>
+                        <a href="/long-beach" class="city-link">Long Beach</a>
+                        <a href="/oakland" class="city-link">Oakland</a>
+                        <a href="/bakersfield" class="city-link">Bakersfield</a>
+                        <a href="/anaheim" class="city-link">Anaheim</a>
+                        <a href="/santa-ana" class="city-link">Santa Ana</a>
+                        <a href="/riverside" class="city-link">Riverside</a>
+                        <a href="/stockton" class="city-link">Stockton</a>
+                        <a href="/chula-vista" class="city-link">Chula Vista</a>
+                        <a href="/fremont" class="city-link">Fremont</a>
+                    <% } %>
+                </div>
+                
+                <p class="coverage-note"><strong>Don't see your city?</strong> We serve clients throughout California. <a href="/contact">Contact us</a> for coverage in your area.</p>
+            </div>
+        </section>
+        
+        <!-- FAQs Section -->
+        <% if (data.faqs && data.faqs.length > 0) { %>
+        <section class="service-faqs">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <% data.faqs.forEach((faq, index) => { %>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-<%= index %>">
+                            <span><%= faq.question %></span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div id="faq-answer-<%= index %>" class="faq-answer" hidden>
+                            <p><%= faq.answer %></p>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </section>
+        <% } %>
+        
+        <!-- Related Services Section -->
+        <% if (data.relatedServices && data.relatedServices.length > 0) { %>
+        <section class="related-services">
+            <div class="container">
+                <h2>Related Security Services</h2>
+                <div class="row">
+                    <% data.relatedServices.forEach(service => { %>
+                    <div class="col-md-4 mb-3">
+                        <a href="<%= service.url %>" class="related-service-card">
+                            <i class="<%= service.icon %>"></i>
+                            <h3><%= service.name %></h3>
+                            <p><%= service.description %></p>
+                            <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </section>
+        <% } %>
+        
+        <!-- Final CTA Section -->
+        <section class="final-cta">
+            <div class="container text-center">
+                <h2>Ready to Secure Your Property or Event?</h2>
+                <p class="cta-subtitle">Get a customized security quote from California's trusted security professionals</p>
+                <div class="cta-actions">
+                    <a href="tel:+17147167430" class="btn btn-primary btn-lg">
+                        <i class="fas fa-phone-alt"></i> Call (714) 716-7430
+                    </a>
+                    <a href="/contact" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-envelope"></i> Request a Quote
+                    </a>
+                    <a href="mailto:info@shieldwisesecurity.com" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-envelope"></i> Email Us
+                    </a>
+                </div>
+                <div class="trust-signals">
+                    <div class="trust-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Licensed & Insured</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-clock"></i>
+                        <span>24/7 Availability</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-star"></i>
+                        <span>15+ Years in Business</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-users"></i>
+                        <span>500+ Satisfied Clients</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <%- include('../partials/Footer') %>
+    
+    <!-- Speakable Content for Voice Search -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".ai-summary", ".service-overview", ".coverage-intro"]
+        },
+        "url": "<%= data.canonicalUrl %>"
+    }
+    </script>
+    
+    <!-- Essential Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" defer></script>
+    
+    <!-- FAQ Accordion Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqButtons = document.querySelectorAll('.faq-question');
+            
+            faqButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    answer.hidden = isExpanded;
+                    this.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+    
+    <%- include('../partials/tracking-scripts-deferred') %>
+</body>
+</html>

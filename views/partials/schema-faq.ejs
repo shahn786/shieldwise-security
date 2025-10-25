@@ -1,0 +1,19 @@
+<!-- FAQPage Structured Data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        <% faqs.forEach((faq, index) => { %>
+        {
+            "@type": "Question",
+            "name": "<%= faq.question.replace(/"/g, '\\"') %>",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "<%= faq.answer.replace(/"/g, '\\"') %>"
+            }
+        }<%= index < faqs.length - 1 ? ',' : '' %>
+        <% }); %>
+    ]
+}
+</script>
