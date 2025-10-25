@@ -40,10 +40,11 @@ body, html {
 .hero-content-section {
     width: 100%;
     padding: 100px 40px;
-    background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.1), 0 10px 40px rgba(0, 0, 0, 0.15);
+    border-top: 4px solid #d32f2f;
 }
 
 .hero-content-section::before {
@@ -54,8 +55,8 @@ body, html {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.12) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(13, 27, 42, 0.5) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(211, 47, 47, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.03) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -68,9 +69,9 @@ body, html {
     height: 6px;
     background: linear-gradient(90deg, 
         transparent 0%, 
-        rgba(212, 175, 55, 0.6) 25%, 
-        rgba(212, 175, 55, 1) 50%, 
-        rgba(212, 175, 55, 0.6) 75%, 
+        rgba(211, 47, 47, 0.6) 25%, 
+        rgba(211, 47, 47, 1) 50%, 
+        rgba(211, 47, 47, 0.6) 75%, 
         transparent 100%);
 }
 
@@ -89,10 +90,8 @@ body, html {
     margin-bottom: 35px;
     letter-spacing: -0.02em;
     line-height: 1.15;
-    background: linear-gradient(135deg, #ffffff 0%, #d4af37 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #1a1a1a;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
     animation: fadeInUp 0.8s ease-out;
     position: relative;
     padding-bottom: 20px;
@@ -106,9 +105,9 @@ body, html {
     transform: translateX(-50%);
     width: 150px;
     height: 5px;
-    background: linear-gradient(90deg, transparent, #d4af37 20%, #d4af37 80%, transparent);
+    background: linear-gradient(90deg, transparent, #d32f2f 20%, #d32f2f 80%, transparent);
     border-radius: 3px;
-    box-shadow: 0 2px 15px rgba(212, 175, 55, 0.5);
+    box-shadow: 0 2px 15px rgba(211, 47, 47, 0.4);
 }
 
 .hero-subtitle {
@@ -117,8 +116,8 @@ body, html {
     margin-bottom: 50px;
     margin-top: 10px;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.95);
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    color: #2c3e50;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
     animation: fadeInUp 0.8s ease-out 0.2s backwards;
     letter-spacing: 0.5px;
 }
