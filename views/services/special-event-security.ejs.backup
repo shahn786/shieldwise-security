@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/meta-tags-special-event-security') %>
+    <%- include('../partials/performance-optimization') %>
+    <%- include('../partials/mobile-app-meta') %>
+
+    <!-- CSS Resources -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="/css/apartment-security.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <%- include('../partials/schema-primary') %>
+    <%- include('../partials/schema-special-event-security') %>
+    <%- include('../partials/schema-faq-special-event-security') %>
+    <%- include('../partials/tracking-scripts-special-event-security') %>
+
+    <style>
+        /* Special Event Security Section Styles */
+        .event-features-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-secondary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .event-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .event-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .event-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .event-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .security-process-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .process-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .benefits-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .benefit-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .benefit-content p {
+            color: #666;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        :root {
+            --primary-color: #1a3c6e;
+            --secondary-color: #bf9e5b;
+            --text-color: #333333;
+            --light-bg: #f8f9fa;
+            --gradient-secondary: linear-gradient(135deg, #bf9e5b, #d4b570);
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(26, 60, 110, 0.9), rgba(26, 60, 110, 0.9)), url('/img/eventsecurity.png');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), #0d2b54);
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .btn-custom {
+            background: var(--secondary-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-custom:hover {
+            background: #a88b4a;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .stats-section {
+            padding: 60px 0;
+            background: var(--light-bg);
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .client-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .event-types-showcase {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .event-type-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: var(--light-bg);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .event-type-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .event-type-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 25px;
+            font-size: 2rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .event-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .event-type-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .event-type-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <%- include('../partials/Header') %>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="hero-title speakable-intro"><%= serviceData.serviceTitle %></h1>
+                <p class="hero-subtitle speakable-intro"><%= serviceData.serviceDescription %></p>
+            </div>
+        </section>
+
+        <!-- Premier Overview Section -->
+        <div style="background-color:#ffffff; padding:60px; border-radius:14px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color:#1c1c1c; max-width:960px; margin:60px auto;
+            box-shadow:0 10px 30px rgba(0,0,0,0.1); border:1px solid #e0e0e0;">
+            <h2 style="font-size:38px; margin-bottom:28px; color:#152f45;">
+                Premier Special Event Security Services for Unforgettable Experiences
+            </h2>
+            <p class="speakable-services" style="font-size:20px; line-height:1.8; margin-bottom:0;">
+                <strong>ShieldWise Security</strong> specializes in providing tailored security solutions for special events, ensuring the safety and success of gatherings ranging from corporate conferences and trade shows to weddings and large public festivals. Our comprehensive approach includes <strong style="color:#bf9e5b;">24/7 on-site security personnel</strong>, <strong style="color:#bf9e5b;">advanced access control systems</strong>, <strong style="color:#bf9e5b;">visitor management protocols</strong>, and <strong style="color:#bf9e5b;">emergency response procedures</strong> to ensure exceptional experiences for all attendees.
+            </p>
+            <div class="speakable-contact" style="margin-top:20px; font-size:18px;">
+                <strong>Call This Number:</strong> +1-714-716-7430 | 
+                <strong>Email:</strong> info@shieldwisesecurity.com
+            </div>
+        </div>
+
+        <!-- Special Event Security Features Section -->
+        <section id="features" class="event-features-section">
+            <div class="container">
+                <h2 class="section-title">Comprehensive Special Event Security Features</h2>
+                <p class="section-subtitle">Advanced security solutions designed specifically for special events and gatherings</p>
+
+                <div class="event-grid">
+                    <% serviceData.features.forEach(feature => { %>
+                    <div class="event-card">
+                        <div class="event-icon">
+                            <i class="<%= feature.icon %>" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="event-title"><%= feature.title %></h3>
+                        <p class="event-description"><%= feature.description %></p>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Types Showcase -->
+        <section class="event-types-showcase">
+            <div class="container">
+                <h2 class="section-title">Special Events We Secure</h2>
+                <p class="section-subtitle">Tailored security solutions for every type of special event</p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="event-type-item">
+                            <div class="event-type-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div>
+                                <h4>Corporate Conferences & Trade Shows</h4>
+                                <p>Professional security for business events, conventions, and industry gatherings with VIP protection and access control.</p>
+                            </div>
+                        </div>
+
+                        <div class="event-type-item">
+                            <div class="event-type-icon">
+                                <i class="fas fa-ring"></i>
+                            </div>
+                            <div>
+                                <h4>Weddings & Private Celebrations</h4>
+                                <p>Discrete security services for weddings, anniversaries, and private parties ensuring guest safety and privacy.</p>
+                            </div>
+                        </div>
+
+                        <div class="event-type-item">
+                            <div class="event-type-icon">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <div>
+                                <h4>Festivals & Entertainment Events</h4>
+                                <p>Comprehensive security for music festivals, outdoor events, and entertainment venues with crowd management.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="event-type-item">
+                            <div class="event-type-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div>
+                                <h4>Public Gatherings & Rallies</h4>
+                                <p>Security services for community events, political rallies, and public demonstrations with crowd control expertise.</p>
+                            </div>
+                        </div>
+
+                        <div class="event-type-item">
+                            <div class="event-type-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div>
+                                <h4>Award Shows & Galas</h4>
+                                <p>High-profile event security for award ceremonies, charity galas, and red carpet events with VIP protection.</p>
+                            </div>
+                        </div>
+
+                        <div class="event-type-item">
+                            <div class="event-type-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div>
+                                <h4>Cultural & Art Events</h4>
+                                <p>Specialized security for art exhibitions, cultural festivals, museum events, and theater productions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Process Section -->
+        <section class="security-process-section">
+            <div class="container">
+                <h2 class="section-title">Our Special Event Security Process</h2>
+                <p class="section-subtitle">A systematic approach to event security planning and execution</p>
+
+                <div class="row">
+                    <% serviceData.processSteps.forEach(step => { %>
+                    <div class="col-md-3">
+                        <div class="process-step">
+                            <div class="process-number"><%= step.number %></div>
+                            <h3 class="process-title"><%= step.title %></h3>
+                            <p><%= step.description %></p>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <div class="container">
+                <h2 class="section-title">Why Choose ShieldWise for Special Event Security</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <% serviceData.benefits.slice(0, 3).forEach(benefit => { %>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="<%= benefit.icon %>" aria-hidden="true"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4><%= benefit.title %></h4>
+                                <p><%= benefit.description %></p>
+                            </div>
+                        </div>
+                        <% }); %>
+                    </div>
+                    <div class="col-md-6">
+                        <% serviceData.benefits.slice(3, 6).forEach(benefit => { %>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="<%= benefit.icon %>" aria-hidden="true"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4><%= benefit.title %></h4>
+                                <p><%= benefit.description %></p>
+                            </div>
+                        </div>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Overview -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <% serviceData.serviceOfferings.forEach(offering => { %>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="<%= offering.icon %> service-icon" aria-hidden="true"></i>
+                            <h3 class="service-title"><%= offering.title %></h3>
+                            <ul class="feature-list">
+                                <% offering.features.forEach(feature => { %>
+                                <li><%= feature %></li>
+                                <% }); %>
+                            </ul>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="row">
+                    <% serviceData.statistics.forEach(stat => { %>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number"><%= stat.number %></div>
+                            <div class="stat-label"><%= stat.label %></div>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5 service-title">What Event Organizers Say</h2>
+                <div class="row">
+                    <% serviceData.testimonials.forEach(testimonial => { %>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/<%= testimonial.image %>" alt="<%= testimonial.name %>, <%= testimonial.title %>" class="client-image" loading="lazy" width="80" height="80">
+                            <h4><%= testimonial.name %></h4>
+                            <p class="text-muted"><%= testimonial.title %></p>
+                            <p>"<%= testimonial.quote %>"</p>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="mb-4">Secure Your Special Event Today</h2>
+                <p class="mb-4">Contact us for a customized special event security solution tailored to your specific needs and requirements</p>
+                <button class="btn btn-custom" aria-label="Request free event security assessment" onclick="trackEventConsultation()">Get a Free Event Security Assessment</button>
+            </div>
+        </section>
+    </main>
+
+    <%- include('../partials/Footer') %>
+
+    <!-- Structured Data for Voice Search -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [
+                ".speakable-intro",
+                ".speakable-services", 
+                ".speakable-contact"
+            ]
+        },
+        "url": "<%= serviceData.canonicalUrl %>"
+    }
+    </script>
+
+    <!-- Essential Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <!-- Special Event Security Specific JavaScript -->
+    <script>
+        // Enhanced tracking for special event security
+        function trackEventConsultation() {
+            gtag('event', 'generate_lead', {
+                'event_category': 'Special Event Security',
+                'event_label': 'special_event_security',
+                'value': 1,
+                'custom_parameter_1': 'special_event_security'
+            });
+
+            fbq('track', 'Lead', {
+                content_name: 'Special Event Security Request',
+                content_category: 'Event Security Services',
+                value: <%= serviceData.priceRange.low %>,
+                currency: 'USD'
+            });
+
+            // Redirect to quote page
+            window.location.href = '/get-quote';
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.event-card, .service-card, .process-step, .benefit-item, .event-type-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Counter animation for statistics
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                const displayValue = Math.floor(current);
+                const originalText = element.textContent;
+                if (originalText.includes('+')) {
+                    element.textContent = displayValue + '+';
+                } else if (originalText.includes('%')) {
+                    element.textContent = displayValue + '%';
+                } else if (originalText.includes('/')) {
+                    element.textContent = originalText;
+                } else {
+                    element.textContent = displayValue;
+                }
+            }, 20);
+        }
+
+        // Trigger counter animation when stats come into view
+        const statObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const value = parseInt(statNumber.textContent.replace(/[^\d]/g, ''));
+                    if (value && value > 0) {
+                        animateCounter(statNumber, value);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-card').forEach(el => {
+            statObserver.observe(el);
+        });
+
+        // Add hover effect to cards
+        document.querySelectorAll('.event-card, .service-card, .process-step, .event-type-item').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+
+    <!-- Deferred Tracking Scripts -->
+    <%- include('../partials/tracking-scripts-deferred') %>
+</body>
+</html>

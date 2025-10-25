@@ -1,0 +1,123 @@
+
+<!-- Enhanced Google Analytics with Fire Watch Specific Tracking -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', { 
+    'anonymize_ip': true,
+    'allow_google_signals': false,
+    'allow_ad_personalization_signals': false,
+    'custom_map': {
+      'custom_parameter_1': 'service_type',
+      'custom_parameter_2': 'site_type',
+      'custom_parameter_3': 'location_served'
+    }
+  });
+
+  // Enhanced event tracking for fire watch services
+  gtag('event', 'page_view', {
+    'page_title': document.title,
+    'page_location': window.location.href,
+    'content_group1': 'Fire Watch Services',
+    'content_group2': 'California',
+    'content_group3': 'Fire Safety',
+    'custom_parameter_1': 'fire_watch',
+    'custom_parameter_2': 'construction_commercial',
+    'custom_parameter_3': 'california_statewide'
+  });
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+
+<!-- Microsoft Clarity disabled (CSP compliance) -->
+
+<!-- Facebook Pixel -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'XXXXXXXXXXXXXXXXX');
+  fbq('track', 'PageView');
+  fbq('track', 'ViewContent', {
+    content_type: 'fire_watch',
+    content_category: 'fire_safety_services'
+  });
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXXXX&ev=PageView&noscript=1"
+/></noscript>
+
+<!-- Fire Watch Specific Tracking -->
+<script>
+  // Track fire watch service interest
+  function trackFireWatchService(type) {
+    gtag('event', 'fire_watch_interest', {
+      'event_category': 'Fire Watch Services',
+      'event_label': type,
+      'value': 1
+    });
+  }
+
+  // Track site type interest
+  function trackSiteType(siteType) {
+    gtag('event', 'site_type_interest', {
+      'event_category': 'Fire Watch Coverage',
+      'event_label': siteType,
+      'value': 1
+    });
+  }
+
+  // Track emergency request
+  function trackEmergencyFireWatch() {
+    gtag('event', 'emergency_fire_watch_request', {
+      'event_category': 'Emergency Services',
+      'event_label': 'Urgent Fire Watch',
+      'value': 1
+    });
+  }
+</script>
+
+<!-- Enhanced Fire Safety Compliance Tracking -->
+<script>
+  // Enhanced privacy settings for fire watch clients
+  if (typeof window.dataLayer !== 'undefined') {
+    window.dataLayer.push({
+      'service_type': 'fire_watch',
+      'compliance_required': true,
+      'emergency_service': true
+    });
+  }
+</script>
+
+<!-- Fire Watch Quote and Consultation Tracking -->
+<script>
+  // Track fire watch consultation requests
+  function trackFireWatchConsultation() {
+    gtag('event', 'fire_watch_consultation_request', {
+      'event_category': 'Lead Generation',
+      'event_label': 'Fire Watch Consultation',
+      'value': 1
+    });
+  }
+
+  // Track compliance assessment requests
+  function trackComplianceAssessment() {
+    gtag('event', 'compliance_assessment_request', {
+      'event_category': 'Fire Safety Compliance',
+      'event_label': 'Site Assessment',
+      'value': 1
+    });
+  }
+</script>

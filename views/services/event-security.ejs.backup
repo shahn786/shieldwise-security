@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/meta-tags-event-security') %>
+    <%- include('../partials/performance-optimization') %>
+    <%- include('../partials/mobile-app-meta') %>
+
+    <!-- CSS Resources -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="/css/apartment-security.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <%- include('../partials/schema-primary') %>
+    <%- include('../partials/schema-event-security') %>
+    <%- include('../partials/schema-faq-event-security') %>
+    <%- include('../partials/tracking-scripts', {
+        serviceType: serviceData.serviceType,
+        priceRange: serviceData.priceRange
+    }) %>
+
+    <!-- Critical CSS Inline -->
+    <style>
+        /* Event Types Section Styles */
+        .event-types-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-secondary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .event-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .event-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .event-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .event-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        :root {
+            --primary-color: #1a3c6e;
+            --secondary-color: #bf9e5b;
+            --text-color: #333333;
+            --light-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(26, 60, 110, 0.9), rgba(26, 60, 110, 0.9)), url('/img/eventsecurity.png');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), #0d2b54);
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .btn-custom {
+            background: var(--secondary-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-custom:hover {
+            background: #a88b4a;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .stats-section {
+            padding: 60px 0;
+            background: var(--light-bg);
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .client-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <%- include('../partials/Header') %>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="hero-title speakable-intro"><%= serviceData.serviceTitle %></h1>
+                <p class="hero-subtitle speakable-intro"><%= serviceData.serviceDescription %></p>
+            </div>
+        </section>
+
+        <!-- Premier Overview Section -->
+        <div style="background-color:#ffffff; padding:60px; border-radius:14px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color:#1c1c1c; max-width:960px; margin:60px auto;
+            box-shadow:0 10px 30px rgba(0,0,0,0.1); border:1px solid #e0e0e0;">
+            <h2 style="font-size:38px; margin-bottom:28px; color:#152f45;">
+                Premier Event Security Services for Unmatched Peace of Mind
+            </h2>
+            <p class="speakable-services" style="font-size:20px; line-height:1.8; margin-bottom:0;">
+                At <strong>ShieldWise Security</strong>, we set the gold standard in <strong>event security services</strong> by integrating industry-leading expertise with cutting-edge technology. From comprehensive <strong>risk assessments</strong> and strategic <strong>crowd management</strong> at large conventions and music festivals to personalized <strong>VIP protection</strong> and 24/7 <strong>emergency response protocols</strong>, our approach is both proactive and adaptable. We deploy advanced <strong>anti-drone systems</strong>, AI-powered facial recognition, and real-time surveillance to safeguard every perimeter, while our seamless <strong>access control management</strong> and mobile credential solutions ensure only authorized individuals gain entry. Whether you're hosting a high-profile gala, a civic ceremony, or a luxury hotel event, our custom security plans deliver unparalleled reliability—so you can focus on creating memorable experiences without compromise.
+            </p>
+            <div class="speakable-contact" style="margin-top:20px; font-size:18px;">
+                <strong>Call This Number:</strong> +1-714-716-7430 | 
+                <strong>Email:</strong> events@shieldwisesecurity.com
+            </div>
+        </div>
+
+        <!-- Event Types Section -->
+        <section id="events" class="event-types-section">
+            <div class="container">
+                <h2 class="section-title">Security for Every Type of Event</h2>
+                <p class="section-subtitle">From intimate gatherings to large-scale productions</p>
+
+                <div class="event-grid">
+                    <% serviceData.features.forEach(feature => { %>
+                    <div class="event-card">
+                        <div class="event-icon">
+                            <i class="<%= feature.icon %>" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="event-title"><%= feature.title %></h3>
+                        <p class="event-description"><%= feature.description %></p>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Overview -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <% serviceData.serviceOfferings.forEach(offering => { %>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="<%= offering.icon %> service-icon" aria-hidden="true"></i>
+                            <h3 class="service-title"><%= offering.title %></h3>
+                            <ul class="feature-list">
+                                <% offering.features.forEach(feature => { %>
+                                <li><%= feature %></li>
+                                <% }); %>
+                            </ul>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="row">
+                    <% serviceData.statistics.forEach(stat => { %>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-number"><%= stat.number %></div>
+                            <div class="stat-label"><%= stat.label %></div>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5 service-title">What Our Clients Say</h2>
+                <div class="row">
+                    <% serviceData.testimonials.forEach(testimonial => { %>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/<%= testimonial.image %>" alt="<%= testimonial.name %>, <%= testimonial.title %>" class="client-image" loading="lazy" width="80" height="80">
+                            <h4><%= testimonial.name %></h4>
+                            <p class="text-muted"><%= testimonial.title %></p>
+                            <p>"<%= testimonial.quote %>"</p>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="mb-4">Ready to Secure Your Next Event?</h2>
+                <p class="mb-4">Contact us for a customized security solution tailored to your event needs</p>
+                <button class="btn btn-custom" aria-label="Request a free event security quote" onclick="trackEventQuoteRequest()">Get a Free Quote</button>
+            </div>
+        </section>
+    </main>
+
+    <%- include('../partials/Footer') %>
+
+    <!-- Structured Data for Voice Search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".speakable-intro",
+          ".speakable-services",
+          ".speakable-contact"
+        ]
+      },
+      "url": "<%= serviceData.canonicalUrl %>"
+    }
+    </script>
+
+    <!-- Essential Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <!-- Event Security Specific JavaScript -->
+    <script>
+        // Track event quote requests
+        function trackEventQuoteRequest() {
+            gtag('event', 'generate_lead', {
+                'event_category': 'Event Security Services',
+                'event_label': 'event_security',
+                'value': 1
+            });
+
+            fbq('track', 'Lead', {
+                content_name: 'Event Security Quote Request',
+                content_category: 'Event Security Services'
+            });
+
+            // Redirect to quote page
+            window.location.href = '/get-quote';
+        }
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.event-card, .service-card, .process-step, .feature-box').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Counter Animation for Statistics
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : element.textContent.includes('%') ? '%' : '');
+            }, 20);
+        }
+
+        // Trigger counter animation when in view
+        const statObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const value = parseInt(statNumber.textContent);
+                    animateCounter(statNumber, value);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-card').forEach(el => {
+            statObserver.observe(el);
+        });
+    </script>
+
+    <!-- Event Security Specific Tracking -->
+    <%- include('../partials/tracking-scripts-event-security') %>
+
+    <!-- Deferred Tracking Scripts -->
+    <%- include('../partials/tracking-scripts-deferred') %>
+</body>
+</html>

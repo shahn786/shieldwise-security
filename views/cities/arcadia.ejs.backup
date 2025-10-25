@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: https://ogp.me/ns#" itemscope itemtype="https://schema.org/LocalBusiness">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- ✅ Critical CSS Inlined Above the Fold -->
+   
+
+    <!-- ✅ Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://stackpath.bootstrapcdn.com">
+
+    <!-- ✅ Optimized SEO Meta Tags -->
+    <title>🛡️ Arcadia Security Guards | Santa Anita Mall | ShieldWise</title>
+    <meta name="description" content="★★★★★ Arcadia Security Guards. 2-hour emergency response! Santa Anita Mall, luxury communities, tech business protection. Multilingual BSIS licensed guards. Call (714) 716-7430!">
+    <meta name="keywords" content="Arcadia security guards, Santa Anita Mall security, Arcadia security company, multilingual security guards, luxury community security, tech business security, BSIS licensed guards, 24/7 security services, emergency security response, California security guards, armed security guards Arcadia, unarmed security guards Arcadia">
+    <meta name="author" content="ShieldWise Security">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="theme-color" content="#1a3c64">
+
+    <!-- ✅ Enhanced Mobile Optimization -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Arcadia Security">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- ✅ Advanced Location & Language Tags -->
+    <meta name="geo.region" content="US-CA">
+    <meta name="geo.placename" content="Arcadia, California">
+    <meta name="geo.position" content="34.1397;-118.0353">
+    <meta name="ICBM" content="34.1397, -118.0353">
+
+    <!-- ✅ Canonical & Hreflang -->
+    <link rel="canonical" href="https://shieldwisesecurity.com/los-angeles/arcadia">
+    <link rel="alternate" hreflang="en-US" href="https://shieldwisesecurity.com/los-angeles/arcadia">
+    <link rel="alternate" hreflang="es-US" href="https://shieldwisesecurity.com/es/los-angeles/arcadia">
+
+    <!-- ✅ Enhanced Open Graph Meta Tags -->
+    <meta property="og:title" content="🛡️ #1 Arcadia Security Guards | Santa Anita Mall & Luxury Protection">
+    <meta property="og:description" content="★★★★★ Professional security services in Arcadia. Immediate 2-hour deployment! Santa Anita Mall, luxury communities, tech business protection. Multilingual guards. Licensed & insured since 2010.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shieldwisesecurity.com/los-angeles/arcadia">
+    <meta property="og:image" content="https://shieldwisesecurity.com/img/arcadia-security-guards.jpg">
+    <meta property="og:image:secure_url" content="https://shieldwisesecurity.com/img/arcadia-security-guards.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Professional security guards protecting Arcadia Santa Anita Mall and luxury communities">
+    <meta property="og:site_name" content="ShieldWise Security">
+    <meta property="og:locale" content="en_US">
+
+    <!-- ✅ Enhanced Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@shieldwisesec">
+    <meta name="twitter:creator" content="@shieldwisesec">
+    <meta name="twitter:title" content="🛡️ #1 Arcadia Security Guards | 2-Hour Response Time">
+    <meta name="twitter:description" content="★★★★★ Professional security guards in Arcadia. Santa Anita Mall, luxury community protection. Multilingual staff. Call (714) 716-7430 for immediate deployment!">
+    <meta name="twitter:image" content="https://shieldwisesecurity.com/img/arcadia-security-guards.jpg">
+    <meta name="twitter:image:alt" content="Elite security team protecting Arcadia properties">
+
+    <!-- ✅ Enhanced Sitemap Reference -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://shieldwisesecurity.com/sitemap.xml">
+
+    <!-- ✅ Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://shieldwisesecurity.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Los Angeles Security",
+                "item": "https://shieldwisesecurity.com/los-angeles/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Arcadia Security Guards",
+                "item": "https://shieldwisesecurity.com/los-angeles/arcadia"
+            }
+        ]
+    }
+    </script>
+
+    <!-- ✅ Enhanced Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://shieldwisesecurity.com/#organization",
+        "name": "ShieldWise Security Services",
+        "url": "https://shieldwisesecurity.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://shieldwisesecurity.com/img/shieldwise-logo.png"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "411 E Huntington Dr",
+            "addressLocality": "Arcadia",
+            "addressRegion": "CA",
+            "postalCode": "91006",
+            "addressCountry": "US"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-714-716-7430",
+            "contactType": "customer service"
+        }
+    }
+    </script>
+
+    <!-- ✅ Enhanced SecurityService Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SecurityService",
+        "@id": "https://shieldwisesecurity.com/los-angeles/arcadia#service",
+        "name": "ShieldWise Security - Arcadia",
+        "alternateName": ["Arcadia Security Guards", "Santa Anita Security", "ShieldWise Arcadia"],
+        "image": [
+            "https://shieldwisesecurity.com/img/arcadia-security-guards.jpg",
+            "https://shieldwisesecurity.com/img/santa-anita-mall-security.jpg",
+            "https://shieldwisesecurity.com/img/luxury-community-security.jpg"
+        ],
+        "description": "Premier security guard services in Arcadia, CA. Specializing in Santa Anita Mall protection, luxury residential communities, tech businesses. 24/7 rapid response with multilingual guards.",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://shieldwisesecurity.com/img/shieldwise-logo.png",
+            "width": 400,
+            "height": 400
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "411 E Huntington Dr",
+            "addressLocality": "Arcadia",
+            "addressRegion": "CA",
+            "postalCode": "91006",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 34.1397,
+            "longitude": -118.0353
+        },
+        "url": "https://shieldwisesecurity.com/los-angeles/arcadia",
+        "telephone": "+1-714-716-7430",
+        "email": "arcadia@shieldwisesecurity.com",
+        "priceRange": "$$-$$$",
+        "currenciesAccepted": "USD",
+        "paymentAccepted": ["Cash", "Credit Card", "Check", "Invoice", "Bank Transfer"],
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "00:00",
+                "closes": "23:59"
+            }
+        ],
+        "sameAs": [
+            "https://www.facebook.com/shieldwisesecurity",
+            "https://twitter.com/shieldwisesecurity",
+            "https://www.instagram.com/shieldwisesecurity",
+            "https://www.linkedin.com/company/shieldwisesecurity",
+            "https://www.yelp.com/biz/shieldwise-security-arcadia",
+            "https://www.bbb.org/us/ca/arcadia/profile/security-guard-service/shieldwise-security"
+        ],
+        "serviceArea": [
+            {
+                "@type": "GeoCircle",
+                "geoMidpoint": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 34.1397,
+                    "longitude": -118.0353
+                },
+                "geoRadius": "25000"
+            }
+        ],
+        "areaServed": [
+            {
+                "@type": "City",
+                "name": "Arcadia"
+            },
+            {
+                "@type": "Place",
+                "name": "Santa Anita Mall"
+            },
+            {
+                "@type": "Place",
+                "name": "Santa Anita Park"
+            },
+            {
+                "@type": "Place",
+                "name": "Downtown Arcadia"
+            },
+            {
+                "@type": "Place",
+                "name": "Huntington Drive Corridor"
+            }
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Arcadia Security Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Santa Anita Mall Security Arcadia",
+                        "description": "Specialized retail security guards for Santa Anita Mall and shopping centers in Arcadia CA. Expert loss prevention, customer service, and crowd management.",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "ShieldWise Security"
+                        }
+                    },
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "priceCurrency": "USD",
+                        "price": "35-55"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Luxury Community Security Arcadia",
+                        "description": "Premium security services for upscale residential communities, estates, and gated neighborhoods in Arcadia with access control and patrol services.",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "ShieldWise Security"
+                        }
+                    },
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "priceCurrency": "USD",
+                        "price": "30-50"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Multilingual Security Guards Arcadia",
+                        "description": "Security personnel fluent in English, Mandarin, and Cantonese to serve Arcadia's diverse community with clear communication and cultural understanding.",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "ShieldWise Security"
+                        }
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Event Security Santa Anita Park",
+                        "description": "Professional event security for Santa Anita Park events, corporate functions, and private gatherings with crowd management and VIP protection.",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "ShieldWise Security"
+                        }
+                    }
+                }
+            ]
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "143",
+            "reviewCount": "98"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "@id": "https://shieldwisesecurity.com/los-angeles/arcadia#review1",
+                "author": {
+                    "@type": "Person",
+                    "name": "Linda C.",
+                    "jobTitle": "Store Manager"
+                },
+                "datePublished": "2024-04-15",
+                "reviewBody": "Outstanding security service for our Santa Anita Mall store. Professional, reliable multilingual guards with excellent customer interaction skills.",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "url": "https://shieldwisesecurity.com/los-angeles/arcadia#review1"
+            },
+            {
+                "@type": "Review",
+                "@id": "https://shieldwisesecurity.com/los-angeles/arcadia#review2",
+                "author": {
+                    "@type": "Person",
+                    "name": "David Z.",
+                    "jobTitle": "Community Director"
+                },
+                "datePublished": "2024-05-08",
+                "reviewBody": "Excellent response time and professional service for our Arcadia luxury community. Their multilingual capabilities are invaluable for our diverse residents.",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "url": "https://shieldwisesecurity.com/los-angeles/arcadia#review2"
+            }
+        ],
+        "potentialAction": {
+            "@type": "ReserveAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://shieldwisesecurity.com/contact",
+                "inLanguage": "en-US",
+                "actionPlatform": [
+                    "http://schema.org/DesktopWebPlatform",
+                    "http://schema.org/IOSPlatform",
+                    "http://schema.org/AndroidPlatform"
+                ]
+            },
+            "result": {
+                "@type": "Reservation",
+                "name": "Emergency Security Deployment"
+            }
+        },
+        "memberOf": [
+            {
+                "@type": "Organization",
+                "name": "California Association of Licensed Security Agencies"
+            },
+            {
+                "@type": "Organization",
+                "name": "Arcadia Chamber of Commerce"
+            }
+        ],
+        "award": [
+            "Best Security Provider Arcadia 2024 - San Gabriel Valley Business Journal",
+            "Excellence in Multilingual Security 2024 - CA Security Association"
+        ],
+        "foundingDate": "2010",
+        "slogan": "Arcadia's Most Trusted Security Partner",
+        "knowsAbout": [
+            "Santa Anita Mall Security",
+            "Luxury Community Security",
+            "Multilingual Security Services",
+            "Event Security",
+            "Commercial Building Security",
+            "Residential Security"
+        ]
+    }
+    </script>
+
+    <!-- ✅ Enhanced LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "ShieldWise Security - Arcadia",
+        "image": [
+            "https://shieldwisesecurity.com/img/arcadia-security-guards.jpg",
+            "https://shieldwisesecurity.com/img/santa-anita-mall-security.jpg"
+        ],
+        "description": "Arcadia's premier security guard company. Providing Santa Anita Mall, luxury community, and commercial security services since 2010. 24/7 emergency response with multilingual guards.",
+        "@id": "https://shieldwisesecurity.com/los-angeles/arcadia",
+        "url": "https://shieldwisesecurity.com/los-angeles/arcadia",
+        "telephone": "+1-714-716-7430",
+        "priceRange": "$$-$$$",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "411 E Huntington Dr",
+            "addressLocality": "Arcadia",
+            "addressRegion": "CA",
+            "postalCode": "91006",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 34.1397,
+            "longitude": -118.0353
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            ],
+            "opens": "00:00",
+            "closes": "23:59"
+        },
+        "sameAs": [
+            "https://www.facebook.com/shieldwisesecurity",
+            "https://twitter.com/shieldwisesecurity",
+            "https://www.instagram.com/shieldwisesecurity",
+            "https://www.linkedin.com/company/shieldwisesecurity"
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "143"
+        }
+    }
+    </script>
+
+    <!-- ✅ Enhanced FAQ Schema with Page Anchors -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "@id": "https://shieldwisesecurity.com/los-angeles/arcadia#faq-response-time",
+                "name": "How quickly can ShieldWise Security respond to emergency calls in Arcadia?",
+                "url": "https://shieldwisesecurity.com/los-angeles/arcadia#faq-response-time",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ShieldWise Security provides rapid emergency response within 2 hours for urgent security needs in Arcadia, CA. Our 24/7 dispatch center ensures immediate deployment of licensed security guards to your location."
+                }
+            },
+            {
+                "@type": "Question",
+                "@id": "https://shieldwisesecurity.com/los-angeles/arcadia#faq-multilingual",
+                "name": "Do you provide multilingual security guards for Arcadia businesses?",
+                "url": "https://shieldwisesecurity.com/los-angeles/arcadia#faq-multilingual",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we offer multilingual security guards fluent in English, Mandarin, and Cantonese to serve Arcadia's diverse business community. This ensures effective communication with all customers and employees."
+                }
+            },
+            {
+                "@type": "Question",
+                "@id": "https://shieldwisesecurity.com/los-angeles/arcadia#faq-santa-anita-mall",
+                "name": "Do you provide security for Santa Anita Mall?",
+                "url": "https://shieldwisesecurity.com/los-angeles/arcadia#faq-santa-anita-mall",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we provide professional retail security services for Santa Anita Mall and retail establishments throughout Arcadia. Our retail security guards are trained in loss prevention, customer service, and crowd management."
+                }
+            },
+            {
+                "@type": "Question",
+                "@id": "https://shieldwisesecurity.com/los-angeles/arcadia#faq-licensed-insured",
+                "name": "Are your Arcadia security guards licensed and insured?",
+                "url": "https://shieldwisesecurity.com/los-angeles/arcadia#faq-licensed-insured",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, all ShieldWise security guards are fully licensed through the California Bureau of Security and Investigative Services (BSIS). We carry $2M liability insurance and full workers' compensation. Each guard passes rigorous background checks, drug testing, and ongoing training programs."
+                }
+            },
+            {
+                "@type": "Question",
+                "@id": "https://shieldwisesecurity.com/los-angeles/arcadia#faq-luxury-communities",
+                "name": "Do you provide security for luxury communities in Arcadia?",
+                "url": "https://shieldwisesecurity.com/los-angeles/arcadia#faq-luxury-communities",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we specialize in premium security services for Arcadia's upscale residential communities, estates, and gated neighborhoods. Our services include access control, visitor management, patrol services, and emergency response tailored to luxury community standards."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- ✅ Performance Optimization with fetchpriority -->
+    <link rel="preload" href="/css/style-cities.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" as="style">
+    <link rel="preload" as="image" href="/img/arcadia-security-guards.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="/img/shieldwise-logo.png">
+
+    <!-- ✅ External CSS with font-display optimization -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style-cities.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- ✅ Favicon & App Icons -->
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- ✅ Tightened Security Headers -->
+    <!-- CSP managed via HTTP headers in index.js -->
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+    <!-- ✅ Voice Search Optimization -->
+    <meta name="voice-search-keywords" content="security guard near me, Arcadia security, Santa Anita Mall security, luxury community security">
+    <meta name="speakable" content="name,description,telephone">
+</head>
+
+<body id="top" itemscope itemtype="https://schema.org/WebPage">
+    <!-- Header Section -->
+    <%- include('../partials/Header') %>
+
+    <!-- Hero Section with Background Image -->
+    <section class="hero-downtown">
+        <div class="hero-content">
+            <h1>Arcadia Security Services</h1>
+            <h2>Professional Security Solutions for Santa Anita Mall & Luxury Communities</h2>
+            <a href="/get-quote" class="btn btn-primary btn-lg">Get a Free Security Quote</a>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="downtown-security">
+        <div class="container">
+            <h2 class="section-title">Comprehensive Security Solutions for Arcadia</h2>
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <p>ShieldWise Security delivers <span class="highlight">professional security guard services</span> customized for the unique needs of this prosperous community. From the bustling Santa Anita Mall to upscale residential areas, our experienced team ensures superior protection for your property and assets.</p>
+                    <p>Our security professionals are thoroughly trained in the unique requirements of this city's various districts, including retail centers, residential communities, and entertainment venues. We provide advanced security protocols combined with exceptional customer service and multilingual capabilities.</p>
+                </div>
+                <div class="image-content">
+                    <img src="/img/shahn1.png" alt="Professional Security Guards protecting Arcadia Santa Anita Mall and luxury communities" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="our-services">
+        <div class="container">
+            <h2>Our Security Services</h2>
+            <p>ShieldWise Security provides a comprehensive range of security services tailored to this community's unique business environment:</p>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-item">
+                    <i class="fas fa-store"></i>
+                    <h3>Santa Anita Mall Security</h3>
+                    <p>Specialized retail security for the renowned shopping destination and retail centers. Expert loss prevention, customer service, and crowd management for premium shopping environments.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-item">
+                    <i class="fas fa-home"></i>
+                    <h3>Luxury Community Security</h3>
+                    <p>Premium security services for upscale residential communities, estates, and gated neighborhoods with access control and patrol services.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Event Security</h3>
+                    <p>Professional event security for Santa Anita Park events, corporate functions, and private gatherings with crowd management and VIP protection.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-item">
+                    <i class="fas fa-building"></i>
+                    <h3>Commercial Building Security</h3>
+                    <p>Comprehensive security for office buildings, business centers, and commercial properties with access control, visitor management, and 24/7 patrols.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-item">
+                    <i class="fas fa-users"></i>
+                    <h3>Multilingual Security Services</h3>
+                    <p>Security personnel fluent in English, Mandarin, and Cantonese to serve the diverse community with clear communication and cultural understanding.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-item">
+                    <i class="fas fa-hard-hat"></i>
+                    <h3>Construction Site Security</h3>
+                    <p>Prevent theft and vandalism at construction and development sites with 24/7 security guards, surveillance, and access control measures.</p>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="service-item">
+                    <i class="fas fa-video"></i>
+                    <h3>Surveillance Systems</h3>
+                    <p>Advanced video surveillance systems to complement our security guard services, providing comprehensive protection for local properties.</p>
+                </div>
+
+                <!-- Service 8 -->
+                <div class="service-item">
+                    <i class="fas fa-car"></i>
+                    <h3>Mobile Patrol</h3>
+                    <p>Flexible mobile patrol services for multiple properties with routine check-ins, rapid response, and GPS tracking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Challenges Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">Security Challenges</h2>
+                    <p>As an affluent city with high-end retail, entertainment venues, and luxury residential areas, this community presents unique security challenges that require specialized approaches:</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> High-end retail security for Santa Anita Mall</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Luxury residential community protection</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Entertainment venue security management</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Multilingual communication capabilities</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success mr-2"></i> Cultural sensitivity and premium service</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/img/2.webp" alt="Security Services" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-4">Our Service Areas</h2>
+                    <p class="mb-5">ShieldWise Security proudly serves all areas of the community, including:</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Downtown Area</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Santa Anita Mall Area</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Santa Anita Park</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Huntington Drive Corridor</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> North District</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> South District</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> East District</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> West District</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> The Shops at Santa Anita</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Business District</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26444.93271925618!2d-117.92765682191085!3d34.13970000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c3258b3dd1904f%3A0x47fde469c268f39b!2sArcadia%2C%20CA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" title="Map of Arcadia, California showing ShieldWise Security service areas"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial" id="review1">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"ShieldWise Security has significantly improved the security at our retail store in Santa Anita Mall. Their guards are professional, attentive, and have helped us dramatically reduce losses. The management team is responsive and easy to work with."</p>
+                    <h4>Sarah Johnson</h4>
+                    <div class="position">Store Manager, Santa Anita Mall</div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial" id="review2">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"We've used ShieldWise for multiple special events in our community. Their team manages large crowds effectively and maintains a friendly but authoritative presence. Their preparation and attention to detail have made our events run smoothly and safely."</p>
+                    <h4>David Zhang</h4>
+                    <div class="position">Event Director</div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"We've experienced a significant improvement in security and resident satisfaction. Their guards are professional, courteous, and provide excellent service to our residents."</p>
+                    <h4>Jennifer Lee</h4>
+                    <div class="position">HOA President, North District</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section Matched to Schema -->
+    <section class="py-5" id="faq">
+        <div class="container">
+            <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="arcadiaFAQ">
+                        <!-- FAQ Item 1 - Exact match to schema -->
+                        <div class="card mb-3">
+                            <div class="card-header" id="headingOne">
+                                <h3 class="mb-0 h5">
+                                    <button class="btn btn-link btn-block text-left text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <span id="faq-response-time">How quickly can ShieldWise Security respond to emergency calls?</span>
+                                    </button>
+                                </h3>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#arcadiaFAQ">
+                                <div class="card-body">
+                                    ShieldWise Security provides rapid emergency response within 2 hours for urgent security needs. Our 24/7 dispatch center ensures immediate deployment of licensed security guards to your location.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 2 - Exact match to schema -->
+                        <div class="card mb-3">
+                            <div class="card-header" id="headingTwo">
+                                <h3 class="mb-0 h5">
+                                    <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <span id="faq-santa-anita-mall">Do you provide security for Santa Anita Mall?</span>
+                                    </button>
+                                </h3>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#arcadiaFAQ">
+                                <div class="card-body">
+                                    Yes, we provide professional retail security services for Santa Anita Mall and retail establishments throughout the area. Our retail security guards are trained in loss prevention, customer service, and crowd management.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 3 - Exact match to schema -->
+                        <div class="card mb-3">
+                            <div class="card-header" id="headingThree">
+                                <h3 class="mb-0 h5">
+                                    <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <span id="faq-multilingual">Do you provide multilingual security guards for local businesses?</span>
+                                    </button>
+                                </h3>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#arcadiaFAQ">
+                                <div class="card-body">
+                                    Yes, we offer multilingual security guards fluent in English, Mandarin, and Cantonese to serve the diverse business community. This ensures effective communication with all customers and employees.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 4 - Additional question -->
+                        <div class="card mb-3">
+                            <div class="card-header" id="headingFour">
+                                <h3 class="mb-0 h5">
+                                    <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        <span id="faq-licensed-insured">Are your security guards licensed and insured?</span>
+                                    </button>
+                                </h3>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#arcadiaFAQ">
+                                <div class="card-body">
+                                    Yes, all ShieldWise security guards are fully licensed through the California Bureau of Security and Investigative Services (BSIS). We carry $2M liability insurance and full workers' compensation. Each guard passes rigorous background checks, drug testing, and ongoing training programs.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 5 - Voice search question -->
+                        <div class="card mb-3 highlighted-faq">
+                            <div class="card-header bg-danger text-white" id="headingFive">
+                                <h3 class="mb-0 h5">
+                                    <button class="btn btn-link btn-block text-left collapsed text-decoration-none text-white" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        <span id="faq-luxury-communities">Need security for luxury communities?</span>
+                                    </button>
+                                </h3>
+                            </div>
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#arcadiaFAQ">
+                                <div class="card-body">
+                                    Yes, we specialize in premium security services for upscale residential communities, estates, and gated neighborhoods. Our services include access control, visitor management, patrol services, and emergency response tailored to luxury community standards. Call <a href="tel:+17147167430">(714) 716-7430</a> for immediate assistance.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-4">Ready to Secure Your Property?</h2>
+                    <p class="lead mb-5">Contact ShieldWise Security today for a customized security solution designed specifically for your location. Our team of security experts will work with you to develop a comprehensive security plan that addresses your unique challenges.</p>
+                    <a href="/get-quote" class="btn btn-light btn-lg mr-3 mb-3">Get a Free Quote</a>
+                    <a href="/contact" class="btn btn-outline-light btn-lg mb-3">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Areas Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Explore Other Los Angeles Areas We Serve</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <a href="/los-angeles" class="text-decoration-none">
+                        <div class="card h-100 shadow-sm hover-effect">
+                            <img src="/img/la-pic.webp" class="card-img-top" alt="Los Angeles Security Services">
+                            <div class="card-body text-center">
+                                <h3 class="h5 card-title">Los Angeles</h3>
+                                <p class="card-text">Comprehensive security services throughout Los Angeles.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="/los-angeles/pasadena" class="text-decoration-none">
+                        <div class="card h-100 shadow-sm hover-effect">
+                            <img src="/img/OC1.webp" class="card-img-top" alt="Pasadena Security Services">
+                            <div class="card-body text-center">
+                                <h3 class="h5 card-title">Pasadena</h3>
+                                <p class="card-text">Specialized security for Pasadena businesses and events.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="/los-angeles/torrance" class="text-decoration-none">
+                        <div class="card h-100 shadow-sm hover-effect">
+                            <img src="/img/santaclara.webp" class="card-img-top" alt="Torrance Security Services">
+                            <div class="card-body text-center">
+                                <h3 class="h5 card-title">Torrance</h3>
+                                <p class="card-text">Premium security solutions for Torrance properties.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <%- include('../partials/Footer') %>
+
+    <!-- Back to Top Button -->
+    <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript for Interactive Elements -->
+    <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded successfully');
+
+            // Initialize fade-in animations
+            function initAnimations() {
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, observerOptions);
+
+                // Observe all fade-in elements
+                document.querySelectorAll('.fade-in').forEach(el => {
+                    observer.observe(el);
+                });
+            }
+
+            // Initialize back to top button
+            function initBackToTop() {
+                const backToTopButton = document.querySelector('.back-to-top');
+
+                if (backToTopButton) {
+                    window.addEventListener('scroll', function() {
+                        if (window.pageYOffset > 300) {
+                            backToTopButton.classList.add('active');
+                        } else {
+                            backToTopButton.classList.remove('active');
+                        }
+                    });
+
+                    backToTopButton.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    });
+                }
+            }
+
+            // Initialize navbar scroll effect
+            function initNavbar() {
+                const navbar = document.querySelector('.navbar');
+
+                if (navbar) {
+                    window.addEventListener('scroll', function() {
+                        if (window.pageYOffset > 50) {
+                            navbar.classList.add('scrolled');
+                        } else {
+                            navbar.classList.remove('scrolled');
+                        }
+                    });
+                }
+            }
+
+            // Initialize all functions
+            initAnimations();
+            initBackToTop();
+            initNavbar();
+        });
+
+        // jQuery ready function for Bootstrap components
+        $(document).ready(function() {
+            console.log('jQuery loaded successfully, version:', $.fn.jquery);
+
+            // Test FAQ accordion functionality
+            $('.collapse').on('show.bs.collapse', function () {
+                console.log('FAQ opening:', this.id);
+                const button = $(this).parent().find('[data-toggle="collapse"]');
+                button.removeClass('collapsed');
+            });
+
+            $('.collapse').on('hide.bs.collapse', function () {
+                console.log('FAQ closing:', this.id);
+                const button = $(this).parent().find('[data-toggle="collapse"]');
+                button.addClass('collapsed');
+            });
+
+            // Test FAQ button clicks
+            $('[data-toggle="collapse"]').on('click', function() {
+                console.log('FAQ button clicked:', $(this).attr('data-target'));
+            });
+
+            // Smooth scrolling for anchor links
+            $('a[href^="#"]').on('click', function(event) {
+                const target = $(this.getAttribute('href'));
+                if (target.length) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 70
+                    }, 1000);
+                }
+            });
+
+            // Initialize tooltips if any
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
+        // Fallback for older browsers
+        if (typeof IntersectionObserver === 'undefined') {
+            // Fallback animation for older browsers
+            window.addEventListener('scroll', function() {
+                const elements = document.querySelectorAll('.fade-in');
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+
+                    if (elementPosition < screenPosition) {
+                        element.classList.add('visible');
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>

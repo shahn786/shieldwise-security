@@ -338,7 +338,7 @@
                     <% serviceData.testimonials.forEach(testimonial => { %>
                     <div class="col-md-4">
                         <div class="testimonial-card">
-                            <img src="/img/<%= testimonial.image %>" alt="<%= testimonial.name %>, <%= testimonial.title %>" class="client-image" loading="lazy" width="80" height="80">
+                            <img loading="lazy" src="/img/<%= testimonial.image %>" alt="<%= testimonial.name %>, <%= testimonial.title %>" class="client-image" loading="lazy" width="80" height="80">
                             <h4><%= testimonial.name %></h4>
                             <p class="text-muted"><%= testimonial.title %></p>
                             <p>"<%= testimonial.quote %>"</p>

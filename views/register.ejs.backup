@@ -1,0 +1,1442 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Enhanced SEO Meta Tags -->
+    <title>Register with ShieldWise Security | Premier Security Guard Jobs in California</title>
+    <meta name="description" content="Create your ShieldWise Security account to access exclusive security guard jobs, career advancement, and customized protection plans across California. Apply today!">
+    <meta name="keywords" content="security guard registration, ShieldWise account signup, security jobs California, armed guard careers, unarmed security positions, security professional certification, security license training">
+    <meta name="author" content="ShieldWise Security">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://www.shieldwisesecurity.com/register" />
+    
+    <!-- Additional SEO meta tags -->
+    <meta name="geo.region" content="US-CA" />
+    <meta name="geo.placename" content="California" />
+    <meta name="geo.position" content="36.7783;-119.4179" />
+    <meta name="ICBM" content="36.7783, -119.4179" />
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Enhanced Schema.org Markup for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Create an Account with ShieldWise Security",
+      "description": "Register for a ShieldWise Security account to access top-tier security jobs, professional training, and career advancement opportunities throughout California.",
+      "provider": {
+        "@type": "Organization",
+        "name": "ShieldWise Security",
+        "logo": "https://www.shieldwisesecurity.com/img/logo.png",
+        "url": "https://www.shieldwisesecurity.com",
+        "sameAs": [
+          "https://www.facebook.com/shieldwisesecurity",
+          "https://www.linkedin.com/company/shieldwisesecurity",
+          "https://twitter.com/shieldwisesec"
+        ]
+      },
+      "offers": {
+        "@type": "Offer",
+        "description": "Join our elite network of security professionals",
+        "availability": "https://schema.org/InStock"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.shieldwisesecurity.com/register"
+      }
+    }
+    </script>
+    
+    <!-- FAQ Schema for Rich Results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the requirements to become a security guard with ShieldWise?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Requirements include being at least 18 years old, having a clean criminal record, possessing a valid Guard Card, and completing required training. Armed positions require additional licensing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does the application process take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "After creating your account and submitting all required documents, the application review typically takes 3-5 business days. Background checks may require additional time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does ShieldWise Security provide training for new guards?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, ShieldWise offers comprehensive training programs for both new and experienced security professionals, including Guard Card certification assistance, weapons training, and specialized security protocols."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What career advancement opportunities are available?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ShieldWise provides clear advancement paths from entry-level positions to supervisor roles, management positions, and specialized security assignments, supported by ongoing professional development programs."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Open Graph & Twitter Card for Social Media (Enhanced) -->
+    <meta property="og:title" content="Register with ShieldWise Security | Premier Security Careers">
+    <meta property="og:description" content="Create your ShieldWise Security account to access exclusive security guard jobs, professional training, and career advancement opportunities across California.">
+    <meta property="og:image" content="/img/register-security-banner.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://www.shieldwisesecurity.com/register">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ShieldWise Security">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@shieldwisesec">
+    <meta name="twitter:creator" content="@shieldwisesec">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    
+    <!-- Preconnect to External Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://stackpath.bootstrapcdn.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <style>
+      /* Registration Page Styling - Enhanced for SEO and UX */
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #f5f7fa;
+        color: #333;
+        overflow-x: hidden;
+      }
+      
+      /* Registration Title Section */
+      .registration-title-section {
+        background: linear-gradient(135deg, #1a1a1a, #3a3a3a);
+        padding: 60px 0;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .registration-title-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('/img/security-pattern.png');
+        opacity: 0.05;
+        z-index: 1;
+      }
+      
+      .registration-title-section h1,
+      .registration-title-section p {
+        position: relative;
+        z-index: 2;
+      }
+      
+      .title-decoration {
+        height: 4px;
+        width: 80px;
+        background: linear-gradient(90deg, #d12028, #ff4d4d);
+        border-radius: 2px;
+      }
+      
+      .registration-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 0;
+      }
+      
+      .registration-card {
+        display: flex;
+        width: 90%;
+        max-width: 1200px;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+      }
+      
+      .image-section {
+        flex: 1;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("/img/1.jpg") no-repeat center center;
+        background-size: cover;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        color: white;
+        text-align: center;
+      }
+      
+      .image-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(209, 32, 40, 0.3), rgba(0, 0, 0, 0.5));
+        z-index: -1;
+      }
+      
+      .image-content {
+        max-width: 90%;
+        z-index: 1;
+      }
+      
+      .image-content h2 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      }
+      
+      .image-content p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 25px;
+        text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+      }
+      
+      .security-features {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+      }
+      
+      .feature-item {
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        padding: 10px 15px;
+        border-radius: 8px;
+        width: calc(50% - 10px);
+      }
+      
+      .feature-item i {
+        font-size: 1.5rem;
+        color: #d12028;
+        margin-right: 10px;
+      }
+      
+      .form-section {
+        flex: 1.2;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow-y: auto;
+        max-height: 800px;
+      }
+      
+      .form-section h2 {
+        font-weight: 700;
+        margin-bottom: 30px;
+        font-size: 2.2rem;
+        color: #222;
+        position: relative;
+        padding-bottom: 15px;
+      }
+      
+      .form-section h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(to right, #d12028, #a51920);
+        border-radius: 2px;
+      }
+      
+      .form-group {
+        margin-bottom: 25px;
+        display: flex;
+        gap: 20px;
+      }
+      
+      .col {
+        flex: 1;
+      }
+      
+      .form-group label {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+        display: block;
+        color: #333;
+      }
+      
+      .form-control {
+        width: 100%;
+        padding: 12px 15px;
+        font-size: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        background-color: #f8f9fa;
+      }
+      
+      .form-control:focus {
+        border-color: #d12028;
+        box-shadow: 0 0 0 0.2rem rgba(209, 32, 40, 0.25);
+        background-color: #fff;
+      }
+      
+      .form-control.error {
+        border-color: #d12028;
+        background-color: rgba(209, 32, 40, 0.05);
+      }
+      
+      .error-message {
+        color: #d12028;
+        font-size: 0.85rem;
+        display: none;
+        margin-top: 5px;
+        font-weight: 500;
+      }
+      
+      #success-message {
+        display: none;
+        background-color: rgba(40, 167, 69, 0.9);
+        color: white;
+        padding: 12px;
+        border-radius: 8px;
+        font-weight: 500;
+        animation: fadeIn 0.5s;
+      }
+      
+      .form-control::placeholder {
+        color: #aaa;
+        font-style: italic;
+      }
+      
+      .form-section button {
+        width: 100%;
+        padding: 14px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #fff;
+        background: linear-gradient(135deg, #d12028, #a51920);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 25px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .form-section button:hover {
+        background: linear-gradient(135deg, #a51920, #7a1218);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(209, 32, 40, 0.2);
+      }
+      
+      .form-section button:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: 0.5s;
+      }
+      
+      .form-section button:hover:before {
+        left: 100%;
+      }
+      
+      .alert {
+        margin-bottom: 20px;
+        border-radius: 8px;
+        font-weight: 500;
+      }
+      
+      #cust-success-alert {
+        display: none;
+        background-color: rgba(40, 167, 69, 0.9);
+        color: white;
+        border: none;
+        padding: 15px;
+        animation: fadeIn 0.5s;
+      }  
+      
+      #cust-danger-alert {
+        display: none;
+        background-color: rgba(220, 53, 69, 0.9);
+        color: white;
+        border: none;
+        padding: 15px;
+        animation: fadeIn 0.5s;
+      }
+      
+      .field-section-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin: 30px 0 15px;
+        color: #d12028;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+      }
+      
+      .required-field::after {
+        content: ' *';
+        color: #d12028;
+      }
+      
+      .privacy-terms {
+        margin-top: 20px;
+        font-size: 0.85rem;
+        color: #777;
+        text-align: center;
+      }
+      
+      .privacy-terms a {
+        color: #d12028;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      
+      .privacy-terms a:hover {
+        text-decoration: underline;
+      }
+      
+      .form-footer {
+        margin-top: 30px;
+        text-align: center;
+        font-size: 0.95rem;
+      }
+      
+      .form-footer a {
+        color: #d12028;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      
+      .form-footer a:hover {
+        text-decoration: underline;
+      }
+      
+      .password-strength {
+        height: 5px;
+        margin-top: 8px;
+        border-radius: 3px;
+        background: #eee;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      .password-strength-meter {
+        width: 0;
+        height: 100%;
+        transition: width 0.3s ease, background-color 0.3s ease;
+      }
+      
+      .password-strength-text {
+        font-size: 0.8rem;
+        margin-top: 5px;
+        display: none;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      /* Responsive styles */
+      @media (max-width: 992px) {
+        .registration-card {
+          flex-direction: column;
+          width: 95%;
+        }
+        
+        .image-section {
+          padding: 60px 30px;
+        }
+        
+        .form-section {
+          padding: 30px;
+        }
+        
+        .image-content h2 {
+          font-size: 2.2rem;
+        }
+        
+        .feature-item {
+          width: 100%;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .form-group {
+          flex-direction: column;
+          gap: 10px;
+        }
+        
+        .image-section {
+          padding: 40px 20px;
+        }
+        
+        .image-content h2 {
+          font-size: 1.8rem;
+        }
+        
+        .image-content p {
+          font-size: 1rem;
+        }
+        
+        .form-section h2 {
+          font-size: 1.8rem;
+        }
+      }
+      
+      @media (max-width: 576px) {
+        .registration-container {
+          padding: 20px 0;
+        }
+        
+        .form-section {
+          padding: 25px 15px;
+        }
+      }
+      
+      /* Testimonials Section */
+      .testimonials-section {
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .section-title {
+        position: relative;
+        color: #333;
+        font-weight: 700;
+        padding-bottom: 15px;
+      }
+      
+      .section-title:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(90deg, #d12028, #ff4d4d);
+        border-radius: 2px;
+      }
+      
+      .testimonial-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+      }
+      
+      .testimonial-text {
+        line-height: 1.8;
+        color: #555;
+      }
+      
+      /* Career Benefits Section */
+      .career-benefits {
+        position: relative;
+      }
+      
+      .career-benefits img {
+        transition: transform 0.5s ease;
+      }
+      
+      .career-benefits img:hover {
+        transform: scale(1.02);
+      }
+      
+      .benefit-icon {
+        font-size: 1.5rem;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      /* FAQ Section Styling */
+      .faq-section {
+        position: relative;
+      }
+      
+      .accordion .card {
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      
+      .accordion .card:hover {
+        transform: translateY(-2px);
+      }
+      
+      .accordion .card-header {
+        padding: 0;
+        border-bottom: none;
+      }
+      
+      .accordion .btn-link {
+        position: relative;
+        padding: 20px;
+        font-size: 1.1rem;
+      }
+      
+      .accordion .btn-link:hover {
+        text-decoration: none;
+        color: #d12028;
+      }
+      
+      .accordion .btn-link:focus {
+        box-shadow: none;
+        text-decoration: none;
+      }
+      
+      .accordion .btn-link i {
+        transition: transform 0.3s ease;
+      }
+      
+      .accordion .btn-link:not(.collapsed) i {
+        transform: rotate(180deg);
+      }
+      
+      .accordion .card-body {
+        padding: 0 20px 20px;
+        color: #666;
+        line-height: 1.8;
+      }
+      
+      /* Mobile Responsiveness for New Sections */
+      @media (max-width: 768px) {
+        .registration-title-section {
+          padding: 40px 0;
+        }
+        
+        .registration-title-section h1 {
+          font-size: 2rem;
+        }
+        
+        .registration-title-section p {
+          font-size: 1rem;
+        }
+        
+        .testimonial-card {
+          margin-bottom: 20px;
+        }
+        
+        .section-title {
+          font-size: 1.8rem;
+        }
+        
+        .accordion .btn-link {
+          font-size: 1rem;
+          padding: 15px;
+        }
+      }
+    </style>
+</head>
+
+<body>
+  <!-- Include Header -->
+  <%- include('partials/Header') %>
+
+  <main>
+    <!-- Page Title Section with Career Focus -->
+    <section class="registration-title-section py-4 bg-dark text-white text-center">
+      <div class="container">
+        <h1 class="display-4 font-weight-bold mb-2" style="color: white;">Start Your Security Career Today</h1>
+        <p class="lead mb-0">Join California's premier security team and unlock professional growth opportunities</p>
+        <div class="title-decoration mt-3 mb-2 mx-auto"></div>
+      </div>
+    </section>
+  
+    <div class="registration-container">
+      <div class="registration-card">
+        <!-- Image Section with Enhanced Benefits -->
+        <div class="image-section">
+          <div class="image-content">
+            <h2>Join ShieldWise Security</h2>
+            <p>Create your account today and access exclusive security positions, career advancement, and comprehensive training throughout California.</p>
+            
+            <div class="security-features">
+              <div class="feature-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>Professional Security Network</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-user-tie"></i>
+                <span>Career Advancement Path</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-file-contract"></i>
+                <span>Competitive Pay & Benefits</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Training & Certification</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Flexible Scheduling</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-building"></i>
+                <span>Diverse Work Environments</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Section -->
+        <div class="form-section">
+          <h2>Create an Account</h2>
+
+          <div class="alert alert-success w-100" id="cust-success-alert" role="alert">
+            Registration successful! Please check your email to verify your account.
+          </div>
+
+          <div class="alert alert-danger w-100" id="cust-danger-alert" role="alert">
+            There was a problem with your registration. Please try again.
+          </div>
+
+          <form id="registrationForm" method="POST" enctype="multipart/form-data">
+            <!-- Personal Information -->
+            <div class="field-section-title">Personal Information</div>
+            
+            <!-- Name Fields -->
+            <div class="form-group">
+              <div class="col">
+                <label for="firstName" class="required-field">First Name</label>
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  class="form-control"
+                  placeholder="Enter your first name"
+                  aria-required="true"
+                />
+                <div class="error-message" id="firstName-error">
+                  First name is required.
+                </div>
+              </div>
+              <div class="col">
+                <label for="lastName" class="required-field">Last Name</label>
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  class="form-control"
+                  placeholder="Enter your last name"
+                  aria-required="true"
+                />
+                <div class="error-message" id="lastName-error">
+                  Last name is required.
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Fields -->
+            <div class="form-group">
+              <div class="col">
+                <label for="email" class="required-field">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="example@mail.com"
+                  aria-required="true"
+                />
+                <div class="error-message" id="email-error">
+                  Enter a valid email address.
+                </div>
+              </div>
+              <div class="col">
+                <label for="phone" class="required-field">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="form-control"
+                  placeholder="1234567890" 
+                  maxlength="10"
+                  aria-required="true"
+                />
+                <div class="error-message" id="phone-error">
+                  Phone number must be 10 digits.
+                </div>
+              </div>
+            </div>
+
+            <!-- Address Section -->
+            <div class="field-section-title">Address Information</div>
+            
+            <!-- Address Fields -->
+            <div class="form-group">
+              <div class="col">
+                <label for="street" class="required-field">Street Address</label>
+                <input
+                  type="text"
+                  id="street"
+                  name="street"
+                  class="form-control"
+                  placeholder="123 Main St"
+                  aria-required="true"
+                />
+                <div class="error-message" id="street-error">
+                  Street Address is required.
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col">
+                <label for="city" class="required-field">City</label>
+                <input
+                  type="text"
+                  id="city"
+                  name="city"
+                  class="form-control"
+                  placeholder="Your City"
+                  aria-required="true"
+                />
+                <div class="error-message" id="city-error">
+                  City is required.
+                </div>
+              </div>
+              <div class="col">
+                <label for="state" class="required-field">State</label>
+                <input
+                  type="text"
+                  id="state"
+                  name="state"
+                  class="form-control"
+                  placeholder="Your State"
+                  aria-required="true"
+                />
+                <div class="error-message" id="state-error">
+                  State is required.
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col">
+                <label for="zip" class="required-field">Zip/Postal Code</label>
+                <input
+                  type="text"
+                  id="zip"
+                  name="zip"
+                  class="form-control"
+                  placeholder="12345" 
+                  maxlength="5"
+                  aria-required="true"
+                />
+                <div class="error-message" id="zip-error">
+                  Zip/Postal Code is required and must be 5 digits.
+                </div>
+              </div>
+            </div>
+
+            <!-- Professional Information -->
+            <div class="field-section-title">Professional Information</div>
+            
+            <!-- Position Fields -->
+            <div class="form-group">
+              <div class="col">
+                <label for="position">Position Applying For</label>
+                <select id="position" name="position" class="form-control">
+                  <option value="" disabled selected>Select Position</option>
+                  <option value="armed-guard">Armed Security Guard</option>
+                  <option value="unarmed-guard">Unarmed Security Guard</option>
+                  <option value="supervisor">Security Supervisor</option>
+                  <option value="manager">Security Manager</option>
+                  <option value="client">Client/Business Owner</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="col">
+                <label for="guard-card-no">Guard Card Number</label>
+                <input
+                  type="text"
+                  id="guard-card-no"
+                  name="guardCardNo"
+                  class="form-control"
+                  placeholder="Leave blank if not applicable"
+                />
+              </div>
+            </div>
+
+            <!-- Account Information -->
+            <div class="field-section-title">Account Information</div>
+            
+            <!-- Password Fields -->
+            <div class="form-group">
+              <div class="col">
+                <label for="password" class="required-field">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="form-control"
+                  placeholder="Enter your password"
+                  aria-required="true"
+                />
+                <div class="password-strength">
+                  <div class="password-strength-meter"></div>
+                </div>
+                <div class="password-strength-text"></div>
+                <div class="error-message" id="password-error">
+                  Password must be at least 6 characters.
+                </div>
+              </div>
+              <div class="col">
+                <label for="confirm-password" class="required-field">Confirm Password</label>
+                <input
+                  type="password"
+                  id="confirm-password"
+                  name="confirmPassword"
+                  class="form-control"
+                  placeholder="Confirm your password"
+                  aria-required="true"
+                />
+                <div class="error-message" id="confirm-password-error">
+                  Passwords must match.
+                </div>
+              </div>
+            </div>
+
+            <div class="privacy-terms">
+              By creating an account, you agree to ShieldWise Security's 
+              <a href="/terms">Terms of Service</a> and 
+              <a href="/privacy">Privacy Policy</a>.
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary" id="registerButton">
+              Create Your Account <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+
+            <div class="alert alert-success w-100 mt-3" role="alert" id="success-message">
+              Registration successful! Please log in.
+            </div>
+
+            <div class="form-footer">
+              Already have an account? <a href="/login">Sign In</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials-section py-5 mt-5 bg-light">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">What Our Security Team Says</h2>
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <div class="testimonial-card p-4 bg-white shadow-sm rounded h-100">
+              <div class="testimonial-rating mb-3">
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+              </div>
+              <p class="testimonial-text font-italic">"Joining ShieldWise Security was the best career decision I've made. The professional training and advancement opportunities have helped me grow from an entry-level position to a site supervisor in just two years."</p>
+              <div class="testimonial-author d-flex align-items-center mt-3">
+                <div class="avatar mr-3">
+                  <img src="/img/profile-placeholder.jpg" alt="Security Professional" width="50" height="50" class="rounded-circle">
+                </div>
+                <div>
+                  <h5 class="mb-0">Michael Rodriguez</h5>
+                  <small class="text-muted">Security Supervisor, Los Angeles</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <div class="testimonial-card p-4 bg-white shadow-sm rounded h-100">
+              <div class="testimonial-rating mb-3">
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+              </div>
+              <p class="testimonial-text font-italic">"The training program at ShieldWise is top-notch. They helped me get my Guard Card and provided specialized training that's given me an edge in the security industry. The flexible scheduling works perfectly with my education goals."</p>
+              <div class="testimonial-author d-flex align-items-center mt-3">
+                <div class="avatar mr-3">
+                  <img src="/img/profile-placeholder.jpg" alt="Security Professional" width="50" height="50" class="rounded-circle">
+                </div>
+                <div>
+                  <h5 class="mb-0">Jasmine Thompson</h5>
+                  <small class="text-muted">Armed Security Guard, San Diego</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <div class="testimonial-card p-4 bg-white shadow-sm rounded h-100">
+              <div class="testimonial-rating mb-3">
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star-half-alt text-warning"></i>
+              </div>
+              <p class="testimonial-text font-italic">"After serving in the military, ShieldWise offered me a smooth transition to civilian security work. The company values my experience and provides competitive pay with excellent benefits. I appreciate how they prioritize both employee and client satisfaction."</p>
+              <div class="testimonial-author d-flex align-items-center mt-3">
+                <div class="avatar mr-3">
+                  <img src="/img/profile-placeholder.jpg" alt="Security Professional" width="50" height="50" class="rounded-circle">
+                </div>
+                <div>
+                  <h5 class="mb-0">Robert Jackson</h5>
+                  <small class="text-muted">Executive Protection, San Francisco</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Career Benefits Section -->
+    <section class="career-benefits py-5 bg-white">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <img src="/img/2.webp" alt="Security Professional Training" class="img-fluid rounded shadow-lg">
+          </div>
+          <div class="col-lg-6">
+            <h2 class="section-title mb-4">Your Security Career Starts Here</h2>
+            <p class="lead mb-4">ShieldWise Security offers more than just a job—we provide a rewarding career path with continuous growth opportunities.</p>
+            <div class="benefits-list">
+              <div class="benefit-item d-flex align-items-start mb-4">
+                <div class="benefit-icon mr-3 mt-1">
+                  <i class="fas fa-dollar-sign text-success"></i>
+                </div>
+                <div>
+                  <h5>Competitive Compensation</h5>
+                  <p>Above-industry-standard pay with regular performance-based increases and bonuses for exceptional service.</p>
+                </div>
+              </div>
+              <div class="benefit-item d-flex align-items-start mb-4">
+                <div class="benefit-icon mr-3 mt-1">
+                  <i class="fas fa-graduation-cap text-primary"></i>
+                </div>
+                <div>
+                  <h5>Professional Development</h5>
+                  <p>Access to ongoing training, specialized certifications, and skill development programs to advance your security career.</p>
+                </div>
+              </div>
+              <div class="benefit-item d-flex align-items-start">
+                <div class="benefit-icon mr-3 mt-1">
+                  <i class="fas fa-clipboard-list text-danger"></i>
+                </div>
+                <div>
+                  <h5>Licensing Assistance</h5>
+                  <p>Support with obtaining and renewing your security guard license, firearms permits, and other required certifications.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="faq-section py-5 bg-light">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">Frequently Asked Questions</h2>
+        <div class="accordion" id="registrationFAQ">
+          <div class="card mb-3 border-0 shadow-sm">
+            <div class="card-header bg-white" id="headingOne">
+              <h3 class="mb-0">
+                <button class="btn btn-link text-dark text-decoration-none font-weight-bold w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  What are the requirements to become a security guard with ShieldWise?
+                  <i class="fas fa-chevron-down float-right"></i>
+                </button>
+              </h3>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#registrationFAQ">
+              <div class="card-body">
+                To join our team, you must be at least 18 years old, possess a high school diploma or equivalent, have a clean criminal record, and hold a valid Guard Card issued by the Bureau of Security and Investigative Services (BSIS). For armed positions, you'll need additional weapons permits and training certifications. We also look for individuals with strong communication skills, professional demeanor, and a customer service mindset.
+              </div>
+            </div>
+          </div>
+          
+          <div class="card mb-3 border-0 shadow-sm">
+            <div class="card-header bg-white" id="headingTwo">
+              <h3 class="mb-0">
+                <button class="btn btn-link text-dark text-decoration-none font-weight-bold w-100 text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  How long does the application process take?
+                  <i class="fas fa-chevron-down float-right"></i>
+                </button>
+              </h3>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#registrationFAQ">
+              <div class="card-body">
+                After creating your account and submitting all required documentation, our hiring team typically reviews applications within 3-5 business days. Background checks may require additional processing time, usually 7-10 days. Once approved, you'll be invited to orientation and initial training sessions. The entire process from application to first assignment usually takes 2-3 weeks, though we can expedite for qualified candidates when immediate positions are available.
+              </div>
+            </div>
+          </div>
+          
+          <div class="card mb-3 border-0 shadow-sm">
+            <div class="card-header bg-white" id="headingThree">
+              <h3 class="mb-0">
+                <button class="btn btn-link text-dark text-decoration-none font-weight-bold w-100 text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Does ShieldWise Security provide training for new guards?
+                  <i class="fas fa-chevron-down float-right"></i>
+                </button>
+              </h3>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#registrationFAQ">
+              <div class="card-body">
+                Yes, ShieldWise offers comprehensive training programs for both new and experienced security professionals. We provide assistance with Guard Card certification, weapons training for armed positions, and specialized security protocols. Our training covers emergency response, conflict de-escalation, report writing, customer service, and site-specific procedures. All team members receive paid training and ongoing professional development opportunities to enhance their skills and advance their careers.
+              </div>
+            </div>
+          </div>
+          
+          <div class="card mb-3 border-0 shadow-sm">
+            <div class="card-header bg-white" id="headingFour">
+              <h3 class="mb-0">
+                <button class="btn btn-link text-dark text-decoration-none font-weight-bold w-100 text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  What career advancement opportunities are available?
+                  <i class="fas fa-chevron-down float-right"></i>
+                </button>
+              </h3>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#registrationFAQ">
+              <div class="card-body">
+                ShieldWise Security provides clear advancement paths from entry-level positions to leadership roles. Our career progression includes opportunities to become shift supervisors, site managers, field supervisors, and operations directors. We also offer specialized tracks in executive protection, investigation, training, and client relations. Advancement is based on performance, reliability, and professional development. Many of our managers began as security officers, demonstrating our commitment to promoting from within.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Include Footer -->
+  <%- include('partials/Footer') %>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <!-- Structured Data Verification -->
+  <script>
+    // This helps ensure your structured data is valid
+    console.log('Registration page loaded successfully');
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize all tooltips for better UX
+      $('[data-toggle="tooltip"]').tooltip();
+      
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+      
+      // Add animations to elements when they come into view
+      const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.testimonial-card, .benefit-item, .accordion .card');
+        elements.forEach(element => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          if (elementPosition < windowHeight - 50) {
+            element.classList.add('animated');
+          }
+        });
+      };
+      
+      window.addEventListener('scroll', animateOnScroll);
+      animateOnScroll(); // Initial check
+    });
+  </script>
+
+  <!-- Enhanced Client-Side Validation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById("registrationForm");
+      const registerButton = document.getElementById("registerButton");
+      const passwordInput = document.getElementById("password");
+      const passwordStrengthMeter = document.querySelector(".password-strength-meter");
+      const passwordStrengthText = document.querySelector(".password-strength-text");
+      
+      // Password strength meter
+      passwordInput.addEventListener('input', function() {
+        const password = this.value;
+        let strength = 0;
+        let message = '';
+        
+        if (password.length >= 6) strength += 20;
+        if (password.length >= 8) strength += 20;
+        if (/[A-Z]/.test(password)) strength += 20;
+        if (/[0-9]/.test(password)) strength += 20;
+        if (/[^A-Za-z0-9]/.test(password)) strength += 20;
+        
+        passwordStrengthMeter.style.width = strength + '%';
+        passwordStrengthText.style.display = 'block';
+        
+        if (strength <= 20) {
+          passwordStrengthMeter.style.backgroundColor = '#ff4d4d';
+          message = 'Very weak';
+        } else if (strength <= 40) {
+          passwordStrengthMeter.style.backgroundColor = '#ffa64d';
+          message = 'Weak';
+        } else if (strength <= 60) {
+          passwordStrengthMeter.style.backgroundColor = '#ffff4d';
+          message = 'Medium';
+        } else if (strength <= 80) {
+          passwordStrengthMeter.style.backgroundColor = '#4dff4d';
+          message = 'Strong';
+        } else {
+          passwordStrengthMeter.style.backgroundColor = '#22bb33';
+          message = 'Very strong';
+        }
+        
+        passwordStrengthText.textContent = message;
+        passwordStrengthText.style.color = passwordStrengthMeter.style.backgroundColor;
+      });
+      
+      // Form validation
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault(); // Prevent form submission
+
+        let isValid = true;
+
+        // Validation logic
+        const fields = [
+          "firstName",
+          "lastName",
+          "email",
+          "phone",
+          "street",
+          "city",
+          "state",
+          "zip",
+          "password",
+          "confirm-password",
+        ];
+
+        fields.forEach((id) => {
+          const input = document.getElementById(id);
+          const errorMessage = document.getElementById(`${id}-error`);
+
+          // Check if required fields are empty
+          if (!input.value.trim()) {
+            input.classList.add("error");
+            errorMessage.style.display = "block";
+            isValid = false;
+          } else {
+            input.classList.remove("error");
+            errorMessage.style.display = "none";
+
+            // Additional validations for specific fields
+            if (id === "email") {
+              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              if (!emailRegex.test(input.value.trim())) {
+                input.classList.add("error");
+                document.getElementById("email-error").textContent =
+                  "Enter a valid email address.";
+                document.getElementById("email-error").style.display = "block";
+                isValid = false;
+              } else {
+                document.getElementById("email-error").style.display = "none";
+              }
+            }
+
+            if (id === "phone") {
+              if (!/^\d{10}$/.test(input.value.trim())) {
+                input.classList.add("error");
+                document.getElementById("phone-error").textContent =
+                  "Phone number must be 10 digits.";
+                document.getElementById("phone-error").style.display = "block";
+                isValid = false;
+              } else {
+                document.getElementById("phone-error").style.display = "none";
+              }
+            }
+
+            if (id === "zip") {
+              if (!/^\d{5}$/.test(input.value.trim())) {
+                input.classList.add("error");
+                document.getElementById("zip-error").textContent =
+                  "ZIP code must be 5 digits.";
+                document.getElementById("zip-error").style.display = "block";
+                isValid = false;
+              } else {
+                document.getElementById("zip-error").style.display = "none";
+              }
+            }
+          }
+        });
+
+        // Password match validation
+        const password = document.getElementById("password");
+        const confirmPassword = document.getElementById("confirm-password");
+
+        // Check for minimum 6 characters
+        if (password.value.length < 6) {
+          password.classList.add("error");
+          document.getElementById("password-error").textContent =
+            "Password must be at least 6 characters long.";
+          document.getElementById("password-error").style.display = "block";
+          isValid = false;
+        } else {
+          document.getElementById("password-error").style.display = "none";
+        }
+
+        if (password.value !== confirmPassword.value) {
+          confirmPassword.classList.add("error");
+          document.getElementById("confirm-password-error").style.display =
+            "block";
+          isValid = false;
+        } else {
+          document.getElementById("confirm-password-error").style.display =
+            "none";
+        }
+
+        if (!isValid) {
+          return; // Stop if form is not valid
+        }
+
+        const errorContainer = document.getElementById("cust-danger-alert");
+        const successContainer = document.getElementById("cust-success-alert");
+
+        // Show loading state
+        registerButton.disabled = true;
+        registerButton.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i> Creating Account...';
+
+        // Convert FormData to plain object
+        const formData = new FormData(form);
+        const formDataObject = {};
+        formData.forEach((value, key) => {
+          formDataObject[key] = value;
+        });
+
+        formDataObject["username"] = formDataObject["email"];
+
+        // Send the form data to the server via Fetch API
+        try {
+          const response = await fetch("/register", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formDataObject),
+          });
+
+          const result = await response.json();
+
+          // Handle the server response
+          if (response.ok) {
+            // Hide error alert if it was visible
+            errorContainer.style.display = "none";
+            errorContainer.innerHTML = "";
+            
+            // Show success message
+            const successMessage = document.getElementById("success-message");
+            successMessage.textContent = "Congratulations, your account is created! Please log in.";
+            successMessage.style.display = "block";
+            
+            // Scroll to success message
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Reset form after timeout
+            setTimeout(() => {
+              form.reset();
+              successMessage.style.display = "none";
+              window.location.href = "/login"; 
+            }, 5000);
+
+          } else {
+            // Re-enable button
+            registerButton.disabled = false;
+            registerButton.innerHTML = 'Create Your Account <i class="fas fa-arrow-right ml-2"></i>';
+            
+            // Show error alert
+            errorContainer.style.display = "block";
+            errorContainer.innerHTML = `<i class="fas fa-exclamation-circle mr-2"></i> ${result.message || "Registration failed. Please try again."}`;
+            
+            // Scroll to error message
+            errorContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        } catch (error) {
+          // Re-enable button
+          registerButton.disabled = false;
+          registerButton.innerHTML = 'Create Your Account <i class="fas fa-arrow-right ml-2"></i>';
+          
+          // Show error alert
+          errorContainer.style.display = "block";
+          errorContainer.innerHTML = `<i class="fas fa-exclamation-triangle mr-2"></i> An error occurred during registration. Please try again.`;
+          
+          // Scroll to error message
+          errorContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+
+      // Hide error when user types in the field
+      document.querySelectorAll(".form-control").forEach((input) => {
+        input.addEventListener("input", () => {
+          input.classList.remove("error");
+          const errorMessage = document.getElementById(`${input.id}-error`);
+          if (errorMessage) {
+            errorMessage.style.display = "none";
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

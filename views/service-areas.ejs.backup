@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Areas</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FontAwesome for Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    
+    
+      .services-area {
+        background: url('/img/California_SecurityGuards.jpg') no-repeat center center;
+        background-size: cover;
+        height: 70vh; /* Increase height for better visibility */
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end; /* Position text towards the bottom */
+        color: white;
+      }
+
+      .services-area .overlay {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.7); /* Dark background for better contrast */
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      .services-area h1 {
+        margin: 0;
+        font-size: 4rem; /* Slightly reduced for clarity */
+        color: white;
+        font-weight: bold;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Stronger shadow for better visibility */
+      }
+  </style>
+
+</head>
+<body>
+  <!-- Include Header -->
+  <%- include('partials/Header') %>
+
+  <!-- Services Area Section -->
+  <section class="services-area">
+    <h1>Services Area</h1>
+  </section>
+
+    <div class="service-area-page my-5 p-4 shadow-lg rounded">
+      <div class="service-area-title text-center mb-4">
+        <h2 class="font-weight-bold text-primary">Top-Rated Security Guard Services in California</h2>
+      </div>
+      <p class="service-area-paragraph mb-3">
+        Are you looking for reliable and professional security guard services across California? Look no further than ShieldWise Security, a trusted leader in the industry known for providing comprehensive and top-quality security solutions. Whether you are a business owner, property manager, or resident, ShieldWise Security is dedicated to safeguarding what matters most. With a solid reputation for excellence, we are proud to be recognized as one of California's premier security companies. Fully licensed, bonded, and insured, our team delivers professionalism, reliability, and expertise to give clients peace of mind throughout the state.
+      </p>
+      <p class="service-area-paragraph mb-3">
+        California is a diverse region with various industries, residential communities, and commercial centers, each with unique security needs. From bustling cities like Los Angeles and San Diego to serene suburbs and remote properties, ShieldWise Security customizes its services to meet the specific demands of every client. Our mission is to ensure safety and foster a sense of security that allows our clients to focus on their daily lives without worry.
+      </p>
+      <p class="service-area-paragraph mb-3">
+        No matter what kind of security services you need, ShieldWise Security is here for you. Our top priority is ensuring clients' safety and satisfaction. Whether you require security for a business, residential property, or an event, our team will create a custom security plan to meet your goals and budget. ShieldWise Security also offers competitive rates, discounts for repeat clients, and corporate accounts for businesses requiring multiple guards.
+      </p>
+      <p class="service-area-paragraph mb-3">
+        In California—a region known for its scenic landscapes, vibrant events, and growing population—security services are vital for protecting assets and ensuring public safety. From major events like state fairs, festivals, and music concerts to thriving businesses and residential communities, the demand for top-tier security solutions is ever-present.
+      </p>
+      <p class="service-area-paragraph mb-4">
+        ShieldWise Security emphasizes professionalism and utilizes the latest technologies to enhance efficiency. Whether you need patrol services for an event, business protection, or private security for personal properties, ShieldWise Security is a trusted partner for all your security needs.
+      </p>
+      <div class="service-area-alert alert alert-info text-center shadow-sm">
+        With ShieldWise Security, California businesses and residents can rely on exceptional security services tailored to their unique requirements. Protect what matters most with the expertise and professionalism we provide.
+      </div>
+    </div>
+
+
+    <!--   california city sections  -->
+    <div class="locations-wrapper">
+      <div class="locations-section">
+        <h1 class="locations-title">California Locations We Serve</h1>
+        <div class="locations-container">
+          <!-- Map Image -->
+          <div class="map-wrapper">
+            <img src="/img/cali_map.png" alt="California Map" class="map-image">
+          </div>
+          <!-- Locations List -->
+          <div class="locations-list">
+            <h3 class="locations-subtitle">Cities We Serve</h3>
+            <ul class="city-list">
+              <li><i class="fas fa-map-marker-alt"></i>Anaheim, California</li>
+              <li><i class="fas fa-map-marker-alt"></i>Bakersfield, California</li>
+              <li><i class="fas fa-map-marker-alt"></i>Chula Vista, California</li>
+              <li><i class="fas fa-map-marker-alt"></i>Fremont, California</li>
+              <li><i class="fas fa-map-marker-alt"></i>Fresno, California</li>
+              <li><i class="fas fa-map-marker-alt"></i>Irvine, California</li>
+              <li><i class="fas fa-map-marker-alt"></i>Long Beach, California</li>
+              <li><i class="fas fa-map-marker-alt"></i>Los Angeles, California</li>
+              <li><i class="fas fa-map-marker-alt"></i>Oakland, California</li>
+              <li><i class="fas fa-map-marker-alt"></i>Riverside, California</li>
+              <li><i class="fas fa-map-marker-alt"></i>Sacramento, California</li>
+              <li><i class="fas fa-map-marker-alt"></i>San Bernardino, California</li>
+              <li><i class="fas fa-map-marker-alt"></i>San Diego, California</li>
+              <li><i class="fas fa-map-marker-alt"></i>San Francisco, California</li>
+              <li><i class="fas fa-map-marker-alt"></i>San Jose, California</li>
+              <li><i class="fas fa-map-marker-alt"></i>Santa Ana, California</li>
+              <li><i class="fas fa-map-marker-alt"></i>Santa Clarita, California</li>
+              <li><i class="fas fa-map-marker-alt"></i>Stockton, California</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+        <!--    servces in -->
+
+    <section id="los-angeles" class="la-security-jobs">
+      <div class="la-security-content">
+        <h1>Top-Rated Guard Services in Los Angeles</h1>
+        <p>
+          ShieldWise Security is proud to be one of the leading providers of <strong>security services in Los Angeles</strong>. 
+          With years of expertise and a commitment to excellence, we offer tailored solutions to safeguard your 
+          events, businesses, and properties. Our team specializes in providing <strong>armed and unarmed guards</strong>, 
+          mobile and vehicle patrols, and comprehensive <strong>security guard services in Los Angeles</strong>. 
+          From event security to active threat response, we are here to provide reliable protection.
+        </p>
+        <p>
+          Whether you're a business owner, event planner, or residential property manager, our mission is to deliver 
+          top-notch <strong>Los Angeles safety jobs</strong> and reliable security solutions. We proudly serve 
+          neighborhoods such as Hollywood, Downtown LA, Glendale, Pasadena, and beyond. Contact us today to learn more 
+          about our customized security plans!
+        </p>
+      </div>
+      <div class="la-security-image">
+        <img src="/img/la-pic.jpg" alt="Reliable Security Guard Services in Los Angeles">
+      </div>
+    </section>
+
+   
+
+
+    <section class="la-security-cities">
+      <div class="la-cities-container">
+        <div class="city">Los Angeles - Reliable <strong>security services in Los Angeles</strong></div>
+        <div class="city">Hollywood - Expert <strong>guard services in LA</strong></div>
+        <div class="city">Beverly Hills - Trusted <strong>Los Angeles safety jobs</strong></div>
+        <div class="city">Santa Monica - Professional <strong>security guard services</strong></div>
+        <div class="city">Pasadena - Comprehensive <strong>guard services in LA</strong></div>
+        <div class="city">Glendale - Top-rated <strong>security solutions in Los Angeles</strong></div>
+        <div class="city">Burbank - Experienced <strong>security guards in LA</strong></div>
+        <div class="city">West Hollywood - Leading <strong>Los Angeles safety providers</strong></div>
+        <div class="city">Long Beach - Affordable <strong>security guard services</strong></div>
+        <div class="city">Torrance - Specialized <strong>security services in Los Angeles</strong></div>
+        <div class="city">Culver City - Reliable <strong>guard services in LA</strong></div>
+        <div class="city">Malibu - High-quality <strong>security solutions in Los Angeles</strong></div>
+        <div class="city">Downtown LA - Premier <strong>Los Angeles safety jobs</strong></div>
+        <div class="city">San Fernando - Custom <strong>security guard solutions</strong></div>
+        <div class="city">Van Nuys - Certified <strong>security professionals in LA</strong></div>
+        <div class="city">Inglewood - Best <strong>security services in Los Angeles</strong></div>
+        <div class="city">Compton - Secure <strong>Los Angeles safety solutions</strong></div>
+        <div class="city">Palmdale - Advanced <strong>guard services in LA</strong></div>
+        <div class="city">Lancaster - Expert <strong>security guard services</strong></div>
+        <div class="city">Pomona - Trusted <strong>security services in Los Angeles</strong></div>
+        <div class="city">Whittier - Dependable <strong>guard services in LA</strong></div>
+        <div class="city">El Monte - Top-notch <strong>Los Angeles safety jobs</strong></div>
+        <div class="city">Hawthorne - Comprehensive <strong>security guard services</strong></div>
+        <div class="city">South Gate - Trusted <strong>security services in Los Angeles</strong></div>
+      </div>
+    </section>
+
+
+    <!-- Orange County Section -->
+    <section id="orange" class="oc-security-jobs">
+      <div class="oc-security-content">
+        <h1>Top-Rated Security Guard Services in Orange County, CA</h1>
+        <p>
+          ShieldWise Security is proud to deliver exceptional <strong>security services in Orange County</strong>. 
+          With a professional team and years of experience, we offer tailored solutions for businesses, residential 
+          communities, and events. From <strong>patrol services</strong> to executive protection, our mission is to ensure 
+          the safety and satisfaction of our clients.
+        </p>
+        <p>
+          Orange County's diverse landscape, renowned attractions, and bustling business centers demand comprehensive 
+          security measures. ShieldWise Security provides <strong>armed and unarmed guards</strong>, advanced surveillance, and 
+          customized security plans to meet the unique challenges of this dynamic region.
+        </p>
+        <p>
+          Whether you require protection for a corporate event, retail space, or residential property, our highly 
+          trained guards and cutting-edge technology are here to serve. Contact ShieldWise Security today for reliable 
+          security guard services in Orange County, CA.
+        </p>
+      </div>
+      <div class="oc-security-image">
+        <img src="/img/OC1.jpg" alt="Reliable Security Guard Services in Orange County">
+      </div>
+    </section>
+
+
+    <!--    orange county city -->
+
+    <section class="oc-security-cities">
+      <div class="oc-cities-container">
+        <div class="city">Anaheim - Reliable <strong>security services in Orange County</strong></div>
+        <div class="city">Irvine - Expert <strong>guard services in Orange County</strong></div>
+        <div class="city">Santa Ana - Trusted <strong>Orange County safety jobs</strong></div>
+        <div class="city">Newport Beach - Professional <strong>security guard services</strong></div>
+        <div class="city">Huntington Beach - Comprehensive <strong>guard services in Orange County</strong></div>
+        <div class="city">Garden Grove - Top-rated <strong>security solutions in Orange County</strong></div>
+        <div class="city">Fullerton - Experienced <strong>security guards in Orange County</strong></div>
+        <div class="city">Costa Mesa - Leading <strong>Orange County safety providers</strong></div>
+        <div class="city">Laguna Beach - Affordable <strong>security guard services</strong></div>
+        <div class="city">Mission Viejo - Specialized <strong>security services in Orange County</strong></div>
+        <div class="city">Tustin - Reliable <strong>guard services in Orange County</strong></div>
+        <div class="city">Lake Forest - High-quality <strong>security solutions in Orange County</strong></div>
+        <div class="city">Westminster - Premier <strong>Orange County safety jobs</strong></div>
+        <div class="city">Cypress - Custom <strong>security guard solutions</strong></div>
+        <div class="city">Aliso Viejo - Certified <strong>security professionals in Orange County</strong></div>
+        <div class="city">Laguna Niguel - Best <strong>security services in Orange County</strong></div>
+        <div class="city">Orange - Secure <strong>Orange County safety solutions</strong></div>
+        <div class="city">Dana Point - Advanced <strong>guard services in Orange County</strong></div>
+        <div class="city">San Clemente - Expert <strong>security guard services</strong></div>
+        <div class="city">Buena Park - Trusted <strong>security services in Orange County</strong></div>
+        <div class="city">Fountain Valley - Dependable <strong>guard services in Orange County</strong></div>
+        <div class="city">Laguna Hills - Top-notch <strong>Orange County safety jobs</strong></div>
+        <div class="city">Yorba Linda - Comprehensive <strong>security guard services</strong></div>
+        <div class="city">Placentia - Trusted <strong>security services in Orange County</strong></div>
+      </div>
+    </section>
+
+    <!-- Ventura County Section -->
+    <section id="ventura-county" class="ventura-security-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="ventura-content">
+              <h2 class="section-title">Ventura County Security Service Areas</h2>
+              <p class="lead-text">
+                ShieldWise Security provides professional security guard services throughout the region. 
+                Explore our comprehensive security solutions or request a consultation for customized protection plans.
+              </p>
+              <div class="cta-buttons">
+                <a href="/get-quote" class="btn btn-primary btn-lg mr-3">Get Free Quote</a>
+                <a href="tel:+17147167430" class="btn btn-outline-primary btn-lg">
+                  <i class="fas fa-phone-alt mr-2"></i>Call Now
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="ventura-cities-grid">
+              <div class="cities-header">
+                <h3><i class="fas fa-map-marker-alt text-primary mr-2"></i>Cities We Serve</h3>
+              </div>
+              <div class="cities-list">
+                <a href="/oxnard" class="city-card">
+                  <i class="fas fa-shield-alt"></i>
+                  <span>Oxnard Security</span>
+                  <small>Industrial & Port Security</small>
+                </a>
+                <a href="/thousand-oaks" class="city-card">
+                  <i class="fas fa-building"></i>
+                  <span>Thousand Oaks Security</span>
+                  <small>Corporate & Residential</small>
+                </a>
+                <a href="/ventura" class="city-card">
+                  <i class="fas fa-anchor"></i>
+                  <span>Ventura Security</span>
+                  <small>Coastal & Government</small>
+                </a>
+                <a href="/simi-valley" class="city-card">
+                  <i class="fas fa-home"></i>
+                  <span>Simi Valley Security</span>
+                  <small>Residential & Business</small>
+                </a>
+                <a href="/camarillo" class="city-card">
+                  <i class="fas fa-shopping-bag"></i>
+                  <span>Camarillo Security</span>
+                  <small>Premium Outlets & Corporate</small>
+                </a>
+                <a href="/moorpark" class="city-card">
+                  <i class="fas fa-graduation-cap"></i>
+                  <span>Moorpark Security</span>
+                  <small>Community & Educational</small>
+                </a>
+                <a href="/fillmore" class="city-card">
+                  <i class="fas fa-tractor"></i>
+                  <span>Fillmore Security</span>
+                  <small>Agricultural & Rural</small>
+                </a>
+                <a href="/ojai" class="city-card">
+                  <i class="fas fa-spa"></i>
+                  <span>Ojai Security</span>
+                  <small>Resort & Wellness</small>
+                </a>
+                <a href="/santa-paula" class="city-card">
+                  <i class="fas fa-industry"></i>
+                  <span>Santa Paula Security</span>
+                  <small>Agricultural & Business</small>
+                </a>
+                <a href="/port-hueneme" class="city-card">
+                  <i class="fas fa-ship"></i>
+                  <span>Port Hueneme Security</span>
+                  <small>Maritime & Port</small>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--   san frencisco   --> 
+
+    <!-- San Francisco Section -->
+    <section id="san-francisco" class="sf-security-jobs">
+      <div class="sf-security-content">
+        <h1>Top-Rated Security Guard Services in San Francisco, CA</h1>
+        <p>
+          ShieldWise Security is a trusted leader in <strong>security services in San Francisco</strong>, offering expert 
+          protection for businesses, events, and residential properties. Our highly trained professionals specialize in 
+          <strong>armed and unarmed security guards</strong>, advanced surveillance, and customized security solutions 
+          designed to ensure your safety and peace of mind.
+        </p>
+        <p>
+          Known for its thriving tech industry, iconic landmarks, and diverse culture, San Francisco demands exceptional 
+          security solutions. ShieldWise Security excels in providing <strong>high-profile event protection</strong>, 
+          <strong>corporate security services</strong>, and <strong>residential security</strong>, tailored to the unique needs 
+          of this dynamic region.
+        </p>
+        <p>
+          Whether you're safeguarding a corporate event, retail business, or private property, ShieldWise Security is your 
+          go-to partner for <strong>reliable security guard services in San Francisco</strong>. Contact us today to 
+          discuss your security requirements and learn how we can provide you with industry-leading protection.
+        </p>
+      </div>
+      <div class="sf-security-image">
+        <img src="/img/sanfrancisco1.jpg" alt="Expert Security Guard Services in San Francisco">
+      </div>
+    </section>
+
+    <!-- San Francisco Major Cities -->
+    <section class="sf-security-cities">
+      <div class="sf-cities-container">
+        <div class="city">San Francisco - Premier <strong>security services in San Francisco</strong></div>
+        <div class="city">Oakland - Reliable <strong>guard services in San Francisco Bay Area</strong></div>
+        <div class="city">Berkeley - Expert <strong>security guard solutions</strong></div>
+        <div class="city">San Mateo - Trusted <strong>security services in the Bay Area</strong></div>
+      </div>
+    </section>
+
+    <!-- San Diego Section -->
+    <section id="san-diego" class="sd-security-jobs">
+      <div class="sd-security-content">
+        <h1>Top-Rated Security Guard Services in San Diego, CA</h1>
+        <p>
+          ShieldWise Security is a trusted provider of <strong>security services in San Diego</strong>, offering unparalleled protection 
+          for businesses, events, and residential properties. Our highly trained security professionals are skilled in delivering 
+          <strong>armed and unarmed guard services</strong>, advanced surveillance, and customized solutions to meet your specific needs.
+        </p>
+        <p>
+          San Diego’s vibrant tourism, diverse industries, and active communities require robust and reliable security solutions. 
+          ShieldWise Security specializes in <strong>event security</strong>, <strong>corporate protection</strong>, and <strong>residential safety</strong>, 
+          ensuring your peace of mind in this dynamic city. From retail spaces to large-scale events, we deliver excellence every time.
+        </p>
+        <p>
+          Whether you’re securing a private event, protecting business assets, or safeguarding your home, ShieldWise Security provides 
+          exceptional <strong>security guard services in San Diego</strong>. Contact us today to explore how our tailored security solutions 
+          can help you protect what matters most.
+        </p>
+      </div>
+      <div class="sd-security-image">
+        <img src="/img/sandeigo1.jpg" alt="Professional Security Guard Services in San Diego">
+      </div>
+    </section>
+    
+
+    <!-- San Diego Major Cities -->
+    
+    <section class="sd-security-cities">
+      <div class="sd-cities-container">
+        <div class="city">San Diego - Trusted <strong>security services in San Diego</strong></div>
+        <div class="city">Chula Vista - Reliable <strong>guard services in San Diego County</strong></div>
+        <div class="city">Carlsbad - Premier <strong>security guard solutions</strong></div>
+        <div class="city">Escondido - Comprehensive <strong>security services in San Diego County</strong></div>
+      </div>
+    </section>
+
+
+  <!--     riverside -->
+
+    <!-- Riverside Section -->
+    <section id="riverside" class="rs-security-jobs">
+      <div class="rs-security-content">
+        <h1>Top-Rated Security Guard Services in Riverside, CA</h1>
+        <p>
+          ShieldWise Security is proud to provide trusted <strong>security services in Riverside</strong>, offering expert protection for businesses, residential properties, and events. 
+          With highly trained <strong>armed and unarmed security guards</strong> and advanced surveillance systems, we deliver customized security solutions tailored to your specific needs.
+        </p>
+        <p>
+          Riverside, known for its rich history, thriving businesses, and vibrant communities, requires reliable and professional security services. 
+          ShieldWise Security excels in providing <strong>corporate protection</strong>, <strong>event security</strong>, and <strong>residential safety solutions</strong> to ensure peace of mind and uncompromised safety.
+        </p>
+        <p>
+          Whether you're planning a high-profile event, safeguarding your business, or protecting your home, ShieldWise Security is your trusted partner for dependable <strong>security guard services in Riverside</strong>. 
+          Contact us today to learn how we can meet your unique security requirements with top-tier professionalism and cutting-edge solutions.
+        </p>
+      </div>
+      <div class="rs-security-image">
+        <img src="/img/riverside.jpeg" alt="Reliable Security Guard Services in Riverside" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Riverside County Cities Section -->
+    <section class="rs-security-cities">
+      <div class="rs-cities-container">
+        <div class="city">Riverside - Premier <strong>security services in Riverside</strong></div>
+        <div class="city">Corona - Trusted <strong>guard services in Riverside County</strong></div>
+        <div class="city">Moreno Valley - Expert <strong>security guard solutions</strong></div>
+        <div class="city">Temecula - Reliable <strong>security services in Riverside County</strong></div>
+        <div class="city">Palm Springs - Comprehensive <strong>security guard services</strong></div>
+        <div class="city">Hemet - Professional <strong>security services in Riverside</strong></div>
+        <div class="city">Murrieta - Leading <strong>security guard solutions</strong></div>
+        <div class="city">Perris - Dependable <strong>security services in Riverside</strong></div>
+      </div>
+    </section>
+
+    <!-- San Bernardino Section -->
+    <section id="san-bernardino" class="sb-security-jobs">
+      <div class="sb-security-content">
+        <h1>Top-Rated Security Guard Services in San Bernardino, CA</h1>
+        <p>
+          ShieldWise Security is a leading provider of <strong>security services in San Bernardino</strong>, delivering expert protection for businesses, events, and residential communities. 
+          Our team of highly trained <strong>armed and unarmed security guards</strong> is equipped with advanced surveillance systems and specializes in creating custom security plans tailored to your needs.
+        </p>
+        <p>
+          San Bernardino is home to diverse industries, scenic attractions, and a growing population, all of which demand top-tier security solutions. 
+          ShieldWise Security excels in offering <strong>corporate security services</strong>, <strong>event protection</strong>, and <strong>residential safety</strong>, ensuring that clients enjoy peace of mind and uncompromised protection.
+        </p>
+        <p>
+          Whether you're hosting a high-profile event, safeguarding your property, or protecting your assets, ShieldWise Security provides dependable <strong>security guard services in San Bernardino</strong>. 
+          Contact us today for expert security solutions tailored to your unique requirements.
+        </p>
+      </div>
+      <div class="sb-security-image">
+        <img src="/img/sanbardino12.webp" alt="Expert Security Guard Services in San Bernardino">
+      </div>
+    </section>
+
+    <!-- San Bernardino County Cities Section -->
+    <section class="sb-security-cities">
+      <div class="sb-cities-container">
+        <div class="city">San Bernardino - Premier <strong>security services in San Bernardino</strong></div>
+        <div class="city">Fontana - Reliable <strong>guard services in San Bernardino County</strong></div>
+        <div class="city">Ontario - Trusted <strong>security guard solutions</strong></div>
+        <div class="city">Rancho Cucamonga - Expert <strong>security services in San Bernardino County</strong></div>
+      </div>
+    </section>
+
+    <!-- Ventura Security Guards -->
+    <section id="ventura" class="city-security-section">
+      <div class="city-security-image">
+        <img src="/img/ventura-california-1-2.jpg" alt="Top Security Guard Services in Ventura, CA">
+      </div>
+      <div class="city-security-content">
+        <h1>VENTURA SECURITY GUARDS – TRUSTED PROTECTION</h1>
+        <p>
+          ShieldWise Security provides professional <strong>security guard services in Ventura, CA</strong>, ensuring businesses, events, and residential properties remain secure. Our highly trained <strong>armed and unarmed guards</strong> offer tailored security solutions, including <strong>mobile patrols</strong> and on-site protection. Whether securing retail spaces or large events, our expert security personnel provide top-notch safety and peace of mind.
+        </p>
+      </div>
+    </section>
+
+    <!-- Sacramento Security Guards -->
+    <section id="sacramento" class="city-security-section">
+      <div class="city-security-image">
+        <img src="/img/sacraamento12.jpg" alt="Reliable Security Guard Services in Sacramento, CA">
+      </div>
+      <div class="city-security-content">
+        <h1>SACRAMENTO SECURITY GUARDS – EXPERT SAFETY SOLUTIONS</h1>
+        <p>
+          ShieldWise Security offers premier <strong>security guard services in Sacramento</strong>, serving government offices, businesses, and public events. Our professional team delivers customized security plans, including <strong>corporate security</strong>, event protection, and residential surveillance. Trust our skilled security personnel to safeguard your property with professionalism and efficiency.
+        </p>
+      </div>
+    </section>
+
+    <!-- Santa Clara Security Guards -->
+    <section id="santa-clara" class="city-security-section">
+      <div class="city-security-image">
+        <img src="/img/santa-clara-county-neighborhood.jpg" alt="Professional Security Guard Services in Santa Clara, CA">
+      </div>
+      <div class="city-security-content">
+        <h1>SANTA CLARA SECURITY GUARDS – TAILORED PROTECTION</h1>
+        <p>
+          As a thriving business hub, <strong>Santa Clara security services</strong> by ShieldWise Security ensure comprehensive protection for corporate offices, tech campuses, and residential communities. Our highly trained guards utilize advanced surveillance technologies to deliver personalized security solutions that fit the dynamic needs of Santa Clara businesses and residents.
+        </p>
+      </div>
+    </section>
+
+    <!-- Alameda Security Guards -->
+    <section id="alameda" class="city-security-section">
+      <div class="city-security-image">
+        <img src="/img/alamendsa1.jpg" alt="Certified Security Guard Services in Alameda, CA">
+      </div>
+      <div class="city-security-content">
+        <h1>ALAMEDA SECURITY GUARDS – PROFESSIONAL SECURITY SOLUTIONS</h1>
+        <p>
+          ShieldWise Security offers trusted <strong>security guard services in Alameda</strong>, ensuring the safety of businesses, residential areas, and public venues. Our security personnel provide round-the-clock surveillance and on-site protection tailored to meet the needs of Alameda’s growing community.
+        </p>
+      </div>
+    </section>
+
+    <!-- Fresno Security Guards -->
+    <section id="fresno" class="city-security-section">
+      <div class="city-security-image">
+        <img src="/img/fresno.jpeg" alt="Best Security Guard Services in Fresno, CA">
+      </div>
+      <div class="city-security-content">
+        <h1>FRESNO SECURITY GUARDS – RELIABLE PROTECTION</h1>
+        <p>
+          ShieldWise Security delivers expert <strong>security guard services in Fresno</strong>, offering tailored solutions for businesses, farms, and residential communities. Our trained guards provide vigilant monitoring, mobile patrols, and event security to ensure the protection of Fresno’s diverse industries and residents.
+        </p>
+      </div>
+    </section>
+
+    <!-- San Jose Security Guards -->
+    <section id="san-jose" class="city-security-section">
+      <div class="city-security-image">
+        <img src="/img/sanjose1111.webp" alt="Top-Rated Security Guard Services in San Jose, CA">
+      </div>
+      <div class="city-security-content">
+        <h1>SAN JOSE SECURITY GUARDS – ELITE PROTECTION SERVICES</h1>
+        <p>
+          In the heart of Silicon Valley, <strong>San Jose security services</strong> by ShieldWise Security provide premium protection for tech companies, high-profile events, and residential properties. Our expert security guards ensure comprehensive security measures, utilizing cutting-edge surveillance and risk assessment strategies to safeguard your assets.
+        </p>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+
+  <!-- Description Section -->
+  
+  <!-- Include Footer -->
+  <%- include('partials/Footer') %>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js">document.addEventListener("DOMContentLoaded", function () {
+    const hash = window.location.hash;
+    if (hash) {
+      document.querySelector(hash)?.scrollIntoView({ behavior: "smooth" });
+    }
+  });</script>
+    
+</body>
+</html>

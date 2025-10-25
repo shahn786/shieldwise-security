@@ -1,0 +1,613 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Enhanced SEO Meta Tags -->
+  <title>Login to ShieldWise Security | Secure Client Portal</title>
+  <meta name="description" content="Access your secure ShieldWise Security client portal. Login to manage your security services, view reports, and communicate with your dedicated security team.">
+  <meta name="keywords" content="security login, ShieldWise client portal, security guard management, secure login, California security services, security client access">
+  <meta name="author" content="ShieldWise Security">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.shieldwisesecurity.com/login" />
+  
+  <!-- Schema.org Markup for Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Login to ShieldWise Security Client Portal",
+    "description": "Access your secure client portal to manage your security services, view reports, and communicate with your dedicated security team.",
+    "provider": {
+      "@type": "Organization",
+      "name": "ShieldWise Security",
+      "logo": "https://www.shieldwisesecurity.com/img/logo.png"
+    },
+    "offers": {
+      "@type": "Offer",
+      "description": "Access premium security services through your client portal"
+    }
+  }
+  </script>
+
+  <!-- Open Graph & Twitter Card for Social Media -->
+  <meta property="og:title" content="Login to ShieldWise Security | Secure Client Portal">
+  <meta property="og:description" content="Access your secure ShieldWise Security client portal. Login to manage your security services, view reports, and communicate with your dedicated security team.">
+  <meta property="og:image" content="/img/shield-secure-login.jpg">
+  <meta property="og:url" content="https://www.shieldwisesecurity.com/login">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <!-- Enhanced Login Page Styling -->
+  <style>
+    /* Login Page Specific Styling */
+    body.login-page {
+      height: 100%;
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f4f6f9;
+    }
+
+    .login-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 85vh;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('/img/login.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px 50px;
+      border-radius: 10px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      width: 450px;
+      max-width: 95%;
+      position: relative;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+    
+    .form-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .form-container h2 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: #222;
+      position: relative;
+      padding-bottom: 0.6rem;
+      text-align: center;
+    }
+    
+    .form-container h2:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: #d12028;
+    }
+
+    .form-container label {
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .form-container .form-control {
+      padding: 0.8rem 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      transition: all 0.3s;
+      background-color: rgba(255, 255, 255, 0.9);
+      font-size: 1rem;
+    }
+    
+    .form-container .form-control:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      background-color: #fff;
+    }
+
+    .form-container .btn-primary {
+      background: linear-gradient(45deg, #d12028, #a51920);
+      border: none;
+      padding: 0.8rem;
+      font-weight: 600;
+      width: 100%;
+      margin-top: 1.5rem;
+      border-radius: 5px;
+      color: white;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .form-container .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(209, 32, 40, 0.3);
+      background: linear-gradient(45deg, #a51920, #d12028);
+    }
+    
+    .form-container .btn-primary:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: 0.5s;
+    }
+    
+    .form-container .btn-primary:hover:before {
+      left: 100%;
+    }
+
+    .form-container p {
+      text-align: center;
+      margin-top: 1.5rem;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .form-container a {
+      color: #d12028;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    
+    .form-container a:hover {
+      color: #a51920;
+      text-decoration: underline;
+    }
+    
+    .error {
+      color: #d12028;
+      display: none;
+      font-size: 0.875rem;
+      margin-top: -1.25rem;
+      margin-bottom: 1rem;
+    }
+    
+    #cust-success-alert {
+      display: none;
+      background-color: rgba(40, 167, 69, 0.9);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.25rem;
+      border-radius: 5px;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+      animation: fadeIn 0.5s;
+    }
+    
+    #cust-danger-alert {
+      display: none;
+      background-color: rgba(220, 53, 69, 0.9);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.25rem;
+      border-radius: 5px;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+      animation: fadeIn 0.5s;
+    }
+    
+    .form-logo {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-logo img {
+      height: 60px;
+    }
+    
+    .security-notice {
+      display: flex;
+      align-items: center;
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: #555;
+    }
+    
+    .security-notice i {
+      color: #28a745;
+      margin-right: 0.5rem;
+      font-size: 1rem;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Security Banner Enhancements */
+    .security-banner-123 {
+      position: relative;
+      width: 100%;
+      background: linear-gradient(135deg, #1a1a1a, #333);
+      color: white;
+      padding: 50px 20px;
+      margin: 60px 0;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .security-banner-123::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(209, 32, 40, 0.3), transparent);
+      z-index: 1;
+    }
+    
+    .banner-content-123 {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    #banner-heading-123 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    #banner-text-123 {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    }
+    
+    .phone-number-123 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-top: 20px;
+    }
+    
+    .phone-number-123 a {
+      color: white;
+      text-decoration: none;
+      background: linear-gradient(45deg, #d12028, #a51920);
+      padding: 12px 28px;
+      border-radius: 50px;
+      display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(209, 32, 40, 0.4);
+    }
+    
+    .phone-number-123 a:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(209, 32, 40, 0.5);
+    }
+    
+    /* Back to Top Button */
+    #back-to-top-123 {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999;
+      width: 50px;
+      height: 50px;
+      background-color: #d12028;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      opacity: 0;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    #back-to-top-123 i {
+      font-size: 1.2rem;
+    }
+    
+    #back-to-top-123.show {
+      opacity: 1;
+    }
+    
+    #back-to-top-123:hover {
+      background-color: #a51920;
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .form-container {
+        padding: 30px 25px;
+      }
+      
+      .form-container h2 {
+        font-size: 1.6rem;
+      }
+      
+      #banner-heading-123 {
+        font-size: 1.8rem;
+      }
+      
+      #banner-text-123 {
+        font-size: 1rem;
+      }
+      
+      .phone-number-123 a {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .form-container {
+        padding: 25px 20px;
+      }
+      
+      .form-container h2 {
+        font-size: 1.4rem;
+      }
+      
+      #banner-heading-123 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="login-page">
+  <!-- Include Header -->
+  <%- include('partials/Header') %>
+
+  <div class="login-container">
+    <div class="form-container">
+      <div class="form-logo">
+        <img src="/img/logo.png" alt="ShieldWise Security Logo" onerror="this.src='/img/shield-icon.png'; this.onerror=null;">
+      </div>
+
+      <div class="alert alert-success w-100" id="cust-success-alert" role="alert">
+        Login successful!
+      </div>
+
+      <div class="alert alert-danger w-100" id="cust-danger-alert" role="alert">
+        Login failed, please check your credentials.
+      </div>
+
+      <% if (!loggedIn) { %>
+        <h2>Client Portal Login</h2>
+        <form id="loginForm" method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="username"><i class="fas fa-user-shield"></i> Username</label>
+            <input type="text" class="form-control mb-0" id="username" name="username" placeholder="Enter your username">
+            <div class="error" id="username-error">Please enter a valid username.</div>
+          </div>
+          <div class="form-group">
+            <label for="password"><i class="fas fa-lock"></i> Password</label>
+            <input type="password" class="form-control mb-0" id="password" name="password" placeholder="Enter your password">
+            <div class="error" id="password-error">Please enter a password.</div>
+          </div>
+          <button type="submit" class="btn btn-primary">Secure Login <i class="fas fa-sign-in-alt ml-2"></i></button>
+          <div class="security-notice">
+            <i class="fas fa-shield-alt"></i>
+            <span>Your connection to this login page is secure and encrypted.</span>
+          </div>
+        </form>
+        <p>Don't have an account? <a href="/register">Create an account</a></p>
+      <% } else { %>
+        <h2>Welcome back, <%= username %>!</h2>
+        <p>Explore exciting career opportunities with ShieldWise Security.</p>
+        <a href="/logout" class="btn btn-primary">Logout <i class="fas fa-sign-out-alt ml-2"></i></a>
+      <% } %>
+    </div>
+  </div>
+
+  <section class="security-banner-123">
+    <div class="banner-content-123">
+      <h2 id="banner-heading-123">EXPERT SECURITY SERVICES ACROSS CALIFORNIA</h2>
+      <p id="banner-text-123">
+        Trust ShieldWise Security for professional protection tailored to your needs. From armed guards to event security, we deliver reliable solutions for businesses and property owners.
+      </p>
+      <p class="phone-number-123">
+        <a href="tel:+17147167430"><i class="fas fa-phone-alt mr-2"></i> (714) 716-7430</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Include Footer -->
+  <%- include('partials/Footer') %>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top-123" title="Go to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", async (event) => {
+      event.preventDefault(); // Prevent form submission for validation
+
+      let isValid = true;
+
+      // Get form fields
+      const username = document.getElementById("username");
+      const password = document.getElementById("password");
+
+      // Clear previous error messages
+      document.getElementById("username-error").style.display = "none";
+      document.getElementById("password-error").style.display = "none";
+
+      // Validate fields
+      if (!username.value.trim()) {
+        isValid = false;
+        document.getElementById("username-error").style.display = "block";
+        username.classList.add("is-invalid");
+      } else {
+        username.classList.remove("is-invalid");
+        username.classList.add("is-valid");
+      }
+
+      if (!password.value.trim()) {
+        isValid = false;
+        document.getElementById("password-error").style.display = "block";
+        password.classList.add("is-invalid");
+      } else {
+        password.classList.remove("is-invalid");
+        password.classList.add("is-valid");
+      }
+
+      // If form is not valid, stop here
+      if (!isValid) {
+        return;
+      }
+
+      const errorContainer = document.getElementById("cust-danger-alert");
+      const successContainer = document.getElementById("cust-success-alert");
+
+      // Prepare data for the API call
+      const formData = {
+        username: username.value,
+        password: password.value,
+      };
+
+      try {
+        // Send login request to the server
+        const response = await fetch("/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+
+        const result = await response.json();
+
+        // Handle server response
+        if (response.ok) {
+          successContainer.style.display = "block";
+          successContainer.innerHTML = "";
+          errorContainer.style.display = "none";
+          errorContainer.innerHTML = "";
+          
+          // Login successful, update UI
+          successContainer.innerHTML = `${result.message || "Login successful! Redirecting..."}`;
+          
+          // Add loading animation
+          document.querySelector(".btn-primary").innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i> Logging in...';
+          document.querySelector(".btn-primary").disabled = true;
+          
+          // Redirect after delay
+          setTimeout(() => {
+            window.location.href = "/career";
+          }, 2000);
+        } else {
+          errorContainer.style.display = "block";
+          errorContainer.innerHTML = "";
+          successContainer.style.display = "none";
+          
+          // Show error message
+          errorContainer.innerHTML = `<i class="fas fa-exclamation-circle mr-2"></i> ${result.message || "Login failed. Please try again."}`;
+          
+          // Shake the form on error
+          const formContainer = document.querySelector(".form-container");
+          formContainer.classList.add("shake");
+          setTimeout(() => {
+            formContainer.classList.remove("shake");
+          }, 500);
+        }
+      } catch (error) {
+        errorContainer.style.display = "block";
+        errorContainer.innerHTML = "";
+        successContainer.style.display = "none";
+        errorContainer.innerHTML = `<i class="fas fa-exclamation-triangle mr-2"></i> An error occurred during login. Please try again.`;
+      }
+    });
+
+    // Hide error messages when user starts typing
+    document.getElementById("username").addEventListener("input", () => {
+      document.getElementById("username-error").style.display = "none";
+      document.getElementById("username").classList.remove("is-invalid");
+    });
+
+    document.getElementById("password").addEventListener("input", () => {
+      document.getElementById("password-error").style.display = "none";
+      document.getElementById("password").classList.remove("is-invalid");
+    });
+    
+    // Back to Top Button Script
+    document.addEventListener("DOMContentLoaded", function () {
+      const backToTopButton = document.getElementById("back-to-top-123");
+
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 300) {
+          backToTopButton.classList.add("show");
+        } else {
+          backToTopButton.classList.remove("show");
+        }
+      });
+
+      backToTopButton.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+      
+      // Add shake animation
+      document.head.insertAdjacentHTML("beforeend", `
+        <style>
+          @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+          }
+          .shake {
+            animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+          }
+        </style>
+      `);
+    });
+  </script>
+</body>
+</html>
