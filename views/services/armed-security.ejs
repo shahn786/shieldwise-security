@@ -9,7 +9,7 @@
     <!-- CSS Resources -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="/css/apartment-security.css" rel="stylesheet">
+    <link href="/css/apartment-security.min.css" rel="stylesheet">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,6 +28,14 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
     <%- include('../partials/Header') %>
+
+    <!-- Breadcrumb Navigation -->
+    <%- include('../partials/breadcrumb', { 
+        breadcrumbs: [
+            { name: 'Services', url: '/services' },
+            { name: 'Armed Security Guards', url: null }
+        ]
+    }) %>
     
     <main id="main-content">
         <!-- Hero Section -->
@@ -48,7 +56,7 @@
                 Premier Armed Security Services for Maximum Protection
             </h2>
             <p class="speakable-services" style="font-size:20px; line-height:1.8; margin-bottom:0;">
-                <strong>ShieldWise Security</strong> provides California's most ShieldWise Security services with <strong style="color:#dc3545;">BSIS-licensed armed guards</strong>, <strong style="color:#dc3545;">military & law enforcement veterans</strong>, <strong style="color:#dc3545;">sub-15-minute emergency response</strong>, and <strong style="color:#dc3545;">24/7 tactical support</strong> for businesses requiring the highest level of protection.
+                <strong>ShieldWise Security</strong> provides California's most comprehensive armed security services with <strong style="color:#dc3545;">BSIS-licensed armed guards</strong>, <strong style="color:#dc3545;">military & law enforcement veterans</strong>, <strong style="color:#dc3545;">sub-15-minute emergency response</strong>, and <strong style="color:#dc3545;">24/7 tactical support</strong> for businesses requiring the highest level of protection.
             </p>
             <div class="speakable-contact" style="margin-top:20px; font-size:18px;">
                 <strong>Emergency Hotline:</strong> +1-800-744-3531 |
@@ -176,7 +184,7 @@
                     <% serviceData.testimonials.forEach(testimonial => { %>
                     <div class="col-md-4">
                         <div class="testimonial-card">
-                            <img src="/img/<%= testimonial.image %>" alt="<%= testimonial.name %>, <%= testimonial.title %>" class="client-image">
+                            <img src="/img/<%= testimonial.image %>" alt="<%= testimonial.name %>, <%= testimonial.title %>" class="client-image" loading="lazy" width="80" height="80">
                             <h4><%= testimonial.name %></h4>
                             <p class="text-muted"><%= testimonial.title %></p>
                             <p>"<%= testimonial.quote %>"</p>
