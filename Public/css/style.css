@@ -54,12 +54,12 @@ html, body {
 
 /* Hero Content Section - Banner Style */
 .hero-content-section {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+  background: linear-gradient(135deg, #1a3c6e 0%, #2c5aa0 50%, #1a3c6e 100%);
   padding: 80px 20px;
   text-align: center;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3), 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .hero-content-section::before {
@@ -69,8 +69,8 @@ html, body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='%23ffffff' fill-opacity='0.1'/%3E%3C/svg%3E");
-  opacity: 0.3;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E");
+  opacity: 0.4;
   pointer-events: none;
 }
 
@@ -83,21 +83,21 @@ html, body {
   font-size: 4rem;
   font-weight: 800;
   margin-bottom: 20px;
-  color: #1a1a1a;
+  color: #ffffff;
   letter-spacing: -0.5px;
   line-height: 1.1;
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
   animation: fadeInUp 1s ease-out forwards;
 }
 
 .hero-subtitle {
   font-size: 2rem;
   margin-bottom: 40px;
-  color: #333333;
+  color: #e8f0ff;
   font-weight: 500;
   animation: fadeInUp 1s ease-out 0.3s forwards;
   opacity: 0;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-buttons {
