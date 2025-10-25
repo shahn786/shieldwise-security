@@ -1720,8 +1720,8 @@ html, body {
 
 /* Base Styles */
 .premium-testimonials {
-    padding: 100px 0;
-    background-color: #f8f9fa;
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
     font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     color: #343a40;
 }
@@ -1735,7 +1735,7 @@ html, body {
 /* Section Header */
 .premium-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 
 .premium-header h2 {
@@ -1743,47 +1743,61 @@ html, body {
     font-weight: 700;
     color: #1a3c6e;
     margin-bottom: 15px;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.5px;
+    position: relative;
+    display: inline-block;
+}
+
+.premium-header h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #d12028, #ff6659);
+    margin: 15px auto 0;
+    border-radius: 2px;
 }
 
 .premium-header p {
-    font-size: 1.25rem;
-    color: #6c757d;
+    font-size: 1.15rem;
+    color: #666;
     max-width: 700px;
-    margin: 0 auto;
+    margin: 20px auto 0;
+    line-height: 1.6;
 }
 
 /* Featured Testimonial */
 .premium-feature {
     background-color: #fff;
-    border-radius: 12px;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    margin-bottom: 60px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    margin-bottom: 50px;
     position: relative;
+    border-left: 5px solid #d12028;
 }
 
 .feature-content {
-    padding: 50px;
+    padding: 40px;
     position: relative;
 }
 
 .quote-mark {
     position: absolute;
-    top: 30px;
-    left: 40px;
-    font-size: 120px;
-    color: rgba(230, 57, 70, 0.08);
+    top: 20px;
+    right: 30px;
+    font-size: 80px;
+    color: rgba(209, 32, 40, 0.1);
     font-family: Georgia, serif;
-    line-height: 0;
+    line-height: 1;
 }
 
 .premium-feature blockquote {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     line-height: 1.7;
-    color: #343a40;
-    margin: 0 0 30px 0;
-    padding: 20px 0 0 0;
+    color: #444;
+    margin: 0 0 25px 0;
+    padding: 0;
     font-style: italic;
     position: relative;
     z-index: 2;
@@ -1792,16 +1806,17 @@ html, body {
 .feature-author {
     display: flex;
     align-items: center;
+    gap: 15px;
 }
 
 .author-photo {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     overflow: hidden;
     border-radius: 50%;
-    margin-right: 25px;
-    border: 3px solid #fff;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 3px solid #d12028;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .author-photo img {
@@ -1811,81 +1826,94 @@ html, body {
 }
 
 .author-info h4 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 0 0 5px 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0 0 4px 0;
     color: #1a3c6e;
+    line-height: 1.2;
 }
 
 .author-info p {
-    margin: 0 0 5px 0;
+    margin: 0 0 3px 0;
     color: #495057;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    line-height: 1.3;
 }
 
 .author-location {
     display: block;
-    color: #6c757d;
-    font-size: 0.85rem;
-    margin-bottom: 8px;
+    color: #999;
+    font-size: 0.8rem;
+    margin-bottom: 6px;
 }
 
 .star-rating {
     color: #ffc107;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    font-size: 14px;
 }
 
 /* Client Grid */
 .premium-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin-bottom: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
 }
 
 .premium-card {
     background-color: #fff;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
     display: flex;
     flex-direction: column;
-    height: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    border-left: 4px solid #d12028;
 }
 
 .premium-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
 }
 
 .card-photo {
-    height: 220px;
+    height: 0;
+    padding-bottom: 60%;
     overflow: hidden;
+    position: relative;
+    background: #f8f9fa;
 }
 
 .card-photo img {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .premium-card:hover .card-photo img {
-    transform: scale(1.05);
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 .card-content {
-    padding: 30px;
+    padding: 25px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 
 .premium-card blockquote {
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.7;
-    color: #495057;
+    color: #444;
     margin: 0 0 20px 0;
     padding: 0;
     font-style: italic;
@@ -1894,29 +1922,32 @@ html, body {
 
 .card-author {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding-top: 20px;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .card-author h5 {
     font-size: 1rem;
-    font-weight: 600;
-    margin: 0 0 3px 0;
+    font-weight: 700;
+    margin: 0;
     color: #1a3c6e;
+    line-height: 1.3;
 }
 
 .card-author p {
-    margin: 0 0 3px 0;
+    margin: 0;
     color: #495057;
     font-size: 0.85rem;
+    line-height: 1.4;
 }
 
 .card-author span {
     display: block;
-    color: #6c757d;
+    color: #999;
     font-size: 0.75rem;
+    line-height: 1.3;
 }
 
 /* Results Bar */
@@ -1991,7 +2022,7 @@ html, body {
 /* Responsive Design */
 @media (max-width: 1100px) {
     .premium-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
 
     .result-item {
@@ -2007,7 +2038,7 @@ html, body {
 
 @media (max-width: 768px) {
     .premium-testimonials {
-        padding: 70px 0;
+        padding: 60px 0;
     }
 
     .premium-header h2 {
@@ -2015,19 +2046,29 @@ html, body {
     }
 
     .premium-header p {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .feature-content {
-        padding: 30px;
+        padding: 30px 25px;
     }
 
     .premium-feature blockquote {
-        font-size: 1.2rem;
+        font-size: 1.05rem;
     }
 
     .premium-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card-photo {
+        padding-bottom: 50%;
+    }
+
+    .card-photo img {
+        width: 70px;
+        height: 70px;
     }
 
     .result-item {
@@ -2046,34 +2087,47 @@ html, body {
     }
 
     .premium-header h2 {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
     }
 
     .premium-header p {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .feature-content {
-        padding: 25px;
+        padding: 25px 20px;
     }
 
     .premium-feature blockquote {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .author-photo {
-        width: 70px;
-        height: 70px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .card-photo img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    .premium-card blockquote {
+        font-size: 0.9rem;
     }
 
     .premium-cta p {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .quote-mark {
-        font-size: 80px;
-        top: 20px;
-        left: 20px;
+        font-size: 60px;
+        top: 15px;
+        right: 20px;
     }
 }
 
