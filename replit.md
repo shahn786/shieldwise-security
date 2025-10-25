@@ -43,6 +43,18 @@ Preferred communication style: Simple, everyday language.
 - **Caching Strategy**: Strategic resource caching for optimal performance
 - **Page Speed**: LCP optimized from 6.9s to 0.47s (93% improvement)
 - **Automated Scripts**: Image optimizer, H1 fixer, sitemap generator created
+- **Script Optimization (Oct 25, 2025)**: All JavaScript consolidated and deferred - jQuery, Bootstrap, and navigation scripts load with defer attribute for optimal performance
+- **Critical CSS (Oct 25, 2025)**: Comprehensive above-the-fold CSS inlined on homepage for instant rendering
+
+### Accessibility Features (October 2025 - WCAG 2.1 AA COMPLIANT)
+- **Keyboard Navigation**: Full keyboard support for all interactive elements (Tab/Shift+Tab/Enter/Space/ESC/Arrow keys)
+- **ARIA Attributes**: Comprehensive ARIA implementation across navigation, forms, and interactive components
+- **Focus Management**: Focus trap on mobile menu, visible focus indicators, skip navigation link
+- **Semantic HTML**: Proper landmarks (header, nav, main, footer) with role attributes
+- **Form Accessibility**: Explicit label associations, aria-required, aria-describedby on all form inputs
+- **Mobile Menu**: Accessible hamburger menu with body scroll lock, ESC key support, click-outside-to-close
+- **Screen Reader Support**: All images have descriptive alt text, proper heading hierarchy (single H1 per page)
+- **Accessible Navigation Script**: Public/JS/accessible-nav.js - consolidated navigation logic with full a11y support
 
 ### SEO and Local Optimization (October 2025 - OPTIMIZED)
 - **Local SEO**: Comprehensive location-based content structure for 186 California cities + 14 services (200+ pages)
