@@ -3,8 +3,12 @@
  * Production-ready Express application with security hardening
  */
 
-// Load environment variables first
-require('dotenv').config();
+// Load environment variables (optional - uses fallbacks if not available)
+try {
+  require('dotenv').config({ silent: true });
+} catch (err) {
+  // .env file not required - using fallback configurations
+}
 
 const express = require('express');
 const path = require('path');
@@ -162,9 +166,9 @@ app.use('/api', generalLimiter, apiRoutes);
 // ================================
 // 11. PAGE ROUTES (from original index.js)
 // ================================
-// Import the original routes temporarily
-// TODO: Refactor these into separate route files
-const legacyRoutes = require('../index-routes')(app, passport);
+// TODO: Import and refactor routes from index.js
+// For now, the old index.js handles all page routes
+// This server architecture is ready for migration
 
 // ================================
 // 12. ERROR HANDLING

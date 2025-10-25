@@ -2,10 +2,11 @@
   "name": "security-services-website",
   "version": "1.0.0",
   "description": "Security Services Website",
-  "main": "src/server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node src/server.js",
-    "dev": "NODE_ENV=development node src/server.js",
+    "start": "node index.js",
+    "start:new": "node src/server.js",
+    "dev": "NODE_ENV=development node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

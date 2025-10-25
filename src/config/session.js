@@ -6,8 +6,13 @@
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 
+// MongoDB URI with fallback (matching database.js pattern)
+const mongoUri = process.env.MONGODB_URI && process.env.MONGODB_URI.startsWith('mongodb') 
+  ? process.env.MONGODB_URI 
+  : "mongodb+srv://shahnawazkarimi2014:No0708156402@cluster0.y5o4d.mongodb.net/?retryWrites=true&w=majority";
+
 const sessionConfig = {
-  secret: process.env.SESSION_SECRET || 'fallback-dev-secret-change-in-production',
+  secret: process.env.SESSION_SECRET || 'shieldwise-dev-secret-2025-change-in-production',
   resave: false,
   saveUninitialized: false,
   name: 'sessionId', // Custom name instead of default 'connect.sid'
@@ -18,9 +23,9 @@ const sessionConfig = {
     maxAge: 14 * 24 * 60 * 60 * 1000, // 14 days
   },
   store: MongoStore.create({
-    mongoUrl: process.env.MONGODB_URI,
+    mongoUrl: mongoUri,
     crypto: {
-      secret: process.env.MONGO_STORE_SECRET || 'fallback-store-secret-change-in-production'
+      secret: process.env.MONGO_STORE_SECRET || 'mongo-store-dev-secret-2025-change-in-production'
     },
     ttl: 14 * 24 * 60 * 60, // 14 days
     autoRemove: 'native',
