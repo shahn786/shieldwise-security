@@ -1,0 +1,8 @@
+<!-- Canonical URL -->
+<% 
+  // Generate canonical URL based on current path
+  const baseUrl = 'https://shieldwisesecurity.com';
+  const currentPath = typeof canonicalPath !== 'undefined' ? canonicalPath : (typeof path !== 'undefined' ? path : '');
+  const canonicalUrl = currentPath ? `${baseUrl}${currentPath}` : baseUrl;
+%>
+<link rel="canonical" href="<%= canonicalUrl %>" />

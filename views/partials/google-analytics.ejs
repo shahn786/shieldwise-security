@@ -1,0 +1,49 @@
+<!-- Google Analytics / GA4 -->
+<%
+  // Set your Google Analytics 4 Measurement ID here
+  // Get this from: https://analytics.google.com/analytics/web/
+  const ga4MeasurementId = 'G-XXXXXXXXXX'; // TODO: Replace with actual GA4 ID
+  const enableAnalytics = typeof process !== 'undefined' && process.env.NODE_ENV === 'production';
+%>
+
+<% if (enableAnalytics && ga4MeasurementId !== 'G-XXXXXXXXXX') { %>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=<%= ga4MeasurementId %>"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '<%= ga4MeasurementId %>', {
+    'anonymize_ip': true,
+    'cookie_flags': 'SameSite=None;Secure'
+  });
+  
+  // Custom event tracking for quote requests
+  function trackQuoteRequest() {
+    gtag('event', 'generate_lead', {
+      'event_category': 'engagement',
+      'event_label': 'quote_request'
+    });
+  }
+  
+  // Custom event tracking for contact form
+  function trackContactSubmission() {
+    gtag('event', 'generate_lead', {
+      'event_category': 'engagement',
+      'event_label': 'contact_form'
+    });
+  }
+  
+  // Custom event tracking for phone clicks
+  function trackPhoneClick() {
+    gtag('event', 'conversion', {
+      'event_category': 'engagement',
+      'event_label': 'phone_click',
+      'value': 1
+    });
+  }
+</script>
+<% } else { %>
+<!-- Google Analytics disabled in development or not configured -->
+<% } %>

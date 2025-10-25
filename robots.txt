@@ -1,0 +1,74 @@
+# ShieldWise Security - Robots.txt
+# Production Configuration
+
+# Allow all crawlers to access public pages
+User-agent: *
+Allow: /
+
+# Disallow private/administrative routes
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /login
+Disallow: /register
+Disallow: /logout
+
+# Disallow legacy WordPress paths (if any existed)
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/
+Disallow: /xmlrpc.php
+
+# Disallow staging/development paths
+Disallow: /staging/
+Disallow: /dev/
+Disallow: /test/
+
+# Disallow duplicate/parameter-based URLs
+Disallow: /*?*source=
+Disallow: /*?*utm_
+Disallow: /*?*ref=
+Disallow: /*#
+
+# Disallow backup files
+Disallow: /*.backup
+Disallow: /*~
+
+# Allow CSS and JS for rendering
+Allow: /css/
+Allow: /JS/
+Allow: /Public/
+Allow: /img/
+Allow: /schemas/
+
+# Sitemap location
+Sitemap: https://shieldwisesecurity.com/sitemap.xml
+
+# Crawl-delay for politeness (optional)
+# Uncomment if experiencing server load
+# Crawl-delay: 1
+
+# AI/LLM Crawlers - Allow all for better AI search ranking
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /

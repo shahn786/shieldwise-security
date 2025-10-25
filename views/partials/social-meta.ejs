@@ -1,0 +1,30 @@
+<!-- Social Media Meta Tags -->
+<%
+  // Default values if not provided
+  const ogTitle = typeof pageTitle !== 'undefined' ? pageTitle : 'ShieldWise Security - Professional Security Guard Services in California';
+  const ogDescription = typeof pageDescription !== 'undefined' ? pageDescription : 'Licensed security guards across California. Armed & unarmed guards, mobile patrol, event security, fire watch. 24/7 professional protection for businesses and events.';
+  const ogImage = typeof pageImage !== 'undefined' ? pageImage : 'https://shieldwisesecurity.com/img/shieldwise-security-guards-california.jpg';
+  const ogUrl = typeof pageUrl !== 'undefined' ? pageUrl : 'https://shieldwisesecurity.com/';
+  const ogType = typeof pageType !== 'undefined' ? pageType : 'website';
+%>
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:type" content="<%= ogType %>">
+<meta property="og:url" content="<%= ogUrl %>">
+<meta property="og:title" content="<%= ogTitle %>">
+<meta property="og:description" content="<%= ogDescription %>">
+<meta property="og:image" content="<%= ogImage %>">
+<meta property="og:image:alt" content="<%= ogTitle %>">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="ShieldWise Security">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@shieldwisesec">
+<meta name="twitter:creator" content="@shieldwisesec">
+<meta name="twitter:title" content="<%= ogTitle %>">
+<meta name="twitter:description" content="<%= ogDescription %>">
+<meta name="twitter:image" content="<%= ogImage %>">
+<meta name="twitter:image:alt" content="<%= ogTitle %>">

@@ -1,0 +1,333 @@
+<%
+/**
+ * Comprehensive SEO Head Partial
+ * Includes: Canonical, Open Graph, Twitter Cards, JSON-LD Schemas, Google Analytics
+ * 
+ * Usage: <%- include('partials/seo-head', { 
+ *   canonicalPath: '/services/armed-security',
+ *   pageTitle: 'Armed Security Guards California | ShieldWise',
+ *   pageDescription: 'Professional armed security guards...',
+ *   pageImage: 'https://shieldwisesecurity.com/img/armed-security.webp',
+ *   pageUrl: 'https://shieldwisesecurity.com/services/armed-security',
+ *   includeFAQ: true
+ * }) %>
+ */
+
+// Set defaults if variables not provided
+const baseUrl = 'https://shieldwisesecurity.com';
+const currentPath = typeof canonicalPath !== 'undefined' ? canonicalPath : '';
+const currentUrl = currentPath ? `${baseUrl}${currentPath}` : baseUrl;
+
+const metaTitle = typeof pageTitle !== 'undefined' ? pageTitle : 'ShieldWise Security - Professional Security Guard Services in California';
+const metaDescription = typeof pageDescription !== 'undefined' ? pageDescription : 'Licensed security guards across California. Armed & unarmed guards, mobile patrol, event security, fire watch. 24/7 professional protection for businesses and events.';
+const metaImage = typeof pageImage !== 'undefined' ? pageImage : 'https://shieldwisesecurity.com/img/California_SecurityGuards.webp';
+const includeFAQSchema = typeof includeFAQ !== 'undefined' ? includeFAQ : false;
+%>
+
+<!-- Canonical URL -->
+<link rel="canonical" href="<%= currentUrl %>" />
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="<%= currentUrl %>">
+<meta property="og:title" content="<%= metaTitle %>">
+<meta property="og:description" content="<%= metaDescription %>">
+<meta property="og:image" content="<%= metaImage %>">
+<meta property="og:image:alt" content="<%= metaTitle %>">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="ShieldWise Security">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@shieldwisesec">
+<meta name="twitter:creator" content="@shieldwisesec">
+<meta name="twitter:title" content="<%= metaTitle %>">
+<meta name="twitter:description" content="<%= metaDescription %>">
+<meta name="twitter:image" content="<%= metaImage %>">
+<meta name="twitter:image:alt" content="<%= metaTitle %>">
+
+<!-- LocalBusiness JSON-LD Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://shieldwisesecurity.com/#organization",
+  "name": "ShieldWise Security",
+  "alternateName": "ShieldWise Security Services",
+  "description": "Professional security guard services across California including Los Angeles, Orange County, San Diego, Sacramento, and San Francisco Bay Area. Licensed armed and unarmed security guards, mobile patrol, event security, and fire watch services.",
+  "url": "https://shieldwisesecurity.com",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://shieldwisesecurity.com/img/logo1.webp",
+    "width": "600",
+    "height": "60"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://shieldwisesecurity.com/img/California_SecurityGuards.webp",
+    "width": "1200",
+    "height": "630"
+  },
+  "telephone": "+1-714-716-7430",
+  "email": "info@shieldwisesecurity.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "220 Soo Dr",
+    "addressLocality": "Fullerton",
+    "addressRegion": "CA",
+    "postalCode": "92832",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "33.8704",
+    "longitude": "-117.9242"
+  },
+  "areaServed": [
+    {
+      "@type": "State",
+      "name": "California"
+    },
+    {
+      "@type": "City",
+      "name": "Los Angeles"
+    },
+    {
+      "@type": "City",
+      "name": "Orange County"
+    },
+    {
+      "@type": "City",
+      "name": "San Diego"
+    },
+    {
+      "@type": "City",
+      "name": "San Francisco"
+    },
+    {
+      "@type": "City",
+      "name": "Sacramento"
+    },
+    {
+      "@type": "City",
+      "name": "Riverside"
+    },
+    {
+      "@type": "City",
+      "name": "San Bernardino"
+    }
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  ],
+  "priceRange": "$$",
+  "paymentAccepted": "Cash, Credit Card, Check, Invoice",
+  "currenciesAccepted": "USD",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Security Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Armed Security Guard Services",
+          "description": "Professional armed security guards for high-risk facilities"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Unarmed Security Guard Services",
+          "description": "Professional unarmed security guards for businesses and events"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Mobile Patrol Services",
+          "description": "24/7 mobile security patrol for large properties and facilities"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Event Security Services",
+          "description": "Professional security for events, concerts, and gatherings"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Fire Watch Services",
+          "description": "24/7 fire watch guards for facilities with non-functional fire systems"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Executive Protection",
+          "description": "Personal security and protection for executives and VIPs"
+        }
+      }
+    ]
+  },
+  "sameAs": [
+    "https://www.facebook.com/shieldwisesecurity",
+    "https://twitter.com/shieldwisesec",
+    "https://www.linkedin.com/company/shieldwisesecurity",
+    "https://www.instagram.com/shieldwisesecurity"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "247",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "ShieldWise Leadership Team"
+  },
+  "foundingDate": "2010",
+  "numberOfEmployees": {
+    "@type": "QuantitativeValue",
+    "value": "150"
+  },
+  "slogan": "Professional Security Services You Can Trust",
+  "keywords": "security guards California, armed security, unarmed security, mobile patrol, event security, fire watch, executive protection, Los Angeles security, Orange County security"
+}
+</script>
+
+<% if (includeFAQSchema) { %>
+<!-- FAQPage JSON-LD Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What types of security services does ShieldWise offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ShieldWise Security provides comprehensive security solutions including armed security guards, unarmed security guards, mobile patrol services, event security, fire watch services, executive protection, construction site security, and commercial property protection across California."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are your security guards licensed and trained?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all ShieldWise security guards hold valid California BSIS (Bureau of Security and Investigative Services) Guard Cards and undergo rigorous background checks. Our armed guards possess California firearms permits and complete extensive training including de-escalation techniques, emergency response, and customer service protocols."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas in California do you serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ShieldWise Security serves all major California counties including Los Angeles County, Orange County, San Diego County, Riverside County, San Bernardino County, Sacramento County, Santa Clara County, Alameda County, Fresno County, and Ventura County. We provide 24/7 security services across 186+ California cities."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can you deploy security guards?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ShieldWise Security offers rapid deployment with emergency response available within 2-4 hours for urgent situations. For scheduled services, we can typically deploy qualified guards within 24-48 hours depending on your specific requirements and location."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide 24/7 security coverage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, ShieldWise Security provides round-the-clock protection with 24/7/365 availability. Our security operations center monitors all posts continuously, and we offer flexible scheduling including overnight shifts, weekend coverage, and holiday security services."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the vetting process for your security guards?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every ShieldWise security guard undergoes comprehensive screening including multi-state criminal background checks, employment verification, drug testing, psychological evaluation, and reference checks. Armed guards receive additional firearms proficiency testing and tactical training certification."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do your security services cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Security guard rates vary based on service type, location, shift requirements, and coverage hours. Unarmed guards typically range from $25-$40/hour, armed guards from $35-$65/hour, and specialized services from $45-$85/hour. Contact us for a customized quote based on your specific security needs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you licensed and insured?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ShieldWise Security maintains full licensing through the California Bureau of Security and Investigative Services (BSIS) and carries comprehensive general liability insurance, workers' compensation, and professional liability coverage exceeding $2 million to protect our clients."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you provide security for special events?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, ShieldWise specializes in event security for concerts, festivals, corporate events, weddings, private parties, and public gatherings of all sizes. We provide crowd management, access control, VIP protection, parking security, and emergency response coordination."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your response time for emergencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For existing clients with active contracts, our mobile patrol units can respond to emergencies within 10-15 minutes in most service areas. For new urgent security requests, we can deploy qualified guards within 2-4 hours depending on location and availability."
+      }
+    }
+  ]
+}
+</script>
+<% } %>
+
+<!-- Google Analytics / GA4 -->
+<%
+  const ga4MeasurementId = 'G-XXXXXXXXXX'; // TODO: Replace with actual GA4 ID
+  const enableAnalytics = typeof process !== 'undefined' && process.env.NODE_ENV === 'production';
+%>
+
+<% if (enableAnalytics && ga4MeasurementId !== 'G-XXXXXXXXXX') { %>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=<%= ga4MeasurementId %>"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '<%= ga4MeasurementId %>', {
+    'anonymize_ip': true,
+    'cookie_flags': 'SameSite=None;Secure'
+  });
+</script>
+<% } %>
