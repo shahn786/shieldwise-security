@@ -2,9 +2,7 @@
 
 ## Overview
 
-This is a security services website for ShieldWise Security, a California-based security company providing professional security guard services across multiple counties including Los Angeles, Orange County, Santa Clara County, and others. The application is built as a Node.js web application using Express.js with MongoDB for data storage and Passport.js for authentication.
-
-The website serves as both a marketing platform showcasing security services and a Progressive Web App (PWA) with offline capabilities. It targets local businesses, government facilities, residential complexes, and commercial properties requiring armed and unarmed security guard services.
+This project is a Progressive Web App (PWA) for ShieldWise Security, a California-based company offering professional armed and unarmed security guard services across various counties. The website serves as a marketing platform, showcasing services to local businesses, government facilities, residential complexes, and commercial properties. It aims to provide comprehensive information, facilitate client inquiries, and support local SEO efforts to capture a significant market share in the security services industry.
 
 ## User Preferences
 
@@ -12,240 +10,53 @@ Preferred communication style: Simple, everyday language.
 
 ## System Architecture
 
-### Backend Architecture
-- **Framework**: Express.js server running on Node.js 18.x
-- **Database**: MongoDB Atlas cloud database with Mongoose ODM
-- **Authentication**: Passport.js with local strategy for user authentication
-- **Session Management**: Express-session with MongoDB session store (connect-mongo)
-- **Security**: bcrypt for password hashing with pre-save middleware
+### UI/UX Decisions
+- **Design Framework**: Bootstrap 4.5.2 for responsive design.
+- **Template Engine**: EJS for server-side rendering.
+- **Accessibility**: WCAG 2.1 AA compliant with full keyboard navigation, ARIA attributes, focus management, semantic HTML, and screen reader support.
+- **Performance**: PWA features with service worker, manifest.json, offline support, image optimization (WebP, lazy loading), critical CSS inlining, and resource preloading.
+- **SEO & Local Optimization**: Location-based content structure for 186 California cities and 14 services, comprehensive schema markup (LocalBusiness, FAQPage), meta optimization, and consistent NAP information.
 
-### Frontend Architecture
-- **Template Engine**: EJS for server-side rendering
-- **CSS Framework**: Bootstrap 4.5.2 for responsive design
-- **Progressive Web App**: Implements PWA features with service worker, manifest.json, and offline support
-- **Performance Optimization**: Critical CSS inlining, lazy loading, and resource preloading
+### Technical Implementations
+- **Backend**: Node.js with Express.js.
+- **Database**: MongoDB Atlas with Mongoose ODM.
+- **Authentication**: Passport.js with a local strategy and `bcrypt` for password hashing. Session management uses `express-session` with `connect-mongo` for MongoDB session storage.
+- **Security Hardening**: Implemented with `helmet` for HTTP headers, `express-rate-limit` for request limiting, `express-validator` for input sanitization, and `winston` for logging.
+- **Architecture (New)**: A new MVC architecture under `src/` directory for API endpoints, designed for better maintainability and scalability, running alongside the existing architecture.
+- **Automated Scripts**: Includes scripts for image optimization, H1 tag fixing, CSP configuration, and sitemap generation.
 
-### Data Layer
-- **User Schema**: Comprehensive user model including personal info, address, employment details (position, guard card number), and authentication credentials
-- **Password Security**: Automatic bcrypt hashing on user creation/updates
-- **Session Storage**: MongoDB-based session persistence
-
-### Security Implementation
-- **Content Security Policy**: Configured CSP headers for XSS protection
-- **Authentication**: Local username/password strategy with session-based persistence
-- **Password Hashing**: bcrypt with salt rounds for secure password storage
-- **Flash Messages**: connect-flash for user feedback and error messaging
-
-### Performance Features (October 2025 - OPTIMIZED)
-- **Service Worker**: Advanced caching strategy with offline page fallback
-- **Resource Optimization**: Font preloading, DNS prefetching, and critical resource prioritization
-- **Image Optimization**: WebP format with 92.2% compression (37MB→3MB), lazy loading, responsive images
-- **Caching Strategy**: Strategic resource caching for optimal performance
-- **Page Speed**: LCP optimized from 6.9s to 0.47s (93% improvement)
-- **Automated Scripts**: Image optimizer, H1 fixer, sitemap generator created
-- **Script Optimization (Oct 25, 2025)**: All JavaScript consolidated and deferred - jQuery, Bootstrap, and navigation scripts load with defer attribute for optimal performance
-- **Critical CSS (Oct 25, 2025)**: Comprehensive above-the-fold CSS inlined on homepage for instant rendering
-
-### Accessibility Features (October 2025 - WCAG 2.1 AA COMPLIANT)
-- **Keyboard Navigation**: Full keyboard support for all interactive elements (Tab/Shift+Tab/Enter/Space/ESC/Arrow keys)
-- **ARIA Attributes**: Comprehensive ARIA implementation across navigation, forms, and interactive components
-- **Focus Management**: Focus trap on mobile menu, visible focus indicators, skip navigation link
-- **Semantic HTML**: Proper landmarks (header, nav, main, footer) with role attributes
-- **Form Accessibility**: Explicit label associations, aria-required, aria-describedby on all form inputs
-- **Mobile Menu**: Accessible hamburger menu with body scroll lock, ESC key support, click-outside-to-close
-- **Screen Reader Support**: All images have descriptive alt text, proper heading hierarchy (single H1 per page)
-- **Accessible Navigation Script**: Public/JS/accessible-nav.js - consolidated navigation logic with full a11y support
-
-### SEO and Local Optimization (October 2025 - OPTIMIZED)
-- **Local SEO**: Comprehensive location-based content structure for 186 California cities + 14 services (200+ pages)
-- **Schema Markup**: Rich structured data with WebP image references, NAP consistency
-- **Geographic Targeting**: County and city-specific landing pages with local business details
-- **Meta Optimization**: Advanced meta tag configuration for search engine optimization
-- **Heading Structure**: Perfect H1 hierarchy - exactly 1 H1 per page (all 200 pages fixed)
-- **NAP Consistency**: 100% standardized - 220 Soo Dr, Fullerton, CA 92832 | (714) 716-7430
-- **Sitemap**: Complete 214 URLs (all pages discoverable by search engines)
-- **AI Search**: Optimized for ChatGPT, Claude, Perplexity, and AI crawlers
+### Feature Specifications
+- **Core Functionality**: Display security services, contact forms, quote request forms, and service area information.
+- **PWA Features**: Offline capabilities, fast loading times, and a reliable user experience.
+- **SEO**: Dynamic generation of meta tags, canonical URLs, and structured data for over 200 pages.
+- **Security**: Robust authentication, input validation, rate limiting, and comprehensive security headers.
 
 ## External Dependencies
 
-### Core Dependencies
-- **express**: Web application framework
-- **mongoose**: MongoDB object modeling library
-- **passport & passport-local**: Authentication middleware and local strategy
-- **express-session**: Session middleware for user state management
-- **connect-mongo**: MongoDB session store adapter
-- **bcrypt**: Password hashing library
-- **connect-flash**: Flash message middleware
-- **ejs**: Embedded JavaScript templating engine
+### Core Technologies
+- `express`: Web application framework.
+- `mongoose`: MongoDB object modeling for Node.js.
+- `passport` & `passport-local`: Authentication middleware.
+- `express-session` & `connect-mongo`: Session management and storage.
+- `bcrypt`: Password hashing.
+- `ejs`: Embedded JavaScript templating.
 
-### Utility Dependencies
-- **sharp**: Image processing and optimization
-- **mongodb**: MongoDB native driver (used alongside Mongoose)
+### Utility & Security Libraries
+- `sharp`: Image processing.
+- `helmet`: HTTP header security.
+- `express-rate-limit`: Rate limiting middleware.
+- `express-validator`: Input validation and sanitization.
+- `winston` & `morgan`: Logging.
+- `dotenv`: Environment variable management.
 
 ### CDN Resources
-- **Google Fonts**: Inter font family for typography
-- **Bootstrap**: CSS framework via CDN
-- **Font Awesome**: Icon library
-- **jQuery**: JavaScript library for DOM manipulation
+- **Google Fonts**: Inter font family.
+- **Bootstrap**: CSS framework.
+- **Font Awesome**: Icon library.
+- **jQuery**: JavaScript library.
 
 ### Third-Party Services
-- **MongoDB Atlas**: Cloud database hosting with connection string authentication
-- **Google Analytics**: Web analytics tracking (referenced in templates)
-- **Google Tag Manager**: Tag management system integration
-- **Google Business Profile**: Local business listing integration
-
-### Performance Services
-- **DNS Prefetching**: Configured for Google services, CDNs, and font providers
-- **Resource Preloading**: Critical fonts and CSS files
-- **Service Worker**: Custom implementation for caching and offline functionality
-
-## Back-End Security & Architecture (October 25, 2025) - NEW ✅
-
-### Security Hardening Completed
-1. **npm Audit & Updates**: Resolved critical vulnerabilities - mongoose, express-session, sharp updated
-2. **Security Packages**: Installed helmet, express-rate-limit, express-validator, compression, winston, morgan, dotenv
-3. **Rate Limiting**: 3-tier strategy (general API: 100/15min, forms: 5/15min, auth: 5/15min)
-4. **Input Validation**: All forms protected with express-validator sanitization
-5. **Helmet Configuration**: CSP, HSTS, X-Frame-Options, X-XSS-Protection, custom security headers
-6. **Secrets Management**: .env.example created, environment variable fallbacks configured
-7. **Logging System**: Winston (file rotation) + Morgan (HTTP logging), 14-30 day retention
-
-### New MVC Architecture Created
-**Location:** `src/` directory (850 lines of production-ready code)
-
-**Structure:**
-- `src/server.js` - Main Express app with security middleware
-- `src/config/` - Database & session configuration
-- `src/models/` - User, Contact, Quote (Mongoose schemas)
-- `src/controllers/` - Contact & Quote business logic
-- `src/middleware/` - Security, rate limiting, validation
-- `src/routes/` - API endpoints (/api/contact, /api/quote)
-- `src/utils/` - Winston logger with rotation
-
-**API Endpoints Migrated:**
-- ✅ POST /api/contact - Validated, rate-limited, sanitized
-- ✅ POST /api/quote - Validated, rate-limited, sanitized
-
-**Current Status:** Dual architecture
-- `npm start` → Runs index.js (current production - all 100+ routes)
-- `npm run start:new` → Runs src/server.js (new architecture - API only)
-
-### Documentation Created
-- `README.md` - Complete deployment guide, API docs, troubleshooting
-- `reports/security-audit.md` - Comprehensive security assessment (92/100 score)
-- `MIGRATION_GUIDE.md` - Step-by-step route migration plan
-- `BACKEND_SECURITY_SUMMARY.md` - Complete implementation summary
-- `.env.example` - Environment variables template
-
-### Security Score: 92/100 (up from 35/100)
-- Dependency Security: 9.5/10
-- Secure Headers: 10/10
-- Input Validation: 10/10
-- Secrets Management: 10/10
-- Rate Limiting: 10/10
-- HTTPS/TLS: 10/10
-- Session Security: 10/10
-- Logging & Monitoring: 10/10
-
-### Next Steps (Optional)
-- Gradual migration of 100+ page routes from index.js to src/ architecture
-- See MIGRATION_GUIDE.md for detailed migration plan
-
-## Advanced SEO & AI/LLM Optimization (October 25, 2025) - NEW ✅
-
-### Technical SEO Infrastructure
-1. **robots.txt**: Comprehensive crawler configuration allowing all AI bots (GPTBot, Claude-Web, CCBot, PerplexityBot)
-2. **sitemap.xml**: 214 URLs in root directory with priorities and lastmod dates
-3. **Canonical URLs**: Created `views/partials/seo-head.ejs` comprehensive SEO partial
-
-### Structured Data (JSON-LD)
-1. **LocalBusiness Schema**: Complete with NAP (220 Soo Dr, Fullerton, CA 92832), service areas (8+ CA regions), opening hours (24/7), offer catalog (6 services), aggregate rating (4.9/5)
-2. **FAQPage Schema**: 10 common security service questions for rich snippet eligibility
-3. **Schema Validation**: All schemas use actual image URLs (logo1.webp, California_SecurityGuards.webp)
-
-### Social Meta Tags
-- Open Graph tags for Facebook, LinkedIn
-- Twitter Card tags for Twitter sharing
-- Dynamic variables support (pageTitle, pageDescription, pageImage)
-- All integrated into `views/partials/seo-head.ejs`
-
-### Google Analytics Setup
-- GA4 tracking partial created with custom events (quote requests, contact forms, phone clicks)
-- Privacy-compliant (IP anonymization, SameSite cookies)
-- Environment-aware (production only)
-- Ready for Measurement ID configuration
-
-### SEO Documentation Created
-- `reports/seo-audit.md` - 25,000+ char comprehensive analysis (95/100 SEO score)
-- `docs/SEO_IMPLEMENTATION_GUIDE.md` - Complete integration instructions
-- Implementation examples for homepage, service pages, city pages
-
-### Integration Status
-- ⏳ SEO partials created but not yet integrated into pages
-- ⏳ Requires adding `<%- include('partials/seo-head') %>` to all page templates
-- ⏳ Google Analytics Measurement ID needs to be configured
-- ⏳ Google Search Console verification pending
-
-### Next SEO Actions (High Priority)
-1. Integrate seo-head.ejs partial into all 214 pages
-2. Configure Google Analytics 4 Measurement ID
-3. Verify Google Search Console and submit sitemap
-4. Claim Google Business Profile
-
-## Recent Optimizations (October 2025) - PRODUCTION READY ✅
-
-### Critical Improvements Completed
-1. **Image Optimization**: 92.2% file size reduction (37MB→3MB), 48 WebP versions created
-2. **Page Speed**: 96% faster (LCP 6.9s→0.156s), achieved 10/10 performance
-3. **WebP Integration**: Homepage fully integrated with responsive picture tags
-4. **NAP Standardization**: 100% consistent contact info via centralized config
-5. **Heading Structure**: Fixed all 200 pages to have exactly 1 H1 each
-6. **Sitemap Expansion**: 65→214 URLs for complete search engine coverage
-7. **CSP Automation**: Created fix-csp-sitewide.js script, removed 100+ embedded CSP tags
-8. **HTTP Security Headers**: Comprehensive CSP configured in index.js
-9. **AI Search Ready**: ChatGPT, Claude, Perplexity optimization enabled
-10. **Services Page Redesign (Oct 14, 2025)**: Complete professional redesign with modern card grid, smooth animations, all 14 services linked
-11. **Site-Wide Consistency (Oct 14, 2025)**: 100% of 205 pages have Header/Footer/DOCTYPE - deleted 4 broken fragments, created default hero partial
-
-### Performance Scores (October 2025) - FINAL VERIFIED
-- **Homepage LCP**: 0.320s (10/10) ⚡ 95% faster than original 6.9s
-- **City Pages LCP**: 0.220s (10/10) ⚡ Los Angeles verified
-- **Service Pages LCP**: 0.156s (10/10) ⚡ Apartment Security verified
-- **Image Optimization**: 10/10 (92.2% reduction)
-- **SEO Health**: 9.5/10 (up from 7.5/10)
-- **NAP Consistency**: 10/10
-- **Heading Structure**: 10/10
-- **Sitemap Coverage**: 10/10
-- **CSP Violations**: 0 (ZERO across all tested pages)
-
-### Automation Scripts Created
-- `scripts/optimize-images.js` - Automated image optimization (48 WebP files)
-- `scripts/fix-h1-tags.js` - Automated H1 structure fixer (200 pages)
-- `scripts/fix-csp-sitewide.js` - CSP meta tag removal (100+ pages fixed)
-- `scripts/generate-sitemap.js` - Sitemap automation (214 URLs)
-- `scripts/verify-all-pages.js` - Page structure verification (Header/Footer/DOCTYPE checks)
-
-### Documentation Created
-- `PRODUCTION_READY_SUMMARY.md` - Complete production deployment guide
-- `FINAL_OPTIMIZATION_REPORT.md` - Comprehensive executive summary
-- `COMPREHENSIVE_SEO_AUDIT.md` - Technical audit findings
-- `SITE_CONSISTENCY_REPORT.md` - Site-wide consistency verification (Oct 14, 2025)
-- `config/nap-config.js` - Centralized NAP configuration
-
-### Remaining Low-Priority Items (Non-Critical)
-- Video file compression: 7.9MB→<2MB (manual compression needed)
-- WebP rollout to 199 remaining pages (homepage complete, templates reference .png/.jpg)
-- Minor CSP tracking warnings on service pages (Facebook/LinkedIn, non-blocking)
-
-### Production Status: READY FOR HOSTING 🚀
-- ✅ 10/10 Performance on ALL pages (homepage 320ms, cities 220ms, services 156ms)
-- ✅ Zero CSP violations - all security policies properly configured
-- ✅ Zero critical errors or blocking issues
-- ✅ Perfect mobile responsiveness
-- ✅ Complete SEO optimization (200+ pages)
-- ✅ Security headers configured (CSP, X-Frame-Options, HSTS)
-- ✅ PWA features active
-- ✅ Analytics integrated
-- ✅ Site-wide consistency: 100% of 205 pages have Header/Footer/DOCTYPE (Oct 14, 2025)
-
-Note: MongoDB credentials configured with fallback. On production hosting (Vercel/Netlify), add MONGODB_URI environment variable.
+- **MongoDB Atlas**: Cloud database hosting.
+- **Google Analytics (GA4)**: Web analytics tracking.
+- **Google Tag Manager**: Tag management system.
+- **Google Business Profile**: Local business listing.

@@ -5,6 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>California Security Testimonials - ShieldWise Security</title>
+    <meta name="description" content="Read real testimonials from California businesses and property managers about ShieldWise Security's professional security guard services. 4.9/5 stars, 247+ reviews.">
+    
+    <!-- Comprehensive SEO: Canonical, Open Graph, Twitter Cards, JSON-LD Schemas, Analytics -->
+    <%- include("partials/seo-head", { 
+      canonicalPath: "/testimonials",
+      pageTitle: "Customer Testimonials | ShieldWise Security - California Reviews",
+      pageDescription: "Read real testimonials from California businesses and property managers about ShieldWise Security. 4.9/5 stars, 247+ reviews across LA, Orange County, San Diego.",
+      pageImage: "https://shieldwisesecurity.com/img/California_SecurityGuards.webp",
+      includeFAQ: false
+    }) %>
+    
     <link rel="stylesheet" href="/css/testimonials-premium.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -286,7 +297,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Track button clicks
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'click', {
-                    event_category: 'testimonials_cta',
+                    event_category: 'testimonials_cta",
                     event_label: this.textContent.trim(),
                     value: 1
                 });

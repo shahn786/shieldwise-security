@@ -10,36 +10,14 @@
           <meta name="keywords" content="security services, security guards, California security, ShieldWise Security, contact security company">
           <meta name="author" content="ShieldWise Security">
 
-          <!-- Open Graph Meta Tags (For Social Media Sharing) -->
-          <meta property="og:title" content="Contact Us - ShieldWise Security">
-          <meta property="og:description" content="ShieldWise Security provides professional security guard services in California. Get a free quote today!">
-          <meta property="og:image" content="/img/shieldwise-security.jpg">
-          <meta property="og:url" content="https://www.shieldwisesecurity.com/contact">
-          <meta property="og:type" content="website">
-
-          <!-- Structured Data for Google Rich Results -->
-          <script type="application/ld+json">
-          {
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "ShieldWise Security",
-            "image": "https://www.shieldwisesecurity.com/img/logo.png",
-            "url": "https://www.shieldwisesecurity.com",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "220 Soco Dr",
-              "addressLocality": "Fullerton",
-              "addressRegion": "CA",
-              "postalCode": "92832",
-              "addressCountry": "US"
-            },
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+1-714-716-7430",
-              "contactType": "customer service"
-            }
-          }
-          </script>
+          <!-- Comprehensive SEO: Canonical, Open Graph, Twitter Cards, JSON-LD Schemas, Analytics -->
+          <%- include("partials/seo-head", { 
+            canonicalPath: "/contact",
+            pageTitle: "Contact Us | ShieldWise Security - California Security Services",
+            pageDescription: "Contact ShieldWise Security for professional security guard services across California. Free consultation, 24/7 support, rapid deployment. Call (714) 716-7430 today.",
+            pageImage: "https://shieldwisesecurity.com/img/California_SecurityGuards.webp",
+            includeFAQ: false
+          }) %>
 
           <!-- Favicon -->
           <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
@@ -434,9 +412,9 @@
     // API Call
     try {
       const response = await fetch('/contact', {
-        method: 'POST',
+        method: 'POST",
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json",
         },
         body: JSON.stringify({ name, email, contact_number, best_time, message }),
       });

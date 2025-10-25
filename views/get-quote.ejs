@@ -4,6 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Get a Security Quote | ShieldWise Security</title>
+  <meta name="description" content="Get a free security quote from ShieldWise Security. Custom security solutions for businesses, events, and properties across California. Fast response, competitive rates.">
+
+  <!-- Comprehensive SEO: Canonical, Open Graph, Twitter Cards, JSON-LD Schemas, Analytics -->
+  <%- include("partials/seo-head", { 
+    canonicalPath: "/get-quote",
+    pageTitle: "Get a Free Security Quote | ShieldWise Security California",
+    pageDescription: "Get a free security quote from ShieldWise Security. Custom security solutions for businesses, events, and properties across California. Fast response, competitive rates, 24/7 availability.",
+    pageImage: "https://shieldwisesecurity.com/img/California_SecurityGuards.webp",
+    includeFAQ: false
+  }) %>
 
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -695,7 +705,7 @@
 
       try {
         const response = await fetch('/get-quote', {
-          method: 'POST',
+          method: 'POST",
           headers: {
             'Content-Type': 'application/json'
           },
