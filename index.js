@@ -545,9 +545,13 @@ app.get("/services/mobile-patrol-security", (req, res) => {
   res.render("services/patrol");
 });
 
-// Patrol Page
+// Patrol Page - new handler with data
+const patrolRoute = require('./routes/patrol');
+app.use('/services/patrol', patrolRoute);
+
+// Patrol Page (legacy redirect)
 app.get("/patrol", (req, res) => {
-  res.render("patrol");
+  res.redirect(301, "/services/patrol");
 });
 
 // servicde area
