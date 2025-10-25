@@ -36,16 +36,17 @@ body, html {
     background: #ffffff;
 }
 
-/* Content Banner - Below Video */
-.hero-content-below {
+/* Hero Content Section - Below Video */
+.hero-content-section {
     width: 100%;
-    padding: 80px 40px;
+    padding: 100px 40px;
     background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
     position: relative;
     overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
-.hero-content-below::before {
+.hero-content-section::before {
     content: '';
     position: absolute;
     top: 0;
@@ -53,27 +54,27 @@ body, html {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.12) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(13, 27, 42, 0.5) 0%, transparent 50%);
     pointer-events: none;
 }
 
-.hero-content-below::after {
+.hero-content-section::after {
     content: '';
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 4px;
+    height: 6px;
     background: linear-gradient(90deg, 
         transparent 0%, 
-        rgba(212, 175, 55, 0.5) 25%, 
-        rgba(212, 175, 55, 0.8) 50%, 
-        rgba(212, 175, 55, 0.5) 75%, 
+        rgba(212, 175, 55, 0.6) 25%, 
+        rgba(212, 175, 55, 1) 50%, 
+        rgba(212, 175, 55, 0.6) 75%, 
         transparent 100%);
 }
 
-.hero-content-below .container {
+.hero-content-section .container {
     max-width: 1200px;
     text-align: center;
     margin: 0 auto;
@@ -83,27 +84,43 @@ body, html {
 }
 
 .hero-title {
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: 900;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
     letter-spacing: -0.02em;
     line-height: 1.15;
     background: linear-gradient(135deg, #ffffff 0%, #d4af37 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
     animation: fadeInUp 0.8s ease-out;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.hero-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 5px;
+    background: linear-gradient(90deg, transparent, #d4af37 20%, #d4af37 80%, transparent);
+    border-radius: 3px;
+    box-shadow: 0 2px 15px rgba(212, 175, 55, 0.5);
 }
 
 .hero-subtitle {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 500;
-    margin-bottom: 45px;
+    margin-bottom: 50px;
+    margin-top: 10px;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.95);
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
     animation: fadeInUp 0.8s ease-out 0.2s backwards;
+    letter-spacing: 0.5px;
 }
 
 .hero-buttons {
@@ -132,12 +149,30 @@ body, html {
     background: linear-gradient(135deg, #d4af37 0%, #bf9e5b 100%);
     color: #1a1a1a;
     border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    font-weight: 800;
+}
+
+.primary-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s ease;
+}
+
+.primary-button:hover::before {
+    left: 100%;
 }
 
 .primary-button:hover {
     background: linear-gradient(135deg, #e6c158 0%, #d4af37 100%);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6);
     color: #1a1a1a;
     text-decoration: none;
 }
@@ -176,16 +211,16 @@ body, html {
         min-height: 400px;
     }
 
-    .hero-content-below {
-        padding: 60px 30px;
+    .hero-content-section {
+        padding: 80px 30px;
     }
 
     .hero-title {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
 
     .hero-subtitle {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
     }
 }
 
@@ -196,18 +231,23 @@ body, html {
         min-height: 350px;
     }
 
-    .hero-content-below {
-        padding: 50px 25px;
+    .hero-content-section {
+        padding: 60px 25px;
     }
 
     .hero-title {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
+        font-size: 2.8rem;
+        margin-bottom: 25px;
+    }
+
+    .hero-title::after {
+        width: 100px;
+        height: 4px;
     }
 
     .hero-subtitle {
-        font-size: 1.3rem;
-        margin-bottom: 35px;
+        font-size: 1.4rem;
+        margin-bottom: 40px;
     }
 
     .hero-buttons {
