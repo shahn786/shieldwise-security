@@ -77,82 +77,11 @@
   </nav>
 </header>
 
-<!-- jQuery and Bootstrap JS for Dropdown Functionality (no defer - needed for inline scripts) -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<!-- jQuery and Bootstrap JS for Dropdown Functionality (with defer - all logic now in accessible-nav.js) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" defer></script>
 
-<!-- Navbar scroll effect script -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var navbar = document.querySelector('.navbar-main');
-
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
-    // Initialize Bootstrap dropdowns
-    if (typeof jQuery !== 'undefined') {
-        jQuery('.dropdown-toggle').dropdown();
-        console.log("✅ jQuery Loaded - Dropdowns Active");
-    }
-});
-</script>
-
-<script>
-  $(document).ready(function() {
-    $('.dropdown-toggle').dropdown();
-    console.log("✅ jQuery Loaded - Dropdowns Active");
-  });
-</script>
-
-<!-- JavaScript for Active Navigation Item & Smooth Scrolling -->
-<script>
-    $(document).ready(function() {
-        // Initialize Bootstrap dropdowns
-        $('.dropdown-toggle').dropdown();
-
-        // Add active class to current page in navigation
-        const currentLocation = window.location.pathname;
-        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-        const menuToggle = document.getElementById('navbarNavDropdown'); // Updated ID
-
-        navLinks.forEach(link => {
-            const linkPath = link.getAttribute('href');
-            if (linkPath === '/' && currentLocation === '/') {
-                link.classList.add('active');
-                link.setAttribute('aria-current', 'page');
-            } else if (linkPath !== '/' && currentLocation.includes(linkPath)) {
-                link.classList.add('active');
-                link.setAttribute('aria-current', 'page');
-            }
-        });
-
-        // Close mobile menu when link is clicked
-        $('.navbar-nav .nav-link').on('click', function() {
-            if (window.innerWidth < 992) {
-                $('.navbar-collapse').collapse('hide');
-            }
-        });
-
-        // Smooth scrolling for anchor links
-        $('a[href^="#"]').on('click', function(e) {
-            if (this.hash !== "") {
-                e.preventDefault();
-                var hash = this.hash;
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top - 100
-                }, 800, function(){
-                    window.location.hash = hash;
-                });
-            }
-        });
-    });
-</script>
-
+<!-- All navigation logic consolidated in accessible-nav.js -->
 <link rel="stylesheet" href="/css/header-fix.css">
 <script src="/JS/header-fix.js" defer></script>
 <script src="/JS/accessible-nav.js" defer></script>

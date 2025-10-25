@@ -1,6 +1,8 @@
 /**
  * Accessible Navigation Menu
- * Implements keyboard support, focus trap, and mobile menu enhancements
+ * Implements keyboard support, focus trap, mobile menu enhancements,
+ * Bootstrap dropdown initialization, active navigation highlighting,
+ * smooth scrolling, and navbar scroll effects
  */
 (function() {
   'use strict';
@@ -11,6 +13,14 @@
   let lastFocusable = null;
 
   document.addEventListener('DOMContentLoaded', function() {
+    initializeNavbar();
+    initializeBootstrapDropdowns();
+    initializeActiveNavigation();
+    initializeSmoothScrolling();
+    initializeScrollEffect();
+  });
+
+  function initializeNavbar() {
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.querySelector('#navbarNav');
     const body = document.body;
@@ -207,5 +217,63 @@
         }
       }, 150);
     });
-  });
+  }
+
+  function initializeBootstrapDropdowns() {
+    // Initialize Bootstrap dropdowns only if jQuery and Bootstrap are loaded
+    if (typeof jQuery !== 'undefined' && jQuery.fn.dropdown) {
+      jQuery('.dropdown-toggle').dropdown();
+      console.log("✅ Bootstrap Dropdowns Initialized");
+    } else {
+      console.warn("⚠️ jQuery or Bootstrap not loaded - dropdowns may not function");
+    }
+  }
+
+  function initializeActiveNavigation() {
+    // Add active class to current page in navigation
+    const currentLocation = window.location.pathname;
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+    navLinks.forEach(function(link) {
+      const linkPath = link.getAttribute('href');
+      if (linkPath === '/' && currentLocation === '/') {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      } else if (linkPath !== '/' && currentLocation.includes(linkPath)) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      }
+    });
+  }
+
+  function initializeSmoothScrolling() {
+    // Smooth scrolling for anchor links (requires jQuery)
+    if (typeof jQuery !== 'undefined') {
+      jQuery('a[href^="#"]').on('click', function(e) {
+        if (this.hash !== "") {
+          e.preventDefault();
+          var hash = this.hash;
+          jQuery('html, body').animate({
+            scrollTop: jQuery(hash).offset().top - 100
+          }, 800, function() {
+            window.location.hash = hash;
+          });
+        }
+      });
+    }
+  }
+
+  function initializeScrollEffect() {
+    // Add 'scrolled' class to navbar on scroll
+    const navbar = document.querySelector('.navbar-main');
+    if (!navbar) return;
+
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  }
 })();
