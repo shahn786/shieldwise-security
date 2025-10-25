@@ -1,0 +1,39 @@
+B) BACK-END ARCHITECTURE & DEPLOYMENT READINESS
+====================================================
+
+B1. Security
+- Update dependencies: run `npm audit fix` and upgrade flagged packages. If high/critical issues remain, replace packages or pin patched versions.
+- Input validation/sanitization:
+  - For all form endpoints (e.g., contact): validate name/email/message; escape output; strip HTML where not needed; rate-limit submissions.
+  - Prevent header injection in email sending logic.
+- Add `helmet` for secure headers; configure CSP minimally to avoid breaking current assets; add HSTS on production.
+- Secrets:
+  - Move all credentials/API keys/emails/SMTP creds to environment variables.
+  - Create `.env.example` (no secrets) and ensure `.env` is git-ignored.
+- HTTPS enforcement:
+  - In production, redirect HTTP→HTTPS and set secure, HttpOnly cookies as applicable.
+- Disable directory listing; return 404/410 for any legacy WP routes.
+
+B2. Code Structure & Maintainability
+- Restructure Node app into modules:
+  - `/src/server.js` (bootstrap), `/src/routes`, `/src/controllers`, `/src/middleware`, `/src/utils`, `/src/views` (if templating).
+- Introduce a templating engine (EJS or Pug) OR partial includes for headers/footers to eliminate duplicate HTML across 100+ pages.
+- Remove WordPress remnants: “Hello World” post, comment forms, `wp-*` scripts/styles, empty comment UIs.
+- Add logging:
+  - Use `morgan` (HTTP) and `winston` (app errors) with rotating files.
+- Document setup in `README.md` (install, run, build, deploy, env vars, lint/test commands).
+
+B3. Deployment & Hosting
+- Choose path based on features:
+  - If purely static: export pages and host on Netlify/Vercel/Cloudflare Pages (CDN).
+  - If Node required (forms/API): deploy to Vercel/Render/Heroku/Railway/AWS Lightsail with CI/CD.
+- Pipeline:
+  - On push to `main` → run lint/tests → build/minify → deploy to **staging** → on approval → deploy to **production**.
+- Server perf:
+  - Enable compression middleware; set proper cache headers.
+- Backups/rollback:
+  - Keep previous build artifacts; document rollback steps; keep a `staging` branch.
+
+Deliverables:
+- `reports/security-audit.md` with remaining known risks and their severity.
+- Updated `README.md` with deployment pipeline and env var matrix.
