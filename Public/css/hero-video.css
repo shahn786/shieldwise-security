@@ -4,20 +4,17 @@
     width: 100%;
     overflow: hidden;
     margin-bottom: 0;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    display: flex;
-    align-items: stretch;
-    min-height: 90vh;
+    background: #ffffff;
 }
 
 .video-container {
     position: relative;
-    width: 50%;
+    width: 100%;
     height: 90vh;
     min-height: 700px;
-    background: #000000;
+    background: #ffffff;
     overflow: hidden;
-    order: 2;
+    margin: 0 auto;
 }
 
 #hero-video {
@@ -27,28 +24,22 @@
     width: 100%;
     height: 100%;
     transform: translate(-50%, -50%);
-    object-fit: cover;
+    object-fit: contain;
     z-index: 1;
 }
 
 .hero-content-below {
-    width: 50%;
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    padding: 60px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    text-align: left;
+    padding: 60px 20px;
+    text-align: center;
+    margin-top: 0;
     position: relative;
     z-index: 10;
-    order: 1;
 }
 
 .hero-content-below .container {
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .hero-title {
@@ -74,7 +65,7 @@
 .hero-buttons {
     display: flex;
     gap: 20px;
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -135,16 +126,9 @@
 
 /* Tablet Responsive */
 @media (max-width: 992px) {
-    .hero-section {
-        flex-direction: column;
-        min-height: auto;
-    }
-
     .video-container {
-        width: 100%;
         height: 50vh;
         min-height: 400px;
-        order: 1;
     }
 
     #hero-video {
@@ -153,11 +137,7 @@
     }
 
     .hero-content-below {
-        width: 100%;
         padding: 50px 20px;
-        text-align: center;
-        align-items: center;
-        order: 2;
     }
 
     .hero-title {
@@ -166,10 +146,6 @@
 
     .hero-subtitle {
         font-size: 1.3rem;
-    }
-
-    .hero-buttons {
-        justify-content: center;
     }
 
     .primary-button,
