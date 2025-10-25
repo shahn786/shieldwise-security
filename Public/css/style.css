@@ -22,7 +22,7 @@ html, body {
   position: relative;
   width: 100%;
   height: 90vh; /* Adjust viewport height as needed */
-  background-color: #ffffff; /* White background */
+  background-color: #ffffff !important; /* White background */
   overflow: hidden;
 }
 

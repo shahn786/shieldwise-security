@@ -124,7 +124,7 @@ body, html {
 .video-container {
     flex: 1;
     position: relative;
-    background: #ffffff;
+    background: #ffffff !important;
     overflow: hidden;
     order: 2;
 }
@@ -135,7 +135,8 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    background: #ffffff;
 }
 
 /* Tablet Responsive */
