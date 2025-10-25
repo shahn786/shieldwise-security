@@ -365,8 +365,9 @@
   box-shadow: 0 8px 20px rgba(209, 32, 40, 0.4);
   position: relative;
   overflow: hidden;
-  border: 2px solid transparent;
+  border: 2px solid #d12028;
   letter-spacing: 0.5px;
+  min-width: 280px;
 }
 
 .phone-button:hover {
@@ -410,6 +411,7 @@
   position: relative;
   overflow: hidden;
   letter-spacing: 0.5px;
+  min-width: 280px;
 }
 
 .quote-button:hover {
