@@ -1075,3 +1075,114 @@ With these elements in place, ShieldWise is positioned to dominate search result
 ---
 
 **END OF REPORT**
+
+---
+
+## SERVICE FILES CLEANUP REPORT (October 25, 2025)
+
+### Overview
+**Status:** ✅ COMPLETED  
+**Files Cleaned:** 14 service view files  
+**Backup Files Removed:** 11  
+**New Files Created:** 2  
+**Final Result:** 13 clean, SEO-compliant service files
+
+---
+
+### Actions Taken
+
+#### 1. Corrupted Files Restored from Backups (9 files)
+The following files had duplicate content or structural issues and were restored from clean backups:
+
+- `construction-security.ejs` - Restored proper structure, removed duplicates
+- `educational-campus-security.ejs` - Fixed breadcrumbs, minified CSS
+- `event-security.ejs` - Corrected heading hierarchy
+- `fire-watch.ejs` - Added missing SEO elements
+- `hospital-security.ejs` - Fixed image optimization
+- `hotel-security.ejs` - Restored breadcrumb navigation
+- `shopping-center-security.ejs` - Fixed CSS minification
+- `special-event-security.ejs` - Corrected meta tags
+- `unarmed-security.ejs` - Fixed lazy loading attributes
+
+#### 2. Clean Files Optimized (2 files)
+
+**apartment-security.ejs**
+- Issue: SEO violation with multiple H1 tags (line 42 had `<h1>` instead of `<h2>`)
+- Action: Replaced with backup version with correct heading hierarchy
+
+**armed-security.ejs**
+- Issues in main file:
+  - Non-minified CSS reference
+  - Missing breadcrumb navigation
+  - Content typo: "most ShieldWise Security services" (duplicate)
+  - Missing image lazy loading attributes
+- Action: Replaced with optimized backup version
+- Improvements:
+  - Minified CSS (`apartment-security.min.css`)
+  - Added breadcrumb navigation
+  - Fixed typo to "most comprehensive armed security services"
+  - Added `loading="lazy" width="80" height="80"` to images
+
+#### 3. Missing Files Created (2 files)
+
+**commercial-security.ejs** ✨ NEWLY CREATED
+- Route handler exists at `/services/commercial-security`
+- Created from template with business-focused content
+- Includes commercial-specific meta tags, schema, and tracking
+
+**executive-protection.ejs** ✨ NEWLY CREATED  
+- Route handler exists at `/services/executive-protection`
+- Created from template with VIP security content
+- Includes executive-specific meta tags, schema, and tracking
+
+---
+
+### SEO Compliance Verification
+
+All 13 service files now meet these SEO criteria:
+
+✅ **Single H1 Tag** - Only one per page (hero title)  
+✅ **Breadcrumb Navigation** - Proper structure for UX and SEO  
+✅ **Minified CSS** - All use `.min.css` for performance  
+✅ **Heading Hierarchy** - Proper H1 → H2 → H3 structure  
+✅ **Image Optimization** - Lazy loading with dimensions  
+✅ **Meta Tags** - Service-specific via partials  
+✅ **Schema Markup** - Service-specific structured data  
+✅ **Speakable Content** - Voice search optimization  
+✅ **Mobile Responsive** - Bootstrap responsive grid
+
+---
+
+### Final File Structure
+
+```
+views/services/ (13 files, 0 backups)
+├── apartment-security.ejs          ✅ Clean (from optimized backup)
+├── armed-security.ejs              ✅ Clean (from optimized backup)
+├── commercial-security.ejs         ✨ Newly created
+├── construction-security.ejs       ✅ Clean (from backup)
+├── educational-campus-security.ejs ✅ Clean (from backup)
+├── event-security.ejs              ✅ Clean (from backup)
+├── executive-protection.ejs        ✨ Newly created
+├── fire-watch.ejs                  ✅ Clean (from backup)
+├── hospital-security.ejs           ✅ Clean (from backup)
+├── hotel-security.ejs              ✅ Clean (from backup)
+├── shopping-center-security.ejs    ✅ Clean (from backup)
+├── special-event-security.ejs      ✅ Clean (from backup)
+└── unarmed-security.ejs            ✅ Clean (from backup)
+```
+
+---
+
+### Recommendations
+
+1. **Version Control** - Never commit `.backup` files; use Git branches for testing
+2. **Template Consistency** - When updating one service, consider updating all
+3. **SEO Monitoring** - Regularly audit H1 tags and image optimization
+4. **Performance** - Monitor page load times and CSS file sizes
+5. **Content Updates** - Keep testimonials and statistics current
+
+---
+
+**Cleanup Status:** READY FOR DEPLOYMENT ✅
+
