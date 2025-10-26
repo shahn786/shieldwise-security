@@ -309,6 +309,11 @@ app.get("/blog", (req, res) => {
   res.render("blog");
 });
 
+app.get("/about", (req, res) => {
+  const loggedIn = req.isAuthenticated ? req.isAuthenticated() : false;
+  res.render("about", { loggedIn });
+});
+
 app.get("/register", (req, res) => {
   const loggedIn = req.isAuthenticated ? req.isAuthenticated() : false;
   res.render("register", { loggedIn, error: null, success: null });

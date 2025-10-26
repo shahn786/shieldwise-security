@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/seo-head', {
+        title: 'About ShieldWise Security | Licensed California Security Company Since 2009',
+        description: 'Learn about ShieldWise Security, California\'s trusted security guard company since 2009. BSIS licensed, insured, and serving 186+ cities with professional armed and unarmed security services.',
+        keywords: 'about ShieldWise Security, California security company history, licensed security guards, BSIS certified, professional security services',
+        canonical: 'https://shieldwisesecurity.com/about',
+        ogType: 'website',
+        ogImage: 'https://shieldwisesecurity.com/img/shieldwise-team.webp'
+    }) %>
+    
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('/img/pattern.svg') repeat;
+            opacity: 0.05;
+        }
+        .section-title {
+            color: #1e3c72;
+            font-weight: 700;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #ffc107;
+        }
+        .value-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .value-icon {
+            font-size: 48px;
+            color: #1e3c72;
+            margin-bottom: 20px;
+        }
+        .credential-badge {
+            background: #f8f9fa;
+            border: 2px solid #1e3c72;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .credential-badge:hover {
+            background: #1e3c72;
+            color: white;
+        }
+        .stat-box {
+            background: white;
+            border-radius: 10px;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 10px;
+        }
+        .stat-label {
+            font-size: 16px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 50px;
+            padding-bottom: 40px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: -40px;
+            width: 2px;
+            background: #1e3c72;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ffc107;
+            border: 3px solid #1e3c72;
+        }
+        .timeline-item:last-child::before {
+            display: none;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .btn-custom {
+            background: #ffc107;
+            color: #1e3c72;
+            padding: 15px 40px;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        .btn-custom:hover {
+            background: white;
+            color: #1e3c72;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/Navbar', { loggedIn: typeof loggedIn !== 'undefined' ? loggedIn : false }) %>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h1 class="display-3 font-weight-bold mb-4">About ShieldWise Security</h1>
+                        <p class="lead mb-4">Protecting California Communities Since 2009</p>
+                        <p class="h5 font-weight-normal">Professional security guard services built on integrity, excellence, and unwavering commitment to safety across 186+ California cities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Story Section -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 mx-auto">
+                        <h2 class="section-title text-center">Our Story</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="lead">Founded in 2009, ShieldWise Security was established with a clear mission: to provide California businesses and communities with professional, reliable security services that go beyond traditional guard companies.</p>
+                                <p>What started as a small team serving Los Angeles County has grown into one of California's most trusted security providers, protecting over 186 cities across 14 counties with a comprehensive range of security solutions.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>Our founders recognized a gap in the security industry—clients needed more than just uniformed personnel; they needed strategic partners who understood their unique safety challenges and could deliver customized, professional solutions.</p>
+                                <p>Today, ShieldWise Security stands as a testament to that vision, combining cutting-edge technology with highly trained security professionals to deliver peace of mind to thousands of clients statewide.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 mb-4">
+                        <div class="stat-box">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="stat-box">
+                            <div class="stat-number">186+</div>
+                            <div class="stat-label">Cities Served</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="stat-box">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Trained Guards</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="stat-box">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Availability</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission, Vision, Values -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="section-title text-center">Our Mission, Vision & Values</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-bullseye" aria-hidden="true"></i>
+                            </div>
+                            <h3>Our Mission</h3>
+                            <p>To provide exceptional security services that protect people, property, and assets through professional excellence, innovative solutions, and unwavering dedication to client safety across California.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-eye" aria-hidden="true"></i>
+                            </div>
+                            <h3>Our Vision</h3>
+                            <p>To be California's most trusted and respected security services provider, setting the industry standard for professionalism, reliability, and client satisfaction in every community we serve.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                            </div>
+                            <h3>Our Values</h3>
+                            <ul class="text-left">
+                                <li><strong>Integrity:</strong> Honest, ethical conduct in all operations</li>
+                                <li><strong>Excellence:</strong> Highest standards of service delivery</li>
+                                <li><strong>Professionalism:</strong> Trained, certified, experienced personnel</li>
+                                <li><strong>Accountability:</strong> Responsive and responsible service</li>
+                                <li><strong>Innovation:</strong> Cutting-edge security solutions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Credentials & Certifications -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="section-title text-center">Credentials & Certifications</h2>
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <div class="credential-badge">
+                            <i class="fas fa-certificate fa-3x mb-3 text-warning" aria-hidden="true"></i>
+                            <h4>BSIS Licensed</h4>
+                            <p class="mb-0">California Bureau of Security & Investigative Services</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="credential-badge">
+                            <i class="fas fa-shield-alt fa-3x mb-3 text-warning" aria-hidden="true"></i>
+                            <h4>Fully Insured</h4>
+                            <p class="mb-0">$5M General Liability Coverage</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="credential-badge">
+                            <i class="fas fa-user-check fa-3x mb-3 text-warning" aria-hidden="true"></i>
+                            <h4>Background Checked</h4>
+                            <p class="mb-0">All guards undergo comprehensive screening</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="credential-badge">
+                            <i class="fas fa-graduation-cap fa-3x mb-3 text-warning" aria-hidden="true"></i>
+                            <h4>Certified Training</h4>
+                            <p class="mb-0">Ongoing professional development programs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-12 text-center">
+                        <h4>Industry Memberships & Associations</h4>
+                        <p class="mb-2"><i class="fas fa-check-circle text-success" aria-hidden="true"></i> California Association of Licensed Security Agencies (CALSAGA)</p>
+                        <p class="mb-2"><i class="fas fa-check-circle text-success" aria-hidden="true"></i> International Association for Healthcare Security & Safety (IAHSS)</p>
+                        <p class="mb-2"><i class="fas fa-check-circle text-success" aria-hidden="true"></i> ASIS International - Security Professional Association</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Timeline -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="section-title text-center">Our Journey</h2>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="timeline-item">
+                            <h4 class="text-primary">2009 - Foundation</h4>
+                            <p>ShieldWise Security founded in Los Angeles County with a team of 10 security professionals, focusing on commercial property protection.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="text-primary">2012 - Expansion</h4>
+                            <p>Expanded services to include armed security, event security, and residential protection. Opened operations in San Diego and Riverside counties.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="text-primary">2015 - Specialization</h4>
+                            <p>Launched specialized divisions for hospital security, educational facilities, and executive protection services.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="text-primary">2018 - Technology Integration</h4>
+                            <p>Integrated mobile patrol technology and real-time reporting systems, setting new industry standards for transparency and accountability.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="text-primary">2020 - Statewide Coverage</h4>
+                            <p>Achieved coverage across 186+ California cities, serving 14 counties with 500+ trained security professionals.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="text-primary">2025 - Industry Leader</h4>
+                            <p>Recognized as one of California's premier security service providers, protecting thousands of clients with innovative, professional security solutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="section-title text-center">Why California Businesses Choose ShieldWise</h2>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="d-flex">
+                            <div class="mr-3">
+                                <i class="fas fa-check-circle fa-2x text-success" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h4>Local Expertise</h4>
+                                <p>Deep understanding of California communities, regulations, and unique security challenges across 186+ cities.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="d-flex">
+                            <div class="mr-3">
+                                <i class="fas fa-check-circle fa-2x text-success" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h4>Trained Professionals</h4>
+                                <p>Every guard undergoes rigorous training, background checks, and ongoing professional development programs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="d-flex">
+                            <div class="mr-3">
+                                <i class="fas fa-check-circle fa-2x text-success" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h4>24/7 Availability</h4>
+                                <p>Round-the-clock support and emergency response capabilities for immediate security needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="d-flex">
+                            <div class="mr-3">
+                                <i class="fas fa-check-circle fa-2x text-success" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h4>Custom Solutions</h4>
+                                <p>Tailored security plans designed to meet your specific needs, budget, and risk profile.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="d-flex">
+                            <div class="mr-3">
+                                <i class="fas fa-check-circle fa-2x text-success" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h4>Proven Track Record</h4>
+                                <p>15+ years of excellence with thousands of satisfied clients across residential, commercial, and government sectors.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="d-flex">
+                            <div class="mr-3">
+                                <i class="fas fa-check-circle fa-2x text-success" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h4>Technology-Enabled</h4>
+                                <p>Real-time reporting, mobile patrol tracking, and digital incident management for complete transparency.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="mb-4">Partner with California's Trusted Security Experts</h2>
+                <p class="lead mb-4">Experience the ShieldWise difference—professional, reliable security services backed by 15+ years of excellence.</p>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <a href="/contact" class="btn btn-custom btn-lg btn-block">Contact Us Today</a>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <a href="/get-quote" class="btn btn-outline-light btn-lg btn-block">Get Free Quote</a>
+                            </div>
+                        </div>
+                        <p class="mt-3 mb-0">
+                            <small>Available 24/7 • Free Security Assessment • Licensed & Insured • Emergency Response</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <%- include('partials/Footer') %>
+
+    <!-- Organization Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ShieldWise Security",
+      "legalName": "ShieldWise Security Services Inc.",
+      "url": "https://shieldwisesecurity.com",
+      "logo": "https://shieldwisesecurity.com/img/logo.png",
+      "foundingDate": "2009",
+      "description": "Professional security guard services company serving 186+ California cities since 2009. BSIS licensed, fully insured, providing armed and unarmed security solutions.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "350 S Figueroa St",
+        "addressLocality": "Los Angeles",
+        "addressRegion": "CA",
+        "postalCode": "90071",
+        "addressCountry": "US"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-714-716-7430",
+        "contactType": "Customer Service",
+        "areaServed": "CA",
+        "availableLanguage": ["English", "Spanish"]
+      },
+      "sameAs": [
+        "https://www.facebook.com/shieldwisesecurity",
+        "https://www.linkedin.com/company/shieldwise-security"
+      ],
+      "areaServed": {
+        "@type": "State",
+        "name": "California"
+      },
+      "slogan": "10 Plus Years of Keeping You Safe",
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "value": "500",
+        "unitText": "employees"
+      },
+      "knowsAbout": [
+        "Armed Security Services",
+        "Unarmed Security Services",
+        "Event Security",
+        "Fire Watch",
+        "Mobile Patrol",
+        "Hospital Security",
+        "Executive Protection",
+        "Commercial Security",
+        "Residential Security"
+      ]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "When was ShieldWise Security founded?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ShieldWise Security was founded in 2009 in Los Angeles County and has grown to serve 186+ California cities across 14 counties."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is ShieldWise Security licensed and insured?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, ShieldWise Security is fully licensed by the California Bureau of Security & Investigative Services (BSIS) and carries $5 million in general liability insurance coverage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many cities does ShieldWise Security serve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ShieldWise Security serves 186+ cities across California, spanning 14 counties including Los Angeles, Orange, Riverside, San Bernardino, San Diego, and Sacramento counties."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of security services does ShieldWise offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ShieldWise Security offers armed and unarmed security guards, event security, mobile patrol, fire watch, hospital security, executive protection, commercial security, residential/apartment security, and construction site security."
+          }
+        }
+      ]
+    }
+    </script>
+</body>
+</html>
