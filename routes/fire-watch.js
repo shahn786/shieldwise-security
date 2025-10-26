@@ -246,7 +246,7 @@ router.get('/', (req, res) => {
             { number: '24/7', label: 'Emergency Availability' },
             { number: '2-4hr', label: 'Emergency Response' },
             { number: '100%', label: 'Code Compliant' },
-            { number: '15+', label: 'Years Experience' }
+            { number: '10+', label: 'Years Experience' }
         ],
 
         // Testimonials

@@ -246,7 +246,7 @@ router.get('/', (req, res) => {
             { number: '5000+', label: 'Events Secured' },
             { number: '99.9%', label: 'Incident-Free Rate' },
             { number: '24/7', label: 'Availability' },
-            { number: '15+', label: 'Years Experience' }
+            { number: '10+', label: 'Years Experience' }
         ],
 
         // Testimonials

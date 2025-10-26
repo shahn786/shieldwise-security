@@ -246,7 +246,7 @@ router.get('/', (req, res) => {
             { number: '50+', label: 'Healthcare Facilities' },
             { number: '99.5%', label: 'Patient Satisfaction' },
             { number: '24/7', label: 'Availability' },
-            { number: '15+', label: 'Years Experience' }
+            { number: '10+', label: 'Years Experience' }
         ],
 
         // Testimonials

@@ -168,7 +168,7 @@ router.get('/', (req, res) => {
             { number: '500+', label: 'Armed Guards Available' },
             { number: '99.8%', label: 'Client Satisfaction' },
             { number: '24/7', label: 'Emergency Response' },
-            { number: '15+', label: 'Years Experience' }
+            { number: '10+', label: 'Years Experience' }
         ],
 
         // Testimonials

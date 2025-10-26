@@ -304,7 +304,7 @@ router.get('/', (req, res) => {
             { number: '800+', label: 'Security Officers' },
             { number: '99.5%', label: 'Client Satisfaction' },
             { number: '24/7', label: 'Availability' },
-            { number: '15+', label: 'Years Experience' }
+            { number: '10+', label: 'Years Experience' }
         ],
 
         // Testimonials (existing)

@@ -246,7 +246,7 @@ router.get('/', (req, res) => {
             { number: '100%', label: 'Client Safety Record' },
             { number: '24/7', label: 'Global Availability' },
             { number: '50+', label: 'Elite Agents' },
-            { number: '15+', label: 'Years Experience' }
+            { number: '10+', label: 'Years Experience' }
         ],
 
         // Testimonials

@@ -200,36 +200,6 @@ app.use(passport.session());
 // Import meta helpers
 const metaHelpers = require('./utils/metaHelpers');
 
-// Apartment Security Service Route
-app.get('/services/apartment-security', (req, res) => {
-  const serviceData = {
-    serviceTitle: 'Professional Apartment Security Services',
-    serviceDescription: 'Comprehensive apartment security services with 24/7 guards, access control, CCTV monitoring, and emergency response for residential communities.',
-    serviceKeywords: 'apartment security, residential security guards, access control systems, 24/7 security monitoring, property protection',
-    serviceImage: 'apartmentsecurity.webp',
-    serviceUrl: 'apartment-security',
-    serviceType: 'apartment',
-    serviceBenefit: 'enhanced residential safety and peace of mind',
-    propertyType: 'apartment complex',
-    priceRange: { low: 35, mid: 55, high: 85 },
-    serviceAltName: 'Residential Security Services',
-    serviceOutput: 'Complete apartment complex protection',
-    audienceType: 'Property Managers and Residents',
-    relatedProperty: 'apartments',
-    specializedServices: 'access control systems, CCTV monitoring, visitor management, parking area security, emergency response protocols',
-    industryType: 'residential',
-    clientType: 'residents and property managers',
-    managerType: 'property managers',
-    assessmentSpecifics: 'resident safety protocols, common area security evaluation, parking garage assessment'
-  };
-
-  res.render('services/apartment-security', { 
-    serviceData,
-    safeServiceData: serviceData,
-    ...metaHelpers
-  });
-});
-
 // Event Security Service Route
 const eventSecurityRoute = require('./routes/event-security');
 app.use('/services/event-security', eventSecurityRoute);
@@ -303,13 +273,6 @@ app.use('/services/fire-watch', fireWatchRoute);
 
 const hospitalSecurityRouter = require('./routes/hospital-security');
 app.use('/services/hospital-security', hospitalSecurityRouter);
-
-app.use('/services/apartment-security', apartmentSecurityRouter);
-app.use('/services/armed-security', armedSecurityRoutes);
-app.use('/services/commercial-security', commercialSecurityRoutes);
-app.use('/services/construction-security', constructionSecurityRoutes);
-app.use('/services/educational-campus-security', educationalSecurityRoutes);
-app.use('/services/executive-protection', executiveProtectionRoute);
 
 // Register Route
 app.get("/register", (req, res) => {
@@ -536,9 +499,6 @@ app.get("/services/executive-protection", (req, res) => {
 });
 
 // Special Event Security Page
-app.get("/services/special-event-security", (req, res) => {
-  res.render("services/special-event-security");
-});
 
 // Mobile Patrol Security Page
 app.get("/services/mobile-patrol-security", (req, res) => {
@@ -1233,6 +1193,8 @@ app.get('/central-valley/fresno', (req, res) => {
 });
 
 const shoppingCenterSecurityRoute = require('./routes/shopping-center-security');
+const hotelSecurityRoutes = require('./routes/hotel-security');
+const specialEventSecurityRoutes = require('./routes/special-event-security');
 
 // Use routes
 app.use('/services/apartment-security', apartmentSecurityRouter);
@@ -1243,203 +1205,9 @@ app.use('/services/educational-campus-security', educationalSecurityRoutes);
 app.use('/services/executive-protection', executiveProtectionRoute);
 app.use('/services/fire-watch', fireWatchRoute);
 app.use('/services/hospital-security', hospitalSecurityRouter);
-// Hotel security route is handled directly above - no separate router needed
-// const hotelSecurityRoutes = require('./routes/hotel-security');
-// app.use('/services/hotel-security', hotelSecurityRoutes);
-
-// Hotel Security Route - Direct Handler
-app.get('/services/hotel-security', (req, res) => {
-  console.log('🏨 Hotel Security Route Hit - Direct Route Handler');
-
-  // Add aggressive cache-busting headers
-  res.set({
-    'Cache-Control': 'no-cache, no-store, must-revalidate, private, max-age=0',
-    'Pragma': 'no-cache',
-    'Expires': '-1',
-    'Last-Modified': new Date().toUTCString(),
-    'ETag': Math.random().toString(),
-    'X-Debug-Route': 'direct-hotel-security-route',
-    'X-Timestamp': new Date().toISOString()
-  });
-
-  const serviceData = {
-    serviceType: 'hotel-security',
-    serviceTitle: 'Professional Hotel Security Services in California',
-    serviceDescription: '24/7 Guest Protection & Hospitality Security Solutions',
-    serviceKeywords: 'hotel security, hospitality security guards, guest protection, hotel safety',
-    serviceImage: 'Hotel-Security.webp',
-    serviceUrl: 'hotel-security',
-    serviceBenefit: 'enhanced guest safety and hospitality security',
-    propertyType: 'hotel and hospitality facilities',
-    priceRange: { low: 35, mid: 55, high: 85 },
-    serviceAltName: 'Hospitality Security Services',
-    serviceOutput: 'Complete hotel security protection with guest safety assurance',
-    audienceType: 'Hotel Owners, Managers, Hospitality Businesses',
-    relatedProperty: 'hotels and resorts',
-    specializedServices: 'guest protection, lobby security, emergency response, access control',
-    industryType: 'hospitality',
-    clientType: 'hotel guests and management',
-    managerType: 'hotel managers',
-    assessmentSpecifics: 'guest safety protocols, lobby security evaluation, emergency response planning',
-    features: [
-      {
-        icon: 'fas fa-hotel',
-        title: 'Lobby Security',
-        description: 'Professional security presence in hotel lobbies ensuring guest safety while maintaining a welcoming environment for visitors and guests.'
-      },
-      {
-        icon: 'fas fa-users-shield',
-        title: 'Guest Protection',
-        description: 'Comprehensive guest safety services including escort services, room security checks, and rapid response to guest concerns or emergencies.'
-      },
-      {
-        icon: 'fas fa-phone-volume',
-        title: 'Emergency Response',
-        description: '24/7 emergency response capabilities including medical emergencies, security incidents, fire safety, and coordination with local emergency services.'
-      },
-      {
-        icon: 'fas fa-car-side',
-        title: 'Parking Security',
-        description: 'Hotel parking lot and garage security including vehicle patrols, theft prevention, guest assistance, and unauthorized access prevention.'
-      },
-      {
-        icon: 'fas fa-key',
-        title: 'Access Control',
-        description: 'Monitoring and controlling access to restricted areas, managing key card systems, and ensuring only authorized personnel enter secure zones.'
-      },
-      {
-        icon: 'fas fa-calendar-alt',
-        title: 'Event Security',
-        description: 'Specialized security for hotel events, conferences, weddings, and special occasions ensuring guest safety during large gatherings.'
-      }
-    ],
-    processSteps: [
-      {
-        number: 1,
-        title: 'Property Assessment',
-        description: 'Comprehensive evaluation of your hotel property security needs, vulnerabilities, and guest safety requirements.'
-      },
-      {
-        number: 2,
-        title: 'Custom Security Plan',
-        description: 'Development of tailored security protocols specific to your hotel layout,guest demographics, and hospitality standards.'
-      },
-      {
-        number: 3,
-        title: 'Implementation',
-        description: 'Deployment of security personnel, installation of systems, and integration with existing hotel management protocols.'
-      },
-      {
-        number: 4,
-        title: 'Ongoing Monitoring',
-        description: 'Continuous security coverage with regular reviews, updates, and adjustments to maintain optimal guest protection levels.'
-      }
-    ],
-    benefits: [
-      {
-        icon: 'fas fa-clock',
-        title: '24/7 Security Coverage',
-        description: 'Round-the-clock protection with professional security personnel ensuring constant guest safety and property protection.'
-      },
-      {
-        icon: 'fas fa-graduation-cap',
-        title: 'Hospitality-Trained Guards',
-        description: 'Security guards specifically trained in hospitality protocols, guest relations, and maintaining welcoming atmosphere.'
-      },
-      {
-        icon: 'fas fa-dollar-sign',
-        title: 'Cost-Effective Solutions',
-        description: 'Competitive pricing with flexible service packages that enhance guest experience while protecting your investment.'
-      },
-      {
-        icon: 'fas fa-star',
-        title: 'Guest Satisfaction',
-        description: 'Enhanced guest experience through improved safety, peace of mind, and professional security presence.'
-      },
-      {
-        icon: 'fas fa-chart-line',
-        title: 'Property Value Enhancement',
-        description: 'Professional security services increase property desirability and can positively impact occupancy rates and reputation.'
-      },
-      {
-        icon: 'fas fa-phone-alt',
-        title: '24/7 Emergency Support',
-        description: 'Immediate response capabilities for emergencies with direct coordination with local emergency services and hotel management.'
-      }
-    ],
-    serviceOfferings: [
-      {
-        icon: 'fas fa-building',
-        title: 'Lobby & Reception Security',
-        features: [
-          'Front Desk Security Support',
-          'Guest Check-in Assistance',
-          'Visitor Management',
-          'Concierge Security Services'
-        ]
-      },
-      {
-        icon: 'fas fa-shield-alt',
-        title: 'Guest Protection Services',
-        features: [
-          'Personal Safety Escorts',
-          'Room Security Checks',
-          'Guest Assistance Programs',
-          'VIP Protection Services'
-        ]
-      },
-      {
-        icon: 'fas fa-route',
-        title: 'Property Patrol Services',
-        features: [
-          'Hotel Perimeter Patrols',
-          'Parking Area Security',
-          'Common Area Monitoring',
-          'Emergency Response'
-        ]
-      }
-    ],
-    statistics: [
-      { number: '150+', label: 'Hotels Protected' },
-      { number: '99%', label: 'Guest Satisfaction' },
-      { number: '24/7', label: 'Security Coverage' },
-      { number: '15+', label: 'Years Experience' }
-    ],
-    testimonials: [
-      {
-        name: 'Sarah Johnson',
-        title: 'Hotel Manager',
-        image: 'james.png',
-        quote: 'ShieldWise transformed our hotel security. Guest satisfaction scores have increased significantly since their implementation.'
-      },
-      {
-        name: 'Michael Chen',
-        title: 'Resort Director',
-        image: 'samanta.png',
-        quote: 'Professional, courteous security staff who understand the hospitality industry. Our guests feel much safer.'
-      },
-      {
-        name: 'Emily Rodriguez',
-        title: 'Hospitality Manager',
-        image: 'shahn1.png',
-        quote: 'The security team maintains our welcoming atmosphere while providing excellent protection. Perfect balance for hospitality.'
-      }
-    ],
-    canonicalUrl: 'https://shieldwisesecurity.com/services/hotel-security'
-  };
-
-  // Include meta helpers
-  const metaHelpers = require('./utils/metaHelpers') || {};
-
-  // Render the template with complete data
-  res.render('services/hotel-security', { 
-    serviceData,
-    safeServiceData: serviceData,
-    ...metaHelpers
-  });
-});
+app.use('/services/hotel-security', hotelSecurityRoutes);
 app.use('/services/shopping-center-security', shoppingCenterSecurityRoute);
-app.use('/services/special-event-security', require('./routes/special-event-security'));
+app.use('/services/special-event-security', specialEventSecurityRoutes);
 app.use('/services/unarmed-security', require('./routes/unarmed-security'));
 
 // Start the server

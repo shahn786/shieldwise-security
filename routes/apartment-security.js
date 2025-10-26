@@ -246,7 +246,7 @@ router.get('/', (req, res) => {
             { number: '300+', label: 'Properties Secured' },
             { number: '99.7%', label: 'Resident Satisfaction' },
             { number: '24/7', label: 'Availability' },
-            { number: '15+', label: 'Years Experience' }
+            { number: '10+', label: 'Years Experience' }
         ],
 
         // Testimonials

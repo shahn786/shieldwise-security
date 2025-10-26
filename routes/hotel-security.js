@@ -246,7 +246,7 @@ router.get('/', (req, res) => {
             { number: '100+', label: 'Hotels Secured' },
             { number: '99.4%', label: 'Guest Satisfaction' },
             { number: '24/7', label: 'Availability' },
-            { number: '15+', label: 'Years Experience' }
+            { number: '10+', label: 'Years Experience' }
         ],
 
         // Testimonials

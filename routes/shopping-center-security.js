@@ -246,7 +246,7 @@ router.get('/', (req, res) => {
             { number: '200+', label: 'Retail Locations' },
             { number: '40%', label: 'Average Theft Reduction' },
             { number: '24/7', label: 'Availability' },
-            { number: '15+', label: 'Years Experience' }
+            { number: '10+', label: 'Years Experience' }
         ],
 
         // Testimonials
