@@ -31,8 +31,9 @@
 }
 
 .back-to-top.active {
-    opacity: 1;
-    visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
 }
 
 .back-to-top:focus {
