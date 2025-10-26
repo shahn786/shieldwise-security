@@ -61,12 +61,16 @@ if (process.env.NODE_ENV !== 'production') {
 app.set('trust proxy', 1);
 
 // MongoDB Atlas Database Connection
-// TODO: For production deployment, move this to environment variables via hosting platform
-// Current fallback uses hardcoded credentials (development only)
+// SECURITY: Requires MONGODB_URI environment variable
+if (!process.env.MONGODB_URI) {
+  const errorMsg = '❌ FATAL: MONGODB_URI environment variable is required!';
+  console.error(errorMsg);
+  console.error('Set MONGODB_URI in your environment before starting the server.');
+  logger.error(errorMsg);
+  process.exit(1);
+}
 
-const uri = process.env.MONGODB_URI && process.env.MONGODB_URI.startsWith('mongodb') 
-  ? process.env.MONGODB_URI 
-  : "mongodb+srv://shahnawazkarimi2014:No0708156402@cluster0.y5o4d.mongodb.net/?retryWrites=true&w=majority";
+const uri = process.env.MONGODB_URI;
 
 mongoose.connect(uri, {
   serverSelectionTimeoutMS: 5000,
@@ -80,6 +84,7 @@ mongoose.connect(uri, {
 .catch((err) => {
   console.error("❌ MongoDB Connection Error:", err);
   logger.error("MongoDB connection failed", { error: err.message, stack: err.stack });
+  process.exit(1);
 });
 
 
@@ -198,17 +203,18 @@ const authLimiter = rateLimit({
 });
 
 // Session setup with secure secrets from environment variables
-// CRITICAL: Production must have proper secrets or it will fail fast
-if (process.env.NODE_ENV === 'production') {
-  if (!process.env.SESSION_SECRET || !process.env.MONGO_CRYPTO_SECRET) {
-    console.error('❌ FATAL: SESSION_SECRET and MONGO_CRYPTO_SECRET must be set in production!');
-    console.error('Set these environment variables before starting the server.');
-    process.exit(1);
-  }
+// CRITICAL: Require secrets or fail immediately
+if (!process.env.SESSION_SECRET || !process.env.MONGO_CRYPTO_SECRET) {
+  const errorMsg = '❌ FATAL: SESSION_SECRET and MONGO_CRYPTO_SECRET environment variables are required!';
+  console.error(errorMsg);
+  console.error('Set these environment variables before starting the server.');
+  console.error('Generate secure secrets with: node -e "console.log(require(\'crypto\').randomBytes(32).toString(\'hex\'))"');
+  logger.error(errorMsg);
+  process.exit(1);
 }
 
-const SESSION_SECRET = process.env.SESSION_SECRET || 'dev-secret-only-' + Math.random().toString(36);
-const MONGO_CRYPTO_SECRET = process.env.MONGO_CRYPTO_SECRET || 'dev-crypto-only-' + Math.random().toString(36);
+const SESSION_SECRET = process.env.SESSION_SECRET;
+const MONGO_CRYPTO_SECRET = process.env.MONGO_CRYPTO_SECRET;
 
 app.use(
   session({
