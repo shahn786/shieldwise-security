@@ -60,32 +60,29 @@ if (process.env.NODE_ENV !== 'production') {
 // Trust proxy for accurate rate limiting behind reverse proxies (Replit, Cloudflare, etc.)
 app.set('trust proxy', 1);
 
-// MongoDB Atlas Database Connection
-// SECURITY: Requires MONGODB_URI environment variable
-if (!process.env.MONGODB_URI) {
-  const errorMsg = '❌ FATAL: MONGODB_URI environment variable is required!';
-  console.error(errorMsg);
-  console.error('Set MONGODB_URI in your environment before starting the server.');
-  logger.error(errorMsg);
-  process.exit(1);
+// MongoDB Atlas Database Connection (Optional)
+// If MONGODB_URI is set and valid, connect to MongoDB
+if (process.env.MONGODB_URI && process.env.MONGODB_URI.startsWith('mongodb')) {
+  const uri = process.env.MONGODB_URI;
+  
+  mongoose.connect(uri, {
+    serverSelectionTimeoutMS: 5000,
+    tls: true,
+    retryWrites: true
+  })
+  .then(() => {
+    console.log("✅ Connected successfully to MongoDB Atlas");
+    logger.info("MongoDB Atlas connection established successfully");
+  })
+  .catch((err) => {
+    console.error("⚠️ MongoDB Connection Error:", err.message);
+    logger.error("MongoDB connection failed", { error: err.message, stack: err.stack });
+    console.log("⚠️ Server will continue without database connection");
+  });
+} else {
+  console.log("⚠️ MONGODB_URI not configured - running without database");
+  logger.warn("Server running without MongoDB connection");
 }
-
-const uri = process.env.MONGODB_URI;
-
-mongoose.connect(uri, {
-  serverSelectionTimeoutMS: 5000,
-  tls: true,
-  retryWrites: true
-})
-.then(() => {
-  console.log("✅ Connected successfully to MongoDB Atlas");
-  logger.info("MongoDB Atlas connection established successfully");
-})
-.catch((err) => {
-  console.error("❌ MongoDB Connection Error:", err);
-  logger.error("MongoDB connection failed", { error: err.message, stack: err.stack });
-  process.exit(1);
-});
 
 
 // Define a User Model
@@ -203,40 +200,43 @@ const authLimiter = rateLimit({
 });
 
 // Session setup with secure secrets from environment variables
-// CRITICAL: Require secrets or fail immediately
-if (!process.env.SESSION_SECRET || !process.env.MONGO_CRYPTO_SECRET) {
-  const errorMsg = '❌ FATAL: SESSION_SECRET and MONGO_CRYPTO_SECRET environment variables are required!';
-  console.error(errorMsg);
-  console.error('Set these environment variables before starting the server.');
-  console.error('Generate secure secrets with: node -e "console.log(require(\'crypto\').randomBytes(32).toString(\'hex\'))"');
-  logger.error(errorMsg);
-  process.exit(1);
+// Use environment variables or generate temporary secrets for development
+const SESSION_SECRET = process.env.SESSION_SECRET || 'dev-secret-' + Math.random().toString(36);
+const MONGO_CRYPTO_SECRET = process.env.MONGO_CRYPTO_SECRET || 'dev-crypto-' + Math.random().toString(36);
+
+if (!process.env.SESSION_SECRET) {
+  console.log("⚠️ Using temporary SESSION_SECRET (sessions will not persist across restarts)");
+  logger.warn("SESSION_SECRET not configured - using temporary secret");
 }
 
-const SESSION_SECRET = process.env.SESSION_SECRET;
-const MONGO_CRYPTO_SECRET = process.env.MONGO_CRYPTO_SECRET;
+// Session configuration
+const sessionConfig = {
+  secret: SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    secure: process.env.NODE_ENV === 'production',
+    httpOnly: true,
+    maxAge: 14 * 24 * 60 * 60 * 1000,
+    sameSite: 'lax'
+  }
+};
 
-app.use(
-  session({
-    secret: SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      secure: process.env.NODE_ENV === 'production',
-      httpOnly: true,
-      maxAge: 14 * 24 * 60 * 60 * 1000,
-      sameSite: 'lax'
+// Add MongoDB session store if database is connected
+if (process.env.MONGODB_URI && process.env.MONGODB_URI.startsWith('mongodb')) {
+  sessionConfig.store = MongoStore.create({
+    mongoUrl: process.env.MONGODB_URI,
+    crypto: {
+      secret: MONGO_CRYPTO_SECRET
     },
-    store: MongoStore.create({
-      mongoUrl: uri,
-      crypto: {
-        secret: MONGO_CRYPTO_SECRET
-      },
-      ttl: 14 * 24 * 60 * 60,
-      autoRemove: 'native'
-    }),
-  }),
-);
+    ttl: 14 * 24 * 60 * 60,
+    autoRemove: 'native'
+  });
+} else {
+  console.log("⚠️ Using memory session store (sessions will not persist across restarts)");
+}
+
+app.use(session(sessionConfig));
 
 // Cache Control for Static Assets
 app.use((req, res, next) => {

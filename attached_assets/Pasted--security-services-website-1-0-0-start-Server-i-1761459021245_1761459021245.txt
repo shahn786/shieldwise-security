@@ -1,0 +1,18 @@
+> security-services-website@1.0.0 start
+=================================================
+Server is running on port 5000
+Local URL: http://0.0.0.0:5000
+Replit URL: https://workspace.FnuShahnawaz.repl.co
+=================================================
+❌ MongoDB Connection Error: MongoParseError: Invalid scheme, expected connection string to start with "mongodb://" or "mongodb+srv://"
+    at new ConnectionString (/home/runner/workspace/node_modules/mongodb-connection-string-url/lib/index.js:86:19)
+    at parseOptions (/home/runner/workspace/node_modules/mongodb/lib/connection_string.js:197:17)
+    at new MongoClient (/home/runner/workspace/node_modules/mongodb/lib/mongo_client.js:68:61)
+    at NativeConnection.createClient (/home/runner/workspace/node_modules/mongoose/lib/drivers/node-mongodb-native/connection.js:343:14)
+    at NativeConnection.openUri (/home/runner/workspace/node_modules/mongoose/lib/connection.js:1075:34)
+    at Mongoose.connect (/home/runner/workspace/node_modules/mongoose/lib/mongoose.js:450:15)
+    at Object.<anonymous> (/home/runner/workspace/index.js:75:10)
+    at Module._compile (node:internal/modules/cjs/loader:1529:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+    at Module.load (node:internal/modules/cjs/loader:1275:32)
+error: MongoDB connection failed {"error":"Invalid scheme, expected connection string to start with \"mongodb://\" or \"mongodb+srv://\"","stack":"MongoParseError: Invalid scheme, expected connection string to start with \"mongodb://\" or \"mongodb+srv://\"\n    at new ConnectionString (/home/runner/workspace/node_modules/mongodb-connection-string-url/lib/index.js:86:19)\n    at parseOptions (/home/runner/workspace/node_modules/mongodb/lib/connection_string.js:197:17)\n    at new MongoClient (/home/runner/workspace/node_modules/mongodb/lib/mongo_client.js:68:61)\n    at NativeConnection.createClient (/home/runner/workspace/node_modules/mongoose/lib/drivers/node-mongodb-native/connection.js:343:14)\n    at NativeConnection.openUri (/home/runner/workspace/node_modules/mongoose/lib/connection.js:1075:34)\n    at Mongoose.connect (/home/runner/workspace/node_modules/mongoose/lib/mongoose.js:450:15)\n    at Object.<anonymous> (/home/runner/workspace/index.js:75:10)\n    at Module._compile (node:internal/modules/cjs/loader:1529:14)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)\n    at Module.load (node:internal/modules/cjs/loader:1275:32)","timestamp":"2025-10-26 06:08:08"}
