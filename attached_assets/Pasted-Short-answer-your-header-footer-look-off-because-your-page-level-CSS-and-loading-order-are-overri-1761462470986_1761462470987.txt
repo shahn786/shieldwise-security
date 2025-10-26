@@ -1,0 +1,91 @@
+Short answer: your header/footer look “off” because your page-level CSS and loading order are overriding Bootstrap’s defaults that those partials were designed for.
+
+Here are the specific issues I see and how to fix them fast:
+
+You’re globally overriding Bootstrap’s core classes
+Problem: in the inline <style> you redefine .container and .navbar. Your header/footer partials likely rely on Bootstrap’s original .container spacing and .navbar colors/behavior, so they render differently than expected (especially on mobile).
+Fix: stop touching Bootstrap’s globals. Make your own scoped classes.
+
+<!-- remove this global override -->
+/* .container { max-width:1200px; margin:0 auto; padding:0 15px; } */
+/* .navbar { background-color:#343a40; padding: .5rem 0; } */
+
+<!-- replace with: -->
+.sw-container { max-width:1200px; margin:0 auto; padding:0 15px; }
+.header .navbar { background-color:#343a40; padding:.5rem 0; }
+
+
+Then, in your markup, change your custom sections to use .sw-container instead of .container so you don’t break header/footer:
+
+<section class="hero-content-section">
+  <div class="sw-container">
+    ...
+  </div>
+</section>
+
+<main id="main-content" class="shieldwise-main-content" role="main">
+  <div class="sw-container"> ... </div>
+</main>
+
+<section id="security-services" class="services-section">
+  <div class="sw-container text-center"> ... </div>
+</section>
+
+<section class="service-areas-section">
+  <div class="sw-container"> ... </div>
+</section>
+
+
+CSS load strategy is causing inconsistent styling “moments”
+Problem: you’re using preload + onload swap for Bootstrap CSS. If that onload fires late, the header/footer (which depend on Bootstrap) appear unstyled or “different” briefly, and your custom overrides kick in.
+Fix (simplest): just include Bootstrap as a normal stylesheet before your custom CSS.
+
+<!-- Put this BEFORE your custom CSS, no preload/swap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- Then your site CSS -->
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/back-to.css">
+
+
+(If you must keep the preload pattern, also include a regular <link rel="stylesheet"...> immediately after as a reliable fallback.)
+
+Unscoped critical CSS is bleeding into the partials
+Problem: rules like .navbar { ... } and .container { ... } apply to the partials too.
+Fix: namespace your page-specific rules (e.g., .home-page .hero-section { ... }) and wrap your page body with a class:
+
+<body id="top" class="home-page" itemscope itemtype="https://schema.org/WebPage">
+
+
+Then scope your critical CSS:
+
+.home-page .hero-section { ... }
+.home-page .video-container { ... }
+.home-page .hero-title { ... }
+
+
+Possible CSS from other files overriding header/footer
+Problem: /css/back-to.css or other files might have broad selectors (a, .container, .row, .footer *) that accidentally restyle the header/footer.
+Fix: open those files and ensure they’re scoped (e.g., .back-to-top { ... } only) and don’t touch Bootstrap primitives or global a {} styles.
+
+Markup mismatch between header/footer and page sections
+Make sure your partials/Header and partials/Footer use the same version of Bootstrap classes as the rest of the site (e.g., don’t mix v5 classes with v4.5.2). Also confirm they wrap content consistently:
+
+<header class="header">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container"><!-- keep Bootstrap container here -->
+      ...
+    </div>
+  </nav>
+</header>
+
+<footer class="footer bg-dark text-light">
+  <div class="container">
+    ...
+  </div>
+</footer>
+
+
+Font loading / FOUT causing “different” look
+Your Inter font is loaded via Google Fonts with a late onload swap. If the header/footer render first, you’ll see a flash in a different font/weight.
+Fix: either inline a small @font-face for the first weights, or keep Google Fonts but accept a brief FOUT. (The bigger wins are items 1–3.)
