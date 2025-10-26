@@ -3,10 +3,10 @@
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": "<%= serviceData.serviceType %> Security",
-  "name": "<%= serviceData.serviceTitle %>",
-  "alternateName": "<%= serviceData.serviceAltName %>",
-  "description": "Professional <%= serviceData.serviceType %> security services throughout California, including 24/7 security guards, access control, and mobile patrols.",
+  "serviceType": "<%= service.serviceType %> Security",
+  "name": "<%= service.serviceTitle %>",
+  "alternateName": "<%= service.serviceAltName %>",
+  "description": "Professional <%= service.serviceType %> security services throughout California, including 24/7 security guards, access control, and mobile patrols.",
   "provider": {
     "@type": "Organization",
     "name": "ShieldWise Security Services",
@@ -54,7 +54,7 @@
     { "@type": "City", "name": "Oakland" },
     { "@type": "City", "name": "San Jose" }
   ],
-  "serviceOutput": "<%= serviceData.serviceOutput %>",
+  "serviceOutput": "<%= service.serviceOutput %>",
   "termsOfService": "https://shieldwisesecurity.com/terms/",
   "hoursAvailable": {
     "@type": "OpeningHoursSpecification",
@@ -72,24 +72,24 @@
   },
   "audience": {
     "@type": "Audience",
-    "audienceType": "<%= serviceData.audienceType %>"
+    "audienceType": "<%= service.audienceType %>"
   },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "<%= serviceData.serviceTitle %>",
+    "name": "<%= service.serviceTitle %>",
     "itemListElement": [
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
           "name": "24/7 Security Guards",
-          "description": "Professional on-site security personnel for <%= serviceData.serviceType %>"
+          "description": "Professional on-site security personnel for <%= service.serviceType %>"
         },
-        "price": "<%= serviceData.priceRange.low %>",
+        "price": "<%= service.priceRange.low %>",
         "priceCurrency": "USD",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "<%= serviceData.priceRange.low %>",
+          "price": "<%= service.priceRange.low %>",
           "priceCurrency": "USD",
           "unitText": "HOUR"
         }
@@ -98,30 +98,14 @@
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Access Control Systems",
-          "description": "Electronic key card systems and visitor management"
+          "name": "Professional Security Services",
+          "description": "<%= service.serviceBenefit %>"
         },
-        "price": "<%= serviceData.priceRange.mid %>",
+        "price": "<%= service.priceRange.mid %>",
         "priceCurrency": "USD",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "<%= serviceData.priceRange.mid %>",
-          "priceCurrency": "USD",
-          "unitText": "HOUR"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Mobile Patrol Services",
-          "description": "Regular security patrols of property perimeter and common areas"
-        },
-        "price": "40.00",
-        "priceCurrency": "USD",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "40.00",
+          "price": "<%= service.priceRange.mid %>",
           "priceCurrency": "USD",
           "unitText": "HOUR"
         }
@@ -133,60 +117,16 @@
           "name": "Emergency Response Team",
           "description": "Rapid response security team for emergency situations"
         },
-        "price": "<%= serviceData.priceRange.high %>",
+        "price": "<%= service.priceRange.high %>",
         "priceCurrency": "USD",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "<%= serviceData.priceRange.high %>",
+          "price": "<%= service.priceRange.high %>",
           "priceCurrency": "USD",
           "unitText": "HOUR"
         }
       }
     ]
-  }
-}
-</script>
-
-<%
-// Extract serviceData for schema
-const schemaServiceData = typeof locals.serviceData !== 'undefined' ? serviceData : {};
-%>
-
-<!-- Service-Specific Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "<%= schemaServiceData.serviceTitle || 'Professional Security Services' %>",
-  "description": "<%= schemaServiceData.serviceDescription || 'Professional security services with licensed guards and 24/7 monitoring.' %>",
-  "provider": {
-    "@type": "Organization",
-    "name": "ShieldWise Security Services",
-    "url": "https://shieldwisesecurity.com"
-  },
-  "serviceType": "<%= schemaServiceData.serviceType || 'security' %> security services",
-  "areaServed": {
-    "@type": "State",
-    "name": "California"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "<%= schemaServiceData.serviceType || 'Security' %> Service Packages",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Basic <%= schemaServiceData.serviceType || 'Security' %> Package"
-        },
-        "price": "<%= (schemaServiceData.priceRange && schemaServiceData.priceRange.low) ? schemaServiceData.priceRange.low : '35' %>",
-        "priceCurrency": "USD"
-      }
-    ]
-  },
-  "audience": {
-    "@type": "Audience",
-    "audienceType": "<%= schemaServiceData.audienceType || 'Property Managers and Business Owners' %>"
   }
 }
 </script>
