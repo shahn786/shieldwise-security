@@ -11,8 +11,51 @@ const helmet = require("helmet");
 const compression = require("compression");
 const rateLimit = require("express-rate-limit");
 
+const winston = require("winston");
+require("winston-daily-rotate-file");
+
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+// Configure Winston Logger with Daily Rotation
+const logger = winston.createLogger({
+  level: process.env.LOG_LEVEL || 'info',
+  format: winston.format.combine(
+    winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
+    winston.format.errors({ stack: true }),
+    winston.format.splat(),
+    winston.format.json()
+  ),
+  transports: [
+    new winston.transports.DailyRotateFile({
+      filename: 'logs/error-%DATE%.log',
+      datePattern: 'YYYY-MM-DD',
+      level: 'error',
+      maxSize: '20m',
+      maxFiles: '14d',
+      format: winston.format.combine(
+        winston.format.timestamp(),
+        winston.format.json()
+      )
+    }),
+    new winston.transports.DailyRotateFile({
+      filename: 'logs/combined-%DATE%.log',
+      datePattern: 'YYYY-MM-DD',
+      maxSize: '20m',
+      maxFiles: '14d'
+    })
+  ]
+});
+
+// Add console logging in development
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.combine(
+      winston.format.colorize(),
+      winston.format.simple()
+    )
+  }));
+}
 
 // Trust proxy for accurate rate limiting behind reverse proxies (Replit, Cloudflare, etc.)
 app.set('trust proxy', 1);
@@ -30,8 +73,14 @@ mongoose.connect(uri, {
   tls: true,
   retryWrites: true
 })
-.then(() => console.log("✅ Connected successfully to MongoDB Atlas"))
-.catch((err) => console.error("❌ MongoDB Connection Error:", err));
+.then(() => {
+  console.log("✅ Connected successfully to MongoDB Atlas");
+  logger.info("MongoDB Atlas connection established successfully");
+})
+.catch((err) => {
+  console.error("❌ MongoDB Connection Error:", err);
+  logger.error("MongoDB connection failed", { error: err.message, stack: err.stack });
+});
 
 
 // Define a User Model
