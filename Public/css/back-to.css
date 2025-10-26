@@ -1,29 +1,33 @@
+
 /* Back to Top Button Styles */
 .back-to-top {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 20px;
+    right: 20px;
     width: 50px;
     height: 50px;
-    background: #1a3c6e;
+    background-color: #d32f2f;
     color: white;
+    border: none;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    font-size: 18px;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    z-index: 9999;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .back-to-top:hover {
-    background: #bf9e5b;
+    background-color: #b71c1c;
     color: white;
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .back-to-top.active {
@@ -31,20 +35,18 @@
     visibility: visible;
 }
 
-.back-to-top i {
-    font-size: 20px;
+.back-to-top:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
 }
 
-/* Mobile responsiveness */
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .back-to-top {
-        bottom: 20px;
-        right: 20px;
         width: 45px;
         height: 45px;
-    }
-
-    .back-to-top i {
-        font-size: 18px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 16px;
     }
 }
