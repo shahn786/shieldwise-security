@@ -18,6 +18,7 @@ function initBackToTop() {
             function handleScroll() {
                 if (window.pageYOffset > 300) {
                     backToTopButton.classList.add('active');
+                    console.log('Button should be visible now'); // Debug log
                 } else {
                     backToTopButton.classList.remove('active');
                 }
@@ -40,6 +41,9 @@ function initBackToTop() {
 
             // Initial check for scroll position
             handleScroll();
+            
+            // Force a check after a short delay to ensure visibility
+            setTimeout(handleScroll, 100);
 
         } else {
             console.log('Back to top button NOT found'); // Debug log
