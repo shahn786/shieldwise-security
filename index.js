@@ -469,15 +469,9 @@ app.get("/services/hospital-security", (req, res) => {
   res.render("services/hospital-security");
 });
 
-// Construction Security Page
-app.get("/services/construction-security", (req, res) => {
-  res.render("services/construction-security");
-});
+// Construction Security Page - handled by separate router
 
-// Commercial Security Page
-app.get("/services/commercial-security", (req, res) => {
-  res.render("services/commercial-security");
-});
+// Commercial Security Page - handled by separate router
 
 // Shopping Center Security route is handled by the separate router file
 
@@ -486,17 +480,11 @@ app.get("/services/educational-security", (req, res) => {
   res.redirect(301, "/services/educational-campus-security");
 });
 
-// Armed Security Page
-app.get("/services/armed-security", (req, res) => {
-  res.render("services/armed-security");
-});
+// Armed Security Page - handled by separate router
 
 // Unarmed Security Page - handled by separate router
 
-// Executive Protection Page
-app.get("/services/executive-protection", (req, res) => {
-  res.render("services/executive-protection");
-});
+// Executive Protection Page - handled by separate router
 
 // Special Event Security Page
 
