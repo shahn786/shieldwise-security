@@ -7,9 +7,15 @@ const LocalStrategy = require("passport-local").Strategy;
 const bcrypt = require("bcrypt");
 const flash = require("connect-flash");
 const path = require("path");
+const helmet = require("helmet");
+const compression = require("compression");
+const rateLimit = require("express-rate-limit");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+// Trust proxy for accurate rate limiting behind reverse proxies (Replit, Cloudflare, etc.)
+app.set('trust proxy', 1);
 
 // MongoDB Atlas Database Connection
 // TODO: For production deployment, move this to environment variables via hosting platform
@@ -22,7 +28,6 @@ const uri = process.env.MONGODB_URI && process.env.MONGODB_URI.startsWith('mongo
 mongoose.connect(uri, {
   serverSelectionTimeoutMS: 5000,
   tls: true,
-  tlsInsecure: true,
   retryWrites: true
 })
 .then(() => console.log("✅ Connected successfully to MongoDB Atlas"))
@@ -89,16 +94,88 @@ const getQuoteSchema = new mongoose.Schema({
 });
 const getQuote = mongoose.model("getQuote", getQuoteSchema);
 
-// Session setup
+// HTTPS redirect for production
+if (process.env.NODE_ENV === 'production') {
+  app.use((req, res, next) => {
+    if (req.header('x-forwarded-proto') !== 'https') {
+      res.redirect(`https://${req.header('host')}${req.url}`);
+    } else {
+      next();
+    }
+  });
+}
+
+// Security middleware - Helmet
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://code.jquery.com", "https://cdn.jsdelivr.net", "https://stackpath.bootstrapcdn.com", "https://www.google.com", "https://www.gstatic.com", "https://www.googletagmanager.com", "https://static.hotjar.com", "https://script.hotjar.com", "https://www.clarity.ms", "https://connect.facebook.net", "https://snap.licdn.com"],
+      styleSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net", "https://stackpath.bootstrapcdn.com", "https://cdnjs.cloudflare.com", "https://fonts.googleapis.com"],
+      imgSrc: ["'self'", "data:", "https:", "http:"],
+      fontSrc: ["'self'", "https://fonts.gstatic.com", "https://cdnjs.cloudflare.com"],
+      connectSrc: ["'self'", "https://www.google-analytics.com", "https://*.hotjar.com", "https://*.hotjar.io", "wss://*.hotjar.com", "https://www.clarity.ms", "https://www.facebook.com", "https://connect.facebook.net", "https://px.ads.linkedin.com"],
+      frameSrc: ["'self'", "https://www.google.com"],
+      objectSrc: ["'none'"],
+      upgradeInsecureRequests: []
+    }
+  },
+  hsts: {
+    maxAge: 31536000,
+    includeSubDomains: true,
+    preload: true
+  }
+}));
+
+// Compression middleware for gzip
+app.use(compression());
+
+// Rate limiting
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  message: 'Too many requests from this IP, please try again later.',
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+app.use(limiter);
+
+// Stricter rate limiting for authentication endpoints
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 5,
+  message: 'Too many login attempts, please try again later.',
+  skipSuccessfulRequests: true,
+});
+
+// Session setup with secure secrets from environment variables
+// CRITICAL: Production must have proper secrets or it will fail fast
+if (process.env.NODE_ENV === 'production') {
+  if (!process.env.SESSION_SECRET || !process.env.MONGO_CRYPTO_SECRET) {
+    console.error('❌ FATAL: SESSION_SECRET and MONGO_CRYPTO_SECRET must be set in production!');
+    console.error('Set these environment variables before starting the server.');
+    process.exit(1);
+  }
+}
+
+const SESSION_SECRET = process.env.SESSION_SECRET || 'dev-secret-only-' + Math.random().toString(36);
+const MONGO_CRYPTO_SECRET = process.env.MONGO_CRYPTO_SECRET || 'dev-crypto-only-' + Math.random().toString(36);
+
 app.use(
   session({
-    secret: "your-secret-key",
+    secret: SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
+    cookie: {
+      secure: process.env.NODE_ENV === 'production',
+      httpOnly: true,
+      maxAge: 14 * 24 * 60 * 60 * 1000,
+      sameSite: 'lax'
+    },
     store: MongoStore.create({
       mongoUrl: uri,
       crypto: {
-        secret: 'squirrel'
+        secret: MONGO_CRYPTO_SECRET
       },
       ttl: 14 * 24 * 60 * 60,
       autoRemove: 'native'
@@ -106,37 +183,13 @@ app.use(
   }),
 );
 
-// Security and Performance Headers
+// Cache Control for Static Assets
 app.use((req, res, next) => {
-  // Security Headers
-  res.setHeader('X-Content-Type-Options', 'nosniff');
-  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
-  res.setHeader('X-XSS-Protection', '1; mode=block');
-  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
-  res.setHeader('Permissions-Policy', 'geolocation=(), microphone=(), camera=()');
-  
-  // Content Security Policy
-  res.setHeader('Content-Security-Policy', 
-    "default-src 'self'; " +
-    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://code.jquery.com https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://www.google.com https://www.gstatic.com https://www.googletagmanager.com https://static.hotjar.com https://script.hotjar.com https://www.clarity.ms https://connect.facebook.net https://snap.licdn.com; " +
-    "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://cdnjs.cloudflare.com https://fonts.googleapis.com; " +
-    "img-src 'self' data: https: http:; " +
-    "font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; " +
-    "connect-src 'self' https://www.google-analytics.com https://*.hotjar.com https://*.hotjar.io wss://*.hotjar.com https://www.clarity.ms https://www.facebook.com https://connect.facebook.net https://px.ads.linkedin.com; " +
-    "frame-src 'self' https://www.google.com https://vars.hotjar.com; " +
-    "worker-src 'self' blob:;"
-  );
-  
-  // Performance Headers - Enable Compression
-  res.setHeader('Vary', 'Accept-Encoding');
-  
-  // Cache Control for Static Assets
   if (req.url.match(/\.(css|js|jpg|jpeg|png|gif|webp|woff|woff2|ttf|svg|ico)$/)) {
     res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
   } else if (req.url.match(/\.(html|ejs)$/)) {
     res.setHeader('Cache-Control', 'no-cache, must-revalidate');
   }
-  
   next();
 });
 
@@ -280,8 +333,8 @@ app.get("/register", (req, res) => {
   res.render("register", { loggedIn, error: null, success: null });
 });
 
-// Handle Registration
-app.post("/register", async (req, res) => {
+// Handle Registration (with strict rate limiting)
+app.post("/register", authLimiter, async (req, res) => {
   const {
     firstName,
     lastName,
@@ -372,7 +425,8 @@ app.get("/login", (req, res) => {
 //   }),
 // );
 
-app.post("/login", async (req, res) => {
+// Login POST Request (with strict rate limiting)
+app.post("/login", authLimiter, async (req, res) => {
   const { username, password } = req.body;
 
   console.log("test-ketan login", req.body);
