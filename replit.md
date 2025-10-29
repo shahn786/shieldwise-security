@@ -10,6 +10,18 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes (October 29, 2025)
 
+### City Pages Cleanup - "Cheapest and Best" Campaign
+- **All 182 city pages updated** with new "cheapest and best" value proposition
+- **Sentence Added:** "Cheapest and best security guard services in {{CITY}}, California" under every H1
+- **All Explicit Pricing Removed:** 0 service pricing patterns remaining (e.g., "$30-40/hour")
+- **Schema Pricing Removed:** 0 priceSpecification objects remaining in JSON-LD
+- **Neutral Statements Added:** Market pricing context where pricing was removed
+- **CTAs Enhanced:** "Get Your Custom Quote - Often the Lowest Price in {{CITY}}"
+- **$2M Insurance Preserved:** Company credential retained on 80 pages
+- **Layout Preserved:** Zero visual changes - all styling and animations intact
+- **Backups:** All originals saved to views/cities-backup-pricing-cleanup/
+- **Report:** CITY_PAGES_CLEANUP_REPORT.md documents complete implementation
+
 ### Performance Optimization - Image Compression
 - **Images Optimized:** Compressed 8 large images from 300-717KB to under 250KB each
 - **Total Space Saved:** ~1.9MB across site
