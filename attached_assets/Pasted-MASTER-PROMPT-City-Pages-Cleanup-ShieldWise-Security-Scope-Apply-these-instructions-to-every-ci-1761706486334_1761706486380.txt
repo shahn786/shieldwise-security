@@ -1,0 +1,105 @@
+MASTER PROMPT — City Pages Cleanup (ShieldWise Security)
+Scope
+
+Apply these instructions to every city/location page (e.g., Los Angeles, Anaheim, San Jose, etc.). Pages include HTML/EJS content, headings, hero, body sections, CTAs, FAQs, and footers.
+
+Variables
+
+{{CITY}} – the city name (e.g., “Anaheim”)
+
+{{STATE}} – “California”
+
+{{COMPANY}} – “ShieldWise Security”
+
+Primary Goals
+
+Insert one clear sentence mentioning the city that states we’re the cheapest and best:
+
+Place directly under the H1 (or first hero heading) as a single sentence:
+
+Cheapest and best security guard services in {{CITY}}, California.
+
+If a more natural version fits the page tone, you may use:
+
+ShieldWise Security provides the cheapest and best security guard services in {{CITY}}, California.
+
+Ensure only one instance per page (no duplicates).
+
+Remove or neutralize all prices on city pages:
+
+Delete any explicit prices/rates (e.g., “$35/hr”, “$xxx per hour”, “starting at $xx”).
+
+Where a price sentence is needed for context, replace with this neutral market statement (not a quote from us):
+
+Regular market prices for licensed security guards in {{CITY}} vary by scope, schedule, and risk level. These are typical industry ranges—not {{COMPANY}} quotes. For our pricing (often the lowest in {{CITY}}), request a custom quote.
+
+If a section is only a price table, remove the table and insert a short paragraph using the neutral statement above plus a “Get a Quote” CTA link/button.
+
+Make it crystal-clear those prices aren’t ours:
+
+When you keep any general pricing commentary, always include:
+
+Note: Market rates shown are general industry references for {{CITY}} and are not {{COMPANY}}’s prices. {{COMPANY}} frequently provides cheaper, customized rates based on your needs.
+
+SEO & Copy Polish (keep concise, professional)
+
+Keep H1 as-is (don’t add prices to H1).
+
+Ensure the new sentence appears once, under H1/hero, in plain text (no small/hidden styles).
+
+Improve grammar/flow across the page, but do not add numbers/$$ in copy or metadata.
+
+If any JSON-LD/structured data includes explicit price fields for services, remove those fields (do not invent prices).
+
+Keep city/local keywords natural: “security guard services in {{CITY}}, {{STATE}}”, “armed/unarmed guards”, “mobile patrol”, “fire watch”, etc.
+
+CTAs
+
+Where you removed prices, add/keep:
+
+Button text: “Get Your Custom Quote”
+
+Subtext: “Often the lowest price in {{CITY}}—tailored to your site.”
+
+Do Not Change
+
+Phone, email, license details, service lists, testimonials, service coverage statements.
+
+Don’t add any dollar amounts anywhere on these city pages.
+
+Find/Replace Guidance
+
+Remove lines/blocks containing price patterns like:
+$, USD, /hr, per hour, starting at, from $, hourly rate, rate: $, Price: $, $$.
+
+Remove price columns in tables; keep non-price service info.
+
+If a paragraph becomes empty after removal, delete it and maintain clean spacing.
+
+Final Checks
+
+Exactly one of the following appears under H1:
+
+“Cheapest and best security guard services in {{CITY}}, California.”
+OR
+
+“ShieldWise Security provides the cheapest and best security guard services in {{CITY}}, California.”
+
+No explicit numbers/$$ remain on the page body, headings, footers, FAQs, schema, or meta.
+
+At least one strong CTA exists near the top and bottom.
+
+No duplicate new sentence. No leftover empty sections/gaps.
+
+Example (before → after)
+
+Before:
+“H1: {{CITY}} Security Guards — From $35/hr”
+Paragraph: “We charge $35–$45/hr for unarmed and $45–$55/hr for armed.”
+
+After:
+“H1: {{CITY}} Security Guards”
+(Insert below H1)
+“Cheapest and best security guard services in {{CITY}}, California.”
+Paragraph (replaced):
+“Regular market prices for licensed security guards in {{CITY}} vary by scope, schedule, and risk level. These are typical industry ranges—not ShieldWise Security quotes. For our pricing (often the lowest in {{CITY}}), request a custom quote.”
