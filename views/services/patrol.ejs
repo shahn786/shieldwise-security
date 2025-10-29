@@ -8,17 +8,29 @@
         canonicalUrl: serviceData.canonicalUrl
     }) %>
 
-    <!-- Enhanced SEO Meta Tags -->
-    <meta name="keywords" content="mobile patrol security, 24/7 patrol services, security patrol officers, GPS tracked patrols, rapid response security, California mobile security, alarm response patrol, construction site security patrol, property inspection services, professional security patrol">
+    <!-- Enhanced SEO Meta Tags for AI Search & Voice Assistants -->
+    <meta name="keywords" content="<%= serviceData.serviceKeywords %>">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="googlebot" content="index, follow">
-    <meta name="bingbot" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="bingbot" content="index, follow, max-image-preview:large">
     <meta name="author" content="ShieldWise Security">
     <meta name="publisher" content="ShieldWise Security">
+    <meta name="rating" content="General">
+    <meta name="revisit-after" content="7 days">
 
-    <!-- Geo-targeting -->
+    <!-- Enhanced Geo-targeting for Southern California/Riverside -->
     <meta name="geo.region" content="US-CA">
-    <meta name="geo.placename" content="California">
+    <meta name="geo.placename" content="Riverside, California">
+    <meta name="geo.position" content="33.9533;-117.3962">
+    <meta name="ICBM" content="33.9533, -117.3962">
+    <meta name="DC.title" content="<%= serviceData.pageTitle %>">
+    <meta name="DC.subject" content="Mobile Patrol Security Services in Southern California">
+    <meta name="DC.description" content="<%= serviceData.pageDescription %> ">
+    
+    <!-- Voice Search & AI Optimization -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="alternate" hreflang="en-us" href="<%= serviceData.canonicalUrl %>">
 
     <!-- Open Graph Enhanced -->
     <meta property="og:type" content="website">
@@ -48,9 +60,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Comprehensive Schema Markup for Rich Snippets & Voice Search -->
     <%- include('../partials/schema-primary') %>
     <%- include('../partials/schema-service', { serviceData: serviceData }) %>
     <%- include('../partials/schema-faq-service', { serviceData: serviceData }) %>
+    <%- include('../partials/schema-patrol-webpage-speakable') %>
+    <%- include('../partials/schema-patrol-review') %>
+    <%- include('../partials/schema-patrol-offercatalog') %>
+    <%- include('../partials/schema-patrol-riverside-localbusiness') %>
     <%- include('../partials/tracking-scripts', {
         serviceType: serviceData.serviceType,
         priceRange: serviceData.priceRange
@@ -845,6 +862,143 @@
             display: none;
         }
 
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Southern California Cities Section */
+        .socal-cities-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 90px 0;
+        }
+
+        .city-card {
+            background: white;
+            border-radius: 16px;
+            padding: 35px;
+            height: 100%;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .city-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-secondary);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .city-card:hover {
+            border-color: var(--secondary-color);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .city-card:hover::before {
+            opacity: 1;
+        }
+
+        .city-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(191, 158, 91, 0.3);
+        }
+
+        .city-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .city-name {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .city-county {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 18px;
+            font-weight: 500;
+        }
+
+        .city-description {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-color);
+            margin-bottom: 25px;
+        }
+
+        .city-features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .city-features-list li {
+            padding: 10px 0;
+            padding-left: 28px;
+            position: relative;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .city-features-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background: var(--gradient-secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .best-value-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(191, 158, 91, 0.4);
+        }
+
         .skip-link {
             position: absolute;
             top: -40px;
@@ -1230,6 +1384,50 @@
             </div>
         </section>
 
+        <!-- Southern California Cities - Best & Cheapest Patrol Services -->
+        <section class="socal-cities-section speakable-services" aria-labelledby="socal-cities-heading">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-subtitle-badge">Southern California Coverage</span>
+                    <h2 id="socal-cities-heading" class="section-title">Best & Cheapest Mobile Patrol in Southern California</h2>
+                    <p class="section-description">ShieldWise Security provides the most affordable and highest quality mobile patrol services throughout Southern California, with special focus on Riverside County, San Bernardino County, and Orange County. We guarantee the cheapest rates without compromising on quality or service excellence.</p>
+                </header>
+
+                <div class="row">
+                    <% serviceData.southernCaliforniaCities.forEach((city, index) => { %>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <article class="city-card" itemscope itemtype="https://schema.org/Service">
+                            <% if (index === 0 || index === 1) { %>
+                            <span class="best-value-badge">Best Value</span>
+                            <% } %>
+                            <div class="city-icon">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="city-name" itemprop="name"><%= city.name %></h3>
+                            <div class="city-county"><%= city.county %></div>
+                            <p class="city-description" itemprop="description"><%= city.description %></p>
+                            <ul class="city-features-list">
+                                <% city.features.forEach(feature => { %>
+                                <li><%= feature %></li>
+                                <% }); %>
+                            </ul>
+                        </article>
+                    </div>
+                    <% }); %>
+                </div>
+
+                <div class="text-center mt-5">
+                    <p class="speakable-contact" style="font-size: 1.2rem; color: var(--primary-color); margin-bottom: 25px;">
+                        <strong>Serving all of Southern California</strong> with the best mobile patrol rates. Call us today for a free quote!
+                    </p>
+                    <a href="/get-quote" class="btn-custom" aria-label="Get free quote for mobile patrol services in Southern California">
+                        <i class="fas fa-calculator" aria-hidden="true"></i>
+                        Get Your Free Quote - Cheapest Rates in SoCal
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- Testimonials Section with Review Schema -->
         <section class="testimonials-section" aria-labelledby="testimonials-heading">
             <div class="container">
@@ -1339,6 +1537,43 @@
                             </div>
                         </article>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section with Interaction Tracking -->
+        <section class="faq-section" aria-labelledby="faq-heading" itemscope itemtype="https://schema.org/FAQPage">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-subtitle-badge">Common Questions</span>
+                    <h2 id="faq-heading" class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-description">Get answers to common questions about our mobile patrol security services in Southern California</p>
+                </header>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <% serviceData.faqs.forEach((faq, index) => { %>
+                        <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" data-faq-id="<%= index %>">
+                            <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-answer-<%= index %>">
+                                <span itemprop="name"><%= faq.question %></span>
+                                <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+                            </div>
+                            <div id="faq-answer-<%= index %>" class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                <div itemprop="text"><%= faq.answer %></div>
+                            </div>
+                        </article>
+                        <% }); %>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5">
+                    <p style="font-size: 1.1rem; color: var(--text-light); margin-bottom: 25px;">
+                        Still have questions? Our patrol security experts are available 24/7 to help.
+                    </p>
+                    <a href="tel:+18007443531" class="btn-custom" aria-label="Call ShieldWise Security 24/7 hotline">
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                        Call (800) 744-3531 - 24/7 Support
+                    </a>
                 </div>
             </div>
         </section>
@@ -1728,6 +1963,55 @@
                     gtag('event', 'email_click', {
                         'event_category': 'Contact',
                         'event_label': this.getAttribute('href')
+                    });
+                }
+            });
+        });
+
+        // FAQ Interaction Tracking with Analytics
+        document.querySelectorAll('.faq-item').forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const faqId = item.getAttribute('data-faq-id');
+            const questionText = question.querySelector('span').textContent;
+
+            question.addEventListener('click', function() {
+                item.classList.toggle('active');
+                const isExpanded = item.classList.contains('active');
+                
+                // Update ARIA attributes
+                this.setAttribute('aria-expanded', isExpanded);
+
+                // Track FAQ interaction
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'faq_interaction', {
+                        'event_category': 'Engagement',
+                        'event_label': questionText,
+                        'event_action': isExpanded ? 'expand' : 'collapse',
+                        'faq_id': faqId,
+                        'non_interaction': false
+                    });
+                }
+            });
+
+            // Keyboard accessibility
+            question.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+        });
+
+        // Track city card hover interactions for analytics
+        document.querySelectorAll('.city-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const cityName = this.querySelector('.city-name').textContent;
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'city_card_hover', {
+                        'event_category': 'Engagement',
+                        'event_label': cityName,
+                        'location': 'socal_cities_section',
+                        'non_interaction': true
                     });
                 }
             });
