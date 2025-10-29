@@ -9,6 +9,7 @@ const flash = require("connect-flash");
 const path = require("path");
 const helmet = require("helmet");
 const compression = require("compression");
+const morgan = require("morgan");
 const rateLimit = require("express-rate-limit");
 
 const winston = require("winston");
@@ -180,6 +181,17 @@ app.use(helmet({
 
 // Compression middleware for gzip
 app.use(compression());
+
+// HTTP request logging with Morgan
+if (process.env.NODE_ENV === 'production') {
+  app.use(morgan('combined', {
+    stream: {
+      write: (message) => logger.info(message.trim())
+    }
+  }));
+} else {
+  app.use(morgan('dev'));
+}
 
 // Rate limiting
 const limiter = rateLimit({
