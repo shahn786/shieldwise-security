@@ -94,14 +94,23 @@ function removePricingFromFAQs(content, cityName) {
     return content;
 }
 
-// Step 4: Remove service pricing divs
+// Step 4: Remove service pricing divs and lists
 function removeServicePricing(content, cityName) {
     // Remove pricing divs like: <div class="service-pricing">Starting at $45-85/hour</div>
     content = content.replace(/<div class="service-pricing">[^<]*<\/div>/gi, '');
     
-    // Remove any paragraph or span containing explicit prices
-    content = content.replace(/<p[^>]*>.*?(\$\d+[-–]\$?\d*|per hour|\/hour|starting at \$).*?<\/p>/gi, '');
-    content = content.replace(/<span[^>]*>.*?(\$\d+[-–]\$?\d*|per hour|\/hour).*?<\/span>/gi, '');
+    // Remove list items with service pricing (e.g., "<li><strong>Armed Guards:</strong> $40-90/hour</li>")
+    // But preserve $2M insurance lines
+    content = content.replace(/<li><strong>(Unarmed Guards?|Armed Guards?|Mobile Patrol|Fire Watch|Event Security|Executive Protection):<\/strong>[^<]*\$\d+[-–]?\d*\/hour[^<]*<\/li>/gi, '');
+    
+    // Remove paragraphs with "Starting at $" patterns
+    content = content.replace(/<p[^>]*>[^<]*starting at \$\d+[-–]?\d*\/hour[^<]*<\/p>/gi, '');
+    
+    // Remove divs with hourly pricing (but not $2M insurance)
+    content = content.replace(/<div[^>]*>[^<]*\$\d+[-–]?\d*\/hour[^<]*<\/div>/gi, function(match) {
+        if (match.includes('$2M') || match.includes('insurance')) return match;
+        return '';
+    });
     
     return content;
 }
