@@ -1600,7 +1600,7 @@
                         </div>
                     </div>
 
-                    <button class="btn btn-custom" aria-label="Request mobile patrol security services and get a free quote" onclick="trackPatrolRequest()">
+                    <button class="btn btn-custom patrol-request-btn" aria-label="Request mobile patrol security services and get a free quote">
                         <i class="fas fa-car" aria-hidden="true"></i>
                         Get Patrol Services Now
                     </button>
@@ -2016,6 +2016,21 @@
                 }
             });
         });
+
+        // Track patrol request button clicks (CSP-compliant)
+        const patrolRequestBtn = document.querySelector('.patrol-request-btn');
+        if (patrolRequestBtn) {
+            patrolRequestBtn.addEventListener('click', function() {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'patrol_request_click', {
+                        'event_category': 'Conversion',
+                        'event_label': 'CTA Button - Patrol Services',
+                        'event_value': 1
+                    });
+                }
+                window.location.href = '/get-quote';
+            });
+        }
 
         // Page engagement time tracking
         let startTime = Date.now();
