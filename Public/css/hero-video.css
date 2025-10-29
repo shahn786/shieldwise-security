@@ -21,7 +21,7 @@ body, html {
     width: 100%;
     height: 95vh;
     min-height: 800px;
-    background: #ffffff !important;
+    background: #FDFAF6 !important;
     overflow: hidden;
     margin-bottom: 120px;
 }
@@ -33,7 +33,7 @@ body, html {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    background: #ffffff;
+    background: #FDFAF6;
 }
 
 /* Hero Content Section - Below Video */
