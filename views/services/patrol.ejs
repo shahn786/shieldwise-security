@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,22 +6,22 @@
     <title>Best & Cheapest Mobile Patrol Security Services in Southern California | ShieldWise Security</title>
     <meta name="description" content="Cheapest and best mobile patrol security services in California. 24/7 random patrols, alarm response, property monitoring in Riverside, San Bernardino, and Southern California. Licensed & insured patrol officers.">
     <meta name="keywords" content="cheapest mobile patrol security, best patrol services riverside, affordable security patrol southern california, mobile patrol riverside county, san bernardino patrol security">
-
+    
     <link rel="canonical" href="https://shieldwisesecurity.com/services/patrol/">
-
+    
     <%- include('../partials/performance-optimization') %>
     <%- include('../partials/mobile-app-meta') %>
-
+    
     <!-- CSS Resources -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="/css/apartment-security.min.css" rel="stylesheet">
-
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-
+    
     <%- include('../partials/schema-primary') %>
     <%- include('../partials/schema-service', { service: serviceData }) %>
     <%- include('../partials/schema-faq-service', { faqs: serviceData.faqs }) %>
@@ -31,9 +32,17 @@
 </head>
 <body id="top">
     <a href="#main-content" class="skip-link">Skip to main content</a>
-
+    
     <%- include('../partials/Header') %>
 
+    <!-- Breadcrumb Navigation -->
+    <%- include('../partials/breadcrumb', { 
+        breadcrumbs: [
+            { name: 'Services', url: '/services' },
+            { name: 'Mobile Patrol Security', url: null }
+        ]
+    }) %>
+    
     <main id="main-content">
         <!-- Hero Section -->
         <section class="hero-section">
@@ -66,7 +75,7 @@
             <div class="container">
                 <h2 class="section-title">ShieldWise Mobile Patrol Features</h2>
                 <p class="section-subtitle">Comprehensive patrol coverage with industry-leading technology</p>
-
+                
                 <div class="apartment-grid">
                     <% serviceData.features.forEach(feature => { %>
                     <div class="apartment-card">
@@ -81,64 +90,10 @@
             </div>
         </section>
 
-        <!-- Security Process Section -->
-        <section class="security-process-section">
-            <div class="container">
-                <h2 class="section-title">Our Mobile Patrol Process</h2>
-                <p class="section-subtitle">Systematic approach to property protection</p>
-
-                <div class="row">
-                    <% serviceData.processSteps.forEach(step => { %>
-                    <div class="col-md-3">
-                        <div class="process-step">
-                            <div class="process-number"><%= step.number %></div>
-                            <h3 class="process-title"><%= step.title %></h3>
-                            <p><%= step.description %></p>
-                        </div>
-                    </div>
-                    <% }); %>
-                </div>
-            </div>
-        </section>
-
-        <!-- Benefits Section -->
-        <section class="benefits-section">
-            <div class="container">
-                <h2 class="section-title">Why Choose ShieldWise Mobile Patrol</h2>
-                <div class="row">
-                    <div class="col-md-6">
-                        <% serviceData.benefits.slice(0, 3).forEach(benefit => { %>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">
-                                <i class="<%= benefit.icon %>" aria-hidden="true"></i>
-                            </div>
-                            <div class="benefit-content">
-                                <h4><%= benefit.title %></h4>
-                                <p><%= benefit.description %></p>
-                            </div>
-                        </div>
-                        <% }); %>
-                    </div>
-                    <div class="col-md-6">
-                        <% serviceData.benefits.slice(3, 6).forEach(benefit => { %>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">
-                                <i class="<%= benefit.icon %>" aria-hidden="true"></i>
-                            </div>
-                            <div class="benefit-content">
-                                <h4><%= benefit.title %></h4>
-                                <p><%= benefit.description %></p>
-                            </div>
-                        </div>
-                        <% }); %>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Services Overview -->
-        <section class="py-5">
+        <section class="py-5" style="background-color: #f8f9fa;">
             <div class="container">
+                <h2 class="section-title">Mobile Patrol Service Offerings</h2>
                 <div class="row">
                     <% serviceData.serviceOfferings.forEach(offering => { %>
                     <div class="col-md-4">
@@ -166,6 +121,86 @@
                         <div class="stat-card">
                             <div class="stat-number"><%= stat.number %></div>
                             <div class="stat-label"><%= stat.label %></div>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </section>
+
+        <!-- Southern California Cities Coverage -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="section-title">Best & Cheapest Mobile Patrol in Southern California</h2>
+                <p class="text-center mb-5" style="font-size: 1.1rem; max-width: 800px; margin: 0 auto 3rem;">
+                    ShieldWise Security guarantees the <strong>cheapest mobile patrol rates</strong> in Southern California without compromising quality. 
+                    Our BSIS-licensed patrol officers provide the <strong>best value</strong> for businesses and properties throughout Riverside County, 
+                    San Bernardino County, and Orange County.
+                </p>
+                <div class="row">
+                    <% serviceData.southernCaliforniaCities.forEach(city => { %>
+                    <div class="col-md-6 mb-4">
+                        <div class="city-patrol-card" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%;">
+                            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                                <i class="fas fa-map-marker-alt" style="color: #d32f2f; font-size: 24px; margin-right: 15px;"></i>
+                                <h3 style="margin: 0; font-size: 1.5rem; color: #152f45;"><%= city.name %>, <%= city.county %></h3>
+                            </div>
+                            <% if (city.name === 'Riverside') { %>
+                            <span class="badge badge-danger mb-3" style="font-size: 0.9rem;">Best Value</span>
+                            <% } %>
+                            <p style="margin-bottom: 20px; color: #555;"><%= city.description %></p>
+                            <ul class="feature-list" style="list-style: none; padding: 0;">
+                                <% city.features.forEach(feature => { %>
+                                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">
+                                    <i class="fas fa-check-circle" style="color: #d32f2f; margin-right: 10px;"></i>
+                                    <%= feature %>
+                                </li>
+                                <% }); %>
+                            </ul>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-5" style="background-color: #f8f9fa;">
+            <div class="container">
+                <h2 class="text-center mb-5 service-title">What Our Mobile Patrol Clients Say</h2>
+                <div class="row">
+                    <% serviceData.testimonials.forEach(testimonial => { %>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="/img/<%= testimonial.image %>" alt="<%= testimonial.name %>, <%= testimonial.title %>" class="client-image" loading="lazy" width="80" height="80">
+                            <h4><%= testimonial.name %></h4>
+                            <p class="text-muted"><%= testimonial.title %></p>
+                            <div class="rating mb-3">
+                                <% for(let i = 0; i < testimonial.rating; i++) { %>
+                                <i class="fas fa-star" style="color: #ffd166;"></i>
+                                <% } %>
+                            </div>
+                            <p>"<%= testimonial.quote %>"</p>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQs Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-container" style="max-width: 900px; margin: 0 auto;">
+                    <% serviceData.faqs.forEach((faq, index) => { %>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-<%= index %>">
+                            <span><%= faq.question %></span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div id="faq-answer-<%= index %>" class="faq-answer" hidden>
+                            <p><%= faq.answer %></p>
                         </div>
                     </div>
                     <% }); %>
@@ -210,6 +245,7 @@
 
     <!-- Mobile Patrol Specific JavaScript -->
     <script>
+        // Enhanced tracking for mobile patrol
         function trackPatrolRequest() {
             gtag('event', 'generate_lead', {
                 'event_category': 'Mobile Patrol Services',
@@ -217,17 +253,34 @@
                 'value': 1,
                 'custom_parameter_1': 'mobile_patrol'
             });
-
+            
             fbq('track', 'Lead', {
                 content_name: 'Mobile Patrol Request',
                 content_category: 'Mobile Patrol Services',
                 value: <%= serviceData.priceRange.low %>,
                 currency: 'USD'
             });
-
-            window.location.href = '/get-quote';
+            
+            window.location.href = '/contact';
         }
 
+        // FAQ Accordion Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqButtons = document.querySelectorAll('.faq-question');
+            
+            faqButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    answer.hidden = isExpanded;
+                    this.classList.toggle('active');
+                });
+            });
+        });
+
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -241,6 +294,7 @@
             });
         });
 
+        // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
@@ -256,13 +310,15 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.apartment-card, .service-card, .process-step, .benefit-item').forEach(el => {
+        // Observe elements for animation
+        document.querySelectorAll('.apartment-card, .service-card, .city-patrol-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.6s ease';
             observer.observe(el);
         });
 
+        // Counter animation for statistics
         function animateCounter(element, target) {
             let current = 0;
             const increment = target / 100;
@@ -286,6 +342,7 @@
             }, 20);
         }
 
+        // Trigger counter animation when stats come into view
         const statObserver = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
