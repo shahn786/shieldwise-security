@@ -1,21 +1,34 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="https://schema.org/Service">
 <head>
-    <%- include('../partials/meta-tags-base') %>
-    <title>Mobile Patrol Security Services California $45/hr | GPS-Tracked 24/7 | ShieldWise</title>
-    <meta name="description" content="#1 Mobile Patrol Security in California. BSIS-licensed officers, GPS-tracked vehicles, 5-15 min response. Serving Riverside, San Bernardino, Orange County. Starting $45/hr. Call (800) 744-3531">
-    <meta name="keywords" content="mobile patrol security California, GPS tracked security patrol, 24/7 patrol services Riverside, cheapest mobile patrol San Bernardino, alarm response security, property patrol Orange County, BSIS licensed patrol officers, commercial patrol security, residential community patrol">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- AI Search Engine Optimization -->
-    <meta name="ai-search-intent" content="Find professional mobile patrol security services in Southern California with GPS tracking, alarm response, and 24/7 coverage">
-    <meta name="ai-search-answer" content="ShieldWise Security provides mobile patrol security across California with BSIS-licensed officers, GPS-tracked vehicles, and 5-15 minute alarm response times. Services include random patrols, property inspections, alarm response, and digital reporting starting at $45/hour.">
-    <meta name="ai-context" content="Mobile patrol security involves licensed officers conducting vehicle-based property patrols to deter crime, respond to alarms, and monitor large areas cost-effectively. Professional mobile patrols reduce property crime by 60% and cost 30-40% less than stationary guards.">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
-    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large">
-    
+    <!-- Primary SEO Meta Tags -->
+    <title>Mobile Patrol Security Services California | 24/7 GPS-Tracked Patrols | ShieldWise</title>
+    <meta name="description" content="Best mobile patrol security services in Southern California. BSIS-licensed officers, GPS-tracked vehicles, 5-15 min alarm response. Serving Riverside, San Bernardino, Orange County. Starting $45/hr. Free quote.">
+    <meta name="keywords" content="mobile patrol security, GPS tracked security patrol, 24/7 patrol services, alarm response security, property patrol, BSIS licensed patrol officers, commercial patrol security, residential community patrol, cheapest mobile patrol California">
+    <meta name="author" content="ShieldWise Security">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
     <link rel="canonical" href="https://shieldwisesecurity.com/services/patrol/">
+    
+    <!-- Geo Targeting -->
+    <meta name="geo.region" content="US-CA">
+    <meta name="geo.placename" content="Southern California">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shieldwisesecurity.com/services/patrol/">
+    <meta property="og:title" content="Mobile Patrol Security Services California | 24/7 GPS-Tracked Patrols">
+    <meta property="og:description" content="Professional mobile patrol security in Southern California. BSIS-licensed, GPS-tracked, 5-15 min response time. Starting $45/hr.">
+    <meta property="og:image" content="https://shieldwisesecurity.com/img/mobilesecurity.webp">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://shieldwisesecurity.com/services/patrol/">
+    <meta property="twitter:title" content="Mobile Patrol Security Services California">
+    <meta property="twitter:description" content="24/7 GPS-tracked mobile patrol security in Southern California. BSIS-licensed officers. Starting $45/hr.">
+    <meta property="twitter:image" content="https://shieldwisesecurity.com/img/mobilesecurity.webp">
     
     <%- include('../partials/performance-optimization') %>
     <%- include('../partials/mobile-app-meta') %>
@@ -23,66 +36,688 @@
     <!-- CSS Resources -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="/css/apartment-security.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     
     <!-- Enhanced Page Styling -->
     <style>
+        :root {
+            --primary-red: #d32f2f;
+            --dark-blue: #152f45;
+            --light-gray: #f8f9fa;
+            --border-color: #e0e0e0;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Hero Section */
         .hero-section {
-            background: linear-gradient(135deg, rgba(21, 47, 69, 0.95), rgba(211, 47, 47, 0.85)), url('/img/mobilesecurity.webp');
+            background: linear-gradient(135deg, rgba(21, 47, 69, 0.92), rgba(211, 47, 47, 0.88)), url('/img/mobilesecurity.webp');
             background-size: cover;
             background-position: center;
-            padding: 100px 0;
+            background-attachment: fixed;
+            padding: 120px 0 100px;
             color: white;
-            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></svg>');
+            animation: scroll 20s linear infinite;
+        }
+        
+        @keyframes scroll {
+            from { background-position: 0 0; }
+            to { background-position: 100px 100px; }
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px 25px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .trust-badge i {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            color: #ffd700;
+        }
+        
+        /* CTA Buttons */
+        .btn-primary-custom {
+            background: linear-gradient(135deg, var(--primary-red), #b71c1c);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(211, 47, 47, 0.4);
+            border: none;
+            font-size: 1.1rem;
+        }
+        
+        .btn-primary-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(211, 47, 47, 0.5);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .btn-outline-custom {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-custom:hover {
+            background: white;
+            color: var(--dark-blue);
+            text-decoration: none;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: white;
+            padding: 60px 0;
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            padding: 50px 40px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-red);
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        /* Section Titles */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+        
+        /* Feature Cards */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+        }
+        
+        .feature-description {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* Process Steps */
+        .process-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 80px 0;
+        }
+        
         .process-step {
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 20px;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
             height: 100%;
-            transition: transform 0.3s ease;
+            position: relative;
         }
+        
         .process-step:hover {
             transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         }
+        
         .process-number {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #d32f2f, #b71c1c);
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-red), #b71c1c);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            font-weight: bold;
-            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 0 auto 25px;
+            box-shadow: 0 8px 20px rgba(211, 47, 47, 0.3);
         }
-        .feature-card:hover, .industry-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+        
+        .process-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
         }
-        .city-patrol-card:hover {
+        
+        .process-description {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* Pricing Table */
+        .pricing-section {
+            background: white;
+            padding: 80px 0;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid var(--border-color);
+            height: 100%;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            border-color: var(--primary-red);
+        }
+        
+        .pricing-card.featured {
+            border: 3px solid var(--primary-red);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--primary-red);
+            color: white;
+            padding: 5px 40px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            transform: rotate(45deg);
+        }
+        
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .pricing-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+        }
+        
+        .pricing-price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary-red);
+            margin-bottom: 10px;
+        }
+        
+        .pricing-price span {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #666;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+        }
+        
+        .pricing-features li {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: start;
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-features i {
+            color: var(--primary-red);
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        
+        /* Testimonials */
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            height: 100%;
+            position: relative;
+        }
+        
+        .testimonial-quote {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .testimonial-author-info h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-author-info p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+        
+        .testimonial-rating {
+            color: #ffd700;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Cities Coverage */
+        .city-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-red);
+            height: 100%;
+        }
+        
+        .city-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .city-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+        }
+        
+        .city-county {
+            color: var(--primary-red);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .city-features {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        
+        .city-features li {
+            padding: 8px 0;
+            color: #666;
+            display: flex;
+            align-items: center;
+        }
+        
+        .city-features i {
+            color: var(--primary-red);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+        
+        /* Sticky CTA Bar */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, var(--dark-blue), #1a3a52);
+            padding: 20px 0;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .sticky-cta.visible {
+            transform: translateY(0);
+        }
+        
+        .sticky-cta-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .sticky-cta-text h3 {
+            color: white;
+            margin: 0 0 5px 0;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        
+        .sticky-cta-text p {
+            color: rgba(255,255,255,0.8);
+            margin: 0;
+        }
+        
+        .sticky-cta-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .sticky-cta-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .sticky-cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .btn-primary-custom, .btn-outline-custom {
+                width: 100%;
+            }
         }
     </style>
     
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Enhanced Schema Markup with OfferCatalog -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Mobile Patrol Security Services",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "ShieldWise Security",
+        "image": "https://shieldwisesecurity.com/img/mobilesecurity.webp",
+        "telephone": "+1-714-716-7430",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Riverside",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        },
+        "areaServed": [
+          {"@type": "City", "name": "Riverside"},
+          {"@type": "City", "name": "San Bernardino"},
+          {"@type": "City", "name": "Corona"},
+          {"@type": "City", "name": "Moreno Valley"},
+          {"@type": "City", "name": "Fontana"},
+          {"@type": "City", "name": "Ontario"}
+        ]
+      },
+      "description": "Professional mobile patrol security services in Southern California with GPS-tracked vehicles, BSIS-licensed officers, and 24/7 alarm response coverage.",
+      "serviceType": "Mobile Security Patrol",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Mobile Patrol Security Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Random Mobile Patrols",
+              "description": "Unpredictable patrol patterns to maximize deterrence across your property"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "45",
+              "priceCurrency": "USD",
+              "unitText": "HOUR"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Alarm Response Services",
+              "description": "Immediate response to alarm activations with professional assessment"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Property Inspections",
+              "description": "Comprehensive property checks including doors, windows, and lighting"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "GPS-Tracked Vehicle Patrols",
+              "description": "Real-time GPS verification of all patrol routes and checkpoints"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "24/7 Mobile Security Coverage",
+              "description": "Round-the-clock mobile patrol services with customizable schedules"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Commercial Property Patrol",
+              "description": "Mobile security for office complexes, shopping centers, and industrial sites"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Residential Community Patrol",
+              "description": "HOA and gated community patrol services with neighborhood security"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Construction Site Patrol",
+              "description": "Mobile security for construction sites and vacant properties"
+            }
+          }
+        ]
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "45",
+        "highPrice": "85",
+        "priceCurrency": "USD",
+        "unitText": "HOUR"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "127",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
+    
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        <% serviceData.faqs.forEach((faq, index) => { %>
+        {
+          "@type": "Question",
+          "name": "<%= faq.question %>",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "<%= faq.answer %>"
+          }
+        }<%= index < serviceData.faqs.length - 1 ? ',' : '' %>
+        <% }); %>
+      ]
+    }
+    </script>
     
     <%- include('../partials/schema-primary') %>
-    <%- include('../partials/schema-service', { service: serviceData }) %>
-    <%- include('../partials/schema-faq-service', { faqs: serviceData.faqs }) %>
-    <%- include('../partials/tracking-scripts', {
-        serviceType: serviceData.serviceType,
-        priceRange: serviceData.priceRange
-    }) %>
+    <%- include('../partials/tracking-scripts-deferred') %>
 </head>
 <body id="top">
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -100,52 +735,75 @@
     <main id="main-content">
         <!-- Hero Section -->
         <section class="hero-section">
-            <div class="container">
-                <div class="hero-badge speakable-intro">Mobile Patrol Specialists</div>
-                <h1 class="hero-title speakable-intro"><%= serviceData.serviceTitle %></h1>
-                <p class="hero-subtitle speakable-intro"><%= serviceData.serviceDescription %></p>
-                <div class="response-guarantee speakable-contact">
-                    <i class="fas fa-clock"></i> 24/7 Mobile Patrol Coverage - Cheapest Rates Guaranteed
+            <div class="container text-center">
+                <div class="hero-badge">
+                    <i class="fas fa-shield-alt"></i> California's Premier Mobile Patrol Security
                 </div>
-                <div class="hero-cta" style="margin-top: 30px;">
-                    <a href="/get-quote" class="btn btn-lg" style="background-color: #d32f2f; color: white; padding: 15px 40px; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block; margin-right: 15px;">
+                <h1 class="hero-title">Best & Cheapest Mobile Patrol Security in Southern California</h1>
+                <p class="hero-subtitle">
+                    BSIS-licensed patrol officers | GPS-tracked vehicles | 5-15 minute alarm response | 24/7 coverage across Riverside, San Bernardino & Orange County
+                </p>
+                
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <i class="fas fa-certificate"></i>
+                        <strong>BSIS Licensed & Insured</strong>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-star"></i>
+                        <strong>$2M Liability Coverage</strong>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-clock"></i>
+                        <strong>24/7 Rapid Response</strong>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 40px;">
+                    <a href="/get-quote" class="btn-primary-custom mr-3 mb-3">
                         <i class="fas fa-shield-alt"></i> Get Free Quote
                     </a>
-                    <a href="tel:+18007443531" class="btn btn-lg" style="background-color: transparent; color: white; border: 2px solid white; padding: 15px 40px; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block;">
-                        <i class="fas fa-phone"></i> Call Now: (800) 744-3531
+                    <a href="tel:+17147167430" class="btn-outline-custom mb-3">
+                        <i class="fas fa-phone"></i> Call: (714) 716-7430
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Premier Overview Section -->
-        <div style="background-color:#ffffff; padding:60px; border-radius:14px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:#1c1c1c; max-width:960px; margin:60px auto; box-shadow:0 10px 30px rgba(211,47,47,0.1); border:1px solid #e0e0e0;">
-            <h2 style="font-size:38px; margin-bottom:28px; color:#152f45;">
-                Best & Cheapest Mobile Patrol Security in Southern California
-            </h2>
-            <p class="speakable-services" style="font-size:20px; line-height:1.8; margin-bottom:0;">
-                <strong>ShieldWise Security</strong> provides Southern California's most affordable mobile patrol security services with <strong style="color:#d32f2f;">BSIS-licensed patrol officers</strong>, <strong style="color:#d32f2f;">GPS-tracked patrol vehicles</strong>, <strong style="color:#d32f2f;">24/7 random patrol coverage</strong>, and <strong style="color:#d32f2f;">fastest alarm response times</strong> in Riverside, San Bernardino, and Orange County.
-            </p>
-            <div class="speakable-contact" style="margin-top:20px; font-size:18px;">
-                <strong>Emergency Hotline:</strong> +1-800-744-3531 |
-                <strong>Email:</strong> patrol@shieldwisesecurity.com
-            </div>
-        </div>
-
-        <!-- Mobile Patrol Features Section -->
-        <section id="features" class="apartment-features-section">
+        <!-- Stats Section -->
+        <section class="stats-section">
             <div class="container">
-                <h2 class="section-title">ShieldWise Mobile Patrol Features</h2>
-                <p class="section-subtitle">Comprehensive patrol coverage with industry-leading technology</p>
-                
-                <div class="apartment-grid">
-                    <% serviceData.features.forEach(feature => { %>
-                    <div class="apartment-card">
-                        <div class="apartment-icon">
-                            <i class="<%= feature.icon %>" aria-hidden="true"></i>
+                <div class="stats-container">
+                    <div class="row">
+                        <% serviceData.statistics.forEach(stat => { %>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="stat-item">
+                                <span class="stat-number"><%= stat.number %></span>
+                                <span class="stat-label"><%= stat.label %></span>
+                            </div>
                         </div>
-                        <h3 class="apartment-title"><%= feature.title %></h3>
-                        <p class="apartment-description"><%= feature.description %></p>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features Section -->
+        <section style="background: white; padding: 80px 0;">
+            <div class="container">
+                <h2 class="section-title">Why Choose Our Mobile Patrol Security?</h2>
+                <p class="section-subtitle">
+                    Comprehensive mobile security coverage with industry-leading technology and the best rates in Southern California
+                </p>
+                
+                <div class="feature-grid">
+                    <% serviceData.features.forEach(feature => { %>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="<%= feature.icon %>"></i>
+                        </div>
+                        <h3 class="feature-title"><%= feature.title %></h3>
+                        <p class="feature-description"><%= feature.description %></p>
                     </div>
                     <% }); %>
                 </div>
@@ -153,19 +811,20 @@
         </section>
 
         <!-- Process Steps Section -->
-        <section class="py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <section class="process-section">
             <div class="container">
                 <h2 class="section-title">How Our Mobile Patrol Service Works</h2>
-                <p class="text-center mb-5" style="font-size: 1.1rem; max-width: 800px; margin: 0 auto 3rem;">
-                    Getting started with professional mobile patrol security is simple. Here's our proven 4-step process:
+                <p class="section-subtitle">
+                    Getting started with professional mobile patrol security is simple and fast
                 </p>
+                
                 <div class="row">
                     <% serviceData.processSteps.forEach(step => { %>
-                    <div class="col-md-3">
+                    <div class="col-lg-3 col-md-6 mb-4">
                         <div class="process-step">
                             <div class="process-number"><%= step.number %></div>
-                            <h3 style="font-size: 1.2rem; margin: 15px 0;"><%= step.title %></h3>
-                            <p style="color: #666;"><%= step.description %></p>
+                            <h3 class="process-title"><%= step.title %></h3>
+                            <p class="process-description"><%= step.description %></p>
                         </div>
                     </div>
                     <% }); %>
@@ -173,20 +832,135 @@
             </div>
         </section>
 
-        <!-- Why Choose Us Section -->
-        <section class="py-5" style="background-color: #fff;">
+        <!-- Pricing Section -->
+        <section class="pricing-section">
             <div class="container">
-                <h2 class="section-title">Why Choose ShieldWise Mobile Patrol?</h2>
-                <p class="text-center mb-5" style="font-size: 1.1rem; max-width: 800px; margin: 0 auto 3rem;">
-                    We're not just the most affordable option - we're the most comprehensive mobile patrol service in Southern California
+                <h2 class="section-title">Transparent, Competitive Pricing</h2>
+                <p class="section-subtitle">
+                    No hidden fees. No long-term contracts. Just honest, affordable mobile patrol security.
                 </p>
+                
                 <div class="row">
-                    <% serviceData.whyChooseUs.forEach(reason => { %>
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="feature-card" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; transition: transform 0.3s ease;">
-                            <i class="<%= reason.icon %>" style="font-size: 3rem; color: #d32f2f; margin-bottom: 20px;"></i>
-                            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #152f45;"><%= reason.title %></h3>
-                            <p style="color: #555; line-height: 1.7;"><%= reason.description %></p>
+                        <div class="pricing-card">
+                            <div class="pricing-header">
+                                <h3 class="pricing-title">Unarmed Patrol</h3>
+                                <div class="pricing-price">
+                                    $45<span>/hour</span>
+                                </div>
+                                <p style="color: #666;">Most Popular Option</p>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> BSIS Licensed Officers</li>
+                                <li><i class="fas fa-check-circle"></i> GPS-Tracked Vehicles</li>
+                                <li><i class="fas fa-check-circle"></i> Random Patrol Patterns</li>
+                                <li><i class="fas fa-check-circle"></i> Property Inspections</li>
+                                <li><i class="fas fa-check-circle"></i> Digital Reporting</li>
+                                <li><i class="fas fa-check-circle"></i> Alarm Response</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7 Dispatch Support</li>
+                            </ul>
+                            <a href="/get-quote" class="btn-primary-custom" style="width: 100%; text-align: center;">Get Started</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="pricing-card featured">
+                            <div class="pricing-header">
+                                <h3 class="pricing-title">Armed Patrol</h3>
+                                <div class="pricing-price">
+                                    $65<span>/hour</span>
+                                </div>
+                                <p style="color: #666;">High-Risk Areas</p>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> Armed BSIS Officers</li>
+                                <li><i class="fas fa-check-circle"></i> Enhanced Deterrence</li>
+                                <li><i class="fas fa-check-circle"></i> GPS-Tracked Vehicles</li>
+                                <li><i class="fas fa-check-circle"></i> Priority Response</li>
+                                <li><i class="fas fa-check-circle"></i> Advanced Training</li>
+                                <li><i class="fas fa-check-circle"></i> Incident Management</li>
+                                <li><i class="fas fa-check-circle"></i> Real-Time Updates</li>
+                            </ul>
+                            <a href="/get-quote" class="btn-primary-custom" style="width: 100%; text-align: center;">Get Started</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-12 mb-4">
+                        <div class="pricing-card">
+                            <div class="pricing-header">
+                                <h3 class="pricing-title">Multi-Site Patrol</h3>
+                                <div class="pricing-price" style="font-size: 2.5rem;">
+                                    Custom
+                                </div>
+                                <p style="color: #666;">Volume Discounts Available</p>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> Multiple Locations</li>
+                                <li><i class="fas fa-check-circle"></i> Optimized Routes</li>
+                                <li><i class="fas fa-check-circle"></i> Dedicated Account Manager</li>
+                                <li><i class="fas fa-check-circle"></i> Custom Scheduling</li>
+                                <li><i class="fas fa-check-circle"></i> Bulk Pricing</li>
+                                <li><i class="fas fa-check-circle"></i> Integrated Reporting</li>
+                                <li><i class="fas fa-check-circle"></i> Priority Support</li>
+                            </ul>
+                            <a href="/get-quote" class="btn-primary-custom" style="width: 100%; text-align: center;">Get Custom Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section style="background: var(--light-gray); padding: 80px 0;">
+            <div class="container">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-subtitle">
+                    Trusted by 500+ businesses across Southern California
+                </p>
+                
+                <div class="row">
+                    <% serviceData.testimonials.forEach(testimonial => { %>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <% for(let i = 0; i < testimonial.rating; i++) { %>
+                                <i class="fas fa-star"></i>
+                                <% } %>
+                            </div>
+                            <p class="testimonial-quote">"<%= testimonial.quote %>"</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-author-info">
+                                    <h4><%= testimonial.name %></h4>
+                                    <p><%= testimonial.title %></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Areas Section -->
+        <section style="background: white; padding: 80px 0;">
+            <div class="container">
+                <h2 class="section-title">Southern California Coverage Areas</h2>
+                <p class="section-subtitle">
+                    Serving Riverside, San Bernardino, Orange County, and surrounding cities with fastest response times
+                </p>
+                
+                <div class="row">
+                    <% serviceData.southernCaliforniaCities.forEach(city => { %>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="city-card">
+                            <h3 class="city-name"><%= city.name %></h3>
+                            <p class="city-county"><%= city.county %></p>
+                            <p style="color: #666; margin-bottom: 20px;"><%= city.description %></p>
+                            <ul class="city-features">
+                                <% city.features.forEach(feature => { %>
+                                <li><i class="fas fa-map-marker-alt"></i> <%= feature %></li>
+                                <% }); %>
+                            </ul>
                         </div>
                     </div>
                     <% }); %>
@@ -195,23 +969,26 @@
         </section>
 
         <!-- Industry Solutions Section -->
-        <section class="py-5" style="background-color: #f8f9fa;">
+        <section style="background: var(--light-gray); padding: 80px 0;">
             <div class="container">
                 <h2 class="section-title">Specialized Mobile Patrol for Every Industry</h2>
-                <p class="text-center mb-5" style="font-size: 1.1rem; max-width: 800px; margin: 0 auto 3rem;">
-                    Our mobile patrol services are customized to meet the unique security needs of different property types
+                <p class="section-subtitle">
+                    Customized security solutions for different property types and industries
                 </p>
+                
                 <div class="row">
                     <% serviceData.industrySolutions.forEach(solution => { %>
                     <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="industry-card" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; text-align: center;">
-                            <i class="<%= solution.icon %>" style="font-size: 3.5rem; color: #d32f2f; margin-bottom: 20px; display: block;"></i>
-                            <h3 style="font-size: 1.3rem; margin-bottom: 10px; color: #152f45;"><%= solution.title %></h3>
-                            <p style="color: #777; margin-bottom: 20px; font-size: 0.95rem;"><%= solution.description %></p>
-                            <ul class="feature-list" style="text-align: left; list-style: none; padding: 0;">
+                        <div class="feature-card" style="text-align: center;">
+                            <div class="feature-icon">
+                                <i class="<%= solution.icon %>"></i>
+                            </div>
+                            <h3 class="feature-title"><%= solution.title %></h3>
+                            <p style="color: #666; margin-bottom: 25px;"><%= solution.description %></p>
+                            <ul style="list-style: none; padding: 0; text-align: left;">
                                 <% solution.benefits.forEach(benefit => { %>
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">
-                                    <i class="fas fa-check" style="color: #d32f2f; margin-right: 10px;"></i>
+                                <li style="padding: 10px 0; border-bottom: 1px solid var(--border-color);">
+                                    <i class="fas fa-check" style="color: var(--primary-red); margin-right: 10px;"></i>
                                     <%= benefit %>
                                 </li>
                                 <% }); %>
@@ -223,160 +1000,23 @@
             </div>
         </section>
 
-        <!-- Services Overview -->
-        <section class="py-5" style="background-color: #fff;">
+        <!-- Why Choose Us Section -->
+        <section style="background: white; padding: 80px 0;">
             <div class="container">
-                <h2 class="section-title">Comprehensive Mobile Patrol Services</h2>
-                <div class="row">
-                    <% serviceData.serviceOfferings.forEach(offering => { %>
-
-
-        <!-- AI-Optimized Content Section for Search Engines -->
-        <section class="py-5" style="background-color: #fff;">
-            <div class="container">
-                <h2 class="section-title">Complete Mobile Patrol Security Guide</h2>
-                
-                <!-- What is Mobile Patrol Security -->
-                <div class="content-block" style="max-width: 900px; margin: 0 auto 40px;">
-                    <h3 style="font-size: 1.8rem; color: #152f45; margin-bottom: 20px;">What is Mobile Patrol Security?</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: #333; margin-bottom: 20px;">
-                        Mobile patrol security involves licensed security officers conducting regular, random, or scheduled patrols of your property using marked security vehicles. Unlike stationary guards, mobile patrols cover larger areas, provide visible deterrence, and respond rapidly to alarms and incidents. In California, all mobile patrol officers must hold valid BSIS (Bureau of Security and Investigative Services) licenses.
-                    </p>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: #333;">
-                        <strong>Key Benefits:</strong> Mobile patrol security is 30-40% more cost-effective than stationary guards for large properties, provides visible deterrence that reduces crime by up to 60%, and offers flexible scheduling that adapts to your changing security needs. ShieldWise Security combines GPS-tracked vehicles, real-time reporting, and BSIS-licensed officers to deliver California's most reliable mobile patrol service.
-                    </p>
-                </div>
-
-                <!-- How Mobile Patrol Works -->
-                <div class="content-block" style="max-width: 900px; margin: 0 auto 40px;">
-                    <h3 style="font-size: 1.8rem; color: #152f45; margin-bottom: 20px;">How Does Mobile Patrol Security Work in California?</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: #333; margin-bottom: 20px;">
-                        Professional mobile patrol security follows a systematic approach: Our BSIS-licensed officers conduct perimeter inspections, check doors and windows, verify lighting and alarms, monitor parking areas, document incidents with photos, and provide timestamped digital reports. GPS tracking ensures every checkpoint is verified, and our 24/7 dispatch center coordinates immediate response to emergencies.
-                    </p>
-                    <ul style="font-size: 1.05rem; line-height: 2; color: #333; margin-bottom: 20px;">
-                        <li><strong>Random Patrol Pattern:</strong> Unpredictable visit times prevent criminals from identifying patrol schedules</li>
-                        <li><strong>GPS Verification:</strong> Real-time tracking confirms officers complete all designated checkpoints</li>
-                        <li><strong>Incident Documentation:</strong> Photos, videos, and detailed reports for every security concern</li>
-                        <li><strong>Alarm Response:</strong> Average 5-15 minute response time to alarm activations across Riverside and San Bernardino counties</li>
-                    </ul>
-                </div>
-
-                <!-- Cost and Pricing -->
-                <div class="content-block" style="max-width: 900px; margin: 0 auto 40px;">
-                    <h3 style="font-size: 1.8rem; color: #152f45; margin-bottom: 20px;">Mobile Patrol Security Costs in Southern California</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: #333; margin-bottom: 20px;">
-                        Mobile patrol security in California typically costs between $45-$85 per hour depending on patrol frequency, property size, and service level. ShieldWise Security offers the most competitive rates in Riverside, San Bernardino, and Orange County starting at $45/hour with no hidden fees or long-term contracts required.
-                    </p>
-                    <div class="pricing-comparison" style="background: #f8f9fa; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
-                        <h4 style="margin-bottom: 15px; color: #152f45;">Typical Pricing Structure:</h4>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="padding: 10px 0; border-bottom: 1px solid #ddd;"><strong>Unarmed Mobile Patrol:</strong> $45-$55/hour (most common)</li>
-                            <li style="padding: 10px 0; border-bottom: 1px solid #ddd;"><strong>Armed Mobile Patrol:</strong> $65-$85/hour (high-risk areas)</li>
-                            <li style="padding: 10px 0; border-bottom: 1px solid #ddd;"><strong>Multi-Site Patrol:</strong> Custom pricing with volume discounts</li>
-                            <li style="padding: 10px 0;"><strong>Emergency Response:</strong> Included with patrol contracts</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Best Practices -->
-                <div class="content-block" style="max-width: 900px; margin: 0 auto;">
-                    <h3 style="font-size: 1.8rem; color: #152f45; margin-bottom: 20px;">Best Practices for Mobile Patrol Security</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: #333; margin-bottom: 20px;">
-                        Maximize your mobile patrol security investment by implementing these proven strategies: Use random patrol schedules rather than fixed times to prevent predictability, ensure all patrol vehicles are clearly marked for visible deterrence, require GPS-verified checkpoints at critical locations, maintain well-lit parking lots and entrances, install security cameras at main access points, and review patrol reports weekly to identify patterns or concerns.
-                    </p>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: #333;">
-                        According to California security industry studies, properties with regular mobile patrols experience 60% fewer break-ins, 45% less vandalism, and 70% faster emergency response times compared to unprotected properties. ShieldWise Security's combination of experienced officers, advanced technology, and comprehensive reporting makes us the top-rated mobile patrol provider in Southern California.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-
-                    <div class="col-md-4">
-                        <div class="service-card">
-                            <i class="<%= offering.icon %> service-icon" aria-hidden="true"></i>
-                            <h3 class="service-title"><%= offering.title %></h3>
-                            <ul class="feature-list">
-                                <% offering.features.forEach(feature => { %>
-                                <li><%= feature %></li>
-                                <% }); %>
-                            </ul>
-                        </div>
-                    </div>
-                    <% }); %>
-                </div>
-            </div>
-        </section>
-
-        <!-- Stats Section -->
-        <section class="stats-section">
-            <div class="container">
-                <div class="row">
-                    <% serviceData.statistics.forEach(stat => { %>
-                    <div class="col-md-3">
-                        <div class="stat-card">
-                            <div class="stat-number"><%= stat.number %></div>
-                            <div class="stat-label"><%= stat.label %></div>
-                        </div>
-                    </div>
-                    <% }); %>
-                </div>
-            </div>
-        </section>
-
-        <!-- Southern California Cities Coverage -->
-        <section class="py-5">
-            <div class="container">
-                <h2 class="section-title">Best & Cheapest Mobile Patrol in Southern California</h2>
-                <p class="text-center mb-5" style="font-size: 1.1rem; max-width: 800px; margin: 0 auto 3rem;">
-                    ShieldWise Security guarantees the <strong>cheapest mobile patrol rates</strong> in Southern California without compromising quality. 
-                    Our BSIS-licensed patrol officers provide the <strong>best value</strong> for businesses and properties throughout Riverside County, 
-                    San Bernardino County, and Orange County.
+                <h2 class="section-title">The ShieldWise Difference</h2>
+                <p class="section-subtitle">
+                    Not just the cheapest - we're the most comprehensive mobile patrol service in Southern California
                 </p>
+                
                 <div class="row">
-                    <% serviceData.southernCaliforniaCities.forEach(city => { %>
-                    <div class="col-md-6 mb-4">
-                        <div class="city-patrol-card" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%;">
-                            <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                                <i class="fas fa-map-marker-alt" style="color: #d32f2f; font-size: 24px; margin-right: 15px;"></i>
-                                <h3 style="margin: 0; font-size: 1.5rem; color: #152f45;"><%= city.name %>, <%= city.county %></h3>
+                    <% serviceData.whyChooseUs.forEach(reason => { %>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="<%= reason.icon %>"></i>
                             </div>
-                            <% if (city.name === 'Riverside') { %>
-                            <span class="badge badge-danger mb-3" style="font-size: 0.9rem;">Best Value</span>
-                            <% } %>
-                            <p style="margin-bottom: 20px; color: #555;"><%= city.description %></p>
-                            <ul class="feature-list" style="list-style: none; padding: 0;">
-                                <% city.features.forEach(feature => { %>
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">
-                                    <i class="fas fa-check-circle" style="color: #d32f2f; margin-right: 10px;"></i>
-                                    <%= feature %>
-                                </li>
-                                <% }); %>
-                            </ul>
-                        </div>
-                    </div>
-                    <% }); %>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials -->
-        <section class="py-5" style="background-color: #f8f9fa;">
-            <div class="container">
-                <h2 class="text-center mb-5 service-title">What Our Mobile Patrol Clients Say</h2>
-                <div class="row">
-                    <% serviceData.testimonials.forEach(testimonial => { %>
-                    <div class="col-md-4">
-                        <div class="testimonial-card">
-                            <img src="/img/<%= testimonial.image %>" alt="<%= testimonial.name %>, <%= testimonial.title %>" class="client-image" loading="lazy" width="80" height="80">
-                            <h4><%= testimonial.name %></h4>
-                            <p class="text-muted"><%= testimonial.title %></p>
-                            <div class="rating mb-3">
-                                <% for(let i = 0; i < testimonial.rating; i++) { %>
-                                <i class="fas fa-star" style="color: #ffd166;"></i>
-                                <% } %>
-                            </div>
-                            <p>"<%= testimonial.quote %>"</p>
+                            <h3 class="feature-title"><%= reason.title %></h3>
+                            <p class="feature-description"><%= reason.description %></p>
                         </div>
                     </div>
                     <% }); %>
@@ -385,188 +1025,107 @@
         </section>
 
         <!-- FAQs Section -->
-        <section class="py-5">
+        <section style="background: var(--light-gray); padding: 80px 0;">
             <div class="container">
                 <h2 class="section-title">Frequently Asked Questions</h2>
-                <div class="faq-container" style="max-width: 900px; margin: 0 auto;">
-                    <% serviceData.faqs.forEach((faq, index) => { %>
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-<%= index %>">
-                            <span><%= faq.question %></span>
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                        <div id="faq-answer-<%= index %>" class="faq-answer" hidden>
-                            <p><%= faq.answer %></p>
+                <p class="section-subtitle">
+                    Everything you need to know about our mobile patrol security services
+                </p>
+                
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="accordion" id="faqAccordion">
+                            <% serviceData.faqs.forEach((faq, index) => { %>
+                            <div class="card" style="border: 1px solid var(--border-color); margin-bottom: 15px; border-radius: 10px;">
+                                <div class="card-header" style="background: white; border-radius: 10px 10px 0 0;" id="heading<%= index %>">
+                                    <h3 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse<%= index %>" aria-expanded="<%= index === 0 ? 'true' : 'false' %>" aria-controls="collapse<%= index %>" style="text-decoration: none; color: var(--dark-blue); font-weight: 600; font-size: 1.1rem; padding: 20px;">
+                                            <i class="fas fa-question-circle" style="color: var(--primary-red); margin-right: 15px;"></i>
+                                            <%= faq.question %>
+                                        </button>
+                                    </h3>
+                                </div>
+
+                                <div id="collapse<%= index %>" class="collapse <%= index === 0 ? 'show' : '' %>" aria-labelledby="heading<%= index %>" data-parent="#faqAccordion">
+                                    <div class="card-body" style="padding: 25px; color: #666; line-height: 1.8;">
+                                        <%= faq.answer %>
+                                    </div>
+                                </div>
+                            </div>
+                            <% }); %>
                         </div>
                     </div>
-                    <% }); %>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="cta-section">
+        <!-- Final CTA Section -->
+        <section style="background: linear-gradient(135deg, var(--dark-blue), #1a3a52); padding: 100px 0; color: white; text-align: center;">
             <div class="container">
-                <h2 class="mb-4">Secure Your Property with ShieldWise Mobile Patrol</h2>
-                <p class="mb-4">Get the best value mobile patrol security in Southern California with our unbeatable rates and 24/7 coverage</p>
-                <button class="btn btn-custom" aria-label="Request mobile patrol security services" onclick="trackPatrolRequest()">
-                    <i class="fas fa-car"></i> Get Mobile Patrol Quote
-                </button>
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700; margin-bottom: 25px;">
+                    Ready to Secure Your Property?
+                </h2>
+                <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto 40px; opacity: 0.9;">
+                    Get a free security assessment and custom quote for mobile patrol services in Southern California
+                </p>
+                
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                    <a href="/get-quote" class="btn-primary-custom" style="font-size: 1.2rem;">
+                        <i class="fas fa-shield-alt"></i> Get Free Quote Now
+                    </a>
+                    <a href="tel:+17147167430" class="btn-outline-custom" style="font-size: 1.2rem;">
+                        <i class="fas fa-phone"></i> Call: (714) 716-7430
+                    </a>
+                </div>
+                
+                <p style="margin-top: 30px; opacity: 0.8;">
+                    <i class="fas fa-clock"></i> 24/7 Emergency Hotline Available
+                </p>
             </div>
         </section>
     </main>
 
+    <!-- Sticky CTA Bar -->
+    <div class="sticky-cta" id="stickyCTA">
+        <div class="sticky-cta-content">
+            <div class="sticky-cta-text">
+                <h3>Get Mobile Patrol Security Starting at $45/hr</h3>
+                <p>Free quote. No long-term contracts. 24/7 coverage.</p>
+            </div>
+            <div class="sticky-cta-buttons">
+                <a href="/get-quote" class="btn-primary-custom">Get Free Quote</a>
+                <a href="tel:+17147167430" class="btn-outline-custom" style="color: white; border-color: white;">Call Now</a>
+            </div>
+        </div>
+    </div>
+
     <%- include('../partials/Footer') %>
-
-    <!-- Structured Data for Voice Search -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": [
-                ".speakable-intro",
-                ".speakable-services", 
-                ".speakable-contact"
-            ]
-        },
-        "url": "https://shieldwisesecurity.com/services/patrol/"
-    }
-    </script>
-
-    <!-- Essential Scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" defer></script>
-
-    <!-- Mobile Patrol Specific JavaScript -->
+    
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script>
-        // Enhanced tracking for mobile patrol
-        function trackPatrolRequest() {
-            gtag('event', 'generate_lead', {
-                'event_category': 'Mobile Patrol Services',
-                'event_label': 'mobile_patrol',
-                'value': 1,
-                'custom_parameter_1': 'mobile_patrol'
-            });
-            
-            fbq('track', 'Lead', {
-                content_name: 'Mobile Patrol Request',
-                content_category: 'Mobile Patrol Services',
-                value: <%= serviceData.priceRange.low %>,
-                currency: 'USD'
-            });
-            
-            window.location.href = '/contact';
-        }
-
-        // FAQ Accordion Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const faqButtons = document.querySelectorAll('.faq-question');
-            
-            faqButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const answer = this.nextElementSibling;
-                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                    
-                    this.setAttribute('aria-expanded', !isExpanded);
-                    answer.hidden = isExpanded;
-                    this.classList.toggle('active');
-                });
-            });
+        // Sticky CTA Bar
+        window.addEventListener('scroll', () => {
+            const stickyCTA = document.getElementById('stickyCTA');
+            if (window.scrollY > 800) {
+                stickyCTA.classList.add('visible');
+            } else {
+                stickyCTA.classList.remove('visible');
+            }
         });
-
-        // Smooth scrolling for anchor links
+        
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                    entry.target.classList.add('animate-on-scroll');
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.querySelectorAll('.apartment-card, .service-card, .city-patrol-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
-        });
-
-        // Counter animation for statistics
-        function animateCounter(element, target) {
-            let current = 0;
-            const increment = target / 100;
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                const displayValue = Math.floor(current);
-                const originalText = element.textContent;
-                if (originalText.includes('+')) {
-                    element.textContent = displayValue + '+';
-                } else if (originalText.includes('%')) {
-                    element.textContent = displayValue + '%';
-                } else if (originalText.includes('/')) {
-                    element.textContent = originalText;
-                } else {
-                    element.textContent = displayValue;
-                }
-            }, 20);
-        }
-
-        // Trigger counter animation when stats come into view
-        const statObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-                    entry.target.classList.add('animated');
-                    const statNumber = entry.target.querySelector('.stat-number');
-                    const value = parseInt(statNumber.textContent.replace(/[^\d]/g, ''));
-                    if (value && value > 0) {
-                        animateCounter(statNumber, value);
-                    }
-                }
-            });
-        }, { threshold: 0.5 });
-
-        document.querySelectorAll('.stat-card').forEach(el => {
-            statObserver.observe(el);
         });
     </script>
-
-    <!-- Deferred Tracking Scripts -->
-    <%- include('../partials/tracking-scripts-deferred') %>
-
-    <!-- Back to Top Button -->
-    <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-
-    <!-- Back to Top Script -->
-    <script src="/JS/back-to-top.js" defer></script>
-    <link rel="stylesheet" href="/css/back-to.css">
 </body>
 </html>
