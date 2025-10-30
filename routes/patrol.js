@@ -173,6 +173,76 @@ router.get('/', (req, res) => {
             }
         ],
 
+        // Process Steps for visual workflow
+        processSteps: [
+            { number: '1', title: 'Contact Us', description: 'Call or fill out our online form for a free security assessment' },
+            { number: '2', title: 'Custom Plan', description: 'We design a patrol schedule tailored to your property needs' },
+            { number: '3', title: 'Deploy Officers', description: 'BSIS-licensed patrol officers begin protecting your property' },
+            { number: '4', title: '24/7 Coverage', description: 'Real-time monitoring, reports, and instant emergency response' }
+        ],
+
+        // Why Choose Us Section
+        whyChooseUs: [
+            {
+                icon: 'fas fa-certificate',
+                title: 'BSIS Licensed & Insured',
+                description: 'All patrol officers hold valid California BSIS licenses with $2M liability coverage'
+            },
+            {
+                icon: 'fas fa-map-marked-alt',
+                title: 'GPS-Tracked Vehicles',
+                description: 'Real-time vehicle tracking ensures accountability and verified patrol routes'
+            },
+            {
+                icon: 'fas fa-dollar-sign',
+                title: 'Best Value Pricing',
+                description: 'Competitive rates starting at $45/hour with no hidden fees or long-term contracts'
+            },
+            {
+                icon: 'fas fa-headset',
+                title: '24/7 Dispatch Support',
+                description: 'Round-the-clock dispatch center for emergencies and immediate assistance'
+            },
+            {
+                icon: 'fas fa-file-alt',
+                title: 'Detailed Reporting',
+                description: 'Digital patrol reports with photos, timestamps, and incident documentation'
+            },
+            {
+                icon: 'fas fa-award',
+                title: '15+ Years Experience',
+                description: 'Trusted by 500+ California businesses for reliable mobile security services'
+            }
+        ],
+
+        // Industry-Specific Solutions
+        industrySolutions: [
+            {
+                icon: 'fas fa-building',
+                title: 'Commercial Properties',
+                description: 'Office parks, warehouses, and business complexes',
+                benefits: ['Perimeter checks', 'Access control', 'Parking enforcement', 'After-hours security']
+            },
+            {
+                icon: 'fas fa-home',
+                title: 'Residential Communities',
+                description: 'HOAs, gated communities, and apartment complexes',
+                benefits: ['Neighborhood patrols', 'Guest verification', 'Common area monitoring', 'Incident response']
+            },
+            {
+                icon: 'fas fa-hard-hat',
+                title: 'Construction Sites',
+                description: 'Active job sites and development projects',
+                benefits: ['Equipment protection', 'Theft prevention', 'Trespasser deterrence', 'Safety compliance']
+            },
+            {
+                icon: 'fas fa-store',
+                title: 'Retail Centers',
+                description: 'Shopping malls, strip malls, and retail parks',
+                benefits: ['Parking lot security', 'Storefront checks', 'Vandalism prevention', 'Emergency response']
+            }
+        ],
+
         // FAQs for Schema
         faqs: [
             {
@@ -190,6 +260,22 @@ router.get('/', (req, res) => {
             {
                 question: 'What makes your patrol service the best in Southern California?',
                 answer: 'We combine the cheapest rates with the best quality service. Our patrol officers undergo rigorous training, all vehicles have GPS tracking and dashcams, you receive real-time digital reports, and we maintain the highest customer satisfaction ratings in Southern California. We are fully licensed, bonded, and carry $2M in insurance coverage.'
+            },
+            {
+                question: 'What does a typical mobile patrol route include?',
+                answer: 'Our comprehensive patrol routes include perimeter checks, door and window inspections, parking lot surveillance, lighting verification, alarm response, incident documentation with photos, and detailed timestamped reports accessible through our online portal.'
+            },
+            {
+                question: 'Can I customize my patrol schedule?',
+                answer: 'Yes! We offer flexible patrol schedules including random patrols (unpredictable times for maximum deterrence), scheduled patrols (specific times daily/weekly), or hybrid approaches. We work with you to design the perfect security plan for your property.'
+            },
+            {
+                question: 'Do you provide patrol services for multiple locations?',
+                answer: 'Absolutely. We specialize in multi-location patrol services for property management companies, retail chains, and businesses with multiple sites across Southern California. Volume discounts available.'
+            },
+            {
+                question: 'How are patrol reports delivered?',
+                answer: 'All patrol reports are delivered digitally through our secure online portal within 24 hours. Reports include GPS-verified timestamps, photos of checkpoints, incident documentation, and officer notes. Emergency situations are reported immediately by phone.'
             }
         ]
     };
