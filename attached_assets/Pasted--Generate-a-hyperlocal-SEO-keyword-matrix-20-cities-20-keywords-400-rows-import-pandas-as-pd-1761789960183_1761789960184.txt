@@ -1,0 +1,56 @@
+# Generate a hyperlocal SEO keyword matrix (20 cities × 20 keywords = 400 rows)
+import pandas as pd
+
+cities = [
+    "Los Angeles", "San Diego", "San Jose", "San Francisco", "Fresno",
+    "Sacramento", "Long Beach", "Oakland", "Bakersfield", "Anaheim",
+    "Santa Ana", "Riverside", "Stockton", "Irvine", "Chula Vista",
+    "Fremont", "San Bernardino", "Modesto", "Fontana", "Moreno Valley"
+]
+
+base_terms_and_patterns = [
+    ("security guard services", "Best licensed security guard services in {city} CA", "Quality/Transactional"),
+    ("hire security guard", "Hire a security guard near {city} CA", "Transactional/Immediate"),
+    ("armed security guards", "Armed security guards in {city} California", "Specific/Transactional"),
+    ("private security company", "Private security company {city} CA", "Transactional"),
+    ("event security services", "24 hour event security services in {city}", "Urgency/Specific"),
+    ("retail security guards", "Retail security guards {city} CA", "Specific/Commercial"),
+    ("construction site security", "Overnight construction site security {city} CA", "Urgency/Specific"),
+    ("mobile patrol security", "Licensed mobile patrol security services {city} CA", "Quality/Specific"),
+    ("24 hour security guard", "24 hour security guard {city} CA", "Urgency/Immediate"),
+    ("licensed security guards", "Licensed security guards in {city}", "Quality/Trust"),
+    ("manned guarding services", "Professional manned guarding services {city} CA", "Quality/Specific"),
+    ("corporate security officers", "Hire corporate security officers in {city} CA", "Transactional/Specific"),
+    ("residential security guards", "Residential security guards {city} California", "Specific/Residential"),
+    ("night security guard services", "Night security guard services {city}", "Urgency/Overnight"),
+    ("professional security guards", "Professional security guards {city} CA", "Quality/General"),
+    ("static security guards", "Static security guards {city} CA", "Specific/Property"),
+    ("VIP protection services", "Executive VIP protection services {city} CA", "Specific/Executive"),
+    ("alarm response security", "Rapid alarm response security {city} CA", "Urgency/Immediate"),
+    ("commercial property security", "Commercial property security {city} CA", "Specific/Commercial"),
+    ("security company near me", "Security company near {city} CA", "Local/Transactional"),
+]
+
+rows = []
+for city in cities:
+    for idx, (base, pattern, intent) in enumerate(base_terms_and_patterns, start=1):
+        keyword = pattern.format(city=city)
+        rows.append({
+            "City": city,
+            "Priority": idx,
+            "BaseTerm": base,
+            "OptimizedKeyword": keyword,
+            "IntentCategory": intent
+        })
+
+df = pd.DataFrame(rows, columns=["City", "Priority", "BaseTerm", "OptimizedKeyword", "IntentCategory"])
+
+# Save to CSV
+csv_path = "/mnt/data/hyperlocal_security_keywords_CA.csv"
+df.to_csv(csv_path, index=False)
+
+# Show a quick preview (first 30 rows)
+import caas_jupyter_tools
+caas_jupyter_tools.display_dataframe_to_user("Hyperlocal Security Keywords (Preview)", df.head(30))
+
+csv_path

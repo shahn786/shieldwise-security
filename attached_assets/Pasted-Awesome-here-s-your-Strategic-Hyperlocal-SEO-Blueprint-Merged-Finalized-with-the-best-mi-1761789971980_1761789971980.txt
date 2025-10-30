@@ -1,0 +1,142 @@
+Awesome—here’s your **“Strategic Hyperlocal SEO Blueprint (Merged + Finalized)”** with the **best mixed keyword set** and ready-to-ship assets.
+
+# Executive Snapshot (what you get)
+
+* A **400-keyword matrix** (20 keywords × 20 cities) built from your framework and my localized, high-intent terms.
+* **Intent-mapped** for conversion (Urgency / Transactional / Quality / Specific).
+* Built for **Google, Bing, Yahoo, Safari, and AI search** (explicit geo + action modifiers).
+
+[Download the full 400-keyword CSV](sandbox:/mnt/data/hyperlocal_security_keywords_CA.csv)
+
+---
+
+# How to use (fast)
+
+* Add **one primary** + **two support** keywords per city page (H1/H2/FAQ).
+* Mirror those keywords in **GBP services**, **Products**, and **Updates**.
+* Reuse the same terms in **internal links** (“related services in {City}”) and **schema (hasOfferCatalog)**.
+
+---
+
+# Templates you can drop into your EJS
+
+**Title (≤60 chars)**
+
+```
+<%= city %> Security Guard Services | Licensed & 24/7
+```
+
+**H1**
+
+```
+Best Licensed Security Guard Services in <%= city %>, CA
+```
+
+**Meta Description (≤155 chars)**
+
+```
+Hire licensed, 24/7 security guards in <%= city %>, CA. Armed/unarmed, mobile patrol, event & commercial property security. Rapid response. Free quote.
+```
+
+**URL**
+
+```
+/california/<%= slug %>/security-guard-services
+```
+
+**Section H2s**
+
+* Armed & Unarmed Guards in <%= city %>
+* Mobile Patrol & Alarm Response – 24/7
+* Construction & Commercial Property Security
+* Residential & Gated Community Protection
+
+**Internal Link Anchors**
+
+* “Hire licensed security guards in <%= city %>”
+* “24 hour event security <%= city %>”
+* “Mobile patrol security <%= city %> CA”
+
+**JSON-LD (LocalBusiness + Services) – snippet**
+
+```html
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"LocalBusiness",
+  "name":"ShieldWise Security",
+  "areaServed":"<%= city %>, CA",
+  "telephone":"<%= phone %>",
+  "address":{"@type":"PostalAddress","addressLocality":"<%= city %>","addressRegion":"CA"},
+  "hasOfferCatalog":{
+    "@type":"OfferCatalog",
+    "name":"Security Services",
+    "itemListElement":[
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Armed Security Guards in <%= city %> CA"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Mobile Patrol Security <%= city %>"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Construction Site Security <%= city %>"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"24 Hour Event Security <%= city %>"}}
+    ]
+  }
+}
+</script>
+```
+
+---
+
+# What’s inside the CSV (structure)
+
+**Columns:** City · Priority (1–20) · BaseTerm · OptimizedKeyword · IntentCategory
+
+**Examples (pulled directly from the file):**
+
+* Los Angeles · 1 · security guard services · **Best licensed security guard services in Los Angeles CA** · Quality/Transactional
+* San Diego · 2 · hire security guard · **Hire a security guard near San Diego CA** · Transactional/Immediate
+* San Jose · 17 · VIP protection services · **Executive VIP protection services San Jose CA** · Specific/Executive
+* Riverside · 8 · mobile patrol security · **Licensed mobile patrol security services Riverside CA** · Quality/Specific
+* Fontana · 7 · construction site security · **Overnight construction site security Fontana CA** · Urgency/Specific
+
+---
+
+# Quick city-by-city top picks (use as primary H1)
+
+* **Los Angeles:** Best licensed security guard services in Los Angeles CA
+* **San Diego:** Hire a security guard near San Diego CA
+* **San Jose:** Executive VIP protection services San Jose CA
+* **San Francisco:** 24 hour event security services in San Francisco
+* **Fresno:** Overnight construction site security Fresno CA
+* **Sacramento:** 24 hour security guard Sacramento CA
+* **Long Beach:** Commercial property security Long Beach CA
+* **Oakland:** Armed security guards in Oakland California
+* **Bakersfield:** Licensed mobile patrol security services Bakersfield CA
+* **Anaheim:** Best private security company Anaheim CA
+* **Santa Ana:** Hire corporate security officers in Santa Ana CA
+* **Riverside:** Rapid alarm response security Riverside CA
+* **Stockton:** Residential security guards Stockton California
+* **Irvine:** Professional security guards Irvine CA
+* **Chula Vista:** Security company near Chula Vista CA
+* **Fremont:** Professional manned guarding services Fremont CA
+* **San Bernardino:** 24 hour mobile patrol security San Bernardino
+* **Modesto:** Static security guards Modesto CA
+* **Fontana:** Commercial property security Fontana CA
+* **Moreno Valley:** Licensed security guards in Moreno Valley
+
+---
+
+# KPI & rollout checklist (fast)
+
+* **Per city page:** 1 primary + 2 support keywords, 1 FAQ per keyword.
+* **GBP:** Add the same services as Products; post one Update/week with a target keyword in the first sentence.
+* **Citations:** Ensure exact **NAP** and link each listing to the **matching city landing page**.
+* **Tracking:** Tag primary CTA with `utm_campaign=<city>_security_primary`. In CRM, attribute deals to the keyword used in the user’s first landing page session.
+
+---
+
+If you want, I can also:
+
+* Auto-generate **20 page stubs** (EJS) with the title/H1/meta pre-filled.
+* Create **JSON-LD** per city from the CSV.
+* Build a **briefing deck** showing which keywords map to which sections per page.
+
+Again, grab the full file here:
+**[Download the 400-keyword CSV](sandbox:/mnt/data/hyperlocal_security_keywords_CA.csv)**
