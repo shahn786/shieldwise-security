@@ -1,0 +1,182 @@
+info@shieldwisesecurity.com , phone , , address , MASTER PROMPT — Final Production Check for Multi-City Security Website (California)
+
+You are a senior full-stack web auditor and SEO engineer. Audit and make production-ready my website for a California security-guard company with hundreds of city pages. Tech stack: Node/EJS + HTML/CSS/JS. Assume pages like /california/{city}/security-guard/ (Los Angeles, San Diego, San Jose, etc.).
+
+My Preferences & Branding
+
+Use easy-to-understand class names in HTML/CSS.
+
+Instagram icon in header (not Yelp).
+
+Phone number hover effect in header.
+
+Logo path: Public/Image/image1.png.
+
+City pages should optionally include the claim: “Cheapest and best security guard in {City}, California” (keep compliant and non-deceptive; if risky, suggest compliant alternatives).
+
+Remove any hard-coded price tables; if pricing is mentioned, label clearly as “typical market rates (not ShieldWise pricing)”.
+
+What to Deliver (STRICT)
+
+Produce all of the following:
+
+Executive Summary (1 page)
+
+Top wins, critical risks, and ETA to fix.
+
+Prioritized Issue List
+
+For each issue: Severity (Critical/Major/Minor), Impact, Exact file/line, How to fix, and code diff patch.
+
+City-Page QA Matrix (table)
+For a representative sample of 10 cities + template logic for the rest:
+
+URL, H1, Title, Meta Description, H2 set, FAQ count, Word count, Schema presence (LocalBusiness, SecurityService, FAQ, Breadcrumb), NAP (Name/Address/Phone) accuracy, Internal links in/out, Canonical, Noindex/Index, Core Web Vitals estimates.
+
+Note any duplicate or near-duplicate content.
+
+Auto-Fix Bundle
+
+Clean code diffs for: HTML/EJS, CSS, JS.
+
+One refactored views/services.ejs with professional styling (remove unused CSS, remove inline CSS, centralize styles).
+
+One /Public/JS/back-to-top.js fix (ensure button with id backToTop works on all pages).
+
+Deploy Checklist (copy-ready)
+Exact steps & commands for build, minify, image conversion, schema validation, Lighthouse run, and final smoke test.
+
+JSON Report (/reports/final_site_audit.json)
+
+All findings in structured form (pages, metrics, issues, fixes, status).
+
+Technical Checks (DO ALL)
+Performance & CWV
+
+Target: LCP ≤ 1.8s, INP ≤ 200ms, CLS ≤ 0.1 on mobile.
+
+Inline critical CSS per template, defer non-critical JS, remove unused CSS/JS, eliminate render-blocking, add rel=preconnect/dns-prefetch for fonts/analytics, lazy-load below-the-fold media, and compress text (Gzip/Brotli).
+
+Convert images to WebP/AVIF (keep originals fallback) with width/height attributes and loading="lazy" decoding="async".
+
+Generate a responsive image set (srcset/sizes) for hero and galleries.
+
+SEO Essentials
+
+Unique Title (50–60 chars) + Meta Description (130–160) per city, including the city name early.
+
+Exactly one H1 per page; logical H2/H3 hierarchy.
+
+Canonical tags (self-referential unless truly duplicate).
+
+Internal linking: ensure each city page links to region hub and 5–8 nearby cities; add breadcrumb.
+
+Schema (JSON-LD): Organization (site-wide), LocalBusiness + SecurityService per city (use city address/phone if available), BreadcrumbList, and FAQPage when FAQs exist.
+
+Sitemaps: split if >50k URLs; include images.
+
+robots.txt: block only staging/test; allow city pages.
+
+Fix parameter duplicates (?ref=, utm_) with canonicals or rules.
+
+Content Quality (City Pages)
+
+800–1,300 words per city page (no boilerplate bloat).
+
+Include service blocks (armed, unarmed, mobile patrol, fire watch, event security) with localized value props (landmarks, neighborhoods).
+
+Location-specific testimonials or proof points if available.
+
+Include optional tagline: “Cheapest and best security guard in {City}, California” only if compliant—otherwise propose a compliant variant (e.g., “Top-rated and budget-friendly…”).
+
+Ensure consistent NAP (Name, Address, Phone) and click-to-call for phone.
+
+Accessibility
+
+Passes WCAG 2.2 AA basics: semantic landmarks, focus states, contrast, proper <label> and aria- on controls, descriptive alt text, skip-links.
+
+Headings are not used for styling; no keyboard traps; all interactive elements have visible focus.
+
+Security & Reliability
+
+Security headers: HSTS, CSP (report-only then strict), X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy.
+
+Strip secrets from client bundle; lock dependencies; run npm audit fix recommendations.
+
+404 and 500 error pages with search and top links.
+
+Backup & rollback plan documented.
+
+Analytics & Tracking
+
+Add GA4 (or privacy-safe alternative) with consent mode; redact PII.
+
+Track: quote submissions, phone clicks, “Get a Quote” CTA, and form completion funnel.
+
+Node/EJS & Build Hygiene
+
+Deduplicate partials for header/footer; ensure consistent Instagram icon and phone hover.
+
+Remove inline styles; centralize in /Public/CSS/*.css.
+
+ESLint + Prettier; HTMLHint; Stylelint.
+
+Production build: hashed assets, long-term caching headers, ETag.
+
+Specific Fixes to Implement
+
+Header/Footer Consistency
+
+One canonical header/footer partial; ensure Instagram replaces Yelp; add phone hover style.
+
+Back-to-Top Button
+
+Ensure element with id backToTop exists on all pages; JS waits for DOMContentLoaded; toggles .active after pageYOffset > 300; smooth scroll behavior with window.scrollTo({ top: 0, behavior: 'smooth' }).
+
+views/services.ejs Redesign
+
+Clean, professional layout; grid cards for services; remove unused & inline CSS; ensure mobile-first; export one minified CSS file.
+
+Meta & Schema Generator
+
+Create a helper that, given {city, county, phone, address}, returns: Title, Description, H1, Canonical, LocalBusiness + SecurityService JSON-LD, FAQ JSON-LD, Breadcrumb JSON-LD. Use it across all city templates.
+
+Duplicate Detection
+
+Identify near-duplicate city pages; propose content deltas (local stats, landmarks, service SLAs, response times, patrol patterns, crime insights with citations if possible).
+
+Validation & Proof
+
+Run Lighthouse (mobile & desktop): include screenshots and JSON exports; target scores ≥95 Perf, ≥95 SEO, ≥100 Best Practices, ≥100 Accessibility where feasible.
+
+Validate structured data through Schema.org/Google Rich Results (paste validation excerpts).
+
+List Core Web Vitals from lab + field data (if available) and the exact changes that improved them.
+
+Provide npm scripts to reproduce:
+
+"build:images", "lint", "build", "analyze", "report", "start:prod".
+
+Output Format
+
+Markdown document with sections matching “What to Deliver”.
+
+A /patches/ folder (diffs), /reports/ folder (Lighthouse + JSON), and /public/ updated assets list.
+
+Clear acceptance criteria checklist that I can tick off before deploy.
+
+Project Variables (use these by default if missing)
+
+Brand: ShieldWise Security
+
+Primary phone:+1-714-716-7430 
+
+HQ city: 7155 Dimaggio st, riverside,ca, 92503 
+
+Logo: Public/Image/image1.png
+
+When you’re done, provide:
+
+A short commit message summary for a single PR, and
+
+One staging URL test plan (10 bullet items) I can follow in 5 minutes.,
