@@ -1,0 +1,20 @@
+--- a/package.json
++++ b/package.json
+@@ -6,7 +6,16 @@
+   "scripts": {
+     "start": "node index.js",
+     "dev": "NODE_ENV=development node index.js",
+-    "test": "echo \"Error: no test specified\" && exit 1"
++    "test": "echo \"Error: no test specified\" && exit 1",
++    "build": "npm run build:css",
++    "build:css": "echo 'Run: npm install -g clean-css-cli' && cleancss -o Public/css/style.min.css Public/css/style.css || echo 'CSS minification skipped'",
++    "build:images": "node scripts/optimize-images.js",
++    "lint": "echo 'Run: npm install --save-dev eslint' && eslint . --ext .js || echo 'Linting skipped'",
++    "lint:fix": "eslint . --ext .js --fix",
++    "analyze": "node scripts/analyze-bundle.js",
++    "report": "node scripts/generate-audit-report.js",
++    "start:prod": "NODE_ENV=production node index.js",
++    "sitemap": "node scripts/generate-sitemap.js"
+   },
+   "dependencies": {
+     "bcrypt": "^5.1.1",

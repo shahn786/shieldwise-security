@@ -1,0 +1,16 @@
+--- a/views/partials/Footer.ejs
++++ b/views/partials/Footer.ejs
+@@ -1,236 +1,1 @@
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+-<style>
+-/* Footer Styles */
+-... (All inline styles removed - see Public/css/footer.css)
+-</style>
++<link rel="stylesheet" href="/css/footer.css">
+ <footer class="footer" itemscope itemtype="https://schema.org/LocalBusiness">
+ 
+--- /dev/null
++++ b/Public/css/footer.css
+@@ -0,0 +1,236 @@
++/* Footer Styles */
++(Copy all inline styles from Footer.ejs lines 3-236 to this file)

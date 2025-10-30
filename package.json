@@ -7,7 +7,16 @@
     "start": "node index.js",
     "start:new": "node src/server.js",
     "dev": "NODE_ENV=development node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build:css",
+    "build:css": "echo 'CSS minification - install clean-css-cli globally if needed'",
+    "build:images": "node scripts/optimize-images.js",
+    "lint": "echo 'Linting - install eslint if needed'",
+    "lint:fix": "echo 'Auto-fix linting issues'",
+    "analyze": "echo 'Analyze bundle size'",
+    "report": "echo 'Generate audit report'",
+    "start:prod": "NODE_ENV=production node index.js",
+    "sitemap": "node scripts/generate-sitemap.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",

@@ -1,0 +1,57 @@
+--- a/views/partials/Header.ejs
++++ b/views/partials/Header.ejs
+@@ -70,7 +70,17 @@
+ 
+           <li class="nav-item" role="none"><a class="nav-link" href="/contact" role="menuitem">Contact</a></li>
+           <li class="nav-item" role="none"><a class="nav-link" href="/login" role="menuitem">Careers</a></li>
++          
++          <!-- Instagram Icon -->
++          <li class="nav-item" role="none">
++            <a class="nav-link social-icon" href="https://www.instagram.com/shieldwisesecurity/" aria-label="Follow us on Instagram" target="_blank" rel="noopener noreferrer">
++              <i class="fab fa-instagram"></i>
++            </a>
++          </li>
+         </ul>
++        
++        <!-- Phone Number with Hover Effect -->
++        <a href="tel:+17147167430" class="btn btn-outline-light ml-3 phone-header"><i class="fas fa-phone-alt"></i> (714) 716-7430</a>
++        
+         <a href="/get-quote" class="btn btn-danger ml-3">Get a Quote</a>
+       </div>
+     </div>
+@@ -85,3 +95,32 @@
+ <script src="/JS/accessible-nav.js" defer></script>
+ 
+ <!-- Skip Navigation for Accessibility -->
+-<a href="#main-content" class="skip-nav visually-hidden-focusable">Skip to main content</a>
+\ No newline at end of file
++<a href="#main-content" class="skip-nav visually-hidden-focusable">Skip to main content</a>
++
++<!-- Header Custom Styles -->
++<style>
++.phone-header {
++  transition: all 0.3s ease;
++  border: 2px solid #fff;
++  font-weight: 600;
++  white-space: nowrap;
++}
++
++.phone-header:hover {
++  background-color: #d4af37 !important;
++  border-color: #d4af37 !important;
++  color: #000 !important;
++  transform: scale(1.05);
++  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
++}
++
++.social-icon {
++  font-size: 1.3rem;
++  padding: 0.5rem 1rem !important;
++  transition: all 0.3s ease;
++}
++
++.social-icon:hover {
++  color: #d4af37 !important;
++  transform: translateY(-2px);
++}
++</style>

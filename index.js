@@ -176,6 +176,15 @@ app.use(helmet({
     maxAge: 31536000,
     includeSubDomains: true,
     preload: true
+  },
+  referrerPolicy: {
+    policy: 'strict-origin-when-cross-origin'
+  },
+  frameguard: {
+    action: 'deny'
+  },
+  permissionsPolicy: {
+    features: { geolocation: ['self'], microphone: [], camera: [] }
   }
 }));
 

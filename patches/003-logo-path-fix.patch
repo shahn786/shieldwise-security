@@ -1,0 +1,21 @@
+--- a/views/partials/Header.ejs
++++ b/views/partials/Header.ejs
+@@ -4,6 +4,7 @@
+     <div class="container">
+       <a class="navbar-brand" href="/">
++        <img src="/img/favicon.ico" alt="ShieldWise Security Logo" class="navbar-logo" width="40" height="40" loading="eager">
+         <div class="company-name">
+           <div class="company-main">SHIELDWISE</div>
+           <div class="company-tagline">SECURITY</div>
+@@ -87,3 +88,11 @@
+ 
+ <!-- Skip Navigation for Accessibility -->
+ <a href="#main-content" class="skip-nav visually-hidden-focusable">Skip to main content</a>
++
++<style>
++.navbar-logo {
++  margin-right: 12px;
++  filter: brightness(1.1);
++  transition: transform 0.3s ease;
++}
++</style>

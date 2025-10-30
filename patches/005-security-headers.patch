@@ -1,0 +1,18 @@
+--- a/index.js
++++ b/index.js
+@@ -175,7 +175,15 @@
+     maxAge: 31536000,
+     includeSubDomains: true,
+     preload: true
+-  }
++  },
++  referrerPolicy: {
++    policy: 'strict-origin-when-cross-origin'
++  },
++  frameguard: {
++    action: 'deny'
++  },
++  permissionsPolicy: {
++    features: { geolocation: ['self'], microphone: [], camera: [] }
++  }
+ }));
