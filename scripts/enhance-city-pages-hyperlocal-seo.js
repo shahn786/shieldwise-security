@@ -86,6 +86,10 @@ function generateMetaDescription(cityName, primaryKeyword) {
 // Enhance H1 tag
 function enhanceH1(fileContent, cityName, primaryKeyword) {
   const h1Regex = /<h1[^>]*>.*?<\/h1>/i;
+  
+  // Remove any existing "cheapest and best" claims to avoid duplication
+  fileContent = fileContent.replace(/<p[^>]*class="cheapest-best-claim[^"]*"[^>]*>.*?<\/p>/gi, '');
+  
   const newH1 = `<h1>${primaryKeyword}</h1>
             <p class="cheapest-best-claim animate-fade-in-delay">Cheapest and best security guard services in ${cityName}, California.</p>`;
   

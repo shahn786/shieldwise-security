@@ -8,6 +8,20 @@ This project is a Progressive Web App (PWA) for ShieldWise Security, a Californi
 
 Preferred communication style: Simple, everyday language.
 
+## Recent Changes (October 30, 2025)
+
+### Hyperlocal SEO Optimization - Multi-Platform Search Strategy
+- **178 city pages enhanced** with comprehensive hyperlocal keyword strategy
+- **3,560 keywords deployed** (20 intent-mapped keywords per city)
+- **H1 Tags Optimized:** Primary keyword "Best licensed security guard services in [City] CA" on all pages
+- **Schema Markup Enhanced:** OfferCatalog with 10 service offerings per city for rich snippets
+- **Meta Tags Optimized:** Title, description, and keywords updated with hyperlocal patterns
+- **Search Engine Coverage:** Google, Bing, Yahoo, AI Search (ChatGPT/Bard), Voice Search (Alexa/Siri/Google Assistant)
+- **Intent Mapping:** Quality/Transactional, Urgency/Specific, Geographic, Service-specific keywords
+- **Layout Preserved:** Zero visual changes - all enhancements in meta/schema only
+- **Report:** HYPERLOCAL_SEO_ENHANCEMENT_REPORT.md documents complete implementation
+- **Scripts Created:** hyperlocal-seo-keywords.js, enhance-city-pages-hyperlocal-seo.js
+
 ## Recent Changes (October 29, 2025)
 
 ### City Pages Cleanup - "Cheapest and Best" Campaign
