@@ -29,7 +29,7 @@ router.get('/', (req, res) => {
 
         // Page-specific Meta Data
         pageTitle: 'Best & Cheapest Mobile Patrol Security Riverside CA | Southern California 24/7 Patrols',
-        pageDescription: 'Cheapest and best mobile patrol security services in Southern California. Special focus on Riverside, San Bernardino, Orange County. 24/7 random patrols, fastest alarm response, property monitoring. Licensed & insured patrol officers. Call (800) 744-3531',
+        pageDescription: 'Cheapest and best mobile patrol security services in Southern California. Special focus on Riverside, San Bernardino, Orange County. 24/7 random patrols, fastest alarm response, property monitoring. Licensed & insured patrol officers. Call (714) 716-7430',
         canonicalUrl: 'https://shieldwisesecurity.com/services/patrol/',
 
         // Service-specific Features
