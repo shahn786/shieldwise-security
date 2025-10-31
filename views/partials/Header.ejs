@@ -83,9 +83,9 @@
         </ul>
         
         <!-- Phone Number with Hover Effect -->
-        <a href="tel:+17147167430" class="btn btn-outline-light ml-3 phone-header"><i class="fas fa-phone-alt"></i> (714) 716-7430</a>
+        <a href="tel:+17147167430" class="btn btn-outline-light ml-3 phone-header" onclick="typeof trackPhoneClick === 'function' && trackPhoneClick()"><i class="fas fa-phone-alt"></i> (714) 716-7430</a>
         
-        <a href="/get-quote" class="btn btn-danger ml-3">Get a Quote</a>
+        <a href="/get-quote" class="btn btn-danger ml-3" onclick="typeof gtag === 'function' && gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'get_quote_header'})">Get a Quote</a>
       </div>
     </div>
   </nav>

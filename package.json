@@ -16,7 +16,11 @@
     "analyze": "echo 'Analyze bundle size'",
     "report": "echo 'Generate audit report'",
     "start:prod": "NODE_ENV=production node index.js",
-    "sitemap": "node scripts/generate-sitemap.js"
+    "sitemap": "node scripts/generate-sitemap.js",
+    "audit:links": "node scripts/audit-links.js",
+    "audit:images": "node scripts/audit-images.js",
+    "audit:lighthouse": "node scripts/audit-lighthouse.js",
+    "sitemap:weekly": "node scripts/regenerate-sitemap-weekly.js"
   },
   "dependencies": {
     "@lhci/cli": "^0.15.1",

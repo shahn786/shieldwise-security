@@ -399,6 +399,20 @@ app.get("/about", (req, res) => {
   res.render("about", { loggedIn });
 });
 
+app.get("/privacy-policy", (req, res) => {
+  res.render("privacy-policy", {
+    title: 'Privacy Policy | ShieldWise Security',
+    description: 'ShieldWise Security Privacy Policy - How we collect, use, and protect your personal information.'
+  });
+});
+
+app.get("/terms", (req, res) => {
+  res.render("terms", {
+    title: 'Terms of Service | ShieldWise Security',
+    description: 'ShieldWise Security Terms of Service - Legal terms and conditions for our security services.'
+  });
+});
+
 app.get("/register", (req, res) => {
   const loggedIn = req.isAuthenticated ? req.isAuthenticated() : false;
   res.render("register", { loggedIn, error: null, success: null });
