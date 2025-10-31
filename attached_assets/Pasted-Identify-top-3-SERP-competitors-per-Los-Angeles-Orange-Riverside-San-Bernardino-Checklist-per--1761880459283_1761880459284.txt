@@ -1,0 +1,71 @@
+Identify top 3 SERP competitors per: Los Angeles, Orange, Riverside, San Bernardino.
+
+Checklist per city page:
+
+Content length ≥ competitor + 20% more helpful details
+
+Add city-specific FAQs they lack
+
+Faster LCP than competitor (PageSpeed Insights comparison)
+
+More internal links & clearer CTAs
+
+Acceptance: Pages outperform on content depth & PSI; rankings trend upward (track 10 priority keywords per county).
+
+Phase 10 — Final Deployment Checklist
+
+✅ Unique title/meta on all pages
+
+✅ One H1; logical H2/H3
+
+✅ No placeholder text; unique city content (≥20–30% diff)
+
+✅ Alt text complete; A11y scan clean
+
+✅ Locations hub + internal links; no orphan pages
+
+✅ Sitemaps generated & submitted; robots open; canonicals correct
+
+✅ No console errors; no 404s; assets minified; lazy-load images
+
+✅ Lighthouse: Perf ≥95 / SEO 100 / A11y ~100 / Best Practices 100
+
+✅ CWV good (LCP ≤1.8s, INP ≤200ms, CLS ≤0.1)
+
+✅ Security headers (HSTS, CSP, XFO, XCTO, Referrer-Policy); HTTPS redirect
+
+✅ GA4 + conversions; GSC & Bing verified; sitemap accepted
+
+✅ Backup pre-launch; post-deploy logs clean; GSC Coverage clean
+
+Deliverables for You (from the Agent)
+
+Fix log with links changed, redirects added, scripts minified, images converted.
+
+Sitemap index + count of submitted URLs.
+
+Schema validation screenshots (Rich Results Test) for Home + 3 cities + 1 service.
+
+Lighthouse & PSI reports (mobile/desktop) before/after with metrics table.
+
+City content diff samples showing uniqueness improvements.
+
+GSC/Bing verification and sitemap submission confirmation.
+
+GA4 event report (test conversions firing).
+
+Competitor benchmark sheet (content length, PSI, SERP notes) for LA/OC/RIV/SB.
+
+Notes & Shortcuts
+
+For bulk city pages, create a content YAML/JSON (city, county, landmarks, industries, local FAQ) and render via EJS to ensure uniqueness at scale.
+
+Use Sharp to auto-generate WebP/AVIF + responsive sizes.
+
+Add <link rel="preload"> for hero image on key pages to improve LCP if beneficial.
+
+Keep anchors descriptive: “fire watch in Anaheim” (not “click here”).
+
+Submit sitemaps after every large batch publish.
+
+Track 10 keywords per county; adjust titles/H1s by CTR data in GSC.
