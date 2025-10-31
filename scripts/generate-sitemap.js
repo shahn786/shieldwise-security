@@ -9,15 +9,15 @@ const path = require('path');
 // Get current date in YYYY-MM-DD format
 const today = new Date().toISOString().split('T')[0];
 
-// Get all city page files
+// Get all city page files (exclude backups)
 const citiesDir = path.join(__dirname, '../views/cities');
 const cityFiles = fs.readdirSync(citiesDir)
-  .filter(file => file.endsWith('.ejs'))
+  .filter(file => file.endsWith('.ejs') && !file.includes('.backup'))
   .map(file => file.replace('.ejs', ''));
 
 console.log(`Found ${cityFiles.length} city pages`);
 
-// Service pages
+// Service pages (using actual route paths)
 const servicePages = [
   'apartment-security',
   'armed-security',
@@ -29,7 +29,7 @@ const servicePages = [
   'fire-watch',
   'hospital-security',
   'hotel-security',
-  'mobile-patrol-security',
+  'mobile-patrol',
   'shopping-center-security',
   'special-event-security',
   'unarmed-security'
@@ -66,7 +66,7 @@ let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://shieldwisesecurity.com/blog</loc>
+        <loc>https://shieldwisesecurity.com/locations</loc>
         <lastmod>${today}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -137,7 +137,7 @@ const majorCities = [
 majorCities.forEach(city => {
   if (cityFiles.includes(city)) {
     sitemap += `    <url>
-        <loc>https://shieldwisesecurity.com/cities/${city}</loc>
+        <loc>https://shieldwisesecurity.com/${city}</loc>
         <lastmod>${today}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -155,28 +155,13 @@ cityFiles.forEach(city => {
   if (!majorCities.includes(city)) {
     const priority = city.includes('county') ? '0.8' : '0.7';
     sitemap += `    <url>
-        <loc>https://shieldwisesecurity.com/cities/${city}</loc>
+        <loc>https://shieldwisesecurity.com/${city}</loc>
         <lastmod>${today}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>${priority}</priority>
     </url>
 `;
   }
-});
-
-sitemap += `    
-    <!-- Blog Posts -->
-`;
-
-// Add blog posts
-blogPosts.forEach(post => {
-  sitemap += `    <url>
-        <loc>https://shieldwisesecurity.com/blog/${post}</loc>
-        <lastmod>${today}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-`;
 });
 
 sitemap += `
@@ -186,13 +171,14 @@ sitemap += `
 const sitemapPath = path.join(__dirname, '../Public/sitemap.xml');
 fs.writeFileSync(sitemapPath, sitemap);
 
+const totalUrls = servicePages.length + cityFiles.length + 9; // 9 main pages (including /locations)
+
 console.log(`✅ Sitemap generated successfully!`);
 console.log(`📍 Location: ${sitemapPath}`);
-console.log(`📊 Total URLs: ${servicePages.length + cityFiles.length + blogPosts.length + 8}`);
-console.log(`   - Main pages: 8`);
+console.log(`📊 Total URLs: ${totalUrls}`);
+console.log(`   - Main pages: 9 (includes /locations hub)`);
 console.log(`   - Service pages: ${servicePages.length}`);
 console.log(`   - City pages: ${cityFiles.length}`);
-console.log(`   - Blog posts: ${blogPosts.length}`);
 console.log(`\n🎯 Submit to:`);
 console.log(`   - Google Search Console: https://search.google.com/search-console`);
 console.log(`   - Bing Webmaster Tools: https://www.bing.com/webmasters`);
