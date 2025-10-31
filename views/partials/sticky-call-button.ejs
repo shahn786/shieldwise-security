@@ -1,0 +1,131 @@
+<!-- Sticky Mobile Call Now Button -->
+<a href="tel:+17147167430" 
+   id="stickyCallButton" 
+   class="sticky-call-button" 
+   onclick="typeof trackPhoneClick === 'function' && trackPhoneClick()"
+   aria-label="Call ShieldWise Security Now">
+  <i class="fas fa-phone-alt"></i>
+  <span class="call-text">Call Now</span>
+</a>
+
+<style>
+.sticky-call-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+  color: #000;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.6);
+  z-index: 9999;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.5rem;
+  border: 3px solid #fff;
+}
+
+.sticky-call-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.8);
+  background: linear-gradient(135deg, #f4d03f 0%, #d4af37 100%);
+  text-decoration: none;
+  color: #000;
+}
+
+.sticky-call-button .call-text {
+  display: none;
+}
+
+/* Animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.6);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.9);
+  }
+  100% {
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.6);
+  }
+}
+
+.sticky-call-button {
+  animation: pulse 2s infinite;
+}
+
+/* Desktop - Show on all screen sizes but optimize for mobile */
+@media (min-width: 768px) {
+  .sticky-call-button {
+    width: 140px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+
+  .sticky-call-button i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+  }
+
+  .sticky-call-button .call-text {
+    display: inline;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile Optimization */
+@media (max-width: 767px) {
+  .sticky-call-button {
+    bottom: 15px;
+    right: 15px;
+    width: 55px;
+    height: 55px;
+  }
+}
+
+/* Accessibility */
+.sticky-call-button:focus {
+  outline: 3px solid #3498db;
+  outline-offset: 2px;
+}
+
+/* Hide on very small screens if needed */
+@media (max-width: 350px) {
+  .sticky-call-button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+}
+</style>
+
+<script>
+// Show/hide sticky button on scroll (optional)
+(function() {
+  const stickyButton = document.getElementById('stickyCallButton');
+  if (!stickyButton) return;
+
+  // Show button after scrolling down 200px
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 200) {
+      stickyButton.style.opacity = '1';
+      stickyButton.style.visibility = 'visible';
+    } else {
+      // Optional: Hide button at top of page
+      // stickyButton.style.opacity = '0';
+      // stickyButton.style.visibility = 'hidden';
+    }
+  });
+
+  // Initial state: visible
+  stickyButton.style.opacity = '1';
+  stickyButton.style.visibility = 'visible';
+})();
+</script>
