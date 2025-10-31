@@ -1,0 +1,130 @@
+MASTER TASKLIST — Make ShieldWise Production-Ready & #1 for CA Local SEO
+
+Repo context: Node/EJS + HTML/CSS/JS, hundreds of city/service pages
+Primary domain: https://shieldwisesecurity.com/
+Goal: Production-ready. Core Web Vitals green. SEO/Accessibility 100. All city/service pages crawlable, indexable, and ranking across CA (priority: Southern California).
+
+Phase 0 — Project Setup & Safety
+
+Create a working branch
+
+git checkout -b prod-hardening-seo-2025-10
+
+Install required tooling (dev dependencies)
+
+npm i -D lighthouse @lhci/cli html-validate broken-link-checker-local \
+  eslint stylelint postcss postcss-cli autoprefixer purgecss \
+  sharp svgo imagemin imagemin-mozjpeg imagemin-pngquant imagemin-webp \
+  sitemap robots-txt helmet compression @fastify/compress \
+  cheerio globby chalk
+
+
+Node prod flags
+
+Ensure NODE_ENV=production in Replit “Secrets/Env”.
+
+If Express present, verify production mode toggles (view cache, etag).
+
+Backup
+
+Export current site ZIP and DB (if any). Commit.
+
+Acceptance: Branch created, deps installed, reproducible build, clean lint.
+
+Phase 1 — Production Readiness & Architecture
+1.1 Fix Broken Links & Routes
+
+Task: Crawl site to find 404/5xx and redirect map.
+
+npx broken-link-checker-local https://shieldwisesecurity.com --recursive --exclude-external --get
+
+
+Action:
+
+Fix bad href and src.
+
+Add 301s for legacy paths in server/router (or _redirects if static).
+
+Snippet (Express):
+
+// redirects.js
+app.get('/old-path', (req,res)=>res.redirect(301,'/new-path'));
+
+
+Acceptance: 0 internal 404s; redirect list documented.
+
+1.2 Header/Footer/Nav Consistency
+
+Task: Centralize partials.
+
+views/partials/header.ejs, views/partials/footer.ejs, views/partials/nav.ejs
+
+Replace all scattered header/footer with <%- include('partials/header') %>, etc.
+
+Mobile: Ensure menu toggle uses one script across pages; test on 360px width.
+
+Acceptance: One source of truth for header/footer/nav. No layout drift mobile/desktop.
+
+1.3 Meta & Head Baseline (global)
+
+File: views/partials/meta-base.ejs
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="<%= canonical %>">
+<meta name="author" content="ShieldWise Security">
+
+
+Inject per-page vars: canonical, title, description, og fields.
+
+Acceptance: Lighthouse SEO “Document has a valid hreflang/meta/title/desc” all green (hreflang optional).
+
+1.4 Title/Description Automations
+
+Task: Enforce unique <title> (50–60 chars) + meta description (130–160 chars).
+
+EJS helper (title):
+
+<title><%= title %> | ShieldWise Security</title>
+
+
+Examples:
+
+City: Security Guard Services in Los Angeles, CA
+
+Service: Mobile Patrol Security in San Diego, CA
+
+Description example:
+Armed & unarmed security guards in Los Angeles, CA. 24/7 patrol, event security & fire watch. BSIS-licensed. Free quote.
+
+Acceptance: No duplicates across site. All pages have titles & descriptions within range.
+
+1.5 Open Graph / Twitter
+
+File: views/partials/meta-social.ejs
+
+<meta property="og:title" content="<%= ogTitle || title %>">
+<meta property="og:description" content="<%= ogDesc || description %>">
+<meta property="og:url" content="<%= canonical %>">
+<meta property="og:image" content="<%= ogImage || 'https://shieldwisesecurity.com/static/og-default.jpg' %>">
+<meta name="twitter:card" content="summary_large_image">
+
+
+Acceptance: Link previews render correct title/desc/image.
+
+1.6 Alt Text & A11y
+
+Task: Add meaningful alt to all <img>. Decorative → alt="".
+
+Batch pass: Use Cheerio script to detect missing alt and auto-inject TODO markers for manual fill where needed.
+
+Acceptance: Lighthouse Accessibility ~100; no “Image elements lack alt attributes”.
+
+1.7 JavaScript Console Clean
+
+Task: Open key pages; fix all console errors (missing files, form script).
+
+If forms depend on third-party JS: ensure script is loaded defer.
+
+Acceptance: 0 console errors across templates.
