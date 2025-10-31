@@ -352,6 +352,14 @@ app.get('/testimonials', (req, res) => {
   });
 });
 
+// Locations hub route
+app.get('/locations', (req, res) => {
+  res.render('locations', {
+    title: 'Security Guard Service Areas | All California Locations | ShieldWise Security',
+    description: 'Professional security guard services across 182 California cities in 25+ counties. BSIS licensed armed & unarmed guards. 24/7 coverage in Los Angeles, Orange County, San Diego, Sacramento & more.'
+  });
+});
+
 app.get("/services", (req, res) => {
   res.render("services");
 });
