@@ -163,14 +163,16 @@ img {
 </style>
 
 <!-- Async CSS Loading for Non-Critical Styles -->
-<link rel="preload" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" as="style" id="bootstrap-css">
 <noscript><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></noscript>
 
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" id="fontawesome-css">
 <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
 <!-- Service-specific CSS -->
-<link rel="preload" href="/css/<%= serviceType %>-security.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<% if (serviceType && serviceType !== 'security') { %>
+<link rel="preload" href="/css/<%= serviceType %>-security.css" as="style" id="service-css">
+<% } %>
 
 <!-- Performance Monitoring Script -->
 <script>
@@ -213,6 +215,21 @@ img {
 <link rel="preload" href="/api/contact-form" as="fetch" crossorigin="anonymous">
 <link rel="prefetch" href="/testimonials.json">
 <link rel="prefetch" href="/security-pricing.json">
+
+<!-- Async CSS Loader (CSP-compliant) -->
+<script>
+(function() {
+  // Load preloaded CSS asynchronously
+  const cssLinks = ['bootstrap-css', 'fontawesome-css', 'service-css'];
+  cssLinks.forEach(id => {
+    const link = document.getElementById(id);
+    if (link) {
+      link.onload = null;
+      link.rel = 'stylesheet';
+    }
+  });
+})();
+</script>
 
 <!-- Service Worker Registration for PWA Performance -->
 <script>
