@@ -1,0 +1,151 @@
+<%
+// Enhanced Organization/SecurityCompany Schema for sitewide use
+// This provides comprehensive structured data for search engines
+var cityName = (typeof city !== 'undefined') ? city : 'California';
+var cityAreaServed = (typeof city !== 'undefined') ? city + ', CA' : 'California';
+%>
+<!-- Organization & SecurityCompany Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Organization", "LocalBusiness", "SecurityService"],
+  "@id": "https://shieldwisesecurity.com/#organization",
+  "name": "ShieldWise Security",
+  "alternateName": ["ShieldWise Security Services", "ShieldWise Security Guards"],
+  "url": "https://shieldwisesecurity.com",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://shieldwisesecurity.com/img/logo1.webp",
+    "width": 400,
+    "height": 200,
+    "caption": "ShieldWise Security - Professional Security Services"
+  },
+  "image": [
+    "https://shieldwisesecurity.com/img/California_SecurityGuards.webp",
+    "https://shieldwisesecurity.com/img/main2.webp",
+    "https://shieldwisesecurity.com/img/logo1.webp"
+  ],
+  "description": "Professional security guard services across California. Licensed BSIS armed and unarmed guards, mobile patrol, event security, fire watch, and executive protection with 24/7 availability.",
+  "telephone": "+1-714-716-7430",
+  "email": "info@shieldwisesecurity.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "220 Soco Dr",
+    "addressLocality": "Fullerton",
+    "addressRegion": "CA",
+    "postalCode": "92832",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "33.8704",
+    "longitude": "-117.9242"
+  },
+  "areaServed": <%= JSON.stringify(cityAreaServed) %>,
+  "serviceArea": {
+    "@type": "State",
+    "name": "California",
+    "containedInPlace": {
+      "@type": "Country",
+      "name": "United States"
+    }
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Security Guard Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Armed Security Guards",
+          "description": "Professional BSIS licensed armed security guards for high-risk locations"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Unarmed Security Guards",
+          "description": "Professional BSIS licensed unarmed security guards for commercial and residential properties"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Mobile Patrol Services",
+          "description": "24/7 mobile patrol security services for multiple locations"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Event Security",
+          "description": "Professional event security for concerts, festivals, and special events"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Fire Watch Services",
+          "description": "24/7 fire watch services for buildings with disabled fire protection systems"
+        }
+      }
+    ]
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "priceRange": "$$",
+  "paymentAccepted": "Cash, Credit Card, Check, Invoice",
+  "currenciesAccepted": "USD",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "247",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "slogan": "Your Shield. Your Peace of Mind.",
+  "foundingDate": "2015",
+  "numberOfEmployees": {
+    "@type": "QuantitativeValue",
+    "value": "150+"
+  },
+  "knowsAbout": [
+    "Armed Security",
+    "Unarmed Security",
+    "Mobile Patrol",
+    "Event Security",
+    "Fire Watch",
+    "Executive Protection",
+    "BSIS Licensing",
+    "California Security Laws"
+  ],
+  "sameAs": [
+    "https://www.facebook.com/shieldwisesecurity",
+    "https://www.linkedin.com/company/shieldwise-security",
+    "https://www.instagram.com/shieldwisesecurity"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-714-716-7430",
+    "contactType": "Customer Service",
+    "areaServed": "California",
+    "availableLanguage": ["English", "Spanish"],
+    "contactOption": "TollFree",
+    "hoursAvailable": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  }
+}
+</script>

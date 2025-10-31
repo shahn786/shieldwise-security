@@ -1,0 +1,33 @@
+<%
+// City Page BreadcrumbList Schema
+// Pattern: Home > Locations > City Name
+var cityName = (typeof city !== 'undefined') ? city : 'City';
+var citySlug = (typeof cityUrl !== 'undefined') ? cityUrl : cityName.toLowerCase().replace(/\s+/g, '-');
+%>
+<!-- BreadcrumbList Structured Data for City Pages -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://shieldwisesecurity.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Service Areas",
+      "item": "https://shieldwisesecurity.com/locations"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "<%= cityName %> Security Guards",
+      "item": "https://shieldwisesecurity.com/<%= citySlug %>"
+    }
+  ]
+}
+</script>
