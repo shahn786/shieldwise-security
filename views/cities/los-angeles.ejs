@@ -151,16 +151,13 @@
                 
                 <!-- Non-critical CSS loaded async to reduce render blocking -->
                 <link rel="preload" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-                <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+                <link rel="preload" href="/css/fontawesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
                 <link rel="preload" href="/css/style456.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
                 <link rel="preload" href="/css/style-cities.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
                 
-                <!-- Font Display Override - loaded after Font Awesome to override @font-face with font-display: swap -->
-                <link rel="stylesheet" href="/css/font-display-override.css">
-                
                 <noscript>
                   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-                  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+                  <link rel="stylesheet" href="/css/fontawesome.min.css">
                   <link rel="stylesheet" href="/css/style456.css">
                   <link rel="stylesheet" href="/css/style-cities.css">
                 </noscript>
