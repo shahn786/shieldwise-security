@@ -1,0 +1,47 @@
+/* Font Display Optimization for Core Web Vitals */
+/* This CSS adds font-display: swap to all external fonts to prevent render blocking */
+
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Font Awesome 6 Brands';
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Font Awesome 5 Brands';
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Segoe UI';
+  font-display: swap;
+}
+
+/* Global font-display for all fonts */
+* {
+  font-display: swap !important;
+}

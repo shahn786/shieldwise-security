@@ -143,8 +143,12 @@
                 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
                 
+                <!-- Preload LCP hero image for faster rendering -->
+                <link rel="preload" as="image" href="/img/sanbardino12.webp" fetchpriority="high">
+                
                 <!-- Critical CSS loaded synchronously -->
                 <link rel="stylesheet" href="/css/style.css">
+                <link rel="stylesheet" href="/css/font-display-fix.css">
                 
                 <!-- Non-critical CSS loaded async with font-display: swap -->
                 <link rel="preload" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
