@@ -13,7 +13,7 @@
                 <meta name="geo.region" content="US-CA">
                 <meta name="geo.placename" content="Los Angeles">
                 <meta name="geo.position" content="34.0522;-118.2437">
-                <link rel="canonical" href="https://shieldwisesecurity.com/security-guards-los-angeles" />
+                <link rel="canonical" href="https://shieldwisesecurity.com/los-angeles" />
 
                 <!-- Apple WebKit & iOS Optimization -->
                 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -137,12 +137,26 @@
                 }
                 </script>
 
-                <!-- Stylesheets -->
-                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+                <!-- Resource Preconnections for Performance -->
+                <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+                <link rel="preconnect" href="https://stackpath.bootstrapcdn.com" crossorigin>
+                <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                
+                <!-- Critical CSS loaded synchronously -->
                 <link rel="stylesheet" href="/css/style.css">
-                <link rel="stylesheet" href="/css/style456.css">
-                <link rel="stylesheet" href="/css/style-cities.css">
+                
+                <!-- Non-critical CSS loaded async with font-display: swap -->
+                <link rel="preload" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+                <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+                <link rel="preload" href="/css/style456.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+                <link rel="preload" href="/css/style-cities.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+                <noscript>
+                  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+                  <link rel="stylesheet" href="/css/style456.css">
+                  <link rel="stylesheet" href="/css/style-cities.css">
+                </noscript>
             
 
             
