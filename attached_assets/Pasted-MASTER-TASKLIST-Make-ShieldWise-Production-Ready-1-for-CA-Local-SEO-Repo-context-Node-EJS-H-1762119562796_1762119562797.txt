@@ -1,0 +1,422 @@
+MASTER TASKLIST — Make ShieldWise Production-Ready & #1 for CA Local SEO
+
+Repo context: Node/EJS + HTML/CSS/JS, hundreds of city/service pages
+Primary domain: https://shieldwisesecurity.com/
+Goal: Production-ready. Core Web Vitals green. SEO/Accessibility 100. All city/service pages crawlable, indexable, and ranking across CA (priority: Southern California).
+
+Phase 0 — Project Setup & Safety
+
+Create a working branch
+
+git checkout -b prod-hardening-seo-2025-10
+
+Install required tooling (dev dependencies)
+
+npm i -D lighthouse @lhci/cli html-validate broken-link-checker-local \
+  eslint stylelint postcss postcss-cli autoprefixer purgecss \
+  sharp svgo imagemin imagemin-mozjpeg imagemin-pngquant imagemin-webp \
+  sitemap robots-txt helmet compression @fastify/compress \
+  cheerio globby chalk
+
+
+Node prod flags
+
+Ensure NODE_ENV=production in Replit “Secrets/Env”.
+
+If Express present, verify production mode toggles (view cache, etag).
+
+Backup
+
+Export current site ZIP and DB (if any). Commit.
+
+Acceptance: Branch created, deps installed, reproducible build, clean lint.
+
+Phase 1 — Production Readiness & Architecture
+1.1 Fix Broken Links & Routes
+
+Task: Crawl site to find 404/5xx and redirect map.
+
+npx broken-link-checker-local https://shieldwisesecurity.com --recursive --exclude-external --get
+
+
+Action:
+
+Fix bad href and src.
+
+Add 301s for legacy paths in server/router (or _redirects if static).
+
+Snippet (Express):
+
+// redirects.js
+app.get('/old-path', (req,res)=>res.redirect(301,'/new-path'));
+
+
+Acceptance: 0 internal 404s; redirect list documented.
+
+1.2 Header/Footer/Nav Consistency
+
+Task: Centralize partials.
+
+views/partials/header.ejs, views/partials/footer.ejs, views/partials/nav.ejs
+
+Replace all scattered header/footer with <%- include('partials/header') %>, etc.
+
+Mobile: Ensure menu toggle uses one script across pages; test on 360px width.
+
+Acceptance: One source of truth for header/footer/nav. No layout drift mobile/desktop.
+
+1.3 Meta & Head Baseline (global)
+
+File: views/partials/meta-base.ejs
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="<%= canonical %>">
+<meta name="author" content="ShieldWise Security">
+
+
+Inject per-page vars: canonical, title, description, og fields.
+
+Acceptance: Lighthouse SEO “Document has a valid hreflang/meta/title/desc” all green (hreflang optional).
+
+1.4 Title/Description Automations
+
+Task: Enforce unique <title> (50–60 chars) + meta description (130–160 chars).
+
+EJS helper (title):
+
+<title><%= title %> | ShieldWise Security</title>
+
+
+Examples:
+
+City: Security Guard Services in Los Angeles, CA
+
+Service: Mobile Patrol Security in San Diego, CA
+
+Description example:
+Armed & unarmed security guards in Los Angeles, CA. 24/7 patrol, event security & fire watch. BSIS-licensed. Free quote.
+
+Acceptance: No duplicates across site. All pages have titles & descriptions within range.
+
+1.5 Open Graph / Twitter
+
+File: views/partials/meta-social.ejs
+
+<meta property="og:title" content="<%= ogTitle || title %>">
+<meta property="og:description" content="<%= ogDesc || description %>">
+<meta property="og:url" content="<%= canonical %>">
+<meta property="og:image" content="<%= ogImage || 'https://shieldwisesecurity.com/static/og-default.jpg' %>">
+<meta name="twitter:card" content="summary_large_image">
+
+
+Acceptance: Link previews render correct title/desc/image.
+
+1.6 Alt Text & A11y
+
+Task: Add meaningful alt to all <img>. Decorative → alt="".
+
+Batch pass: Use Cheerio script to detect missing alt and auto-inject TODO markers for manual fill where needed.
+
+Acceptance: Lighthouse Accessibility ~100; no “Image elements lack alt attributes”.
+
+1.7 JavaScript Console Clean
+
+Task: Open key pages; fix all console errors (missing files, form script).
+
+If forms depend on third-party JS: ensure script is loaded defer.
+
+Acceptance: 0 console errors across templates.
+
+Phase 2 — Crawlability, Internal Linking, Sitemaps, Robots
+2.1 Locations Hub & Link Depth
+
+Create: /locations/index.ejs listing ALL cities, grouped by county.
+
+From Home/Services/Footer: add links to /locations.
+
+Within city pages: interlink to nearest cities and related services using descriptive anchors (e.g., “fire watch in Riverside”).
+
+Acceptance: Every city/service ≤3 clicks from Home. No orphan pages.
+
+2.2 XML Sitemap(s)
+
+Task: Generate comprehensive sitemaps.
+
+// scripts/generate-sitemaps.js
+// use 'sitemap' + globby to include all city & service URLs
+
+
+Output: /public/sitemap.xml or /public/sitemap-index.xml + chunked sitemaps (≤50k URLs each).
+
+Robots link: Sitemap: https://shieldwisesecurity.com/sitemap-index.xml (or single sitemap).
+
+Acceptance: All pages present in sitemaps; open in browser to verify count.
+
+2.3 robots.txt
+
+File: /public/robots.txt
+
+User-agent: *
+Disallow:
+Sitemap: https://shieldwisesecurity.com/sitemap.xml
+
+
+Acceptance: No Disallow on city/service paths.
+
+Phase 3 — Structured Data (Schema)
+3.1 Organization/LocalBusiness (sitewide)
+
+Partial: views/partials/schema-org.ejs
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "SecurityCompany",
+ "name": "ShieldWise Security",
+ "url": "https://shieldwisesecurity.com",
+ "telephone": "800-744-3531",
+ "address": {
+   "@type": "PostalAddress",
+   "streetAddress": "220 Soco Dr",
+   "addressLocality": "Fullerton",
+   "addressRegion": "CA",
+   "postalCode": "92832"
+ },
+ "areaServed": "California",
+ "logo": "https://shieldwisesecurity.com/static/logo.png",
+ "sameAs": [
+   "https://www.facebook.com/...", "https://www.linkedin.com/company/..."
+ ]
+}
+</script>
+
+3.2 City pages — add areaServed / serviceArea
+
+Inject city name: "areaServed": "<%= city %>, CA"
+
+3.3 FAQ schema (key city & service pages)
+
+Add a small FAQ section (3–5 Q&As) + JSON-LD FAQPage.
+
+3.4 BreadcrumbList (optional)
+
+If nested: Home > Locations > Los Angeles.
+
+Acceptance: Google Rich Results Test passes with 0 errors for Home & a sample of city/service pages.
+
+Phase 4 — Content Refresh (Unique, Helpful, Local)
+4.1 De-templating City Pages
+
+Target: minimum 500+ words each, 20–30% unique.
+
+Add: local landmarks, industries, use cases, micro-testimonials, response time, licensing mention (BSIS), city-specific FAQs.
+
+H1/H2/H3 hierarchy: One H1 including city, H2 for services, H3 for specifics.
+
+Acceptance: Random diff checks across 10 city pages show clear uniqueness; no “cookie-cutter” flags.
+
+4.2 Keyword Integration (Southern CA priority)
+
+Incorporate the provided county keyword sets (LA, Orange, Riverside, San Bernardino, Sacramento, Santa Clara) naturally in titles/H1s/body/FAQs.
+
+Avoid stuffing; use synonyms/variations.
+
+Acceptance: Pages read naturally, keyword intent satisfied; no over-optimization.
+
+Phase 5 — Performance, Core Web Vitals, Security
+5.1 Asset Optimization
+
+Images:
+
+Convert heavy JPG/PNG → WebP/AVIF; cap dimensions to rendered size.
+
+# example: convert all hero images to webp
+npx imagemin 'public/images/**/*.{jpg,png}' --plugin=webp --out-dir='public/images-webp'
+
+
+<img loading="lazy" decoding="async" width height>; use srcset.
+
+SVG: Run svgo on icons.
+
+CSS/JS: Purge & minify; mark non-critical scripts as defer/async.
+
+npx purgecss --css public/css/*.css --content 'views/**/*.ejs' -o public/css/
+npx postcss public/css/*.css --use autoprefixer -d public/css/
+
+5.2 Server/Compression/CDN
+
+Express middleware:
+
+import compression from 'compression';
+app.use(compression({ level: 6 }));
+
+
+Helmet/Security headers (if Express):
+
+import helmet from 'helmet';
+app.use(helmet({
+  contentSecurityPolicy: {
+    useDefaults: true,
+    directives: {
+      "img-src": ["'self'", "https:", "data:"],
+      "script-src": ["'self'", "'unsafe-inline'"]
+    }
+  },
+  referrerPolicy: { policy: "strict-origin-when-cross-origin" },
+  frameguard: { action: "sameorigin" }
+}));
+app.use((_,res,next)=>{
+  res.setHeader('Strict-Transport-Security','max-age=31536000; includeSubDomains; preload');
+  next();
+});
+
+
+CDN: Configure Cloudflare for static caching; enable Brotli; set long cache headers for css/js/img.
+
+Preload LCP asset: Preload hero image or critical font if needed.
+
+5.3 CWV/Lighthouse Targets
+
+Run audits:
+
+npx lhci autorun --upload.target=filesystem --collect.numberOfRuns=3
+
+
+Targets: LCP ≤ 1.8s, INP ≤ 200ms, CLS ≤ 0.1; Lighthouse: Perf ≥95, SEO 100, A11y ~100, BP 100.
+
+Acceptance: Metrics met on Home + 3 heavy city pages (mobile + desktop).
+
+Phase 6 — Analytics, Indexing & Monitoring
+6.1 GA4 + Events
+
+Add GA4 tag sitewide (via GTM or direct).
+
+Track: phone-clicks (tel:), quote form submits, header CTA.
+
+6.2 Search Consoles
+
+Google Search Console: verify, submit sitemap, monitor Coverage + CWV.
+
+Bing Webmaster Tools: verify, submit sitemap.
+
+6.3 Ongoing Health Scripts (CI)
+
+Add npm run audit:links, npm run audit:images, npm run audit:lighthouse in CI to prevent regressions.
+
+Set weekly job to regenerate sitemap & ping search engines.
+
+Acceptance: GA4 real-time fires; GSC/Bing verified; sitemap accepted; zero “blocked” or “noindex” surprises.
+
+Phase 7 — Conversion & Trust (E-E-A-T)
+
+Prominent CTAs on all pages
+
+Sticky “Call Now” on mobile, “Get a Quote” form per city page.
+
+Trust elements
+
+BSIS license number, $ coverage, certifications, uniforms, response times.
+
+Add 2–3 short testimonials per major city (rotating slider is fine).
+
+Legal/Privacy
+
+Footer links: Privacy Policy, Terms. Cookie notice if using tracking.
+
+Acceptance: Clear CTAs; visible trust badges; compliance pages present.
+
+Phase 8 — Content Marketing & Local SEO
+
+Blog cadence (2×/month)
+
+Topics: “Event Security in Los Angeles: What Venues Require”,
+“Mobile Patrol vs On-Site Guards in Orange County”,
+“Fire Watch Requirements in CA: What Businesses Must Know”.
+
+Add FAQ schema; interlink to related services/cities.
+
+Google Business Profile
+
+Ensure category “Security Guard Service”; upload photos; weekly posts; collect reviews; set service areas.
+
+Citations/Backlinks
+
+Consistent NAP on Yelp, BBB, Chamber of Commerce, industry orgs; pitch local PR pieces.
+
+Acceptance: 3–5 authoritative local/industry links acquired in first cycle; GBP complete.
+
+Phase 9 — Competitor Parity → Superiority (Southern CA First)
+
+Identify top 3 SERP competitors per: Los Angeles, Orange, Riverside, San Bernardino.
+
+Checklist per city page:
+
+Content length ≥ competitor + 20% more helpful details
+
+Add city-specific FAQs they lack
+
+Faster LCP than competitor (PageSpeed Insights comparison)
+
+More internal links & clearer CTAs
+
+Acceptance: Pages outperform on content depth & PSI; rankings trend upward (track 10 priority keywords per county).
+
+Phase 10 — Final Deployment Checklist
+
+✅ Unique title/meta on all pages
+
+✅ One H1; logical H2/H3
+
+✅ No placeholder text; unique city content (≥20–30% diff)
+
+✅ Alt text complete; A11y scan clean
+
+✅ Locations hub + internal links; no orphan pages
+
+✅ Sitemaps generated & submitted; robots open; canonicals correct
+
+✅ No console errors; no 404s; assets minified; lazy-load images
+
+✅ Lighthouse: Perf ≥95 / SEO 100 / A11y ~100 / Best Practices 100
+
+✅ CWV good (LCP ≤1.8s, INP ≤200ms, CLS ≤0.1)
+
+✅ Security headers (HSTS, CSP, XFO, XCTO, Referrer-Policy); HTTPS redirect
+
+✅ GA4 + conversions; GSC & Bing verified; sitemap accepted
+
+✅ Backup pre-launch; post-deploy logs clean; GSC Coverage clean
+
+Deliverables for You (from the Agent)
+
+Fix log with links changed, redirects added, scripts minified, images converted.
+
+Sitemap index + count of submitted URLs.
+
+Schema validation screenshots (Rich Results Test) for Home + 3 cities + 1 service.
+
+Lighthouse & PSI reports (mobile/desktop) before/after with metrics table.
+
+City content diff samples showing uniqueness improvements.
+
+GSC/Bing verification and sitemap submission confirmation.
+
+GA4 event report (test conversions firing).
+
+Competitor benchmark sheet (content length, PSI, SERP notes) for LA/OC/RIV/SB.
+
+Notes & Shortcuts
+
+For bulk city pages, create a content YAML/JSON (city, county, landmarks, industries, local FAQ) and render via EJS to ensure uniqueness at scale.
+
+Use Sharp to auto-generate WebP/AVIF + responsive sizes.
+
+Add <link rel="preload"> for hero image on key pages to improve LCP if beneficial.
+
+Keep anchors descriptive: “fire watch in Anaheim” (not “click here”).
+
+Submit sitemaps after every large batch publish.
+
+Track 10 keywords per county; adjust titles/H1s by CTR data in GSC.
