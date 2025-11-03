@@ -1,0 +1,109 @@
+Privacy Policy
+
+Scope: This Privacy Policy explains how ShieldWise Security ("we," "us," or "our") collects, uses, and shares your personal information when you use our website or services. By using the site, you agree to the data practices described in this policy.
+
+Information We Collect
+
+We collect various types of information from and about users of our site:
+
+Information You Provide: When you fill out a contact form, request a quote, create an account, or sign up on our site, we collect personal information such as your name, email address, phone number, login username, and any other details you submit. If you communicate with us (for example, by email or via site forms), we will collect the information you provide in those communications.
+
+Automatically Collected Data: When you visit our website, we and our analytics partners may automatically collect technical data about your visit. This data can include your IP address, browser type, device identifiers, pages viewed, how long you spend on pages, and referring website or search terms. We use cookies and similar tracking technologies (like web beacons and analytics scripts) to collect this information. (See Cookies and Analytics below for more details.)
+
+Call Tracking Information: If you call us at our published phone numbers, we may receive caller ID information such as your phone number and the time and date of your call. We may also record or monitor calls for quality assurance and training purposes, if we notify you at the start of the call or via our phone system message.
+
+How We Use Your Information
+
+We use the collected information for various legitimate business purposes, including:
+
+Providing Services and Support: To respond to your inquiries, provide quotes or information you requested, process service agreements, and deliver the security services you purchase from us.
+
+Site Functionality and User Experience: To operate, maintain, and improve our website’s functionality, content, and user experience. For example, we analyze how users interact with our site to optimize design and content.
+
+Communication: To communicate with you, such as sending administrative emails, service confirmations, updates about your services, or responding to messages and requests you send us.
+
+Marketing (With Consent): To send you promotional communications or newsletters about our services, but only if you have consented to such communications. You can opt out of marketing emails at any time.
+
+Safety and Legal Compliance: To maintain the security and integrity of our website and services (for example, detecting and protecting against fraud or misuse), and to comply with legal obligations. We may also use information as necessary to enforce our Terms of Service or to establish or defend legal claims.
+
+Legal Bases for Processing (EU/UK Visitors)
+
+If you are located in regions with data protection laws (such as the EU, UK, or similar jurisdictions), we process your personal information under the following legal bases:
+
+Consent: We rely on your consent where applicable – for example, when you voluntarily provide information in our contact forms or opt in to receive marketing emails. You have the right to withdraw your consent at any time.
+
+Contractual Necessity: We process some information because it is necessary to fulfill a contract or to take steps at your request prior to entering a contract. For instance, if you request our security services, we need to use your personal data to provide those services and communicate with you.
+
+Legitimate Interests: We may also process your information for our legitimate business interests, such as improving our services, securing our website, responding to your inquiries, or sending communications about our services. When we rely on legitimate interests, we consider and balance any potential impact on your privacy and your rights.
+
+Sharing of Information
+
+We do not sell your personal information to third parties. However, we may share your information in the following situations:
+
+Service Providers: We share data with trusted third-party service providers who perform services on our behalf to operate our business and the website. This includes website hosting companies, analytics providers (e.g., Google Analytics), customer relationship management (CRM) software, email service providers, and call-tracking or phone service companies. These providers are given access only to the information necessary to perform their functions and are contractually obligated to protect your information and use it only for our purposes.
+
+Legal Obligations and Protection: We may disclose information if required to do so by law or in response to valid legal process (e.g., a subpoena or court order). We may also disclose personal information if we believe it is necessary to investigate, prevent, or take action regarding suspected illegal activities, fraud, or situations involving potential threats to the safety or legal rights of any person, or to enforce our Terms of Service.
+
+Business Transfers: If ShieldWise Security is involved in a merger, acquisition, sale of assets, or other business transaction, user information may be transferred to a successor or affiliate as part of that transaction. If such a transfer occurs, your personal information will remain subject to the promises made in this Privacy Policy (unless you consent otherwise).
+
+Cookies and Analytics
+
+We use cookies and similar tracking technologies on our site to personalize and enhance your experience and to collect usage data:
+
+What Cookies Are: Cookies are small text files placed on your device when you visit a website. Some cookies are essential for the site to function (for example, to stay logged in or remember your preferences). Other cookies help us understand how users interact with our site or support our marketing efforts.
+
+Analytics: We use third-party analytics tools (such as Google Analytics) that deploy cookies or similar technologies to collect information about site traffic and user interactions. This helps us understand which pages are most popular, how users navigate the site, and where we can improve. These analytics tools may collect information like your IP address, browser type, and pages visited on our site. The data collected is generally aggregated and does not directly identify individual visitors. However, if you prefer not to be included in analytics tracking, you can install a browser add-on to opt out of Google Analytics or adjust your browser settings to block cookies.
+
+Your Choices: Most web browsers automatically accept cookies, but you can modify your browser setting to decline cookies or alert you when cookies are being sent. Please note that if you disable cookies, some features of our site may not function properly. For more information about cookies and how to control them, check our Cookie notice (if available) or consult your browser’s help documentation.
+
+California Privacy Rights
+
+If you are a California resident, you have specific privacy rights under the California Consumer Privacy Act (CCPA), as amended by the California Privacy Rights Act (CPRA):
+
+Right to Know and Access: You may request information about the categories and specific pieces of personal information we have collected about you, the categories of sources of that information, the business or commercial purpose for collecting it, and the categories of third parties with whom we share it.
+
+Right to Delete: You have the right to request that we delete personal information we have collected from you, subject to certain exceptions (for example, if the information is needed to complete a transaction you requested or to comply with a legal obligation).
+
+Right to Correct: You can request that we correct inaccurate personal information that we maintain about you.
+
+Right to Opt-Out of Sale/Sharing: We do not sell personal information, and we do not share personal information for cross-context behavioral advertising (as defined under CPRA). If we ever decide to sell or share your personal information in a way that triggers this opt-out right, we will provide a clear “Do Not Sell or Share My Personal Information” link on our website. Since we do not currently sell or share personal data in this manner, we simply confirm that fact here.
+
+Right to Non-Discrimination: We will not discriminate against you for exercising any of your privacy rights. This means, for example, we will not deny you services, charge you a different price, or provide a different level of service because you exercised your rights under California law.
+
+To exercise any of your California privacy rights, please contact us using the information in the Contact Us section below. We will need to verify your identity before fulfilling certain requests, as required by law. You may also designate an authorized agent to make requests on your behalf by providing written authorization or a power of attorney, but we will still take steps to verify your identity (or request that you verify directly) before processing an agent’s request.
+
+Data Security and Retention
+
+We take reasonable measures to protect the security of your personal information. We use administrative, technical, and physical safeguards to help protect against unauthorized access, use, or disclosure of personal data. For example, our website is hosted by reputable providers and may employ security measures like encryption (HTTPS) for data transmission. However, please be aware that no method of transmission over the internet or method of electronic storage is completely secure. While we strive to protect your personal information, we cannot guarantee its absolute security.
+
+We retain personal information for as long as necessary to fulfill the purposes for which we collected it, unless a longer retention period is required or permitted by law. For instance, if you become a client, we may retain your information for the duration of our business relationship and for a period afterward as needed for legal compliance, accounting, or record-keeping. If you request deletion of your data, we will delete or anonymize your information (and direct our service providers to do the same), unless we are required or permitted to keep certain information for legal reasons (for example, to comply with regulatory obligations or to resolve disputes).
+
+Your Choices and Rights
+
+Updating Your Information: If you have an account on our site, you can log in to review and update your profile information. If you do not have an account or wish to update other personal information, you may contact us to request corrections or updates to your data.
+
+Opting Out of Communications: If you no longer wish to receive marketing or promotional emails from us, you may opt out at any time by clicking the “unsubscribe” link in those emails or by contacting us directly. Please note that even if you opt out of marketing messages, we may still send you service-related communications (e.g., communications about an ongoing service or updates to our terms and policies).
+
+Do Not Track Signals: Our website currently does not respond to “Do Not Track” browser signals due to the lack of an industry standard for interpreting them. We treat all user data collection in accordance with this Privacy Policy, regardless of any Do Not Track signals.
+
+International Visitors: Our website is operated from and hosted in the United States. If you are visiting from outside the U.S., be aware that your information may be transferred to and processed in the U.S. (or other countries where our service providers are located). By using our site, you consent to your information being transferred to jurisdictions which may have different data protection laws than your country, though we will protect your information as described in this Privacy Policy.
+
+Children’s Privacy
+
+Our website and services are not directed to children under the age of 13, and we do not knowingly collect personal information from anyone under 13 years old. If we become aware that we have inadvertently received personal information from a child under 13, we will delete it. If you are a parent or guardian and believe we might have collected information from your child, please contact us so we can investigate and address the issue promptly.
+
+Contact Us
+
+If you have any questions, concerns, or requests regarding this Privacy Policy or about your personal information, please contact us using the details below:
+
+ShieldWise Security – Privacy Department
+
+Mailing Address: 220 Soco Dr, Fullerton, CA 92832, USA
+
+Email: shahnwaz.alikhail@hotmail.com
+
+Phone: (714) 716-7430
+
+We will do our best to respond promptly to your inquiry and help resolve any concerns you may have about your privacy or our data practices.
+
+Last Updated: November 2, 2025
