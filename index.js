@@ -203,10 +203,10 @@ if (process.env.NODE_ENV === 'production') {
   app.use(morgan('dev'));
 }
 
-// Rate limiting
+// Rate limiting - Generous limits for normal browsing
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 100,
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 1000, // 1000 requests per 15 minutes (allows ~30-40 page views)
   message: 'Too many requests from this IP, please try again later.',
   standardHeaders: true,
   legacyHeaders: false,
@@ -215,8 +215,8 @@ app.use(limiter);
 
 // Stricter rate limiting for authentication endpoints
 const authLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 5,
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 15, // 15 login attempts per 15 minutes (prevents brute force)
   message: 'Too many login attempts, please try again later.',
   skipSuccessfulRequests: true,
 });
