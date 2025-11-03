@@ -1,0 +1,258 @@
+
+/* Careers Page Styles */
+
+.careers-hero {
+    position: relative;
+    height: 60vh;
+    background: linear-gradient(135deg, #1a3c6e 0%, #2c5aa0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.careers-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.careers-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+}
+
+.careers-hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.careers-hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+/* Why Work Section */
+.why-work-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.why-work-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a3c6e;
+}
+
+.benefit-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+}
+
+.benefit-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #d12028, #ff6659);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.benefit-icon i {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.benefit-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a3c6e;
+    margin-bottom: 15px;
+}
+
+.benefit-card p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Positions Section */
+.positions-section {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.positions-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a3c6e;
+}
+
+.position-card {
+    background: #fff;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 30px;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.position-card:hover {
+    border-color: #d12028;
+    box-shadow: 0 10px 30px rgba(209, 32, 40, 0.15);
+}
+
+.position-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f8f9fa;
+}
+
+.position-header i {
+    font-size: 2.5rem;
+    color: #d12028;
+}
+
+.position-header h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a3c6e;
+    margin: 0;
+}
+
+.position-details p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.position-details i {
+    color: #d12028;
+    margin-right: 8px;
+    width: 20px;
+}
+
+.position-requirements {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.position-requirements li {
+    padding: 8px 0;
+    color: #666;
+}
+
+.position-requirements i {
+    color: #28a745;
+    margin-right: 10px;
+}
+
+.position-card .btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Process Section */
+.process-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.process-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a3c6e;
+}
+
+.process-step {
+    text-align: center;
+}
+
+.step-number {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #1a3c6e, #2c5aa0);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-number i {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.process-step h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1a3c6e;
+    margin-bottom: 15px;
+}
+
+.process-step p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* CTA Section */
+.careers-cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #1a3c6e, #2c5aa0);
+    color: #fff;
+}
+
+.careers-cta h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.careers-cta p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .careers-hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .careers-hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .why-work-section h2,
+    .positions-section h2,
+    .process-section h2 {
+        font-size: 2rem;
+    }
+
+    .position-header {
+        flex-direction: column;
+        text-align: center;
+    }
+}

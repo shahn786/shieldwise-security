@@ -65,7 +65,7 @@ app.set('trust proxy', 1);
 // If MONGODB_URI is set and valid, connect to MongoDB
 if (process.env.MONGODB_URI && process.env.MONGODB_URI.startsWith('mongodb')) {
   const uri = process.env.MONGODB_URI;
-  
+
   mongoose.connect(uri, {
     serverSelectionTimeoutMS: 5000,
     tls: true,
@@ -329,6 +329,7 @@ app.use(passport.session());
 
 // Import meta helpers
 const metaHelpers = require('./utils/metaHelpers');
+const NAP = metaHelpers.NAP; // Assuming NAP is exported from metaHelpers
 
 // Event Security Service Route
 const eventSecurityRoute = require('./routes/event-security');
@@ -364,14 +365,21 @@ app.get("/services", (req, res) => {
   res.render("services");
 });
 
-app.get("/contact", (req, res) => {
-  res.render("contact", {
-    success: undefined,
-    name: "",
-    email: "",
-    contact_number: "",
-    best_time: "",
-    message: "",
+// Contact Page
+app.get('/contact', (req, res) => {
+  res.render('contact', { 
+    title: 'Contact ShieldWise Security | Get a Free Quote',
+    currentPage: 'contact',
+    NAP: NAP
+  });
+});
+
+// Careers Page
+app.get('/careers', (req, res) => {
+  res.render('careers', { 
+    title: 'Careers at ShieldWise Security | Join Our Team',
+    currentPage: 'careers',
+    NAP: NAP
   });
 });
 
