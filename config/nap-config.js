@@ -19,27 +19,27 @@ const NAP_CONFIG = {
     displayPrimary: "(714) 716-7430" // What users see
   },
   
-  // Headquarters Address - CONFIRMED: Fullerton, CA
+  // Headquarters Address - CONFIRMED: Riverside, CA
   address: {
-    street: "220 Soo Dr",
+    street: "7155 Dimaggio St",
     suite: "",
-    city: "Fullerton",
+    city: "Riverside",
     state: "CA",
     stateFullName: "California",
-    zip: "92832",
+    zip: "92503",
     country: "US",
     countryFullName: "United States",
     
     // Full formatted addresses
-    full: "220 Soo Dr, Fullerton, CA 92832",
-    fullWithCountry: "220 Soo Dr, Fullerton, CA 92832, USA",
+    full: "7155 Dimaggio St, Riverside, CA 92503",
+    fullWithCountry: "7155 Dimaggio St, Riverside, CA 92503, USA",
     
     // Google Maps link
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=220+Soo+Dr+Fullerton+CA+92832",
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=7155+Dimaggio+St+Riverside+CA+92503",
     
-    // Coordinates for Fullerton HQ
-    latitude: "33.8704",
-    longitude: "-117.9242"
+    // Coordinates for Riverside HQ
+    latitude: "33.9533",
+    longitude: "-117.3962"
   },
   
   // Email Addresses

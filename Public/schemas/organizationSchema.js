@@ -115,7 +115,7 @@ const organizationSchema = {
   ],
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": `${NAP.address.street}, ${NAP.address.suite}`,
+    "streetAddress": `${NAP.address.street}`,
     "addressLocality": NAP.address.city,
     "addressRegion": NAP.address.state,
     "postalCode": NAP.address.zip,
@@ -127,7 +127,7 @@ const organizationSchema = {
       "name": `${NAP.companyName} ${NAP.address.city} Headquarters`,
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": `${NAP.address.street}, ${NAP.address.suite}`,
+        "streetAddress": `${NAP.address.street}`,
         "addressLocality": NAP.address.city,
         "addressRegion": NAP.address.state,
         "postalCode": NAP.address.zip,
@@ -143,19 +143,19 @@ const organizationSchema = {
     },
     {
       "@type": "Place",
-      "name": "ShieldWise Security Orange County Office",
+      "name": "ShieldWise Security Irvine Office",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "456 Protection Way",
+        "streetAddress": "4614 El Camino Real",
         "addressLocality": "Irvine",
         "addressRegion": "CA",
-        "postalCode": "92614",
+        "postalCode": "92602",
         "addressCountry": "US"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "33.6846",
-        "longitude": "-117.8265"
+        "latitude": "33.6595",
+        "longitude": "-117.8443"
       },
       "telephone": "(714) 716-7430"
     },
