@@ -578,31 +578,11 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
+  <!-- Back to Top Script -->
+  <script src="/JS/back-to-top.js"></script>
+
   <!-- Calculator Functionality -->
   <script>
-    // Back to Top Button Functionality
-    const backToTopButton = document.querySelector('.back-to-top');
-    
-    if (backToTopButton) {
-        // Show/hide button based on scroll position
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('show');
-            } else {
-                backToTopButton.classList.remove('show');
-            }
-        });
-
-        // Smooth scroll to top when clicked
-        backToTopButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
-
     // Simple calculator functionality
     document.addEventListener('DOMContentLoaded', function() {
       const hoursRange = document.getElementById('hoursRange');
