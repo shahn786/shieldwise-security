@@ -189,8 +189,34 @@
 }
 
 .navbar-nav .nav-link:hover {
-  color: #d4af37 !important;
-  transform: translateY(-1px);
+  color: #ffc107 !important;
+}
+
+/* Social Media Icons in Header */
+.navbar-nav .social-icon {
+  padding: 0.5rem 0.75rem !important;
+}
+
+.navbar-nav .social-icon i {
+  font-size: 1.2rem;
+}
+
+.navbar-nav .social-icon:hover i {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Phone Number in Header */
+.phone-header {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.phone-header:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-nav .nav-link:hover:before {
@@ -297,7 +323,7 @@
     position: static !important;
     width: 100%;
   }
-  
+
   /* Ensure dropdown toggle is clearly clickable */
   .navbar-nav .dropdown-toggle {
     cursor: pointer;
@@ -310,7 +336,7 @@
     position: relative;
     z-index: 10;
   }
-  
+
   /* Style dropdown menus */
   .navbar-main .dropdown-menu {
     position: static !important;
@@ -341,21 +367,21 @@
     z-index: 1000 !important;
     max-height: none !important;
   }
-  
+
   /* For services and service area dropdowns specifically */
   .nav-item.dropdown .dropdown-menu.show {
     max-height: 300px;
     overflow-y: auto;
     padding: 8px 0 !important;
   }
-  
+
   .navbar-main .dropdown-menu.show {
     max-height: 1000px !important;
     opacity: 1 !important;
     visibility: visible !important;
     padding: 8px 0 !important;
   }
-  
+
   /* Open state for dropdown menus */
   .navbar-main .dropdown-menu.show {
     display: block !important;
@@ -366,7 +392,7 @@
     padding-bottom: 10px !important;
     border-left: 3px solid #d4af37 !important;
   }
-  
+
   /* Dropdown items styling */
   .navbar-main .dropdown-menu .dropdown-item {
     color: rgba(255,255,255,.75) !important;
@@ -377,14 +403,14 @@
     display: block;
     width: 100%;
   }
-  
+
   .navbar-main .dropdown-menu .dropdown-item:hover,
   .navbar-main .dropdown-menu .dropdown-item:focus {
     background-color: #343a40 !important;
     color: #d4af37 !important;
     transform: translateX(5px);
   }
-  
+
   /* Dropdown arrow styling */
   .dropdown-toggle::after {
     float: right;
@@ -394,29 +420,29 @@
     border-left: 0.3em solid transparent;
     transition: transform 0.3s ease;
   }
-  
+
   /* Rotate arrow when expanded */
   .dropdown-toggle[aria-expanded="true"]::after {
     transform: rotate(180deg);
   }
-  
+
   /* Add highlighting for active dropdown toggle */
   .dropdown-toggle[aria-expanded="true"] {
     background-color: rgba(212, 175, 55, 0.1);
     color: #d4af37 !important;
   }
-  
+
   /* Ensure dropdown menus appear even in mobile view */
   .navbar-collapse.show .dropdown-menu,
   .navbar-collapse.collapsing .dropdown-menu {
     display: none; /* Start closed - JS will handle opening */
   }
-  
+
   /* Keep parent link active while displaying children */
   .dropdown.show > .nav-link {
     color: #d4af37 !important;
   }
-  
+
   /* Force higher z-index for dropdown menus to ensure they appear above other content */
   .dropdown-menu.show {
     z-index: 1030 !important;
