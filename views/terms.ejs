@@ -4,331 +4,249 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms of Service | ShieldWise Security</title>
-  <meta name="description" content="ShieldWise Security Terms of Service - Legal terms and conditions for using our security guard services in California.">
-  <meta name="robots" content="index, follow">
-  
-  <!-- Bootstrap CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta name="description" content="Terms of Service for ShieldWise Security - Legal terms and conditions for using our security services and website.">
+
+  <%- include("partials/seo-head", { 
+    canonicalPath: "/terms",
+    pageTitle: "Terms of Service | ShieldWise Security",
+    pageDescription: "ShieldWise Security Terms of Service - Legal terms and conditions for our security services.",
+    pageImage: "https://shieldwisesecurity.com/img/California_SecurityGuards.webp",
+    includeFAQ: false
+  }) %>
+
+  <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/style.css">
 
-  <%- include("partials/google-analytics") %>
-
   <style>
-    body {
-      background: #f5f5f7;
-      color: #333;
-      font-family: 'Arial', sans-serif;
+    .terms-container {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 40px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
     .terms-header {
-      background: linear-gradient(135deg, #1a2642 0%, #2c3e50 100%);
-      color: #fff;
-      padding: 60px 0 40px;
       text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #d12028;
     }
 
     .terms-header h1 {
       font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 15px;
-    }
-
-    .terms-content {
-      background: #fff;
-      padding: 60px 0;
-    }
-
-    .terms-content h2 {
       color: #1a2642;
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-top: 40px;
-      margin-bottom: 20px;
-      border-left: 5px solid #d4af37;
-      padding-left: 15px;
+      margin-bottom: 10px;
     }
 
-    .terms-content h3 {
-      color: #2c3e50;
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-top: 30px;
-      margin-bottom: 15px;
-    }
-
-    .terms-content p {
-      line-height: 1.8;
-      margin-bottom: 20px;
+    .terms-header p {
+      color: #666;
       font-size: 1rem;
     }
 
-    .terms-content ul {
-      margin-bottom: 25px;
-      padding-left: 30px;
+    .terms-section {
+      margin-bottom: 35px;
     }
 
-    .terms-content ul li {
-      margin-bottom: 10px;
-      line-height: 1.6;
-    }
-
-    .last-updated {
-      background: #f8f9fa;
-      padding: 15px 20px;
-      border-radius: 5px;
-      margin-bottom: 30px;
-      border-left: 4px solid #3498db;
-    }
-
-    .contact-box {
-      background: #f8f9fa;
-      border: 2px solid #d4af37;
-      border-radius: 8px;
-      padding: 30px;
-      margin-top: 40px;
-      text-align: center;
-    }
-
-    .contact-box h3 {
+    .terms-section h2 {
+      font-size: 1.4rem;
       color: #1a2642;
-      margin-bottom: 20px;
-    }
-
-    .contact-box a {
-      color: #3498db;
-      text-decoration: none;
+      margin-bottom: 15px;
       font-weight: 600;
     }
 
-    .contact-box a:hover {
-      text-decoration: underline;
+    .terms-section p,
+    .terms-section ul {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 15px;
     }
 
-    .important-notice {
+    .terms-section ul {
+      padding-left: 25px;
+    }
+
+    .terms-section li {
+      margin-bottom: 8px;
+    }
+
+    .contact-info-box {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 8px;
+      margin-top: 40px;
+      border-left: 4px solid #d12028;
+    }
+
+    .contact-info-box h3 {
+      font-size: 1.3rem;
+      color: #1a2642;
+      margin-bottom: 15px;
+    }
+
+    .contact-info-box p {
+      margin-bottom: 8px;
+      color: #444;
+    }
+
+    .emergency-notice {
       background: #fff3cd;
-      border-left: 4px solid #ffc107;
+      border: 2px solid #ffc107;
       padding: 20px;
+      border-radius: 8px;
       margin: 30px 0;
-      border-radius: 5px;
     }
 
-    .important-notice strong {
+    .emergency-notice h3 {
       color: #856404;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .emergency-notice p {
+      color: #856404;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    .last-updated {
+      text-align: center;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #e0e0e0;
+      color: #666;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .terms-container {
+        margin: 30px 15px;
+        padding: 25px 20px;
+      }
+
+      .terms-header h1 {
+        font-size: 2rem;
+      }
+
+      .terms-section h2 {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
+
 <body>
-  <%- include("partials/Header") %>
+  <%- include('partials/Header') %>
 
-  <div class="terms-header">
-    <div class="container">
+  <main class="terms-container">
+    <div class="terms-header">
       <h1>Terms of Service</h1>
-      <p>Legal terms and conditions for ShieldWise Security services</p>
+      <p>Please read these terms carefully before using our website or services</p>
     </div>
-  </div>
 
-  <div class="terms-content">
-    <div class="container">
-      <div class="last-updated">
-        <strong><i class="fas fa-calendar-alt"></i> Last Updated:</strong> October 31, 2025
-      </div>
+    <div class="terms-section">
+      <h2>1. Acceptance of Terms</h2>
+      <p>By accessing or using this website, you agree to these Terms and to all applicable policies referenced herein (including our Privacy Policy).</p>
+    </div>
 
-      <p>Welcome to ShieldWise Security. These Terms of Service ("Terms") govern your use of our website and security services. By accessing our website or engaging our services, you agree to be bound by these Terms.</p>
+    <div class="terms-section">
+      <h2>2. No Professional Advice; No Security Guarantee</h2>
+      <p>Content on this site is for general informational purposes only and does not constitute legal advice, safety advice, or professional counsel. We do not guarantee the prevention of crime, any specific incident response times, or any particular outcomes from using our services or information.</p>
+    </div>
 
-      <div class="important-notice">
-        <strong><i class="fas fa-exclamation-triangle"></i> Important:</strong> Please read these Terms carefully before using our services. If you do not agree to these Terms, do not use our website or services.
-      </div>
+    <div class="terms-section">
+      <h2>3. No Offer; Services Only by Contract</h2>
+      <p>Nothing on the website constitutes a binding offer to provide services. Security services are provided exclusively under a separate, mutually executed written service agreement that defines the scope of work, staffing, pricing, and each party's responsibilities and liabilities.</p>
+    </div>
 
-      <h2>1. Services Provided</h2>
-      
-      <p>ShieldWise Security provides professional security services in California, including but not limited to:</p>
-      <ul>
-        <li>Armed and unarmed security guard services</li>
-        <li>Mobile patrol services</li>
-        <li>Event security services</li>
-        <li>Fire watch services</li>
-        <li>Executive protection services</li>
-        <li>Commercial and residential security</li>
-        <li>Construction site security</li>
-        <li>Hospital and healthcare security</li>
-      </ul>
+    <div class="terms-section">
+      <h2>4. Disclaimers (As Is / As Available)</h2>
+      <p>This website and all content on it are provided on an "as is" and "as available" basis. ShieldWise Security disclaims all warranties of any kind, whether express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, accuracy, and non-infringement.</p>
+    </div>
 
-      <p>All services are provided in accordance with California Bureau of Security and Investigative Services (BSIS) regulations.</p>
-
-      <h2>2. Eligibility and Use of Website</h2>
-      
-      <p>You must be at least 18 years old to use our services or enter into agreements with us. By using our website, you represent that you:</p>
-      <ul>
-        <li>Are at least 18 years of age</li>
-        <li>Have the legal capacity to enter into binding contracts</li>
-        <li>Will use our website and services in compliance with all applicable laws</li>
-        <li>Will provide accurate and complete information when requested</li>
-      </ul>
-
-      <h2>3. Service Agreements and Quotes</h2>
-      
-      <h3>Quote Requests</h3>
-      <p>Quote requests submitted through our website are not binding commitments. They are requests for information only. A formal service agreement must be executed before services commence.</p>
-
-      <h3>Service Contracts</h3>
-      <p>All security services are governed by a written Service Agreement that includes:</p>
-      <ul>
-        <li>Scope of services to be provided</li>
-        <li>Service hours and locations</li>
-        <li>Pricing and payment terms</li>
-        <li>Duration and termination provisions</li>
-        <li>Liability limitations and insurance coverage</li>
-        <li>Compliance with applicable laws and regulations</li>
-      </ul>
-
-      <h3>Pricing and Payment</h3>
-      <p>Pricing is subject to change without notice. Prices quoted are estimates based on information provided and may be adjusted based on actual service requirements. Payment terms are specified in individual Service Agreements.</p>
-
-      <h2>4. Client Responsibilities</h2>
-      
-      <p>Clients engaging our security services agree to:</p>
-      <ul>
-        <li>Provide accurate information about security needs and site conditions</li>
-        <li>Grant necessary access to secured premises</li>
-        <li>Provide timely payment according to agreed terms</li>
-        <li>Comply with all applicable laws and regulations</li>
-        <li>Report incidents or concerns promptly</li>
-        <li>Maintain appropriate insurance coverage for their property</li>
-        <li>Indemnify ShieldWise Security for client-caused incidents</li>
-      </ul>
-
+    <div class="terms-section">
       <h2>5. Limitation of Liability</h2>
-      
-      <p>ShieldWise Security maintains professional liability insurance as required by California law (minimum $2,000,000 coverage). However, our liability is limited as follows:</p>
-
-      <ul>
-        <li><strong>Maximum Liability:</strong> Our total liability for any claim shall not exceed the amount paid for services rendered during the 12 months preceding the claim</li>
-        <li><strong>Force Majeure:</strong> We are not liable for failure to perform due to circumstances beyond our reasonable control</li>
-        <li><strong>Third-Party Acts:</strong> We are not liable for criminal acts committed by third parties</li>
-        <li><strong>Consequential Damages:</strong> We are not liable for indirect, consequential, or punitive damages</li>
-      </ul>
-
-      <div class="important-notice">
-        <strong>Important:</strong> Security services reduce risk but cannot guarantee prevention of all incidents. Clients should maintain appropriate insurance coverage for their property and operations.
-      </div>
-
-      <h2>6. Intellectual Property</h2>
-      
-      <p>All content on this website, including text, graphics, logos, images, and software, is the property of ShieldWise Security and protected by copyright and trademark laws. You may not:</p>
-      <ul>
-        <li>Copy, modify, or distribute our content without permission</li>
-        <li>Use our trademarks or branding without authorization</li>
-        <li>Reverse engineer or attempt to access our source code</li>
-        <li>Create derivative works based on our content</li>
-      </ul>
-
-      <h2>7. Privacy and Data Protection</h2>
-      
-      <p>Your use of our website and services is subject to our <a href="/privacy-policy">Privacy Policy</a>. We collect, use, and protect your personal information in accordance with applicable privacy laws, including the California Consumer Privacy Act (CCPA).</p>
-
-      <h2>8. Termination</h2>
-      
-      <h3>Service Termination</h3>
-      <p>Either party may terminate service agreements according to the terms specified in the individual Service Agreement. Typical termination provisions include:</p>
-      <ul>
-        <li>30-day written notice for routine termination</li>
-        <li>Immediate termination for material breach</li>
-        <li>Payment for services rendered through termination date</li>
-        <li>Return of client property and materials</li>
-      </ul>
-
-      <h3>Website Access</h3>
-      <p>We reserve the right to suspend or terminate your access to our website for:</p>
-      <ul>
-        <li>Violation of these Terms</li>
-        <li>Fraudulent or illegal activity</li>
-        <li>Abuse of our systems or services</li>
-        <li>Any reason deemed necessary to protect our business or clients</li>
-      </ul>
-
-      <h2>9. Indemnification</h2>
-      
-      <p>You agree to indemnify and hold harmless ShieldWise Security, its officers, employees, and agents from any claims, damages, or expenses arising from:</p>
-      <ul>
-        <li>Your use of our website or services</li>
-        <li>Your violation of these Terms</li>
-        <li>Your violation of any third-party rights</li>
-        <li>Inaccurate information you provide</li>
-        <li>Incidents caused by your negligence or intentional acts</li>
-      </ul>
-
-      <h2>10. BSIS Compliance and Licensing</h2>
-      
-      <p>ShieldWise Security operates in full compliance with California BSIS regulations:</p>
-      <ul>
-        <li>PPO License #: 123456</li>
-        <li>All security guards are properly licensed and trained</li>
-        <li>All armed guards possess valid firearms permits</li>
-        <li>Professional liability insurance: $2,000,000 coverage</li>
-        <li>Workers' compensation insurance maintained</li>
-      </ul>
-
-      <h2>11. Dispute Resolution</h2>
-      
-      <h3>Governing Law</h3>
-      <p>These Terms are governed by the laws of the State of California, without regard to conflict of law principles.</p>
-
-      <h3>Arbitration</h3>
-      <p>Any disputes arising from these Terms or our services shall be resolved through binding arbitration in Orange County, California, in accordance with the rules of the American Arbitration Association.</p>
-
-      <h3>Exceptions</h3>
-      <p>Either party may seek injunctive relief in court for violations of intellectual property rights or confidentiality obligations.</p>
-
-      <h2>12. Warranties and Disclaimers</h2>
-      
-      <h3>Our Warranties</h3>
-      <p>We warrant that:</p>
-      <ul>
-        <li>Services will be performed professionally and competently</li>
-        <li>All personnel are properly licensed and trained</li>
-        <li>We maintain required insurance coverage</li>
-        <li>We comply with applicable laws and regulations</li>
-      </ul>
-
-      <h3>Disclaimer</h3>
-      <p>EXCEPT AS EXPRESSLY STATED, OUR SERVICES AND WEBSITE ARE PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED. WE DISCLAIM ALL WARRANTIES INCLUDING MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</p>
-
-      <h2>13. Changes to Terms</h2>
-      
-      <p>We reserve the right to modify these Terms at any time. Changes will be effective upon posting to our website with an updated "Last Updated" date. Continued use of our services after changes constitutes acceptance of modified Terms.</p>
-
-      <p>For material changes affecting existing Service Agreements, we will provide 30 days' notice and opportunity to terminate without penalty.</p>
-
-      <h2>14. Severability</h2>
-      
-      <p>If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions shall remain in full force and effect. Invalid provisions will be modified to the minimum extent necessary to make them enforceable.</p>
-
-      <h2>15. Entire Agreement</h2>
-      
-      <p>These Terms, together with our Privacy Policy and any executed Service Agreement, constitute the entire agreement between you and ShieldWise Security regarding use of our website and services.</p>
-
-      <h2>16. Contact Information</h2>
-      
-      <p>For questions about these Terms or our services, contact us:</p>
-
-      <div class="contact-box">
-        <h3><i class="fas fa-gavel"></i> Legal & Service Inquiries</h3>
-        <p>
-          <strong>Email:</strong> <a href="mailto:legal@shieldwisesecurity.com">legal@shieldwisesecurity.com</a><br>
-          <strong>Phone:</strong> <a href="tel:+17147167430">(714) 716-7430</a><br>
-          <strong>Address:</strong> 220 Soo Dr, Fullerton, CA 92832<br>
-          <strong>Hours:</strong> 24/7 for Security Emergencies
-        </p>
-        <p style="margin-top: 20px;"><strong>BSIS PPO License #:</strong> 123456</p>
-      </div>
-
-      <div class="important-notice" style="margin-top: 40px;">
-        <strong><i class="fas fa-info-circle"></i> Note:</strong> These Terms of Service are a legal agreement. If you do not understand any provisions, please consult with a legal professional before engaging our services.
-      </div>
+      <p>To the maximum extent permitted by law, ShieldWise Security and its owners, officers, employees, and agents shall not be liable for any indirect, incidental, special, consequential, exemplary, or punitive damages arising from your use of the site or any content herein. In any event, our total liability for any claim related to this website or its use will not exceed the greater of one hundred dollars ($100) or the amount you paid (if anything) to use the site in the 12 months before the claim arose. Some jurisdictions do not allow certain liability limitations, so some of these limits may not apply to you to the extent prohibited by law.</p>
     </div>
-  </div>
 
-  <%- include("partials/Footer") %>
+    <div class="terms-section">
+      <h2>6. Indemnification</h2>
+      <p>You agree to defend, indemnify, and hold harmless ShieldWise Security and its affiliates, owners, officers, employees, and agents from and against any and all claims, damages, liabilities, losses, and expenses (including reasonable attorneys' fees) arising out of or related to your use of the site, your violation of these Terms, or your violation of any third party's rights.</p>
+    </div>
+
+    <div class="terms-section">
+      <h2>7. User Submissions & Testimonials</h2>
+      <p>If you submit any reviews, comments, questions, or other content through our site (including testimonials or feedback), you grant ShieldWise Security a non-exclusive, royalty-free, perpetual license to use, reproduce, modify, and publish such content for our business purposes (for example, in marketing or on the website). Any personal data in your submissions will be handled in accordance with our Privacy Policy. Testimonials on the site reflect individual experiences and do not guarantee that others will achieve the same results.</p>
+    </div>
+
+    <div class="terms-section">
+      <h2>8. Third-Party Links & Tools</h2>
+      <p>Our website may include links to third-party websites or integrate third-party tools or services for convenience. ShieldWise Security is not responsible for any third-party sites, content, products, or services, and your use of them is at your own risk. Linking to or using third-party sites does not imply endorsement or verification by us.</p>
+    </div>
+
+    <div class="terms-section">
+      <h2>9. Intellectual Property</h2>
+      <p>All content on the site, including text, graphics, logos, trademarks, and software, is the property of ShieldWise Security or its content suppliers and is protected by intellectual property laws. You are granted a limited, revocable license to access and use the site for personal, non-commercial use. You may not reproduce, distribute, create derivative works from, or otherwise exploit any site content without our express prior written permission.</p>
+    </div>
+
+    <div class="emergency-notice">
+      <h3>⚠️ Emergency and Critical Incidents</h3>
+      <p><strong>This website is not a real-time monitoring or emergency reporting platform.</strong> Do not use this site to report an ongoing crime or emergency. In any emergency or life-threatening situation, call 911 or contact law enforcement or emergency responders immediately.</p>
+    </div>
+
+    <div class="terms-section">
+      <h2>11. DMCA Notice</h2>
+      <p>ShieldWise Security respects intellectual property rights and complies with the Digital Millennium Copyright Act (DMCA). If you believe any content on this site infringes your copyright, please send a written notice to our designated DMCA Agent at the contact information below:</p>
+      <ul>
+        <li><strong>DMCA Agent:</strong> Shahnawaz Alikhail</li>
+        <li><strong>Mailing Address:</strong> 7155 Dimaggio St, Riverside, CA 92503, USA</li>
+        <li><strong>Email:</strong> info@shieldwisesecurity.com</li>
+        <li><strong>Phone:</strong> (714) 716-7430</li>
+      </ul>
+      <p>Your DMCA notice must include the information required by 17 U.S.C. § 512(c)(3). Upon receipt of a valid DMCA notice, we will investigate and remove or disable access to the allegedly infringing material as appropriate, and we may notify the user who posted the content.</p>
+    </div>
+
+    <div class="terms-section">
+      <h2>12. Governing Law; Dispute Resolution; Arbitration & Class-Action Waiver</h2>
+      <p>These Terms and your use of the site are governed by the laws of the State of California, without regard to its conflict of laws principles, and by applicable U.S. federal law (including the Federal Arbitration Act). Any dispute or claim arising out of or relating to this website or these Terms shall be resolved by binding individual arbitration in Orange County or Los Angeles County, California, administered by a reputable arbitration provider such as JAMS or the AAA under their applicable rules.</p>
+      <p><strong>No Class Actions:</strong> You and ShieldWise Security each waive the right to a trial by jury and agree that any dispute will be resolved on an individual basis, not as part of any class or representative action. An arbitrator may not consolidate the claims of multiple parties.</p>
+      <p><strong>Small Claims Option:</strong> Either you or ShieldWise may choose to bring an individual claim in small claims court instead of arbitration if the claim qualifies.</p>
+    </div>
+
+    <div class="terms-section">
+      <h2>13. Severability; No Waiver</h2>
+      <p>If any provision of these Terms is found to be unlawful or unenforceable, that provision will be deemed severed from these Terms and will not affect the validity and enforceability of the remaining provisions. Our failure to enforce any right or provision of these Terms shall not constitute a waiver of that or any other right or provision.</p>
+    </div>
+
+    <div class="terms-section">
+      <h2>14. Changes to Terms</h2>
+      <p>ShieldWise Security may update or modify these Terms of Service at any time in its discretion. If we make material changes, we will update the "Last Updated" date at the bottom of this document. Your continued use of the site after any changes signifies your acceptance of the updated Terms.</p>
+    </div>
+
+    <div class="contact-info-box">
+      <h3>15. Contact Information</h3>
+      <p>If you have any questions about these Terms or need to contact us, please reach out to ShieldWise Security at:</p>
+      <p><strong>Main Office:</strong><br>
+      7155 Dimaggio St, Riverside, CA 92503, USA</p>
+      <p><strong>Branch Office:</strong><br>
+      4614 El Camino Real, Irvine, CA 92602, USA</p>
+      <p><strong>Email:</strong> info@shieldwisesecurity.com</p>
+      <p><strong>Phone:</strong> (714) 716-7430</p>
+      <p><strong>License:</strong> ShieldWise Security is licensed by the California Bureau ofSecurity and Investigative Services (License #122008).</p>
+    </div>
+
+    <div class="last-updated">
+      <p>Last Updated: January 2, 2025</p>
+    </div>
+  </main>
+
+  <%- include('partials/Footer') %>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/JS/back-to-top.js"></script>
 </body>
 </html>
