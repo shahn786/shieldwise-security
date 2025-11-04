@@ -1,0 +1,550 @@
+
+// ========================================
+// COMPREHENSIVE CITY ROUTING
+// Updated: 2025-11-04
+// ========================================
+
+// Generic route for city pages
+app.get('/city/:name', (req, res) => {
+    const cityName = req.params.name.toLowerCase();
+    res.render(`cities/${cityName}`, { city: cityName, title: cityName });
+});
+
+// Main city/county routes
+app.get('/los-angeles', (req, res) => {
+    res.render('cities/los-angeles', { title: 'Los Angeles' });
+});
+
+app.get('/orange-county', (req, res) => {
+    res.render('cities/orange-county', { title: 'Orange County' });
+});
+
+app.get('/san-francisco', (req, res) => {
+    res.render('cities/san-francisco', { title: 'San Francisco' });
+});
+
+app.get('/san-diego', (req, res) => {
+    res.render('cities/san-diego', { title: 'San Diego' });
+});
+
+app.get('/riverside-county', (req, res) => {
+    res.render('cities/riverside-county', { title: 'Riverside County' });
+});
+
+app.get('/sacramento', (req, res) => {
+    res.render('cities/sacramento', { title: 'Sacramento' });
+});
+
+app.get('/fresno', (req, res) => {
+    res.render('cities/fresno', { 
+        title: 'Fresno',
+        cityName: 'Fresno',
+        pageUrl: '/fresno'
+    });
+});
+
+// ========================================
+// LOS ANGELES COUNTY (35 cities)
+// ========================================
+const losAngelesCountyCities = [
+    'alhambra', 'arcadia', 'azusa', 'baldwin-park', 'bellflower', 'beverly-hills',
+    'burbank', 'calabasas', 'carson', 'cerritos', 'compton', 'culver-city', 'downey',
+    'downtown-los-Angeles', 'el-monte', 'gardena', 'glendale', 'hawthorne',
+    'hermosa-beach', 'hollywood', 'inglewood', 'la-mirada', 'lancaster', 'long-beach',
+    'malibu', 'manhattan-beach', 'norwalk', 'palmdale', 'pasadena',
+    'pomona', 'redondo-beach', 'santa-monica', 'torrance', 'west-hollywood'
+];
+
+losAngelesCountyCities.forEach(city => {
+    const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    
+    // Route with /los-angeles/ prefix
+    app.get(`/los-angeles/${city}`, (req, res) => {
+        try {
+            const templateName = city === 'downtown' ? 'downtown-los-Angeles' : city;
+            res.render(`cities/${templateName}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/los-angeles/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    // Direct route without prefix
+    app.get(`/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+});
+
+// ========================================
+// ORANGE COUNTY (27 cities)
+// ========================================
+const orangeCountyCities = [
+    'aliso-viejo', 'anaheim', 'brea', 'buena-park', 'costa-mesa', 'cypress', 'dana-point',
+    'fountain-valley', 'fullerton', 'garden-grove', 'huntington-beach', 'irvine',
+    'la-habra', 'laguna-beach', 'laguna-hills', 'laguna-niguel', 'lake-forest',
+    'mission-viejo', 'newport-beach', 'orange', 'placentia',
+    'san-clemente', 'santa-ana', 'tustin', 'westminster', 'yorba-linda'
+];
+
+orangeCountyCities.forEach(city => {
+    const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    
+    // Orange County prefix route
+    app.get(`/orange-county/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/orange-county/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    // Direct route without county prefix
+    app.get(`/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+});
+
+// ========================================
+// SAN DIEGO COUNTY (18 cities)
+// ========================================
+const sanDiegoCountyCities = [
+    'carlsbad', 'chula-vista', 'coronado', 'del-mar', 'el-cajon', 'encinitas',
+    'escondido', 'imperial-beach', 'la-mesa', 'lemon-grove', 'national-city',
+    'oceanside', 'poway', 'san-diego', 'san-marcos', 'santee', 'solana-beach', 'vista'
+];
+
+sanDiegoCountyCities.forEach(city => {
+    const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    
+    app.get(`/california/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/california/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    app.get(`/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+});
+
+// ========================================
+// SACRAMENTO COUNTY (17 cities)
+// ========================================
+const sacramentoCountyCities = [
+    'carmichael', 'citrus-heights', 'downtown-sacramento', 'east-sacramento', 'elk-grove',
+    'fair-oaks', 'folsom', 'isleton', 'land-park', 'midtown', 'midtown-sacramento',
+    'natomas', 'pocket', 'rancho-cordova', 'roseville', 'west-sacramento', 'davis', 'woodland'
+];
+
+sacramentoCountyCities.forEach(city => {
+    const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    
+    app.get(`/sacramento-county/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/sacramento-county/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    app.get(`/sacramento/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/sacramento/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    app.get(`/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+});
+
+// ========================================
+// RIVERSIDE COUNTY (13 cities)
+// ========================================
+const riversideCountyCities = [
+    'cathedral-city', 'coachella', 'corona', 'hemet', 'indio', 'la-quinta',
+    'moreno-valley', 'murrieta', 'palm-springs', 'perris', 'riverside', 'temecula'
+];
+
+riversideCountyCities.forEach(city => {
+    const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    
+    app.get(`/riverside-county/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/riverside-county/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    app.get(`/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+});
+
+// ========================================
+// SAN BERNARDINO COUNTY (18 cities)
+// ========================================
+const sanBernardinoCities = [
+    'apple-valley', 'barstow', 'big-bear-lake', 'chino', 'chino-hills', 'colton',
+    'fontana', 'hesperia', 'highland', 'montclair', 'ontario', 'rancho-cucamonga',
+    'redlands', 'rialto', 'san-bernardino', 'twentynine-palms', 'upland', 'victorville'
+];
+
+sanBernardinoCities.forEach(city => {
+    const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    
+    app.get(`/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+});
+
+// ========================================
+// SANTA CLARA COUNTY (11 cities)
+// ========================================
+const santaClaraCities = [
+    'campbell', 'cupertino', 'gilroy', 'los-gatos', 'milpitas', 'morgan-hill',
+    'mountain-view', 'palo-alto', 'san-jose', 'santa-clara', 'sunnyvale'
+];
+
+santaClaraCities.forEach(city => {
+    const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    
+    app.get(`/santa-clara-county/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/santa-clara-county/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    app.get(`/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+});
+
+// ========================================
+// ALAMEDA COUNTY (13 cities)
+// ========================================
+const alamedaCountyCities = [
+    'alameda', 'berkeley', 'castro-valley', 'dublin', 'emeryville', 'fremont',
+    'hayward', 'newark', 'oakland', 'pleasanton', 'san-leandro', 'san-lorenzo', 'union-city'
+];
+
+alamedaCountyCities.forEach(city => {
+    const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    
+    app.get(`/alameda-county/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/alameda-county/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    app.get(`/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    // Security suffix routes
+    app.get(`/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: `${formattedCity} Security`,
+                cityName: formattedCity,
+                pageUrl: `/${city}-security`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    app.get(`/alameda-county/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: `${formattedCity} Security`,
+                cityName: formattedCity,
+                pageUrl: `/alameda-county/${city}-security`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+});
+
+// ========================================
+// VENTURA COUNTY (10 cities)
+// ========================================
+const venturaCountyCities = [
+    'camarillo', 'fillmore', 'moorpark', 'ojai', 'oxnard', 'port-hueneme',
+    'santa-paula', 'simi-valley', 'thousand-oaks', 'ventura'
+];
+
+venturaCountyCities.forEach(city => {
+    const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    
+    app.get(`/ventura-county/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/ventura-county/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    app.get(`/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    app.get(`/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/${city}-security`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    app.get(`/ventura-county/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/ventura-county/${city}-security`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+});
+
+// ========================================
+// CENTRAL VALLEY COUNTIES (15 cities)
+// ========================================
+const centralValleyCities = [
+    'bakersfield', 'clovis', 'delano', 'hanford', 'lemoore',
+    'madera', 'merced', 'modesto', 'porterville', 'stockton', 'tulare', 'visalia'
+];
+
+centralValleyCities.forEach(city => {
+    const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    
+    app.get(`/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    app.get(`/central-valley/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/central-valley/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+});
+
+// ========================================
+// BAY AREA & OTHER CITIES (6 cities)
+// ========================================
+const otherCities = [
+    'san-fernando', 'south-gate', 'van-nuys', 'whittier', 'huntington-park'
+];
+
+otherCities.forEach(city => {
+    const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    
+    app.get(`/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+});
+
+// Special route for Carlsbad (already handled in San Diego County, kept for backward compatibility)
+app.get('/carlsbad', (req, res) => {
+    res.render('cities/carlsbad', { 
+        title: 'Carlsbad',
+        cityName: 'Carlsbad',
+        pageUrl: '/carlsbad'
+    });
+});
+
+// Special route for San Bernardino
+app.get('/san-bernardino', (req, res) => {
+    res.render('cities/san-bernardino', { title: 'San Bernardino' });
+});
+
+// Special route for Ventura
+app.get('/ventura', (req, res) => {
+    res.render('cities/ventura', { title: 'Ventura County' });
+});
+
+// Special route for Santa Clara
+app.get('/santa-clara', (req, res) => {
+    res.render('cities/santa-clara', { title: 'Santa Clara' });
+});
+
+// Special route for Alameda
+app.get('/alameda', (req, res) => {
+    res.render('cities/alameda', { title: 'Alameda' });
+});
+
+// Special route for San Jose
+app.get('/san-jose', (req, res) => {
+    res.render('cities/san-jose', { title: 'San Jose' });
+});
