@@ -1286,7 +1286,8 @@ const orangeCountyCities = [
     'garden-grove', 'fullerton', 'costa-mesa', 'laguna-beach', 'mission-viejo',
     'tustin', 'lake-forest', 'westminster', 'cypress', 'aliso-viejo',
     'laguna-niguel', 'orange', 'dana-point', 'san-clemente', 'buena-park',
-    'fountain-valley', 'laguna-hills', 'yorba-linda', 'placentia', 'brea'
+    'fountain-valley', 'laguna-hills', 'yorba-linda', 'placentia', 'brea',
+    'la-habra'
 ];
 
 orangeCountyCities.forEach(city => {
