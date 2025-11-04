@@ -1305,20 +1305,6 @@ orangeCountyCities.forEach(city => {
             res.status(500).send('Page not found');
         }
     });
-
-    // Also create direct route without /orange-county prefix
-    app.get(`/${city}`, (req, res) => {
-        try {
-            res.render(`cities/${city}`, { 
-                title: formattedCity,
-                cityName: formattedCity,
-                pageUrl: `/${city}`
-            });
-        } catch (error) {
-            console.error(`Error rendering ${city} page:`, error);
-            res.status(500).send('Page not found');
-        }
-    });
 });
 
 // Central Valley cities routes
