@@ -15,11 +15,11 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- Hero Video CSS -->
-    <link rel="stylesheet" href="/css/hero-video.css">
-    
     <!-- Services Page CSS -->
     <link rel="stylesheet" href="/css/services-page.css">
+    
+    <!-- Hero Video CSS -->
+    <link rel="stylesheet" href="/css/hero-video.css">
     
     <!-- Back to Top CSS -->
     <link rel="stylesheet" href="/css/back-to.css">
@@ -505,54 +505,67 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Back to Top Script -->
+    <!-- Back to Top Script - Fixed scroll detection -->
     <script>
-    (function() {
-      'use strict';
+    (function () {
+      console.log('Back-to-top script loaded');
       
+      function getScrollY() {
+        // Use the most reliable method
+        return Math.max(
+          window.pageYOffset,
+          document.documentElement.scrollTop,
+          document.body.scrollTop
+        ) || 0;
+      }
+
       function initBackToTop() {
+        console.log('Initializing back-to-top button...');
         var btn = document.getElementById('backToTop');
+        
         if (!btn) {
-          console.error('Back to top button not found');
+          console.error('Back to top button NOT found');
           return;
         }
-
-        var lastScroll = 0;
         
-        function updateButton() {
-          var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        console.log('Back to top button found');
+
+        function handleScroll() {
+          var scrollY = getScrollY();
+          console.log('Scroll position:', scrollY);
           
-          if (scrollTop > 300 && scrollTop !== lastScroll) {
+          if (scrollY > 300) {
+            console.log('Adding active class');
             btn.classList.add('active');
-          } else if (scrollTop <= 300) {
+          } else {
+            console.log('Removing active class');
             btn.classList.remove('active');
           }
-          
-          lastScroll = scrollTop;
         }
 
-        // Throttle scroll events
-        var ticking = false;
-        window.addEventListener('scroll', function() {
-          if (!ticking) {
-            window.requestAnimationFrame(function() {
-              updateButton();
-              ticking = false;
-            });
-            ticking = true;
+        // Use throttled scroll listener for better performance
+        var scrollTimeout;
+        function throttledScroll() {
+          if (!scrollTimeout) {
+            scrollTimeout = setTimeout(function() {
+              handleScroll();
+              scrollTimeout = null;
+            }, 100);
           }
-        }, { passive: true });
+        }
 
-        btn.addEventListener('click', function(e) {
-          e.preventDefault();
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-          });
-        });
-
+        window.addEventListener('scroll', throttledScroll, { passive: true });
+        
         // Initial check
-        updateButton();
+        setTimeout(handleScroll, 100);
+
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          console.log('Scrolling to top');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        console.log('Initialization complete - page height:', document.documentElement.scrollHeight, 'viewport height:', window.innerHeight);
       }
 
       if (document.readyState === 'loading') {
