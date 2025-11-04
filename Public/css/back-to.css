@@ -1,47 +1,51 @@
 
 /* Back to Top Button Styles */
 .back-to-top {
-    position: fixed !important;
-    bottom: 20px !important;
-    right: 20px !important;
-    width: 50px !important;
-    height: 50px !important;
-    background-color: #d32f2f !important;
-    color: white !important;
-    border: none !important;
-    border-radius: 50% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-decoration: none !important;
-    font-size: 18px !important;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: all 0.3s ease !important;
-    z-index: 2147483647 !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
-    transform: translateY(100px);
-}
-
-.back-to-top:hover {
-    background-color: #b71c1c !important;
-    color: white !important;
-    text-decoration: none !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    z-index: 9999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(0);
 }
 
 .back-to-top.active {
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-    transform: translateY(0) !important;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.back-to-top:hover {
+    background-color: #b71c1c;
+    color: white;
+    text-decoration: none;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .back-to-top:focus {
     outline: 2px solid #fff;
     outline-offset: 2px;
+}
+
+.back-to-top i {
+    color: white;
 }
 
 /* Responsive adjustments */
