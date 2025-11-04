@@ -987,11 +987,14 @@ const losAngelesAreas = [
     'el-monte', 'hawthorne', 'south-gate', 'arcadia', 'azusa',
     'baldwin-park', 'bellflower', 'calabasas', 'carson', 'cypress',
     'downey', 'gardena', 'hermosa-beach', 'huntington-park', 'la-mirada',
-    'manhattan-beach', 'norwalk', 'redondo-beach'
+    'manhattan-beach', 'norwalk', 'redondo-beach', 'alhambra', 'cerritos',
+    'downtown-los-Angeles', 'la-habra'
 ];
 
 losAngelesAreas.forEach(area => {
     const formattedArea = area.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    
+    // Route with /los-angeles/ prefix
     app.get(`/los-angeles/${area}`, (req, res) => {
         // Special case for downtown-los-Angeles.ejs file
         if (area === 'downtown') {
@@ -1000,6 +1003,17 @@ losAngelesAreas.forEach(area => {
             res.render(`cities/${area}`, { title: formattedArea });
         }
     });
+    
+    // Direct route without prefix for the newly added cities
+    if (area === 'alhambra' || area === 'cerritos' || area === 'downtown-los-Angeles' || area === 'la-habra') {
+        app.get(`/${area}`, (req, res) => {
+            res.render(`cities/${area}`, { 
+                title: formattedArea,
+                cityName: formattedArea,
+                pageUrl: `/${area}`
+            });
+        });
+    }
 });
 
 // Riverside County cities routes
