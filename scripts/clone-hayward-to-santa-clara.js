@@ -18,7 +18,7 @@ const cities = [
         landmark2: 'Pruneyard Shopping Center',
         landmark3: 'Los Gatos Creek Trail',
         industries: ['Commercial', 'Residential', 'Retail', 'Entertainment'],
-        heroImage: '/img/san jose.webp',
+        heroImage: '/img/san-jose.webp',
         countySlug: 'santa-clara-county',
         county: 'Santa Clara County'
     },
@@ -37,7 +37,7 @@ const cities = [
         landmark2: 'De Anza College',
         landmark3: 'Cupertino City Center',
         industries: ['Technology', 'Corporate', 'Residential', 'Educational'],
-        heroImage: '/img/san jose.webp',
+        heroImage: '/img/san-jose.webp',
         countySlug: 'santa-clara-county',
         county: 'Santa Clara County'
     },
@@ -56,7 +56,7 @@ const cities = [
         landmark2: 'Gilroy Premium Outlets',
         landmark3: 'Gilroy Garlic Festival',
         industries: ['Agricultural', 'Tourism', 'Retail', 'Events'],
-        heroImage: '/img/san jose.webp',
+        heroImage: '/img/san-jose.webp',
         countySlug: 'santa-clara-county',
         county: 'Santa Clara County'
     },
@@ -75,7 +75,7 @@ const cities = [
         landmark2: 'Vasona Lake Park',
         landmark3: 'Netflix HQ',
         industries: ['Residential', 'Retail', 'Technology', 'Entertainment'],
-        heroImage: '/img/san jose.webp',
+        heroImage: '/img/san-jose.webp',
         countySlug: 'santa-clara-county',
         county: 'Santa Clara County'
     },
@@ -94,7 +94,7 @@ const cities = [
         landmark2: 'Cisco Systems Campus',
         landmark3: 'Milpitas Square',
         industries: ['Industrial', 'Manufacturing', 'Technology', 'Retail'],
-        heroImage: '/img/san jose.webp',
+        heroImage: '/img/san-jose.webp',
         countySlug: 'santa-clara-county',
         county: 'Santa Clara County'
     },
@@ -113,7 +113,7 @@ const cities = [
         landmark2: 'Anderson Lake County Park',
         landmark3: 'Coyote Lake',
         industries: ['Agricultural', 'Residential', 'Commercial', 'Events'],
-        heroImage: '/img/san jose.webp',
+        heroImage: '/img/san-jose.webp',
         countySlug: 'santa-clara-county',
         county: 'Santa Clara County'
     },
@@ -132,7 +132,7 @@ const cities = [
         landmark2: 'NASA Ames Research Center',
         landmark3: 'Computer History Museum',
         industries: ['Technology', 'Aerospace', 'Research', 'Entertainment'],
-        heroImage: '/img/san jose.webp',
+        heroImage: '/img/san-jose.webp',
         countySlug: 'santa-clara-county',
         county: 'Santa Clara County'
     },
@@ -151,7 +151,7 @@ const cities = [
         landmark2: 'Stanford Shopping Center',
         landmark3: 'Tesla Headquarters',
         industries: ['Educational', 'Technology', 'Finance', 'Research'],
-        heroImage: '/img/san jose.webp',
+        heroImage: '/img/san-jose.webp',
         countySlug: 'santa-clara-county',
         county: 'Santa Clara County'
     },
@@ -170,7 +170,7 @@ const cities = [
         landmark2: 'Downtown San Jose',
         landmark3: 'SAP Center',
         industries: ['Technology', 'Corporate', 'Educational', 'Entertainment', 'Transportation'],
-        heroImage: '/img/san jose.webp',
+        heroImage: '/img/san-jose.webp',
         countySlug: 'santa-clara-county',
         county: 'Santa Clara County'
     },
@@ -189,7 +189,7 @@ const cities = [
         landmark2: 'Intel Museum',
         landmark3: 'Santa Clara University',
         industries: ['Technology', 'Sports', 'Entertainment', 'Educational'],
-        heroImage: '/img/san jose.webp',
+        heroImage: '/img/san-jose.webp',
         countySlug: 'santa-clara-county',
         county: 'Santa Clara County'
     },
@@ -208,7 +208,7 @@ const cities = [
         landmark2: 'LinkedIn Headquarters',
         landmark3: 'Lockheed Martin Space Systems',
         industries: ['Technology', 'Corporate', 'Industrial', 'Residential'],
-        heroImage: '/img/san jose.webp',
+        heroImage: '/img/san-jose.webp',
         countySlug: 'santa-clara-county',
         county: 'Santa Clara County'
     }
