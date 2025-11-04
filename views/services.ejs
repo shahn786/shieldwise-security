@@ -511,10 +511,12 @@
       console.log('Back-to-top script loaded');
       
       function getScrollY() {
-        // Try multiple methods to get scroll position
-        var scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-        console.log('Raw scroll values - window.scrollY:', window.scrollY, 'pageYOffset:', window.pageYOffset, 'documentElement.scrollTop:', document.documentElement.scrollTop, 'body.scrollTop:', document.body.scrollTop);
-        return scrollY;
+        // Use the most reliable method
+        return Math.max(
+          window.pageYOffset,
+          document.documentElement.scrollTop,
+          document.body.scrollTop
+        ) || 0;
       }
 
       function initBackToTop() {
@@ -522,58 +524,53 @@
         var btn = document.getElementById('backToTop');
         
         if (!btn) {
-          console.error('Back to top button NOT found - ID: backToTop does not exist');
+          console.error('Back to top button NOT found');
           return;
         }
         
-        console.log('Back to top button found:', btn);
-        console.log('Initial button styles:', {
-          opacity: window.getComputedStyle(btn).opacity,
-          visibility: window.getComputedStyle(btn).visibility,
-          display: window.getComputedStyle(btn).display,
-          position: window.getComputedStyle(btn).position
-        });
+        console.log('Back to top button found');
 
         function handleScroll() {
           var scrollY = getScrollY();
-          console.log('Current scroll position:', scrollY);
+          console.log('Scroll position:', scrollY);
           
           if (scrollY > 300) {
-            console.log('SHOWING button - adding active class');
+            console.log('Adding active class');
             btn.classList.add('active');
-            btn.style.opacity = '1';
-            btn.style.visibility = 'visible';
           } else {
-            console.log('HIDING button - removing active class');
+            console.log('Removing active class');
             btn.classList.remove('active');
-            btn.style.opacity = '0';
-            btn.style.visibility = 'hidden';
           }
-          
-          console.log('After update - opacity:', btn.style.opacity, 'visibility:', btn.style.visibility, 'classes:', btn.className);
         }
 
-        // Listen to both window and document scroll events
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        document.addEventListener('scroll', handleScroll, { passive: true });
+        // Use throttled scroll listener for better performance
+        var scrollTimeout;
+        function throttledScroll() {
+          if (!scrollTimeout) {
+            scrollTimeout = setTimeout(function() {
+              handleScroll();
+              scrollTimeout = null;
+            }, 100);
+          }
+        }
+
+        window.addEventListener('scroll', throttledScroll, { passive: true });
         
-        // Check initial position
-        handleScroll();
+        // Initial check
+        setTimeout(handleScroll, 100);
 
         btn.addEventListener('click', function (e) {
           e.preventDefault();
-          console.log('Back to top clicked - scrolling to top');
+          console.log('Scrolling to top');
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
         
-        console.log('Back-to-top initialization complete');
+        console.log('Initialization complete - page height:', document.documentElement.scrollHeight, 'viewport height:', window.innerHeight);
       }
 
       if (document.readyState === 'loading') {
-        console.log('DOM still loading, waiting...');
         document.addEventListener('DOMContentLoaded', initBackToTop);
       } else {
-        console.log('DOM already loaded, initializing now');
         initBackToTop();
       }
     })();
