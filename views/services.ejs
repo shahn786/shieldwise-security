@@ -505,7 +505,47 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Back to Top Script -->
-    <script src="/JS/back-to-top.js" defer></script>
+    <!-- Back to Top Script - Robust inline version -->
+    <script>
+    (function () {
+      function getScrollY() {
+        return window.pageYOffset !== undefined
+          ? window.pageYOffset
+          : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+      }
+
+      function initBackToTop() {
+        var btn = document.getElementById('backToTop');
+        if (!btn) {
+          console.log('Back to top button NOT found');
+          return;
+        }
+        console.log('Back to top button found');
+
+        function handleScroll() {
+          if (getScrollY() > 300) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        }
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll();
+
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          console.log('Back to top clicked');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initBackToTop);
+      } else {
+        initBackToTop();
+      }
+    })();
+    </script>
 </body>
 </html>
