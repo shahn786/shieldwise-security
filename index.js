@@ -893,6 +893,31 @@ app.get('/sacramento', (req, res) => {
     res.render('cities/sacramento', { title: 'Sacramento' });
 });
 
+// Sacramento security routes
+app.get('/sacramento-security', (req, res) => {
+    res.render('cities/sacramento', { 
+        title: 'Sacramento Security',
+        cityName: 'Sacramento',
+        pageUrl: '/sacramento-security'
+    });
+});
+
+app.get('/sacramento-county/sacramento-security', (req, res) => {
+    res.render('cities/sacramento', { 
+        title: 'Sacramento Security',
+        cityName: 'Sacramento',
+        pageUrl: '/sacramento-county/sacramento-security'
+    });
+});
+
+app.get('/sacramento/sacramento-security', (req, res) => {
+    res.render('cities/sacramento', { 
+        title: 'Sacramento Security',
+        cityName: 'Sacramento',
+        pageUrl: '/sacramento/sacramento-security'
+    });
+});
+
 app.get('/fresno', (req, res) => {
     res.render('cities/fresno', { 
         title: 'Fresno',
@@ -937,6 +962,33 @@ losAngelesCountyCities.forEach(city => {
                 title: formattedCity,
                 cityName: formattedCity,
                 pageUrl: `/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    // Security suffix routes
+    app.get(`/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: `${formattedCity} Security`,
+                cityName: formattedCity,
+                pageUrl: `/${city}-security`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    app.get(`/los-angeles/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: `${formattedCity} Security`,
+                cityName: formattedCity,
+                pageUrl: `/los-angeles/${city}-security`
             });
         } catch (error) {
             console.error(`Error rendering ${city} page:`, error);
@@ -1000,6 +1052,33 @@ orangeCountyCities.forEach(city => {
             res.status(500).send('Page not found');
         }
     });
+    
+    // Security suffix routes
+    app.get(`/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: `${formattedCity} Security`,
+                cityName: formattedCity,
+                pageUrl: `/${city}-security`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    app.get(`/orange-county/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: `${formattedCity} Security`,
+                cityName: formattedCity,
+                pageUrl: `/orange-county/${city}-security`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
 });
 
 // ========================================
@@ -1033,6 +1112,33 @@ sanDiegoCountyCities.forEach(city => {
                 title: formattedCity,
                 cityName: formattedCity,
                 pageUrl: `/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    // Security suffix routes
+    app.get(`/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: `${formattedCity} Security`,
+                cityName: formattedCity,
+                pageUrl: `/${city}-security`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    app.get(`/california/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: `${formattedCity} Security`,
+                cityName: formattedCity,
+                pageUrl: `/california/${city}-security`
             });
         } catch (error) {
             console.error(`Error rendering ${city} page:`, error);
@@ -1091,6 +1197,46 @@ sacramentoCountyCities.forEach(city => {
             res.status(500).send('Page not found');
         }
     });
+    
+    // Security suffix routes
+    app.get(`/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: `${formattedCity} Security`,
+                cityName: formattedCity,
+                pageUrl: `/${city}-security`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    app.get(`/sacramento-county/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: `${formattedCity} Security`,
+                cityName: formattedCity,
+                pageUrl: `/sacramento-county/${city}-security`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    app.get(`/sacramento/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: `${formattedCity} Security`,
+                cityName: formattedCity,
+                pageUrl: `/sacramento/${city}-security`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
 });
 
 // ========================================
@@ -1129,6 +1275,33 @@ riversideCountyCities.forEach(city => {
             res.status(500).send('Page not found');
         }
     });
+    
+    // Security suffix routes
+    app.get(`/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: `${formattedCity} Security`,
+                cityName: formattedCity,
+                pageUrl: `/${city}-security`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    app.get(`/riverside-county/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: `${formattedCity} Security`,
+                cityName: formattedCity,
+                pageUrl: `/riverside-county/${city}-security`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
 });
 
 // ========================================
@@ -1149,6 +1322,20 @@ sanBernardinoCities.forEach(city => {
                 title: formattedCity,
                 cityName: formattedCity,
                 pageUrl: `/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    // Security suffix route
+    app.get(`/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: `${formattedCity} Security`,
+                cityName: formattedCity,
+                pageUrl: `/${city}-security`
             });
         } catch (error) {
             console.error(`Error rendering ${city} page:`, error);
@@ -1187,6 +1374,33 @@ santaClaraCities.forEach(city => {
                 title: formattedCity,
                 cityName: formattedCity,
                 pageUrl: `/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    // Security suffix routes
+    app.get(`/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: `${formattedCity} Security`,
+                cityName: formattedCity,
+                pageUrl: `/${city}-security`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    app.get(`/santa-clara-county/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: `${formattedCity} Security`,
+                cityName: formattedCity,
+                pageUrl: `/santa-clara-county/${city}-security`
             });
         } catch (error) {
             console.error(`Error rendering ${city} page:`, error);
@@ -1360,6 +1574,33 @@ centralValleyCities.forEach(city => {
             res.status(500).send('Page not found');
         }
     });
+    
+    // Security suffix routes
+    app.get(`/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: `${formattedCity} Security`,
+                cityName: formattedCity,
+                pageUrl: `/${city}-security`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    app.get(`/central-valley/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: `${formattedCity} Security`,
+                cityName: formattedCity,
+                pageUrl: `/central-valley/${city}-security`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
 });
 
 // ========================================
@@ -1378,6 +1619,20 @@ otherCities.forEach(city => {
                 title: formattedCity,
                 cityName: formattedCity,
                 pageUrl: `/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+    
+    // Security suffix route
+    app.get(`/${city}-security`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: `${formattedCity} Security`,
+                cityName: formattedCity,
+                pageUrl: `/${city}-security`
             });
         } catch (error) {
             console.error(`Error rendering ${city} page:`, error);
