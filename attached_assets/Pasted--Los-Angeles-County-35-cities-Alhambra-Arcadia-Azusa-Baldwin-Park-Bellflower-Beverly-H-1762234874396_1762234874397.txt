@@ -1,0 +1,195 @@
+ Los Angeles County (35 cities)
+ Alhambra
+ Arcadia
+ Azusa
+ Baldwin Park
+ Bellflower
+ Beverly Hills
+ Burbank
+ Calabasas
+ Carson
+ Cerritos
+ Compton
+ Culver City
+ Downey
+ Downtown Los Angeles
+ El Monte
+ Gardena
+ Glendale
+ Hawthorne
+ Hermosa Beach
+ Hollywood
+ Inglewood
+ La Mirada
+ Lancaster
+ Long Beach
+ Los Angeles
+ Malibu
+ Manhattan Beach
+ Norwalk
+ Palmdale
+ Pasadena
+ Pomona
+ Redondo Beach
+ Santa Monica
+ Torrance
+ West Hollywood
+ Orange County (25 cities)
+ Aliso Viejo
+ Anaheim
+ Buena Park
+ Costa Mesa
+ Cypress
+ Dana Point
+ Fountain Valley
+ Fullerton
+ Garden Grove
+ Huntington Beach
+ Irvine
+ La Habra
+ Laguna Beach
+ Laguna Hills
+ Laguna Niguel
+ Lake Forest
+ Mission Viejo
+ Newport Beach
+ Orange
+ Orange County
+ Placentia
+ San Clemente
+ Santa Ana
+ Tustin
+ Westminster
+ San Diego County (17 cities)
+ Carlsbad
+ Chula Vista
+ Coronado
+ Del Mar
+ El Cajon
+ Encinitas
+ Escondido
+ Imperial Beach
+ La Mesa
+ Lemon Grove
+ National City
+ Oceanside
+ Poway
+ San Diego
+ San Marcos
+ Santee
+ Solana Beach
+ Vista
+ Sacramento County (13 cities)
+ Carmichael
+ Citrus Heights
+ Downtown Sacramento
+ East Sacramento
+ Elk Grove
+ Fair Oaks
+ Folsom
+ Isleton
+ Land Park
+ Midtown
+ Midtown Sacramento
+ Natomas
+ Pocket
+ Rancho Cordova
+ Roseville
+ Sacramento
+ West Sacramento
+ Riverside County (12 cities)
+ Cathedral City
+ Coachella
+ Corona
+ Hemet
+ Indio
+ La Quinta
+ Moreno Valley
+ Murrieta
+ Palm Springs
+ Perris
+ Riverside
+ Riverside County
+ Temecula
+ San Bernardino County (14 cities)
+ Apple Valley
+ Barstow
+ Big Bear Lake
+ Chino
+ Chino Hills
+ Colton
+ Fontana
+ Hesperia
+ Highland
+ Montclair
+ Ontario
+ Rancho Cucamonga
+ Redlands
+ Rialto
+ San Bernardino
+ Twentynine Palms
+ Upland
+ Victorville
+ Santa Clara County (10 cities)
+ Campbell
+ Cupertino
+ Gilroy
+ Los Gatos
+ Milpitas
+ Morgan Hill
+ Mountain View
+ Palo Alto
+ San Jose
+ Santa Clara
+ Sunnyvale
+ Alameda County (10 cities)
+ Alameda
+ Berkeley
+ Castro Valley
+ Dublin
+ Emeryville
+ Fremont
+ Hayward
+ Newark
+ Oakland
+ Pleasanton
+ San Leandro
+ San Lorenzo
+ Union City
+ Ventura County (7 cities)
+ Camarillo
+ Fillmore
+ Moorpark
+ Ojai
+ Oxnard
+ Port Hueneme
+ Santa Paula
+ Simi Valley
+ Thousand Oaks
+ Ventura
+ Central Valley Counties (11 cities)
+Includes Fresno, Kern, Kings, Madera, Merced, San Joaquin, Stanislaus, Tulare, and Yolo Counties
+
+ Bakersfield
+ Clovis
+ Davis
+ Delano
+ Fresno
+ Hanford
+ Lemoore
+ Madera
+ Merced
+ Modesto
+ Porterville
+ Stockton
+ Tulare
+ Visalia
+ Woodland
+ Bay Area - San Francisco & Other (2 cities)
+ San Fernando
+ San Francisco
+ South Gate
+ Van Nuys
+ Whittier
+ Yorba Linda
+ Huntington Park
