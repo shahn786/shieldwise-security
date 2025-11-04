@@ -15,28 +15,25 @@
     justify-content: center !important;
     text-decoration: none !important;
     font-size: 18px !important;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: all 0.3s ease !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease !important;
     z-index: 2147483647 !important;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
-    transform: translateY(100px);
 }
 
 .back-to-top:hover {
-    background-color: #b71c1c !important;
-    color: white !important;
-    text-decoration: none !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+    background-color: #b71c1c;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .back-to-top.active {
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
-    transform: translateY(0) !important;
 }
 
 .back-to-top:focus {
