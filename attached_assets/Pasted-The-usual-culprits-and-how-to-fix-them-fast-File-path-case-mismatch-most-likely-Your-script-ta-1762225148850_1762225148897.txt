@@ -1,0 +1,123 @@
+The usual culprits (and how to fix them fast)
+
+
+File path case mismatch (most likely)
+Your script tag uses /JS/back-to-top.js (capital JS). On Linux servers paths are case-sensitive. If your folder is public/js or Public/js, a capital mismatch returns 404, so the class never toggles.
+Fix: make the path match the real folder exactly, e.g.
+
+
+<script src="/js/back-to-top.js" defer></script>
+
+Open DevTools → Network tab and confirm 200 OK for that file.
+
+
+CSS filename mismatch
+You’re linking /css/back-to.css. If your actual file is back-to-top.css (or anything else), the styles won’t load. That can keep the button invisible or styled oddly.
+Fix: make sure the CSS href matches the real file exactly.
+
+
+Wrong scroll container
+If some wrapper (like .hero-section or a layout div) has overflow: auto and controls scrolling, listening on window won’t update pageYOffset.
+Fix: either remove that overflow or read from document.documentElement.scrollTop (robust code below).
+
+
+Covered by other layers
+Sticky headers/overlays can sit on top.
+Fix: bump z-index higher than anything else:
+
+
+.back-to-top { z-index: 2147483647 !important; }
+
+
+
+DOM not ready / element not found
+You already defend for this, but if the element ID changes in templates, the init won’t find it. Make sure it’s exactly id="backToTop".
+
+
+
+Drop-in robust script (paste at the very end, before </body>)
+This version:
+
+
+Works whether the page scrolls on window or the root element
+
+
+Uses passive scroll for perf
+
+
+Keeps your smooth scroll
+
+
+<script>
+(function () {
+  function getScrollY() {
+    return window.pageYOffset !== undefined
+      ? window.pageYOffset
+      : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+  }
+
+  function initBackToTop() {
+    var btn = document.getElementById('backToTop');
+    if (!btn) return;
+
+    function handleScroll() {
+      if (getScrollY() > 300) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBackToTop);
+  } else {
+    initBackToTop();
+  }
+})();
+</script>
+
+Minimal CSS (make sure this actually loads)
+.back-to-top {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  width: 50px !important;
+  height: 50px !important;
+  background: #d32f2f !important;
+  color: #fff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity .3s ease, transform .3s ease, visibility .3s ease !important;
+  z-index: 2147483647 !important;
+}
+.back-to-top.active { opacity: 1 !important; visibility: visible !important; }
+
+Quick checklist
+
+
+✅ Network tab shows 200 for /js/back-to-top.js and your CSS file
+
+
+✅ Console shows “Initializing Back to Top” and “Back to top button found” (your logs)
+
+
+✅ No parent container is handling scroll with overflow: auto
+
+
+✅ id="backToTop" matches exactly
+
+
+If you still don’t see it after fixing the path, tell me your exact folder names for public, js, and css, and I’ll align the includes to your Express/static setup.
