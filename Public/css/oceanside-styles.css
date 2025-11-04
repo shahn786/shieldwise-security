@@ -2553,3 +2553,72 @@ body {
         background-attachment: scroll;
     }
 }
+
+
+/* ✅ SIMPLIFIED AREAS WE SERVE SECTION */
+.anaheim-areas-section {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.anaheim-areas-section h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.anaheim-areas-section .areas-intro {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.area-item {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border-top: 3px solid #d12028;
+}
+
+.area-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.area-item i {
+    font-size: 2rem;
+    color: #d12028;
+    margin-bottom: 15px;
+}
+
+.area-item h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .areas-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .anaheim-areas-section h3 {
+        font-size: 1.6rem;
+    }
+}

@@ -1,4 +1,3 @@
-
 const fs = require('fs');
 const path = require('path');
 
@@ -524,44 +523,23 @@ function generateCityPage(city) {
                     </div>
                 </div>
 
-                <!-- Enhanced Features Section -->
-                <section class="anaheim-features-section">
-                    <h3>Why Choose ShieldWise Security for ${city.name} Protection?</h3>
-                    <div class="anaheim-features-container">
-                        <div class="anaheim-feature-item">
-                            <i class="fas fa-building"></i>
-                            <h4>Local ${city.name} Expertise</h4>
-                            <p>Our security teams have specialized knowledge of ${city.name}'s ${city.industries.join(', ').toLowerCase()} sectors and community needs for targeted protection strategies.</p>
-                        </div>
+                <!-- AREAS WE SERVE SECTION -->
+                <section class="anaheim-areas-section">
+                    <h3>${city.name} Areas We Serve</h3>
+                    <p class="areas-intro">ShieldWise Security provides comprehensive security services throughout ${city.name} and surrounding Santa Clara County.</p>
 
-                        <div class="anaheim-feature-item">
-                            <i class="fas fa-shield-alt"></i>
-                            <h4>${city.specialty}</h4>
-                            <p>Specialized security solutions for ${city.specialty.toLowerCase()} with staff experienced in Santa Clara County security protocols and requirements.</p>
+                    <div class="areas-grid">
+                        <div class="area-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h4>${city.landmarks[0]}</h4>
                         </div>
-
-                        <div class="anaheim-feature-item">
-                            <i class="fas fa-clock"></i>
-                            <h4>24/7 Coverage</h4>
-                            <p>Round-the-clock security services with rapid 1-2 hour response capabilities throughout ${city.name} and surrounding Santa Clara County areas.</p>
+                        <div class="area-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h4>${city.landmarks[1]}</h4>
                         </div>
-
-                        <div class="anaheim-feature-item">
-                            <i class="fas fa-fire-extinguisher"></i>
-                            <h4>Fire Watch Services</h4>
-                            <p>Professional fire watch services for construction sites and buildings with impaired fire systems, meeting all California state regulations.</p>
-                        </div>
-
-                        <div class="anaheim-feature-item">
-                            <i class="fas fa-car"></i>
-                            <h4>Mobile Patrol Services</h4>
-                            <p>Regular patrol checks for businesses, properties, and facilities with detailed reporting and rapid response capabilities.</p>
-                        </div>
-
-                        <div class="anaheim-feature-item">
-                            <i class="fas fa-users"></i>
-                            <h4>Trained Professionals</h4>
-                            <p>BSIS licensed and certified security professionals with ongoing training in customer service, emergency response, and conflict resolution.</p>
+                        <div class="area-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h4>All ${city.name} Neighborhoods</h4>
                         </div>
                     </div>
                 </section>
