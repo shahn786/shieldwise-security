@@ -1294,12 +1294,27 @@ orangeCountyCities.forEach(city => {
     // Format city name for display (e.g., 'santa-ana') becomes 'Santa Ana')
     const formattedCity = city.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
+    // Orange County prefix route
     app.get(`/orange-county/${city}`, (req, res) => {
         try {
             res.render(`cities/${city}`, { 
                 title: formattedCity, 
                 cityName: formattedCity,
                 pageUrl: `/orange-county/${city}`
+            });
+        } catch (error) {
+            console.error(`Error rendering ${city} page:`, error);
+            res.status(500).send('Page not found');
+        }
+    });
+
+    // Direct route without county prefix (for all cities)
+    app.get(`/${city}`, (req, res) => {
+        try {
+            res.render(`cities/${city}`, { 
+                title: formattedCity,
+                cityName: formattedCity,
+                pageUrl: `/${city}`
             });
         } catch (error) {
             console.error(`Error rendering ${city} page:`, error);
