@@ -508,6 +508,8 @@
     <!-- Back to Top Script - Robust inline version -->
     <script>
     (function () {
+      console.log('Back-to-top script loaded');
+      
       function getScrollY() {
         return window.pageYOffset !== undefined
           ? window.pageYOffset
@@ -515,34 +517,47 @@
       }
 
       function initBackToTop() {
+        console.log('Initializing back-to-top button...');
         var btn = document.getElementById('backToTop');
+        
         if (!btn) {
-          console.log('Back to top button NOT found');
+          console.error('Back to top button NOT found - ID: backToTop does not exist');
           return;
         }
-        console.log('Back to top button found');
+        
+        console.log('Back to top button found:', btn);
+        console.log('Button classes:', btn.className);
 
         function handleScroll() {
-          if (getScrollY() > 300) {
+          var scrollY = getScrollY();
+          console.log('Scroll position:', scrollY);
+          
+          if (scrollY > 300) {
+            console.log('Adding active class');
             btn.classList.add('active');
           } else {
+            console.log('Removing active class');
             btn.classList.remove('active');
           }
         }
 
         window.addEventListener('scroll', handleScroll, { passive: true });
-        handleScroll();
+        handleScroll(); // Check initial position
 
         btn.addEventListener('click', function (e) {
           e.preventDefault();
-          console.log('Back to top clicked');
+          console.log('Back to top clicked - scrolling to top');
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+        
+        console.log('Back-to-top initialization complete');
       }
 
       if (document.readyState === 'loading') {
+        console.log('DOM still loading, waiting...');
         document.addEventListener('DOMContentLoaded', initBackToTop);
       } else {
+        console.log('DOM already loaded, initializing now');
         initBackToTop();
       }
     })();
