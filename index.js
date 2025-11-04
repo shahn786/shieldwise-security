@@ -919,8 +919,7 @@ losAngelesCountyCities.forEach(city => {
     // Route with /los-angeles/ prefix
     app.get(`/los-angeles/${city}`, (req, res) => {
         try {
-            const templateName = city === 'downtown' ? 'downtown-los-Angeles' : city;
-            res.render(`cities/${templateName}`, { 
+            res.render(`cities/${city}`, { 
                 title: formattedCity,
                 cityName: formattedCity,
                 pageUrl: `/los-angeles/${city}`
@@ -944,6 +943,20 @@ losAngelesCountyCities.forEach(city => {
             res.status(500).send('Page not found');
         }
     });
+});
+
+// Special route for /los-angeles/downtown to map to downtown-los-Angeles
+app.get('/los-angeles/downtown', (req, res) => {
+    try {
+        res.render('cities/downtown-los-Angeles', { 
+            title: 'Downtown Los Angeles',
+            cityName: 'Downtown Los Angeles',
+            pageUrl: '/los-angeles/downtown'
+        });
+    } catch (error) {
+        console.error('Error rendering downtown Los Angeles page:', error);
+        res.status(500).send('Page not found');
+    }
 });
 
 // ========================================
@@ -1315,7 +1328,7 @@ venturaCountyCities.forEach(city => {
 // CENTRAL VALLEY COUNTIES (15 cities)
 // ========================================
 const centralValleyCities = [
-    'bakersfield', 'clovis', 'davis', 'delano', 'hanford', 'lemoore',
+    'bakersfield', 'clovis', 'davis', 'delano', 'fresno', 'hanford', 'lemoore',
     'madera', 'merced', 'modesto', 'porterville', 'stockton', 'tulare', 'visalia', 'woodland'
 ];
 
