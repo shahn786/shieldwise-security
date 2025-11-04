@@ -873,12 +873,24 @@ app.get('/los-angeles', (req, res) => {
     res.render('cities/los-angeles', { title: 'Los Angeles' });
 });
 
+app.get('/los-angeles-security', (req, res) => {
+    res.render('cities/los-angeles', { title: 'Los Angeles Security' });
+});
+
 app.get('/orange-county', (req, res) => {
     res.render('cities/orange-county', { title: 'Orange County' });
 });
 
+app.get('/orange-county-security', (req, res) => {
+    res.render('cities/orange-county', { title: 'Orange County Security' });
+});
+
 app.get('/san-francisco', (req, res) => {
     res.render('cities/san-francisco', { title: 'San Francisco' });
+});
+
+app.get('/san-francisco-security', (req, res) => {
+    res.render('cities/san-francisco', { title: 'San Francisco Security' });
 });
 
 app.get('/san-diego', (req, res) => {
@@ -889,8 +901,21 @@ app.get('/riverside-county', (req, res) => {
     res.render('cities/riverside-county', { title: 'Riverside County' });
 });
 
+app.get('/riverside-county-security', (req, res) => {
+    res.render('cities/riverside-county', { title: 'Riverside County Security' });
+});
+
 app.get('/sacramento', (req, res) => {
     res.render('cities/sacramento', { title: 'Sacramento' });
+});
+
+// Sacramento alternative county routes
+app.get('/sacramento-county/sacramento', (req, res) => {
+    res.render('cities/sacramento', { 
+        title: 'Sacramento',
+        cityName: 'Sacramento',
+        pageUrl: '/sacramento-county/sacramento'
+    });
 });
 
 // Sacramento security routes
@@ -935,7 +960,7 @@ const losAngelesCountyCities = [
     'downtown-los-Angeles', 'el-monte', 'gardena', 'glendale', 'hawthorne',
     'hermosa-beach', 'hollywood', 'inglewood', 'la-mirada', 'lancaster', 'long-beach',
     'malibu', 'manhattan-beach', 'norwalk', 'palmdale', 'pasadena',
-    'pomona', 'redondo-beach', 'santa-monica', 'torrance', 'west-hollywood'
+    'pomona', 'redondo-beach', 'santa-monica', 'torrance', 'west-hollywood', 'whittier'
 ];
 
 losAngelesCountyCities.forEach(city => {
