@@ -517,14 +517,19 @@
           return;
         }
 
+        console.log('Back to top initialized, page height:', document.documentElement.scrollHeight, 'viewport:', window.innerHeight);
+        
         var lastScroll = 0;
         
         function updateButton() {
           var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          console.log('Scroll position:', scrollTop);
           
-          if (scrollTop > 300 && scrollTop !== lastScroll) {
+          if (scrollTop > 100) {
+            console.log('Showing button');
             btn.classList.add('active');
-          } else if (scrollTop <= 300) {
+          } else {
+            console.log('Hiding button');
             btn.classList.remove('active');
           }
           

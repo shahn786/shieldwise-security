@@ -529,6 +529,13 @@
 /* ===== SMOOTH SCROLL ===== */
 html {
     scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* ===== PRINT STYLES ===== */
