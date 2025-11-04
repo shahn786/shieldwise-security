@@ -505,15 +505,16 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Back to Top Script - Robust inline version -->
+    <!-- Back to Top Script - Fixed scroll detection -->
     <script>
     (function () {
       console.log('Back-to-top script loaded');
       
       function getScrollY() {
-        return window.pageYOffset !== undefined
-          ? window.pageYOffset
-          : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+        // Try multiple methods to get scroll position
+        var scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        console.log('Raw scroll values - window.scrollY:', window.scrollY, 'pageYOffset:', window.pageYOffset, 'documentElement.scrollTop:', document.documentElement.scrollTop, 'body.scrollTop:', document.body.scrollTop);
+        return scrollY;
       }
 
       function initBackToTop() {
@@ -526,23 +527,38 @@
         }
         
         console.log('Back to top button found:', btn);
-        console.log('Button classes:', btn.className);
+        console.log('Initial button styles:', {
+          opacity: window.getComputedStyle(btn).opacity,
+          visibility: window.getComputedStyle(btn).visibility,
+          display: window.getComputedStyle(btn).display,
+          position: window.getComputedStyle(btn).position
+        });
 
         function handleScroll() {
           var scrollY = getScrollY();
-          console.log('Scroll position:', scrollY);
+          console.log('Current scroll position:', scrollY);
           
           if (scrollY > 300) {
-            console.log('Adding active class');
+            console.log('SHOWING button - adding active class');
             btn.classList.add('active');
+            btn.style.opacity = '1';
+            btn.style.visibility = 'visible';
           } else {
-            console.log('Removing active class');
+            console.log('HIDING button - removing active class');
             btn.classList.remove('active');
+            btn.style.opacity = '0';
+            btn.style.visibility = 'hidden';
           }
+          
+          console.log('After update - opacity:', btn.style.opacity, 'visibility:', btn.style.visibility, 'classes:', btn.className);
         }
 
+        // Listen to both window and document scroll events
         window.addEventListener('scroll', handleScroll, { passive: true });
-        handleScroll(); // Check initial position
+        document.addEventListener('scroll', handleScroll, { passive: true });
+        
+        // Check initial position
+        handleScroll();
 
         btn.addEventListener('click', function (e) {
           e.preventDefault();
