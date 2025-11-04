@@ -517,19 +517,14 @@
           return;
         }
 
-        console.log('Back to top initialized, page height:', document.documentElement.scrollHeight, 'viewport:', window.innerHeight);
-        
         var lastScroll = 0;
         
         function updateButton() {
           var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          console.log('Scroll position:', scrollTop);
           
-          if (scrollTop > 100) {
-            console.log('Showing button');
+          if (scrollTop > 300 && scrollTop !== lastScroll) {
             btn.classList.add('active');
-          } else {
-            console.log('Hiding button');
+          } else if (scrollTop <= 300) {
             btn.classList.remove('active');
           }
           
