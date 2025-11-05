@@ -494,36 +494,35 @@
 
     <!-- Custom JavaScript for Enhanced UX -->
     <script>
-        $(document).ready(function() {
-            // Smooth scrolling for anchor links
-            $('a[href^="#"]').on('click', function(event) {
-                event.preventDefault();
-                $('html, body').animate({
-                    scrollTop: $($.attr(this, 'href')).offset().top - 100
-                }, 800);
-            });
-
-            // Enhanced FAQ Toggles with proper animation
-            $('.faq-question').on('click', function(e) {
-                e.preventDefault();
-                const $item = $(this).closest('.anaheim-faq-item');
-                const $toggle = $(this).find('.faq-toggle i');
-                const $answer = $item.find('.faq-answer');
-                const isActive = $item.hasClass('active');
-
-                // Close all FAQ items first
-                $('.anaheim-faq-item').each(function() {
-                    $(this).removeClass('active');
-                    $(this).find('.faq-answer').stop(true, true).slideUp(300);
-                    $(this).find('.faq-toggle i').removeClass('fa-minus').addClass('fa-plus');
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Accordion functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const item = this.closest('.anaheim-faq-item');
+                    const toggle = this.querySelector('.faq-toggle i');
+                    const answer = item.querySelector('.faq-answer');
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all FAQ items
+                    document.querySelectorAll('.anaheim-faq-item').forEach(faqItem => {
+                        faqItem.classList.remove('active');
+                        const faqToggle = faqItem.querySelector('.faq-toggle i');
+                        if (faqToggle) {
+                            faqToggle.classList.remove('fa-minus');
+                            faqToggle.classList.add('fa-plus');
+                        }
+                    });
+                    
+                    // If this item wasn't active, open it
+                    if (!isActive) {
+                        item.classList.add('active');
+                        toggle.classList.remove('fa-plus');
+                        toggle.classList.add('fa-minus');
+                    }
                 });
-
-                // If this item wasn't active, open it
-                if (!isActive) {
-                    $item.addClass('active');
-                    $answer.stop(true, true).slideDown(300);
-                    $toggle.removeClass('fa-plus').addClass('fa-minus');
-                }
             });
         });
     </script>
