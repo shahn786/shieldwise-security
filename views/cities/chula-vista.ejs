@@ -705,91 +705,7 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="anaheim-testimonials-section" id="testimonials-section">
-        <div class="anaheim-testimonials-container">
-            <h2>What Our Chula Vista Clients Say</h2>
-
-            <div class="testimonials-static-grid">
-                <div class="testimonial-row" itemscope itemtype="https://schema.org/Review">
-                    <meta itemprop="datePublished" content="2024-12-10">
-                    <div class="testimonial-image">
-                        <img src="/img/testimonial-1.webp" alt="Carlos Rodriguez - Manufacturing Manager" width="80" height="80" loading="lazy" decoding="async">
-                    </div>
-                    <div class="testimonial-content">
-                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
-                        <p itemprop="reviewBody">ShieldWise Security has been providing security for our manufacturing facility in Chula Vista for the past year. Their guards are professional, thorough, and understand the unique security needs of industrial operations. They've implemented excellent access control protocols and their overnight patrols have virtually eliminated the equipment theft issues we were experiencing.</p>
-                        <div class="testimonial-author-info">
-                            <h4 itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Carlos Rodriguez</span></h4>
-                            <p>Manufacturing Manager, Eastlake</p>
-                            <div class="author-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                                <meta itemprop="ratingValue" content="5">
-                                <meta itemprop="bestRating" content="5">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-row reverse" itemscope itemtype="https://schema.org/Review">
-                    <meta itemprop="datePublished" content="2024-11-28">
-                    <div class="testimonial-image">
-                        <img src="/img/testimonial-2.webp" alt="Maria Gonzalez - Property Manager" width="80" height="80" loading="lazy" decoding="async">
-                    </div>
-                    <div class="testimonial-content">
-                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
-                        <p itemprop="reviewBody">We've been using ShieldWise for our retail center in Chula Vista for over two years. Their security team has significantly reduced shoplifting incidents and their guards are excellent with our customers. They maintain a strong security presence while being approachable and helpful. Their bilingual staff has been particularly valuable for communicating with our diverse customer base.</p>
-                        <div class="testimonial-author-info">
-                            <h4 itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Maria Gonzalez</span></h4>
-                            <p>Property Manager, Otay Ranch</p>
-                            <div class="author-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                                <meta itemprop="ratingValue" content="5">
-                                <meta itemprop="bestRating" content="5">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-row" itemscope itemtype="https://schema.org/Review">
-                    <meta itemprop="datePublished" content="2024-10-12">
-                    <div class="testimonial-image">
-                        <img src="/img/testimonial-3.webp" alt="David Martinez - HOA President" width="80" height="80" loading="lazy" decoding="async">
-                    </div>
-                    <div class="testimonial-content">
-                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
-                        <p itemprop="reviewBody">As the president of our HOA in Rolling Hills Ranch, I can't recommend ShieldWise Security enough. Their guards provide consistent, reliable service and have significantly improved our residents' feeling of security. Their detailed reporting and regular communication keep me informed, and they're always responsive to any concerns our community raises.</p>
-                        <div class="testimonial-author-info">
-                            <h4 itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">David Martinez</span></h4>
-                            <p>HOA President, Rolling Hills Ranch</p>
-                            <div class="author-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                                <meta itemprop="ratingValue" content="5">
-                                <meta itemprop="bestRating" content="5">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-cta">
-                <p>Join our growing list of satisfied Chula Vista clients</p>
-                <a href="/reviews" class="testimonial-link" onclick="gtag('event', 'click', {'event_category': 'Reviews', 'event_label': 'Read More Reviews'});">Read More Client Reviews <i class="fas fa-long-arrow-alt-right"></i></a>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- 2024-2025 Security Trends Section -->
     <section class="py-5 bg-light">
@@ -1159,49 +1075,6 @@
                 }
             });
         });
-
-        // Testimonial Slider functionality
-        const testimonials = document.querySelectorAll('.anaheim-testimonial-item');
-        const indicators = document.querySelectorAll('.slider-indicators .indicator');
-        const prevButton = document.querySelector('.slider-prev');
-        const nextButton = document.querySelector('.slider-next');
-        let currentSlide = 0;
-
-        function showSlide(index) {
-            testimonials.forEach(item => item.classList.remove('active'));
-            indicators.forEach(item => item.classList.remove('active'));
-
-            testimonials[index].classList.add('active');
-            indicators[index].classList.add('active');
-            currentSlide = index;
-        }
-
-        if (prevButton && nextButton) {
-            prevButton.addEventListener('click', () => {
-                let newIndex = currentSlide - 1;
-                if (newIndex < 0) newIndex = testimonials.length - 1;
-                showSlide(newIndex);
-            });
-
-            nextButton.addEventListener('click', () => {
-                let newIndex = currentSlide + 1;
-                if (newIndex >= testimonials.length) newIndex = 0;
-                showSlide(newIndex);
-            });
-
-            indicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', () => {
-                    showSlide(index);
-                });
-            });
-
-            // Auto-rotate testimonials every 7 seconds
-            setInterval(() => {
-                let newIndex = currentSlide + 1;
-                if (newIndex >= testimonials.length) newIndex = 0;
-                showSlide(newIndex);
-            }, 7000);
-        }
     </script>
 </body>
 </html>
