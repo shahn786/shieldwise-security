@@ -110,7 +110,7 @@
         {
           "@type": "Question",
           "name": "Are your security guards licensed in California?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes, all our security guards are BSIS-certified and licensed by the state of California, with comprehensive background checks." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, all our security guards are BSIS-certified and licensed by the state of California, with comprehensive training and background checks." }
         },
         {
           "@type": "Question",
@@ -525,10 +525,10 @@
             </div>
         </section>
 
+        
 
-
-
-
+        
+    
 
     <!-- Call-to-Action Section -->
         <section class="cta-section">
@@ -543,21 +543,21 @@
         </section>
 
     <!-- Include Footer -->
+    
+    
 
-
-
-
+    
     <!-- FAQ Accordion JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const faqQuestions = document.querySelectorAll('.faq-question');
-
+            
             faqQuestions.forEach(question => {
                 question.addEventListener('click', function() {
                     const item = this.closest('.anaheim-faq-item');
                     const toggle = this.querySelector('.faq-toggle i');
                     const isActive = item.classList.contains('active');
-
+                    
                     // Close all FAQ items
                     document.querySelectorAll('.anaheim-faq-item').forEach(faqItem => {
                         faqItem.classList.remove('active');
@@ -567,7 +567,7 @@
                             faqToggle.classList.add('fa-plus');
                         }
                     });
-
+                    
                     // If this item wasn't active, open it
                     if (!isActive) {
                         item.classList.add('active');
@@ -787,14 +787,14 @@
 
 
 
-
+    
 
     <%- include('../partials/Footer') %>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-
+    
     <!-- Back to Top JavaScript -->
     <script src="/JS/back-to-top.js"></script>
 
@@ -922,13 +922,13 @@ const testimonialIndicators = document.querySelectorAll('.slider-indicators .ind
 
 function showTestimonialSlide(n) {
     if (testimonialSlides.length === 0) return;
-
+    
     if (n >= testimonialSlides.length) { currentTestimonialSlide = 0; }
     if (n < 0) { currentTestimonialSlide = testimonialSlides.length - 1; }
-
+    
     testimonialSlides.forEach(slide => slide.classList.remove('active'));
     testimonialIndicators.forEach(indicator => indicator.classList.remove('active'));
-
+    
     testimonialSlides[currentTestimonialSlide].classList.add('active');
     testimonialIndicators[currentTestimonialSlide].classList.add('active');
 }
@@ -951,48 +951,6 @@ setInterval(() => {
 // Initialize first slide
 showTestimonialSlide(currentTestimonialSlide);
 </script>
-
-<!-- Related Areas Section -->
-        <section class="py-5 bg-light">
-            <div class="container">
-                <h2 class="text-center mb-5">Explore Other Areas We Serve</h2>
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <a href="/riverside-county" class="text-decoration-none">
-                            <div class="card h-100 shadow-sm hover-effect">
-                                <img src="/img/riverside.webp" class="card-img-top" alt="Comprehensive security services throughout Riverside County California" loading="lazy" width="400" height="250" style="object-fit: cover;">
-                                <div class="card-body text-center">
-                                    <h3 class="h5 card-title">Riverside County</h3>
-                                    <p class="card-text">Comprehensive security services throughout Riverside County.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <a href="/cities/temecula" class="text-decoration-none">
-                            <div class="card h-100 shadow-sm hover-effect">
-                                <img src="/img/LA.webp" class="card-img-top" alt="Specialized security services for Temecula businesses and residential communities" loading="lazy" width="400" height="250" style="object-fit: cover;">
-                                <div class="card-body text-center">
-                                    <h3 class="h5 card-title">Temecula</h3>
-                                    <p class="card-text">Specialized security for Temecula businesses and properties.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <a href="/cities/wildomar" class="text-decoration-none">
-                            <div class="card h-100 shadow-sm hover-effect">
-                                <img src="/img/downtown-la1.webp" class="card-img-top" alt="Premium security solutions for Wildomar residential and commercial properties" loading="lazy" width="400" height="250" style="object-fit: cover;">
-                                <div class="card-body text-center">
-                                    <h3 class="h5 card-title">Wildomar</h3>
-                                    <p class="card-text">Premium security solutions for Wildomar properties.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
 
 </body>
 </html>
