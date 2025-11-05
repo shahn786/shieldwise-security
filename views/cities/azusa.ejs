@@ -1079,5 +1079,28 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Back to Top and Common Functionality -->
     <script src="/JS/back-to-top.js"></script>
+    <!-- FAQ Accordion JavaScript -->
+    <script>
+        $(document).ready(function() {
+            // Enhanced FAQ Toggles with smooth animations
+            $('.faq-question').on('click', function() {
+                const $item = $(this).closest('.anaheim-faq-item');
+                const $toggle = $(this).find('.faq-toggle i');
+                const $answer = $item.find('.faq-answer');
+                const isActive = $item.hasClass('active');
+
+                // Close all FAQ items first
+                $('.anaheim-faq-item').removeClass('active');
+                $('.anaheim-faq-item .faq-toggle i').removeClass('fa-minus').addClass('fa-plus');
+
+                // If this item wasn't active, open it
+                if (!isActive) {
+                    $item.addClass('active');
+                    $toggle.removeClass('fa-plus').addClass('fa-minus');
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>

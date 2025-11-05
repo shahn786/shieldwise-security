@@ -1382,6 +1382,29 @@
 
         <!-- Back to Top Button Script -->
         <script src="/JS/back-to-top.js"></script>
+    <!-- FAQ Accordion JavaScript -->
+    <script>
+        $(document).ready(function() {
+            // Enhanced FAQ Toggles with smooth animations
+            $('.faq-question').on('click', function() {
+                const $item = $(this).closest('.anaheim-faq-item');
+                const $toggle = $(this).find('.faq-toggle i');
+                const $answer = $item.find('.faq-answer');
+                const isActive = $item.hasClass('active');
+
+                // Close all FAQ items first
+                $('.anaheim-faq-item').removeClass('active');
+                $('.anaheim-faq-item .faq-toggle i').removeClass('fa-minus').addClass('fa-plus');
+
+                // If this item wasn't active, open it
+                if (!isActive) {
+                    $item.addClass('active');
+                    $toggle.removeClass('fa-plus').addClass('fa-minus');
+                }
+            });
+        });
+    </script>
+
         <script src="/JS/performance-optimization.js" defer></script>
 
         <!-- Structured Data for Voice Search -->
