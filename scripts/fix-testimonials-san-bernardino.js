@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const cities = [
-    'barstow', 'big-bear-lake', 'chino', 'chino-hills', 'colton',
+    'apple-valley', 'barstow', 'big-bear-lake', 'chino', 'chino-hills', 'colton',
     'fontana', 'hesperia', 'highland', 'montclair', 'ontario',
     'rancho-cucamonga', 'redlands', 'rialto', 'san-bernardino',
     'twentynine-palms', 'upland', 'victorville'
@@ -24,37 +24,51 @@ cities.forEach(citySlug => {
         word.charAt(0).toUpperCase() + word.slice(1)
     ).join(' ');
 
-    // Fix the slider buttons with onclick handlers
+    // Fix FAQ questions to have proper onclick handlers
     content = content.replace(
-        /<button class="slider-prev" aria-label="Previous testimonial">/g,
-        '<button class="slider-prev" onclick="moveTestimonialSlide(-1)" aria-label="Previous testimonial">'
-    );
-    
-    content = content.replace(
-        /<button class="slider-next" aria-label="Next testimonial">/g,
-        '<button class="slider-next" onclick="moveTestimonialSlide(1)" aria-label="Next testimonial">'
+        /<div class="faq-question">\s*<h3>/g,
+        '<div class="faq-question" onclick="toggleFAQ(this)">\n                        <h3>'
     );
 
-    // Fix the indicators with onclick handlers
-    content = content.replace(
-        /<span class="indicator active" data-slide="0"><\/span>/g,
-        '<span class="indicator active" data-slide="0" onclick="setTestimonialSlide(0)"></span>'
-    );
-    
-    content = content.replace(
-        /<span class="indicator" data-slide="1"><\/span>/g,
-        '<span class="indicator" data-slide="1" onclick="setTestimonialSlide(1)"></span>'
-    );
-    
-    content = content.replace(
-        /<span class="indicator" data-slide="2"><\/span>/g,
-        '<span class="indicator" data-slide="2" onclick="setTestimonialSlide(2)"></span>'
-    );
+    // Ensure FAQ toggle icons exist
+    if (!content.includes('faq-toggle')) {
+        content = content.replace(
+            /<\/h3>\s*<\/div>\s*<div class="faq-answer">/g,
+            '</h3>\n                        <div class="faq-toggle"><i class="fas fa-plus"></i></div>\n                    </div>\n                    <div class="faq-answer">'
+        );
+    }
 
-    // Add the JavaScript if not already present
-    if (!content.includes('function showTestimonialSlide')) {
-        const scriptToAdd = `
+    // Add FAQ JavaScript if not present
+    if (!content.includes('function toggleFAQ')) {
+        const faqScript = `
 <script>
+// FAQ Toggle Functionality
+function toggleFAQ(element) {
+    const faqItem = element.closest('.anaheim-faq-item');
+    const faqAnswer = faqItem.querySelector('.faq-answer');
+    const toggleIcon = faqItem.querySelector('.faq-toggle i');
+    const isActive = faqItem.classList.contains('active');
+    
+    // Close all FAQ items
+    document.querySelectorAll('.anaheim-faq-item').forEach(item => {
+        item.classList.remove('active');
+        const icon = item.querySelector('.faq-toggle i');
+        if (icon) {
+            icon.classList.remove('fa-minus');
+            icon.classList.add('fa-plus');
+        }
+    });
+    
+    // Open clicked item if it wasn't active
+    if (!isActive) {
+        faqItem.classList.add('active');
+        if (toggleIcon) {
+            toggleIcon.classList.remove('fa-plus');
+            toggleIcon.classList.add('fa-minus');
+        }
+    }
+}
+
 // Testimonials Slider Functionality
 let currentTestimonialSlide = 0;
 const testimonialSlides = document.querySelectorAll('.anaheim-testimonial-item');
@@ -88,18 +102,77 @@ setInterval(() => {
     moveTestimonialSlide(1);
 }, 5000);
 
-// Initialize first slide
-showTestimonialSlide(currentTestimonialSlide);
+// Initialize
+document.addEventListener('DOMContentLoaded', function() {
+    showTestimonialSlide(currentTestimonialSlide);
+});
 </script>
 
 </body>
 </html>`;
 
-        content = content.replace('</body>\n</html>', scriptToAdd);
+        content = content.replace('</body>\n</html>', faqScript);
+    } else {
+        // Update existing FAQ function
+        content = content.replace(
+            /function toggleFAQ\(element\) \{[\s\S]*?\n\}/,
+            `function toggleFAQ(element) {
+    const faqItem = element.closest('.anaheim-faq-item');
+    const faqAnswer = faqItem.querySelector('.faq-answer');
+    const toggleIcon = faqItem.querySelector('.faq-toggle i');
+    const isActive = faqItem.classList.contains('active');
+    
+    // Close all FAQ items
+    document.querySelectorAll('.anaheim-faq-item').forEach(item => {
+        item.classList.remove('active');
+        const icon = item.querySelector('.faq-toggle i');
+        if (icon) {
+            icon.classList.remove('fa-minus');
+            icon.classList.add('fa-plus');
+        }
+    });
+    
+    // Open clicked item if it wasn't active
+    if (!isActive) {
+        faqItem.classList.add('active');
+        if (toggleIcon) {
+            toggleIcon.classList.remove('fa-plus');
+            toggleIcon.classList.add('fa-minus');
+        }
+    }
+}`
+        );
     }
 
+    // Fix testimonial slider buttons with onclick handlers
+    content = content.replace(
+        /<button class="slider-prev"[^>]*>/g,
+        '<button class="slider-prev" onclick="moveTestimonialSlide(-1)" aria-label="Previous testimonial">'
+    );
+    
+    content = content.replace(
+        /<button class="slider-next"[^>]*>/g,
+        '<button class="slider-next" onclick="moveTestimonialSlide(1)" aria-label="Next testimonial">'
+    );
+
+    // Fix the indicators with onclick handlers
+    content = content.replace(
+        /<span class="indicator active" data-slide="0"[^>]*><\/span>/g,
+        '<span class="indicator active" data-slide="0" onclick="setTestimonialSlide(0)"></span>'
+    );
+    
+    content = content.replace(
+        /<span class="indicator" data-slide="1"[^>]*><\/span>/g,
+        '<span class="indicator" data-slide="1" onclick="setTestimonialSlide(1)"></span>'
+    );
+    
+    content = content.replace(
+        /<span class="indicator" data-slide="2"[^>]*><\/span>/g,
+        '<span class="indicator" data-slide="2" onclick="setTestimonialSlide(2)"></span>'
+    );
+
     fs.writeFileSync(filepath, content, 'utf8');
-    console.log(`✅ Fixed testimonials slider for ${cityName}`);
+    console.log(`✅ Fixed FAQ and testimonials for ${cityName}`);
 });
 
-console.log('\n🎉 All San Bernardino County city testimonials sliders fixed!');
+console.log('\n🎉 All San Bernardino County city FAQ and testimonials fixed!');
