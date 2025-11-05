@@ -870,9 +870,13 @@
 
                 <!-- Local Security Insights -->
                 
+                </div>
+
+                
             </div>
-        </div>
-    </section>
+
+                
+            </section>
 
     <!-- Enhanced Banner Section with Parallax -->
     <section class="anaheim-banner-section" id="contact-sec" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/img/quot.webp'); background-size: cover; background-position: center; background-attachment: fixed;">
@@ -1111,6 +1115,15 @@
     <section class="anaheim-faq-section">
         <div class="anaheim-faq-container">
             <h2>Frequently Asked Questions</h2>
+            <div class="anaheim-faq-navigation">
+                <button class="faq-nav-btn faq-nav-prev" aria-label="Previous FAQs">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="faq-nav-btn faq-nav-next" aria-label="Next FAQs">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="anaheim-faq-carousel">
             <div class="anaheim-faq-list">
                 <div class="anaheim-faq-item">
                     <div class="faq-question">
@@ -1190,6 +1203,89 @@
     </section>
 
     <!-- Footer (included via server-side template) -->
+    
+    <!-- FAQ Carousel & Accordion JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Accordion functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const item = this.closest('.anaheim-faq-item');
+                    const toggle = this.querySelector('.faq-toggle i');
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all FAQ items
+                    document.querySelectorAll('.anaheim-faq-item').forEach(faqItem => {
+                        faqItem.classList.remove('active');
+                        const faqToggle = faqItem.querySelector('.faq-toggle i');
+                        if (faqToggle) {
+                            faqToggle.classList.remove('fa-minus');
+                            faqToggle.classList.add('fa-plus');
+                        }
+                    });
+                    
+                    // If this item wasn't active, open it
+                    if (!isActive) {
+                        item.classList.add('active');
+                        toggle.classList.remove('fa-plus');
+                        toggle.classList.add('fa-minus');
+                    }
+                });
+            });
+
+            // FAQ Carousel functionality
+            const faqList = document.querySelector('.anaheim-faq-list');
+            const faqItems = document.querySelectorAll('.anaheim-faq-item');
+            const prevBtn = document.querySelector('.faq-nav-prev');
+            const nextBtn = document.querySelector('.faq-nav-next');
+            
+            if (faqList && faqItems.length > 0 && prevBtn && nextBtn) {
+                let currentIndex = 0;
+                const itemsPerView = window.innerWidth > 768 ? 3 : 1;
+                const maxIndex = Math.max(0, faqItems.length - itemsPerView);
+                
+                function updateCarousel() {
+                    const itemWidth = faqItems[0].offsetWidth;
+                    const gap = 30;
+                    const offset = currentIndex * (itemWidth + gap);
+                    faqList.style.transform = `translateX(-${offset}px)`;
+                    
+                    // Update button states
+                    prevBtn.disabled = currentIndex === 0;
+                    nextBtn.disabled = currentIndex >= maxIndex;
+                    
+                    prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+                    nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
+                }
+                
+                prevBtn.addEventListener('click', () => {
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                        updateCarousel();
+                    }
+                });
+                
+                nextBtn.addEventListener('click', () => {
+                    if (currentIndex < maxIndex) {
+                        currentIndex++;
+                        updateCarousel();
+                    }
+                });
+                
+                // Handle window resize
+                window.addEventListener('resize', () => {
+                    currentIndex = 0;
+                    updateCarousel();
+                });
+                
+                // Initialize
+                updateCarousel();
+            }
+        });
+    </script>
+
     <%- include('../partials/Footer') %>
 
     <!-- Back to Top Button -->

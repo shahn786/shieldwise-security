@@ -1627,6 +1627,63 @@
   padding-top: 10px;
 }
 
+/* FAQ Carousel Navigation */
+.anaheim-faq-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.faq-nav-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  background: white;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faq-nav-btn:hover:not(:disabled) {
+  background: var(--primary-color);
+  color: white;
+  transform: scale(1.1);
+}
+
+.faq-nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-color: #ccc;
+  color: #ccc;
+}
+
+.anaheim-faq-carousel {
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+}
+
+.anaheim-faq-carousel .anaheim-faq-list {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.5s ease;
+  margin-top: 0;
+}
+
+.anaheim-faq-carousel .anaheim-faq-item {
+  min-width: calc(33.333% - 20px);
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
 /* Mobile Responsive for FAQ */
 @media (max-width: 768px) {
   .faq-question {
@@ -1649,6 +1706,16 @@
 
   .faq-toggle i {
     font-size: 14px;
+  }
+  
+  .anaheim-faq-carousel .anaheim-faq-item {
+    min-width: 100%;
+  }
+  
+  .faq-nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
   }
 }
 
