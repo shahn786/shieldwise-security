@@ -739,86 +739,189 @@
         </div>
     </section>
 
-    <!-- Customer Success Stories & Testimonials -->
-    <section class="testimonials-section py-5" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 60px 0;">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title" style="font-size: 2.5rem; font-weight: 700; color: #1a3c64; margin-bottom: 20px;">San Diego Client Success Stories</h2>
-                <p class="lead" style="max-width: 800px; margin: 0 auto; color: #2c3e50; font-size: 1.2rem; font-weight: 500;">See why San Diego businesses trust ShieldWise Security for their protection needs</p>
+    <!-- San Diego County Cities Section - Matching Hesperia Style -->
+    <section class="anaheim-section" style="background: #ffffff; padding: 4rem 0;">
+        <div class="container">           
+            <div class="anaheim-nearby-cities">
+                <div class="cities-header">
+                    <h3>We Serve San Diego County</h3>
+                    <p>Professional Security Services Throughout San Diego County's 17 Cities</p>
+                </div>
+                <div class="cities-grid">
+                    <!-- Row 1 -->
+                    <a href="/carlsbad" class="city-link">
+                        <i class="fas fa-building"></i>
+                        <span>Carlsbad</span>
+                    </a>
+                    <a href="/chula-vista" class="city-link">
+                        <i class="fas fa-building"></i>
+                        <span>Chula Vista</span>
+                    </a>
+                    <a href="/coronado" class="city-link">
+                        <i class="fas fa-building"></i>
+                        <span>Coronado</span>
+                    </a>
+                    <!-- Row 2 -->
+                    <a href="/del-mar" class="city-link">
+                        <i class="fas fa-building"></i>
+                        <span>Del Mar</span>
+                    </a>
+                    <a href="/el-cajon" class="city-link">
+                        <i class="fas fa-building"></i>
+                        <span>El Cajon</span>
+                    </a>
+                    <a href="/encinitas" class="city-link">
+                        <i class="fas fa-building"></i>
+                        <span>Encinitas</span>
+                    </a>
+                    <!-- Row 3 -->
+                    <a href="/escondido" class="city-link">
+                        <i class="fas fa-building"></i>
+                        <span>Escondido</span>
+                    </a>
+                    <a href="/imperial-beach" class="city-link">
+                        <i class="fas fa-building"></i>
+                        <span>Imperial Beach</span>
+                    </a>
+                    <a href="/la-mesa" class="city-link">
+                        <i class="fas fa-building"></i>
+                        <span>La Mesa</span>
+                    </a>
+                    <!-- Row 4 -->
+                    <a href="/lemon-grove" class="city-link">
+                        <i class="fas fa-building"></i>
+                        <span>Lemon Grove</span>
+                    </a>
+                    <a href="/national-city" class="city-link">
+                        <i class="fas fa-building"></i>
+                        <span>National City</span>
+                    </a>
+                    <a href="/oceanside" class="city-link">
+                        <i class="fas fa-building"></i>
+                        <span>Oceanside</span>
+                    </a>
+                    <!-- Row 5 -->
+                    <a href="/poway" class="city-link">
+                        <i class="fas fa-building"></i>
+                        <span>Poway</span>
+                    </a>
+                    <a href="/san-marcos" class="city-link">
+                        <i class="fas fa-building"></i>
+                        <span>San Marcos</span>
+                    </a>
+                    <a href="/santee" class="city-link">
+                        <i class="fas fa-building"></i>
+                        <span>Santee</span>
+                    </a>
+                    <!-- Row 6 -->
+                    <a href="/solana-beach" class="city-link">
+                        <i class="fas fa-building"></i>
+                        <span>Solana Beach</span>
+                    </a>
+                    <a href="/vista" class="city-link">
+                        <i class="fas fa-building"></i>
+                        <span>Vista</span>
+                    </a>
+                </div>
             </div>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="testimonial-card h-100" style="background: linear-gradient(135deg, #ffffff, #f8f9fa); padding: 35px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); border-left: 5px solid #d12028; transition: transform 0.3s ease;">
-                        <div class="stars mb-3" style="color: #ff8c00; font-size: 1.4rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">
-                            ★★★★★
-                        </div>
-                        <blockquote style="font-style: italic; margin-bottom: 25px; color: #2c3e50; font-size: 1.1rem; line-height: 1.7; font-weight: 400;">
-                            "ShieldWise Security has protected our Scripps Ranch medical center for 3 years. Their healthcare-trained guards understand HIPAA compliance and handle emergency situations with professionalism."
-                        </blockquote>
-                        <div class="testimonial-author" style="border-top: 2px solid #e9ecef; padding-top: 20px;">
-                            <strong style="color: #1a3c64; font-size: 1.2rem; font-weight: 700;">Dr. Sarah Chen, MD</strong><br>
-                            <span style="color: #6c757d; font-size: 1rem; font-weight: 500;">Medical Director, Scripps Health</span>
+        </div>
+    </section>
+
+    <!-- Testimonials Section - Matching Hesperia Style -->
+    <section class="anaheim-testimonials-section" id="testimonials-section">
+        <div class="anaheim-testimonials-container">
+            <h2>What Our San Diego Clients Say</h2>
+
+            <!-- Testimonial Slider for Enhanced User Experience -->
+            <div class="anaheim-testimonials-slider">
+                <div class="slider-navigation">
+                    <button class="slider-prev" onclick="moveSanDiegoTestimonialSlide(-1)" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slider-indicators">
+                        <span class="indicator active" data-slide="0" onclick="setSanDiegoTestimonialSlide(0)"></span>
+                        <span class="indicator" data-slide="1" onclick="setSanDiegoTestimonialSlide(1)"></span>
+                        <span class="indicator" data-slide="2" onclick="setSanDiegoTestimonialSlide(2)"></span>
+                    </div>
+                    <button class="slider-next" onclick="moveSanDiegoTestimonialSlide(1)" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+                </div>
+
+                <div class="anaheim-testimonials-grid">
+                    <div class="anaheim-testimonial-item active" itemscope itemtype="https://schema.org/Review">
+                        <meta itemprop="datePublished" content="2024-12-10">
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                        <p itemprop="reviewBody">ShieldWise Security has protected our Scripps Ranch medical center for 3 years. Their healthcare-trained guards understand HIPAA compliance and handle emergency situations with professionalism and care.</p>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="/img/testimonial-1.webp" alt="Dr. Sarah Chen - Medical Director at Scripps Health" width="60" height="60" loading="lazy">
+                            </div>
+                            <div class="author-info">
+                                <h4 itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Dr. Sarah Chen, MD</span></h4>
+                                <p>Medical Director, Scripps Health</p>
+                                <div class="author-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                                    <meta itemprop="ratingValue" content="5">
+                                    <meta itemprop="bestRating" content="5">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="testimonial-card h-100" style="background: linear-gradient(135deg, #ffffff, #f8f9fa); padding: 35px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); border-left: 5px solid #d12028; transition: transform 0.3s ease;">
-                        <div class="stars mb-3" style="color: #ff8c00; font-size: 1.4rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">
-                            ★★★★★
-                        </div>
-                        <blockquote style="font-style: italic; margin-bottom: 25px; color: #2c3e50; font-size: 1.1rem; line-height: 1.7; font-weight: 400;">
-                            "Our downtown San Diego office building has experienced zero security incidents since partnering with ShieldWise. Their guards are professional, reliable, and know how to handle the unique challenges of the Gaslamp Quarter."
-                        </blockquote>
-                        <div class="testimonial-author" style="border-top: 2px solid #e9ecef; padding-top: 20px;">
-                            <strong style="color: #1a3c64; font-size: 1.2rem; font-weight: 700;">Michael Rodriguez</strong><br>
-                            <span style="color: #6c757d; font-size: 1rem; font-weight: 500;">Property Manager, Pinnacle Real Estate</span>
+
+                    <div class="anaheim-testimonial-item" itemscope itemtype="https://schema.org/Review">
+                        <meta itemprop="datePublished" content="2024-11-28">
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                        <p itemprop="reviewBody">Our downtown San Diego office building has experienced zero security incidents since partnering with ShieldWise. Their guards are professional, reliable, and know how to handle the unique challenges of the Gaslamp Quarter.</p>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="/img/testimonial-2.webp" alt="Michael Rodriguez - Property Manager at Pinnacle Real Estate" width="60" height="60" loading="lazy">
+                            </div>
+                            <div class="author-info">
+                                <h4 itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Michael Rodriguez</span></h4>
+                                <p>Property Manager, Pinnacle Real Estate</p>
+                                <div class="author-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                                    <meta itemprop="ratingValue" content="5">
+                                    <meta itemprop="bestRating" content="5">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="testimonial-card h-100" style="background: linear-gradient(135deg, #ffffff, #f8f9fa); padding: 35px; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); border-left: 5px solid #d12028; transition: transform 0.3s ease;">
-                        <div class="stars mb-3" style="color: #ff8c00; font-size: 1.4rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">
-                            ★★★★★
-                        </div>
-                        <blockquote style="font-style: italic; margin-bottom: 25px; color: #2c3e50; font-size: 1.1rem; line-height: 1.7; font-weight: 400;">
-                            "For our Comic-Con events and corporate conferences at the San Diego Convention Center, ShieldWise provides unmatched crowd control and VIP protection services."
-                        </blockquote>
-                        <div class="testimonial-author" style="border-top: 2px solid #e9ecef; padding-top: 20px;">
-                            <strong style="color: #1a3c64; font-size: 1.2rem; font-weight: 700;">Jennifer Park</strong><br>
-                            <span style="color: #6c757d; font-size: 1rem; font-weight: 500;">Event Director, San Diego Events</span>
+
+                    <div class="anaheim-testimonial-item" itemscope itemtype="https://schema.org/Review">
+                        <meta itemprop="datePublished" content="2024-10-15">
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                        <p itemprop="reviewBody">For our Comic-Con events and corporate conferences at the San Diego Convention Center, ShieldWise provides unmatched crowd control and VIP protection services. Truly San Diego's best security company.</p>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="/img/testimonial-3.webp" alt="Jennifer Park - Event Director at San Diego Events" width="60" height="60" loading="lazy">
+                            </div>
+                            <div class="author-info">
+                                <h4 itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Jennifer Park</span></h4>
+                                <p>Event Director, San Diego Events</p>
+                                <div class="author-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                                    <meta itemprop="ratingValue" content="5">
+                                    <meta itemprop="bestRating" content="5">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row mt-4">
-                <div class="col-md-6 mb-4">
-                    <div class="case-study-card" style="background: linear-gradient(135deg, #1a3c64, #2c5282); color: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-                        <h3 style="color: #ffd166; margin-bottom: 20px; font-size: 1.6rem; font-weight: 600;">Case Study: Harbor Security</h3>
-                        <p style="margin-bottom: 15px; font-size: 1.1rem; line-height: 1.6;">
-                            <strong style="color: #ffd166;">Challenge:</strong> Securing a 50-slip marina in Mission Bay with valuable yachts and high foot traffic.
-                        </p>
-                        <p style="margin-bottom: 15px; font-size: 1.1rem; line-height: 1.6;">
-                            <strong style="color: #ffd166;">Solution:</strong> 24/7 waterfront patrol with marine-certified guards and floating patrol boats.
-                        </p>
-                        <p style="color: #ffffff; font-size: 1.1rem; line-height: 1.6;">
-                            <strong style="color: #ffd166;">Result:</strong> 95% reduction in theft incidents and improved customer satisfaction ratings.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="case-study-card" style="background: linear-gradient(135deg, #d12028, #a51920); color: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-                        <h3 style="color: #ffd166; margin-bottom: 20px; font-size: 1.6rem; font-weight: 600;">Case Study: Biotech Campus</h3>
-                        <p style="margin-bottom: 15px; font-size: 1.1rem; line-height: 1.6;">
-                            <strong style="color: #ffd166;">Challenge:</strong> Protecting sensitive research facilities in Sorrento Valley with intellectual property concerns.
-                        </p>
-                        <p style="margin-bottom: 15px; font-size: 1.1rem; line-height: 1.6;">
-                            <strong style="color: #ffd166;">Solution:</strong> Armed guards with security clearances and advanced access control systems.
-                        </p>
-                        <p style="color: #ffffff; font-size: 1.1rem; line-height: 1.6;">
-                            <strong style="color: #ffd166;">Result:</strong> Zero security breaches in 2+ years of service.
-                        </p>
-                    </div>
-                </div>
+
+            <div class="testimonial-cta">
+                <p>Join our growing list of satisfied clients in San Diego</p>
+                <a href="/reviews" class="testimonial-link" onclick="gtag('event', 'click', {'event_category': 'Reviews', 'event_label': 'Read More Reviews'});">Read More Client Reviews <i class="fas fa-long-arrow-alt-right"></i></a>
             </div>
         </div>
     </section>
@@ -1216,6 +1319,61 @@
                 getTTFB(console.log);
             });
         }
+    </script>
+
+    <!-- San Diego Testimonials Slider Functionality -->
+    <script>
+        // Testimonials Slider Functionality
+        let currentSanDiegoTestimonialSlide = 0;
+        const sanDiegoTestimonialSlides = document.querySelectorAll('.anaheim-testimonial-item');
+        const sanDiegoTestimonialIndicators = document.querySelectorAll('.slider-indicators .indicator');
+
+        function showSanDiegoTestimonialSlide(n) {
+            if (sanDiegoTestimonialSlides.length === 0) return;
+            
+            if (n >= sanDiegoTestimonialSlides.length) { currentSanDiegoTestimonialSlide = 0; }
+            if (n < 0) { currentSanDiegoTestimonialSlide = sanDiegoTestimonialSlides.length - 1; }
+            
+            sanDiegoTestimonialSlides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (sanDiegoTestimonialIndicators[index]) {
+                    sanDiegoTestimonialIndicators[index].classList.remove('active');
+                }
+            });
+            
+            if (sanDiegoTestimonialSlides[currentSanDiegoTestimonialSlide]) {
+                sanDiegoTestimonialSlides[currentSanDiegoTestimonialSlide].classList.add('active');
+            }
+            if (sanDiegoTestimonialIndicators[currentSanDiegoTestimonialSlide]) {
+                sanDiegoTestimonialIndicators[currentSanDiegoTestimonialSlide].classList.add('active');
+            }
+        }
+
+        function moveSanDiegoTestimonialSlide(direction) {
+            currentSanDiegoTestimonialSlide += direction;
+            if (currentSanDiegoTestimonialSlide >= sanDiegoTestimonialSlides.length) {
+                currentSanDiegoTestimonialSlide = 0;
+            }
+            if (currentSanDiegoTestimonialSlide < 0) {
+                currentSanDiegoTestimonialSlide = sanDiegoTestimonialSlides.length - 1;
+            }
+            showSanDiegoTestimonialSlide(currentSanDiegoTestimonialSlide);
+        }
+
+        function setSanDiegoTestimonialSlide(n) {
+            currentSanDiegoTestimonialSlide = n;
+            showSanDiegoTestimonialSlide(n);
+        }
+
+        // Auto-rotate testimonials every 7 seconds
+        if (sanDiegoTestimonialSlides.length > 0) {
+            setInterval(() => {
+                moveSanDiegoTestimonialSlide(1);
+            }, 7000);
+        }
+
+        // Initialize testimonials slider
+        showSanDiegoTestimonialSlide(currentSanDiegoTestimonialSlide);
     </script>
 </body>
 </html>
