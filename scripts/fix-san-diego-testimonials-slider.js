@@ -9,6 +9,8 @@ const cities = [
     'santee', 'solana-beach', 'vista'
 ];
 
+console.log('Starting testimonials slider fix for San Diego County cities...');
+
 cities.forEach(citySlug => {
     const filepath = path.join(__dirname, '..', 'views', 'cities', `${citySlug}.ejs`);
     
