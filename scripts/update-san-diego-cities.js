@@ -1,3 +1,4 @@
+
 const fs = require('fs');
 const path = require('path');
 
@@ -395,7 +396,7 @@ function generateCityPage(city) {
             <div class="anaheim-intro-section">
                 <div class="section-badge">${city.badge}</div>
                 <h1>Professional Security Guard Services in ${city.name}, CA</h1>
-
+                
                 <div class="anaheim-intro-rating">
                     <div class="stars">
                         <i class="fas fa-star"></i>
@@ -468,14 +469,14 @@ function generateCityPage(city) {
         <div class="anaheim-services-container">
             <div class="section-badge">Our ${city.name} Services</div>
             <h2>Specialized Security Services for ${city.name}</h2>
-
+            
             <div class="anaheim-services-grid-enhanced">
                 <div class="anaheim-service-item-enhanced">
                     <h3>${city.specialty} Security</h3>
                     <p>Professional security services specialized for ${city.name}'s unique environment and business needs.</p>
                     <div class="service-pricing">Starting at $25-50/hour</div>
                 </div>
-
+                
                 <div class="anaheim-service-item-enhanced">
                     <h3>Mobile Patrol Services</h3>
                     <p>GPS-tracked patrol services providing flexible security coverage throughout ${city.name}.</p>
@@ -534,7 +535,7 @@ function generateCityPage(city) {
     </section>
 
     <%- include('../partials/Footer') %>
-
+    
     <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </a>
@@ -582,22 +583,22 @@ function generateCityPage(city) {
 // Generate all city pages
 function generateAllCityPages() {
     const citiesDir = path.join(__dirname, '..', 'views', 'cities');
-
+    
     // Ensure cities directory exists
     if (!fs.existsSync(citiesDir)) {
         fs.mkdirSync(citiesDir, { recursive: true });
     }
-
+    
     cities.forEach(city => {
         const filename = `${city.slug}.ejs`;
         const filepath = path.join(citiesDir, filename);
-
+        
         // Generate content for each city
         const content = generateCityPage(city);
         fs.writeFileSync(filepath, content, 'utf8');
         console.log(`✅ Generated: ${filename}`);
     });
-
+    
     console.log(`🎉 Generated ${cities.length} city pages for San Diego County!`);
 }
 
