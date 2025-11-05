@@ -4,12 +4,10 @@ const path = require('path');
 
 const cities = [
     'carlsbad', 'chula-vista', 'coronado', 'del-mar', 'el-cajon',
-    'encinitas', 'escondido', 'imperial-beach', 'la-mesa', 'lemon-grove',
-    'national-city', 'oceanside', 'poway', 'san-diego', 'san-marcos',
+    'escondido', 'imperial-beach', 'la-mesa', 'lemon-grove',
+    'national-city', 'poway', 'san-diego', 'san-marcos',
     'santee', 'solana-beach', 'vista'
 ];
-
-console.log('Starting testimonials slider fix for San Diego County cities...');
 
 cities.forEach(citySlug => {
     const filepath = path.join(__dirname, '..', 'views', 'cities', `${citySlug}.ejs`);
@@ -58,7 +56,7 @@ cities.forEach(citySlug => {
         const scriptToAdd = `
 <script>
 // Testimonials Slider Functionality
-const testimonialSlides = document.querySelectorAll('.anaheim-testimonial-item');
+const testimonialSlides = document.querySelectorAll('.testimonial-slide');
 const testimonialIndicators = document.querySelectorAll('.slider-indicators .indicator');
 let currentTestimonialSlide = 0;
 
