@@ -504,7 +504,8 @@
             });
 
             // Enhanced FAQ Toggles with proper animation
-            $('.faq-question').on('click', function() {
+            $('.faq-question').on('click', function(e) {
+                e.preventDefault();
                 const $item = $(this).closest('.anaheim-faq-item');
                 const $toggle = $(this).find('.faq-toggle i');
                 const $answer = $item.find('.faq-answer');
