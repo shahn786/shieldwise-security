@@ -1,0 +1,34 @@
+<section class="anaheim-areas-section">
+        <div class="anaheim-areas-container">
+            <div class="section-badge">Local Coverage</div>
+            <h2>Areas We Serve in Fontana</h2>
+            <p class="areas-intro">ShieldWise Security provides comprehensive security services throughout Fontana and the surrounding communities. Our local expertise allows us to deliver tailored security solutions for the unique needs of each transportation district:</p>
+
+            <div class="anaheim-areas-grid">
+                <div class="anaheim-area-item">
+                    <h3>BNSF Railway Corridor</h3>
+                    <p>Specialized rail yard security for intermodal facilities and cargo transfer points with federal compliance and coordination with railway police.</p>
+                </div>
+                <div class="anaheim-area-item">
+                    <h3>Interstate 10 Distribution Centers</h3>
+                    <p>Professional security services for major distribution centers and logistics facilities along the I-10 corridor including Amazon, UPS, and FedEx facilities.</p>
+                </div>
+                <div class="anaheim-area-item">
+                    <h3>Sierra Avenue Industrial Zone</h3>
+                    <p>Industrial security solutions for manufacturing facilities and automotive parts distribution centers with specialized asset protection protocols.</p>
+                </div>
+                <div class="anaheim-area-item">
+                    <h3>Valley Boulevard Corridor</h3>
+                    <p>Comprehensive security coverage for commercial properties and business complexes along Valley Boulevard with mobile patrol and static guard services.</p>
+                </div>
+                <div class="anaheim-area-item">
+                    <h3>North Fontana Industrial</h3>
+                    <p>Security services for industrial parks and manufacturing facilities in North Fontana with 24/7 coverage and specialized industrial protocols.</p>
+                </div>
+                <div class="anaheim-area-item">
+                    <h3>South Fontana Residential</h3>
+                    <p>Residential security for South Fontana communities with mobile patrol and access control for gated neighborhoods.</p>
+                </div>
+            </div>
+        </div>
+        </div>
