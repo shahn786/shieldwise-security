@@ -1084,53 +1084,33 @@
 
 <!-- Custom JavaScript for Enhanced UX -->
 <script>
-    $(document).ready(function() {
-        // Smooth scrolling for anchor links
-        $('a[href^="#"]').on('click', function(event) {
-            event.preventDefault();
-            $('html, body').animate({
-                scrollTop: $($.attr(this, 'href')).offset().top - 100
-            }, 800);
-        });
-
-        // Enhanced FAQ Toggles with proper animation
-        $('.faq-question').on('click', function() {
-            const $item = $(this).closest('.anaheim-faq-item');
-            const $toggle = $(this).find('.faq-toggle i');
-            const isActive = $item.hasClass('active');
-
-            // Close all FAQ items first
-            $('.anaheim-faq-item').removeClass('active');
-            $('.anaheim-faq-item .faq-toggle i').removeClass('fa-minus').addClass('fa-plus');
-
-            // If this item wasn't active, open it
-            if (!isActive) {
-                $item.addClass('active');
-                $toggle.removeClass('fa-plus').addClass('fa-minus');
-            }
-        });
-
-        // Intersection Observer for animation triggers
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('in-view');
-                        observer.unobserve(entry.target);
+    document.addEventListener('DOMContentLoaded', function() {
+        // FAQ Accordion functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+                const item = this.closest('.anaheim-faq-item');
+                const toggle = this.querySelector('.faq-toggle i');
+                const isActive = item.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.anaheim-faq-item').forEach(faqItem => {
+                    faqItem.classList.remove('active');
+                    const faqToggle = faqItem.querySelector('.faq-toggle i');
+                    if (faqToggle) {
+                        faqToggle.classList.remove('fa-minus');
+                        faqToggle.classList.add('fa-plus');
                     }
                 });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.anaheim-feature-item, .anaheim-service-item, .anaheim-area-item, .anaheim-testimonial-item, .anaheim-faq-item').forEach(item => {
-                observer.observe(item);
+                
+                // If this item wasn't active, open it
+                if (!isActive) {
+                    item.classList.add('active');
+                    toggle.classList.remove('fa-plus');
+                    toggle.classList.add('fa-minus');
+                }
             });
-        }
-
-        // Parallax effect for banner
-        $(window).scroll(function() {
-            const scrollPosition = $(window).scrollTop();
-            $('.anaheim-banner-parallax').css('transform', 'translateY(' + scrollPosition * 0.2 + 'px)');
-            $('.national-city-hero').css('background-position', 'center ' + (50 + scrollPosition * 0.05) + '%');
         });
 
         // Testimonial Slider functionality
@@ -1144,9 +1124,11 @@
             testimonials.forEach(item => item.classList.remove('active'));
             indicators.forEach(item => item.classList.remove('active'));
 
-            testimonials[index].classList.add('active');
-            indicators[index].classList.add('active');
-            currentSlide = index;
+            if (testimonials[index]) {
+                testimonials[index].classList.add('active');
+                indicators[index].classList.add('active');
+                currentSlide = index;
+            }
         }
 
         if (prevButton && nextButton) {
@@ -1176,21 +1158,55 @@
             }, 7000);
         }
 
-        // Enhanced tracking for industrial specific interactions
-        $('a[href*="industrial"]').on('click', function() {
-            gtag('event', 'click', {
-                'event_category': 'Service Interest',
-                'event_label': 'Industrial Waterfront Security'
+        // Intersection Observer for animation triggers
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.anaheim-feature-item, .anaheim-service-item, .anaheim-area-item, .anaheim-testimonial-item, .anaheim-faq-item').forEach(item => {
+                observer.observe(item);
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const offsetTop = target.offsetTop - 100;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
             });
         });
 
-        $('a[href*="port"]').on('click', function() {
-            gtag('event', 'click', {
-                'event_category': 'Location Interest',
-                'event_label': 'Port District Security Services'
-            });
+        // Parallax effect for banner
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.pageYOffset;
+            const bannerParallax = document.querySelector('.anaheim-banner-parallax');
+            const heroElement = document.querySelector('.national-city-hero');
+            
+            if (bannerParallax) {
+                bannerParallax.style.transform = 'translateY(' + scrollPosition * 0.2 + 'px)';
+            }
+            if (heroElement) {
+                heroElement.style.backgroundPosition = 'center ' + (50 + scrollPosition * 0.05) + '%';
+            }
         });
     });
+</script>
 </script>
 
 </body>
