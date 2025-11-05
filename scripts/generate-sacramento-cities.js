@@ -2,6 +2,20 @@
 const fs = require('fs');
 const path = require('path');
 
+// Available images for random selection in Related Areas section
+const availableImages = [
+    'sacramento.webp', 'downtown_la.webp', 'LA.webp', 'orange.webp', 
+    'san-diego.webp', 'san-jose.webp', 'fresno.webp', 'riverside.webp',
+    'OC1.webp', 'bakerfield.webp', 'okland.webp', 'san-francsco.webp',
+    'santaclara.webp', 'ventura.webp', 'sanbardino12.webp'
+];
+
+// Function to get 3 random images (no duplicates)
+function getRandomImages(count = 3) {
+    const shuffled = [...availableImages].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+}
+
 // Sacramento County cities data - Updated to match Coachella format
 const cities = [
     {
@@ -232,6 +246,9 @@ const cities = [
 
 // Template function to generate city page matching Coachella format
 function generateCityPage(city) {
+    // Get random images for Related Areas section
+    const randomImages = getRandomImages(3);
+    
     return `<!DOCTYPE html>
 <html lang="en" itemscope itemtype="https://schema.org/LocalBusiness">
 <head>
@@ -670,41 +687,6 @@ function generateCityPage(city) {
         </main>
     </div>
 
-    <!-- Map Section -->
-    <section id="service-areas" class="py-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="mb-4">Our ${city.name} Service Areas</h2>
-                    <p class="mb-5">ShieldWise Security proudly serves all areas of ${city.name}, including:</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <ul class="list-unstyled">
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> ${city.landmarks[0] || city.name}</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> ${city.landmarks[1] || 'Downtown ' + city.name}</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> ${city.landmarks[2] || city.name + ' Business District'}</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <ul class="list-unstyled">
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Residential Areas</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> Commercial Districts</li>
-                        <li class="mb-3"><i class="fas fa-map-marker-alt text-danger mr-2"></i> ${city.industries[0]} Facilities</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-12">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=${encodeURIComponent(city.name + ', California')}&center=${city.lat},${city.lng}" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Testimonials Section -->
     <section class="testimonials">
         <div class="container">
@@ -888,7 +870,7 @@ function generateCityPage(city) {
                 <div class="col-md-4 mb-4">
                     <a href="/sacramento-county" class="text-decoration-none">
                         <div class="card h-100 shadow-sm hover-effect">
-                            <img loading="lazy" src="/img/sacramento.webp" class="card-img-top" alt="Sacramento County Security Services">
+                            <img loading="lazy" src="/img/${randomImages[0]}" class="card-img-top" alt="Sacramento County Security Services">
                             <div class="card-body text-center">
                                 <h3 class="h5 card-title">Sacramento County</h3>
                                 <p class="card-text">Comprehensive security services throughout Sacramento County.</p>
@@ -899,7 +881,7 @@ function generateCityPage(city) {
                 <div class="col-md-4 mb-4">
                     <a href="/sacramento-county/downtown-sacramento" class="text-decoration-none">
                         <div class="card h-100 shadow-sm hover-effect">
-                            <img loading="lazy" src="/img/sacramento.webp" class="card-img-top" alt="Downtown Sacramento Security">
+                            <img loading="lazy" src="/img/${randomImages[1]}" class="card-img-top" alt="Downtown Sacramento Security">
                             <div class="card-body text-center">
                                 <h3 class="h5 card-title">Downtown Sacramento</h3>
                                 <p class="card-text">Government and corporate security for California's capital.</p>
@@ -910,7 +892,7 @@ function generateCityPage(city) {
                 <div class="col-md-4 mb-4">
                     <a href="/sacramento-county/folsom" class="text-decoration-none">
                         <div class="card h-100 shadow-sm hover-effect">
-                            <img loading="lazy" src="/img/sacramento.webp" class="card-img-top" alt="Folsom Security Services">
+                            <img loading="lazy" src="/img/${randomImages[2]}" class="card-img-top" alt="Folsom Security Services">
                             <div class="card-body text-center">
                                 <h3 class="h5 card-title">Folsom</h3>
                                 <p class="card-text">Historic and technology security solutions for Folsom.</p>
