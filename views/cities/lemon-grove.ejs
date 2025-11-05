@@ -862,13 +862,13 @@
         <!-- Testimonial Slider for Enhanced User Experience -->
         <div class="anaheim-testimonials-slider">
             <div class="slider-navigation">
-                <button class="slider-prev" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-prev" onclick="moveTestimonialSlide(-1)" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
                 <div class="slider-indicators">
-                    <span class="indicator active" data-slide="0"></span>
-                    <span class="indicator" data-slide="1"></span>
-                    <span class="indicator" data-slide="2"></span>
+                    <span class="indicator active" onclick="setTestimonialSlide(0)" data-slide="0"></span>
+                    <span class="indicator" onclick="setTestimonialSlide(1)" data-slide="1"></span>
+                    <span class="indicator" onclick="setTestimonialSlide(2)" data-slide="2"></span>
                 </div>
-                <button class="slider-next" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+                <button class="slider-next" onclick="moveTestimonialSlide(1)" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
             </div>
 
             <div class="anaheim-testimonials-grid">
@@ -1156,6 +1156,45 @@
             });
         });
     });
+</script>
+
+
+<script>
+// Testimonials Slider Functionality
+const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+const testimonialIndicators = document.querySelectorAll('.slider-indicators .indicator');
+let currentTestimonialSlide = 0;
+
+function showTestimonialSlide(n) {
+    if (testimonialSlides.length === 0) return;
+    
+    if (n >= testimonialSlides.length) { currentTestimonialSlide = 0; }
+    if (n < 0) { currentTestimonialSlide = testimonialSlides.length - 1; }
+    
+    testimonialSlides.forEach(slide => slide.classList.remove('active'));
+    testimonialIndicators.forEach(indicator => indicator.classList.remove('active'));
+    
+    testimonialSlides[currentTestimonialSlide].classList.add('active');
+    testimonialIndicators[currentTestimonialSlide].classList.add('active');
+}
+
+function moveTestimonialSlide(direction) {
+    currentTestimonialSlide += direction;
+    showTestimonialSlide(currentTestimonialSlide);
+}
+
+function setTestimonialSlide(n) {
+    currentTestimonialSlide = n;
+    showTestimonialSlide(currentTestimonialSlide);
+}
+
+// Auto-advance testimonials every 5 seconds
+setInterval(() => {
+    moveTestimonialSlide(1);
+}, 5000);
+
+// Initialize first slide
+showTestimonialSlide(currentTestimonialSlide);
 </script>
 
 </body>
