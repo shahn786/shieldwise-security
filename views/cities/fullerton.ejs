@@ -1194,20 +1194,15 @@
                 e.preventDefault();
                 const $item = $(this).closest('.anaheim-faq-item');
                 const $toggle = $(this).find('.faq-toggle i');
-                const $answer = $item.find('.faq-answer');
                 const isActive = $item.hasClass('active');
 
                 // Close all FAQ items first
-                $('.anaheim-faq-item').each(function() {
-                    $(this).removeClass('active');
-                    $(this).find('.faq-answer').stop(true, true).slideUp(300);
-                    $(this).find('.faq-toggle i').removeClass('fa-minus').addClass('fa-plus');
-                });
+                $('.anaheim-faq-item').removeClass('active');
+                $('.anaheim-faq-item .faq-toggle i').removeClass('fa-minus').addClass('fa-plus');
 
                 // If this item wasn't active, open it
                 if (!isActive) {
                     $item.addClass('active');
-                    $answer.stop(true, true).slideDown(300);
                     $toggle.removeClass('fa-plus').addClass('fa-minus');
                 }
             });
