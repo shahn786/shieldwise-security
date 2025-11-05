@@ -996,87 +996,74 @@
     <div class="anaheim-testimonials-container">
         <h2>What Our Encinitas Clients Say</h2>
 
-        <!-- Testimonial Slider for Enhanced User Experience -->
-        <div class="anaheim-testimonials-slider">
-            <div class="slider-navigation">
-                <button class="slider-prev" onclick="moveTestimonialSlide(-1)" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
-                <div class="slider-indicators">
-                    <span class="indicator active" onclick="setTestimonialSlide(0)" data-slide="0"></span>
-                    <span class="indicator" onclick="setTestimonialSlide(1)" data-slide="1"></span>
-                    <span class="indicator" onclick="setTestimonialSlide(2)" data-slide="2"></span>
+        <div class="testimonials-static-grid">
+            <div class="testimonial-row" itemscope itemtype="https://schema.org/Review">
+                <meta itemprop="datePublished" content="2024-12-10">
+                <div class="testimonial-image">
+                    <img loading="lazy" src="/img/testimonial-1.webp" alt="Elena Martinez - Gallery Owner" width="80" height="80">
                 </div>
-                <button class="slider-next" onclick="moveTestimonialSlide(1)" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
-            </div>
-
-            <div class="anaheim-testimonials-grid">
-                <div class="anaheim-testimonial-item active" itemscope itemtype="https://schema.org/Review">
-                    <meta itemprop="datePublished" content="2024-12-10">
+                <div class="testimonial-content">
                     <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
                     <p itemprop="reviewBody">ShieldWise Security has provided exceptional security services for our art gallery in Encinitas for over two years. Their guards understand the unique security needs of artistic businesses and provide professional, discreet protection for our valuable artwork and visitors.</p>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img loading="lazy" src="/img/testimonial-1.webp" alt="Elena Martinez - Gallery Owner" width="60" height="60">
-                        </div>
-                        <div class="author-info">
-                            <h4 itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Elena Martinez</span></h4>
-                            <p>Gallery Owner</p>
-                            <div class="author-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                                <meta itemprop="ratingValue" content="5">
-                                <meta itemprop="bestRating" content="5">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
+                    <div class="testimonial-author-info">
+                        <h4 itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Elena Martinez</span></h4>
+                        <p>Gallery Owner</p>
+                        <div class="author-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            <meta itemprop="ratingValue" content="5">
+                            <meta itemprop="bestRating" content="5">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="anaheim-testimonial-item" itemscope itemtype="https://schema.org/Review">
-                    <meta itemprop="datePublished" content="2024-11-28">
+            <div class="testimonial-row reverse" itemscope itemtype="https://schema.org/Review">
+                <meta itemprop="datePublished" content="2024-11-28">
+                <div class="testimonial-image">
+                    <img loading="lazy" src="/img/testimonial-2.webp" alt="David Thompson - Creative District Business Owner" width="80" height="80">
+                </div>
+                <div class="testimonial-content">
                     <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
                     <p itemprop="reviewBody">Outstanding security services in Encinitas's artistic community. The team's expertise in creative business protection and their understanding of our unique community make them our preferred security partner for the arts district.</p>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img loading="lazy" src="/img/testimonial-2.webp" alt="David Thompson - Creative District Business Owner" width="60" height="60">
-                        </div>
-                        <div class="author-info">
-                            <h4 itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">David Thompson</span></h4>
-                            <p>Creative District Business Owner</p>
-                            <div class="author-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                                <meta itemprop="ratingValue" content="5">
-                                <meta itemprop="bestRating" content="5">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
+                    <div class="testimonial-author-info">
+                        <h4 itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">David Thompson</span></h4>
+                        <p>Creative District Business Owner</p>
+                        <div class="author-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            <meta itemprop="ratingValue" content="5">
+                            <meta itemprop="bestRating" content="5">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="anaheim-testimonial-item" itemscope itemtype="https://schema.org/Review">
-                    <meta itemprop="datePublished" content="2024-10-12">
+            <div class="testimonial-row" itemscope itemtype="https://schema.org/Review">
+                <meta itemprop="datePublished" content="2024-10-12">
+                <div class="testimonial-image">
+                    <img loading="lazy" src="/img/testimonial-3.webp" alt="Sarah Williams - Beachfront Property Owner" width="80" height="80">
+                </div>
+                <div class="testimonial-content">
                     <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
                     <p itemprop="reviewBody">As the owner of a beachfront property in Encinitas, I can't recommend ShieldWise Security enough. Their guards provide consistent, reliable coastal security and understand the unique security needs of our beachfront environment. Their detailed reporting keeps me informed about our property's security status.</p>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img loading="lazy" src="/img/testimonial-3.webp" alt="Sarah Williams - Beachfront Property Owner" width="60" height="60">
-                        </div>
-                        <div class="author-info">
-                            <h4 itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Sarah Williams</span></h4>
-                            <p>Beachfront Property Owner</p>
-                            <div class="author-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                                <meta itemprop="ratingValue" content="5">
-                                <meta itemprop="bestRating" content="5">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
+                    <div class="testimonial-author-info">
+                        <h4 itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Sarah Williams</span></h4>
+                        <p>Beachfront Property Owner</p>
+                        <div class="author-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            <meta itemprop="ratingValue" content="5">
+                            <meta itemprop="bestRating" content="5">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                     </div>
                 </div>
