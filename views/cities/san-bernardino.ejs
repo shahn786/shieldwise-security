@@ -715,5 +715,44 @@
     
     <!-- Back to Top JavaScript -->
     <script src="/JS/back-to-top.js"></script>
+
+<script>
+// Testimonials Slider Functionality
+let currentTestimonialSlide = 0;
+const testimonialSlides = document.querySelectorAll('.anaheim-testimonial-item');
+const testimonialIndicators = document.querySelectorAll('.slider-indicators .indicator');
+
+function showTestimonialSlide(n) {
+    if (testimonialSlides.length === 0) return;
+    
+    if (n >= testimonialSlides.length) { currentTestimonialSlide = 0; }
+    if (n < 0) { currentTestimonialSlide = testimonialSlides.length - 1; }
+    
+    testimonialSlides.forEach(slide => slide.classList.remove('active'));
+    testimonialIndicators.forEach(indicator => indicator.classList.remove('active'));
+    
+    testimonialSlides[currentTestimonialSlide].classList.add('active');
+    testimonialIndicators[currentTestimonialSlide].classList.add('active');
+}
+
+function moveTestimonialSlide(direction) {
+    currentTestimonialSlide += direction;
+    showTestimonialSlide(currentTestimonialSlide);
+}
+
+function setTestimonialSlide(n) {
+    currentTestimonialSlide = n;
+    showTestimonialSlide(currentTestimonialSlide);
+}
+
+// Auto-advance testimonials every 5 seconds
+setInterval(() => {
+    moveTestimonialSlide(1);
+}, 5000);
+
+// Initialize first slide
+showTestimonialSlide(currentTestimonialSlide);
+</script>
+
 </body>
 </html>
