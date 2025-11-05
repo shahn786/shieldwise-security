@@ -4,8 +4,8 @@ const path = require('path');
 
 const cities = [
     'carlsbad', 'chula-vista', 'coronado', 'del-mar', 'el-cajon',
-    'escondido', 'imperial-beach', 'la-mesa', 'lemon-grove',
-    'national-city', 'poway', 'san-diego', 'san-marcos',
+    'encinitas', 'escondido', 'imperial-beach', 'la-mesa', 'lemon-grove',
+    'national-city', 'oceanside', 'poway', 'san-diego', 'san-marcos',
     'santee', 'solana-beach', 'vista'
 ];
 
@@ -56,7 +56,7 @@ cities.forEach(citySlug => {
         const scriptToAdd = `
 <script>
 // Testimonials Slider Functionality
-const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+const testimonialSlides = document.querySelectorAll('.anaheim-testimonial-item');
 const testimonialIndicators = document.querySelectorAll('.slider-indicators .indicator');
 let currentTestimonialSlide = 0;
 
