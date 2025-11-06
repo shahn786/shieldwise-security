@@ -1,0 +1,161 @@
+Perfect—here’s your **updated MASTER PROMPT** with a strict **Crawl & Index Guarantee** for *all city pages*, plus Google Search Console tasks. It keeps your **style/layout 100% unchanged** while maximizing SEO, performance, and indexing.
+
+---
+
+# 🔒 FINAL PRE-HOSTING AUDIT (NO STYLE/NO LAYOUT CHANGES) + **CRAWL & INDEX GUARANTEE**
+
+You are a senior full-stack release engineer and SEO/performance auditor.
+**Goal:** Make my website *production-ready* BEFORE hosting, while keeping the **visual design, layout, and styling 100% unchanged**, and **guarantee that ALL city & service pages are crawlable and indexable**.
+
+## Hard Rules (do NOT violate)
+
+* ❌ **Do not change** layout, spacing, typography, colors, component structure, or page order.
+* ❌ **No new UI elements**, no CSS refactors that affect appearance.
+* ✅ You may **remove unused/dead assets**, **minify/compress**, and **add non-visual meta/headers/config**.
+* ✅ All fixes must be **backward-compatible** and **zero-visual-diff**.
+
+## Context
+
+* Tech: Node/EJS + HTML/CSS/JS (assume standard `/Public` assets).
+* Site: Multi-city + services pages for a California security company.
+* Devices: **Desktop, tablet, mobile** (modern Chrome, Safari, Firefox, Edge; iOS/Android).
+
+---
+
+## Your Tasks
+
+### 1) Safe Cleanup (no visual impact)
+
+* Build a **Dead Asset Report**: list all **unused images, CSS, JS, fonts, backups** (`.zip`, `.rar`, `.old`, `.bak`, `copy`, `-final`, `-backup`, `-old`, `tmp`, `~`) and **orphaned partials**.
+* Verify unused status via **static references + runtime crawl** (follow home → services → all city pages).
+* Output a **Delete Plan** with exact paths + justification.
+* Produce a **git-ready deletion patch** (only removals/renames). **Do not touch files in use.**
+
+### 2) Performance Hardening (zero visual change)
+
+* **Minify** HTML/CSS/JS; enable **Gzip/Brotli**; set **cache headers** (immutable for hashed assets).
+* **Preconnect/DNS-prefetch** critical third-party domains (fonts/analytics) if present.
+* Ensure images have explicit `width`/`height`; provide **WebP/AVIF** alternatives **without changing displayed dimensions**; keep original formats as fallback.
+* Add `loading="lazy"` and `decoding="async"` to **non-critical** images where **no CLS risk**.
+* Defer/async **non-critical JS**; avoid render-blocking in `<head>` unless required.
+* Confirm **no console errors**, no 404s, no render-blocking fonts (prefer `font-display: swap` if already defined; do not alter families/sizes).
+
+### 3) SEO & Indexing (content unchanged)
+
+* Titles (50–60) + meta descriptions (130–160) **present on every page**; add where missing **without changing visible content**.
+* Exactly one **H1** per page (report violations; do not restyle).
+* **Canonicals**: self-referential unless a true duplicate; fix missing/incorrect canonicals.
+* **robots.txt**: allow city/service pages; block only test/staging.
+* **Sitemaps**: ensure `/sitemap.xml` includes **all city & service URLs**; if large, split by **/california/{county}/** or alphabet buckets; reference all in `robots.txt`.
+* **Schema JSON-LD**: validate/add `Organization` (site-wide), `LocalBusiness`/`SecurityService` (per city), `BreadcrumbList`, and `FAQPage` (only where FAQ content already exists).
+* Add `og:*` and `twitter:*` metas where missing (non-visual).
+* Enforce **HTTP→HTTPS** and **www vs non-www** with 301s (config only; no template edits).
+
+### 4) **Crawl & Index Guarantee (city pages focus)**
+
+Produce and execute an **Indexing Plan** that proves every city & service page is discoverable, crawlable, and indexable:
+
+1. **URL Inventory & Orphan Detector**
+
+   * Generate a complete list of intended **city URLs** from routing/templates.
+   * Crawl site to detect **orphans** (0 internal links) and **deep pages** (depth >3).
+   * Add non-visual internal links via existing nav/footers/HTML includes where already present; if a link is truly missing, propose a **zero-visual-diff** fix (e.g., include in existing sitemap and breadcrumbs JSON-LD). If visual change would be required, **flag for approval**.
+
+2. **robots / meta / header audit**
+
+   * Confirm no `noindex`, `nofollow`, or `X-Robots-Tag: noindex` on city/service pages.
+   * Confirm canonicals are **self** and not pointing to other cities.
+   * Verify robots.txt allows `/california/` path.
+
+3. **Sitemap Strategy**
+
+   * Build/validate **index sitemap** + segmented sitemaps (e.g., `/sitemaps/sitemap-cities-a.xml`, `-b.xml`…) with `<lastmod>`.
+   * Ensure **city URL → exactly one sitemap** (no duplicates).
+   * Return a **Sitemap Coverage Table**: total URLs intended vs in sitemap vs crawlable.
+
+4. **Internal Linking Minimums**
+
+   * Ensure each city page links to:
+
+     * Its **region hub** (e.g., county), and
+     * **5–8 nearby cities** (non-visual modifications only—e.g., use existing link blocks/partials if present; otherwise document as “requires approval”).
+   * Ensure services pages link to **top city pages** (and vice versa) without visual change.
+
+5. **Google Search Console Playbook** *(post-deploy step list)*
+
+   * Verify **Domain Property**, submit all sitemaps.
+   * Use **URL Inspection** on a **sample of 20 city pages** (A–Z spread).
+   * Track **Coverage** statuses and export a list of “Discovered – currently not indexed” or “Crawled – not indexed” with recommended non-visual fixes (internal links, canonicals, sitemaps, server logs).
+
+6. **Server Log Spot-Check** *(optional)*
+
+   * Provide a short guide to confirm Googlebot hits **representative city URLs** within 72 hours of sitemap submission.
+
+### 5) Cross-Platform Consistency (report only)
+
+* Responsive snapshots (desktop 1440, tablet 1024, mobile 390) for **home, one service, three city pages**.
+* Report any **CLS/LCP/INP risks** and **browser quirks**; propose **non-visual** remedies only (e.g., preload hero, explicit image sizes).
+* Verify favicon, manifest, and `viewport` meta.
+
+### 6) Accessibility (no styling changes)
+
+* Add missing **`alt`** attributes (concise, descriptive) where absent.
+* Ensure interactive elements have **`aria-label`** where needed.
+* Confirm focus visible, landmarks, heading order; report anything that would need visual edits (do not apply).
+
+### 7) Security & Reliability
+
+* Recommend headers: **HSTS**, **CSP (report-only)**, **X-Content-Type-Options**, **X-Frame-Options**, **Referrer-Policy**, **Permissions-Policy**.
+* Ensure no secrets in client bundles; provide `npm audit` summary with safe patch versions (no breaking upgrades).
+
+---
+
+## Checks & Targets
+
+* **Core Web Vitals (lab):** LCP ≤ 1.8s, INP ≤ 200ms, CLS ≤ 0.1.
+* **Lighthouse (mobile):** Performance ≥ 95, SEO ≥ 100, Best Practices ≥ 100, Accessibility ≥ 100 (where feasible).
+* **Indexing:** **0** city/service pages blocked unintentionally; **100% of intended city URLs** present in sitemap(s) and **passing GSC URL Inspection** (sample proof).
+
+---
+
+## Required Outputs
+
+1. **Executive Summary (1 page)** — top risks, zero-visual-change fixes, and go-live confidence.
+2. **Delete Plan (table)** — path, type (img/js/css/backup), reason, detection proof.
+3. **Safe Fix Patch** — git diff(s) that only:
+
+   * remove unused files,
+   * add/adjust non-visual meta/headers,
+   * add `preconnect`, `loading="lazy"` where no CLS risk,
+   * set cache headers/redirects (server config docs).
+4. **Performance Report** — before/after Lighthouse JSON + brief commentary.
+5. **SEO & Indexing Report** —
+
+   * **City Indexing Matrix** (columns: URL, in-sitemap, crawlable, canonical OK, robots OK, status hint, notes).
+   * robots.txt, canonicals, schema validation notes/screenshots.
+6. **Cross-Device Snapshot Sheet** — desktop/tablet/mobile screenshots with parity notes.
+7. **Roll-Back Plan** — revert deletions/config in one command.
+8. **Go-Live Checklist** — exact steps/commands to deploy safely.
+9. **GSC Runbook (post-deploy)** — verify domain, submit sitemaps, URL-inspect 20 sample city pages, monitor Coverage → export any non-indexed pages + fixes.
+
+---
+
+## Assumptions (update if different)
+
+* Build: `npm run build`; assets in `/Public`.
+* Sitemaps at `/sitemap.xml` (may create `/sitemaps/*.xml`).
+* No CDN yet (include suggested **Cloudflare** headers config—non-visual).
+* Host supports custom headers (`.htaccess` / `vercel.json` / `netlify.toml` snippets).
+
+---
+
+## Output Format
+
+* One Markdown report with sections above.
+* Attach **patch files** and **JSON** results (Lighthouse).
+* **Absolutely no CSS/HTML structural changes that affect appearance.**
+  If a fix risks visuals, label it **“VISUAL CHANGE — REQUIRES APPROVAL”** and do not apply.
+
+---
+
+**Begin now. Return the Delete Plan, City Indexing Matrix (sample 25 city URLs), and Safe Fix Patch first for approval before applying.**
