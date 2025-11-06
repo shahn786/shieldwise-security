@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="https://schema.org/LocalBusiness">
 <head>
@@ -217,9 +216,9 @@
     <link rel="stylesheet" href="/css/anaheim-styles.css">
 
 
-            
 
-            
+
+
 <!-- Enhanced Hyperlocal SEO Schema with OfferCatalog -->
                 <script type="application/ld+json">
                 {
@@ -269,9 +268,9 @@
         <div class="anaheim-hero-content">
             <h1>Best licensed security guard services in Emeryville CA</h1>
             <p class="cheapest-best-claim animate-fade-in-delay">Cheapest and best security guard services in Emeryville, California.</p>
-            
-            
-            
+
+
+
             <p class="animate-fade-in-delay">Premier technology and biotech facility security services protecting Emeryville's innovation hub since 2015</p>
             <div class="anaheim-cta-buttons">
                 <a href="#contact-sec" class="anaheim-cta-button animate-fade-in-delay-2">Get Your Free Tech Security Assessment</a>
@@ -498,7 +497,7 @@
                 <div class="anaheim-service-item-enhanced">
                     <h4>Armed Tech Campus Security</h4>
                     <p>BSIS-licensed armed guards with specialized tech industry training provide maximum security presence for high-value technology facilities and research centers.</p>
-                    
+
                     <div class="service-benefits">
                         <span>✓ Security clearance verified</span>
                         <span>✓ IP protection trained</span>
@@ -508,7 +507,7 @@
                 <div class="anaheim-service-item-enhanced">
                     <h4>Unarmed Tech Security Guards</h4>
                     <p>Professional unarmed officers specialized in tech environments focus on access control, visitor management, and maintaining the innovative atmosphere.</p>
-                    
+
                     <div class="service-benefits">
                         <span>✓ Tech industry experience</span>
                         <span>✓ Visitor management systems</span>
@@ -518,7 +517,7 @@
                 <div class="anaheim-service-item-enhanced">
                     <h4>Fire Watch & Data Protection</h4>
                     <p>OSHA-certified fire watch personnel with specialized training for protecting sensitive equipment, data centers, and research facilities.</p>
-                    
+
                     <div class="service-benefits">
                         <span>✓ Data center protocols</span>
                         <span>✓ Equipment protection</span>
@@ -528,7 +527,7 @@
                 <div class="anaheim-service-item-enhanced">
                     <h4>Mobile Tech Campus Patrol</h4>
                     <p>GPS-tracked patrol vehicles with advanced security technology conduct comprehensive security checks across multiple tech facilities in Emeryville.</p>
-                    
+
                     <div class="service-benefits">
                         <span>✓ AI-powered reporting</span>
                         <span>✓ Multi-facility coverage</span>
@@ -627,21 +626,35 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
 
+    <!-- FAQ Accordion JavaScript -->
     <script>
-        $(document).ready(function() {
-            // FAQ Toggles
-            $('.faq-question').on('click', function() {
-                const $item = $(this).closest('.anaheim-faq-item');
-                const $toggle = $(this).find('.faq-toggle i');
-                const isActive = $item.hasClass('active');
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Accordion functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
 
-                $('.anaheim-faq-item').removeClass('active');
-                $('.anaheim-faq-item .faq-toggle i').removeClass('fa-minus').addClass('fa-plus');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const item = this.closest('.anaheim-faq-item');
+                    const toggle = this.querySelector('.faq-toggle i');
+                    const isActive = item.classList.contains('active');
 
-                if (!isActive) {
-                    $item.addClass('active');
-                    $toggle.removeClass('fa-plus').addClass('fa-minus');
-                }
+                    // Close all FAQ items
+                    document.querySelectorAll('.anaheim-faq-item').forEach(faqItem => {
+                        faqItem.classList.remove('active');
+                        const faqToggle = faqItem.querySelector('.faq-toggle i');
+                        if (faqToggle) {
+                            faqToggle.classList.remove('fa-minus');
+                            faqToggle.classList.add('fa-plus');
+                        }
+                    });
+
+                    // If this item wasn't active, open it
+                    if (!isActive) {
+                        item.classList.add('active');
+                        toggle.classList.remove('fa-plus');
+                        toggle.classList.add('fa-minus');
+                    }
+                });
             });
         });
     </script>

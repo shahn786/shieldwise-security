@@ -1707,11 +1707,11 @@
   .faq-toggle i {
     font-size: 14px;
   }
-  
+
   .anaheim-faq-carousel .anaheim-faq-item {
     min-width: 100%;
   }
-  
+
   .faq-nav-btn {
     width: 40px;
     height: 40px;
@@ -2814,7 +2814,7 @@
 
 /* Responsive Design */
 @media (max-width: 1200px) {
-  .anaheim-features-container, 
+  .anaheim-features-container,
   .anaheim-services-grid,
   .anaheim-areas-grid,
   .anaheim-testimonials-grid {
@@ -3120,7 +3120,7 @@
     .landscape-content {
         padding: 40px 30px;
     }
-    
+
     .considerations-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 25px;
@@ -3131,29 +3131,29 @@
     .landscape-header h3 {
         font-size: 2rem;
     }
-    
+
     .landscape-content {
         padding: 30px 20px;
     }
-    
+
     .landscape-intro {
         font-size: 1.1rem;
     }
-    
+
     .security-considerations h4,
     .success-stories h4 {
         font-size: 1.6rem;
     }
-    
+
     .considerations-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
+
     .consideration-item {
         padding: 25px 20px;
     }
-    
+
     .community-partnerships ul {
         grid-template-columns: 1fr;
     }
@@ -3164,20 +3164,20 @@
     .security-landscape-section {
         padding: 50px 0;
     }
-    
+
     .landscape-header h3 {
         font-size: 1.75rem;
     }
-    
+
     .consideration-icon {
         width: 60px;
         height: 60px;
     }
-    
+
     .consideration-icon i {
         font-size: 1.75rem;
     }
-    
+
     .consideration-text h5 {
         font-size: 1.2rem;
     }
