@@ -654,9 +654,9 @@ app.get("/services/educational-security", (req, res) => {
 
 // Special Event Security Page
 
-// Mobile Patrol Security Page
+// Mobile Patrol Security Page (redirect to main patrol page)
 app.get("/services/mobile-patrol-security", (req, res) => {
-  res.render("services/patrol");
+  res.redirect(301, "/services/patrol");
 });
 
 // Patrol Page - new handler with data
