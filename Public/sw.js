@@ -1,5 +1,5 @@
 // Service Worker for ShieldWise Security - Enhanced Performance & Offline Support
-const CACHE_VERSION = 'v2-compressed';
+const CACHE_VERSION = 'v3-production-ready';
 const CACHE_NAME = `shieldwise-${CACHE_VERSION}`;
 const OFFLINE_URL = '/offline.html';
 
@@ -9,18 +9,14 @@ const CACHE_URLS = [
   '/services/',
   '/services/apartment-security',
   '/services/commercial-security',
-  '/services/mobile-patrol',
   '/get-quote',
   '/contact',
-  '/css/critical-path.css',
-  '/css/apartment-security.css',
-  '/js/critical.js',
-  '/fonts/inter-var.woff2',
-  '/img/logo.png',
-  '/img/hero-security-service.webp',
-  // Added compressed video assets to cache
-  '/videos/shieldwise-promo-compressed.mp4',
-  '/videos/shieldwise-promo-compressed.webm',
+  '/css/style.min.css',
+  '/css/fontawesome.min.css',
+  '/JS/global.min.js',
+  '/JS/header-fix.min.js',
+  '/img/logo1.webp',
+  '/img/main2.webp',
   '/manifest.json',
   OFFLINE_URL
 ];
@@ -158,24 +154,12 @@ async function handleQuoteSync() {
 self.addEventListener('push', event => {
   const options = {
     body: event.data ? event.data.text() : 'Security alert notification',
-    icon: '/img/icons/icon-192x192.png',
-    badge: '/img/icons/badge-72x72.png',
+    icon: '/img/logo1.webp',
+    badge: '/img/favicon.ico',
     vibrate: [200, 100, 200],
     data: {
       url: '/alerts'
-    },
-    actions: [
-      {
-        action: 'view',
-        title: 'View Alert',
-        icon: '/img/icons/view-icon.png'
-      },
-      {
-        action: 'dismiss',
-        title: 'Dismiss',
-        icon: '/img/icons/dismiss-icon.png'
-      }
-    ]
+    }
   };
 
   event.waitUntil(
@@ -251,42 +235,3 @@ function openDB() {
   });
 }
 
-// Performance monitoring
-self.addEventListener('fetch', event => {
-  // Track navigation timing
-  if (event.request.destination === 'document') {
-    const startTime = performance.now();
-
-    event.respondWith(
-      handleRequest(event.request).then(response => {
-        const endTime = performance.now();
-        const duration = endTime - startTime;
-
-        // Report performance metrics
-        self.clients.matchAll().then(clients => {
-          clients.forEach(client => {
-            client.postMessage({
-              type: 'PERFORMANCE_METRIC',
-              metric: 'navigation_timing',
-              duration: duration,
-              url: event.request.url
-            });
-          });
-        });
-
-        return response;
-      })
-    );
-  }
-});
-
-// Generic request handler
-async function handleRequest(request) {
-  try {
-    const response = await fetch(request);
-    return response;
-  } catch (error) {
-    const cachedResponse = await caches.match(request);
-    return cachedResponse || new Response('Offline', { status: 503 });
-  }
-}
