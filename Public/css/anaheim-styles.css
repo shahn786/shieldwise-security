@@ -447,7 +447,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('/img/anaheim-banner.webp');
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('/img/quot.webp');
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -2614,8 +2614,6 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  background-image: url('/img/security-pattern.png');
-  background-blend-mode: soft-light;
   box-shadow: inset 0 0 100px rgba(0,0,0,0.4);
 }
 
@@ -2626,7 +2624,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('/img/security-pattern.png') repeat;
   opacity: 0.05;
   z-index: 1;
 }

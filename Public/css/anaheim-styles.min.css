@@ -1,1 +1,3207 @@
-.anaheim-page{--primary-color:#003366;--primary-dark:#002244;--primary-light:#004488;--secondary-color:#d12028;--secondary-dark:#a51920;--accent-color:#f8b133;--text-dark:#333333;--text-medium:#555555;--text-light:#f9f9f9;--section-padding:80px 0;--border-radius:10px;--box-shadow:0 10px 30px rgba(0,0,0,0.08);--transition:all 0.3s ease;color-scheme:light;font-family:'Segoe UI','Roboto','Helvetica Neue',Arial,sans-serif;color:var(--text-dark);line-height:1.6;overflow-x:hidden}.animate-fade-in{opacity:0;animation:fadeIn 1s ease-out forwards}.animate-fade-in-delay{opacity:0;animation:fadeIn 1s ease-out 0.3s forwards}.animate-fade-in-delay-2{opacity:0;animation:fadeIn 1s ease-out 0.6s forwards}@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}@keyframes bounceDown{0%,20%,50%,80%,100%{transform:translateY(0) translateX(-50%)}40%{transform:translateY(-10px) translateX(-50%)}60%{transform:translateY(-5px) translateX(-50%)}}.section-badge{display:inline-block;background:var(--primary-color);color:white;font-size:0.9rem;font-weight:600;padding:5px 15px;border-radius:30px;margin-bottom:15px;text-transform:uppercase;letter-spacing:1px}.anaheim-hero{background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6)),url('/img/anaheim-skyline.webp');background-size:cover;background-position:center;background-attachment:fixed;height:80vh;min-height:500px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;color:white;text-align:center}.anaheim-hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:1}.anaheim-hero-content{position:relative;z-index:2;max-width:900px;padding:0 20px;text-align:center}.anaheim-hero-content h1{font-size:3.5rem;font-weight:700;margin-bottom:25px;text-shadow:2px 2px 8px rgba(0,0,0,0.7);letter-spacing:1px;line-height:1.2}.anaheim-hero-content p{font-size:1.5rem;margin-bottom:40px;text-shadow:1px 1px 4px rgba(0,0,0,0.8);font-weight:300;line-height:1.6}.anaheim-cta-buttons{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}.anaheim-cta-button{background:var(--secondary-color);color:white;padding:15px 30px;font-size:1.1rem;font-weight:600;border-radius:50px;border:none;transition:var(--transition);text-decoration:none;display:inline-block;box-shadow:0 5px 20px rgba(209,32,40,0.4)}.anaheim-cta-button-alt{background:transparent;color:white;padding:15px 30px;font-size:1.1rem;font-weight:600;border-radius:50px;border:2px solid white;transition:var(--transition);text-decoration:none;display:inline-block}.anaheim-cta-button:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(209,32,40,0.5);background:var(--secondary-dark);color:white;text-decoration:none}.anaheim-cta-button-alt:hover{background:rgba(255,255,255,0.2);transform:translateY(-5px);color:white;text-decoration:none;box-shadow:0 10px 20px rgba(0,0,0,0.2)}.anaheim-hero-scroll-indicator{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;color:white;z-index:2;animation:bounceDown 2s infinite}.anaheim-hero-scroll-indicator span{font-size:0.9rem;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}.anaheim-main-content{padding:var(--section-padding);background-color:#f9f9f9}.anaheim-content-container{max-width:1200px;margin:0 auto;padding:0 20px}.anaheim-intro-section{background:white;border-radius:var(--border-radius);padding:50px;margin-bottom:50px;box-shadow:var(--box-shadow);position:relative;overflow:hidden}.anaheim-intro-section h1{color:var(--primary-color);font-size:2.5rem;margin-bottom:25px;font-weight:700;position:relative;line-height:1.3}.anaheim-intro-section h2{color:var(--primary-color);font-size:2.2rem;margin-bottom:25px;font-weight:700;position:relative;line-height:1.3}.anaheim-intro-rating{display:flex;align-items:center;margin-bottom:30px}.anaheim-intro-rating .stars{color:var(--accent-color);font-size:1.2rem;margin-right:10px}.anaheim-intro-rating span{color:var(--text-medium);font-size:1rem}.anaheim-highlight-box{display:flex;gap:30px;background:linear-gradient(to right,#f9f9f9,white);border-left:5px solid var(--primary-color);padding:30px;margin:40px 0;border-radius:0 var(--border-radius) var(--border-radius) 0;box-shadow:0 5px 15px rgba(0,0,0,0.05)}.highlight-icon{font-size:2.5rem;color:var(--primary-color);flex-shrink:0;display:flex;align-items:flex-start;justify-content:center;width:80px}.highlight-content{flex:1}.highlight-content p{font-size:1.1rem;line-height:1.8;color:var(--text-medium);margin-bottom:20px}.highlight-content p:last-child{margin-bottom:0}.highlight-content p strong{color:var(--text-dark);font-weight:600}.anaheim-trust-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin:40px 0}.trust-badge{display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(to bottom,#f9f9f9,#f1f1f1);border-radius:var(--border-radius);padding:20px;width:200px;box-shadow:0 5px 15px rgba(0,0,0,0.05);transition:var(--transition)}.trust-badge:hover{transform:translateY(-5px);box-shadow:0 10px 20px rgba(0,0,0,0.1)}.trust-badge i{font-size:2rem;color:var(--primary-color);margin-bottom:15px}.trust-badge span{font-weight:600;color:var(--text-dark)}.anaheim-features-section{padding:50px 0;position:relative;margin-bottom:30px}.anaheim-features-section h2{text-align:center;font-size:2.2rem;margin-bottom:50px;color:var(--primary-color);font-weight:700;position:relative}.anaheim-features-section h2::after{content:'';position:absolute;bottom:-15px;left:50%;transform:translateX(-50%);width:80px;height:3px;background:var(--primary-color)}.anaheim-features-container{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}.anaheim-feature-item{background:white;border-radius:var(--border-radius);padding:30px;box-shadow:var(--box-shadow);transition:var(--transition);position:relative;overflow:hidden;text-align:left;opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease,box-shadow 0.3s ease}.anaheim-feature-item.in-view{opacity:1;transform:translateY(0)}.anaheim-feature-item:hover{transform:translateY(-10px);box-shadow:0 15px 30px rgba(0,0,0,0.1)}.anaheim-feature-item::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:var(--primary-color)}.anaheim-feature-item i{font-size:2.5rem;color:var(--primary-color);margin-bottom:25px;display:inline-block;transition:var(--transition)}.anaheim-feature-item:hover i{transform:scale(1.1)}.anaheim-feature-item h3{font-size:1.4rem;margin-bottom:20px;color:var(--text-dark);font-weight:600}.anaheim-feature-item p{font-size:1rem;color:var(--text-medium);line-height:1.7}.anaheim-banner-section{padding:100px 0;text-align:center;position:relative;overflow:hidden;color:white;margin-bottom:80px;background:linear-gradient(135deg,#e0e0e0,#E4EFE7)}.anaheim-banner-parallax{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),url('/img/anaheim-banner.webp');background-size:cover;background-position:center;z-index:-1;transform:translateZ(0)}.anaheim-banner-content{position:relative;z-index:2;max-width:800px;margin:0 auto;padding:0 20px}.anaheim-banner-content h2{font-size:2.6rem;font-weight:700;margin-bottom:25px;text-shadow:2px 2px 4px rgba(0,0,0,0.5);line-height:1.3}.anaheim-banner-content p{font-size:1.3rem;line-height:1.8;margin-bottom:40px;text-shadow:1px 1px 3px rgba(0,0,0,0.4)}.anaheim-banner-buttons{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}.anaheim-banner-button{background:var(--secondary-color);color:white;padding:15px 30px;font-size:1.1rem;font-weight:600;border-radius:50px;border:none;transition:var(--transition);text-decoration:none;display:inline-block;box-shadow:0 5px 15px rgba(0,0,0,0.2)}.anaheim-banner-button-alt{background:transparent;color:white;padding:15px 30px;font-size:1.1rem;font-weight:600;border-radius:50px;border:2px solid white;transition:var(--transition);text-decoration:none;display:inline-block}.anaheim-banner-button:hover{transform:translateY(-5px);box-shadow:0 10px 20px rgba(0,0,0,0.3);background:var(--secondary-dark);color:white;text-decoration:none}.anaheim-banner-button-alt:hover{background:rgba(255,255,255,0.2);transform:translateY(-5px);color:white;text-decoration:none}.anaheim-services-section{padding:var(--section-padding);background-color:#f9f9f9;text-align:center}.anaheim-services-container{max-width:1200px;margin:0 auto;padding:0 20px}.anaheim-services-title{font-size:2.5rem;margin-bottom:20px;color:var(--primary-color);font-weight:700}.anaheim-title-underline{height:3px;width:80px;background:var(--primary-color);margin:0 auto 50px}.anaheim-services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}.anaheim-service-item{background:white;border-radius:var(--border-radius);padding:40px 30px;text-align:center;transition:var(--transition);box-shadow:var(--box-shadow);text-decoration:none;color:var(--text-dark);display:flex;flex-direction:column;align-items:center;height:100%;position:relative;overflow:hidden;opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease,box-shadow 0.3s ease}.anaheim-service-item.in-view{opacity:1;transform:translateY(0)}.anaheim-service-item:hover{transform:translateY(-10px);box-shadow:0 15px 30px rgba(0,0,0,0.1);text-decoration:none;color:var(--text-dark)}.anaheim-service-item::before{content:'';position:absolute;top:0;left:0;width:5px;height:0;background:var(--primary-color);transition:var(--transition)}.anaheim-service-item:hover::before{height:100%}.anaheim-service-item img{width:100%;height:auto;border-radius:8px;margin:15px 0;object-fit:cover}.service-icon-wrapper{width:70px;height:70px;background:linear-gradient(45deg,#f0f5ff,#e6f0ff);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:25px;transition:var(--transition)}.anaheim-service-item:hover .service-icon-wrapper{background:linear-gradient(45deg,#d9e8ff,#c2dbff)}.anaheim-service-item i{font-size:1.8rem;color:var(--primary-color);transition:var(--transition)}.anaheim-service-item:hover i{transform:scale(1.2)}.anaheim-service-item h3{font-size:1.3rem;font-weight:600;margin-bottom:15px;transition:var(--transition)}.anaheim-service-item p{font-size:1rem;color:var(--text-medium);line-height:1.7;margin-bottom:20px;flex-grow:1}.anaheim-service-item .learn-more{font-size:0.9rem;font-weight:600;color:var(--primary-color);display:inline-flex;align-items:center;transition:var(--transition);margin-top:auto}.anaheim-service-item .learn-more i{font-size:0.8rem;margin-left:5px;transition:var(--transition)}.anaheim-service-item:hover .learn-more{color:var(--primary-dark)}.anaheim-service-item:hover .learn-more i{transform:translateX(5px)}.anaheim-areas-section{padding:var(--section-padding);background:linear-gradient(to right,#f8f9fa,#eaeaea);text-align:center}.anaheim-areas-container{max-width:1200px;margin:0 auto;padding:0 20px}.anaheim-areas-section h2{font-size:2.5rem;margin-bottom:20px;color:var(--primary-color);font-weight:700}.areas-intro{font-size:1.1rem;color:var(--text-medium);max-width:800px;margin:0 auto 40px;line-height:1.7}.anaheim-areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-bottom:40px}.anaheim-area-item{background:white;border-radius:var(--border-radius);padding:40px 30px;text-align:center;opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease,box-shadow 0.3s ease;box-shadow:var(--box-shadow)}.anaheim-area-item.in-view{opacity:1;transform:translateY(0)}.anaheim-area-item:hover{transform:translateY(-10px);box-shadow:0 15px 30px rgba(0,0,0,0.1)}.anaheim-area-item h3{font-size:1.3rem;color:var(--primary-color);font-weight:600;margin-bottom:15px}.anaheim-area-item h3 a{color:inherit;text-decoration:none}.anaheim-area-item p{font-size:1rem;color:var(--text-medium);line-height:1.7;margin-bottom:15px}.area-learn-more{color:var(--primary-color);font-weight:600;font-size:0.9rem;text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:gap 0.3s ease}.area-learn-more:hover{gap:10px;text-decoration:none;color:var(--primary-dark)}@media (max-width:768px){.anaheim-areas-grid{grid-template-columns:1fr}.anaheim-area-item{padding:30px 20px}.anaheim-areas-section h2{font-size:1.8rem}}.section-badge{display:inline-block;font-size:0.9rem;color:var(--primary-dark);background-color:var(--primary-light);padding:5px 15px;border-radius:var(--border-radius);margin-bottom:15px;font-weight:600}.anaheim-testimonials-section{padding:var(--section-padding);background-color:white;text-align:center}.anaheim-testimonials-container{max-width:1200px;margin:0 auto;padding:0 20px}.anaheim-testimonials-section h2{font-size:2.5rem;margin-bottom:50px;color:var(--primary-color);font-weight:700}.anaheim-testimonials-slider{position:relative;margin-bottom:40px}.slider-navigation{display:flex;justify-content:center;align-items:center;margin-bottom:30px}.slider-prev,.slider-next{background:none;border:none;color:var(--primary-color);font-size:1.5rem;cursor:pointer;padding:5px 10px;transition:var(--transition)}.slider-prev:hover,.slider-next:hover{color:var(--primary-dark);transform:scale(1.2)}.slider-indicators{display:flex;gap:10px;margin:0 20px}.indicator{width:12px;height:12px;border-radius:50%;background:#e0e0e0;cursor:pointer;transition:var(--transition)}.indicator.active{background:var(--primary-color);transform:scale(1.2)}.anaheim-testimonials-grid{position:relative;height:350px;margin-bottom:30px}.anaheim-testimonial-item{background:#f9f9f9;border-radius:var(--border-radius);padding:40px 30px;text-align:left;transition:var(--transition);box-shadow:var(--box-shadow);position:absolute;top:0;left:0;right:0;opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;pointer-events:none;height:100%}.anaheim-testimonial-item.active{opacity:1;transform:translateY(0);pointer-events:auto}.testimonial-quote{font-size:2rem;color:var(--primary-color);opacity:0.3;margin-bottom:20px}.anaheim-testimonial-item p{font-size:1.1rem;color:var(--text-medium);line-height:1.7;margin-bottom:30px;font-style:italic}.testimonial-author{display:flex;align-items:center;margin-top:auto}.author-image{width:60px;height:60px;border-radius:50%;margin-right:15px;overflow:hidden}.author-image img{width:100%;height:100%;object-fit:cover}.author-info{flex:1}.author-info h4{font-size:1.1rem;color:var(--text-dark);margin-bottom:5px;font-weight:600}.author-info p{font-size:0.9rem;color:var(--text-medium);margin-bottom:5px;font-style:normal}.author-stars{color:var(--accent-color);font-size:0.9rem}.testimonial-cta{margin-top:40px}.testimonial-cta p{font-size:1.1rem;color:var(--text-medium);margin-bottom:15px}.testimonial-link{display:inline-flex;align-items:center;gap:8px;color:var(--primary-color);font-weight:600;text-decoration:none;transition:var(--transition)}.testimonial-link:hover{color:var(--primary-dark);gap:12px;text-decoration:none}.anaheim-faq-section{padding:var(--section-padding);background:linear-gradient(135deg,#ecf0f1,#bdc3c7)}.anaheim-faq-container{max-width:900px;margin:0 auto;padding:0 20px}.anaheim-faq-section h2{font-size:2.5rem;margin-bottom:50px;color:var(--primary-color);font-weight:700;text-align:center}.anaheim-faq-list{margin-top:40px}.anaheim-faq-item{background:white;border-radius:var(--border-radius);overflow:hidden;margin-bottom:20px;box-shadow:var(--box-shadow);transition:var(--transition);opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease,box-shadow 0.3s ease}.anaheim-faq-item.in-view{opacity:1;transform:translateY(0)}.anaheim-faq-item:hover{box-shadow:0 10px 25px rgba(0,0,0,0.1)}.faq-question{padding:25px 30px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;border-left:5px solid transparent;transition:var(--transition)}.faq-question:hover{border-left-color:var(--primary-color)}.faq-question h3{font-size:1.2rem;color:var(--text-dark);font-weight:600;margin:0}.faq-toggle{width:30px;height:30px;border-radius:50%;background-color:var(--primary-color);display:flex;align-items:center;justify-content:center;color:white;transition:transform 0.3s ease}.faq-question:hover .faq-toggle{transform:rotate(90deg)}.faq-toggle i{font-size:0.9rem;transition:transform 0.3s ease}.faq-toggle i.fa-minus{transform:rotate(180deg)}.faq-answer{padding:0 30px 25px;display:none}.faq-answer p{font-size:1.05rem;color:var(--text-medium);line-height:1.7;margin:0}.anaheim-cta-section{padding:var(--section-padding);background:linear-gradient(135deg,#2c3e50,#34495e);color:white;text-align:center;position:relative;overflow:hidden;background-image:url('/img/security-pattern.png');background-blend-mode:soft-light;box-shadow:inset 0 0 100px rgba(0,0,0,0.4)}.anaheim-cta-section::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:url('/img/security-pattern.png') repeat;opacity:0.05;z-index:1}.anaheim-cta-container{max-width:800px;margin:0 auto;padding:0 20px;position:relative;z-index:2}.anaheim-cta-content{background-color:transparent;border-radius:20px;padding:40px;color:#333333}.anaheim-cta-content h2{font-size:2.5rem;font-weight:700;margin-bottom:20px;color:#333333;text-shadow:none}.anaheim-cta-content p{font-size:1.2rem;line-height:1.7;margin-bottom:40px;max-width:600px;margin-left:auto;margin-right:auto;color:#333333;text-shadow:none}.anaheim-cta-buttons{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}.anaheim-cta-call,.anaheim-cta-quote{padding:15px 30px;font-size:1.1rem;font-weight:600;border-radius:50px;transition:var(--transition);text-decoration:none;display:inline-flex;align-items:center;gap:10px}.anaheim-cta-call{background:white;color:var(--primary-color);box-shadow:0 5px 15px rgba(0,0,0,0.2)}.anaheim-cta-quote{background:transparent;color:white;border:2px solid white}.anaheim-cta-call:hover,.anaheim-cta-quote:hover{transform:translateY(-5px);text-decoration:none}.anaheim-cta-call:hover{box-shadow:0 10px 20px rgba(0,0,0,0.3);background:#f5f5f5;color:var(--primary-dark)}.anaheim-cta-quote:hover{background:rgba(255,255,255,0.2);color:white}.anaheim-cta-call i,.anaheim-cta-quote i{font-size:1.1rem}.badge{background-color:var(--secondary-color);color:white;padding:5px 15px;border-radius:20px;font-size:0.9rem;margin-bottom:20px;display:inline-block;text-transform:uppercase;font-weight:600}.area-card{background:white;padding:30px;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,0.08);transition:transform 0.3s ease,box-shadow 0.3s ease;text-align:center}.area-card:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,0.12)}.area-card:first-child{background-color:var(--secondary-color);color:white}.area-card i{font-size:2rem;margin-bottom:20px;color:inherit}.area-card h3{font-size:1.3rem;margin-bottom:15px;font-weight:600}.area-card p{color:inherit;opacity:0.9;line-height:1.5}.section-description{max-width:800px;margin:0 auto 40px;color:#666;font-size:1.1rem;line-height:1.6}.anaheim-testimonials-slider{overflow:hidden;position:relative}.slider-navigation{position:relative;z-index:5}.anaheim-testimonial-item{display:none;position:relative;top:0;left:0;width:100%}.anaheim-testimonial-item.active{display:block;animation:fadeSlide 0.5s ease forwards}@keyframes fadeSlide{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}@media (max-width:1200px){.anaheim-features-container,.anaheim-services-grid,.anaheim-areas-grid,.anaheim-testimonials-grid{grid-template-columns:repeat(2,1fr)}}@media (max-width:992px){.anaheim-hero-content h1{font-size:3rem}.anaheim-hero-content p{font-size:1.2rem}.anaheim-highlight-box{flex-direction:column;gap:20px}.highlight-icon{text-align:center;width:auto}.anaheim-intro-section{padding:40px 30px}.anaheim-banner-content h2{font-size:2.2rem}}@media (max-width:768px){.anaheim-hero{height:600px}.anaheim-hero-content h1{font-size:2.5rem}.anaheim-hero-content p{font-size:1.1rem}.anaheim-features-container,.anaheim-services-grid,.anaheim-areas-grid{grid-template-columns:1fr}.anaheim-intro-section{padding:30px 20px}.anaheim-intro-section h1{font-size:2rem}.anaheim-banner-content h2{font-size:2rem}.anaheim-banner-content p{font-size:1.1rem}.anaheim-cta-buttons,.anaheim-banner-buttons{flex-direction:column;gap:15px}.trust-badge{width:100%}.anaheim-testimonials-grid{height:auto}.anaheim-testimonial-item{position:relative}}@media (max-width:576px){.anaheim-hero-content h1{font-size:2rem}.anaheim-hero-content p{font-size:1rem}.anaheim-cta-button,.anaheim-cta-button-alt,.anaheim-banner-button,.anaheim-banner-button-alt,.anaheim-cta-call,.anaheim-cta-quote{width:100%}.anaheim-services-title,.anaheim-areas-section h2,.anaheim-faq-section h2,.anaheim-testimonials-section h2,.anaheim-cta-content h2{font-size:1.8rem}.faq-question h3{font-size:1rem}.anaheim-feature-item,.anaheim-service-item,.anaheim-area-item,.anaheim-testimonial-item{padding:25px 20px}.anaheim-cta-content{padding:30px 20px}}@media print{.anaheim-hero,.anaheim-banner-section,.anaheim-cta-section,.anaheim-testimonials-section{background:white;color:black;padding:20px 0;margin:20px 0}.anaheim-hero-overlay,.anaheim-banner-parallax,.anaheim-cta-section::before{display:none}.anaheim-hero-content,.anaheim-banner-content{color:black}.anaheim-cta-buttons,.anaheim-banner-buttons,.slider-navigation{display:none}.anaheim-service-item,.anaheim-feature-item,.anaheim-area-item,.anaheim-testimonial-item,.anaheim-faq-item{box-shadow:none;border:1px solid #ddd;page-break-inside:avoid}.anaheim-testimonial-item{display:block;opacity:1;transform:none;position:relative;margin-bottom:20px}.faq-answer{display:block}.trust-badge,.service-icon-wrapper,.anaheim-feature-item i{color:black;background:white}}.cities-list:hover a:not(:hover){opacity:0.7}.anaheim-feature-item:nth-child(even)::before{background:var(--secondary-color)}.anaheim-service-item:hover img{transform:scale(1.03);transition:transform 0.5s ease}.area-learn-more i{transition:transform 0.3s ease}.area-learn-more:hover i{transform:translateX(3px)}.anaheim-faq-item:last-child{margin-bottom:0}
+/* Anaheim Security Website - Complete CSS */
+
+/* Global Styles for Anaheim Page */
+.anaheim-page {
+  --primary-color: #003366;  /* Updated brand color */
+  --primary-dark: #002244;
+  --primary-light: #004488;
+  --secondary-color: #d12028;  /* Red accent color */
+  --secondary-dark: #a51920;
+  --accent-color: #f8b133;  /* Gold accent */
+  --text-dark: #333333;
+  --text-medium: #555555;
+  --text-light: #f9f9f9;
+  --section-padding: 80px 0;
+  --border-radius: 10px;
+  --box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  --transition: all 0.3s ease;
+  color-scheme: light;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Animation Classes */
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-fade-in-delay {
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.3s forwards;
+}
+
+.animate-fade-in-delay-2 {
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.6s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceDown {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+  40% { transform: translateY(-10px) translateX(-50%); }
+  60% { transform: translateY(-5px) translateX(-50%); }
+}
+
+/* Section Badge Styling */
+.section-badge {
+  display: inline-block;
+  background: var(--primary-color);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 5px 15px;
+  border-radius: 30px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Enhanced Anaheim-Style Design */
+.anaheim-hero {
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.anaheim-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(13,27,42,0.7));
+    z-index: 1;
+}
+
+.anaheim-hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 900px;
+    padding: 40px 30px;
+    margin: 0 auto;
+}
+
+.anaheim-hero-content h1 {
+    font-size: 3.8rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    line-height: 1.2;
+    padding: 0 15px;
+}
+
+.anaheim-hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    opacity: 0.95;
+    line-height: 1.6;
+    padding: 0 20px;
+}
+
+.anaheim-cta-buttons {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    padding: 0 20px;
+}
+
+.anaheim-cta-button {
+    display: inline-block;
+    padding: 20px 40px;
+    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    box-shadow: 0 8px 25px rgba(211, 47, 47, 0.3);
+    min-width: 220px;
+    text-align: center;
+}
+
+.anaheim-cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(211, 47, 47, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.anaheim-cta-button-alt {
+    display: inline-block;
+    padding: 20px 40px;
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: 220px;
+    text-align: center;
+}
+
+.anaheim-cta-button-alt:hover {
+    background: white;
+    color: #222;
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+.anaheim-hero-scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  z-index: 2;
+  animation: bounceDown 2s infinite;
+}
+
+.anaheim-hero-scroll-indicator span {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Main Content Section */
+.anaheim-main-content {
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    padding: 100px 0;
+    position: relative;
+    margin-top: 0;
+}
+
+.anaheim-content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.anaheim-intro-section {
+    text-align: center;
+    margin-bottom: 80px;
+    padding: 40px 20px;
+}
+
+.section-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 35px;
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.2);
+}
+
+.anaheim-intro-section h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 40px;
+    line-height: 1.3;
+    padding: 0 20px;
+}
+
+.anaheim-intro-section h2 {
+  color: var(--primary-color);
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  font-weight: 700;
+  position: relative;
+  line-height: 1.3;
+}
+
+.anaheim-intro-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    display: inline-flex;
+}
+
+.anaheim-intro-rating .stars {
+    color: #ffd700;
+    font-size: 1.3rem;
+}
+
+.anaheim-intro-rating span {
+    font-weight: 600;
+    color: #555;
+    font-size: 1rem;
+}
+
+.anaheim-highlight-box {
+    background: white;
+    padding: 50px 45px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    text-align: left;
+    margin: 50px auto;
+    max-width: 950px;
+    border-left: 6px solid #d32f2f;
+    position: relative;
+}
+
+.highlight-icon {
+    position: absolute;
+    top: -22px;
+    left: 45px;
+    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    box-shadow: 0 6px 20px rgba(211, 47, 47, 0.3);
+}
+
+.highlight-content p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 25px;
+    padding: 0 10px;
+}
+
+.highlight-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Trust Badges */
+.anaheim-trust-badges {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin: 60px 0;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 25px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
+    text-align: left;
+}
+
+.trust-badge:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.trust-badge i {
+    color: #d32f2f;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+}
+
+.trust-badge span {
+    font-weight: 600;
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* Features Section */
+.anaheim-features-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    margin: 40px 0;
+}
+
+.anaheim-features-section h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 70px;
+    position: relative;
+    padding: 0 20px;
+}
+
+.anaheim-features-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 5px;
+    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+    border-radius: 3px;
+}
+
+.anaheim-features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 45px;
+}
+
+.anaheim-feature-item {
+    background: white;
+    padding: 50px 35px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid #d32f2f;
+    position: relative;
+}
+
+.anaheim-feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+}
+
+.anaheim-feature-item i {
+    font-size: 3.5rem;
+    color: #d32f2f;
+    margin-bottom: 30px;
+}
+
+.anaheim-feature-item h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 25px;
+    line-height: 1.3;
+    padding: 0 10px;
+}
+
+.anaheim-feature-item p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 0;
+    padding: 0 10px;
+}
+
+/* Banner Section with Parallax */
+.anaheim-banner-section {
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  margin-bottom: 80px;
+  background: linear-gradient(135deg, #e0e0e0, #948979);
+}
+
+.anaheim-banner-parallax {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('/img/quot.webp');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  transform: translateZ(0);
+}
+
+.anaheim-banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.anaheim-banner-content h2 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 1.3;
+}
+
+.anaheim-banner-content p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.anaheim-banner-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.anaheim-banner-button {
+  background: var(--secondary-color);
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  border: none;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.anaheim-banner-button-alt {
+  background: transparent;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  border: 2px solid white;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.anaheim-banner-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  background: var(--secondary-dark);
+  color: white;
+  text-decoration: none;
+}
+
+.anaheim-banner-button-alt:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+  color: white;
+  text-decoration: none;
+}
+
+/* Services Grid */
+.anaheim-services-section {
+  padding: var(--section-padding);
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.anaheim-services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.anaheim-services-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.anaheim-title-underline {
+  height: 3px;
+  width: 80px;
+  background: var(--primary-color);
+  margin: 0 auto 50px;
+}
+
+.anaheim-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.anaheim-service-item {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 30px 25px;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: var(--box-shadow);
+  text-decoration: none;
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.anaheim-service-item.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.anaheim-service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: var(--text-dark);
+}
+
+.anaheim-service-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 0;
+  background: var(--primary-color);
+  transition: var(--transition);
+}
+
+.anaheim-service-item:hover::before {
+  height: 100%;
+}
+
+.anaheim-service-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 15px 0;
+  object-fit: cover;
+}
+
+.service-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: var(--transition);
+}
+
+.anaheim-service-item:hover .service-icon-wrapper {
+  background: linear-gradient(45deg, #e3f2fd, #bbdefb);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.anaheim-service-item i {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.anaheim-service-item:hover i {
+  transform: scale(1.1);
+  color: var(--primary-dark);
+}
+
+.anaheim-service-item h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  transition: var(--transition);
+  line-height: 1.3;
+}
+
+.anaheim-service-item p {
+  font-size: 0.95rem;
+  color: var(--text-medium);
+  line-height: 1.6;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.anaheim-service-item .learn-more {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  display: inline-flex;
+  align-items: center;
+  transition: var(--transition);
+  margin-top: auto;
+}
+
+.anaheim-service-item .learn-more i {
+  font-size: 0.8rem;
+  margin-left: 5px;
+  transition: var(--transition);
+}
+
+.anaheim-service-item:hover .learn-more {
+  color: var(--primary-dark);
+}
+
+.anaheim-service-item:hover .learn-more i {
+  transform: translateX(5px);
+}
+
+/* Compact Professional Services Section */
+.anaheim-services-section-compact {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    margin: 50px 0;
+}
+
+.anaheim-services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    text-align: center;
+}
+
+.anaheim-services-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.anaheim-title-underline {
+    width: 90px;
+    height: 5px;
+    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+    margin: 0 auto 70px;
+    border-radius: 3px;
+}
+
+.anaheim-services-grid-enhanced {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.anaheim-service-item-enhanced {
+    background: white;
+    padding: 45px 35px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border-top: 5px solid #d32f2f;
+    position: relative;
+    display: block;
+}
+
+.anaheim-service-item-enhanced:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+    text-decoration: none;
+    color: inherit;
+}
+
+.anaheim-service-item-enhanced h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 20px;
+    text-align: left;
+    padding: 0 5px;
+}
+
+.anaheim-service-item-enhanced p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 25px;
+    text-align: left;
+    padding: 0 5px;
+}
+
+/* Responsive Design for Compact Services */
+@media (max-width: 768px) {
+  .anaheim-services-grid-compact {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .anaheim-service-item-compact {
+    padding: 20px 15px;
+  }
+
+  .anaheim-services-section-compact .anaheim-services-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .anaheim-services-grid-compact {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+/* Areas We Serve Section */
+/* Anaheim Areas Section */
+.anaheim-areas-section {
+  padding: var(--section-padding);
+  background: linear-gradient(to right, #f8f9fa, #eaeaea);
+  text-align: center;
+}
+
+.anaheim-areas-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.anaheim-areas-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.areas-intro {
+  font-size: 1.1rem;
+  color: var(--text-medium);
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+.anaheim-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.anaheim-area-item {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 40px 30px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+  box-shadow: var(--box-shadow);
+}
+
+.anaheim-area-item.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.anaheim-area-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.anaheim-area-item h3 {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.anaheim-area-item h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.anaheim-area-item p {
+  font-size: 1rem;
+  color: var(--text-medium);
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.area-learn-more {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: gap 0.3s ease;
+}
+
+.area-learn-more:hover {
+  gap: 10px;
+  text-decoration: none;
+  color: var(--primary-dark);
+}
+
+/*         cities list */
+
+/* Enhanced Nearby Cities Section */
+.anaheim-nearby-cities {
+  background: #f8f9fa;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.cities-header h3 {
+  font-size: 2.5rem;
+  color: #003366;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.cities-header p {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.cities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  align-items: stretch;
+}
+
+.city-link {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 25px 20px;
+  text-decoration: none;
+  color: #003366;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-height: 100px;
+}
+
+.city-link:hover {
+  border-color: #003366;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 51, 102, 0.15);
+  text-decoration: none;
+  color: #003366;
+}
+
+.city-link i {
+  font-size: 2rem;
+  color: #dc3545;
+}
+
+.city-link span {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Main link container - separate from grid */
+.main-link-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.main-link {
+  background: #003366 !important;
+  color: white !important;
+  border-color: #003366 !important;
+}
+
+.main-link:hover {
+  background: #002244 !important;
+  color: white !important;
+  border-color: #002244 !important;
+}
+
+.main-link i {
+  color: white !important;
+}
+
+
+/* Section Badge (optional style) */
+.section-badge {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: var(--primary-dark);
+  background-color: var(--primary-light);
+  padding: 5px 15px;
+  border-radius: var(--border-radius);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* White Text Styling for Better Readability */
+.white-text, .white-text h1, .white-text h2, .white-text h3, .white-text h4, .white-text h5, .white-text h6, .white-text p, .white-text span, .white-text div, .white-text li, .white-text a {
+    color: white !important;
+}
+
+.hero-content, .hero-content h1, .hero-content h2, .hero-content p, .hero-content span {
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) !important;
+}
+
+.anaheim-hero-content, .anaheim-hero-content h1, .anaheim-hero-content h2, .anaheim-hero-content p {
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) !important;
+}
+
+.anaheim-banner-content, .anaheim-banner-content h2, .anaheim-banner-content p {
+    color: white !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8) !important;
+}
+
+.anaheim-cta-section .anaheim-cta-content, .anaheim-cta-section .anaheim-cta-content h2, .anaheim-cta-section .anaheim-cta-content p {
+    color: white !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Back to Top Button Styles */
+.back-to-top {
+    position: fixed !important;
+    bottom: 30px !important;
+    right: 30px !important;
+    width: 50px !important;
+    height: 50px !important;
+    background-color: #003366 !important;
+    color: white !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    font-size: 18px !important;
+    z-index: 99999 !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+    cursor: pointer !important;
+    border: none !important;
+    outline: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+.back-to-top:hover {
+    background-color: #2b5797 !important;
+    color: white !important;
+    text-decoration: none !important;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+.back-to-top.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+.back-to-top i {
+    font-size: 16px;
+    color: white !important;
+}
+
+/* Ensure back-to-top button works on mobile */
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Enhanced Testimonials Section */
+.anaheim-testimonials-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    position: relative;
+    margin: 60px 0;
+}
+
+.anaheim-testimonials-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    text-align: center;
+}
+
+.anaheim-testimonials-container h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 70px;
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.anaheim-testimonials-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 5px;
+    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+    border-radius: 3px;
+}
+
+/* Enhanced Testimonials Grid */
+.enhanced-testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+/* Enhanced Testimonial Cards */
+.enhanced-testimonial-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 35px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    border-top: 5px solid #d32f2f;
+    text-align: left;
+    overflow: hidden;
+}
+
+.enhanced-testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+}
+
+.enhanced-testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, rgba(211, 47, 47, 0.05), rgba(183, 28, 28, 0.05));
+    border-radius: 0 0 0 100px;
+}
+
+/* Quote Icon */
+.testimonial-quote-icon {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(211, 47, 47, 0.3);
+    z-index: 2;
+}
+
+.testimonial-quote-icon i {
+    color: white;
+    font-size: 18px;
+}
+
+/* Testimonial Content */
+.enhanced-testimonial-card .testimonial-content {
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.enhanced-testimonial-card .testimonial-content p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #444;
+    font-style: italic;
+    margin: 0;
+    padding-right: 60px;
+}
+
+/* Testimonial Footer */
+.testimonial-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 2px solid #f0f0f0;
+}
+
+/* Author Info */
+.testimonial-author-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.author-avatar {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #d32f2f;
+    flex-shrink: 0;
+}
+
+.author-avatar i {
+    font-size: 30px;
+    color: #d32f2f;
+}
+
+.author-details {
+    flex: 1;
+}
+
+.author-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #222;
+    margin: 0 0 5px 0;
+    line-height: 1.3;
+}
+
+.author-position {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Rating Section */
+.testimonial-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.testimonial-rating .stars {
+    display: flex;
+    gap: 3px;
+}
+
+.testimonial-rating .stars i {
+    color: #ffd700;
+    font-size: 16px;
+    text-shadow: 0 2px 4px rgba(255, 215, 0, 0.3);
+}
+
+.verified-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: #28a745;
+    font-weight: 600;
+    background: rgba(40, 167, 69, 0.1);
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(40, 167, 69, 0.2);
+}
+
+.verified-badge i {
+    font-size: 14px;
+}
+
+/* Responsive Design for Enhanced Testimonials */
+@media (max-width: 768px) {
+    .enhanced-testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .enhanced-testimonial-card {
+        padding: 30px 25px;
+    }
+
+    .enhanced-testimonial-card .testimonial-content p {
+        font-size: 1.05rem;
+        padding-right: 50px;
+    }
+
+    .testimonial-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .testimonial-rating {
+        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .author-avatar {
+        width: 50px;
+        height: 50px;
+    }
+
+    .author-avatar i {
+        font-size: 24px;
+    }
+
+    .author-name {
+        font-size: 1.1rem;
+    }
+
+    .author-position {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .enhanced-testimonial-card {
+        padding: 25px 20px;
+    }
+
+    .testimonial-quote-icon {
+        width: 40px;
+        height: 40px;
+        top: 20px;
+        right: 25px;
+    }
+
+    .testimonial-quote-icon i {
+        font-size: 14px;
+    }
+
+    .enhanced-testimonial-card .testimonial-content p {
+        padding-right: 40px;
+        font-size: 1rem;
+    }
+
+    .anaheim-testimonials-container h2 {
+        font-size: 2.3rem;
+        margin-bottom: 50px;
+    }
+}
+
+.anaheim-testimonials-slider {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.slider-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.slider-prev,
+.slider-next {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: var(--transition);
+}
+
+.slider-prev:hover,
+.slider-next:hover {
+  color: var(--primary-dark);
+  transform: scale(1.2);
+}
+
+.slider-indicators {
+  display: flex;
+  gap: 10px;
+  margin: 0 20px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.indicator.active {
+  background: var(--primary-color);
+  transform: scale(1.2);
+}
+
+.anaheim-testimonials-grid {
+  position: relative;
+  height: 350px;
+  margin-bottom: 30px;
+}
+
+.anaheim-testimonial-item {
+  background: #f9f9f9;
+  border-radius: var(--border-radius);
+  padding: 40px 30px;
+  text-align: left;
+  transition: var(--transition);
+  box-shadow: var(--box-shadow);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+  height: 100%;
+}
+
+.anaheim-testimonial-item.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.testimonial-quote {
+  font-size: 2rem;
+  color: var(--primary-color);
+  opacity: 0.3;
+  margin-bottom: 20px;
+}
+
+.anaheim-testimonial-item p {
+  font-size: 1.1rem;
+  color: var(--text-medium);
+  line-height: 1.7;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+}
+
+.author-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+  overflow: hidden;
+}
+
+.author-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-info {
+  flex: 1;
+}
+
+.author-info h4 {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.author-info p {
+  font-size: 0.9rem;
+  color: var(--text-medium);
+  margin-bottom: 5px;
+  font-style: normal;
+}
+
+.author-stars {
+  color: var(--accent-color);
+  font-size: 0.9rem;
+}
+
+.testimonial-cta {
+  margin-top: 40px;
+}
+
+.testimonial-cta p {
+  font-size: 1.1rem;
+  color: var(--text-medium);
+  margin-bottom: 15px;
+}
+
+.testimonial-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.testimonial-link:hover {
+  color: var(--primary-dark);
+  gap: 12px;
+  text-decoration: none;
+}
+
+/* FAQ Section */
+.anaheim-faq-section {
+  padding: var(--section-padding);
+  background: linear-gradient(135deg, #ecf0f1, #bdc3c7);
+}
+
+.anaheim-faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.anaheim-faq-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: var(--primary-color);
+  font-weight: 700;
+  text-align: center;
+}
+
+.anaheim-faq-list {
+  margin-top: 40px;
+}
+
+.anaheim-faq-item {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.anaheim-faq-item:nth-child(1) { animation-delay: 0.1s; }
+.anaheim-faq-item:nth-child(2) { animation-delay: 0.2s; }
+.anaheim-faq-item:nth-child(3) { animation-delay: 0.3s; }
+.anaheim-faq-item:nth-child(4) { animation-delay: 0.4s; }
+.anaheim-faq-item:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.anaheim-faq-item:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.faq-question {
+  padding: 25px 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  transition: all 0.3s ease;
+  border: none;
+  width: 100%;
+}
+
+.faq-question:hover {
+  background: #f8f9fa;
+}
+
+.faq-question h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0;
+  flex: 1;
+  padding-right: 20px;
+}
+
+.faq-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), #0056b3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.faq-toggle i {
+  color: white;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.anaheim-faq-item.active .faq-toggle {
+  background: linear-gradient(135deg, #28a745, #20c997);
+}
+
+.anaheim-faq-item.active .faq-toggle i {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  background: #f8f9fa;
+}
+
+.anaheim-faq-item.active .faq-answer {
+  max-height: 500px;
+  padding: 0 30px 30px 30px;
+}
+
+.faq-answer p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+  padding-top: 10px;
+}
+
+/* FAQ Carousel Navigation */
+.anaheim-faq-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.faq-nav-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  background: white;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faq-nav-btn:hover:not(:disabled) {
+  background: var(--primary-color);
+  color: white;
+  transform: scale(1.1);
+}
+
+.faq-nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-color: #ccc;
+  color: #ccc;
+}
+
+.anaheim-faq-carousel {
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+}
+
+.anaheim-faq-carousel .anaheim-faq-list {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.5s ease;
+  margin-top: 0;
+}
+
+.anaheim-faq-carousel .anaheim-faq-item {
+  min-width: calc(33.333% - 20px);
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+/* Mobile Responsive for FAQ */
+@media (max-width: 768px) {
+  .faq-question {
+    padding: 20px;
+  }
+
+  .faq-question h3 {
+    font-size: 1.1rem;
+    padding-right: 15px;
+  }
+
+  .anaheim-faq-item.active .faq-answer {
+    padding: 0 20px 25px 20px;
+  }
+
+  .faq-toggle {
+    width: 35px;
+    height: 35px;
+  }
+
+  .faq-toggle i {
+    font-size: 14px;
+  }
+
+  .anaheim-faq-carousel .anaheim-faq-item {
+    min-width: 100%;
+  }
+
+  .faq-nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb-nav {
+  background: #f8f9fa;
+  padding: 10px 0;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 14px;
+}
+
+.breadcrumb-nav .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.breadcrumb {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: ">";
+  margin: 0 8px;
+  color: #6c757d;
+}
+
+.breadcrumb-item a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+  color: #6c757d;
+}
+
+/* Security Tips Section */
+.anaheim-security-tips {
+  background: #f8f9fa;
+  padding: 60px 0;
+  margin: 40px 0;
+}
+
+.security-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.security-tip {
+  background: white;
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.security-tip:hover {
+  transform: translateY(-5px);
+}
+
+.security-tip h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.3em;
+}
+
+/* Local Insights Section */
+.anaheim-local-insights {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: #ecf0f1;
+  padding: 60px 0;
+  margin: 40px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.anaheim-local-insights::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1));
+  z-index: 1;
+}
+
+.anaheim-local-insights h2 {
+  color: #3498db;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.insights-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.insights-content p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: #bdc3c7;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Enhanced Service Grid */
+.anaheim-services-grid-enhanced {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.anaheim-service-item-enhanced {
+    background: white;
+    padding: 45px 35px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border-top: 5px solid #d32f2f;
+    position: relative;
+    display: block;
+}
+
+.anaheim-service-item-enhanced:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+    text-decoration: none;
+    color: inherit;
+}
+
+.anaheim-service-item-enhanced h3 {
+    color: var(--primary-color);
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.anaheim-service-item-enhanced p {
+    color: var(--text-medium);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.service-pricing {
+  background: var(--accent-color);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+}
+
+.service-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.service-benefits span {
+  color: var(--primary-color);
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .anaheim-hero {
+        height: 90vh;
+        padding: 20px 0;
+    }
+
+    .anaheim-hero-content {
+        padding: 30px 20px;
+    }
+
+    .anaheim-hero-content h1 {
+        font-size: 2.8rem;
+        margin-bottom: 25px;
+        padding: 0 10px;
+    }
+
+    .anaheim-hero-content p {
+        font-size: 1.3rem;
+        margin-bottom: 35px;
+        padding: 0 15px;
+    }
+
+    .anaheim-cta-buttons {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .anaheim-cta-button,
+    .anaheim-cta-button-alt {
+        width: 100%;
+        max-width: 280px;
+        padding: 18px 25px;
+        font-size: 1rem;
+    }
+
+    .anaheim-main-content {
+        padding: 80px 0;
+    }
+
+    .anaheim-content-container {
+        padding: 0 20px;
+    }
+
+    .anaheim-intro-section {
+        padding: 30px 15px;
+        margin-bottom: 60px;
+    }
+
+    .anaheim-intro-section h1 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+
+    .anaheim-highlight-box {
+        padding: 35px 25px;
+        margin: 40px 15px;
+    }
+
+    .anaheim-trust-badges {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 40px 0;
+        padding: 0 15px;
+    }
+
+    .anaheim-features-section {
+        padding: 80px 0;
+    }
+
+    .anaheim-features-section h2 {
+        font-size: 2.3rem;
+        margin-bottom: 50px;
+        padding: 0 15px;
+    }
+
+    .anaheim-features-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 0 20px;
+    }
+
+    .anaheim-feature-item {
+        padding: 40px 25px;
+    }
+
+    .anaheim-services-section-compact {
+        padding: 80px 0;
+    }
+
+    .anaheim-services-container {
+        padding: 0 20px;
+    }
+
+    .anaheim-services-title {
+        font-size: 2.3rem;
+        padding: 0 15px;
+    }
+
+    .anaheim-services-grid-enhanced {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .anaheim-service-item-enhanced {
+        padding: 35px 25px;
+    }
+
+    .anaheim-testimonials-section {
+        padding: 80px 0;
+    }
+
+    .anaheim-testimonials-container {
+        padding: 0 20px;
+    }
+
+    .anaheim-testimonials-container h2 {
+        font-size: 2.3rem;
+        margin-bottom: 50px;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .anaheim-hero-content h1 {
+        font-size: 2.3rem;
+    }
+
+    .anaheim-hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .anaheim-intro-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .anaheim-features-section h2,
+    .anaheim-services-title,
+    .anaheim-testimonials-container h2 {
+        font-size: 2rem;
+    }
+
+    .anaheim-highlight-box {
+        padding: 30px 20px;
+    }
+
+    .anaheim-feature-item,
+    .anaheim-service-item-enhanced {
+        padding: 30px 20px;
+    }
+}
+
+/* Featured Content Styles */
+.anaheim-featured-content {
+  background: white;
+  padding: 50px;
+  margin: 40px 0;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.featured-snippet-content h3 {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin: 30px 0 15px 0;
+  font-weight: 600;
+}
+
+.featured-snippet-content ol, .featured-snippet-content ul {
+  margin: 20px 0;
+  padding-left: 25px;
+}
+
+.featured-snippet-content ol li, .featured-snippet-content ul li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.pricing-breakdown {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 8px;
+  margin: 20px 0;
+  border-left: 4px solid var(--primary-color);
+}
+
+/* Authority Indicators */
+.authority-indicators {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 40px;
+  margin: 30px 0;
+  border-radius: var(--border-radius);
+}
+
+.credentials h3 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.credentials-list {
+  list-style: none;
+  padding: 0;
+}
+
+.credentials-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.credentials-list i {
+  color: var(--secondary-color);
+  margin-right: 12px;
+  width: 20px;
+}
+
+/* Enhanced Local Content Styles */
+.anaheim-local-content {
+  background: white;
+  padding: 60px 50px;
+  margin: 60px 0;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  border-left: 6px solid var(--primary-color);
+  position: relative;
+}
+
+.anaheim-local-content h2 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 50px;
+  text-align: center;
+  position: relative;
+}
+
+.anaheim-local-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  border-radius: 2px;
+}
+
+.anaheim-local-content h3 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 40px 0 25px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+/* Local News Section */
+.local-news-section {
+  margin: 40px 0;
+}
+
+.news-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.news-item {
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+  padding: 35px 30px;
+  border-radius: 15px;
+  border-left: 5px solid var(--secondary-color);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.news-item h4 {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.news-item p {
+  color: var(--text-medium);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Local Partnerships Section */
+.local-partnerships-expanded {
+  margin: 50px 0;
+}
+
+.partnership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.partnership-item {
+  background: white;
+  padding: 30px 25px;
+  border-radius: 12px;
+  border: 2px solid #f0f0f0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.partnership-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(135deg, var(--accent-color), #ffc107);
+  transition: height 0.3s ease;
+}
+
+.partnership-item:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.partnership-item:hover::before {
+  height: 100%;
+}
+
+.partnership-item h4 {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.partnership-item p {
+  color: var(--text-medium);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Local Statistics Enhanced */
+.local-statistics {
+  margin: 50px 0;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 50px 40px;
+  border-radius: 20px;
+  border: 1px solid #dee2e6;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin: 40px 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 35px 25px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  border-top: 4px solid var(--secondary-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: var(--text-medium);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.community-partnerships {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  margin: 30px 0;
+  border-left: 5px solid var(--accent-color);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.community-partnerships p {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.community-partnerships ul {
+  margin: 0;
+  padding-left: 25px;
+}
+
+.community-partnerships li {
+  margin-bottom: 12px;
+  line-height: 1.7;
+  color: var(--text-medium);
+  font-size: 1rem;
+  position: relative;
+}
+
+.community-partnerships li::marker {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Coverage Areas Grid Styling */
+.coverage-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.coverage-area-card {
+  background: white;
+  border-radius: 15px;
+  padding: 30px 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 4px solid var(--primary-color);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.coverage-area-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  border-left-color: var(--secondary-color);
+}
+
+.coverage-area-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, rgba(209, 50, 40, 0.1), rgba(209, 50, 40, 0.05));
+  border-radius: 0 0 0 60px;
+  transition: all 0.3s ease;
+}
+
+.coverage-area-card:hover::before {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, rgba(209, 50, 40, 0.15), rgba(209, 50, 40, 0.08));
+}
+
+.area-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.coverage-area-card:hover .area-icon {
+  background: linear-gradient(135deg, var(--secondary-color), #b71c1c);
+  transform: scale(1.05);
+}
+
+.area-icon i {
+  font-size: 24px;
+  color: white;
+}
+
+.area-content {
+  flex: 1;
+}
+
+.area-content h4 {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.coverage-area-card:hover .area-content h4 {
+  color: var(--secondary-color);
+}
+
+.area-content p {
+  color: var(--text-medium);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Mobile Responsive for Coverage Areas */
+@media (max-width: 768px) {
+  .coverage-areas-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin: 25px 0;
+  }
+
+  .coverage-area-card {
+    padding: 25px 20px;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .area-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+  }
+
+  .area-icon i {
+    font-size: 20px;
+  }
+
+  .area-content h4 {
+    font-size: 1.2rem;
+  }
+
+  .area-content p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .coverage-area-card {
+    padding: 20px 15px;
+  }
+
+  .area-content h4 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Enhanced Responsive Design for Local Content */
+@media (max-width: 992px) {
+  .news-items {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .partnership-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .anaheim-local-content {
+    padding: 40px 25px;
+    margin: 40px 0;
+  }
+
+  .anaheim-local-content h2 {
+    font-size: 2rem;
+    margin-bottom: 35px;
+  }
+
+  .anaheim-local-content h3 {
+    font-size: 1.5rem;
+    margin: 30px 0 20px 0;
+  }
+
+  .news-item {
+    padding: 25px 20px;
+  }
+
+  .partnership-item {
+    padding: 25px 20px;
+  }
+
+  .partnership-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  .anaheim-featured-content,
+  .anaheim-local-content,
+  .authority-indicators {
+    padding: 30px 20px;
+  }
+
+  .local-statistics {
+    padding: 35px 25px;
+  }
+
+  .community-partnerships {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .anaheim-local-content {
+    padding: 30px 20px;
+  }
+
+  .anaheim-local-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .anaheim-local-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .news-item h4 {
+    font-size: 1.2rem;
+  }
+
+  .partnership-item h4 {
+    font-size: 1.1rem;
+  }
+
+  .stat-item {
+    padding: 25px 20px;
+  }
+
+  .stat-number {
+    font-size: 2.2rem;
+  }
+
+  .local-statistics {
+    padding: 25px 20px;
+  }
+}
+
+/* CTA Section */
+.anaheim-cta-section {
+  padding: var(--section-padding);
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.4);
+}
+
+.anaheim-cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+  z-index: 1;
+}
+
+.anaheim-cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.anaheim-cta-content {
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 40px;
+  color: white;
+}
+
+.anaheim-cta-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.anaheim-cta-content p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.anaheim-cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.anaheim-cta-call, .anaheim-cta-quote {
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.anaheim-cta-call {
+  background: linear-gradient(135deg, #00bcd4, #0097a7);
+  color: white;
+  box-shadow: 0 5px 15px rgba(0, 188, 212, 0.3);
+}
+
+.anaheim-cta-quote {
+  background: linear-gradient(135deg, #ff7043, #ff5722);
+  color: white;
+  border: 2px solid transparent;
+  box-shadow: 0 5px 15px rgba(255, 112, 67, 0.3);
+}
+
+.anaheim-cta-call:hover, .anaheim-cta-quote:hover {
+  transform: translateY(-5px);
+  text-decoration: none;
+}
+
+.anaheim-cta-call:hover {
+  box-shadow: 0 10px 20px rgba(0, 188, 212, 0.4);
+  background: linear-gradient(135deg, #0097a7, #00838f);
+  color: white;
+}
+
+.anaheim-cta-quote:hover {
+  background: linear-gradient(135deg, #ff5722, #e64a19);
+  color: white;
+  box-shadow: 0 10px 20px rgba(255, 87, 34, 0.4);
+}
+
+.anaheim-cta-call i, .anaheim-cta-quote i {
+  font-size: 1.1rem;
+}
+
+/* Badge Styling */
+.badge {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Area Cards */
+.area-card {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.area-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.area-card:first-child {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.area-card i {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: inherit;
+}
+
+.area-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.area-card p {
+  color: inherit;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.section-description {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Testimonial Slider Specific Styles */
+.anaheim-testimonials-slider {
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-navigation {
+  position: relative;
+  z-index: 5;
+}
+
+.anaheim-testimonial-item {
+  display: none;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.anaheim-testimonial-item.active {
+  display: block;
+  animation: fadeSlide 0.5s ease forwards;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .anaheim-features-container,
+  .anaheim-services-grid,
+  .anaheim-areas-grid,
+  .anaheim-testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .anaheim-hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .anaheim-hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .anaheim-highlight-box {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .highlight-icon {
+    text-align: center;
+    width: auto;
+  }
+
+  .anaheim-intro-section {
+    padding: 40px 30px;
+  }
+
+  .anaheim-banner-content h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* ========================================
+   SECURITY LANDSCAPE SECTION STYLING
+   "Understanding [City]'s Unique Security Environment"
+   ======================================== */
+
+.dublin-security-landscape,
+.security-landscape-section {
+    background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.dublin-security-landscape::before,
+.security-landscape-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 50%, rgba(0,51,102,0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(209,32,40,0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.landscape-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.landscape-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.landscape-header h3 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-color, #003366);
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.header-accent {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color, #d12028), var(--accent-color, #f8b133));
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.landscape-content {
+    background: white;
+    border-radius: 16px;
+    padding: 50px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,51,102,0.08);
+}
+
+.landscape-intro {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-color, #003366);
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+.landscape-main p {
+    font-size: 1.1rem;
+    color: var(--text-medium, #555);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Security Considerations Styling */
+.security-considerations {
+    margin-top: 50px;
+}
+
+.security-considerations h4 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color, #003366);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.considerations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.consideration-item {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 30px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.consideration-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: linear-gradient(180deg, var(--secondary-color, #d12028), var(--accent-color, #f8b133));
+    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.consideration-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,51,102,0.15);
+    border-color: rgba(0,51,102,0.1);
+}
+
+.consideration-item:hover::before {
+    height: 100%;
+}
+
+.consideration-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color, #003366) 0%, var(--primary-light, #004488) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 25px rgba(0,51,102,0.2);
+}
+
+.consideration-item:hover .consideration-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 15px 35px rgba(0,51,102,0.3);
+}
+
+.consideration-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.consideration-text h5 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--primary-color, #003366);
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.consideration-text p {
+    font-size: 1rem;
+    color: var(--text-medium, #555);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Community Partnerships Styling */
+.community-partnerships {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    padding: 35px;
+    border-radius: 12px;
+    margin-top: 50px;
+    border-left: 4px solid var(--secondary-color, #d12028);
+}
+
+.community-partnerships p {
+    font-weight: 600;
+    color: var(--primary-color, #003366);
+    margin-bottom: 20px;
+    font-size: 1.15rem;
+}
+
+.community-partnerships ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.community-partnerships li {
+    padding: 12px 0 12px 35px;
+    position: relative;
+    font-size: 1.05rem;
+    color: var(--text-dark, #333);
+    line-height: 1.6;
+}
+
+.community-partnerships li::before {
+    content: '\f0c1';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color, #d12028);
+    font-size: 1.1rem;
+}
+
+/* Success Stories Styling */
+.success-stories {
+    margin-top: 50px;
+}
+
+.success-stories h4 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color, #003366);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.success-story {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border-left: 5px solid var(--accent-color, #f8b133);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.success-story::before {
+    content: '\f091';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 3rem;
+    color: rgba(248,177,51,0.1);
+}
+
+.success-story:hover {
+    transform: translateX(10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    border-left-width: 8px;
+}
+
+.success-story p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-dark, #333);
+}
+
+.success-story strong {
+    color: var(--primary-color, #003366);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Responsive Design for Security Landscape */
+@media (max-width: 1024px) {
+    .landscape-content {
+        padding: 40px 30px;
+    }
+
+    .considerations-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .landscape-header h3 {
+        font-size: 2rem;
+    }
+
+    .landscape-content {
+        padding: 30px 20px;
+    }
+
+    .landscape-intro {
+        font-size: 1.1rem;
+    }
+
+    .security-considerations h4,
+    .success-stories h4 {
+        font-size: 1.6rem;
+    }
+
+    .considerations-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .consideration-item {
+        padding: 25px 20px;
+    }
+
+    .community-partnerships ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .dublin-security-landscape,
+    .security-landscape-section {
+        padding: 50px 0;
+    }
+
+    .landscape-header h3 {
+        font-size: 1.75rem;
+    }
+
+    .consideration-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .consideration-icon i {
+        font-size: 1.75rem;
+    }
+
+    .consideration-text h5 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Additional Enhancements */
+.cities-list:hover a:not(:hover) {
+  opacity: 0.7;
+}
+
+.anaheim-feature-item:nth-child(even)::before {
+  background: var(--secondary-color);
+}
+
+.anaheim-service-item:hover img {
+  transform: scale(1.03);
+  transition: transform 0.5s ease;
+}
+
+.area-learn-more i {
+  transition: transform 0.3s ease;
+}
+
+.area-learn-more:hover i {
+  transform: translateX(3px);
+}
+
+.anaheim-faq-item:last-child {
+  margin-bottom: 0;
+}

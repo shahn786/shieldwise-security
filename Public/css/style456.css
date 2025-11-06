@@ -295,7 +295,6 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('/img/security-pattern.png') repeat;
     opacity: 0.02;
     z-index: 1;
 }
@@ -467,7 +466,6 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('/img/security-pattern-light.png') repeat;
     opacity: 0.05;
     z-index: 1;
 }
