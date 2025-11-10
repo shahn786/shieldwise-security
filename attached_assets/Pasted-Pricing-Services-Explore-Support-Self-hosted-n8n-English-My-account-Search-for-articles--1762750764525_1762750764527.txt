@@ -1,0 +1,72 @@
+Pricing
+Services Explore Support
+Self-hosted n8n
+English
+My account
+ 
+Search for articles...
+Home » Support » Email » Hostinger Email: Getting Started » Set Up a Domain for Hostinger Email
+
+Set Up a Domain for Hostinger Email
+Setting up Hostinger Email for your domain name
+
+Updated 2 months ago
+Why Do I Need This?
+To use Hostinger Email, you need to add MX, SPF, DKIM, and DMARC records to your domain’s DNS settings:
+
+MX records ensure emails are properly sent to you
+
+SPF, DKIM (added as a CNAME record), and DMARC records build trust and authenticity of the emails you send and improve email deliverability to your recipients
+
+It won’t be easy, but we’re here to help. This article will provide comprehensive steps, additional guides, and all the information needed to make your domain name work with Hostinger Email.
+
+
+Before You Begin
+Before you proceed with further steps, we recommend you do the following:
+
+
+Keep this guide at hand — Recommended
+Open the Connect Domain tool at Hostinger — Mandatory
+
+Now, let’s proceed with the steps to set your domain up for Hostinger Email 👇
+
+
+Step 1 — Identifying Your Domain’s Management Location
+To find out where to make DNS changes, you need to identify which service provider manages your domain’s settings.
+
+
+The most straightforward way to do this is to check your domain nameservers.
+
+
+Once you know where to manage your domain’s DNS zone, proceed to the next step.
+
+
+Step 2 — Setting Up DNS Records
+Depending on your domain’s management location (step 1), configuring the domain’s DNS settings is either an automated or manual task:
+
+If your domain is managed at Hostinger, the process is automated. Follow these steps: Setting Up a Domain for Hostinger Email Automatically
+
+If your domain is NOT managed at Hostinger, the process is manual. It means that you need to add the necessary DNS records to your domain’s DNS zone by hand. To do so, follow these steps: Setting Up a Domain for Hostinger Email Manually
+
+Once you add the necessary DNS records, your email service may take up to 24 hours to activate due to DNS propagation. This is normal, so just wait. Once complete, you can use your email hassle-free 💡
+
+
+
+If you wish to avoid any manual work and use the automated option, consider the following suggestions:
+
+Point your domain to Hostinger nameservers — it may take up to 24 hours or
+
+Transfer your domain to Hostinger — may take up to 7 days (or more, in some very rare cases)
+
+If you choose any of the options mentioned above, you’ll be able to enable Hostinger Email services for your domain automatically — it requires only a few clicks!
+
+HostingWeb hosting Hosting for WordPress VPS hosting n8n VPS hosting Business email Cloud hosting Hosting for WooCommerce Hosting for agencies Minecraft hosting Game server hosting Google Workspace
+DomainDomain name search Cheap domain names Free domain WHOIS Lookup Free SSL certificate Domain transfer Domain extensions
+ToolsHorizons Website Builder AI Website Builder Ecommerce Website Builder Business Name Generator AI Logo Generator Migrate to Hostinger Hostinger API
+InformationPricing Reviews Affiliate program Referral program Roadmap Wall of fame System status Sitemap
+CompanyAbout Hostinger Our technology Newsroom Career Blog Student discount Sustainability Principles
+SupportTutorials Knowledge Base Contact us Report abuse
+Privacy policy Refund policy Terms of service
+visamastercardamexdiscoverjcbmaestrodinerscluband more
+© 2004-2025 Hostinger – Launch, grow, and succeed online, supported by AI that puts the power in your hands.
+Prices are listed without VAT
