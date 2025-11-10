@@ -94,6 +94,41 @@
     // Dropdown keyboard navigation
     const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
     dropdownToggles.forEach(function(toggle) {
+      // Mobile/Touch click support for dropdowns
+      toggle.addEventListener('click', function(e) {
+        // On mobile (collapsed navbar), handle dropdown toggle manually
+        if (window.innerWidth < 992) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          const dropdownMenu = this.nextElementSibling;
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+          
+          // Close all other dropdowns first
+          document.querySelectorAll('.dropdown-menu.show').forEach(function(menu) {
+            if (menu !== dropdownMenu) {
+              menu.classList.remove('show');
+              const otherToggle = menu.previousElementSibling;
+              if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
+            }
+          });
+          
+          // Toggle current dropdown
+          this.setAttribute('aria-expanded', !isExpanded);
+          dropdownMenu.classList.toggle('show');
+        }
+        // On desktop, let Bootstrap handle it
+      });
+
+      // Touch event support for mobile devices
+      toggle.addEventListener('touchstart', function(e) {
+        if (window.innerWidth < 992) {
+          e.preventDefault();
+          this.click();
+        }
+      }, { passive: false });
+
+      // Keyboard navigation
       toggle.addEventListener('keydown', function(e) {
         const dropdownMenu = this.nextElementSibling;
         
