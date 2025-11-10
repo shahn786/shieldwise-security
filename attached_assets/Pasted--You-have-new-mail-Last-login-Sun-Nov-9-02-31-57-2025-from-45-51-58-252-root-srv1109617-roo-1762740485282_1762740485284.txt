@@ -1,0 +1,47 @@
+
+You have new mail.
+Last login: Sun Nov  9 02:31:57 2025 from 45.51.58.252
+root@srv1109617:~# root@srv1109617:~#
+root@srv1109617:~#: command not found
+root@srv1109617:~# ssh root@31.220.57.141
+The authenticity of host '31.220.57.141 (31.220.57.141)' can't be established.
+ED25519 key fingerprint is SHA256:j3/nOpEbxwj0Lu5kitXXkzizJmzgMHoemoDsD9bh5mc.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? no
+Host key verification failed.
+root@srv1109617:~# nano /etc/nginx/sites-available/shieldwisesecurity.com
+root@srv1109617:~# ln -s /etc/nginx/sites-available/shieldwisesecurity.com /etc/nginx/sites-enabled/
+ln: failed to create symbolic link '/etc/nginx/sites-enabled/shieldwisesecurity.com': File exists
+root@srv1109617:~# nginx -t
+systemctl restart nginx
+nginx: [warn] "ssl_stapling" ignored, no OCSP responder URL in the certificate "/etc/nginx/ssl-certificates/shieldwisesecurity.com.crt"
+nginx: [warn] "ssl_stapling" ignored, no OCSP responder URL in the certificate "/etc/nginx/ssl-certificates/shieldwisesecurity.com.crt"
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+root@srv1109617:~# certbot --nginx -d shieldwisesecurity.com -d www.shieldwisesecurity.com
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+Requesting a certificate for shieldwisesecurity.com and www.shieldwisesecurity.com
+
+Successfully received certificate.
+Certificate is saved at: /etc/letsencrypt/live/shieldwisesecurity.com/fullchain.pem
+Key is saved at:         /etc/letsencrypt/live/shieldwisesecurity.com/privkey.pem
+This certificate expires on 2026-02-08.
+These files will be updated when the certificate renews.
+Certbot has set up a scheduled task to automatically renew this certificate in the background.
+
+Deploying certificate
+Successfully deployed certificate for shieldwisesecurity.com to /etc/nginx/sites-enabled/shieldwisesecurity.com.conf
+Successfully deployed certificate for www.shieldwisesecurity.com to /etc/nginx/sites-enabled/shieldwisesecurity.com.conf
+We were unable to restart web server
+
+NEXT STEPS:
+- The certificate was saved, but could not be installed (installer: nginx). After fixing the error shown below, try installing it again by running:
+  certbot install --cert-name shieldwisesecurity.com
+
+nginx restart failed:
+nginx: [warn] "ssl_stapling" ignored, no OCSP responder URL in the certificate "/etc/letsencrypt/live/shieldwisesecurity.com/fullchain.pem"
+nginx: [warn] "ssl_stapling" ignored, no OCSP responder URL in the certificate "/etc/letsencrypt/live/shieldwisesecurity.com/fullchain.pem"
+nginx: [emerg] no "ssl_certificate" is defined for the "listen ... quic" directive in /etc/nginx/sites-enabled/shieldwisesecurity.com.conf:76
+
+Ask for help or search for solutions at https://community.letsencrypt.org. See the logfile /var/log/letsencrypt/letsencrypt.log or re-run Certbot with -v for more details.
+root@srv1109617:~#
