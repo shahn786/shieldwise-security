@@ -1,0 +1,102 @@
+ypt.log or re-run Certbot with -v for more details.
+root@srv1109617:~# nano /etc/nginx/sites-enabled/shieldwisesecurity.com.conf
+root@srv1109617:~# cat > /etc/nginx/sites-available/shieldwisesecurity.com <<'EOF'
+# Redirect www to non-www
+server {
+    listen 80;
+    listen [::]:80;
+    server_name www.shieldwisesecurity.com;
+    return 301 https://shieldwisesecurity.com$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name www.shieldwisesecurity.com;
+
+    ssl_certificate /etc/letsencrypt/live/shieldwisesecurity.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/shieldwisesecurity.com/privkey.pem;
+
+    return 301 https://shieldwisesecurity.com$request_uri;
+}
+
+# Primary site
+server {
+    listen 80;
+    listen [::]:80;
+    server_name shieldwisesecurity.com;
+    return 301 https://shieldwisesecurity.com$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+EOF }   proxy_cache_bypass $http_upgrade;$proxy_add_x_forwarded_for;/privkey.pem;
+root@srv1109617:~# cat > /etc/nginx/sites-available/shieldwisesecurity.com <<'EOF'
+# Redirect www to non-www
+server {
+    listen 80;
+    listen [::]:80;
+    server_name www.shieldwisesecurity.com;
+    return 301 https://shieldwisesecurity.com$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name www.shieldwisesecurity.com;
+
+    ssl_certificate /etc/letsencrypt/live/shieldwisesecurity.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/shieldwisesecurity.com/privkey.pem;
+
+    return 301 https://shieldwisesecurity.com$request_uri;
+}
+
+# Primary site
+server {
+    listen 80;
+    listen [::]:80;
+    server_name shieldwisesecurity.com;
+    return 301 https://shieldwisesecurity.com$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+EOF }   proxy_cache_bypass $http_upgrade;$proxy_add_x_forwarded_for;/privkey.pem;
+root@srv1109617:~#
+root@srv1109617:~# cat > /etc/nginx/sites-available/shieldwisesecurity.com <<'EOF'
+# Redirect www to non-www
+server {
+    listen 80;
+    listen [::]:80;
+    server_name www.shieldwisesecurity.com;
+    return 301 https://shieldwisesecurity.com$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name www.shieldwisesecurity.com;
+
+    ssl_certificate /etc/letsencrypt/live/shieldwisesecurity.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/shieldwisesecurity.com/privkey.pem;
+
+    return 301 https://shieldwisesecurity.com$request_uri;
+}
+
+# Primary site
+server {
+    listen 80;
+    listen [::]:80;
+    server_name shieldwisesecurity.com;
+    return 301 https://shieldwisesecurity.com$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+EOF }   proxy_cache_bypass $http_upgrade;$proxy_add_x_forwarded_for;/privkey.pem;
+root@srv1109617:~# nginx -t
+nginx: [warn] "ssl_stapling" ignored, no OCSP responder URL in the certificate "/etc/letsencrypt/live/shieldwisesecurity.com/fullchain.pem"
+nginx: [warn] "ssl_stapling" ignored, no OCSP responder URL in the certificate "/etc/letsencrypt/live/shieldwisesecurity.com/fullchain.pem"
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+root@srv1109617:~#
