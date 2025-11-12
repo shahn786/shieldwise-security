@@ -1,0 +1,69 @@
+ <!-- Professional Security Guard Services Section -->
+        <section class="why-choose-section" id="security-guard-services">
+            <div class="why-choose-full-width" itemscope itemtype="https://schema.org/SecurityService">
+                <!-- Content first on the left -->
+                <div class="why-choose-content">
+                    <h2 class="why-choose-title" itemprop="name">The ShieldWise Security Guard Services Advantage</h2>
+                    <div class="why-choose-features">
+                        <!-- Advantage 1: Armed & Unarmed Security -->
+                        <div class="feature" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+                            <div class="icon">🛡️</div>
+                            <div class="text-content">
+                                <h3 itemprop="name">Elite Armed & Unarmed Security Guards</h3>
+                                <p itemprop="description">Our private security services include both armed security guards for high-risk environments and unarmed security guards for everyday protection, all undergoing rigorous vetting and comprehensive training with backgrounds in military and law enforcement.</p>
+                            </div>
+                        </div>
+
+                        <!-- Advantage 2: Mobile Security Patrol -->
+                        <div class="feature" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+                            <div class="icon">⏱️</div>
+                            <div class="text-content">
+                                <h3 itemprop="name">24/7 Security Patrol Services</h3>
+                                <p itemprop="description">With our advanced security patrol services and strategically positioned teams, we guarantee industry-leading response times and continuous monitoring for residential, commercial and construction sites throughout California.</p>
+                            </div>
+                        </div>
+
+                        <!-- Advantage 3: Commercial Security -->
+                        <div class="feature" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+                            <div class="icon">📱</div>
+                            <div class="text-content">
+                                <h3 itemprop="name">Smart Commercial Security Services</h3>
+                                <p itemprop="description">Our comprehensive commercial security services integrate cutting-edge technology with our proprietary monitoring platform for real-time surveillance, digital reporting, and instant notifications for offices, retail centers, and industrial facilities.</p>
+                            </div>
+                        </div>
+
+                        <!-- Advantage 4: Event Security -->
+                        <div class="feature" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+                            <div class="icon">🔍</div>
+                            <div class="text-content">
+                                <h3 itemprop="name">Specialized Event Security Services</h3>
+                                <p itemprop="description">Trust our professional event security services for concerts, conventions, and corporate gatherings, with customized protection plans based on venue assessments, crowd management expertise, and your specific event requirements.</p>
+                            </div>
+                        </div>
+
+                        <!-- Advantage 5: Residential Security -->
+                        <div class="feature" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+                            <div class="icon">🏠</div>
+                            <div class="text-content">
+                                <h3 itemprop="name">Premier Residential Security Services</h3>
+                                <p itemprop="description">Secure your community with our dedicated residential security services for neighborhoods and HOAs, featuring regular patrols, access control, and personalized security consultation to protect what matters most.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Call to action button with location -->
+                    <a href="/services" class="quote-button" itemprop="potentialAction" itemscope itemtype="https://schema.org/Action">
+                        <span itemprop="name">Find Security Guard Services Near Me</span>
+                    </a>
+                </div>
+
+                <!-- Image on the right -->
+                <div class="why-choose-image">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="/img/2.webp" type="image/webp">
+                        <source media="(min-width: 769px)" srcset="/img/2.webp" type="image/webp">
+                        <img src="/img/2.webp" alt="ShieldWise Security Guards providing professional security services in California" itemprop="image" loading="lazy" width="800" height="600" fetchpriority="high">
+                    </picture>
+                </div>
+            </div>
+        </section>
