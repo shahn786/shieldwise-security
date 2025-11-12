@@ -36,6 +36,10 @@ cat > views/partials/schema-patrol-review.ejs << 'SCHEMA'
   "review": [
     {
       "@type": "Review",
+      "itemReviewed": {
+        "@type": "Service",
+        "name": "Mobile Patrol Security Services - Southern California"
+      },
       "author": {
         "@type": "Person",
         "name": "Robert Martinez"
@@ -50,6 +54,10 @@ cat > views/partials/schema-patrol-review.ejs << 'SCHEMA'
     },
     {
       "@type": "Review",
+      "itemReviewed": {
+        "@type": "Service",
+        "name": "Mobile Patrol Security Services - Southern California"
+      },
       "author": {
         "@type": "Person",
         "name": "Lisa Chen"
@@ -64,6 +72,10 @@ cat > views/partials/schema-patrol-review.ejs << 'SCHEMA'
     },
     {
       "@type": "Review",
+      "itemReviewed": {
+        "@type": "Service",
+        "name": "Mobile Patrol Security Services - Southern California"
+      },
       "author": {
         "@type": "Person",
         "name": "David Thompson"
