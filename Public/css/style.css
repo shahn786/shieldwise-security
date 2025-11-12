@@ -641,24 +641,21 @@ html, body {
   display: flex;
   width: 100%;
   margin: 40px 0;
+  align-items: stretch;
 }
 
 /* Left Column with Image */
 .why-choose-image {
   flex: 1;
   display: flex;
-  align-items: stretch;
-  justify-content: center;
   overflow: hidden;
   max-width: 50%;
-  align-self: stretch;
 }
 
 .why-choose-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  align-self: stretch;
 }
 
 /* Right Column with Content */
