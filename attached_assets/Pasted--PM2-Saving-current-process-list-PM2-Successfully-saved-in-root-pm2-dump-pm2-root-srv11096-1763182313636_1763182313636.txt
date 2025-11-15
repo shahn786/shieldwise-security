@@ -1,0 +1,81 @@
+[PM2] Saving current process list...
+[PM2] Successfully saved in /root/.pm2/dump.pm2
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# sed -i 's|^        ]$|        ],|' views/index.ejs
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# echo "=== Checking image array fix ==="
+sed -n '140,145p' views/index.ejs
+=== Checking image array fix ===
+            "https://shieldwisesecurity.com/img/eventsecurity.webp",
+            "https://shieldwisesecurity.com/img/main2.webp"
+        ],
+        "description": "California's top-rated security company providing elite armed & unarmed guards, mobile patrol, event security, fire watch, and emergency response services across Los Angeles, Orange County, and all California regions. Licensed, insured, and available 24/7.",
+        "slogan": "California's Premier Security Protection",
+        "telephone": "+1-714-716-7430",
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# echo ""
+echo "=== Checking Organization schema closing ==="
+grep -n "hasOfferCatalog" views/index.ejs
+
+=== Checking Organization schema closing ===
+228:        "hasOfferCatalog": {
+746:                <div itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+790:                        <div class="feature" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+799:                        <div class="feature" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+808:                        <div class="feature" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+817:                        <div class="feature" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+826:                        <div class="feature" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# sed -n '300,350p' views/index.ejs | head -40
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Fire Watch Services",
+                        "description": "Certified fire watch services for buildings, construction sites, and special events in compliance with all California fire department regulations.",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "ShieldWise Security"
+                        },
+                        "areaServed": "California"
+                    },
+                    "price": "Contact for Quote",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock"
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Emergency Response",
+                        "description": "Rapid security deployment for emergency situations across all California regions with 24/7 availability and immediate response times.",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "ShieldWise Security"
+                        },
+                        "areaServed": "California"
+                    },
+                    "price": "Contact for Quote",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock"
+                }
+            ]
+        },
+        "serviceArea": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": 36.7783,
+                "longitude": -119.4179
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# pm2 restart shieldwise && pm2 save
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [shieldwise](ids: [ 0 ])
+[PM2] [shieldwise](0) ✓
+┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
+│ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │
+├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
+│ 0  │ shieldwise         │ fork     │ 9    │ online    │ 0%       │ 18.9mb   │
+└────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
+[PM2] Saving current process list...
+[PM2] Successfully saved in /root/.pm2/dump.pm2
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# echo ""
+echo "✅ All JSON syntax fixes applied! Test at: https://search.google.com/test/rich-results"
+
+✅ All JSON syntax fixes applied! Test at: https://search.google.com/test/rich-results
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com#
