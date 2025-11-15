@@ -1,0 +1,49 @@
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# grep -r '"license": "122008"' views/
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# grep -n "FAQPage" views/partials/seo-head.ejs
+80:  "@type": "FAQPage",
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# grep -n "application/ld+json" views/partials/seo-head.ejs
+36:<script type="application/ld+json">
+77:<script type="application/ld+json">
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# sed -n '75,120p' views/partials/seo-head.ejs
+<% if (showFAQ) { %>
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What types of security services does ShieldWise offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ShieldWise Security provides armed guards, unarmed guards, mobile patrol, event security, fire watch, and executive protection across California."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are your security guards licensed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all guards hold valid California BSIS Guard Cards and complete rigorous training and background checks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas in California do you serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We serve Los Angeles, Orange County, San Diego, Sacramento, and 186+ California cities with 24/7 security services."
+      }
+    }
+  ]
+}
+</script>
+<% } %>
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# grep -r '"license": "122008"' . --include="*.ejs" --include="*.js"
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# grep "include(" views/index.ejs | head -20
+    <%- include("partials/seo-head", {
+    <%- include('partials/Header') %>
+        <%- include('partials/comprehensive-faq') %>
+        <%- include('partials/Footer') %>
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com#
