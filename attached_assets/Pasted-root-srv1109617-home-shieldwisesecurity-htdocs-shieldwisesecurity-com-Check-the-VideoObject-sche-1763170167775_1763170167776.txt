@@ -1,0 +1,102 @@
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# # Check the VideoObject schema for syntax errors (likely trailing comma)
+echo "=== Checking VideoObject schema ==="
+grep -A15 'VideoObject' views/index.ejs | head -20
+
+# Check Organization schema for issues
+echo ""
+echo "=== Checking Organization schema ==="
+grep -A30 '"@type": \["SecurityService"' views/index.ejs | head -35
+
+# Check comprehensive-faq for the unnamed FAQ items
+echo ""
+echo "=== Checking FAQ schema in comprehensive-faq ==="
+grep -B5 -A30 '@type.*FAQPage' views/partials/comprehensive-faq.ejs | head -40
+=== Checking VideoObject schema ===
+        "@type": "VideoObject",
+        "name": "California's Top Security Services | ShieldWise Security",
+        "description": "Professional security services across California including armed guards, mobile patrol, event security, and emergency response. See how ShieldWise provides elite protection for businesses and properties.",
+        "thumbnailUrl": "https://shieldwisesecurity.com/img/video-thumbnail.jpg",
+        "uploadDate": "2024-08-01T08:00:00+08:00",
+        "duration": "PT1M30S",
+        "contentUrl": "https://shieldwisesecurity.com/img/california-security-services.mp4",
+
+        "publisher": {
+            "@type": "Organization",
+            "name": "ShieldWise Security",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://shieldwisesecurity.com/img/logo1.webp"
+            }
+        },
+
+=== Checking Organization schema ===
+        "@type": ["SecurityService", "LocalBusiness", "Organization"],
+        "name": "ShieldWise Security",
+        "alternateName": "ShieldWise Security Services",
+        "url": "https://shieldwisesecurity.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://shieldwisesecurity.com/img/logo1.webp",
+            "width": "180",
+            "height": "60",
+            "caption": "ShieldWise Security - California's Premier Security Company"
+        },
+        "image": [
+            "https://shieldwisesecurity.com/img/armsecurity.webp",
+            "https://shieldwisesecurity.com/img/eventsecurity.webp",
+            "https://shieldwisesecurity.com/img/main2.webp"
+        ],
+        "description": "California's top-rated security company providing elite armed & unarmed guards, mobile patrol, event security, fire watch, and emergency response services across Los Angeles, Orange County, and all California regions. Licensed, insured, and available 24/7.",
+        "slogan": "California's Premier Security Protection",
+        "telephone": "+1-714-716-7430",
+        "email": "info@shieldwisesecurity.com",
+        "foundingDate": "2015",
+        "founder": {
+            "@type": "Person",
+            "name": "John Smith"
+        },
+        "numberOfEmployees": "250+",
+        "currenciesAccepted": "USD",
+        "paymentAccepted": ["Cash", "Credit Card", "Check", "Invoice"],
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+
+=== Checking FAQ schema in comprehensive-faq ===
+
+<!-- FAQ Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What types of security services do you offer in California?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We provide comprehensive security services including armed security guards, unarmed security guards, mobile patrol services, event security, fire watch services, construction site security, hospital security, hotel security, apartment security, executive protection, and emergency response services throughout California."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do security guard services cost in California?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Security guard costs vary based on location, service type, and duration. Unarmed guards typically range from $25-$40 per hour, while armed guards range from $35-$55 per hour. We provide free consultations and custom quotes based on your specific security needs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are your security guards licensed and insured in California?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all our security guards are BSIS (Bureau of Security and Investigative Services) licensed by the state of California. We carry comprehensive liability insurance and workers' compensation, and all guards undergo thorough background checks and professional training."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between armed and unarmed security guards?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com#
