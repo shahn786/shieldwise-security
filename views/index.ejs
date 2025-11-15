@@ -15,14 +15,18 @@
     <meta name="language" content="en-US">
     <meta name="rating" content="general">
 
-    <!-- Comprehensive SEO: Canonical, Open Graph, Twitter Cards, JSON-LD Schemas, Analytics -->
+    <!-- Canonical + OG / Twitter etc SHOULD be here. 
+         If your seo-head partial ONLY does canonical + OG/Twitter,
+         you can keep it. But make sure it does NOT output any JSON-LD. -->
+    <!--
     <%- include("partials/seo-head", { 
       canonicalPath: "/",
       pageTitle: "California's #1 Security Company | Licensed Armed & Unarmed Guards | ShieldWise Security",
       pageDescription: "California's premier security company offering elite protection services: armed & unarmed guards, mobile patrol, event security & fire watch. Serving Los Angeles, Orange County & all California with 24/7 professional security solutions.",
       pageImage: "https://shieldwisesecurity.com/img/California_SecurityGuards.webp",
-      includeFAQ: true
+      includeFAQ: false  // IMPORTANT: do NOT output FAQ schema from partial
     }) %>
+    -->
 
     <!-- Alternate URLs -->
     <link rel="alternate" hreflang="en-us" href="https://shieldwisesecurity.com/" />
@@ -48,17 +52,6 @@
     <meta name="application-name" content="ShieldWise Security">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
-
-    <!-- Search Engine Verification -->
-    <!-- TODO: Add verification codes from webmaster tools -->
-    <!-- Google: Get code from Google Search Console -->
-    <!-- <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE" /> -->
-    <!-- Bing: Get code from Bing Webmaster Tools -->
-    <!-- <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" /> -->
-    <!-- Yandex: Get code from Yandex Webmaster -->
-    <!-- <meta name="yandex-verification" content="YOUR_YANDEX_VERIFICATION_CODE" /> -->
-    <!-- Baidu: Get code from Baidu Webmaster Tools -->
-    <!-- <meta name="baidu-site-verification" content="YOUR_BAIDU_VERIFICATION_CODE" /> -->
 
     <!-- Enhanced Resource Hints for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -90,15 +83,15 @@
 
     <!-- Preload LCP hero image -->
     <link rel="preload" as="image" href="/img/main2.webp" fetchpriority="high">
-    
+
     <!-- Critical CSS loaded synchronously (MINIFIED for performance) -->
     <link rel="stylesheet" href="/css/style.min.css">
     <link rel="stylesheet" href="/css/back-to.css">
-    
+
     <!-- Non-critical CSS loaded async to reduce render blocking -->
     <link rel="preload" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="/css/fontawesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    
+
     <noscript>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
       <link rel="stylesheet" href="/css/fontawesome.min.css">
@@ -120,389 +113,376 @@
     <link rel="me" href="https://www.instagram.com/shieldwisesecurity">
     <link rel="me" href="https://www.youtube.com/channel/shieldwisesecurity">
 
-    <!-- Enhanced Schema Markup - Organization -->
+    <!-- ===================== STRUCTURED DATA ===================== -->
+
+    <!-- 1) LocalBusiness + Reviews (fixed JSON, valid for review snippets) -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": ["SecurityService", "LocalBusiness", "Organization"],
-        "name": "ShieldWise Security",
-        "alternateName": "ShieldWise Security Services",
-        "url": "https://shieldwisesecurity.com",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://shieldwisesecurity.com/img/logo1.webp",
-            "width": "180",
-            "height": "60",
-            "caption": "ShieldWise Security - California's Premier Security Company"
-        },
-        "image": [
-            "https://shieldwisesecurity.com/img/armsecurity.webp",
-            "https://shieldwisesecurity.com/img/eventsecurity.webp",
-            "https://shieldwisesecurity.com/img/main2.webp"
-        ],
-        "description": "California's top-rated security company providing elite armed & unarmed guards, mobile patrol, event security, fire watch, and emergency response services across Los Angeles, Orange County, and all California regions. Licensed, insured, and available 24/7.",
-        "slogan": "California's Premier Security Protection",
-        "telephone": "+1-714-716-7430",
-        "email": "info@shieldwisesecurity.com",
-        "foundingDate": "2015",
-        "founder": {
-            "@type": "Person",
-            "name": "John Smith"
-        },
-        "numberOfEmployees": "250+",
-        "currenciesAccepted": "USD",
-        "paymentAccepted": ["Cash", "Credit Card", "Check", "Invoice"],
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-            "opens": "00:00",
-            "closes": "23:59"
-        },
-        "priceRange": "$$-$$$",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "123 Main St",
-            "addressLocality": "Los Angeles",
-            "addressRegion": "CA",
-            "postalCode": "92832",
-            "addressCountry": "US"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 34.0522,
-            "longitude": -118.2437
-        },
-            "areaServed": {
-              "@type": "State",
-              "name": "California",
-              "containsPlace": [
-                { "@type": "City", "name": "Los Angeles" },
-                { "@type": "City", "name": "San Diego" },
-                { "@type": "City", "name": "San Jose" },
-                { "@type": "City", "name": "San Francisco" },
-                { "@type": "City", "name": "Fresno" },
-                { "@type": "City", "name": "Sacramento" },
-                { "@type": "City", "name": "Long Beach" },
-                { "@type": "City", "name": "Oakland" },
-                { "@type": "City", "name": "Bakersfield" },
-                { "@type": "City", "name": "Anaheim" },
-                { "@type": "City", "name": "Santa Ana" },
-                { "@type": "City", "name": "Riverside" },
-                { "@type": "City", "name": "Stockton" },
-                { "@type": "City", "name": "Chula Vista" },
-                { "@type": "City", "name": "Irvine" },
-                { "@type": "City", "name": "Fremont" },
-                { "@type": "City", "name": "Modesto" },
-                { "@type": "City", "name": "Fontana" },
-                { "@type": "City", "name": "Moreno Valley" },
-                { "@type": "City", "name": "Glendale" },
-                { "@type": "City", "name": "Huntington Beach" },
-                { "@type": "City", "name": "Oxnard" },
-                { "@type": "City", "name": "Ontario" },
-                { "@type": "City", "name": "Rancho Cucamonga" },
-                { "@type": "City", "name": "Santa Clarita" },
-                { "@type": "City", "name": "Elk Grove" },
-                { "@type": "City", "name": "Corona" },
-                { "@type": "City", "name": "Palmdale" },
-                { "@type": "City", "name": "Salinas" },
-                { "@type": "City", "name": "Pomona" },
-                { "@type": "City", "name": "Torrance" },
-                { "@type": "City", "name": "Hayward" },
-                { "@type": "City", "name": "Escondido" },
-                { "@type": "City", "name": "Sunnyvale" },
-                { "@type": "City", "name": "Fullerton" },
-                { "@type": "City", "name": "Orange" }
-              ]
-            }
-
-        ],
-        "sameAs": [
-            "https://www.facebook.com/shieldwisesecurity",
-            "https://www.linkedin.com/company/shieldwisesecurity",
-            "https://twitter.com/shieldwisesec",
-            "https://www.instagram.com/shieldwisesecurity",
-            "https://www.youtube.com/channel/shieldwisesecurity",
-            "https://www.yelp.com/biz/shieldwise-security",
-            "https://www.bbb.org/us/ca/los-angeles/profile/security-guard-service/shieldwise-security"
-        ],
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Professional Security Services",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Armed Security Guards",
-                        "description": "Elite armed security guard services for high-risk environments throughout California. All guards are licensed, trained, and certified with advanced firearms training.",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "ShieldWise Security"
-                        },
-                        "areaServed": "California",
-                        "availableAtOrFrom": {
-                            "@type": "Place",
-                            "name": "California"
-                        }
-                    },
-                    "price": "Contact for Quote",
-                    "priceCurrency": "USD",
-                    "availability": "https://schema.org/InStock"
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Unarmed Security Guards",
-                        "description": "Professional unarmed security personnel providing vigilant protection for commercial properties, residential communities, and corporate settings with excellent customer service.",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "ShieldWise Security"
-                        },
-                        "areaServed": "California"
-                    },
-                    "price": "Contact for Quote",
-                    "priceCurrency": "USD",
-                    "availability": "https://schema.org/InStock"
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Mobile Patrol Services",
-                        "description": "24/7 mobile patrol services with marked vehicles for comprehensive property protection across California with real-time reporting.",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "ShieldWise Security"
-                        },
-                        "areaServed": "California"
-                    },
-                    "price": "Contact for Quote",
-                    "priceCurrency": "USD",
-                    "availability": "https://schema.org/InStock"
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Event Security",
-                        "description": "Specialized security solutions for events of all sizes including concerts, corporate gatherings, VIP functions, and private parties throughout California.",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "ShieldWise Security"
-                        },
-                        "areaServed": "California"
-                    },
-                    "price": "Contact for Quote",
-                    "priceCurrency": "USD",
-                    "availability": "https://schema.org/InStock"
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Fire Watch Services",
-                        "description": "Certified fire watch services for buildings, construction sites, and special events in compliance with all California fire department regulations.",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "ShieldWise Security"
-                        },
-                        "areaServed": "California"
-                    },
-                    "price": "Contact for Quote",
-                    "priceCurrency": "USD",
-                    "availability": "https://schema.org/InStock"
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Emergency Response",
-                        "description": "Rapid security deployment for emergency situations across all California regions with 24/7 availability and immediate response times.",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "ShieldWise Security"
-                        },
-                        "areaServed": "California"
-                    },
-                    "price": "Contact for Quote",
-                    "priceCurrency": "USD",
-                    "availability": "https://schema.org/InStock"
-                }
-            ]
-        },
-        "serviceArea": {
-            "@type": "GeoCircle",
-            "geoMidpoint": {
-                "@type": "GeoCoordinates",
-                "latitude": 36.7783,
-                "longitude": -119.4179
-            },
-            "geoRadius": "800000"
-        },
-        "review": [
-            {
-                "@type": "Review",
-                "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "5",
-                    "bestRating": "5"
-                },
-                "author": {
-                    "@type": "Person",
-                    "name": "Michael Johnson"
-                },
-                "datePublished": "2024-08-05",
-                "reviewBody": "ShieldWise Security provided exceptional security for our corporate event in Los Angeles. Their guards were professional, vigilant, and courteous to all guests. Highly recommended!"
-            },
-            {
-                "@type": "Review",
-                "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "5",
-                    "bestRating": "5"
-                },
-                "author": {
-                    "@type": "Person",
-                    "name": "Sarah Rodriguez"
-                },
-                "datePublished": "2024-07-12",
-                "reviewBody": "We've used ShieldWise for our commercial property in Orange County for over two years. Their mobile patrol service is reliable and thorough, giving us complete peace of mind."
-            },
-            {
-                "@type": "Review",
-                "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "5",
-                    "bestRating": "5"
-                },
-                "author": {
-                    "@type": "Person",
-                    "name": "David Wilson"
-                },
-                "datePublished": "2024-06-28",
-                "reviewBody": "ShieldWise provided excellent security guards for our construction site in San Diego. Professional, attentive, and deterred multiple potential theft attempts."
-            },
-            {
-                "@type": "Review",
-                "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "5",
-                    "bestRating": "5"
-                },
-                "author": {
-                    "@type": "Person",
-                    "name": "Jennifer Lee"
-                },
-                "datePublished": "2024-05-15",
-                "reviewBody": "Outstanding service! Their armed guards are highly trained and professional. We feel completely secure with ShieldWise protecting our facility 24/7."
-            }
-        ],
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "325",
-            "bestRating": "5",
-            "worstRating": "4"
-        },
-        "award": [
-            "California's #1 Security Company 2024",
-            "Best Security Service Provider - Los Angeles Business Journal 2023",
-            "Top Rated Security Company - Better Business Bureau 2024"
-        ],
-        "memberOf": [
-            {
-                "@type": "Organization",
-                "name": "California Association of Licensed Security Agencies, Guards and Associates (CALSAGA)"
-            },
-            {
-                "@type": "Organization",
-                "name": "International Association for Healthcare Security"
-            }
-        ],
-        "hasCredential": [
-            {
-                "@type": "EducationalOccupationalCredential",
-                "credentialCategory": "license",
-                "recognizedBy": {
-                    "@type": "Organization",
-                    "name": "California Bureau of Security and Investigative Services"
-                }
-            }
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "ShieldWise Security",
+      "alternateName": "ShieldWise Security Services",
+      "url": "https://shieldwisesecurity.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://shieldwisesecurity.com/img/logo1.webp",
+        "width": "180",
+        "height": "60",
+        "caption": "ShieldWise Security - California's Premier Security Company"
+      },
+      "image": [
+        "https://shieldwisesecurity.com/img/armsecurity.webp",
+        "https://shieldwisesecurity.com/img/eventsecurity.webp",
+        "https://shieldwisesecurity.com/img/main2.webp"
+      ],
+      "description": "California's top-rated security company providing elite armed & unarmed guards, mobile patrol, event security, fire watch, and emergency response services across Los Angeles, Orange County, and all California regions. Licensed, insured, and available 24/7.",
+      "slogan": "California's Premier Security Protection",
+      "telephone": "+1-714-716-7430",
+      "email": "info@shieldwisesecurity.com",
+      "foundingDate": "2015",
+      "founder": {
+        "@type": "Person",
+        "name": "John Smith"
+      },
+      "numberOfEmployees": "250+",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": ["Cash", "Credit Card", "Check", "Invoice"],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "priceRange": "$$-$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Main St",
+        "addressLocality": "Los Angeles",
+        "addressRegion": "CA",
+        "postalCode": "92832",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 34.0522,
+        "longitude": -118.2437
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "California",
+        "containsPlace": [
+          { "@type": "City", "name": "Los Angeles" },
+          { "@type": "City", "name": "San Diego" },
+          { "@type": "City", "name": "San Jose" },
+          { "@type": "City", "name": "San Francisco" },
+          { "@type": "City", "name": "Fresno" },
+          { "@type": "City", "name": "Sacramento" },
+          { "@type": "City", "name": "Long Beach" },
+          { "@type": "City", "name": "Oakland" },
+          { "@type": "City", "name": "Bakersfield" },
+          { "@type": "City", "name": "Anaheim" },
+          { "@type": "City", "name": "Santa Ana" },
+          { "@type": "City", "name": "Riverside" },
+          { "@type": "City", "name": "Stockton" },
+          { "@type": "City", "name": "Chula Vista" },
+          { "@type": "City", "name": "Irvine" },
+          { "@type": "City", "name": "Fremont" },
+          { "@type": "City", "name": "Modesto" },
+          { "@type": "City", "name": "Fontana" },
+          { "@type": "City", "name": "Moreno Valley" },
+          { "@type": "City", "name": "Glendale" },
+          { "@type": "City", "name": "Huntington Beach" },
+          { "@type": "City", "name": "Oxnard" },
+          { "@type": "City", "name": "Ontario" },
+          { "@type": "City", "name": "Rancho Cucamonga" },
+          { "@type": "City", "name": "Santa Clarita" },
+          { "@type": "City", "name": "Elk Grove" },
+          { "@type": "City", "name": "Corona" },
+          { "@type": "City", "name": "Palmdale" },
+          { "@type": "City", "name": "Salinas" },
+          { "@type": "City", "name": "Pomona" },
+          { "@type": "City", "name": "Torrance" },
+          { "@type": "City", "name": "Hayward" },
+          { "@type": "City", "name": "Escondido" },
+          { "@type": "City", "name": "Sunnyvale" },
+          { "@type": "City", "name": "Fullerton" },
+          { "@type": "City", "name": "Orange" }
         ]
-    }
-    </script>
-
-    <!-- Enhanced Video Object Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "VideoObject",
-        "name": "California's Top Security Services | ShieldWise Security",
-        "description": "Professional security services across California including armed guards, mobile patrol, event security, and emergency response. See how ShieldWise provides elite protection for businesses and properties.",
-        "thumbnailUrl": "https://shieldwisesecurity.com/img/video-thumbnail.jpg",
-        "uploadDate": "2024-08-01T08:00:00+08:00",
-        "duration": "PT1M30S",
-        "contentUrl": "https://shieldwisesecurity.com/img/california-security-services.mp4",
-        "embedUrl": "https://shieldwisesecurity.com/",
-        "publisher": {
-            "@type": "Organization",
-            "name": "ShieldWise Security",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://shieldwisesecurity.com/img/logo1.webp"
-            }
-        },
-        "potentialAction": {
-            "@type": "SeekToAction",
-            "target": "https://shieldwisesecurity.com/#{seek_to_second_number}",
-            "query-input": "required name=seek_to_second_number"
-        }
-    }
-    </script>
-
-    <!-- Breadcrumb Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
+      },
+      "sameAs": [
+        "https://www.facebook.com/shieldwisesecurity",
+        "https://www.linkedin.com/company/shieldwisesecurity",
+        "https://twitter.com/shieldwisesec",
+        "https://www.instagram.com/shieldwisesecurity",
+        "https://www.youtube.com/channel/shieldwisesecurity",
+        "https://www.yelp.com/biz/shieldwise-security",
+        "https://www.bbb.org/us/ca/los-angeles/profile/security-guard-service/shieldwise-security"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Professional Security Services",
         "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://shieldwisesecurity.com/"
-            }
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Armed Security Guards",
+              "description": "Elite armed security guard services for high-risk environments throughout California. All guards are licensed, trained, and certified with advanced firearms training.",
+              "provider": {
+                "@type": "Organization",
+                "name": "ShieldWise Security"
+              },
+              "areaServed": "California",
+              "availableAtOrFrom": {
+                "@type": "Place",
+                "name": "California"
+              }
+            },
+            "price": "Contact for Quote",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Unarmed Security Guards",
+              "description": "Professional unarmed security personnel providing vigilant protection for commercial properties, residential communities, and corporate settings with excellent customer service.",
+              "provider": {
+                "@type": "Organization",
+                "name": "ShieldWise Security"
+              },
+              "areaServed": "California"
+            },
+            "price": "Contact for Quote",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Fire Watch Services",
+              "description": "Certified fire watch services for buildings, construction sites, and special events in compliance with all California fire department regulations.",
+              "provider": {
+                "@type": "Organization",
+                "name": "ShieldWise Security"
+              },
+              "areaServed": "California"
+            },
+            "price": "Contact for Quote",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Emergency Response",
+              "description": "Rapid security deployment for emergency situations across all California regions with 24/7 availability and immediate response times.",
+              "provider": {
+                "@type": "Organization",
+                "name": "ShieldWise Security"
+              },
+              "areaServed": "California"
+            },
+            "price": "Contact for Quote",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          }
         ]
+      },
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 36.7783,
+          "longitude": -119.4179
+        },
+        "geoRadius": "800000"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "325",
+        "bestRating": "5",
+        "worstRating": "4"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Michael Johnson"
+          },
+          "datePublished": "2024-08-05",
+          "reviewBody": "ShieldWise Security provided exceptional security for our corporate event in Los Angeles. Their guards were professional, vigilant, and courteous to all guests. Highly recommended!"
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Sarah Rodriguez"
+          },
+          "datePublished": "2024-07-12",
+          "reviewBody": "We've used ShieldWise for our commercial property in Orange County for over two years. Their mobile patrol service is reliable and thorough, giving us complete peace of mind."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "David Wilson"
+          },
+          "datePublished": "2024-06-28",
+          "reviewBody": "ShieldWise provided excellent security guards for our construction site in San Diego. Professional, attentive, and deterred multiple potential theft attempts."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Jennifer Lee"
+          },
+          "datePublished": "2024-05-15",
+          "reviewBody": "Outstanding service! Their armed guards are highly trained and professional. We feel completely secure with ShieldWise protecting our facility 24/7."
+        }
+      ]
     }
     </script>
 
-    <!-- Website Schema -->
+    <!-- 2) FAQPage (single, valid, no duplicates) -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "ShieldWise Security",
-        "alternateName": "ShieldWise",
-        "url": "https://shieldwisesecurity.com",
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://shieldwisesecurity.com/search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What areas does ShieldWise Security serve in California?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ShieldWise Security provides professional security services throughout California, including Los Angeles, Orange County, San Diego, San Francisco, Sacramento, and surrounding regions. We offer 24/7 coverage with rapid response times across the entire state."
+          }
         },
-        "sameAs": [
-            "https://www.facebook.com/shieldwisesecurity",
-            "https://www.linkedin.com/company/shieldwisesecurity",
-            "https://twitter.com/shieldwisesec",
-            "https://www.instagram.com/shieldwisesecurity",
-            "https://www.youtube.com/channel/shieldwisesecurity"
-        ]
+        {
+          "@type": "Question",
+          "name": "Are your security guards licensed and insured?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All ShieldWise Security guards are fully licensed by the California Bureau of Security and Investigative Services (BSIS) and we carry comprehensive liability insurance and workers' compensation coverage. Armed guards also complete additional firearms certification."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of security services do you provide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We provide armed and unarmed security guards, mobile patrol, fire watch, construction site security, event security, HOA and apartment security, retail loss prevention, and emergency response services tailored to each client's needs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I request a quote for security services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can request a security quote by calling +1-714-716-7430, emailing info@shieldwisesecurity.com, or submitting the quote form on our website. Our team will review your needs and provide a tailored proposal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How quickly can you deploy security guards?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For emergencies, we can often deploy guards within 2–4 hours in many California cities. For scheduled and ongoing service, we typically staff posts within 24–48 hours depending on location and requirements."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- 3) VideoObject (SeekToAction removed to avoid valueName warning) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "California's Top Security Services | ShieldWise Security",
+      "description": "Professional security services across California including armed guards, mobile patrol, event security, and emergency response. See how ShieldWise provides elite protection for businesses and properties.",
+      "thumbnailUrl": "https://shieldwisesecurity.com/img/video-thumbnail.jpg",
+      "uploadDate": "2024-08-01T08:00:00+08:00",
+      "duration": "PT1M30S",
+      "contentUrl": "https://shieldwisesecurity.com/img/california-security-services.mp4",
+      "embedUrl": "https://shieldwisesecurity.com/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "ShieldWise Security",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://shieldwisesecurity.com/img/logo1.webp"
+        }
+      }
+    }
+    </script>
+
+    <!-- 4) Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://shieldwisesecurity.com/"
+        }
+      ]
+    }
+    </script>
+
+    <!-- 5) Website Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "ShieldWise Security",
+      "alternateName": "ShieldWise",
+      "url": "https://shieldwisesecurity.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://shieldwisesecurity.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "sameAs": [
+        "https://www.facebook.com/shieldwisesecurity",
+        "https://www.linkedin.com/company/shieldwisesecurity",
+        "https://twitter.com/shieldwisesec",
+        "https://www.instagram.com/shieldwisesecurity",
+        "https://www.youtube.com/channel/shieldwisesecurity"
+      ]
     }
     </script>
 
     <!-- Critical CSS Inline for Above-the-Fold Content (Scoped to home-page) -->
     <style>
-        /* Critical CSS for immediate rendering */
         html,body { 
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
             margin: 0; 
@@ -512,7 +492,6 @@
             scroll-behavior: smooth;
             background-color: #ffffff;
         }
-        /* Skip Navigation */
         .skip-nav {
             position: absolute;
             top: -40px;
@@ -526,7 +505,6 @@
         .skip-nav:focus {
             top: 0;
         }
-        /* Hero Section - scoped to home page */
         .home-page .hero-section { 
             position: relative;
             width: 100%;
@@ -577,7 +555,6 @@
             gap: 1rem;
             flex-wrap: wrap;
         }
-        /* Buttons - scoped to home page */
         .home-page .primary-button,
         .home-page .secondary-button { 
             display: inline-block;
@@ -607,7 +584,6 @@
             background: rgba(255,255,255,0.25);
             transform: translateY(-3px);
         }
-        /* Responsive */
         @media (max-width: 768px) { 
             .home-page .hero-title { font-size: 2.5rem; }
             .home-page .hero-subtitle { font-size: 1.2rem; }
@@ -615,47 +591,15 @@
         }
     </style>
 
-    <!-- Performance and Analytics -->
-    <!-- TODO: Add your Google Analytics ID -->
-    <!-- <script defer src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
-    </script> -->
-
-    <!-- TODO: Add your Microsoft Clarity ID -->
-    <!-- <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "YOUR_CLARITY_ID");
-    </script> -->
-
-    <!-- TODO: Add your Hotjar ID -->
-    <!-- <script>
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:YOUR_HOTJAR_ID,hjsv:6};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    </script> -->
-
     <!-- AI Search Optimization -->
     <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1">
     <meta name="bingbot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1">
-
-    <!-- Edge/Safari specific optimizations -->
     <meta http-equiv="x-ua-compatible" content="IE=edge">
     <meta name="format-detection" content="telephone=yes">
     <meta name="format-detection" content="address=yes">
 
 </head>
+
 
 <body id="top" class="home-page" itemscope itemtype="https://schema.org/WebPage">
 
