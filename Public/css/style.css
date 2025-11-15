@@ -934,7 +934,7 @@ html, body {
 }
 
 
-/*               icon section of style  of the index    */ 
+/*               icon section of style  of the index    */
 
 /* ShieldWise Security Services CSS - High Readability Modern Design */
 
@@ -1248,7 +1248,7 @@ html, body {
 .learn-more-link:hover::after {
   margin-left: 12px; /* Arrow moves further on hover */
 }
-/*      guard section end   */ 
+/*      guard section end   */
 
 /* Security Professionals Section - External CSS */
 .security-professionals-section {
@@ -1263,10 +1263,10 @@ html, body {
 .professionals-wrapper {
     display: flex;
     flex-direction: row;
-    min-height: 600px;
+    min-height: 700px;
     max-width: 100%;
-    gap: 40px;
-    align-items: center;
+    gap: 0;
+    align-items: stretch;
 }
 
 .professionals-content {
@@ -1342,7 +1342,7 @@ html, body {
     width: 50%;
     position: relative;
     overflow: hidden;
-    margin-right: 40px;
+    min-height: 700px;
 }
 
 .professionals-image::before {
@@ -1356,6 +1356,7 @@ html, body {
     z-index: 1;
 }
 
+.professionals-image picture,
 .professionals-image img {
     width: 100%;
     height: 100%;
