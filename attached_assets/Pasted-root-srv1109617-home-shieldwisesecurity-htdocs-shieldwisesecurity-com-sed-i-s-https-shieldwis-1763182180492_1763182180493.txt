@@ -1,0 +1,104 @@
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# sed -i 's|"https://shieldwisesecurity.com/img/main2.webp"|"https://shieldwisesecurity.com/img/main2.webp"\n        ]|' views/index.ejs
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# sed -i '/longitude": -118.2437$/,/^[[:space:]]*}$/{s/^[[:space:]]*}$/        },/}' views/index.ejs
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# sed -i '/{ "@type": "City", "name": "Orange" }$/,/^[[:space:]]*}$/{s/^[[:space:]]*}$/            }\n        },/}' views/index.ejs
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# sed -i 's|"https://www.bbb.org/us/ca/los-angeles/profile/security-guard-service/shieldwise-security"|"https://www.bbb.org/us/ca/los-angeles/profile/security-guard-service/shieldwise-security"\n        ],|' views/index.ejs
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# echo "=== Checking fixed Organization schema ==="
+sed -n '136,220p' views/index.ejs
+=== Checking fixed Organization schema ===
+            "caption": "ShieldWise Security - California's Premier Security Company"
+        },
+        "image": [
+            "https://shieldwisesecurity.com/img/armsecurity.webp",
+            "https://shieldwisesecurity.com/img/eventsecurity.webp",
+            "https://shieldwisesecurity.com/img/main2.webp"
+        ]
+        "description": "California's top-rated security company providing elite armed & unarmed guards, mobile patrol, event security, fire watch, and emergency response services across Los Angeles, Orange County, and all California regions. Licensed, insured, and available 24/7.",
+        "slogan": "California's Premier Security Protection",
+        "telephone": "+1-714-716-7430",
+        "email": "info@shieldwisesecurity.com",
+        "foundingDate": "2015",
+        "founder": {
+            "@type": "Person",
+            "name": "John Smith"
+        },
+        "numberOfEmployees": "250+",
+        "currenciesAccepted": "USD",
+        "paymentAccepted": ["Cash", "Credit Card", "Check", "Invoice"],
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+        },
+        "priceRange": "$$-$$$",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Main St",
+            "addressLocality": "Los Angeles",
+            "addressRegion": "CA",
+            "postalCode": "92832",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 34.0522,
+            "longitude": -118.2437
+        },
+            "areaServed": {
+              "@type": "State",
+              "name": "California",
+              "containsPlace": [
+                { "@type": "City", "name": "Los Angeles" },
+                { "@type": "City", "name": "San Diego" },
+                { "@type": "City", "name": "San Jose" },
+                { "@type": "City", "name": "San Francisco" },
+                { "@type": "City", "name": "Fresno" },
+                { "@type": "City", "name": "Sacramento" },
+                { "@type": "City", "name": "Long Beach" },
+                { "@type": "City", "name": "Oakland" },
+                { "@type": "City", "name": "Bakersfield" },
+                { "@type": "City", "name": "Anaheim" },
+                { "@type": "City", "name": "Santa Ana" },
+                { "@type": "City", "name": "Riverside" },
+                { "@type": "City", "name": "Stockton" },
+                { "@type": "City", "name": "Chula Vista" },
+                { "@type": "City", "name": "Irvine" },
+                { "@type": "City", "name": "Fremont" },
+                { "@type": "City", "name": "Modesto" },
+                { "@type": "City", "name": "Fontana" },
+                { "@type": "City", "name": "Moreno Valley" },
+                { "@type": "City", "name": "Glendale" },
+                { "@type": "City", "name": "Huntington Beach" },
+                { "@type": "City", "name": "Oxnard" },
+                { "@type": "City", "name": "Ontario" },
+                { "@type": "City", "name": "Rancho Cucamonga" },
+                { "@type": "City", "name": "Santa Clarita" },
+                { "@type": "City", "name": "Elk Grove" },
+                { "@type": "City", "name": "Corona" },
+                { "@type": "City", "name": "Palmdale" },
+                { "@type": "City", "name": "Salinas" },
+                { "@type": "City", "name": "Pomona" },
+                { "@type": "City", "name": "Torrance" },
+                { "@type": "City", "name": "Hayward" },
+                { "@type": "City", "name": "Escondido" },
+                { "@type": "City", "name": "Sunnyvale" },
+                { "@type": "City", "name": "Fullerton" },
+                { "@type": "City", "name": "Orange" }
+              ]
+            }
+        },
+
+        "sameAs": [
+            "https://www.facebook.com/shieldwisesecurity",
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# pm2 restart shieldwise && pm2 save
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [shieldwise](ids: [ 0 ])
+[PM2] [shieldwise](0) ✓
+┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
+│ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │
+├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
+│ 0  │ shieldwise         │ fork     │ 8    │ online    │ 0%       │ 18.5mb   │
+└────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
+[PM2] Saving current process list...
+[PM2] Successfully saved in /root/.pm2/dump.pm2
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com#
