@@ -1,0 +1,76 @@
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# grep -r '"license": "122008"' . --include="*.ejs" --include="*.js"
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# grep "include(" views/index.ejs | head -20
+    <%- include("partials/seo-head", {
+    <%- include('partials/Header') %>
+        <%- include('partials/comprehensive-faq') %>
+        <%- include('partials/Footer') %>
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# grep -A10 'include("partials/seo-head"' views/index.ejs | head -15
+    <%- include("partials/seo-head", {
+      canonicalPath: "/",
+      pageTitle: "California's #1 Security Company | Licensed Armed & Unarmed Guards | ShieldWise Security",
+      pageDescription: "California's premier security company offering elite protection services: armed & unarmed guards, mobile patrol, event security & fire watch. Serving Los Angeles, Orange County & all California with 24/7 professional security solutions.",
+      pageImage: "https://shieldwisesecurity.com/img/California_SecurityGuards.webp",
+      includeFAQ: false  // IMPORTANT: do NOT output FAQ schema from partial
+    }) %>
+    -->
+
+    <!-- Alternate URLs -->
+    <link rel="alternate" hreflang="en-us" href="https://shieldwisesecurity.com/" />
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# grep -n 'itemtype.*LocalBusiness' views/index.ejs
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# grep -n "122008" views/partials/Header.ejs
+grep -n "LocalBusiness" views/partials/Header.ejs
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# grep -B2 -A15 'include("partials/seo-head"' views/index.ejs
+         you can keep it. But make sure it does NOT output any JSON-LD. -->
+    <!--
+    <%- include("partials/seo-head", {
+      canonicalPath: "/",
+      pageTitle: "California's #1 Security Company | Licensed Armed & Unarmed Guards | ShieldWise Security",
+      pageDescription: "California's premier security company offering elite protection services: armed & unarmed guards, mobile patrol, event security & fire watch. Serving Los Angeles, Orange County & all California with 24/7 professional security solutions.",
+      pageImage: "https://shieldwisesecurity.com/img/California_SecurityGuards.webp",
+      includeFAQ: false  // IMPORTANT: do NOT output FAQ schema from partial
+    }) %>
+    -->
+
+    <!-- Alternate URLs -->
+    <link rel="alternate" hreflang="en-us" href="https://shieldwisesecurity.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://shieldwisesecurity.com/" />
+
+    <!-- Location-Specific Meta Enhanced -->
+    <meta name="geo.region" content="US-CA">
+    <meta name="geo.placename" content="California">
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# grep -r "LocalBusiness" views/ -n | head -30
+views/partials/schema-apartment-security.ejs:6:  "@type": "LocalBusiness",
+views/partials/schema-shopping-center-security.ejs:9:    "@type": "LocalBusiness",
+views/partials/schema-shopping-center-security.ejs:65:  "@type": "LocalBusiness",
+views/partials/schema-fire-watch.ejs:107:  "@type": "LocalBusiness",
+views/partials/meta-tags-hotel-security.ejs:26:<meta name="entity-type" content="LocalBusiness,SecurityService,HotelSecurityService">
+views/partials/Footer.ejs:238:<footer class="footer" itemscope itemtype="https://schema.org/LocalBusiness">
+views/partials/seo-head.ejs:35:<!-- LocalBusiness Schema -->
+views/partials/seo-head.ejs:39:  "@type": "LocalBusiness",
+views/partials/schema-construction-security.ejs:2:<!-- Enhanced Structured Data: LocalBusiness & Organization Schema -->
+views/partials/local-business-schema.ejs:1:<!-- LocalBusiness JSON-LD Schema -->
+views/partials/local-business-schema.ejs:5:  "@type": "LocalBusiness",
+views/partials/schema-special-event-security.ejs:54:  "@type":"LocalBusiness",
+views/partials/schema-special-event-security.ejs:81:  "@type": "LocalBusiness",
+views/partials/schema-org.ejs:11:  "@type": ["Organization", "LocalBusiness", "SecurityService"],
+views/partials/schema-patrol-riverside-localbusiness.ejs:1:<!-- LocalBusiness Schema for Riverside Location -->
+views/partials/schema-patrol-riverside-localbusiness.ejs:5:  "@type": "LocalBusiness",
+views/partials/schema-primary.ejs:5:  "@type": ["SecurityService", "LocalBusiness", "Organization"],
+views/partials/schema-hospital-security.ejs:100:  "@type": "LocalBusiness",
+views/partials/schema-localbusiness.ejs:1:<!-- LocalBusiness Structured Data -->
+views/partials/schema-localbusiness.ejs:5:    "@type": "LocalBusiness",
+views/partials/schema-hotel-security.ejs:6:  "@type": "LocalBusiness",
+views/index.ejs:118:    <!-- 1) LocalBusiness + Reviews (fixed JSON, valid for review snippets) -->
+views/index.ejs:122:      "@type": "LocalBusiness",
+views/index.ejs.backup-20251115-051931:127:        "@type": ["SecurityService", "LocalBusiness", "Organization"],
+views/cities/escondido.ejs:137:      "@type": ["LocalBusiness", "SecurityService", "ProfessionalService"],
+views/cities/escondido.ejs:553:                  "@type":"LocalBusiness",
+views/cities/fullerton.ejs:3:<html lang="en" itemscope itemtype="https://schema.org/LocalBusiness">
+views/cities/fullerton.ejs:98:      "@type": ["LocalBusiness", "SecurityService", "ProfessionalService"],
+views/cities/fullerton.ejs:583:                  "@type":"LocalBusiness",
+views/cities/la-mesa.ejs:137:      "@type": ["SecurityService", "LocalBusiness", "ProfessionalService"],
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# grep -c '@type.*LocalBusiness' views/index.ejs
+1
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# grep -n '@type.*LocalBusiness' views/index.ejs
+122:      "@type": "LocalBusiness",
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com#
