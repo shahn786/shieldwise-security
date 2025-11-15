@@ -1,0 +1,56 @@
+Unnamed item
+1 critical issue
+
+Duplicate field "FAQPage"
+type
+FAQPage
+mainEntity
+type
+Question
+name
+What types of security services do you offer in California?
+acceptedAnswer
+type
+Answer
+text
+We provide comprehensive security services including armed security guards, unarmed security guards, mobile patrol services, event security, fire watch services, construction site security, hospital security, hotel security, apartment security, executive protection, and emergency response services throughout California.
+mainEntity
+type
+Question
+name
+How much do security guard services cost in California?
+acceptedAnswer
+type
+Answer
+text
+Security guard costs vary based on location, service type, and duration. Unarmed guards typically range from $25-$40 per hour, while armed guards range from $35-$55 per hour. We provide free consultations and custom quotes based on your specific security needs.
+mainEntity
+type
+Question
+name
+Are your security guards licensed and insured in California?
+acceptedAnswer
+type
+Answer
+text
+Yes, all our security guards are BSIS (Bureau of Security and Investigative Services) licensed by the state of California. We carry comprehensive liability insurance and workers' compensation, and all guards undergo thorough background checks and professional training.
+mainEntity
+type
+Question
+name
+What's the difference between armed and unarmed security guards?
+acceptedAnswer
+type
+Answer
+text
+Armed security guards carry firearms and require additional licensing and training. They're ideal for high-risk environments, valuable asset protection, and situations requiring maximum deterrence. Unarmed guards focus on observation, reporting, and customer service, making them perfect for retail, residential, and low-risk commercial properties.
+mainEntity
+type
+Question
+name
+Do you provide security services in Los Angeles, Orange County, and San Diego?
+acceptedAnswer
+type
+Answer
+text
+Yes, we provide security services throughout California including Los Angeles County, Orange County, San Diego County, San Francisco Bay Area, Sacramento, Fresno, and all major California cities. Our statewide network ensures consistent quality and rapid response times.
