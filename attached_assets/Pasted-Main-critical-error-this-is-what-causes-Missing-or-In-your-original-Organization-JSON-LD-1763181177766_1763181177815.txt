@@ -1,0 +1,223 @@
+Main critical error (this is what causes “Missing ',' or '}'”)
+In your original Organization JSON-LD you have this:
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 34.0522,
+            "longitude": -118.2437
+        },
+            "areaServed": {
+              "@type": "State",
+              "name": "California",
+              "containsPlace": [
+                { "@type": "City", "name": "Los Angeles" },
+                ...
+                { "@type": "City", "name": "Orange" }
+              ]
+            }
+
+        ],
+        "sameAs": [
+
+The problem is the ], on its own line.
+There is no array open at that level, so JSON is invalid and Google shows:
+
+Parsing error: Missing ',' or '}'
+
+✅ Correct version of that part
+Use this (keep all your cities, just remove that lonely ], and add a comma after the areaServed block):
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 34.0522,
+            "longitude": -118.2437
+        },
+        "areaServed": {
+            "@type": "State",
+            "name": "California",
+            "containsPlace": [
+                { "@type": "City", "name": "Los Angeles" },
+                { "@type": "City", "name": "San Diego" },
+                { "@type": "City", "name": "San Jose" },
+                { "@type": "City", "name": "San Francisco" },
+                { "@type": "City", "name": "Fresno" },
+                { "@type": "City", "name": "Sacramento" },
+                { "@type": "City", "name": "Long Beach" },
+                { "@type": "City", "name": "Oakland" },
+                { "@type": "City", "name": "Bakersfield" },
+                { "@type": "City", "name": "Anaheim" },
+                { "@type": "City", "name": "Santa Ana" },
+                { "@type": "City", "name": "Riverside" },
+                { "@type": "City", "name": "Stockton" },
+                { "@type": "City", "name": "Chula Vista" },
+                { "@type": "City", "name": "Irvine" },
+                { "@type": "City", "name": "Fremont" },
+                { "@type": "City", "name": "Modesto" },
+                { "@type": "City", "name": "Fontana" },
+                { "@type": "City", "name": "Moreno Valley" },
+                { "@type": "City", "name": "Glendale" },
+                { "@type": "City", "name": "Huntington Beach" },
+                { "@type": "City", "name": "Oxnard" },
+                { "@type": "City", "name": "Ontario" },
+                { "@type": "City", "name": "Rancho Cucamonga" },
+                { "@type": "City", "name": "Santa Clarita" },
+                { "@type": "City", "name": "Elk Grove" },
+                { "@type": "City", "name": "Corona" },
+                { "@type": "City", "name": "Palmdale" },
+                { "@type": "City", "name": "Salinas" },
+                { "@type": "City", "name": "Pomona" },
+                { "@type": "City", "name": "Torrance" },
+                { "@type": "City", "name": "Hayward" },
+                { "@type": "City", "name": "Escondido" },
+                { "@type": "City", "name": "Sunnyvale" },
+                { "@type": "City", "name": "Fullerton" },
+                { "@type": "City", "name": "Orange" }
+            ]
+        },
+        "sameAs": [
+            "https://www.facebook.com/shieldwisesecurity",
+            "https://www.linkedin.com/company/shieldwisesecurity",
+            "https://twitter.com/shieldwisesec",
+            "https://www.instagram.com/shieldwisesecurity",
+            "https://www.youtube.com/channel/shieldwisesecurity",
+            "https://www.yelp.com/biz/shieldwise-security",
+            "https://www.bbb.org/us/ca/los-angeles/profile/security-guard-service/shieldwise-security"
+        ],
+
+👉 Conclusion:
+On the Organization schema, your version is correct once you remove that extra ],. You don’t have to switch to Claude’s shorter Organization block unless you want a simpler schema.
+
+2. FAQ errors – where Claude’s code helps
+Your screenshots show:
+
+
+FAQ – 3 invalid items (“Unnamed item”)
+
+
+That almost always means the FAQ JSON-LD is:
+
+
+Missing "name" or "acceptedAnswer" in some Question, or
+
+
+Has a syntax error (trailing comma, wrong brackets) so Google only sees “broken objects”.
+
+
+Claude’s FAQ block is structurally correct JSON-LD for an FAQPage. It will pass the Rich Results test as long as:
+
+
+You don’t accidentally output two FAQ scripts (your EJS includeFAQ: true + this one).
+
+
+There are no comments (// ...) inside the JSON-LD.
+
+
+What I recommend for FAQ
+Since I can’t see your partials/seo-head file, the safe move for now:
+
+
+In this page’s include, change:
+
+
+<%- include("partials/seo-head", { 
+  canonicalPath: "/",
+  pageTitle: "...",
+  pageDescription: "...",
+  pageImage: "...",
+  includeFAQ: true
+}) %>
+
+to:
+<%- include("partials/seo-head", { 
+  canonicalPath: "/",
+  pageTitle: "...",
+  pageDescription: "...",
+  pageImage: "...",
+  includeFAQ: false
+}) %>
+
+
+
+Then paste one FAQ JSON-LD block (like Claude’s) into your <head>:
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What areas does ShieldWise Security serve in California?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ShieldWise Security provides professional security services throughout California, including Los Angeles, Orange County, San Diego, San Francisco, Sacramento, and all surrounding areas. We offer 24/7 coverage with rapid response times across the entire state."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are your security guards licensed and insured?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all ShieldWise Security guards are fully licensed by the California Bureau of Security and Investigative Services (BSIS). We carry comprehensive liability insurance and workers' compensation coverage. Our armed guards complete additional firearms training and certification."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between armed and unarmed security guards?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Armed security guards carry firearms and undergo extensive weapons training, making them ideal for high-risk environments. Unarmed guards provide professional protection through surveillance, access control, and deterrence, suitable for retail, residential, and lower-risk commercial properties."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can you deploy security guards?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ShieldWise Security offers emergency deployment services with guards available within 2–4 hours for urgent situations across California. For scheduled services, we can typically have professional security personnel on-site within 24–48 hours depending on your location and requirements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of properties do you provide security for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We provide security services for commercial properties, residential communities, construction sites, retail locations, corporate offices, healthcare facilities, educational institutions, special events, and industrial facilities throughout California."
+      }
+    }
+  ]
+}
+</script>
+
+After that, re-run the Rich Results test: the FAQ errors should disappear.
+
+3. So… which code should you actually use?
+
+
+For the Organization / LocalBusiness schema:
+
+
+✅ Keep your original big version (with logo, OfferCatalog, reviews, etc.)
+
+
+Just fix the extra ], and make sure there are no syntax errors.
+
+
+
+
+For the FAQ schema:
+
+
+✅ Use Claude’s FAQ JSON-LD style (or similar), but make sure:
+
+
+Only one FAQPage script is rendered.
+
+
+Your EJS partial isn’t outputting another broken FAQ block.
+
+
+
+
+
+
+If you want, next step you can paste the FAQ part from partials/seo-head, and I’ll point out exactly what is wrong in there so you can keep using includeFAQ: true instead of disabling it.
