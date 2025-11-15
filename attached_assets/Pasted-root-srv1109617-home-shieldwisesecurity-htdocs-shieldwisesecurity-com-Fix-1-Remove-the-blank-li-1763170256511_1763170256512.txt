@@ -1,0 +1,44 @@
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# # Fix 1: Remove the blank line and trailing comma in VideoObject
+sed -i '/contentUrl.*mp4",$/,/^[[:space:]]*$/{/^[[:space:]]*$/d;}' views/index.ejs
+
+# Fix 2: Ensure contentUrl line doesn't have trailing comma before publisher
+sed -i 's|"contentUrl": "https://shieldwisesecurity.com/img/california-security-services.mp4",\s*$|"contentUrl": "https://shieldwisesecurity.com/img/california-security-services.mp4",|' views/index.ejs
+
+# Better approach - directly fix the VideoObject section to be valid JSON
+# Find and replace the contentUrl + blank line + publisher with proper formatting
+sed -i '/contentUrl.*california-security-services.mp4",/{N;s/\(contentUrl.*mp4",\)\n\n/\1\n/;}' views/index.ejs
+
+# Verify the fix
+echo "=== Video schema after fix ==="
+grep -A10 'contentUrl' views/index.ejs | head -12
+
+# Restart PM2
+pm2 restart shieldwise && pm2 save
+
+echo ""
+echo "✅ Schema JSON syntax fixed and server restarted!"
+=== Video schema after fix ===
+        "contentUrl": "https://shieldwisesecurity.com/img/california-security-services.mp4",
+        "publisher": {
+            "@type": "Organization",
+            "name": "ShieldWise Security",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://shieldwisesecurity.com/img/logo1.webp"
+            }
+        },
+        "potentialAction": {
+            "@type": "SeekToAction",
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [shieldwise](ids: [ 0 ])
+[PM2] [shieldwise](0) ✓
+┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
+│ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │
+├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
+│ 0  │ shieldwise         │ fork     │ 4    │ online    │ 0%       │ 18.4mb   │
+└────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
+[PM2] Saving current process list...
+[PM2] Successfully saved in /root/.pm2/dump.pm2
+
+✅ Schema JSON syntax fixed and server restarted!
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com#
