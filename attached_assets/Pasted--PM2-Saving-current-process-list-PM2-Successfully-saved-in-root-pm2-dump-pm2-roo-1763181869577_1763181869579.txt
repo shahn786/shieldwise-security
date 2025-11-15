@@ -1,0 +1,55 @@
+───────┘
+[PM2] Saving current process list...
+[PM2] Successfully saved in /root/.pm2/dump.pm2
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# echo "✅ Organization schema properly closed!"
+✅ Organization schema properly closed!
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# # Check the Organization schema structure around line 172
+sed -n '165,180p' views/index.ejs
+            "addressLocality": "Los Angeles",
+            "addressRegion": "CA",
+            "postalCode": "92832",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 34.0522,
+            "longitude": -118.2437
+        }
+    }
+    </script>
+        },
+            "areaServed": {
+              "@type": "State",
+              "name": "California",
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# sed -i '/^[[:space:]]*\],$/d' views/index.ejs
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# grep -n "^[[:space:]]*\],$" views/index.ejs
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# sed -n '165,180p' views/index.ejs
+            "addressRegion": "CA",
+            "postalCode": "92832",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 34.0522,
+            "longitude": -118.2437
+        }
+    }
+    </script>
+        },
+            "areaServed": {
+              "@type": "State",
+              "name": "California",
+              "containsPlace": [
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# pm2 restart shieldwise && pm2 save
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [shieldwise](ids: [ 0 ])
+[PM2] [shieldwise](0) ✓
+┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
+│ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │
+├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
+│ 0  │ shieldwise         │ fork     │ 7    │ online    │ 0%       │ 18.9mb   │
+└────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
+[PM2] Saving current process list...
+[PM2] Successfully saved in /root/.pm2/dump.pm2
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# ^C
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com#
