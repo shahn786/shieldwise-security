@@ -1,0 +1,109 @@
+style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh;">
+    
+    <!-- Header Section -->
+    <div style="text-align: center; padding: 60px 20px 40px; color: white;">
+        <h1 style="font-size: 2.5em; margin: 0 0 15px; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+            Trusted Security Protection Throughout California
+        </h1>
+        <p style="font-size: 1.2em; margin: 0; opacity: 0.95; font-weight: 300;">
+            See why businesses and communities across the Golden State choose ShieldWise Security
+        </p>
+    </div>
+
+    <!-- Testimonials Container -->
+    <div style="max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px;">
+        
+        <!-- Testimonial 1 -->
+        <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); transition: transform 0.3s ease;">
+            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold; margin-right: 15px; flex-shrink: 0;">
+                    MT
+                </div>
+                <div>
+                    <h3 style="margin: 0; font-size: 1.1em; color: #333; font-weight: 600;">Michael Thompson</h3>
+                    <p style="margin: 3px 0 0; font-size: 0.85em; color: #666;">Property Manager</p>
+                    <p style="margin: 2px 0 0; font-size: 0.8em; color: #999;">Sunset Residences, Los Angeles, CA</p>
+                </div>
+            </div>
+            <div style="color: #ffc107; font-size: 1.2em; margin-bottom: 12px;">★★★★★</div>
+            <p style="color: #555; line-height: 1.6; font-size: 0.95em; margin: 0;">
+                ShieldWise's security patrol officers transformed our property's security profile. Since implementing their mobile patrol services, incidents have decreased by 87% and our tenants feel significantly safer. Their professional team responded quickly to our needs and developed a customized security plan that addressed all our concerns.
+            </p>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); transition: transform 0.3s ease;">
+            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #f093fb, #f5576c); display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold; margin-right: 15px; flex-shrink: 0;">
+                    RM
+                </div>
+                <div>
+                    <h3 style="margin: 0; font-size: 1.1em; color: #333; font-weight: 600;">Robert Martinez</h3>
+                    <p style="margin: 3px 0 0; font-size: 0.85em; color: #666;">Construction Manager</p>
+                    <p style="margin: 2px 0 0; font-size: 0.8em; color: #999;">Bay Area Developers, San Francisco</p>
+                </div>
+            </div>
+            <div style="color: #ffc107; font-size: 1.2em; margin-bottom: 12px;">★★★★★</div>
+            <p style="color: #555; line-height: 1.6; font-size: 0.95em; margin: 0;">
+                After experiencing repeated theft at our San Francisco construction site, we hired ShieldWise's construction site security service. Their armed security guards maintained 24/7 surveillance and effectively eliminated all unauthorized access.
+            </p>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); transition: transform 0.3s ease;">
+            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #4facfe, #00f2fe); display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold; margin-right: 15px; flex-shrink: 0;">
+                    SC
+                </div>
+                <div>
+                    <h3 style="margin: 0; font-size: 1.1em; color: #333; font-weight: 600;">Samantha Chen</h3>
+                    <p style="margin: 3px 0 0; font-size: 0.85em; color: #666;">HOA President</p>
+                    <p style="margin: 2px 0 0; font-size: 0.8em; color: #999;">Capital City Estates, Sacramento</p>
+                </div>
+            </div>
+            <div style="color: #ffc107; font-size: 1.2em; margin-bottom: 12px;">★★★★★</div>
+            <p style="color: #555; line-height: 1.6; font-size: 0.95em; margin: 0;">
+                Our residential community in Sacramento needed reliable security that our residents could trust. ShieldWise's residential security services provided both fixed posts and roving patrols, creating a comprehensive security presence.
+            </p>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); transition: transform 0.3s ease;">
+            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #fa709a, #fee140); display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold; margin-right: 15px; flex-shrink: 0;">
+                    JW
+                </div>
+                <div>
+                    <h3 style="margin: 0; font-size: 1.1em; color: #333; font-weight: 600;">James Wilson</h3>
+                    <p style="margin: 3px 0 0; font-size: 0.85em; color: #666;">General Manager</p>
+                    <p style="margin: 2px 0 0; font-size: 0.8em; color: #999;">Pacific Coast Mall, San Diego</p>
+                </div>
+            </div>
+            <div style="color: #ffc107; font-size: 1.2em; margin-bottom: 12px;">★★★★★</div>
+            <p style="color: #555; line-height: 1.6; font-size: 0.95em; margin: 0;">
+                As a retail center in San Diego, our security needs are complex. ShieldWise's commercial security services provided both visible security presence and undercover loss prevention specialists, reducing incidents by 65%.
+            </p>
+        </div>
+
+        <!-- Testimonial 5 -->
+        <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); transition: transform 0.3s ease;">
+            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #a8edea, #fed6e3); display: flex; align-items: center; justify-content: center; color: #333; font-size: 24px; font-weight: bold; margin-right: 15px; flex-shrink: 0;">
+                    JP
+                </div>
+                <div>
+                    <h3 style="margin: 0; font-size: 1.1em; color: #333; font-weight: 600;">Jessica Park</h3>
+                    <p style="margin: 3px 0 0; font-size: 0.85em; color: #666;">Event Director</p>
+                    <p style="margin: 2px 0 0; font-size: 0.8em; color: #999;">Napa Valley Wine Festival</p>
+                </div>
+            </div>
+            <div style="color: #ffc107; font-size: 1.2em; margin-bottom: 12px;">★★★★★</div>
+            <p style="color: #555; line-height: 1.6; font-size: 0.95em; margin: 0;">
+                Planning a major wine country event in Napa Valley required specialized event security services. ShieldWise provided VIP protection, crowd management, and access control with a perfect balance of professionalism.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Bottom Padding -->
+    <div style="height: 60px;"></div>
