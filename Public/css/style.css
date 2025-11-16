@@ -1733,13 +1733,13 @@ html, body {
 /* Premium California Testimonials - Professional Redesign */
 
 .premium-testimonials {
-    padding: 70px 0;
+    padding: 60px 0;
     background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
     font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .premium-container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -1747,32 +1747,32 @@ html, body {
 /* Section Header */
 .premium-header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .premium-header h2 {
-    font-size: 2.2rem;
+    font-size: 1.9rem;
     font-weight: 700;
     color: #1a3c6e;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     letter-spacing: -0.5px;
 }
 
 .premium-header p {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     color: #666;
-    max-width: 650px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
 /* Featured Testimonial */
 .premium-feature {
     background: #fff;
-    border-radius: 12px;
-    padding: 35px;
-    margin-bottom: 40px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-    border-left: 4px solid #d12028;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-left: 3px solid #d12028;
 }
 
 .feature-content {
@@ -1781,30 +1781,30 @@ html, body {
 
 .quote-mark {
     position: absolute;
-    top: -10px;
-    right: 20px;
-    font-size: 60px;
+    top: -8px;
+    right: 15px;
+    font-size: 45px;
     color: rgba(209, 32, 40, 0.08);
     font-family: Georgia, serif;
 }
 
 .premium-feature blockquote {
-    font-size: 1.05rem;
-    line-height: 1.7;
+    font-size: 0.9rem;
+    line-height: 1.6;
     color: #444;
-    margin: 0 0 25px 0;
+    margin: 0 0 20px 0;
     font-style: italic;
 }
 
 .feature-author {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
 }
 
 .author-photo {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid #d12028;
@@ -1818,53 +1818,53 @@ html, body {
 }
 
 .author-info h4 {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 700;
-    margin: 0 0 4px 0;
+    margin: 0 0 3px 0;
     color: #1a3c6e;
 }
 
 .author-info p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #666;
-    margin: 0 0 3px 0;
+    margin: 0 0 2px 0;
 }
 
 .author-location {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: #999;
 }
 
 .star-rating {
     color: #ffc107;
-    font-size: 14px;
-    margin-top: 5px;
+    font-size: 12px;
+    margin-top: 4px;
 }
 
 /* Client Grid */
 .premium-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-bottom: 45px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-bottom: 35px;
 }
 
 .premium-card {
     background: #fff;
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     border-top: 3px solid #d12028;
 }
 
 .premium-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .card-photo {
-    height: 120px;
+    height: 80px;
     background: linear-gradient(135deg, #f8f9fa, #e9ecef);
     display: flex;
     align-items: center;
@@ -1873,82 +1873,82 @@ html, body {
 }
 
 .card-photo img {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #fff;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card-content {
-    padding: 20px;
+    padding: 15px;
 }
 
 .premium-card blockquote {
-    font-size: 0.9rem;
-    line-height: 1.6;
+    font-size: 0.85rem;
+    line-height: 1.5;
     color: #555;
-    margin: 0 0 18px 0;
+    margin: 0 0 15px 0;
     font-style: italic;
 }
 
 .card-author {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding-top: 15px;
+    gap: 8px;
+    padding-top: 12px;
     border-top: 1px solid #f0f0f0;
 }
 
 .card-author h5 {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 700;
     margin: 0;
     color: #1a3c6e;
 }
 
 .card-author p {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     color: #666;
     margin: 0;
 }
 
 .card-author span {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: #999;
 }
 
 /* Results Bar */
 .results-bar {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    margin-bottom: 45px;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 15px;
+    margin-bottom: 35px;
 }
 
 .result-item {
     background: #fff;
-    border-radius: 10px;
-    padding: 25px 20px;
+    border-radius: 8px;
+    padding: 20px 15px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
 }
 
 .result-item:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
 }
 
 .result-number {
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: #d12028;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .result-text {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     color: #666;
     line-height: 1.3;
 }
@@ -1956,25 +1956,26 @@ html, body {
 /* CTA */
 .premium-cta {
     background: linear-gradient(135deg, #1a3c6e, #2c5aa0);
-    border-radius: 12px;
-    padding: 40px;
+    border-radius: 10px;
+    padding: 30px;
     text-align: center;
     color: #fff;
 }
 
 .premium-cta p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+    font-size: 1.05rem;
+    margin-bottom: 18px;
 }
 
 .premium-button {
     display: inline-block;
     background: #d12028;
     color: #fff;
-    padding: 14px 32px;
+    padding: 12px 28px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
+    font-size: 0.95rem;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(209, 32, 40, 0.3);
 }
@@ -1990,15 +1991,15 @@ html, body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .premium-header h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .premium-feature {
-        padding: 25px;
+        padding: 20px;
     }
 
     .quote-mark {
-        font-size: 50px;
+        font-size: 40px;
     }
 
     .premium-grid {
@@ -2010,39 +2011,39 @@ html, body {
     }
 
     .premium-cta {
-        padding: 30px 20px;
+        padding: 25px 15px;
     }
 }
 
 @media (max-width: 576px) {
     .premium-header h2 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
 
     .premium-feature blockquote {
-        font-size: 0.95rem;
+        font-size: 0.85rem;
     }
 
     .author-photo {
-        width: 45px;
-        height: 45px;
+        width: 35px;
+        height: 35px;
     }
 
     .card-photo {
-        height: 100px;
+        height: 70px;
     }
 
     .card-photo img {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
     }
 
     .result-number {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
 
     .premium-cta p {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 }
 
