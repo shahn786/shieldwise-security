@@ -1,6 +1,6 @@
 /**
  * Comprehensive Sitemap Generator for ShieldWise Security
- * Generates sitemap with all 200+ pages for optimal SEO
+ * Generates sitemap matching actual route structure in index.js
  */
 
 const fs = require('fs');
@@ -9,15 +9,7 @@ const path = require('path');
 // Get current date in YYYY-MM-DD format
 const today = new Date().toISOString().split('T')[0];
 
-// Get all city page files (exclude backups)
-const citiesDir = path.join(__dirname, '../views/cities');
-const cityFiles = fs.readdirSync(citiesDir)
-  .filter(file => file.endsWith('.ejs') && !file.includes('.backup'))
-  .map(file => file.replace('.ejs', ''));
-
-console.log(`Found ${cityFiles.length} city pages`);
-
-// Service pages (using actual route paths)
+// Service pages (must match routes in index.js)
 const servicePages = [
   'apartment-security',
   'armed-security',
@@ -29,26 +21,108 @@ const servicePages = [
   'fire-watch',
   'hospital-security',
   'hotel-security',
-  'mobile-patrol',
+  'patrol',
+  'mobile-patrol-security',
   'shopping-center-security',
   'special-event-security',
   'unarmed-security'
 ];
 
-// Blog posts
-const blogPosts = [
-  'security-guard-training-california',
-  'armed-vs-unarmed-security',
-  'retail-security-best-practices',
-  'construction-site-security',
-  'event-security-planning',
-  'commercial-security-systems'
+// City arrays matching index.js routing structure
+const cityRoutes = {
+  losAngeles: {
+    prefix: 'los-angeles',
+    cities: [
+      'alhambra', 'arcadia', 'azusa', 'baldwin-park', 'bellflower', 'beverly-hills',
+      'burbank', 'calabasas', 'carson', 'cerritos', 'compton', 'culver-city', 'downey',
+      'downtown-los-Angeles', 'el-monte', 'gardena', 'glendale', 'hawthorne',
+      'hermosa-beach', 'hollywood', 'inglewood', 'la-mirada', 'lancaster', 'long-beach',
+      'malibu', 'manhattan-beach', 'norwalk', 'palmdale', 'pasadena',
+      'pomona', 'redondo-beach', 'santa-monica', 'torrance', 'west-hollywood', 'whittier'
+    ]
+  },
+  orangeCounty: {
+    prefix: 'orange-county',
+    cities: [
+      'aliso-viejo', 'anaheim', 'brea', 'buena-park', 'costa-mesa', 'cypress', 'dana-point',
+      'fountain-valley', 'fullerton', 'garden-grove', 'huntington-beach', 'irvine',
+      'la-habra', 'laguna-beach', 'laguna-hills', 'laguna-niguel', 'lake-forest',
+      'mission-viejo', 'newport-beach', 'orange', 'placentia',
+      'san-clemente', 'santa-ana', 'tustin', 'westminster', 'yorba-linda'
+    ]
+  },
+  sanDiego: {
+    prefix: 'california',
+    cities: [
+      'carlsbad', 'chula-vista', 'coronado', 'del-mar', 'el-cajon', 'encinitas',
+      'escondido', 'imperial-beach', 'la-mesa', 'lemon-grove', 'national-city',
+      'oceanside', 'poway', 'san-diego', 'san-marcos', 'santee', 'solana-beach', 'vista'
+    ]
+  },
+  sacramento: {
+    prefix: 'sacramento-county',
+    altPrefixes: ['sacramento'],
+    cities: [
+      'carmichael', 'citrus-heights', 'davis', 'downtown-sacramento', 'east-sacramento', 'elk-grove',
+      'fair-oaks', 'folsom', 'isleton', 'land-park', 'midtown', 'midtown-sacramento',
+      'natomas', 'pocket', 'rancho-cordova', 'roseville', 'west-sacramento', 'woodland'
+    ]
+  },
+  riverside: {
+    prefix: 'riverside-county',
+    cities: [
+      'cathedral-city', 'coachella', 'corona', 'hemet', 'indio', 'la-quinta',
+      'moreno-valley', 'murrieta', 'palm-springs', 'perris', 'riverside', 'temecula'
+    ]
+  },
+  sanBernardino: {
+    prefix: null,
+    cities: [
+      'apple-valley', 'barstow', 'big-bear-lake', 'chino', 'chino-hills', 'colton',
+      'fontana', 'hesperia', 'highland', 'montclair', 'ontario', 'rancho-cucamonga',
+      'redlands', 'rialto', 'san-bernardino', 'twentynine-palms', 'upland', 'victorville'
+    ]
+  },
+  santaClara: {
+    prefix: 'santa-clara-county',
+    cities: [
+      'campbell', 'cupertino', 'gilroy', 'los-gatos', 'milpitas', 'morgan-hill',
+      'mountain-view', 'palo-alto', 'san-jose', 'santa-clara', 'sunnyvale'
+    ]
+  },
+  alameda: {
+    prefix: 'alameda-county',
+    cities: [
+      'alameda', 'berkeley', 'castro-valley', 'dublin', 'emeryville', 'fremont',
+      'hayward', 'newark', 'oakland', 'pleasanton', 'san-leandro', 'san-lorenzo', 'union-city'
+    ]
+  },
+  ventura: {
+    prefix: 'ventura-county',
+    cities: [
+      'camarillo', 'fillmore', 'moorpark', 'ojai', 'oxnard', 'port-hueneme',
+      'santa-paula', 'simi-valley', 'thousand-oaks', 'ventura'
+    ]
+  },
+  centralValley: {
+    prefix: 'central-valley',
+    cities: [
+      'bakersfield', 'clovis', 'davis', 'delano', 'fresno', 'hanford', 'lemoore',
+      'madera', 'merced', 'modesto', 'porterville', 'stockton', 'tulare', 'visalia', 'woodland'
+    ]
+  }
+};
+
+// Special major cities with higher priority
+const majorCities = [
+  'los-angeles', 'san-francisco', 'san-diego', 'san-jose', 'sacramento',
+  'fresno', 'long-beach', 'oakland', 'bakersfield', 'anaheim',
+  'santa-ana', 'riverside', 'stockton', 'irvine', 'san-bernardino'
 ];
 
-// Generate sitemap XML
+// Start sitemap XML
 let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <!-- Homepage -->
     <url>
@@ -123,45 +197,133 @@ servicePages.forEach(service => {
 });
 
 sitemap += `    
-    <!-- City Pages - Major Cities (186 total) -->
+    <!-- Major Cities (High Priority) -->
 `;
 
-// Define major cities with higher priority
-const majorCities = [
-  'los-angeles', 'san-francisco', 'san-diego', 'san-jose', 'sacramento',
-  'fresno', 'long-beach', 'oakland', 'bakersfield', 'anaheim',
-  'santa-ana', 'riverside', 'stockton', 'irvine', 'san-bernardino'
-];
-
-// Add major city pages with priority 0.9
+// Add major cities first
 majorCities.forEach(city => {
-  if (cityFiles.includes(city)) {
-    sitemap += `    <url>
+  sitemap += `    <url>
         <loc>https://shieldwisesecurity.com/${city}</loc>
         <lastmod>${today}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
 `;
-  }
 });
 
+// Add top-level county pages
 sitemap += `    
-    <!-- Other City Pages -->
+    <!-- County Pages -->
+    <url>
+        <loc>https://shieldwisesecurity.com/orange-county</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://shieldwisesecurity.com/riverside-county</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://shieldwisesecurity.com/orange-county-security</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://shieldwisesecurity.com/riverside-county-security</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://shieldwisesecurity.com/san-francisco</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://shieldwisesecurity.com/san-francisco-security</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://shieldwisesecurity.com/sacramento-security</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- City Pages by County -->
 `;
 
-// Add remaining city pages with priority 0.7-0.8
-cityFiles.forEach(city => {
-  if (!majorCities.includes(city)) {
-    const priority = city.includes('county') ? '0.8' : '0.7';
-    sitemap += `    <url>
+let totalCityUrls = 0;
+
+// Generate URLs for each county
+Object.keys(cityRoutes).forEach(countyKey => {
+  const county = cityRoutes[countyKey];
+  
+  sitemap += `    
+    <!-- ${countyKey.replace(/([A-Z])/g, ' $1').trim()} Cities -->
+`;
+  
+  county.cities.forEach(city => {
+    const isMajor = majorCities.includes(city);
+    const priority = isMajor ? '0.9' : '0.7';
+    
+    // Add county-prefixed URL (if prefix exists)
+    if (county.prefix) {
+      sitemap += `    <url>
+        <loc>https://shieldwisesecurity.com/${county.prefix}/${city}</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>${priority}</priority>
+    </url>
+`;
+      totalCityUrls++;
+    }
+    
+    // Add alternative prefix for Sacramento
+    if (county.altPrefixes) {
+      county.altPrefixes.forEach(altPrefix => {
+        sitemap += `    <url>
+        <loc>https://shieldwisesecurity.com/${altPrefix}/${city}</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>${priority}</priority>
+    </url>
+`;
+        totalCityUrls++;
+      });
+    }
+    
+    // Add direct URL (without prefix) if not already added as major city
+    if (!isMajor && county.prefix !== null) {
+      sitemap += `    <url>
         <loc>https://shieldwisesecurity.com/${city}</loc>
         <lastmod>${today}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>${priority}</priority>
     </url>
 `;
-  }
+      totalCityUrls++;
+    }
+    
+    // For San Bernardino (no prefix), only add direct URL if not major
+    if (county.prefix === null && !isMajor) {
+      sitemap += `    <url>
+        <loc>https://shieldwisesecurity.com/${city}</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>${priority}</priority>
+    </url>
+`;
+      totalCityUrls++;
+    }
+  });
 });
 
 sitemap += `
@@ -171,14 +333,16 @@ sitemap += `
 const sitemapPath = path.join(__dirname, '../Public/sitemap.xml');
 fs.writeFileSync(sitemapPath, sitemap);
 
-const totalUrls = servicePages.length + cityFiles.length + 9; // 9 main pages (including /locations)
+const totalUrls = 9 + servicePages.length + majorCities.length + 7 + totalCityUrls;
 
 console.log(`✅ Sitemap generated successfully!`);
 console.log(`📍 Location: ${sitemapPath}`);
 console.log(`📊 Total URLs: ${totalUrls}`);
-console.log(`   - Main pages: 9 (includes /locations hub)`);
+console.log(`   - Main pages: 9`);
 console.log(`   - Service pages: ${servicePages.length}`);
-console.log(`   - City pages: ${cityFiles.length}`);
+console.log(`   - Major cities: ${majorCities.length}`);
+console.log(`   - County pages: 7`);
+console.log(`   - City routes: ${totalCityUrls}`);
 console.log(`\n🎯 Submit to:`);
 console.log(`   - Google Search Console: https://search.google.com/search-console`);
 console.log(`   - Bing Webmaster Tools: https://www.bing.com/webmasters`);
