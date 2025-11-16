@@ -235,13 +235,22 @@
   margin-bottom: 1rem;
 }
 </style>
+
 <footer class="footer" itemscope itemtype="https://schema.org/LocalBusiness">
   <div class="container">
     <div class="row">
 
       <div class="col-md-4">
         <div class="footer-left">
-          <a href="/" itemprop="url"><img src="/img/favicon.ico" alt="ShieldWise Security Company Logo" class="footer-logo mb-3" itemprop="logo" loading="lazy" width="120" height="120"></a>
+          <a href="/" itemprop="url">
+            <img src="/img/favicon.ico"
+                 alt="ShieldWise Security Company Logo"
+                 class="footer-logo mb-3"
+                 itemprop="logo"
+                 loading="lazy"
+                 width="120"
+                 height="120">
+          </a>
           <p itemprop="description">
             ShieldWise Security provides 24/7 mobile patrol services throughout California, with specialized coverage in Southern California. Our licensed security officers deliver comprehensive property protection for commercial, residential, and event locations.
           </p>
@@ -284,7 +293,8 @@
             </ul>
           </div>
 
-          <div class="contact-us" itemscope itemtype="https://schema.org/ContactPoint">
+          <!-- Removed ContactPoint itemscope so address belongs to LocalBusiness -->
+          <div class="contact-us">
             <h5 class="footer-title">Contact Us</h5>
             <ul class="contact-list">
               <li><i class="fas fa-map-marker-alt"></i>
