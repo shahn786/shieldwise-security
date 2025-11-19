@@ -1,0 +1,30 @@
+
+You have new mail.
+Last login: Wed Nov 19 06:31:24 2025 from 169.254.0.1
+root@srv1109617:~# pm2 restart shieldwise && pm2 save
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [shieldwise](ids: [ 0 ])
+[PM2] [shieldwise](0) ✓
+┌────┬───────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name          │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├────┼───────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0  │ shieldwise    │ default     │ 1.0.0   │ fork    │ 244877   │ 0s     │ 11   │ online    │ 0%       │ 18.9mb   │ root     │ disabled │
+└────┴───────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+[PM2] Saving current process list...
+[PM2] Successfully saved in /root/.pm2/dump.pm2
+root@srv1109617:~# ls -la /home/shieldwisesecurity/htdocs/shieldwisesecurity.com/views/index.ejs
+ls: cannot access '/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/views/index.ejs': No such file or directory
+root@srv1109617:~# ls -la /home/shieldwisesecurity/htdocs/shieldwisesecurity.com/views/index.ejs
+-rw-r--r-- 1 shieldwisesecurity shieldwisesecurity 75270 Nov 19 07:28 /home/shieldwisesecurity/htdocs/shieldwisesecurity.com/views/index.ejs
+root@srv1109617:~# pm2 restart shieldwise && pm2 save
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [shieldwise](ids: [ 0 ])
+[PM2] [shieldwise](0) ✓
+┌────┬───────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name          │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├────┼───────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0  │ shieldwise    │ default     │ 1.0.0   │ fork    │ 244925   │ 0s     │ 12   │ online    │ 0%       │ 18.9mb   │ root     │ disabled │
+└────┴───────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+[PM2] Saving current process list...
+[PM2] Successfully saved in /root/.pm2/dump.pm2
+root@srv1109617:~# 
