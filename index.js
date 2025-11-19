@@ -361,6 +361,11 @@ app.get('/locations', (req, res) => {
   });
 });
 
+// Legacy redirect: /services.html → /services (fixes Google Search Console duplicate issue)
+app.get("/services.html", (req, res) => {
+  res.redirect(301, "/services");
+});
+
 app.get("/services", (req, res) => {
   res.render("services");
 });
