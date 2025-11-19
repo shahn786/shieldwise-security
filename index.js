@@ -875,43 +875,43 @@ app.get('/city/:name', (req, res) => {
 
 // Main city/county routes
 app.get('/los-angeles', (req, res) => {
-    res.render('cities/los-angeles', { title: 'Los Angeles' });
+    res.render('cities/los-angeles', { title: 'Los Angeles', pageUrl: '/los-angeles' });
 });
 
 app.get('/los-angeles-security', (req, res) => {
-    res.render('cities/los-angeles', { title: 'Los Angeles Security' });
+    res.render('cities/los-angeles', { title: 'Los Angeles Security', pageUrl: '/los-angeles-security' });
 });
 
 app.get('/orange-county', (req, res) => {
-    res.render('cities/orange-county', { title: 'Orange County' });
+    res.render('cities/orange-county', { title: 'Orange County', pageUrl: '/orange-county' });
 });
 
 app.get('/orange-county-security', (req, res) => {
-    res.render('cities/orange-county', { title: 'Orange County Security' });
+    res.render('cities/orange-county', { title: 'Orange County Security', pageUrl: '/orange-county-security' });
 });
 
 app.get('/san-francisco', (req, res) => {
-    res.render('cities/san-francisco', { title: 'San Francisco' });
+    res.render('cities/san-francisco', { title: 'San Francisco', pageUrl: '/san-francisco' });
 });
 
 app.get('/san-francisco-security', (req, res) => {
-    res.render('cities/san-francisco', { title: 'San Francisco Security' });
+    res.render('cities/san-francisco', { title: 'San Francisco Security', pageUrl: '/san-francisco-security' });
 });
 
 app.get('/san-diego', (req, res) => {
-    res.render('cities/san-diego', { title: 'San Diego' });
+    res.render('cities/san-diego', { title: 'San Diego', pageUrl: '/san-diego' });
 });
 
 app.get('/riverside-county', (req, res) => {
-    res.render('cities/riverside-county', { title: 'Riverside County' });
+    res.render('cities/riverside-county', { title: 'Riverside County', pageUrl: '/riverside-county' });
 });
 
 app.get('/riverside-county-security', (req, res) => {
-    res.render('cities/riverside-county', { title: 'Riverside County Security' });
+    res.render('cities/riverside-county', { title: 'Riverside County Security', pageUrl: '/riverside-county-security' });
 });
 
 app.get('/sacramento', (req, res) => {
-    res.render('cities/sacramento', { title: 'Sacramento' });
+    res.render('cities/sacramento', { title: 'Sacramento', pageUrl: '/sacramento' });
 });
 
 // Sacramento alternative county routes
