@@ -1,0 +1,70 @@
+Some fixes failed for Page indexing issues on site shieldwisesecurity.com
+You requested that Google validate your fix for: Page indexing issues on your property, shieldwisesecurity.com. The fix requested was for the following issue: 'Not found (404)'.
+
+Some of your pages are still affected by this issue.
+
+Monitor validation progress and to learn how to fix remaining pages.. Not found (404)
+These pages aren't indexed or served on Google
+
+Validation Failed
+Started: 11/16/25
+Failed: 11/18/25
+Affected pages
+178
+8/25/25
+9/5/25
+9/16/25
+9/27/25
+10/8/25
+10/19/25
+10/30/25
+11/10/25
+180
+120
+60
+0
+Examples
+
+URL Last crawled
+https://shieldwisesecurity.com/news/santee-security
+Nov 10, 2025
+https://shieldwisesecurity.com/services/emergency-response
+Nov 10, 2025
+https://shieldwisesecurity.com/blog/rss.xml
+Nov 10, 2025
+https://shieldwisesecurity.com/services/access-control
+Nov 10, 2025
+https://shieldwisesecurity.com/services/industrial-security
+Nov 10, 2025
+https://shieldwisesecurity.com/orange-county/anaheim-hills
+Nov 10, 2025
+https://shieldwisesecurity.com/es/orange-county/costa-mesa
+Nov 10, 2025
+https://shieldwisesecurity.com/es/orange-county/dana-point/
+
+
+
+Nov 10, 2025
+Page indexing
+
+Not found (404)
+
+Validation details
+
+Validation Failed
+Started: 11/16/25
+Failed: 11/18/25
+Sitemap: All known pages
+Examples
+
+URL Last crawled
+https://shieldwisesecurity.com/santa-clara-county/sunnyvale-regional-shoreline Nov 18, 2025
+https://shieldwisesecurity.com/es/orange-county/westminster Nov 18, 2025
+https://shieldwisesecurity.com/huntington-beach/huntington-harbour-security Nov 17, 2025
+https://shieldwisesecurity.com/es/los-angeles/calabasas Nov 17, 2025
+https://shieldwisesecurity.com/contact.html Nov 17, 2025
+https://shieldwisesecurity.com/huntington-beach/downtown-security Nov 17, 2025
+https://shieldwisesecurity.com/huntington-beach/beachfront-hotels-security Nov 17, 2025
+https://shieldwisesecurity.com/es/los-angeles/pomona Nov 16, 2025
+https://shieldwisesecurity.com/cities/palm-springs Nov 16, 2025
+https://shieldwisesecurity.com/es/orange-county/fountain-valley/ Nov 16, 2025
