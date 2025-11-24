@@ -1,0 +1,32 @@
+
+You have new mail.
+Last login: Mon Nov 24 03:05:02 2025 from 169.254.0.1
+root@srv1109617:~# cd /home/shieldwisesecurity/htdocs/shieldwisesecurity.com
+ls -la views/
+ls -la views/index.ejs
+total 652
+drwxr-xr-x  6 shieldwisesecurity shieldwisesecurity  4096 Nov 24 02:44 .
+drwxrwx--- 18 shieldwisesecurity shieldwisesecurity  4096 Nov 24 02:59 ..
+-rw-r--r--  1 shieldwisesecurity shieldwisesecurity 24624 Nov  6 05:17 about.ejs
+drwxr-xr-x  2 shieldwisesecurity shieldwisesecurity  4096 Nov  6 05:17 blog
+-rw-r--r--  1 shieldwisesecurity shieldwisesecurity 12466 Nov  6 05:17 blog.ejs
+-rw-r--r--  1 shieldwisesecurity shieldwisesecurity 11899 Nov  6 05:17 careers.ejs
+drwxr-xr-x  2 shieldwisesecurity shieldwisesecurity 12288 Nov 16 23:19 cities
+-rw-r--r--  1 shieldwisesecurity shieldwisesecurity 24406 Nov  6 05:17 contact.ejs
+-rw-r--r--  1 shieldwisesecurity shieldwisesecurity 22293 Nov  6 05:17 get-quote.ejs
+-rw-r--r--  1 root               root                   9 Nov 24 02:44 index.ejs
+-rw-r--r--  1 root               root               75270 Nov 24 02:43 index.ejs.backup
+-rw-r--r--  1 shieldwisesecurity shieldwisesecurity 76180 Nov 15 05:19 index.ejs.backup-20251115-051931
+-rw-r--r--  1 root               root               75270 Nov 24 02:12 index.ejs.old
+-rw-r--r--  1 shieldwisesecurity shieldwisesecurity 32064 Nov  6 05:17 locations.ejs
+-rw-r--r--  1 shieldwisesecurity shieldwisesecurity 18538 Nov  6 05:17 login.ejs
+drwxr-xr-x  2 shieldwisesecurity shieldwisesecurity  4096 Nov 19 08:03 partials
+-rw-r--r--  1 shieldwisesecurity shieldwisesecurity 17554 Nov  6 05:17 privacy-policy.ejs
+-rw-r--r--  1 shieldwisesecurity shieldwisesecurity 52662 Nov  6 05:17 register.ejs
+-rw-r--r--  1 shieldwisesecurity shieldwisesecurity 33866 Nov  6 05:17 service-areas.ejs
+drwxr-xr-x  2 shieldwisesecurity shieldwisesecurity  4096 Nov  6 05:17 services
+-rw-r--r--  1 shieldwisesecurity shieldwisesecurity 36926 Nov  6 05:17 services.ejs
+-rw-r--r--  1 shieldwisesecurity shieldwisesecurity 11967 Nov  6 05:17 terms.ejs
+-rw-r--r--  1 shieldwisesecurity shieldwisesecurity 14057 Nov  6 05:17 testimonials-showcase.ejs
+-rw-r--r-- 1 root root 9 Nov 24 02:44 views/index.ejs
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# 
