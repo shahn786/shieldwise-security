@@ -1,0 +1,59 @@
+root@srv1109617:~# nginx -t
+cat /etc/nginx/sites-available/shieldwisesecurity.com
+nginx: [warn] the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/sites-enabled/shieldwisesecurity.com.conf:23
+nginx: [warn] the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/sites-enabled/shieldwisesecurity.com.conf:24
+nginx: [warn] the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/sites-enabled/shieldwisesecurity.com.conf:34
+nginx: [warn] protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/shieldwisesecurity.com.conf:34
+nginx: [warn] the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/sites-enabled/shieldwisesecurity.com.conf:35
+nginx: [warn] protocol options redefined for [::]:443 in /etc/nginx/sites-enabled/shieldwisesecurity.com.conf:35
+nginx: [warn] "ssl_stapling" ignored, no OCSP responder URL in the certificate "/etc/letsencrypt/live/shieldwisesecurity.com/fullchain.pem"
+nginx: [warn] "ssl_stapling" ignored, no OCSP responder URL in the certificate "/etc/letsencrypt/live/shieldwisesecurity.com/fullchain.pem"
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+# Redirect www to non-www
+server {
+    listen 80;
+    listen [::]:80;
+    server_name www.shieldwisesecurity.com;
+    return 301 https://shieldwisesecurity.com$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name www.shieldwisesecurity.com;
+    
+    ssl_certificate /etc/letsencrypt/live/shieldwisesecurity.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/shieldwisesecurity.com/privkey.pem;
+    
+    return 301 https://shieldwisesecurity.com$request_uri;
+}
+
+# Primary site
+server {
+    listen 80;
+    listen [::]:80;
+    server_name shieldwisesecurity.com;
+    return 301 https://shieldwisesecurity.com$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name shieldwisesecurity.com;
+
+    ssl_certificate /etc/letsencrypt/live/shieldwisesecurity.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/shieldwisesecurity.com/privkey.pem;
+
+    location / {
+        proxy_pass http://localhost:5000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+root@srv1109617:~# 
