@@ -1,0 +1,50 @@
+You have new mail.
+Last login: Mon Nov 24 03:43:06 2025 from 31.220.57.141
+root@srv1109617:~# ssh root@31.220.57.141
+root@31.220.57.141's password: 
+
+########################################################
+###            Welcome to CloudPanel                 ###
+########################################################
+
+* Website:         https://www.cloudpanel.io
+* Documentation:   https://www.cloudpanel.io/docs/v2/
+* Best Practices:  https://www.cloudpanel.io/docs/v2/best-practices/
+* CloudPanel:      https://31.220.57.141:8443 
+* CloudPanel CLI:  clpctl
+
+You have new mail.
+Last login: Mon Nov 24 03:56:47 2025 from 169.254.0.1
+root@srv1109617:~# cd /home/shieldwisesecurity/htdocs/shieldwisesecurity.com/Public
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/Public# cp sitemap.xml sitemap.xml.backup-$(date +%Y%m%d)
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/Public# wget -O sitemap.xml "https://raw.githubusercontent.com/yourusername/yourrepo/main/Public/sitemap.xml" 2>/dev/null
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/Public# nano sitemap.xml
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/Public# # Check if sitemap was regenerated
+ls -lh Public/sitemap.xml
+
+# You should see the file with today's date
+ls: cannot access 'Public/sitemap.xml': No such file or directory
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/Public# ls -lh Public/sitemap.xml
+ls: cannot access 'Public/sitemap.xml': No such file or directory
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/Public# ls -lh sitemap.xml
+-rw-r--r-- 1 shieldwisesecurity shieldwisesecurity 2 Nov 24 04:01 sitemap.xml
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/Public# cd /home/shieldwisesecurity/htdocs/shieldwisesecurity.com
+ls -lh Public/sitemap.xml
+-rw-r--r-- 1 shieldwisesecurity shieldwisesecurity 2 Nov 24 04:01 Public/sitemap.xml
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# cd /home/shieldwisesecurity/htdocs/shieldwisesecurity.com
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# node scripts/generate-sitemap.js
+✅ Sitemap generated successfully!
+📍 Location: /home/shieldwisesecurity/htdocs/shieldwisesecurity.com/Public/sitemap.xml
+📊 Total URLs: 386
+   - Main pages: 9
+   - Service pages: 15
+   - Major cities: 15
+   - County pages: 7
+   - City routes: 340
+
+🎯 Submit to:
+   - Google Search Console: https://search.google.com/search-console
+   - Bing Webmaster Tools: https://www.bing.com/webmasters
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# ls -lh sitemap.xml 
+-rw-r--r-- 1 shieldwisesecurity shieldwisesecurity 43K Oct 25 01:59 sitemap.xml
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# 
