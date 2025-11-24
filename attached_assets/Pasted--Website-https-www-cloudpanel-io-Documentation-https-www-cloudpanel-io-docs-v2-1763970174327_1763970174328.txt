@@ -1,0 +1,30 @@
+
+* Website:         https://www.cloudpanel.io
+* Documentation:   https://www.cloudpanel.io/docs/v2/
+* Best Practices:  https://www.cloudpanel.io/docs/v2/best-practices/
+* CloudPanel:      https://31.220.57.141:8443 
+* CloudPanel CLI:  clpctl
+
+You have new mail.
+Last login: Mon Nov 24 07:40:32 2025 from 169.254.0.1
+root@srv1109617:~# cd /home/shieldwisesecurity/htdocs/shieldwisesecurity.com/routes
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/routes# sed -i '142s/answer: answer:/answer:/' executive-protection.js
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/routes# grep -n "Bodyguards typically" executive-protection.js
+142:                answer: 'Executive protection (close protection) is a comprehensive security discipline involving threat assessment, advance planning, intelligence gathering, route analysis, and coordinated security operations by highly-trained specialists. Bodyguards typically refers to individual security personnel. Professional executive protection includes strategic planning, risk mitigation, and proactive threat prevention, not just physical presence.'
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/routes# pm2 restart shieldwise
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [shieldwise](ids: [ 0 ])
+[PM2] [shieldwise](0) ✓
+┌────┬───────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name          │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├────┼───────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0  │ shieldwise    │ default     │ 1.0.0   │ fork    │ 330426   │ 0s     │ 52   │ online    │ 0%       │ 20.0mb   │ root     │ disabled │
+└────┴───────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/routes# sleep 3
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/routes# pm2 status
+┌────┬───────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name          │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├────┼───────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0  │ shieldwise    │ default     │ 1.0.0   │ fork    │ 330426   │ 32s    │ 52   │ online    │ 0%       │ 75.7mb   │ root     │ disabled │
+└────┴───────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/routes# 
