@@ -331,6 +331,73 @@ app.use(passport.session());
 const metaHelpers = require('./utils/metaHelpers');
 const NAP = metaHelpers.NAP; // Assuming NAP is exported from metaHelpers
 
+// ========================================
+// 301 REDIRECTS FOR GOOGLE SEARCH CONSOLE FIX
+// ========================================
+
+// Legacy HTML file redirects
+app.get('/contact.html', (req, res) => {
+  res.redirect(301, '/contact');
+});
+
+// Old /cities/* pattern → root-level city URLs
+app.get('/cities/:citySlug', (req, res) => {
+  res.redirect(301, `/${req.params.citySlug}`);
+});
+
+// Spanish language URLs → English equivalents (Spanish pages not implemented)
+app.get('/es/*', (req, res) => {
+  const englishPath = req.path.replace(/^\/es/, '');
+  res.redirect(301, englishPath || '/');
+});
+
+// News URLs → Blog
+app.get('/news/*', (req, res) => {
+  res.redirect(301, '/blog');
+});
+
+// Blog RSS feed (not implemented yet)
+app.get('/blog/rss.xml', (req, res) => {
+  res.redirect(301, '/blog');
+});
+
+// Redirect non-existent service pages to main services page
+const nonExistentServices = [
+  'emergency-response',
+  'access-control',
+  'industrial-security',
+  'retail-security',
+  'warehouse-security',
+  'residential-security',
+  'corporate-security',
+  'loss-prevention',
+  'security-consulting'
+];
+
+nonExistentServices.forEach(service => {
+  app.get(`/services/${service}`, (req, res) => {
+    res.redirect(301, '/services');
+  });
+});
+
+// Specific neighborhood redirects from Google Search Console errors
+const neighborhoodRedirects = {
+  'huntington-beach/huntington-harbour-security': '/huntington-beach-security',
+  'huntington-beach/downtown-security': '/huntington-beach-security',
+  'huntington-beach/beachfront-hotels-security': '/huntington-beach-security',
+  'santa-clara-county/sunnyvale-regional-shoreline': '/sunnyvale'
+};
+
+Object.keys(neighborhoodRedirects).forEach(oldPath => {
+  app.get(`/${oldPath}`, (req, res) => {
+    res.redirect(301, neighborhoodRedirects[oldPath]);
+  });
+});
+
+// ========================================
+// END REDIRECTS
+// ========================================
+
 // Event Security Service Route
 const eventSecurityRoute = require('./routes/event-security');
 app.use('/services/event-security', eventSecurityRoute);
