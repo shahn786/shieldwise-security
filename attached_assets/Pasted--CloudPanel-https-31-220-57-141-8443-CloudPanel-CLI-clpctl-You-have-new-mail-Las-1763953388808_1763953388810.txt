@@ -1,0 +1,125 @@
+* CloudPanel:      https://31.220.57.141:8443 
+* CloudPanel CLI:  clpctl
+
+You have new mail.
+Last login: Mon Nov 24 02:50:26 2025 from 31.220.57.141
+root@srv1109617:~# ssh root@31.220.57.141
+root@31.220.57.141's password: 
+
+########################################################
+###            Welcome to CloudPanel                 ###
+########################################################
+
+* Website:         https://www.cloudpanel.io
+* Documentation:   https://www.cloudpanel.io/docs/v2/
+* Best Practices:  https://www.cloudpanel.io/docs/v2/best-practices/
+* CloudPanel:      https://31.220.57.141:8443 
+* CloudPanel CLI:  clpctl
+
+You have new mail.
+Last login: Mon Nov 24 03:02:09 2025 from 169.254.0.1
+root@srv1109617:~# pm2 logs shieldwise --lines 50
+[TAILING] Tailing last 50 lines for [shieldwise] process (change the value with --lines option)
+/root/.pm2/logs/shieldwise-error.log last 50 lines:
+0|shieldwi |     at process.processTimers (node:internal/timers:519:7)
+0|shieldwi | MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+0|shieldwi |     at Timeout.<anonymous> (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:187:23)
+0|shieldwi |     at listOnTimeout (node:internal/timers:581:17)
+0|shieldwi |     at process.processTimers (node:internal/timers:519:7)
+0|shieldwi | MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+0|shieldwi |     at Timeout.<anonymous> (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:187:23)
+0|shieldwi |     at listOnTimeout (node:internal/timers:581:17)
+0|shieldwi |     at process.processTimers (node:internal/timers:519:7)
+0|shieldwi | MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+0|shieldwi |     at Timeout.<anonymous> (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:187:23)
+0|shieldwi |     at listOnTimeout (node:internal/timers:581:17)
+0|shieldwi |     at process.processTimers (node:internal/timers:519:7)
+0|shieldwi | MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+0|shieldwi |     at Timeout.<anonymous> (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:187:23)
+0|shieldwi |     at listOnTimeout (node:internal/timers:581:17)
+0|shieldwi |     at process.processTimers (node:internal/timers:519:7)
+0|shieldwi | Error: Failed to lookup view "cities/midtown-sacramento" in views directory "/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/views"
+0|shieldwi |     at Function.render (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/application.js:597:17)
+0|shieldwi |     at ServerResponse.render (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/response.js:1049:7)
+0|shieldwi |     at /home/shieldwisesecurity/htdocs/shieldwisesecurity.com/index.js:1194:17
+0|shieldwi |     at Layer.handle [as handle_request] (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/router/layer.js:95:5)
+0|shieldwi |     at next (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/router/route.js:149:13)
+0|shieldwi |     at Route.dispatch (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/router/route.js:119:3)
+0|shieldwi |     at Layer.handle [as handle_request] (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/router/layer.js:95:5)
+0|shieldwi |     at /home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/router/index.js:284:15
+0|shieldwi |     at Function.process_params (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/router/index.js:346:12)
+0|shieldwi |     at next (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/router/index.js:280:10)
+0|shieldwi | Error: Failed to lookup view "cities/midtown-sacramento" in views directory "/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/views"
+0|shieldwi |     at Function.render (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/application.js:597:17)
+0|shieldwi |     at ServerResponse.render (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/response.js:1049:7)
+0|shieldwi |     at /home/shieldwisesecurity/htdocs/shieldwisesecurity.com/index.js:1220:17
+0|shieldwi |     at Layer.handle [as handle_request] (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/router/layer.js:95:5)
+0|shieldwi |     at next (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/router/route.js:149:13)
+0|shieldwi |     at Route.dispatch (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/router/route.js:119:3)
+0|shieldwi |     at Layer.handle [as handle_request] (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/router/layer.js:95:5)
+0|shieldwi |     at /home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/router/index.js:284:15
+0|shieldwi |     at Function.process_params (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/router/index.js:346:12)
+0|shieldwi |     at next (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/router/index.js:280:10)
+0|shieldwi | Error: Failed to lookup view "cities/midtown-sacramento" in views directory "/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/views"
+0|shieldwi |     at Function.render (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/application.js:597:17)
+0|shieldwi |     at ServerResponse.render (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/response.js:1049:7)
+0|shieldwi |     at /home/shieldwisesecurity/htdocs/shieldwisesecurity.com/index.js:1207:17
+0|shieldwi |     at Layer.handle [as handle_request] (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/router/layer.js:95:5)
+0|shieldwi |     at next (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/router/route.js:149:13)
+0|shieldwi |     at Route.dispatch (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/router/route.js:119:3)
+0|shieldwi |     at Layer.handle [as handle_request] (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/router/layer.js:95:5)
+0|shieldwi |     at /home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/router/index.js:284:15
+0|shieldwi |     at Function.process_params (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/router/index.js:346:12)
+0|shieldwi |     at next (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/node_modules/express/lib/router/index.js:280:10)
+
+/root/.pm2/logs/shieldwise-out.log last 50 lines:
+0|shieldwi | GET /img/san-diego.webp 200 5.952 ms - 7884
+0|shieldwi | GET /img/riverside.webp 200 5.609 ms - 12552
+0|shieldwi | GET /img/ventura-california-1-2.webp 200 3.485 ms - 101238
+0|shieldwi | GET /img/sacraamento12.webp 200 3.229 ms - 110942
+0|shieldwi | GET /img/sanbardino12.webp 200 3.419 ms - 247982
+0|shieldwi | GET /img/santa-clara-county-neighborhood.webp 200 3.062 ms - 91464
+0|shieldwi | GET /img/fresno.webp 200 5.694 ms - 191356
+0|shieldwi | GET /img/alamendsa1.webp 200 5.842 ms - 247876
+0|shieldwi | GET /img/sanjose1111.webp 200 4.410 ms - 231108
+0|shieldwi | GET /favicon.ico 404 1.905 ms - 150
+0|shieldwi | GET /sw.js 304 0.683 ms - -
+0|shieldwi | GET /wp-content/uploads/2024/04/infrastructure-300x300.png 404 1.651 ms - 192
+0|shieldwi | POST /xmlrpc.php 404 1.780 ms - 150
+0|shieldwi | ⚠️ MONGODB_URI not configured - running without database
+0|shieldwi | warn: Server running without MongoDB connection {"timestamp":"2025-11-24 02:45:11"}
+0|shieldwi | ⚠️ Using temporary SESSION_SECRET (sessions will not persist across restarts)
+0|shieldwi | warn: SESSION_SECRET not configured - using temporary secret {"timestamp":"2025-11-24 02:45:11"}
+0|shieldwi | ⚠️ Using memory session store (sessions will not persist across restarts)
+0|shieldwi | =================================================
+0|shieldwi | Server is running on port 5000
+0|shieldwi | Local URL: http://0.0.0.0:5000
+0|shieldwi | Replit URL: https://undefined.undefined.repl.co
+0|shieldwi | =================================================
+0|shieldwi | GET / 200 22.778 ms - 9
+0|shieldwi | GET /sw.js 304 2.595 ms - -
+0|shieldwi | GET / 200 2.421 ms - 9
+0|shieldwi | GET /favicon.ico 404 19.306 ms - 150
+0|shieldwi | GET / 200 1.517 ms - 9
+0|shieldwi | GET /favicon.ico 404 12.418 ms - 150
+0|shieldwi | GET / 200 1.734 ms - 9
+0|shieldwi | GET /favicon.ico 404 1.749 ms - 150
+0|shieldwi | GET / 200 1.796 ms - 9
+0|shieldwi | GET /favicon.ico 404 2.297 ms - 150
+0|shieldwi | GET /sw.js 304 1.174 ms - -
+0|shieldwi | GET /sw.js 304 1.241 ms - -
+0|shieldwi | GET / 200 1.594 ms - 9
+0|shieldwi | GET /favicon.ico 404 1.906 ms - 150
+0|shieldwi | GET /sw.js 304 2.095 ms - -
+0|shieldwi | GET / 200 2.095 ms - 9
+0|shieldwi | GET /favicon.ico 404 1.845 ms - 150
+0|shieldwi | GET / 200 1.798 ms - 9
+0|shieldwi | GET /.well-known/traffic-advice 404 1.700 ms - 165
+0|shieldwi | GET / 200 1.883 ms - 9
+0|shieldwi | GET / 200 1.526 ms - 9
+0|shieldwi | GET / 200 1.315 ms - 9
+0|shieldwi | GET /favicon.ico 404 1.622 ms - 150
+0|shieldwi | HEAD / 200 1.823 ms - 9
+0|shieldwi | GET / 200 3.526 ms - 9
+0|shieldwi | GET / 200 1.482 ms - 9
+0|shieldwi | GET / 200 1.440 ms - 9
