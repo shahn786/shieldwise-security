@@ -139,7 +139,7 @@ router.get('/', (req, res) => {
             },
             {
                 question: 'What is the difference between bodyguards and executive protection?',
-                answer: 'Executive protection (close protection) is a comprehensive security discipline involving threat assessment, advance planning, intelligence gathering, route analysis, and coordinated security operations by highly-trained specialists. "Bodyguards" typically refers to individual security personnel. Professional executive protection includes strategic planning, risk mitigation, and proactive threat prevention, not just physical presence.'
+                answer: 'Executive protection (close protection) is a comprehensive security discipline involving threat assessment, advance planning, intelligence gathering, route analysis, and coordinated security operations by highly-trained specialists. Bodyguards typically refers to individual security personnel. Professional executive protection includes strategic planning, risk mitigation, and proactive threat prevention, not just physical presence.'
             },
             {
                 question: 'Are your executive protection officers armed?',
