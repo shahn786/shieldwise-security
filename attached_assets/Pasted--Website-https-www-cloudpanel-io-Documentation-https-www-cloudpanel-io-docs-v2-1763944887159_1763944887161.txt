@@ -1,0 +1,50 @@
+
+* Website:         https://www.cloudpanel.io
+* Documentation:   https://www.cloudpanel.io/docs/v2/
+* Best Practices:  https://www.cloudpanel.io/docs/v2/best-practices/
+* CloudPanel:      https://31.220.57.141:8443 
+* CloudPanel CLI:  clpctl
+
+You have new mail.
+Last login: Mon Nov 24 00:39:14 2025 from 169.254.0.1
+root@srv1109617:~# cd /home/shieldwisesecurity/htdocs/shieldwisesecurity.com/views
+cp index.ejs index.ejs.backup
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/views# cat > index.ejs << 'ENDOFFILE'
+> <!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/WebPage">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Enhanced Title with Local + Service Keywords -->
+    <title>California's #1 Security Company | Licensed Armed & Unarmed Guards 24/7 | ShieldWise Security</title>
+
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="description" content="California's top-rated security company providing elite armed & unarmed guards, mobile patrol, event security, and fire watch services. Licensed, insured protection with 24/7 availability across Los Angeles, Orange County, and all California regions. Get instant quote today.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="ShieldWise Security">
+    <meta name="publisher" content="ShieldWise Security">
+    <meta name="language" content="en-US">
+    <meta name="rating" content="general">
+
+    <!-- Canonical + OG / Twitter etc SHOULD be here. 
+         If your seo-head partial ONLY does canonical + OG/Twitter,
+         you can keep it. But make sure it does NOT output any JSON-LD. -->
+    <!--
+    <%- include("partials/seo-head", { 
+      canonicalPath: "/",
+      pageTitle: "California's #1 Security Company | Licensed Armed & Unarmed Guards | ShieldWise Security",
+      pageDescription: "California's premier security company offering elite protection services: armed & unarmed guards, mobile patrol, event security & fire watch. Serving Los Angeles, Orange County & all California with 24/7 professional security solutions.",
+      pageImage: "https://shieldwisesecurity.com/img/California_SecurityGuards.webp",
+      includeFAQ: false  // IMPORTANT: do NOT output FAQ schema from partial
+    }) %>
+    
+
+    <!-- Alternate URLs -->
+    <link rel="alternate" hreflang="en-us" href="https://shieldwisesecurity.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://shieldwisesecurity.com/" />
+
+    <!-- Location-Specific Meta Enhanced -->
+        </html>t>); }   icon.textContent = (icon.textContent === '+') ? '-' : '+';: 'smooth' });s" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7
+> ^[[200~ENDOFFILE~
+> 
