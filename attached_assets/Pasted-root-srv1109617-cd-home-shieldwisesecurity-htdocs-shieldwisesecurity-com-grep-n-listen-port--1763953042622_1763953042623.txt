@@ -1,0 +1,45 @@
+root@srv1109617:~# cd /home/shieldwisesecurity/htdocs/shieldwisesecurity.com
+grep -n "listen\|port" index.js | head -10
+5:const passport = require("passport");
+6:const LocalStrategy = require("passport-local").Strategy;
+30:  transports: [
+31:    new winston.transports.DailyRotateFile({
+42:    new winston.transports.DailyRotateFile({
+53:  logger.add(new winston.transports.Console({
+289:// Passport Configuration
+290:passport.use(
+308:passport.serializeUser((user, done) => done(null, user.id));
+309:passport.deserializeUser(async (id, done) => {
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# tail -50 index.js | grep -n "listen\|PORT"
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# grep -n "app.listen" index.js
+841:    const server = app.listen(port, "0.0.0.0", () => {
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# netstat -tulpn | grep node
+tcp        0      0 0.0.0.0:5000            0.0.0.0:*               LISTEN      324408/node /home/s 
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# sudo systemctl restart nginx
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# sudo systemctl status nginx
+● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: enabled)
+     Active: active (running) since Mon 2025-11-24 02:56:22 UTC; 12s ago
+       Docs: man:nginx(8)
+    Process: 325456 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+    Process: 325460 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+   Main PID: 325461 (nginx)
+      Tasks: 5 (limit: 9484)
+     Memory: 41.0M (peak: 41.5M)
+        CPU: 189ms
+     CGroup: /system.slice/nginx.service
+             ├─325461 "nginx: master process /usr/sbin/nginx -g daemon on; master_process on;"
+             ├─325462 "nginx: worker process"
+             └─325463 "nginx: worker process"
+
+Nov 24 02:56:22 srv1109617 nginx[325456]: nginx: [warn] "ssl_stapling" ignored, no OCSP responder URL in the certificate "/etc/letsencrypt/live/shieldwisesecurity.com/full>
+Nov 24 02:56:22 srv1109617 nginx[325460]: nginx: [warn] the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/sites-enabled/shiel>
+Nov 24 02:56:22 srv1109617 nginx[325460]: nginx: [warn] the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/sites-enabled/shiel>
+Nov 24 02:56:22 srv1109617 nginx[325460]: nginx: [warn] the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/sites-enabled/shiel>
+Nov 24 02:56:22 srv1109617 nginx[325460]: nginx: [warn] protocol options redefined for 0.0.0.0:443 in /etc/nginx/sites-enabled/shieldwisesecurity.com.conf:34
+Nov 24 02:56:22 srv1109617 nginx[325460]: nginx: [warn] the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/sites-enabled/shiel>
+Nov 24 02:56:22 srv1109617 nginx[325460]: nginx: [warn] protocol options redefined for [::]:443 in /etc/nginx/sites-enabled/shieldwisesecurity.com.conf:35
+Nov 24 02:56:22 srv1109617 nginx[325460]: nginx: [warn] "ssl_stapling" ignored, no OCSP responder URL in the certificate "/etc/letsencrypt/live/shieldwisesecurity.com/full>
+Nov 24 02:56:22 srv1109617 nginx[325460]: nginx: [warn] "ssl_stapling" ignored, no OCSP responder URL in the certificate "/etc/letsencrypt/live/shieldwisesecurity.com/full>
+Nov 24 02:56:22 srv1109617 systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+lines 1-25/25 (END)
