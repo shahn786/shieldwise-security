@@ -4,7 +4,7 @@
     <!-- Homepage -->
     <url>
         <loc>https://shieldwisesecurity.com/</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -12,49 +12,49 @@
     <!-- Main Pages -->
     <url>
         <loc>https://shieldwisesecurity.com/services</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/locations</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/service-areas</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/contact</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/about</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/get-quote</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/testimonials</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/career</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -62,91 +62,91 @@
     <!-- Service Pages (High Priority) -->
     <url>
         <loc>https://shieldwisesecurity.com/services/apartment-security</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/services/armed-security</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/services/commercial-security</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/services/construction-security</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/services/educational-campus-security</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/services/event-security</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/services/executive-protection</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/services/fire-watch</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/services/hospital-security</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/services/hotel-security</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/services/patrol</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/services/mobile-patrol-security</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/services/shopping-center-security</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/services/special-event-security</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/services/unarmed-security</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -154,91 +154,91 @@
     <!-- Major Cities (High Priority) -->
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/san-francisco</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/san-diego</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/san-jose</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/fresno</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/long-beach</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/oakland</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/bakersfield</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/anaheim</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/santa-ana</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/riverside</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/stockton</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/irvine</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/san-bernardino</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -246,43 +246,43 @@
     <!-- County Pages -->
     <url>
         <loc>https://shieldwisesecurity.com/orange-county</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/riverside-county</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county-security</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/riverside-county-security</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/san-francisco</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/san-francisco-security</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento-security</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -292,415 +292,415 @@
     <!-- los Angeles Cities -->
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/alhambra</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/alhambra</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/arcadia</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/arcadia</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/azusa</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/azusa</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/baldwin-park</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/baldwin-park</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/bellflower</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/bellflower</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/beverly-hills</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/beverly-hills</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/burbank</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/burbank</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/calabasas</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/calabasas</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/carson</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/carson</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/cerritos</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/cerritos</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/compton</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/compton</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/culver-city</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/culver-city</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/downey</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/downey</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/downtown-los-Angeles</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/downtown-los-Angeles</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/el-monte</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/el-monte</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/gardena</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/gardena</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/glendale</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/glendale</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/hawthorne</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/hawthorne</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/hermosa-beach</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/hermosa-beach</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/hollywood</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/hollywood</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/inglewood</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/inglewood</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/la-mirada</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/la-mirada</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/lancaster</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/lancaster</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/long-beach</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/malibu</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/malibu</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/manhattan-beach</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/manhattan-beach</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/norwalk</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/norwalk</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/palmdale</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/palmdale</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/pasadena</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/pasadena</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/pomona</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/pomona</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/redondo-beach</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/redondo-beach</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/santa-monica</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/santa-monica</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/torrance</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/torrance</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/west-hollywood</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/west-hollywood</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-angeles/whittier</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/whittier</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -708,295 +708,295 @@
     <!-- orange County Cities -->
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/aliso-viejo</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/aliso-viejo</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/anaheim</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/brea</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/brea</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/buena-park</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/buena-park</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/costa-mesa</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/costa-mesa</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/cypress</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/cypress</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/dana-point</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/dana-point</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/fountain-valley</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/fountain-valley</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/fullerton</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/fullerton</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/garden-grove</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/garden-grove</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/huntington-beach</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/huntington-beach</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/irvine</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/la-habra</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/la-habra</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/laguna-beach</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/laguna-beach</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/laguna-hills</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/laguna-hills</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/laguna-niguel</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/laguna-niguel</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/lake-forest</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/lake-forest</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/mission-viejo</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/mission-viejo</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/newport-beach</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/newport-beach</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/orange</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/placentia</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/placentia</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/san-clemente</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/san-clemente</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/santa-ana</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/tustin</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/tustin</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/westminster</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/westminster</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/orange-county/yorba-linda</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/yorba-linda</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -1004,211 +1004,211 @@
     <!-- san Diego Cities -->
     <url>
         <loc>https://shieldwisesecurity.com/california/carlsbad</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/carlsbad</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/california/chula-vista</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/chula-vista</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/california/coronado</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/coronado</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/california/del-mar</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/del-mar</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/california/el-cajon</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/el-cajon</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/california/encinitas</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/encinitas</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/california/escondido</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/escondido</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/california/imperial-beach</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/imperial-beach</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/california/la-mesa</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/la-mesa</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/california/lemon-grove</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/lemon-grove</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/california/national-city</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/national-city</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/california/oceanside</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/oceanside</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/california/poway</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/poway</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/california/san-diego</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/california/san-marcos</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/san-marcos</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/california/santee</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/santee</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/california/solana-beach</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/solana-beach</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/california/vista</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/vista</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -1216,325 +1216,325 @@
     <!-- sacramento Cities -->
     <url>
         <loc>https://shieldwisesecurity.com/sacramento-county/carmichael</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento/carmichael</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/carmichael</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento-county/citrus-heights</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento/citrus-heights</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/citrus-heights</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento-county/davis</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento/davis</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/davis</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento-county/downtown-sacramento</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento/downtown-sacramento</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/downtown-sacramento</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento-county/east-sacramento</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento/east-sacramento</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/east-sacramento</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento-county/elk-grove</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento/elk-grove</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/elk-grove</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento-county/fair-oaks</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento/fair-oaks</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/fair-oaks</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento-county/folsom</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento/folsom</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/folsom</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento-county/isleton</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento/isleton</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/isleton</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento-county/land-park</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento/land-park</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/land-park</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento-county/midtown</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento/midtown</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/midtown</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento-county/midtown-sacramento</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento/midtown-sacramento</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/midtown-sacramento</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento-county/natomas</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento/natomas</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/natomas</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento-county/pocket</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento/pocket</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/pocket</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento-county/rancho-cordova</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento/rancho-cordova</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/rancho-cordova</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento-county/roseville</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento/roseville</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/roseville</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento-county/west-sacramento</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento/west-sacramento</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/west-sacramento</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento-county/woodland</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sacramento/woodland</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/woodland</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -1542,139 +1542,139 @@
     <!-- riverside Cities -->
     <url>
         <loc>https://shieldwisesecurity.com/riverside-county/cathedral-city</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/cathedral-city</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/riverside-county/coachella</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/coachella</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/riverside-county/corona</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/corona</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/riverside-county/hemet</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/hemet</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/riverside-county/indio</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/indio</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/riverside-county/la-quinta</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/la-quinta</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/riverside-county/moreno-valley</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/moreno-valley</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/riverside-county/murrieta</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/murrieta</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/riverside-county/palm-springs</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/palm-springs</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/riverside-county/perris</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/perris</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/riverside-county/riverside</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/riverside-county/temecula</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/temecula</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -1682,103 +1682,103 @@
     <!-- san Bernardino Cities -->
     <url>
         <loc>https://shieldwisesecurity.com/apple-valley</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/barstow</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/big-bear-lake</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/chino</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/chino-hills</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/colton</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/fontana</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/hesperia</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/highland</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/montclair</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/ontario</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/rancho-cucamonga</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/redlands</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/rialto</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/twentynine-palms</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/upland</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/victorville</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -1786,127 +1786,127 @@
     <!-- santa Clara Cities -->
     <url>
         <loc>https://shieldwisesecurity.com/santa-clara-county/campbell</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/campbell</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/santa-clara-county/cupertino</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/cupertino</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/santa-clara-county/gilroy</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/gilroy</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/santa-clara-county/los-gatos</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/los-gatos</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/santa-clara-county/milpitas</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/milpitas</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/santa-clara-county/morgan-hill</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/morgan-hill</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/santa-clara-county/mountain-view</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/mountain-view</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/santa-clara-county/palo-alto</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/palo-alto</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/santa-clara-county/san-jose</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/santa-clara-county/santa-clara</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/santa-clara</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/santa-clara-county/sunnyvale</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/sunnyvale</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -1914,151 +1914,151 @@
     <!-- alameda Cities -->
     <url>
         <loc>https://shieldwisesecurity.com/alameda-county/alameda</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/alameda</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/alameda-county/berkeley</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/berkeley</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/alameda-county/castro-valley</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/castro-valley</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/alameda-county/dublin</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/dublin</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/alameda-county/emeryville</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/emeryville</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/alameda-county/fremont</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/fremont</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/alameda-county/hayward</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/hayward</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/alameda-county/newark</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/newark</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/alameda-county/oakland</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/alameda-county/pleasanton</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/pleasanton</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/alameda-county/san-leandro</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/san-leandro</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/alameda-county/san-lorenzo</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/san-lorenzo</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/alameda-county/union-city</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/union-city</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -2066,121 +2066,121 @@
     <!-- ventura Cities -->
     <url>
         <loc>https://shieldwisesecurity.com/ventura-county/camarillo</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/camarillo</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/ventura-county/fillmore</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/fillmore</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/ventura-county/moorpark</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/moorpark</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/ventura-county/ojai</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/ojai</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/ventura-county/oxnard</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/oxnard</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/ventura-county/port-hueneme</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/port-hueneme</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/ventura-county/santa-paula</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/santa-paula</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/ventura-county/simi-valley</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/simi-valley</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/ventura-county/thousand-oaks</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/thousand-oaks</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/ventura-county/ventura</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/ventura</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -2188,163 +2188,163 @@
     <!-- central Valley Cities -->
     <url>
         <loc>https://shieldwisesecurity.com/central-valley/bakersfield</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/central-valley/clovis</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/clovis</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/central-valley/davis</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/davis</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/central-valley/delano</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/delano</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/central-valley/fresno</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/central-valley/hanford</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/hanford</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/central-valley/lemoore</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/lemoore</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/central-valley/madera</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/madera</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/central-valley/merced</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/merced</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/central-valley/modesto</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/modesto</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/central-valley/porterville</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/porterville</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/central-valley/stockton</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/central-valley/tulare</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/tulare</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/central-valley/visalia</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/visalia</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/central-valley/woodland</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://shieldwisesecurity.com/woodland</loc>
-        <lastmod>2025-11-16</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
