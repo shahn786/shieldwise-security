@@ -1,0 +1,58 @@
+You have new mail.
+Last login: Mon Nov 24 07:35:19 2025 from 169.254.0.1
+root@srv1109617:~# cd /home/shieldwisesecurity/htdocs/shieldwisesecurity.com/routes
+nano executive-protection.js
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/routes# pm2 restart shieldwise
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [shieldwise](ids: [ 0 ])
+[PM2] [shieldwise](0) ✓
+┌────┬───────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name          │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├────┼───────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0  │ shieldwise    │ default     │ 1.0.0   │ fork    │ 329901   │ 0s     │ 36   │ online    │ 0%       │ 41.3mb   │ root     │ disabled │
+└────┴───────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/routes# pm2 logs shieldwise --lines 20
+[TAILING] Tailing last 20 lines for [shieldwise] process (change the value with --lines option)
+/root/.pm2/logs/shieldwise-out.log last 20 lines:
+0|shieldwi | ⚠️ MONGODB_URI not configured - running without database
+0|shieldwi | warn: Server running without MongoDB connection {"timestamp":"2025-11-24 07:39:10"}
+0|shieldwi | ⚠️ Using temporary SESSION_SECRET (sessions will not persist across restarts)
+0|shieldwi | warn: SESSION_SECRET not configured - using temporary secret {"timestamp":"2025-11-24 07:39:10"}
+0|shieldwi | ⚠️ Using memory session store (sessions will not persist across restarts)
+0|shieldwi | ⚠️ MONGODB_URI not configured - running without database
+0|shieldwi | warn: Server running without MongoDB connection {"timestamp":"2025-11-24 07:39:10"}
+0|shieldwi | ⚠️ Using temporary SESSION_SECRET (sessions will not persist across restarts)
+0|shieldwi | warn: SESSION_SECRET not configured - using temporary secret {"timestamp":"2025-11-24 07:39:10"}
+0|shieldwi | ⚠️ Using memory session store (sessions will not persist across restarts)
+0|shieldwi | ⚠️ MONGODB_URI not configured - running without database
+0|shieldwi | warn: Server running without MongoDB connection {"timestamp":"2025-11-24 07:39:11"}
+0|shieldwi | ⚠️ Using temporary SESSION_SECRET (sessions will not persist across restarts)
+0|shieldwi | warn: SESSION_SECRET not configured - using temporary secret {"timestamp":"2025-11-24 07:39:11"}
+0|shieldwi | ⚠️ Using memory session store (sessions will not persist across restarts)
+0|shieldwi | ⚠️ MONGODB_URI not configured - running without database
+0|shieldwi | warn: Server running without MongoDB connection {"timestamp":"2025-11-24 07:39:11"}
+0|shieldwi | ⚠️ Using temporary SESSION_SECRET (sessions will not persist across restarts)
+0|shieldwi | warn: SESSION_SECRET not configured - using temporary secret {"timestamp":"2025-11-24 07:39:11"}
+0|shieldwi | ⚠️ Using memory session store (sessions will not persist across restarts)
+
+/root/.pm2/logs/shieldwise-error.log last 20 lines:
+0|shieldwi |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|shieldwi |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|shieldwi |     at require (node:internal/modules/helpers:182:18)
+0|shieldwi |     at Object.<anonymous> (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/index.js:505:34)
+0|shieldwi |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
+0|shieldwi | /home/shieldwisesecurity/htdocs/shieldwisesecurity.com/routes/executive-protection.js:142
+0|shieldwi |                 answer: answer: 'Executive protection (close protection) is a comprehensive security discipline involving threat assessment, advance planning, intelligence gathering, route analysis, and coordinated security operations by highly-trained specialists. Bodyguards typically refers to individual security personnel. Professional executive protection includes strategic planning, risk mitigation, and proactive threat prevention, not just physical presence.'
+0|shieldwi |                               ^
+0|shieldwi | 
+0|shieldwi | SyntaxError: Unexpected token ':'
+0|shieldwi |     at wrapSafe (node:internal/modules/cjs/loader:1464:18)
+0|shieldwi |     at Module._compile (node:internal/modules/cjs/loader:1495:20)
+0|shieldwi |     at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+0|shieldwi |     at Module.load (node:internal/modules/cjs/loader:1266:32)
+0|shieldwi |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+0|shieldwi |     at Module.require (node:internal/modules/cjs/loader:1289:19)
+0|shieldwi |     at Hook._require.Module.require (/usr/lib/node_modules/pm2/node_modules/require-in-the-middle/index.js:101:39)
+0|shieldwi |     at require (node:internal/modules/helpers:182:18)
+0|shieldwi |     at Object.<anonymous> (/home/shieldwisesecurity/htdocs/shieldwisesecurity.com/index.js:505:34)
+0|shieldwi |     at Module._compile (node:internal/modules/cjs/loader:1521:14)
