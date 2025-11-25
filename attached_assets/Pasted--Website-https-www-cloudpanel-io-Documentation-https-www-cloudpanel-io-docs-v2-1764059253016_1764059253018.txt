@@ -1,0 +1,44 @@
+
+* Website:         https://www.cloudpanel.io
+* Documentation:   https://www.cloudpanel.io/docs/v2/
+* Best Practices:  https://www.cloudpanel.io/docs/v2/best-practices/
+* CloudPanel:      https://31.220.57.141:8443 
+* CloudPanel CLI:  clpctl
+
+You have new mail.
+Last login: Tue Nov 25 08:05:35 2025 from 169.254.0.1
+root@srv1109617:~# ssh root@srv1109617
+The authenticity of host 'srv1109617 (127.0.1.1)' can't be established.
+ED25519 key fingerprint is SHA256:j3/nOpEbxwj0Lu5kitXXkzizJmzgMHoemoDsD9bh5mc.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:1: [hashed name]
+Are you sure you want to continue connecting (yes/no/[fingerprint])? y
+Please type 'yes', 'no' or the fingerprint: yes
+Warning: Permanently added 'srv1109617' (ED25519) to the list of known hosts.
+root@srv1109617's password: 
+
+########################################################
+###            Welcome to CloudPanel                 ###
+########################################################
+
+* Website:         https://www.cloudpanel.io
+* Documentation:   https://www.cloudpanel.io/docs/v2/
+* Best Practices:  https://www.cloudpanel.io/docs/v2/best-practices/
+* CloudPanel:      https://31.220.57.141:8443 
+* CloudPanel CLI:  clpctl
+
+You have new mail.
+Last login: Tue Nov 25 08:25:52 2025 from 169.254.0.1
+root@srv1109617:~# cd /home/shieldwisesecurity/htdocs/shieldwisesecurity.comroot@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# sed -i 's/ itemscope itemtype="[^"]*"//g; s/ itemscope//g; s/ itemprop="[^"]*"//g; s/ itemtype="[^"]*"//g; s/ itemtype//g' views/cities/san-francisco.ejs
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# grep "itemscope\|itemprop\|itemtype" views/cities/san-francisco.ejs | wc -l
+0
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# pm2 restart shieldwise
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [shieldwise](ids: [ 0 ])
+[PM2] [shieldwise](0) ✓
+┌────┬───────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name          │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├────┼───────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0  │ shieldwise    │ default     │ 1.0.0   │ fork    │ 347573   │ 0s     │ 56   │ online    │ 0%       │ 18.4mb   │ root     │ disabled │
+└────┴───────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# 
