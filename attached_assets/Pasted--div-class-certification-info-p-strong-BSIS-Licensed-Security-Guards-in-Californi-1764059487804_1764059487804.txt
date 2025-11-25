@@ -1,0 +1,48 @@
+ <div class="certification-info">
+            <p><strong>BSIS Licensed Security Guards in California</strong></p>
+            <p><strong>PPO License #: <span itemprop="license">122008</span></strong></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="footer-middle">
+          <div class="areas-we-serve">
+            <h5 class="footer-title">Areas We Serve</h5>
+            <ul class="areas-list">
+              <li><a href="/locations" style="font-weight: 700; color: #3498db;"><i class="fas fa-map-marked-alt"></i> View All 182 Cities</a></li>
+              <li><a href="/service-areas#los-angeles">Security Services in Los Angeles County</a></li>
+              <li><a href="/service-areas#orange">Security Services in Orange County</a></li>
+              <li><a href="/service-areas#ventura">Security Guards in Ventura County</a></li>
+              <li><a href="/service-areas#riverside">Riverside County Security Services</a></li>
+              <li><a href="/service-areas#imperial">Imperial County Security Guards</a></li>
+              <li><a href="/service-areas#san-bernardino">San Bernardino County Security Officers</a></li>
+              <li><a href="/service-areas#san-diego">San Diego County Patrol Services</a></li>
+              <li><a href="/service-areas#sacramento">Sacramento County Armed Guards</a></li>
+              <li><a href="/service-areas#san-francisco">San Francisco Security Companies</a></li>
+            </ul>
+          </div>
+          <div class="contact-us" itemscope itemtype="https://schema.org/ContactPoint">
+            <h5 class="footer-title">Contact Us</h5>
+            <ul class="contact-list">
+              <li><i class="fas fa-map-marker-alt"></i>
+                <address itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                  <a href="https://www.google.com/maps/search/?api=1&query=7155+Dimaggio+St+Riverside+CA+92503" target="_blank" rel="noopener noreferrer">
+                    <span itemprop="streetAddress">7155 Dimaggio St</span>,
+                    <span itemprop="addressLocality">Riverside</span>,
+                    <span itemprop="addressRegion">CA</span>
+                    <span itemprop="postalCode">92503</span>
+                    <span itemprop="addressCountry">US</span>
+                  </a>
+                </address>
+              </li>
+              <li><i class="fas fa-phone"></i>
+                <a href="tel:+17147167430" itemprop="telephone" onclick="typeof trackPhoneClick === 'function' && trackPhoneClick()">(714) 716-7430</a>
+              </li>
+              <li><i class="fas fa-envelope"></i>
+                <a href="mailto:info@shieldwisesecurity.com" itemprop="email">info@shieldwisesecurity.com</a>
+              </li>
+              <li><i class="fas fa-clock"></i> Open <span itemprop="openingHours">24/7</span> for Security Emergencies</li>
+            </ul>
+          </div>
+        </div>
+      </div>
