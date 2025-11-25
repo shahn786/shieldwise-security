@@ -103,153 +103,120 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@graph": [
+        "@type": "SecurityService",
+        "name": "ShieldWise Security - San Francisco",
+        "alternateName": "San Francisco Security Guards",
+        "image": "https://shieldwisesecurity.com/img/san-francsco.webp",
+        "description": "Professional security guard services in San Francisco, CA. Specializing in financial district, tech companies, and commercial security with 24/7 monitoring and rapid emergency response.",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://shieldwisesecurity.com/img/logo1.webp",
+            "width": 400,
+            "height": 400
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "101 California Street",
+            "addressLocality": "San Francisco",
+            "addressRegion": "CA",
+            "postalCode": "94111",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 37.7749,
+            "longitude": -122.4194
+        },
+        "url": "https://shieldwisesecurity.com/san-francisco",
+        "telephone": "+1-714-716-7430",
+        "email": "sanfrancisco@shieldwisesecurity.com",
+        "priceRange": "$$-$$$",
+        "currenciesAccepted": "USD",
+        "paymentAccepted": ["Cash", "Credit Card", "Check", "Invoice", "Bank Transfer"],
+        "openingHoursSpecification": [
             {
-                "@type": "SecurityService",
-                "@id": "https://shieldwisesecurity.com/san-francisco#financial-district-security",
-                "name": "Financial District Security Services San Francisco",
-                "description": "Professional financial district security guards specializing in bank protection, investment firm security, and corporate office protection for San Francisco's financial corridor.",
-                "serviceType": "Financial District Security",
-                "areaServed": {
-                    "@type": "City",
-                    "name": "San Francisco",
-                    "containedInPlace": {
-                        "@type": "AdministrativeArea",
-                        "name": "California"
-                    }
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "00:00",
+                "closes": "23:59"
+            }
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "189",
+            "reviewCount": "189"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "author": {
+                    "@type": "Person",
+                    "name": "David Chen",
+                    "jobTitle": "Security Director"
                 },
-                "offers": {
-                    "@type": "Offer"
+                "datePublished": "2024-12-08",
+                "reviewBody": "ShieldWise Security has provided outstanding security services for our financial district office building in San Francisco for over two years. Their guards are professional, reliable, and well-trained in high-rise security protocols. The response time is exceptional.",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
                 }
             },
             {
-                "@type": "SecurityService",
-                "@id": "https://shieldwisesecurity.com/san-francisco#tech-company-security",
-                "name": "Tech Company Security Services San Francisco",
-                "description": "Specialized technology company security for startups, established tech firms, and innovation hubs in San Francisco's SOMA district.",
-                "serviceType": "Tech Company Security",
-                "areaServed": {
-                    "@type": "City",
-                    "name": "San Francisco"
+                "@type": "Review",
+                "author": {
+                    "@type": "Person",
+                    "name": "Sarah Rodriguez",
+                    "jobTitle": "Tech Company COO"
+                },
+                "datePublished": "2024-11-22",
+                "reviewBody": "Professional and reliable security services in San Francisco. The team understands tech company security challenges and provides excellent protection for our SOTA headquarters.",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
                 }
-            },
+            }
+        ],
+        "foundingDate": "2010",
+        "slogan": "San Francisco's Trusted Financial & Tech Security Partner",
+        "knowsAbout": [
+            "Financial District Security",
+            "Tech Company Security",
+            "Commercial Security",
+            "High-Rise Security",
+            "Government Security"
+        ],
+        "serviceArea": [
             {
-                "@type": "SecurityService",
-                "name": "ShieldWise Security - San Francisco",
-                "alternateName": "San Francisco Security Guards",
-                "image": "https://shieldwisesecurity.com/img/san-francsco.webp",
-                "description": "Professional security guard services in San Francisco, CA. Specializing in financial district, tech companies, and commercial security with 24/7 monitoring and rapid emergency response.",
-                "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://shieldwisesecurity.com/img/logo1.webp",
-                    "width": 400,
-                    "height": 400
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "101 California Street",
-                    "addressLocality": "San Francisco",
-                    "addressRegion": "CA",
-                    "postalCode": "94111",
-                    "addressCountry": "US"
-                },
-                "geo": {
+                "@type": "GeoCircle",
+                "geoMidpoint": {
                     "@type": "GeoCoordinates",
                     "latitude": 37.7749,
                     "longitude": -122.4194
                 },
-                "url": "https://shieldwisesecurity.com/san-francisco",
-                "telephone": "+1-714-716-7430",
-                "email": "sanfrancisco@shieldwisesecurity.com",
-                "priceRange": "$$-$$$",
-                "currenciesAccepted": "USD",
-                "paymentAccepted": ["Cash", "Credit Card", "Check", "Invoice", "Bank Transfer"],
-                "openingHoursSpecification": [
-                    {
-                        "@type": "OpeningHoursSpecification",
-                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                        "opens": "00:00",
-                        "closes": "23:59"
-                    }
-                ],
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "4.9",
-                    "bestRating": "5",
-                    "worstRating": "1",
-                    "ratingCount": "189",
-                    "reviewCount": "189"
-                },
-                "review": [
-                    {
-                        "@type": "Review",
-                        "author": {
-                            "@type": "Person",
-                            "name": "David Chen",
-                            "jobTitle": "Security Director"
-                        },
-                        "datePublished": "2024-12-08",
-                        "reviewBody": "ShieldWise Security has provided outstanding security services for our financial district office building in San Francisco for over two years. Their guards are professional, reliable, and well-trained in high-rise security protocols. The response time is exceptional.",
-                        "reviewRating": {
-                            "@type": "Rating",
-                            "ratingValue": "5",
-                            "bestRating": "5"
-                        }
-                    },
-                    {
-                        "@type": "Review",
-                        "author": {
-                            "@type": "Person",
-                            "name": "Sarah Rodriguez",
-                            "jobTitle": "Tech Company COO"
-                        },
-                        "datePublished": "2024-11-22",
-                        "reviewBody": "Professional and reliable security services in San Francisco. The team understands tech company security challenges and provides excellent protection for our SOMA headquarters.",
-                        "reviewRating": {
-                            "@type": "Rating",
-                            "ratingValue": "5",
-                            "bestRating": "5"
-                        }
-                    }
-                ],
-                "foundingDate": "2010",
-                "slogan": "San Francisco's Trusted Financial & Tech Security Partner",
-                "knowsAbout": [
-                    "Financial District Security",
-                    "Tech Company Security",
-                    "Commercial Security",
-                    "High-Rise Security",
-                    "Government Security"
-                ],
-                "serviceArea": [
-                    {
-                        "@type": "GeoCircle",
-                        "geoMidpoint": {
-                            "@type": "GeoCoordinates",
-                            "latitude": 37.7749,
-                            "longitude": -122.4194
-                        },
-                        "geoRadius": "20000"
-                    }
-                ],
-                "areaServed": [
-                    {
-                        "@type": "City",
-                        "name": "San Francisco"
-                    },
-                    {
-                        "@type": "Place",
-                        "name": "Financial District"
-                    },
-                    {
-                        "@type": "Place",
-                        "name": "SOMA District"
-                    },
-                    {
-                        "@type": "Place",
-                        "name": "Downtown San Francisco"
-                    }
-                ]
+                "geoRadius": "20000"
+            }
+        ],
+        "areaServed": [
+            {
+                "@type": "City",
+                "name": "San Francisco"
+            },
+            {
+                "@type": "Place",
+                "name": "Financial District"
+            },
+            {
+                "@type": "Place",
+                "name": "SOMA District"
+            },
+            {
+                "@type": "Place",
+                "name": "Downtown San Francisco"
             }
         ]
     }
