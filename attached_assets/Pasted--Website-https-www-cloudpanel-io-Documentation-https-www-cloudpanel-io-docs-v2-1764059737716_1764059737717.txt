@@ -1,0 +1,43 @@
+
+* Website:         https://www.cloudpanel.io
+* Documentation:   https://www.cloudpanel.io/docs/v2/
+* Best Practices:  https://www.cloudpanel.io/docs/v2/best-practices/
+* CloudPanel:      https://31.220.57.141:8443 
+* CloudPanel CLI:  clpctl
+
+You have new mail.
+Last login: Tue Nov 25 08:26:19 2025 from 127.0.0.1
+root@srv1109617:~# ssh root@31.220.57.141
+root@31.220.57.141's password: 
+
+########################################################
+###            Welcome to CloudPanel                 ###
+########################################################
+
+* Website:         https://www.cloudpanel.io
+* Documentation:   https://www.cloudpanel.io/docs/v2/
+* Best Practices:  https://www.cloudpanel.io/docs/v2/best-practices/
+* CloudPanel:      https://31.220.57.141:8443 
+* CloudPanel CLI:  clpctl
+
+You have new mail.
+Last login: Tue Nov 25 08:34:06 2025 from 169.254.0.1
+root@srv1109617:~# cd /home/shieldwisesecurity/htdocs/shieldwisesecurity.com
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# find views -name "*.ejs" -type f -exec sed -i 's/ itemscope itemtype="[^"]*"//g; s/ itemscope//g; s/ itemprop="[^"]*"//g; s/ itemtype="[^"]*"//g; s/ itemtype//g; s/ itemprop//g' {} \;
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# grep -r "itemscope\|itemprop\|itemtype" views/cities/ | wc -l
+6
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# pm2 restart shieldwise && sleep 3 && pm2 status
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [shieldwise](ids: [ 0 ])
+[PM2] [shieldwise](0) ✓
+┌────┬───────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name          │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├────┼───────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0  │ shieldwise    │ default     │ 1.0.0   │ fork    │ 347977   │ 0s     │ 57   │ online    │ 0%       │ 19.5mb   │ root     │ disabled │
+└────┴───────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+┌────┬───────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name          │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├────┼───────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0  │ shieldwise    │ default     │ 1.0.0   │ fork    │ 347977   │ 3s     │ 57   │ online    │ 0%       │ 88.7mb   │ root     │ disabled │
+└────┴───────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+root@srv1109617:/home/shieldwisesecurity/htdocs/shieldwisesecurity.com# 

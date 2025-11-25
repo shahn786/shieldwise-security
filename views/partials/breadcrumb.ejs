@@ -1,26 +1,26 @@
 <!-- Breadcrumb Navigation -->
 <nav class="breadcrumb-container" aria-label="Breadcrumb navigation">
   <div class="container">
-    <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-      <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/" itemprop="item" class="breadcrumb-link">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="/" class="breadcrumb-link">
           <i class="fas fa-home" aria-hidden="true"></i>
-          <span itemprop="name">Home</span>
+          <span>Home</span>
         </a>
-        <meta itemprop="position" content="1" />
+        <meta content="1" />
       </li>
       
       <% if (typeof breadcrumbs !== 'undefined' && breadcrumbs.length > 0) { %>
         <% breadcrumbs.forEach((crumb, index) => { %>
-          <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <li class="breadcrumb-item">
             <% if (crumb.url && index < breadcrumbs.length - 1) { %>
-              <a href="<%= crumb.url %>" itemprop="item" class="breadcrumb-link">
-                <span itemprop="name"><%= crumb.name %></span>
+              <a href="<%= crumb.url %>" class="breadcrumb-link">
+                <span><%= crumb.name %></span>
               </a>
             <% } else { %>
-              <span itemprop="name" class="breadcrumb-current"><%= crumb.name %></span>
+              <span class="breadcrumb-current"><%= crumb.name %></span>
             <% } %>
-            <meta itemprop="position" content="<%= index + 2 %>" />
+            <meta content="<%= index + 2 %>" />
           </li>
         <% }); %>
       <% } %>
