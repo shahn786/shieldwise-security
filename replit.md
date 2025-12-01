@@ -16,7 +16,7 @@ Preferred communication style: Simple, everyday language.
 - **Theme**: Original dark theme with black backgrounds and professional styling.
 - **Accessibility**: WCAG 2.1 AA compliant with full keyboard navigation, ARIA attributes, semantic HTML, and screen reader support.
 - **Performance**: PWA features including service worker, manifest.json, offline support, WebP image optimization, lazy loading, critical CSS inlining, and resource preloading.
-- **SEO & Local Optimization**: Location-based content structure for 186 California cities and 14 services, comprehensive schema markup (LocalBusiness, FAQPage, OfferCatalog), meta optimization, and consistent NAP information.
+- **SEO & Local Optimization**: Location-based content structure for 182 California cities and 14 services, comprehensive JSON-LD schema markup in @graph format (SecurityService, LocalBusiness, BreadcrumbList, FAQPage) with numeric rating values, city-specific unique content sections, meta optimization, and consistent NAP information. All cities pass automated SEO validation (100% compliance).
 
 ### Technical Implementations
 - **Backend**: Node.js with Express.js.
@@ -55,3 +55,24 @@ Preferred communication style: Simple, everyday language.
 - **Google Analytics (GA4)**: Web analytics.
 - **Google Tag Manager**: Tag management.
 - **Google Business Profile**: Local business listing.
+
+## Recent Changes (December 2025)
+
+### SEO Optimization - Complete Implementation
+- **Structured Data Compliance**: Added comprehensive JSON-LD @graph schemas to all 182 city pages. Each page includes SecurityService, LocalBusiness, BreadcrumbList, and FAQPage schemas with numeric rating values (4.9 not "4.9") per Google requirements.
+- **Unique Content Sections**: Added 4 city-specific content sections to all 182 pages using metadata from `data/city-metadata.json`:
+  - Local Security Challenges Section (~100 words)
+  - Industry-Specific Services Section (~150 words)  
+  - Local Compliance & Licensing Section (~75 words)
+  - Why ShieldWise for [City] Section (~100 words)
+- **City Metadata Registry**: Created comprehensive `data/city-metadata.json` with geo coordinates, key industries, specializations, population, and county data for all 182 cities.
+- **Automated Validation**: Implemented `npm run seo:validate` to verify all city pages have required SEO elements.
+
+### SEO Validation Tools
+- `npm run seo:audit` - Generate SEO audit report for all 182 cities
+- `npm run seo:validate` - Quick validation (all checks must pass)
+- `npm run seo:lint` - Lint structured data format
+
+### VPS Deployment
+- Created `deploy-seo-changes.sh` and `sync-to-vps.sh` scripts for production deployment
+- After sync: Run `pm2 restart shieldwise` on VPS
