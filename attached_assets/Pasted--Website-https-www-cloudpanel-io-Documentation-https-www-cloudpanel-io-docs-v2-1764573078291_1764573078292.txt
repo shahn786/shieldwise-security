@@ -1,0 +1,138 @@
+
+* Website:         https://www.cloudpanel.io
+* Documentation:   https://www.cloudpanel.io/docs/v2/
+* Best Practices:  https://www.cloudpanel.io/docs/v2/best-practices/
+* CloudPanel:      https://31.220.57.141:8443 
+* CloudPanel CLI:  clpctl
+
+You have new mail.
+Last login: Mon Dec  1 06:19:01 2025 from 169.254.0.1
+root@srv1109617:~# ssh root@your-vps-ip
+ssh: Could not resolve hostname your-vps-ip: Temporary failure in name resolution
+root@srv1109617:~# cd /var/www/shieldwisesecurity.com
+-bash: cd: /var/www/shieldwisesecurity.com: No such file or directory
+root@srv1109617:~# git pull origin main
+fatal: not a git repository (or any of the parent directories): .git
+root@srv1109617:~# pm2 list
+┌────┬───────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name          │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├────┼───────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0  │ shieldwise    │ default     │ 1.0.0   │ fork    │ 422344   │ 28h    │ 61   │ online    │ 0%       │ 107.9mb  │ root     │ disabled │
+└────┴───────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+root@srv1109617:~# cd /var/www/
+root@srv1109617:/var/www# git clone
+fatal: You must specify a repository to clone.
+
+usage: git clone [<options>] [--] <repo> [<dir>]
+
+    -v, --[no-]verbose    be more verbose
+    -q, --[no-]quiet      be more quiet
+    --[no-]progress       force progress reporting
+    --[no-]reject-shallow don't clone shallow repository
+    -n, --no-checkout     don't create a checkout
+    --checkout            opposite of --no-checkout
+    --[no-]bare           create a bare repository
+    --[no-]mirror         create a mirror repository (implies bare)
+    -l, --[no-]local      to clone from a local repository
+    --no-hardlinks        don't use local hardlinks, always copy
+    --hardlinks           opposite of --no-hardlinks
+    -s, --[no-]shared     setup as shared repository
+    --[no-]recurse-submodules[=<pathspec>]
+                          initialize submodules in the clone
+    --[no-]recursive ...  alias of --recurse-submodules
+    -j, --[no-]jobs <n>   number of submodules cloned in parallel
+    --[no-]template <template-directory>
+                          directory from which templates will be used
+    --[no-]reference <repo>
+                          reference repository
+    --[no-]reference-if-able <repo>
+                          reference repository
+    --[no-]dissociate     use --reference only while cloning
+    -o, --[no-]origin <name>
+                          use <name> instead of 'origin' to track upstream
+    -b, --[no-]branch <branch>
+                          checkout <branch> instead of the remote's HEAD
+    -u, --[no-]upload-pack <path>
+                          path to git-upload-pack on the remote
+    --[no-]depth <depth>  create a shallow clone of that depth
+    --[no-]shallow-since <time>
+                          create a shallow clone since a specific time
+    --[no-]shallow-exclude <revision>
+                          deepen history of shallow clone, excluding rev
+    --[no-]single-branch  clone only one branch, HEAD or --branch
+    --no-tags             don't clone any tags, and make later fetches not to follow them
+    --tags                opposite of --no-tags
+    --[no-]shallow-submodules
+                          any cloned submodules will be shallow
+    --[no-]separate-git-dir <gitdir>
+                          separate git dir from working tree
+    -c, --[no-]config <key=value>
+                          set config inside the new repository
+    --[no-]server-option <server-specific>
+                          option to transmit
+    -4, --ipv4            use IPv4 addresses only
+    -6, --ipv6            use IPv6 addresses only
+    --[no-]filter <args>  object filtering
+    --[no-]also-filter-submodules
+                          apply partial clone filters to submodules
+    --[no-]remote-submodules
+                          any cloned submodules will use their remote-tracking branch
+    --[no-]sparse         initialize sparse-checkout file to include only files at root
+    --[no-]bundle-uri <uri>
+                          a URI for downloading bundles before fetching from origin remote
+
+root@srv1109617:/var/www# ^C
+root@srv1109617:/var/www# ^[[200~git clone https://github.com/shahn786/shieldwise-security.git shieldwisesecurity.com~
+git: command not found
+root@srv1109617:/var/www# git clone https://github.com/shahn786/shieldwise-security.git shieldwisesecurity.com
+Cloning into 'shieldwisesecurity.com'...
+remote: Enumerating objects: 15850, done.
+remote: Total 15850 (delta 0), reused 0 (delta 0), pack-reused 15850 (from 1)
+Receiving objects: 100% (15850/15850), 133.27 MiB | 38.23 MiB/s, done.
+Resolving deltas: 100% (12123/12123), done.
+Updating files: 100% (1071/1071), done.
+root@srv1109617:/var/www# cd shieldwisesecurity.com
+root@srv1109617:/var/www/shieldwisesecurity.com# npm install
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated npmlog@5.0.1: This package is no longer supported.
+npm warn deprecated rimraf@2.7.1: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated rimraf@2.7.1: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated are-we-there-yet@2.0.0: This package is no longer supported.
+npm warn deprecated calmcard@0.1.1: no longer maintained
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated nopter@0.3.0: try optionator
+npm warn deprecated gauge@3.0.2: This package is no longer supported.
+npm warn deprecated uuid@2.0.3: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+npm warn deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+npm warn deprecated urlobj@0.0.11: use universal-url, minurl, relateurl, url-relation
+
+added 1263 packages, and audited 1264 packages in 36s
+
+189 packages are looking for funding
+  run `npm fund` for details
+
+35 vulnerabilities (4 low, 8 moderate, 23 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+npm notice
+npm notice New major version of npm available! 10.8.2 -> 11.6.4
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.6.4
+npm notice To update run: npm install -g npm@11.6.4
+npm notice
+root@srv1109617:/var/www/shieldwisesecurity.com# pm2 restart shieldwise
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [shieldwise](ids: [ 0 ])
+[PM2] [shieldwise](0) ✓
+┌────┬───────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name          │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├────┼───────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0  │ shieldwise    │ default     │ 1.0.0   │ fork    │ 442082   │ 0s     │ 62   │ online    │ 0%       │ 26.1mb   │ root     │ disabled │
+└────┴───────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+root@srv1109617:/var/www/shieldwisesecurity.com# 
