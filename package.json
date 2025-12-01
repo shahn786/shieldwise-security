@@ -14,7 +14,7 @@
     "lint": "echo 'Linting - install eslint if needed'",
     "lint:fix": "echo 'Auto-fix linting issues'",
     "analyze": "echo 'Analyze bundle size'",
-    "report": "echo 'Generate audit report'",
+    "audit:seo": "node scripts/seo-audit.js",
     "start:prod": "NODE_ENV=production node index.js",
     "sitemap": "node scripts/generate-sitemap.js",
     "audit:links": "node scripts/audit-links.js",
@@ -78,3 +78,4 @@
   "license": "UNLICENSED",
   "private": true
 }
+
