@@ -235,10 +235,10 @@
    },
    "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "213",
-    "bestRating": "5",
-    "worstRating": "4",
+    "ratingValue": 4.9,
+    "reviewCount": 213,
+    "bestRating": 5,
+    "worstRating": 1,
     "ratingExplanation": "Based on verified customer reviews from Google, Yelp, and BBB"
    },
    "review": [
@@ -251,8 +251,8 @@
      },
      "reviewRating": {
       "@type": "Rating",
-      "ratingValue": "5",
-      "bestRating": "5"
+      "ratingValue": 5,
+      "bestRating": 5
      },
      "reviewBody": "Outstanding beach security services for our oceanfront resort. ShieldWise provided professional guards with exceptional training in beach environment protocols. Their understanding of coastal security challenges and rapid response to incidents is unmatched. Highly recommend for any beachside business!",
      "datePublished": "2024-01-18",
@@ -270,8 +270,8 @@
      },
      "reviewRating": {
       "@type": "Rating",
-      "ratingValue": "5",
-      "bestRating": "5"
+      "ratingValue": 5,
+      "bestRating": 5
      },
      "reviewBody": "Used ShieldWise for our beach volleyball tournament and festival. Their security team managed crowd control expertly while maintaining the fun beach atmosphere. Professional, courteous, and highly effective. Will use them for all future beach events!",
      "datePublished": "2024-01-12",
@@ -561,7 +561,169 @@
          ]
         }
         </script>
-      </head>
+      
+
+    <!-- ✅ Breadcrumbs Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://shieldwisesecurity.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://shieldwisesecurity.com/services"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Huntington Beach Security",
+                "item": "https://shieldwisesecurity.com/huntington-beach"
+            }
+        ]
+    }
+    </script>
+
+    <!-- ✅ Enhanced SecurityService Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SecurityService",
+        "name": "ShieldWise Security - Huntington Beach",
+        "alternateName": "Huntington Beach Security Guards",
+        "image": "https://shieldwisesecurity.com/img/california_cities.webp",
+        "description": "Professional security guard services in Huntington Beach, CA. Specializing in surf city & event security with 24/7 monitoring and rapid emergency response. BSIS licensed, bonded, and insured.",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://shieldwisesecurity.com/img/logo1.webp",
+            "width": 400,
+            "height": 400
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Security Services Office",
+            "addressLocality": "Huntington Beach",
+            "addressRegion": "CA",
+            "postalCode": "92648",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 33.6595,
+            "longitude": -117.9988
+        },
+        "url": "https://shieldwisesecurity.com/huntington-beach",
+        "telephone": "+1-714-716-7430",
+        "email": "info@shieldwisesecurity.com",
+        "priceRange": "$$-$$$",
+        "currenciesAccepted": "USD",
+        "paymentAccepted": ["Cash", "Credit Card", "Check", "Invoice", "Bank Transfer"],
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "00:00",
+                "closes": "23:59"
+            }
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 4.9,
+            "bestRating": 5,
+            "worstRating": 1,
+            "ratingCount": 189,
+            "reviewCount": 189
+        },
+        "foundingDate": "2010",
+        "slogan": "Huntington Beach's Trusted Professional Security Partner",
+        "knowsAbout": [
+            "Tourism Security",
+            "Oil & Gas Security",
+            "Healthcare Security",
+            "Retail Security",
+            "24/7 Patrol Services"
+        ],
+        "serviceArea": [
+            {
+                "@type": "GeoCircle",
+                "geoMidpoint": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 33.6595,
+                    "longitude": -117.9988
+                },
+                "geoRadius": "20000"
+            }
+        ],
+        "areaServed": [
+            {
+                "@type": "City",
+                "name": "Huntington Beach"
+            },
+            {
+                "@type": "AdministrativeArea",
+                "name": "Orange County"
+            }
+        ]
+    }
+    </script>
+
+    <!-- ✅ FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does a security guard cost in Huntington Beach?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Security guard costs in Huntington Beach vary based on service type, duration, and specific requirements. For unarmed guards, rates typically range from $20-35 per hour, while armed security guards range from $35-55 per hour. ShieldWise Security offers competitive pricing for Huntington Beach businesses. Contact us at (714) 716-7430 for a free customized quote."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What security services does ShieldWise offer in Huntington Beach, CA?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ShieldWise Security provides comprehensive security services in Huntington Beach including armed and unarmed guards, surf city & event security, 24/7 patrol services, event security, fire watch, construction site security, and executive protection. All our guards are BSIS-licensed and trained for Orange County's specific security needs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are your Huntington Beach security guards licensed and insured?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, all ShieldWise Security guards serving Huntington Beach are fully licensed by the California Bureau of Security and Investigative Services (BSIS), bonded, and carry $2 million in liability insurance. We maintain strict compliance with all California security regulations and Orange County requirements."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How quickly can you deploy security guards in Huntington Beach?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ShieldWise Security offers rapid deployment throughout Huntington Beach and Orange County. For standard requests, we can typically deploy guards within 24-48 hours. For emergencies, we offer same-day or next-day service. Our local presence in California ensures quick response times for Huntington Beach clients."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What industries do you serve in Huntington Beach?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ShieldWise Security serves diverse industries in Huntington Beach including tourism, oil & gas, healthcare, and retail sectors. We specialize in surf city & event security and provide tailored security solutions for Huntington Beach's unique business environment."
+                }
+            }
+        ]
+    }
+    </script>
+    </head>
   <link rel="stylesheet" href="/css/style.min.css">
   <!-- Huntington Beach specific styles -->
   <link rel="stylesheet" href="/css/anaheim-styles.min.css">
@@ -685,6 +847,110 @@
                </div>
              </div>
            </section>
+
+<!-- Local Security Challenges Section -->
+<section class="local-security-challenges" style="padding: 60px 0; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div style="background: white; border-radius: 12px; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+          <h2 style="color: #1a3c6e; margin-bottom: 20px; font-size: 1.8rem;"><i class="fas fa-exclamation-triangle" style="color: #d32f2f; margin-right: 10px;"></i>Security Challenges in Huntington Beach</h2>
+          <p style="font-size: 1.1rem; line-height: 1.8; color: #444;">
+            With a population of 199K+ residents, Huntington Beach faces distinct security challenges common to Orange County's tourism and oil & gas sectors. Local businesses contend with visitor safety, crowd management at attractions, and hotel property protection. Additionally, the area experiences energy infrastructure protection, hazardous material security, and pipeline monitoring. ShieldWise Security understands these Huntington Beach-specific threats and deploys officers trained to address tourism and oil & gas security requirements, ensuring comprehensive protection for surf city & event security needs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Industry-Specific Services Section -->
+<section class="industry-specific-services" style="padding: 60px 0; background: #ffffff;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <h2 style="color: #1a3c6e; margin-bottom: 25px; font-size: 1.8rem;"><i class="fas fa-industry" style="color: #28a745; margin-right: 10px;"></i>Tourism & Visitor Security in Huntington Beach</h2>
+        <p style="font-size: 1.05rem; line-height: 1.7; color: #444; margin-bottom: 20px;">
+          Huntington Beach's thriving tourism sector demands specialized security expertise. ShieldWise provides surf city & event security with officers trained specifically for Orange County's unique business environment. Our guards understand the operational rhythms of tourism facilities and deliver security solutions that protect assets without disrupting productivity.
+        </p>
+        <ul style="list-style: none; padding: 0;">
+          <li style="padding: 8px 0; color: #333;"><i class="fas fa-check-circle" style="color: #28a745; margin-right: 10px;"></i>Tourist attraction crowd management</li>
+          <li style="padding: 8px 0; color: #333;"><i class="fas fa-check-circle" style="color: #28a745; margin-right: 10px;"></i>Hotel and resort security staffing</li>
+          <li style="padding: 8px 0; color: #333;"><i class="fas fa-check-circle" style="color: #28a745; margin-right: 10px;"></i>Event security for festivals</li>
+          <li style="padding: 8px 0; color: #333;"><i class="fas fa-check-circle" style="color: #28a745; margin-right: 10px;"></i>Parking facility monitoring</li>
+        </ul>
+      </div>
+      <div class="col-lg-6">
+        <div style="background: #f8f9fa; border-radius: 12px; padding: 30px; margin-top: 20px;">
+          <h3 style="color: #1a3c6e; margin-bottom: 15px; font-size: 1.3rem;">Additional Huntington Beach Industry Coverage</h3>
+          <p style="color: #555; line-height: 1.7;">
+            Beyond tourism, we serve Huntington Beach's oil & gas and healthcare sectors with equal expertise. Our security teams receive cross-training to handle Refinery and pipeline protection and Emergency department security officers. This versatility makes ShieldWise the preferred security partner for Orange County businesses requiring comprehensive protection across multiple facilities or business units.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Local Compliance & Licensing Section -->
+<section class="compliance-licensing" style="padding: 50px 0; background: linear-gradient(90deg, #1a3c6e 0%, #2d5a96 100%); color: white;">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <h2 style="margin-bottom: 15px; font-size: 1.6rem;"><i class="fas fa-certificate" style="margin-right: 10px;"></i>BSIS Licensed Security in Huntington Beach, Orange County</h2>
+        <p style="font-size: 1.05rem; line-height: 1.7; opacity: 0.95;">
+          All ShieldWise security officers serving Huntington Beach hold valid California Bureau of Security and Investigative Services (BSIS) Guard Cards and complete mandatory training exceeding state requirements. Our security personnel are equipped to meet Orange County's business security standards while maintaining full state compliance.
+        </p>
+      </div>
+      <div class="col-lg-4 text-center">
+        <div style="background: rgba(255,255,255,0.15); border-radius: 12px; padding: 25px;">
+          <i class="fas fa-shield-alt" style="font-size: 3rem; margin-bottom: 10px;"></i>
+          <div style="font-size: 1.2rem; font-weight: 600;">Fully Licensed & Insured</div>
+          <div style="font-size: 0.95rem; opacity: 0.9;">$2M Coverage</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Why ShieldWise for Huntington Beach Section -->
+<section class="why-shieldwise-city" style="padding: 60px 0; background: #f8f9fa;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center mb-4">
+        <h2 style="color: #1a3c6e; font-size: 1.8rem;"><i class="fas fa-star" style="color: #ffc107; margin-right: 10px;"></i>Why Huntington Beach Trusts ShieldWise Security</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 text-center mb-4">
+        <div style="background: white; border-radius: 12px; padding: 30px; height: 100%; box-shadow: 0 2px 15px rgba(0,0,0,0.06);">
+          <i class="fas fa-history" style="font-size: 2.5rem; color: #1a3c6e; margin-bottom: 15px;"></i>
+          <h3 style="font-size: 1.3rem; color: #333;">8+ Years in Orange County</h3>
+          <p style="color: #666; line-height: 1.6;">Deep roots in the Huntington Beach community with established relationships across 81+ local businesses and tourism sector clients.</p>
+        </div>
+      </div>
+      <div class="col-md-4 text-center mb-4">
+        <div style="background: white; border-radius: 12px; padding: 30px; height: 100%; box-shadow: 0 2px 15px rgba(0,0,0,0.06);">
+          <i class="fas fa-bolt" style="font-size: 2.5rem; color: #d32f2f; margin-bottom: 15px;"></i>
+          <h3 style="font-size: 1.3rem; color: #333;">1-hour Local Response</h3>
+          <p style="color: #666; line-height: 1.6;">Strategically positioned teams ensure rapid deployment to any Huntington Beach location. Our surf city & event security expertise means faster, more effective security response.</p>
+        </div>
+      </div>
+      <div class="col-md-4 text-center mb-4">
+        <div style="background: white; border-radius: 12px; padding: 30px; height: 100%; box-shadow: 0 2px 15px rgba(0,0,0,0.06);">
+          <i class="fas fa-handshake" style="font-size: 2.5rem; color: #28a745; margin-bottom: 15px;"></i>
+          <h3 style="font-size: 1.3rem; color: #333;">Community Partner</h3>
+          <p style="color: #666; line-height: 1.6;">Huntington Beach Chamber of Commerce member and active participant in Orange County safety initiatives. We invest in Huntington Beach's prosperity.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
            <!-- Huntington Beach-Specific Local Content -->
            <section class="anaheim-local-content">

@@ -336,10 +336,10 @@
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "89",
-        "bestRating": "5",
-        "worstRating": "4",
+        "ratingValue": 4.9,
+        "reviewCount": 89,
+        "bestRating": 5,
+        "worstRating": 1,
         "ratingExplanation": "Based on verified customer reviews from Google, Yelp, BBB, and Facebook"
       },
       "review": [
@@ -352,8 +352,8 @@
           },
           "reviewRating": {
             "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
+            "ratingValue": 5,
+            "bestRating": 5
           },
           "reviewBody": "ShieldWise ha proporcionado un excelente servicio de seguridad para nuestro negocio en la Calle Cuatro por más de un año. Sus guardias bilingües entienden perfectamente nuestra comunidad y han mejorado significativamente la seguridad de nuestra tienda.",
           "datePublished": "2023-11-15",
@@ -371,8 +371,8 @@
           },
           "reviewRating": {
             "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
+            "ratingValue": 5,
+            "bestRating": 5
           },
           "reviewBody": "We've been using ShieldWise for our commercial property in Santa Ana for over a year. Their security team has significantly improved the safety of our tenants and visitors. Their guards are professional, responsive, and their bilingual capabilities are essential in our diverse community.",
           "datePublished": "2023-09-22",
@@ -390,8 +390,8 @@
           },
           "reviewRating": {
             "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
+            "ratingValue": 5,
+            "bestRating": 5
           },
           "reviewBody": "ShieldWise provides exceptional courthouse security services. Their guards are well-trained in government facility protocols and maintain the highest standards of professionalism. Highly recommended for any government security needs.",
           "datePublished": "2023-08-10",
@@ -908,7 +908,169 @@
                   ]
                 }
                 </script>
-            </head>
+            
+
+    <!-- ✅ Breadcrumbs Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://shieldwisesecurity.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://shieldwisesecurity.com/services"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Santa Ana Security",
+                "item": "https://shieldwisesecurity.com/santa-ana"
+            }
+        ]
+    }
+    </script>
+
+    <!-- ✅ Enhanced SecurityService Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SecurityService",
+        "name": "ShieldWise Security - Santa Ana",
+        "alternateName": "Santa Ana Security Guards",
+        "image": "https://shieldwisesecurity.com/img/california_cities.webp",
+        "description": "Professional security guard services in Santa Ana, CA. Specializing in county seat & downtown security with 24/7 monitoring and rapid emergency response. BSIS licensed, bonded, and insured.",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://shieldwisesecurity.com/img/logo1.webp",
+            "width": 400,
+            "height": 400
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Security Services Office",
+            "addressLocality": "Santa Ana",
+            "addressRegion": "CA",
+            "postalCode": "92701",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 33.7455,
+            "longitude": -117.8677
+        },
+        "url": "https://shieldwisesecurity.com/santa-ana",
+        "telephone": "+1-714-716-7430",
+        "email": "info@shieldwisesecurity.com",
+        "priceRange": "$$-$$$",
+        "currenciesAccepted": "USD",
+        "paymentAccepted": ["Cash", "Credit Card", "Check", "Invoice", "Bank Transfer"],
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "00:00",
+                "closes": "23:59"
+            }
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 4.9,
+            "bestRating": 5,
+            "worstRating": 1,
+            "ratingCount": 189,
+            "reviewCount": 189
+        },
+        "foundingDate": "2010",
+        "slogan": "Santa Ana's Trusted Professional Security Partner",
+        "knowsAbout": [
+            "Government Security",
+            "Finance Security",
+            "Manufacturing Security",
+            "Retail Security",
+            "24/7 Patrol Services"
+        ],
+        "serviceArea": [
+            {
+                "@type": "GeoCircle",
+                "geoMidpoint": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 33.7455,
+                    "longitude": -117.8677
+                },
+                "geoRadius": "20000"
+            }
+        ],
+        "areaServed": [
+            {
+                "@type": "City",
+                "name": "Santa Ana"
+            },
+            {
+                "@type": "AdministrativeArea",
+                "name": "Orange County"
+            }
+        ]
+    }
+    </script>
+
+    <!-- ✅ FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does a security guard cost in Santa Ana?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Security guard costs in Santa Ana vary based on service type, duration, and specific requirements. For unarmed guards, rates typically range from $20-35 per hour, while armed security guards range from $35-55 per hour. ShieldWise Security offers competitive pricing for Santa Ana businesses. Contact us at (714) 716-7430 for a free customized quote."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What security services does ShieldWise offer in Santa Ana, CA?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ShieldWise Security provides comprehensive security services in Santa Ana including armed and unarmed guards, county seat & downtown security, 24/7 patrol services, event security, fire watch, construction site security, and executive protection. All our guards are BSIS-licensed and trained for Orange County's specific security needs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are your Santa Ana security guards licensed and insured?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, all ShieldWise Security guards serving Santa Ana are fully licensed by the California Bureau of Security and Investigative Services (BSIS), bonded, and carry $2 million in liability insurance. We maintain strict compliance with all California security regulations and Orange County requirements."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How quickly can you deploy security guards in Santa Ana?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ShieldWise Security offers rapid deployment throughout Santa Ana and Orange County. For standard requests, we can typically deploy guards within 24-48 hours. For emergencies, we offer same-day or next-day service. Our local presence in California ensures quick response times for Santa Ana clients."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What industries do you serve in Santa Ana?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ShieldWise Security serves diverse industries in Santa Ana including government, finance, manufacturing, and retail sectors. We specialize in county seat & downtown security and provide tailored security solutions for Santa Ana's unique business environment."
+                }
+            }
+        ]
+    }
+    </script>
+    </head>
         
 <body id="top" class="anaheim-page">
 
@@ -1014,6 +1176,110 @@
                         </div>
                     </div>
                 </section>
+
+<!-- Local Security Challenges Section -->
+<section class="local-security-challenges" style="padding: 60px 0; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div style="background: white; border-radius: 12px; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+          <h2 style="color: #1a3c6e; margin-bottom: 20px; font-size: 1.8rem;"><i class="fas fa-exclamation-triangle" style="color: #d32f2f; margin-right: 10px;"></i>Security Challenges in Santa Ana</h2>
+          <p style="font-size: 1.1rem; line-height: 1.8; color: #444;">
+            With a population of 310K+ residents, Santa Ana faces distinct security challenges common to Orange County's government and finance sectors. Local businesses contend with public building security, official protection, and sensitive document handling. Additionally, the area experiences bank security, executive protection, and financial document safeguarding. ShieldWise Security understands these Santa Ana-specific threats and deploys officers trained to address government and finance security requirements, ensuring comprehensive protection for county seat & downtown security needs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Industry-Specific Services Section -->
+<section class="industry-specific-services" style="padding: 60px 0; background: #ffffff;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <h2 style="color: #1a3c6e; margin-bottom: 25px; font-size: 1.8rem;"><i class="fas fa-industry" style="color: #28a745; margin-right: 10px;"></i>Government Facility Protection in Santa Ana</h2>
+        <p style="font-size: 1.05rem; line-height: 1.7; color: #444; margin-bottom: 20px;">
+          Santa Ana's thriving government sector demands specialized security expertise. ShieldWise provides county seat & downtown security with officers trained specifically for Orange County's unique business environment. Our guards understand the operational rhythms of government facilities and deliver security solutions that protect assets without disrupting productivity.
+        </p>
+        <ul style="list-style: none; padding: 0;">
+          <li style="padding: 8px 0; color: #333;"><i class="fas fa-check-circle" style="color: #28a745; margin-right: 10px;"></i>Public building security staffing</li>
+          <li style="padding: 8px 0; color: #333;"><i class="fas fa-check-circle" style="color: #28a745; margin-right: 10px;"></i>Courthouse security services</li>
+          <li style="padding: 8px 0; color: #333;"><i class="fas fa-check-circle" style="color: #28a745; margin-right: 10px;"></i>Government official protection</li>
+          <li style="padding: 8px 0; color: #333;"><i class="fas fa-check-circle" style="color: #28a745; margin-right: 10px;"></i>Secure document handling protocols</li>
+        </ul>
+      </div>
+      <div class="col-lg-6">
+        <div style="background: #f8f9fa; border-radius: 12px; padding: 30px; margin-top: 20px;">
+          <h3 style="color: #1a3c6e; margin-bottom: 15px; font-size: 1.3rem;">Additional Santa Ana Industry Coverage</h3>
+          <p style="color: #555; line-height: 1.7;">
+            Beyond government, we serve Santa Ana's finance and manufacturing sectors with equal expertise. Our security teams receive cross-training to handle Bank and credit union security officers and 24-hour perimeter monitoring. This versatility makes ShieldWise the preferred security partner for Orange County businesses requiring comprehensive protection across multiple facilities or business units.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Local Compliance & Licensing Section -->
+<section class="compliance-licensing" style="padding: 50px 0; background: linear-gradient(90deg, #1a3c6e 0%, #2d5a96 100%); color: white;">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <h2 style="margin-bottom: 15px; font-size: 1.6rem;"><i class="fas fa-certificate" style="margin-right: 10px;"></i>BSIS Licensed Security in Santa Ana, Orange County</h2>
+        <p style="font-size: 1.05rem; line-height: 1.7; opacity: 0.95;">
+          All ShieldWise security officers serving Santa Ana hold valid California Bureau of Security and Investigative Services (BSIS) Guard Cards and complete mandatory training exceeding state requirements. Given Santa Ana's significant government presence, our officers undergo additional background screening and specialized training to meet industry-specific security requirements.
+        </p>
+      </div>
+      <div class="col-lg-4 text-center">
+        <div style="background: rgba(255,255,255,0.15); border-radius: 12px; padding: 25px;">
+          <i class="fas fa-shield-alt" style="font-size: 3rem; margin-bottom: 10px;"></i>
+          <div style="font-size: 1.2rem; font-weight: 600;">Fully Licensed & Insured</div>
+          <div style="font-size: 0.95rem; opacity: 0.9;">$2M Coverage</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Why ShieldWise for Santa Ana Section -->
+<section class="why-shieldwise-city" style="padding: 60px 0; background: #f8f9fa;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center mb-4">
+        <h2 style="color: #1a3c6e; font-size: 1.8rem;"><i class="fas fa-star" style="color: #ffc107; margin-right: 10px;"></i>Why Santa Ana Trusts ShieldWise Security</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 text-center mb-4">
+        <div style="background: white; border-radius: 12px; padding: 30px; height: 100%; box-shadow: 0 2px 15px rgba(0,0,0,0.06);">
+          <i class="fas fa-history" style="font-size: 2.5rem; color: #1a3c6e; margin-bottom: 15px;"></i>
+          <h3 style="font-size: 1.3rem; color: #333;">9+ Years in Orange County</h3>
+          <p style="color: #666; line-height: 1.6;">Deep roots in the Santa Ana community with established relationships across 118+ local businesses and government sector clients.</p>
+        </div>
+      </div>
+      <div class="col-md-4 text-center mb-4">
+        <div style="background: white; border-radius: 12px; padding: 30px; height: 100%; box-shadow: 0 2px 15px rgba(0,0,0,0.06);">
+          <i class="fas fa-bolt" style="font-size: 2.5rem; color: #d32f2f; margin-bottom: 15px;"></i>
+          <h3 style="font-size: 1.3rem; color: #333;">45-minute Local Response</h3>
+          <p style="color: #666; line-height: 1.6;">Strategically positioned teams ensure rapid deployment to any Santa Ana location. Our county seat & downtown security expertise means faster, more effective security response.</p>
+        </div>
+      </div>
+      <div class="col-md-4 text-center mb-4">
+        <div style="background: white; border-radius: 12px; padding: 30px; height: 100%; box-shadow: 0 2px 15px rgba(0,0,0,0.06);">
+          <i class="fas fa-handshake" style="font-size: 2.5rem; color: #28a745; margin-bottom: 15px;"></i>
+          <h3 style="font-size: 1.3rem; color: #333;">Community Partner</h3>
+          <p style="color: #666; line-height: 1.6;">Santa Ana Chamber of Commerce member and active participant in Orange County safety initiatives. We invest in Santa Ana's prosperity.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
                 <!-- Enhanced Features Section -->
                 <section class="anaheim-features-section">
