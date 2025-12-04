@@ -89,209 +89,59 @@
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "WebPage",
-          "@id": "https://shieldwisesecurity.com/los-angeles/hawthorne#webpage",
-          "url": "https://shieldwisesecurity.com/los-angeles/hawthorne",
-          "name": "Hawthorne Security Guards | SpaceX Tesla Area & Aerospace Protection",
-          "description": "Top-rated security guard services in Hawthorne, CA. SpaceX/Tesla area protection, aerospace facilities, tech companies. 24/7 service with 2-hour emergency response.",
-          "inLanguage": "en-US",
-          "isPartOf": { "@id": "https://shieldwisesecurity.com/#website" },
-          "breadcrumb": { "@id": "https://shieldwisesecurity.com/los-angeles/hawthorne#breadcrumb" },
-          "mainEntity": { "@id": "https://shieldwisesecurity.com/los-angeles/hawthorne#localbusiness" },
-          "publisher": { "@id": "https://shieldwisesecurity.com/#organization" },
-          "datePublished": "2025-01-01T00:00:00+00:00",
-          "dateModified": "2025-07-18T00:00:00+00:00"
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://shieldwisesecurity.com/#website",
-          "url": "https://shieldwisesecurity.com",
-          "name": "ShieldWise Security",
-          "description": "Professional security guard services across Southern California",
-          "publisher": { "@id": "https://shieldwisesecurity.com/#organization" },
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": {
-              "@type": "EntryPoint",
-              "urlTemplate": "https://shieldwisesecurity.com/search?q={search_term_string}"
-            },
-            "query-input": "required name=search_term_string"
-          }
-        },
-        {
-          "@type": "BreadcrumbList",
-          "@id": "https://shieldwisesecurity.com/los-angeles/hawthorne#breadcrumb",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://shieldwisesecurity.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Los Angeles Security", "item": "https://shieldwisesecurity.com/los-angeles/" },
-            { "@type": "ListItem", "position": 3, "name": "Hawthorne Security Guards", "item": "https://shieldwisesecurity.com/los-angeles/hawthorne" }
-          ]
-        },
-        {
-          "@type": "Organization",
-          "@id": "https://shieldwisesecurity.com/#organization",
-          "name": "ShieldWise Security",
-          "alternateName": ["ShieldWise Security Inc.", "ShieldWise Security Services"],
-          "url": "https://shieldwisesecurity.com",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://shieldwisesecurity.com/img/logo1.webp",
-            "width": 400,
-            "height": 400,
-            "caption": "ShieldWise Security Logo"
-          },
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+1-714-716-7430",
-            "contactType": "customer service",
-            "areaServed": "US",
-            "availableLanguage": ["English", "Spanish"]
-          },
-          "sameAs": [
-            "https://www.facebook.com/shieldwisesecurity",
-            "https://twitter.com/shieldwisesec",
-            "https://www.instagram.com/shieldwisesecurity",
-            "https://www.linkedin.com/company/shieldwisesecurity",
-            "https://www.youtube.com/c/shieldwisesecurity"
-          ],
-          "foundingDate": "2010",
-          "slogan": "Your Security, Our Priority",
-          "description": "Professional security guard services with 24/7 emergency response"
-        },
-        {
-          "@type": "LocalBusiness",
-          "@id": "https://shieldwisesecurity.com/los-angeles/hawthorne#localbusiness",
-          "name": "ShieldWise Security - Hawthorne",
-          "image": [
-            "https://shieldwisesecurity.com/img/la-pic.webp",
-            "https://shieldwisesecurity.com/img/spacex-tesla-area-security.jpg",
-            "https://shieldwisesecurity.com/img/aerospace-facility-security.jpg"
-          ],
-          "description": "Premier security guard services in Hawthorne, CA. Specializing in SpaceX/Tesla area protection, aerospace facilities, tech companies. 24/7 rapid response with high-tech security expertise.",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "12720 Hawthorne Blvd",
-            "addressLocality": "Hawthorne",
-            "addressRegion": "CA",
-            "postalCode": "90250",
-            "addressCountry": "US"
-          },
-          "geo": { "@type": "GeoCoordinates", "latitude": 33.9164, "longitude": -118.3526 },
-          "url": "https://shieldwisesecurity.com/los-angeles/hawthorne",
-          "telephone": "+17147167430",
-          "email": "hawthorne@shieldwisesecurity.com",
-          "priceRange": "$$",
-          "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-            "opens": "00:00", "closes": "23:59"
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": 4.9,
-            "bestRating": 5,
-            "worstRating": 1,
-            "ratingCount": 156,
-            "reviewCount": 112
-          },
-          "review": [
-            {
-              "@type": "Review",
-              "author": { "@type": "Person", "name": "Thomas A." },
-              "datePublished": "2024-04-12",
-              "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 },
-              "reviewBody": "Outstanding security service for our tech facility. Professional IP protection and access control expertise."
-            },
-            {
-              "@type": "Review",
-              "author": { "@type": "Person", "name": "Maria G." },
-              "datePublished": "2024-05-06",
-              "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 },
-              "reviewBody": "Excellent rapid response and professional service for our Hawthorne aerospace facility. Highly recommended."
+                      "@type": "FAQPage",
+                      "@id": "https://shieldwisesecurity.com/hawthorne#faq",
+                      "mainEntity": [
+                                {
+                                          "@type": "Question",
+                                          "name": "What security services does ShieldWise offer in Hawthorne?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "ShieldWise Security offers comprehensive security services in Hawthorne including armed and unarmed guards, mobile patrol, event security, fire watch, construction site security, executive protection, and 24/7 emergency response. We specialize in aerospace & spacex security."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "Are ShieldWise security guards licensed and insured in Hawthorne, CA?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Yes, all ShieldWise security guards serving Hawthorne are BSIS-certified and licensed by the State of California. We carry $2 million in liability insurance and perform comprehensive background checks on all personnel."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "How quickly can ShieldWise respond to emergencies in Hawthorne?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Our emergency response team typically arrives within 15 minutes anywhere in Hawthorne and Los Angeles County. We maintain GPS-tracked patrols and real-time incident monitoring for rapid deployment."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "What industries does ShieldWise serve in Hawthorne?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "In Hawthorne, we provide security services for Aerospace, Technology, Manufacturing, and many other sectors. Our guards are trained for aerospace & spacex security and understand local business needs."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "Does ShieldWise provide 24/7 security coverage in Hawthorne?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Yes, ShieldWise provides around-the-clock security services in Hawthorne including overnight patrols, weekend coverage, holiday security, and emergency response available 24 hours a day, 7 days a week."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "How much does security guard service cost in Hawthorne?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Security service costs in Hawthorne vary based on hours, guard type (armed vs unarmed), and specific requirements. Contact ShieldWise for a free, customized quote for your Hawthorne business or property."
+                                          }
+                                }
+                      ]
             }
-          ],
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Security Services",
-            "itemListElement": [
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aerospace Facility Security", "description": "Specialized security for aerospace facilities in Hawthorne CA" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tech Company Security", "description": "Professional security for tech companies with IP protection" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "24/7 Emergency Response", "description": "Rapid deployment within 2 hours for urgent security needs" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SpaceX Tesla Area Security", "description": "Specialized security services for the SpaceX/Tesla innovation corridor" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Property Security", "description": "Professional security for office buildings and commercial facilities" } }
-            ]
-          },
-          "contactPoint": [
-            {
-              "@type": "ContactPoint",
-              "telephone": "+1-714-716-7430",
-              "contactType": "customer support",
-              "areaServed": "Hawthorne, CA",
-              "availableLanguage": ["English", "Spanish"],
-              "hoursAvailable": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
-                "opens": "00:00", "closes": "23:59"
-              }
-            }
-          ],
-          "areaServed": [
-            { "@type": "City", "name": "Hawthorne", "sameAs": "https://en.wikipedia.org/wiki/Hawthorne,_California" },
-            { "@type": "City", "name": "El Segundo", "sameAs": "https://en.wikipedia.org/wiki/El_Segundo,_California" },
-            { "@type": "City", "name": "Lawndale", "sameAs": "https://en.wikipedia.org/wiki/Lawndale,_California" },
-            { "@type": "City", "name": "Gardena", "sameAs": "https://en.wikipedia.org/wiki/Gardena,_California" }
-          ],
-          "serviceArea": {
-            "@type": "GeoCircle",
-            "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 33.9164, "longitude": -118.3526 },
-            "geoRadius": "25000"
-          }
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "How quickly can ShieldWise Security respond to emergency calls in Hawthorne?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "ShieldWise Security provides rapid emergency response within 2 hours for urgent security needs in Hawthorne, CA. Our 24/7 dispatch center ensures immediate deployment of licensed security guards."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Do you provide security for aerospace and tech companies in Hawthorne?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, we offer specialized security services for high-tech and aerospace facilities in Hawthorne. Our guards receive additional training focusing on intellectual property protection and access control."
-              }
-            },
-            {
-              "@type": "Question", 
-              "name": "Can you provide security near SpaceX and Tesla facilities?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Absolutely. We provide professional security services throughout the SpaceX/Tesla area of Hawthorne. Our security personnel understand the unique requirements of aerospace and automotive technology companies."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What types of security services do you offer in Hawthorne?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "We offer comprehensive security services including armed and unarmed guards, mobile patrol, access control, surveillance monitoring, emergency response, and specialized aerospace facility security."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Are your security guards licensed and insured?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, all our security guards are fully licensed, bonded, and insured. We maintain comprehensive liability insurance and ensure all personnel meet California state requirements."
-              }
-            }
-          ]
-        }
       ]
     }
     </script>
@@ -499,64 +349,6 @@
             }
         ]
     }
-    </script>
-    
-    <!-- Enhanced FAQ Schema for AI Search (ChatGPT, Perplexity, Gemini) -->
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "What security services does ShieldWise offer in Hawthorne?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "ShieldWise Security offers comprehensive security services in Hawthorne including armed and unarmed guards, mobile patrol, event security, fire watch, construction site security, executive protection, and 24/7 emergency response. We specialize in aerospace & spacex security."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Are ShieldWise security guards licensed and insured in Hawthorne, CA?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, all ShieldWise security guards serving Hawthorne are BSIS-certified and licensed by the State of California. We carry $2 million in liability insurance and perform comprehensive background checks on all personnel."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "How quickly can ShieldWise respond to emergencies in Hawthorne?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Our emergency response team typically arrives within 15 minutes anywhere in Hawthorne and Los Angeles County. We maintain GPS-tracked patrols and real-time incident monitoring for rapid deployment."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "What industries does ShieldWise serve in Hawthorne?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "In Hawthorne, we provide security services for Aerospace, Technology, Manufacturing, and many other sectors. Our guards are trained for aerospace & spacex security and understand local business needs."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Does ShieldWise provide 24/7 security coverage in Hawthorne?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, ShieldWise provides around-the-clock security services in Hawthorne including overnight patrols, weekend coverage, holiday security, and emergency response available 24 hours a day, 7 days a week."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "How much does security guard service cost in Hawthorne?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Security service costs in Hawthorne vary based on hours, guard type (armed vs unarmed), and specific requirements. Contact ShieldWise for a free, customized quote for your Hawthorne business or property."
-            }
-        }
-    ]
-}
     </script>
 </head>
 <body id="top">

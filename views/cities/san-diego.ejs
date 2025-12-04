@@ -105,196 +105,59 @@
         "@context": "https://schema.org",
         "@graph": [
             {
-                "@type": "SecurityService",
-                "@id": "https://shieldwisesecurity.com/san-diego#commercial-security",
-                "name": "Commercial Security Services San Diego",
-                "description": "Professional commercial security guards specializing in office building protection, business complex security, and corporate facility monitoring for San Diego's business district.",
-                "serviceType": "Commercial Security",
-                "areaServed": {
-                    "@type": "City",
-                    "name": "San Diego",
-                    "containedInPlace": {
-                        "@type": "AdministrativeArea",
-                        "name": "California"
-                    }
-                },
-                "offers": {
-                    "@type": "Offer"
-                }
-            },
-            {
-                "@type": "SecurityService",
-                "@id": "https://shieldwisesecurity.com/san-diego#healthcare-security",
-                "name": "Healthcare Security Services San Diego",
-                "description": "Specialized healthcare facility security for hospitals, clinics, and medical centers in San Diego's medical district.",
-                "serviceType": "Healthcare Security",
-                "areaServed": {
-                    "@type": "City",
-                    "name": "San Diego"
-                }
-            },
-            {
-                "@type": "SecurityService",
-                "name": "ShieldWise Security - San Diego",
-                "alternateName": "San Diego Security Guards",
-                "image": "https://shieldwisesecurity.com/img/san-diego.webp",
-                "description": "Professional security guard services in San Diego, CA. Specializing in commercial, healthcare, and waterfront security with 24/7 monitoring and rapid emergency response.",
-                "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://shieldwisesecurity.com/img/logo1.webp",
-                    "width": 400,
-                    "height": 400
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "555 Broadway",
-                    "addressLocality": "San Diego",
-                    "addressRegion": "CA",
-                    "postalCode": "92101",
-                    "addressCountry": "US"
-                },
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": 32.7157,
-                    "longitude": -117.1611
-                },
-                "url": "https://shieldwisesecurity.com/san-diego",
-                "telephone": "+1-714-716-7430",
-                "email": "sandiego@shieldwisesecurity.com",
-                "priceRange": "$$-$$$",
-                "currenciesAccepted": "USD",
-                "paymentAccepted": ["Cash", "Credit Card", "Check", "Invoice", "Bank Transfer"],
-                "openingHoursSpecification": [
-                    {
-                        "@type": "OpeningHoursSpecification",
-                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                        "opens": "00:00",
-                        "closes": "23:59"
-                    }
-                ],
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": 4.9,
-                    "bestRating": 5,
-                    "worstRating": 1,
-                    "ratingCount": 189,
-                    "reviewCount": 189
-                },
-                "review": [
-                    {
-                        "@type": "Review",
-                        "author": {
-                            "@type": "Person",
-                            "name": "Dr. Maria Rodriguez",
-                            "jobTitle": "Hospital Administrator"
-                        },
-                        "datePublished": "2024-12-10",
-                        "reviewBody": "ShieldWise Security has provided exceptional security services for our healthcare facility in San Diego for over two years. Their guards are professional, healthcare-trained, and understand the unique requirements of medical environments.",
-                        "reviewRating": {
-                            "@type": "Rating",
-                            "ratingValue": 5,
-                            "bestRating": 5
-                        }
-                    },
-                    {
-                        "@type": "Review",
-                        "author": {
-                            "@type": "Person",
-                            "name": "James Thompson",
-                            "jobTitle": "Property Manager"
-                        },
-                        "datePublished": "2024-11-28",
-                        "reviewBody": "Outstanding commercial security services in San Diego. The team is responsive, professional, and provides excellent protection for our downtown office building.",
-                        "reviewRating": {
-                            "@type": "Rating",
-                            "ratingValue": 5,
-                            "bestRating": 5
-                        }
-                    }
-                ],
-                "foundingDate": "2010",
-                "slogan": "San Diego's Trusted Security Partner",
-                "knowsAbout": [
-                    "Commercial Security",
-                    "Healthcare Security",
-                    "Waterfront Security",
-                    "Event Security",
-                    "Executive Protection"
-                ],
-                "serviceArea": [
-                    {
-                        "@type": "GeoCircle",
-                        "geoMidpoint": {
-                            "@type": "GeoCoordinates",
-                            "latitude": 32.7157,
-                            "longitude": -117.1611
-                        },
-                        "geoRadius": "25000"
-                    }
-                ],
-                "areaServed": [
-                    {
-                        "@type": "City",
-                        "name": "San Diego"
-                    },
-                    {
-                        "@type": "Place",
-                        "name": "Downtown San Diego"
-                    },
-                    {
-                        "@type": "Place",
-                        "name": "Balboa Park"
-                    },
-                    {
-                        "@type": "Place",
-                        "name": "San Diego Bay"
-                    }
-                ]
+                      "@type": "FAQPage",
+                      "@id": "https://shieldwisesecurity.com/san-diego#faq",
+                      "mainEntity": [
+                                {
+                                          "@type": "Question",
+                                          "name": "What security services does ShieldWise offer in San Diego?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "ShieldWise Security offers comprehensive security services in San Diego including armed and unarmed guards, mobile patrol, event security, fire watch, construction site security, executive protection, and 24/7 emergency response. We specialize in naval & biotech security."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "Are ShieldWise security guards licensed and insured in San Diego, CA?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Yes, all ShieldWise security guards serving San Diego are BSIS-certified and licensed by the State of California. We carry $2 million in liability insurance and perform comprehensive background checks on all personnel."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "How quickly can ShieldWise respond to emergencies in San Diego?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Our emergency response team typically arrives within 15 minutes anywhere in San Diego and San Diego County. We maintain GPS-tracked patrols and real-time incident monitoring for rapid deployment."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "What industries does ShieldWise serve in San Diego?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "In San Diego, we provide security services for Military, Biotechnology, Tourism, and many other sectors. Our guards are trained for naval & biotech security and understand local business needs."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "Does ShieldWise provide 24/7 security coverage in San Diego?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Yes, ShieldWise provides around-the-clock security services in San Diego including overnight patrols, weekend coverage, holiday security, and emergency response available 24 hours a day, 7 days a week."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "How much does security guard service cost in San Diego?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Security service costs in San Diego vary based on hours, guard type (armed vs unarmed), and specific requirements. Contact ShieldWise for a free, customized quote for your San Diego business or property."
+                                          }
+                                }
+                      ]
             }
-        ]
-    }
-    </script>
-
-    <!-- ✅ Enhanced FAQ Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Do you provide healthcare security for San Diego medical facilities?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, we specialize in healthcare security in San Diego. Our security professionals have specific training for medical environments and understand the unique security challenges healthcare facilities face. We work with hospitals, clinics, and medical centers throughout San Diego."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What certifications do your San Diego security guards hold?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "All ShieldWise guards in San Diego are BSIS-certified, licensed, and trained in emergency response. They undergo rigorous background checks and receive comprehensive training specific to their assignments."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How quickly can you deploy security guards in San Diego?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We pride ourselves on quick response times. For standard security needs, we can typically deploy guards within 24-48 hours. For emergency situations in San Diego, we offer expedited service and can often provide security personnel within hours."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Do you offer waterfront security services in San Diego?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, we provide comprehensive waterfront security services including marina security, harbor patrol, pier security, and coastal property protection throughout San Diego's extensive waterfront."
-                }
-            }
-        ]
-    }
     </script>
 
     <!-- ✅ Speakable Schema for Voice Search -->
@@ -398,62 +261,52 @@
                   ]
                 }
                 </script>
-            
-    <!-- Enhanced FAQ Schema for AI Search (ChatGPT, Perplexity, Gemini) -->
+
+    <!-- SecurityService Schema with Rating -->
     <script type="application/ld+json">
     {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "What security services does ShieldWise offer in San Diego?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "ShieldWise Security offers comprehensive security services in San Diego including armed and unarmed guards, mobile patrol, event security, fire watch, construction site security, executive protection, and 24/7 emergency response. We specialize in naval & biotech security."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Are ShieldWise security guards licensed and insured in San Diego, CA?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, all ShieldWise security guards serving San Diego are BSIS-certified and licensed by the State of California. We carry $2 million in liability insurance and perform comprehensive background checks on all personnel."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "How quickly can ShieldWise respond to emergencies in San Diego?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Our emergency response team typically arrives within 15 minutes anywhere in San Diego and San Diego County. We maintain GPS-tracked patrols and real-time incident monitoring for rapid deployment."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "What industries does ShieldWise serve in San Diego?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "In San Diego, we provide security services for Military, Biotechnology, Tourism, and many other sectors. Our guards are trained for naval & biotech security and understand local business needs."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Does ShieldWise provide 24/7 security coverage in San Diego?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, ShieldWise provides around-the-clock security services in San Diego including overnight patrols, weekend coverage, holiday security, and emergency response available 24 hours a day, 7 days a week."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "How much does security guard service cost in San Diego?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Security service costs in San Diego vary based on hours, guard type (armed vs unarmed), and specific requirements. Contact ShieldWise for a free, customized quote for your San Diego business or property."
-            }
-        }
-    ]
+    "@type": "SecurityService",
+    "name": "ShieldWise Security - San Diego",
+    "alternateName": "San Diego Security Guards",
+    "description": "Professional security guard services in San Diego, CA. BSIS licensed, $2M insured, 24/7 coverage.",
+    "url": "https://shieldwisesecurity.com/san-diego",
+    "telephone": "+1-714-716-7430",
+    "priceRange": "$-$$",
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 32.7157,
+        "longitude": -117.1611
+    },
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Diego",
+        "addressRegion": "CA",
+        "postalCode": "92101",
+        "addressCountry": "US"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 4.9,
+        "bestRating": 5,
+        "worstRating": 1,
+        "ratingCount": 189,
+        "reviewCount": 189
+    },
+    "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+    }
 }
     </script>
 </head>

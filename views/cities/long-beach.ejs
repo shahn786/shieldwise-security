@@ -131,213 +131,58 @@
         "@context": "https://schema.org",
         "@graph": [
             {
-                "@type": "SecurityService",
-                "@id": "https://shieldwisesecurity.com/#organization",
-                "name": "ShieldWise Security - Long Beach",
-                "image": "https://shieldwisesecurity.com/img/shahn1.webp",
-                "description": "Professional security guard services in Long Beach. Our trained and licensed security personnel protect Port of Long Beach facilities, downtown businesses, events, and properties 24/7.",
-                "priceRange": "$35-$85",
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "100 W Broadway",
-                    "addressLocality": "Long Beach",
-                    "addressRegion": "CA",
-                    "postalCode": "90802",
-                    "addressCountry": "US"
-                },
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": 33.7701,
-                    "longitude": -118.1937
-                },
-                "url": "https://shieldwisesecurity.com/los-angeles/long-beach",
-                "telephone": "+1-714-716-7430",
-                "email": "info@shieldwisesecurity.com",
-                "openingHours": "Mo-Su 00:00-23:59",
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": 4.9,
-                    "reviewCount": 287,
-                    "bestRating": 5,
-                    "worstRating": 1
-                },
-                "review": [
-                    {
-                        "@type": "Review",
-                        "author": {
-                            "@type": "Person",
-                            "name": "Robert Jenkins"
-                        },
-                        "reviewBody": "ShieldWise Security has been instrumental in decreasing security incidents at our downtown Long Beach retail location. Their professional guards and proactive approach have made our employees and customers feel much safer. The detailed daily reports help us identify potential security issues before they become problems.",
-                        "reviewRating": {
-                            "@type": "Rating",
-                            "ratingValue": 5,
-                            "bestRating": 5
-                        },
-                        "datePublished": "2025-01-21"
-                    },
-                    {
-                        "@type": "Review",
-                        "author": {
-                            "@type": "Person",
-                            "name": "Lisa Martinez"
-                        },
-                        "reviewBody": "We've used ShieldWise for multiple events at our Long Beach convention center. Their team is always professional, punctual, and provides excellent crowd management. The security staff is well-trained in de-escalation techniques and their communication with our event staff is outstanding.",
-                        "reviewRating": {
-                            "@type": "Rating",
-                            "ratingValue": 5,
-                            "bestRating": 5
-                        },
-                        "datePublished": "2025-01-10"
-                    },
-                    {
-                        "@type": "Review",
-                        "author": {
-                            "@type": "Person",
-                            "name": "Thomas Anderson"
-                        },
-                        "reviewBody": "After hiring ShieldWise Security for our waterfront property in Long Beach, we've seen a significant improvement in overall security. Their guards are professional, attentive, and excellent with our residents. They provide the perfect balance of security presence without being intrusive.",
-                        "reviewRating": {
-                            "@type": "Rating",
-                            "ratingValue": 5,
-                            "bestRating": 5
-                        },
-                        "datePublished": "2025-01-05"
-                    }
-                ],
-                "hasCredential": [
-                    {
-                        "@type": "EducationalOccupationalCredential",
-                        "name": "BSIS Licensed Security Guards",
-                        "credentialCategory": "Professional License",
-                        "recognizedBy": {
-                            "@type": "Organization",
-                            "name": "California Bureau of Security and Investigative Services"
-                        }
-                    },
-                    {
-                        "@type": "EducationalOccupationalCredential",
-                        "name": "TWIC Certified Guards",
-                        "credentialCategory": "Maritime Security Clearance",
-                        "recognizedBy": {
-                            "@type": "Organization",
-                            "name": "Transportation Security Administration"
-                        }
-                    }
-                ],
-                "hasOfferCatalog": {
-                    "@type": "OfferCatalog",
-                    "name": "Long Beach Security Services",
-                    "itemListElement": [
-                        {
-                            "@type": "Offer",
-                            "name": "Port & Maritime Security",
-                            "description": "Specialized security services for Port of Long Beach facilities, harbors, and maritime operations."
-                        },
-                        {
-                            "@type": "Offer",
-                            "name": "Downtown Commercial Security",
-                            "description": "Comprehensive security solutions for Long Beach downtown businesses and commercial properties."
-                        },
-                        {
-                            "@type": "Offer",
-                            "name": "Event Security",
-                            "description": "Professional security guards for the Long Beach Grand Prix, conventions, and events at the Long Beach Convention Center."
-                        },
-                        {
-                            "@type": "Offer",
-                            "name": "Retail & Shopping District Security",
-                            "description": "Loss prevention and retail security solutions for Long Beach shopping areas including Pike Outlets and Shoreline Village."
-                        }
-                    ]
-                },
-                "sameAs": [
-                    "https://www.facebook.com/shieldwisesecurity",
-                    "https://twitter.com/shieldwisesecurity",
-                    "https://www.instagram.com/shieldwisesecurity",
-                    "https://www.linkedin.com/company/shieldwisesecurity"
-                ],
-                "serviceArea": {
-                    "@type": "GeoCircle",
-                    "geoMidpoint": {
-                        "@type": "GeoCoordinates",
-                        "latitude": 33.7701,
-                        "longitude": -118.1937
-                    },
-                    "geoRadius": "15000"
-                },
-                "areaServed": [
-                    {
-                        "@type": "City",
-                        "name": "Long Beach"
-                    },
-                    {
-                        "@type": "Place",
-                        "name": "Port of Long Beach"
-                    },
-                    {
-                        "@type": "Place",
-                        "name": "Downtown Long Beach"
-                    },
-                    {
-                        "@type": "Place",
-                        "name": "Belmont Shore"
-                    },
-                    {
-                        "@type": "Place",
-                        "name": "Naples"
-                    },
-                    {
-                        "@type": "Place",
-                        "name": "Signal Hill"
-                    }
-                ]
-            },
-            {
-                "@type": "FAQPage",
-                "@id": "https://shieldwisesecurity.com/los-angeles/long-beach#faq",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "What security services do you offer in Long Beach?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "We offer a comprehensive range of security services in Long Beach, including Port of Long Beach security, maritime security, downtown commercial building security, retail security, event security for the Grand Prix and Convention Center, construction site security, residential building security, and mobile patrol services. All our services are customized to meet the specific needs of each client in the Long Beach area."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Do you provide specialized maritime security for Port of Long Beach facilities?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes, we offer specialized maritime and port security services in Long Beach. Our security professionals have specific training for port environments and understand the unique security challenges of waterfront and maritime facilities. Our guards are TWIC certified and trained in port operations security protocols."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Are your security guards licensed and insured?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes, all our security guards are fully licensed, bonded, and insured in accordance with California state regulations. They undergo rigorous background checks, receive comprehensive training, and hold valid guard cards issued by the Bureau of Security and Investigative Services (BSIS). Our maritime guards also hold TWIC certifications."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Do you provide security for events at the Long Beach Convention Center?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes, we provide professional security services for events at the Long Beach Convention Center, the Grand Prix of Long Beach, and other major events throughout the city. Our experienced team can handle crowd management, access control, VIP protection, and overall event security to ensure your event runs smoothly and safely."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How quickly can you deploy security guards in Long Beach?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "We pride ourselves on quick response times. For standard security needs, we can typically deploy guards within 24-48 hours. For emergency situations in Long Beach, we offer expedited service and can often provide security personnel within 1-4 hours. Contact us for immediate assistance."
-                        }
-                    }
-                ]
+                      "@type": "FAQPage",
+                      "@id": "https://shieldwisesecurity.com/long-beach#faq",
+                      "mainEntity": [
+                                {
+                                          "@type": "Question",
+                                          "name": "What security services does ShieldWise offer in Long Beach?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "ShieldWise Security offers comprehensive security services in Long Beach including armed and unarmed guards, mobile patrol, event security, fire watch, construction site security, executive protection, and 24/7 emergency response. We specialize in port & marina security."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "Are ShieldWise security guards licensed and insured in Long Beach, CA?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Yes, all ShieldWise security guards serving Long Beach are BSIS-certified and licensed by the State of California. We carry $2 million in liability insurance and perform comprehensive background checks on all personnel."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "How quickly can ShieldWise respond to emergencies in Long Beach?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Our emergency response team typically arrives within 15 minutes anywhere in Long Beach and Los Angeles County. We maintain GPS-tracked patrols and real-time incident monitoring for rapid deployment."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "What industries does ShieldWise serve in Long Beach?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "In Long Beach, we provide security services for Shipping, Logistics, Tourism, and many other sectors. Our guards are trained for port & marina security and understand local business needs."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "Does ShieldWise provide 24/7 security coverage in Long Beach?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Yes, ShieldWise provides around-the-clock security services in Long Beach including overnight patrols, weekend coverage, holiday security, and emergency response available 24 hours a day, 7 days a week."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "How much does security guard service cost in Long Beach?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Security service costs in Long Beach vary based on hours, guard type (armed vs unarmed), and specific requirements. Contact ShieldWise for a free, customized quote for your Long Beach business or property."
+                                          }
+                                }
+                      ]
             },
             {
                 "@type": "BreadcrumbList",
@@ -421,62 +266,52 @@
                   ]
                 }
                 </script>
-            
-    <!-- Enhanced FAQ Schema for AI Search (ChatGPT, Perplexity, Gemini) -->
+
+    <!-- SecurityService Schema with Rating -->
     <script type="application/ld+json">
     {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "What security services does ShieldWise offer in Long Beach?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "ShieldWise Security offers comprehensive security services in Long Beach including armed and unarmed guards, mobile patrol, event security, fire watch, construction site security, executive protection, and 24/7 emergency response. We specialize in port & marina security."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Are ShieldWise security guards licensed and insured in Long Beach, CA?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, all ShieldWise security guards serving Long Beach are BSIS-certified and licensed by the State of California. We carry $2 million in liability insurance and perform comprehensive background checks on all personnel."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "How quickly can ShieldWise respond to emergencies in Long Beach?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Our emergency response team typically arrives within 15 minutes anywhere in Long Beach and Los Angeles County. We maintain GPS-tracked patrols and real-time incident monitoring for rapid deployment."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "What industries does ShieldWise serve in Long Beach?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "In Long Beach, we provide security services for Shipping, Logistics, Tourism, and many other sectors. Our guards are trained for port & marina security and understand local business needs."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Does ShieldWise provide 24/7 security coverage in Long Beach?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, ShieldWise provides around-the-clock security services in Long Beach including overnight patrols, weekend coverage, holiday security, and emergency response available 24 hours a day, 7 days a week."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "How much does security guard service cost in Long Beach?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Security service costs in Long Beach vary based on hours, guard type (armed vs unarmed), and specific requirements. Contact ShieldWise for a free, customized quote for your Long Beach business or property."
-            }
-        }
-    ]
+    "@type": "SecurityService",
+    "name": "ShieldWise Security - Long Beach",
+    "alternateName": "Long Beach Security Guards",
+    "description": "Professional security guard services in Long Beach, CA. BSIS licensed, $2M insured, 24/7 coverage.",
+    "url": "https://shieldwisesecurity.com/long-beach",
+    "telephone": "+1-714-716-7430",
+    "priceRange": "$-$$",
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 33.7701,
+        "longitude": -118.1937
+    },
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Long Beach",
+        "addressRegion": "CA",
+        "postalCode": "90802",
+        "addressCountry": "US"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 4.9,
+        "bestRating": 5,
+        "worstRating": 1,
+        "ratingCount": 189,
+        "reviewCount": 189
+    },
+    "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+    }
 }
     </script>
 </head>

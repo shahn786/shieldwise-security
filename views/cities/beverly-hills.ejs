@@ -98,163 +98,58 @@
         "@context": "https://schema.org",
         "@graph": [
             {
-                "@type": ["SecurityService", "LocalBusiness"],
-                "@id": "https://shieldwisesecurity.com/los-angeles/beverly-hills#business",
-                "name": "ShieldWise Security - Beverly Hills",
-                "image": "https://shieldwisesecurity.com/img/beverly-hills-security.jpg",
-                "description": "Professional security guard services in Beverly Hills. Our trained and licensed security personnel protect luxury estates, high-end retail, events, and properties 24/7.",
-                "priceRange": "$35-$95/hour",
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Security Boulevard",
-                    "addressLocality": "Beverly Hills",
-                    "addressRegion": "CA",
-                    "postalCode": "90210",
-                    "addressCountry": "US"
-                },
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": 34.0696,
-                    "longitude": -118.4053
-                },
-                "url": "https://shieldwisesecurity.com/los-angeles/beverly-hills",
-                "telephone": "+1-714-716-7430",
-                "email": "info@shieldwisesecurity.com",
-                "openingHoursSpecification": {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                    "opens": "00:00",
-                    "closes": "23:59"
-                },
-                "paymentAccepted": ["Cash", "Credit Card", "Check", "Invoice"],
-                "currenciesAccepted": "USD",
-                "hasCredential": [
-                    {
-                        "@type": "EducationalOccupationalCredential",
-                        "name": "California BSIS License",
-                        "credentialCategory": "license"
-                    },
-                    {
-                        "@type": "EducationalOccupationalCredential", 
-                        "name": "Bonded and Insured",
-                        "credentialCategory": "certification"
-                    }
-                ],
-                "serviceType": [
-                    "Estate Security",
-                    "Event Security", 
-                    "Celebrity Protection",
-                    "Luxury Retail Security",
-                    "Armed Security Guards",
-                    "Unarmed Security Guards",
-                    "Mobile Patrol Services",
-                    "Executive Protection"
-                ],
-                "hasOfferCatalog": {
-                    "@type": "OfferCatalog",
-                    "name": "Beverly Hills Security Services",
-                    "itemListElement": [
-                        {
-                            "@type": "Offer",
-                            "name": "Estate Security",
-                            "description": "Professional armed security guards for luxury estates and residences in Beverly Hills."
-                        },
-                        {
-                            "@type": "Offer", 
-                            "name": "Event Security",
-                            "description": "Specialized security for galas, exclusive events and high-end functions in Beverly Hills."
-                        },
-                        {
-                            "@type": "Offer",
-                            "name": "Celebrity Protection", 
-                            "description": "Discreet security services for VIPs and celebrities in Beverly Hills."
-                        },
-                        {
-                            "@type": "Offer",
-                            "name": "Luxury Retail Security",
-                            "description": "Premium loss prevention and retail security solutions for Rodeo Drive and Beverly Hills boutiques."
-                        }
-                    ]
-                },
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": 4.9,
-                    "reviewCount": 93,
-                    "bestRating": 5,
-                    "worstRating": 1
-                },
-                "sameAs": [
-                    "https://www.facebook.com/shieldwisesecurity",
-                    "https://www.twitter.com/shieldwisesec", 
-                    "https://www.instagram.com/shieldwisesecurity",
-                    "https://www.linkedin.com/company/shieldwisesecurity"
-                ],
-                "serviceArea": {
-                    "@type": "GeoCircle",
-                    "geoMidpoint": {
-                        "@type": "GeoCoordinates",
-                        "latitude": 34.0696,
-                        "longitude": -118.4053
-                    },
-                    "geoRadius": "15000"
-                },
-                "areaServed": {
-                    "@type": "City",
-                    "name": "Beverly Hills",
-                    "sameAs": "https://en.wikipedia.org/wiki/Beverly_Hills,_California"
-                },
-                "founder": {
-                    "@type": "Person",
-                    "name": "ShieldWise Security Team"
-                },
-                "numberOfEmployees": "50-100",
-                "yearEstablished": "2010"
-            },
-            {
-                "@type": "FAQPage",
-                "@id": "https://shieldwisesecurity.com/los-angeles/beverly-hills#faq",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "What security services do you offer in Beverly Hills?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "We offer a comprehensive range of security services in Beverly Hills, including estate security, luxury retail protection, event security, celebrity protection, armed and unarmed guards, mobile patrol services, and loss prevention. All our services are customized to meet the exacting standards expected in Beverly Hills."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Are your security guards licensed and insured?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes, all our security guards are fully licensed, bonded, and insured in accordance with California state regulations. They undergo rigorous background checks, receive comprehensive training, and hold valid guard cards issued by the Bureau of Security and Investigative Services (BSIS)."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Do you provide security for high-end events and galas?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes, we specialize in high-profile event security in Beverly Hills. Our experienced team provides security for luxury galas, charity events, private parties, celebrity events, and other exclusive gatherings. Our guards are trained in discreet security protocols, access control, and VIP protection."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How quickly can you deploy security guards in Beverly Hills?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "We pride ourselves on quick response times. For standard security needs, we can typically deploy guards within 24-48 hours. For emergency situations in Beverly Hills, we offer expedited service and can often provide security personnel within hours. Contact us for immediate assistance."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Do you offer celebrity and executive protection services?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes, we provide specialized executive protection and celebrity security services tailored to Beverly Hills clientele. Our team includes former law enforcement and military personnel trained in close protection techniques. We offer discreet security solutions for high-profile individuals, ensuring their safety while maintaining their privacy and lifestyle."
-                        }
-                    }
-                ]
+                      "@type": "FAQPage",
+                      "@id": "https://shieldwisesecurity.com/beverly-hills#faq",
+                      "mainEntity": [
+                                {
+                                          "@type": "Question",
+                                          "name": "What security services does ShieldWise offer in Beverly Hills?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "ShieldWise Security offers comprehensive security services in Beverly Hills including armed and unarmed guards, mobile patrol, event security, fire watch, construction site security, executive protection, and 24/7 emergency response. We specialize in luxury retail & celebrity protection."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "Are ShieldWise security guards licensed and insured in Beverly Hills, CA?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Yes, all ShieldWise security guards serving Beverly Hills are BSIS-certified and licensed by the State of California. We carry $2 million in liability insurance and perform comprehensive background checks on all personnel."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "How quickly can ShieldWise respond to emergencies in Beverly Hills?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Our emergency response team typically arrives within 15 minutes anywhere in Beverly Hills and Los Angeles County. We maintain GPS-tracked patrols and real-time incident monitoring for rapid deployment."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "What industries does ShieldWise serve in Beverly Hills?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "In Beverly Hills, we provide security services for Luxury Retail, Entertainment, Real Estate, and many other sectors. Our guards are trained for luxury retail & celebrity protection and understand local business needs."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "Does ShieldWise provide 24/7 security coverage in Beverly Hills?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Yes, ShieldWise provides around-the-clock security services in Beverly Hills including overnight patrols, weekend coverage, holiday security, and emergency response available 24 hours a day, 7 days a week."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "How much does security guard service cost in Beverly Hills?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Security service costs in Beverly Hills vary based on hours, guard type (armed vs unarmed), and specific requirements. Contact ShieldWise for a free, customized quote for your Beverly Hills business or property."
+                                          }
+                                }
+                      ]
             },
             {
                 "@type": "Review",
@@ -532,64 +427,6 @@
             }
         ]
     }
-    </script>
-    
-    <!-- Enhanced FAQ Schema for AI Search (ChatGPT, Perplexity, Gemini) -->
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "What security services does ShieldWise offer in Beverly Hills?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "ShieldWise Security offers comprehensive security services in Beverly Hills including armed and unarmed guards, mobile patrol, event security, fire watch, construction site security, executive protection, and 24/7 emergency response. We specialize in luxury retail & celebrity protection."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Are ShieldWise security guards licensed and insured in Beverly Hills, CA?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, all ShieldWise security guards serving Beverly Hills are BSIS-certified and licensed by the State of California. We carry $2 million in liability insurance and perform comprehensive background checks on all personnel."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "How quickly can ShieldWise respond to emergencies in Beverly Hills?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Our emergency response team typically arrives within 15 minutes anywhere in Beverly Hills and Los Angeles County. We maintain GPS-tracked patrols and real-time incident monitoring for rapid deployment."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "What industries does ShieldWise serve in Beverly Hills?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "In Beverly Hills, we provide security services for Luxury Retail, Entertainment, Real Estate, and many other sectors. Our guards are trained for luxury retail & celebrity protection and understand local business needs."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Does ShieldWise provide 24/7 security coverage in Beverly Hills?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, ShieldWise provides around-the-clock security services in Beverly Hills including overnight patrols, weekend coverage, holiday security, and emergency response available 24 hours a day, 7 days a week."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "How much does security guard service cost in Beverly Hills?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Security service costs in Beverly Hills vary based on hours, guard type (armed vs unarmed), and specific requirements. Contact ShieldWise for a free, customized quote for your Beverly Hills business or property."
-            }
-        }
-    ]
-}
     </script>
 </head>
 <body id="top">

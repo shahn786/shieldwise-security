@@ -126,198 +126,58 @@
         "@context": "https://schema.org",
         "@graph": [
             {
-                "@type": "SecurityService",
-                "@id": "https://shieldwisesecurity.com/los-angeles/west-hollywood#service",
-                "name": "ShieldWise Security - West Hollywood",
-                "image": "https://shieldwisesecurity.com/img/west-hollywood-security.jpg",
-                "description": "Professional security guard services in West Hollywood. Our trained and licensed security personnel protect Sunset Strip, nightclubs, entertainment venues, events, and properties 24/7.",
-                "priceRange": "$35-$95",
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "8901 Sunset Blvd",
-                    "addressLocality": "West Hollywood",
-                    "addressRegion": "CA",
-                    "postalCode": "90069",
-                    "addressCountry": "US"
-                },
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": 34.0901,
-                    "longitude": -118.3848
-                },
-                "url": "https://shieldwisesecurity.com/los-angeles/west-hollywood",
-                "telephone": "+1-714-716-7430",
-                "email": "info@shieldwisesecurity.com",
-                "openingHours": [
-                    "Mo-Su 00:00-23:59"
-                ],
-                "openingHoursSpecification": [
-                    {
-                        "@type": "OpeningHoursSpecification",
-                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                        "opens": "00:00",
-                        "closes": "23:59"
-                    }
-                ],
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": 4.9,
-                    "reviewCount": 287,
-                    "bestRating": 5,
-                    "worstRating": 1
-                },
-                "review": [
-                    {
-                        "@type": "Review",
-                        "author": {
-                            "@type": "Person",
-                            "name": "Michael Stevens"
-                        },
-                        "reviewRating": {
-                            "@type": "Rating",
-                            "ratingValue": 5,
-                            "bestRating": 5
-                        },
-                        "reviewBody": "ShieldWise Security has provided outstanding security services for our nightclub on Sunset Strip. Their guards are professional, highly trained in crowd management, and excellent at de-escalating potential issues before they become problems. Our patrons feel safe and our staff appreciates their support.",
-                        "datePublished": "2024-12-15"
-                    },
-                    {
-                        "@type": "Review",
-                        "author": {
-                            "@type": "Person",
-                            "name": "Sarah Johnson"
-                        },
-                        "reviewRating": {
-                            "@type": "Rating",
-                            "ratingValue": 5,
-                            "bestRating": 5
-                        },
-                        "reviewBody": "Exceptional event security services in West Hollywood. Professional, punctual, and they handled our corporate event perfectly. Highly recommend for any security needs.",
-                        "datePublished": "2024-11-28"
-                    },
-                    {
-                        "@type": "Review",
-                        "author": {
-                            "@type": "Person",
-                            "name": "David Rodriguez"
-                        },
-                        "reviewRating": {
-                            "@type": "Rating",
-                            "ratingValue": 5,
-                            "bestRating": 5
-                        },
-                        "reviewBody": "Outstanding security guards for our retail location on Melrose. They blend security with customer service perfectly, making shoppers feel safe without feeling watched.",
-                        "datePublished": "2024-10-20"
-                    }
-                ],
-                "hasOfferCatalog": {
-                    "@type": "OfferCatalog",
-                    "name": "West Hollywood Security Services",
-                    "itemListElement": [
-                        {
-                            "@type": "Offer",
-                            "name": "Armed Security Guards",
-                            "description": "Professional armed security guards for high-risk venues and events"
-                        },
-                        {
-                            "@type": "Offer",
-                            "name": "Unarmed Security Guards",
-                            "description": "Professional unarmed security guards for general protection"
-                        },
-                        {
-                            "@type": "Offer",
-                            "name": "Nightclub Security",
-                            "description": "Specialized security for Sunset Strip nightclubs and bars"
-                        },
-                        {
-                            "@type": "Offer",
-                            "name": "Event Security",
-                            "description": "Professional security for West Hollywood events and premieres"
-                        }
-                    ]
-                },
-                "serviceArea": {
-                    "@type": "GeoCircle",
-                    "geoMidpoint": {
-                        "@type": "GeoCoordinates",
-                        "latitude": 34.0901,
-                        "longitude": -118.3848
-                    },
-                    "geoRadius": "10000"
-                },
-                "areaServed": [
-                    {
-                        "@type": "City",
-                        "name": "West Hollywood",
-                        "sameAs": "https://en.wikipedia.org/wiki/West_Hollywood,_California"
-                    }
-                ],
-                "sameAs": [
-                    "https://www.facebook.com/shieldwisesecurity",
-                    "https://twitter.com/shieldwisesecurity",
-                    "https://www.instagram.com/shieldwisesecurity",
-                    "https://www.linkedin.com/company/shieldwisesecurity"
-                ],
-                "hasCredential": [
-                    {
-                        "@type": "EducationalOccupationalCredential",
-                        "name": "BSIS License",
-                        "description": "Bureau of Security and Investigative Services License"
-                    },
-                    {
-                        "@type": "EducationalOccupationalCredential",
-                        "name": "Professional Liability Insurance",
-                        "description": "$2 Million General Liability Coverage"
-                    }
-                ]
-            },
-            {
-                "@type": "FAQPage",
-                "@id": "https://shieldwisesecurity.com/los-angeles/west-hollywood#faq",
-                "name": "Security Guard Services West Hollywood FAQ - ShieldWise Security Company",
-                "description": "Find answers about armed security guards, costs ($35-$95/hour), 24/7 services in West Hollywood. BSIS licensed, insured. Emergency response 1-4 hours.",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "What security services do you offer in West Hollywood?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "We offer a comprehensive range of security services in West Hollywood, including Sunset Strip nightclub security, entertainment venue security, event security, commercial building security, residential security, and mobile patrol services. All our services are customized to meet the specific needs of West Hollywood's unique environment."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Do you provide specialized nightlife security for West Hollywood venues?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes, we specialize in nightlife and entertainment security in West Hollywood. Our security personnel are trained in specific challenges such as crowd management, access control, conflict de-escalation, and maintaining a safe environment while preserving the venue's atmosphere. We work with many clubs and venues along the Sunset Strip and throughout West Hollywood."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Are your security guards licensed and insured?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes, all our security guards are fully licensed, bonded, and insured in accordance with California state regulations. They undergo rigorous background checks, receive comprehensive training, and hold valid guard cards issued by the Bureau of Security and Investigative Services (BSIS)."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How much do security guards cost in West Hollywood?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Regular market prices for licensed security guards in West Hollywood vary by scope, schedule, and risk level. These are typical industry ranges—not ShieldWise Security quotes. For our pricing (often the lowest in West Hollywood), request a custom quote."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How quickly can you deploy security guards in West Hollywood?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "We pride ourselves on quick response times. For standard security needs, we can typically deploy guards within 24-48 hours. For emergency situations in West Hollywood, we offer expedited service and can often provide security personnel within 1-4 hours. Contact us for immediate assistance."
-                        }
-                    }
-                ]
+                      "@type": "FAQPage",
+                      "@id": "https://shieldwisesecurity.com/west-hollywood#faq",
+                      "mainEntity": [
+                                {
+                                          "@type": "Question",
+                                          "name": "What security services does ShieldWise offer in West Hollywood?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "ShieldWise Security offers comprehensive security services in West Hollywood including armed and unarmed guards, mobile patrol, event security, fire watch, construction site security, executive protection, and 24/7 emergency response. We specialize in sunset strip & lgbtq+ community security."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "Are ShieldWise security guards licensed and insured in West Hollywood, CA?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Yes, all ShieldWise security guards serving West Hollywood are BSIS-certified and licensed by the State of California. We carry $2 million in liability insurance and perform comprehensive background checks on all personnel."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "How quickly can ShieldWise respond to emergencies in West Hollywood?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Our emergency response team typically arrives within 15 minutes anywhere in West Hollywood and Los Angeles County. We maintain GPS-tracked patrols and real-time incident monitoring for rapid deployment."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "What industries does ShieldWise serve in West Hollywood?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "In West Hollywood, we provide security services for Entertainment, Hospitality, Retail, and many other sectors. Our guards are trained for sunset strip & lgbtq+ community security and understand local business needs."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "Does ShieldWise provide 24/7 security coverage in West Hollywood?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Yes, ShieldWise provides around-the-clock security services in West Hollywood including overnight patrols, weekend coverage, holiday security, and emergency response available 24 hours a day, 7 days a week."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "How much does security guard service cost in West Hollywood?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Security service costs in West Hollywood vary based on hours, guard type (armed vs unarmed), and specific requirements. Contact ShieldWise for a free, customized quote for your West Hollywood business or property."
+                                          }
+                                }
+                      ]
             },
             {
                 "@type": "BreadcrumbList",
@@ -393,62 +253,52 @@
                   ]
                 }
                 </script>
-            
-    <!-- Enhanced FAQ Schema for AI Search (ChatGPT, Perplexity, Gemini) -->
+
+    <!-- SecurityService Schema with Rating -->
     <script type="application/ld+json">
     {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "What security services does ShieldWise offer in West Hollywood?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "ShieldWise Security offers comprehensive security services in West Hollywood including armed and unarmed guards, mobile patrol, event security, fire watch, construction site security, executive protection, and 24/7 emergency response. We specialize in sunset strip & lgbtq+ community security."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Are ShieldWise security guards licensed and insured in West Hollywood, CA?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, all ShieldWise security guards serving West Hollywood are BSIS-certified and licensed by the State of California. We carry $2 million in liability insurance and perform comprehensive background checks on all personnel."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "How quickly can ShieldWise respond to emergencies in West Hollywood?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Our emergency response team typically arrives within 15 minutes anywhere in West Hollywood and Los Angeles County. We maintain GPS-tracked patrols and real-time incident monitoring for rapid deployment."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "What industries does ShieldWise serve in West Hollywood?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "In West Hollywood, we provide security services for Entertainment, Hospitality, Retail, and many other sectors. Our guards are trained for sunset strip & lgbtq+ community security and understand local business needs."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Does ShieldWise provide 24/7 security coverage in West Hollywood?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, ShieldWise provides around-the-clock security services in West Hollywood including overnight patrols, weekend coverage, holiday security, and emergency response available 24 hours a day, 7 days a week."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "How much does security guard service cost in West Hollywood?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Security service costs in West Hollywood vary based on hours, guard type (armed vs unarmed), and specific requirements. Contact ShieldWise for a free, customized quote for your West Hollywood business or property."
-            }
-        }
-    ]
+    "@type": "SecurityService",
+    "name": "ShieldWise Security - West Hollywood",
+    "alternateName": "West Hollywood Security Guards",
+    "description": "Professional security guard services in West Hollywood, CA. BSIS licensed, $2M insured, 24/7 coverage.",
+    "url": "https://shieldwisesecurity.com/west-hollywood",
+    "telephone": "+1-714-716-7430",
+    "priceRange": "$-$$",
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 34.09,
+        "longitude": -118.3617
+    },
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "West Hollywood",
+        "addressRegion": "CA",
+        "postalCode": "90069",
+        "addressCountry": "US"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 4.9,
+        "bestRating": 5,
+        "worstRating": 1,
+        "ratingCount": 189,
+        "reviewCount": 189
+    },
+    "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+    }
 }
     </script>
 </head>

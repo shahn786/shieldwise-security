@@ -96,145 +96,58 @@
         "@context": "https://schema.org",
         "@graph": [
             {
-                "@type": "LocalBusiness",
-                "@id": "https://shieldwisesecurity.com/#organization",
-                "name": "ShieldWise Security - Pasadena",
-                "image": "https://shieldwisesecurity.com/img/pasadena-unsplash.jpg",
-                "description": "Professional security guard services in Pasadena, CA. ShieldWise Security provides comprehensive security solutions including event security for Rose Bowl, corporate security, retail protection, and property security with trained and licensed guards available 24/7.",
-                "priceRange": "$$-$$$",
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "35 S Raymond Ave",
-                    "addressLocality": "Pasadena",
-                    "addressRegion": "CA",
-                    "postalCode": "91105",
-                    "addressCountry": "US"
-                },
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": 34.1478,
-                    "longitude": -118.1445
-                },
-                "url": "https://shieldwisesecurity.com/los-angeles/pasadena",
-                "telephone": "+1-714-716-7430",
-                "openingHours": ["Mo 00:00-23:59", "Tu 00:00-23:59", "We 00:00-23:59", "Th 00:00-23:59", "Fr 00:00-23:59", "Sa 00:00-23:59", "Su 00:00-23:59"],
-                "openingHoursSpecification": [
-                    {
-                        "@type": "OpeningHoursSpecification",
-                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                        "opens": "00:00",
-                        "closes": "23:59"
-                    }
-                ],
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": 4.9,
-                    "reviewCount": 287,
-                    "bestRating": 5,
-                    "worstRating": 1
-                },
-                "hasOfferCatalog": {
-                    "@type": "OfferCatalog",
-                    "name": "Pasadena Security Services",
-                    "itemListElement": [
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Event Security",
-                                "description": "Specialized security solutions for events including the Rose Bowl and Tournament of Roses Parade."
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Commercial Building Security",
-                                "description": "Comprehensive security solutions for Pasadena businesses and commercial properties."
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Retail Security",
-                                "description": "Loss prevention and retail security solutions in Pasadena."
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Residential Security",
-                                "description": "Professional security services for residential properties and complexes in Pasadena."
-                            }
-                        }
-                    ]
-                },
-                "sameAs": [
-                    "https://www.facebook.com/shieldwisesecurity",
-                    "https://twitter.com/shieldwisesecurity",
-                    "https://www.instagram.com/shieldwisesecurity",
-                    "https://www.linkedin.com/company/shieldwisesecurity"
-                ],
-                "serviceArea": {
-                    "@type": "GeoCircle",
-                    "geoMidpoint": {
-                        "@type": "GeoCoordinates",
-                        "latitude": 34.1478,
-                        "longitude": -118.1445
-                    },
-                    "geoRadius": "15000"
-                },
-                "areaServed": {
-                    "@type": "City",
-                    "name": "Pasadena"
-                }
-            },
-            {
-                "@type": "FAQPage",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "What security services do you offer in Pasadena?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "We offer a comprehensive range of security services in Pasadena, including event security for the Rose Bowl and Tournament of Roses Parade, commercial building security, retail security, educational institution security, construction site security, residential security, and mobile patrol services. All our services are customized to meet the specific needs of each client in the Pasadena area."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Are your security guards licensed and insured?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes, all our security guards are fully licensed, bonded, and insured in accordance with California state regulations. They undergo rigorous background checks, receive comprehensive training, and hold valid guard cards issued by the Bureau of Security and Investigative Services (BSIS)."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Do you provide security for the Rose Bowl and other major Pasadena events?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes, we provide supplemental event security services for venues and areas surrounding major Pasadena events, including the Rose Bowl and Tournament of Roses Parade. Our security personnel are experienced in handling large crowds, managing access control, and ensuring safe environments for patrons attending these major Pasadena events."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How quickly can you deploy security guards in Pasadena?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "We pride ourselves on quick response times. For standard security needs, we can typically deploy guards within 24-48 hours. For emergency situations in Pasadena, we offer expedited service and can often provide security personnel within hours. Contact us for immediate assistance."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Do you offer mobile patrol services in Pasadena?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes, we provide mobile patrol services throughout Pasadena. Our patrol vehicles are clearly marked and equipped with GPS tracking. Mobile patrols offer a cost-effective security solution for properties that don't require a permanent security presence but benefit from regular security checks."
-                        }
-                    }
-                ]
+                      "@type": "FAQPage",
+                      "@id": "https://shieldwisesecurity.com/pasadena#faq",
+                      "mainEntity": [
+                                {
+                                          "@type": "Question",
+                                          "name": "What security services does ShieldWise offer in Pasadena?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "ShieldWise Security offers comprehensive security services in Pasadena including armed and unarmed guards, mobile patrol, event security, fire watch, construction site security, executive protection, and 24/7 emergency response. We specialize in rose parade & jpl security."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "Are ShieldWise security guards licensed and insured in Pasadena, CA?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Yes, all ShieldWise security guards serving Pasadena are BSIS-certified and licensed by the State of California. We carry $2 million in liability insurance and perform comprehensive background checks on all personnel."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "How quickly can ShieldWise respond to emergencies in Pasadena?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Our emergency response team typically arrives within 15 minutes anywhere in Pasadena and Los Angeles County. We maintain GPS-tracked patrols and real-time incident monitoring for rapid deployment."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "What industries does ShieldWise serve in Pasadena?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "In Pasadena, we provide security services for Technology, Healthcare, Education, and many other sectors. Our guards are trained for rose parade & jpl security and understand local business needs."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "Does ShieldWise provide 24/7 security coverage in Pasadena?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Yes, ShieldWise provides around-the-clock security services in Pasadena including overnight patrols, weekend coverage, holiday security, and emergency response available 24 hours a day, 7 days a week."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "How much does security guard service cost in Pasadena?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Security service costs in Pasadena vary based on hours, guard type (armed vs unarmed), and specific requirements. Contact ShieldWise for a free, customized quote for your Pasadena business or property."
+                                          }
+                                }
+                      ]
             },
             {
                 "@type": "Review",
@@ -503,64 +416,6 @@
             }
         ]
     }
-    </script>
-    
-    <!-- Enhanced FAQ Schema for AI Search (ChatGPT, Perplexity, Gemini) -->
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "What security services does ShieldWise offer in Pasadena?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "ShieldWise Security offers comprehensive security services in Pasadena including armed and unarmed guards, mobile patrol, event security, fire watch, construction site security, executive protection, and 24/7 emergency response. We specialize in rose parade & jpl security."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Are ShieldWise security guards licensed and insured in Pasadena, CA?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, all ShieldWise security guards serving Pasadena are BSIS-certified and licensed by the State of California. We carry $2 million in liability insurance and perform comprehensive background checks on all personnel."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "How quickly can ShieldWise respond to emergencies in Pasadena?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Our emergency response team typically arrives within 15 minutes anywhere in Pasadena and Los Angeles County. We maintain GPS-tracked patrols and real-time incident monitoring for rapid deployment."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "What industries does ShieldWise serve in Pasadena?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "In Pasadena, we provide security services for Technology, Healthcare, Education, and many other sectors. Our guards are trained for rose parade & jpl security and understand local business needs."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Does ShieldWise provide 24/7 security coverage in Pasadena?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, ShieldWise provides around-the-clock security services in Pasadena including overnight patrols, weekend coverage, holiday security, and emergency response available 24 hours a day, 7 days a week."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "How much does security guard service cost in Pasadena?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Security service costs in Pasadena vary based on hours, guard type (armed vs unarmed), and specific requirements. Contact ShieldWise for a free, customized quote for your Pasadena business or property."
-            }
-        }
-    ]
-}
     </script>
 </head>
 <body id="top">

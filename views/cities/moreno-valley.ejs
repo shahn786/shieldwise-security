@@ -86,220 +86,58 @@
         "@context": "https://schema.org",
         "@graph": [
             {
-                "@type": "SecurityService",
-                "@id": "https://shieldwisesecurity.com/moreno-valley#business",
-                "name": "ShieldWise Security - Moreno Valley",
-                "image": "https://shieldwisesecurity.com/img/moreno-valley-security.jpg",
-                "description": "Professional security guard services in Moreno Valley, California. Our trained and licensed security personnel protect businesses, events, and properties 24/7 throughout Moreno Valley and surrounding areas.",
-                "logo": "https://shieldwisesecurity.com/img/logo1.webp",
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "12625 Frederick Street, Suite I-5",
-                    "addressLocality": "Moreno Valley",
-                    "addressRegion": "CA",
-                    "postalCode": "92553",
-                    "addressCountry": "US"
-                },
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": 33.9424658,
-                    "longitude": -117.2296717
-                },
-                "url": "https://shieldwisesecurity.com/moreno-valley",
-                "telephone": "+1-951-555-7430",
-                "priceRange": "$$-$$$",
-                "openingHoursSpecification": [
-                    {
-                        "@type": "OpeningHoursSpecification",
-                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                        "opens": "00:00",
-                        "closes": "23:59"
-                    }
-                ],
-                "serviceArea": {
-                    "@type": "GeoCircle",
-                    "geoMidpoint": {
-                        "@type": "GeoCoordinates",
-                        "latitude": 33.9424658,
-                        "longitude": -117.2296717
-                    },
-                    "geoRadius": "15000"
-                },
-                "areaServed": {
-                    "@type": "City",
-                    "name": "Moreno Valley"
-                },
-                "hasOfferCatalog": {
-                    "@type": "OfferCatalog",
-                    "name": "Security Services in Moreno Valley",
-                    "itemListElement": [
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Armed Security Guards in Moreno Valley",
-                                "description": "Licensed armed security personnel for high-value assets, executive protection, and high-risk locations throughout Moreno Valley."
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Unarmed Security in Moreno Valley",
-                                "description": "Professional unarmed security guards for retail, commercial buildings, construction sites, and events in Moreno Valley and surrounding areas."
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Event Security in Moreno Valley",
-                                "description": "Specialized event security for concerts, festivals, conferences, corporate events, and private functions at venues throughout Moreno Valley."
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Mobile Patrol in Moreno Valley",
-                                "description": "Regular mobile patrol services for businesses, property management companies, and industrial sites throughout Moreno Valley and surrounding communities."
-                            }
-                        }
-                    ]
-                },
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "4.8",
-                    "bestRating": 5,
-                    "worstRating": 1,
-                    "ratingCount": 96
-                },
-                "review": [
-                    {
-                        "@type": "Review",
-                        "author": {
-                            "@type": "Person",
-                            "name": "James Wilson"
-                        },
-                        "datePublished": "2024-09-05",
-                        "reviewBody": "ShieldWise Security has been providing security for our warehouse in Moreno Valley for over a year. Their guards are professional, reliable, and always attentive to detail. The management team is responsive and works closely with us to address our specific security needs.",
-                        "reviewRating": {
-                            "@type": "Rating",
-                            "ratingValue": 5,
-                            "bestRating": 5
-                        }
-                    },
-                    {
-                        "@type": "Review",
-                        "author": {
-                            "@type": "Person",
-                            "name": "Lisa Rodriguez"
-                        },
-                        "datePublished": "2024-08-12",
-                        "reviewBody": "We hired ShieldWise for our community event at Towngate Memorial Park. Their security team was outstanding - professional, courteous, and very effective. They coordinated perfectly with our staff and helped everything run smoothly. I highly recommend their event security services for any Moreno Valley gathering.",
-                        "reviewRating": {
-                            "@type": "Rating",
-                            "ratingValue": 5,
-                            "bestRating": 5
-                        }
-                    }
-                ],
-                "potentialAction": {
-                    "@type": "ReserveAction",
-                    "target": {
-                        "@type": "EntryPoint",
-                        "urlTemplate": "https://shieldwisesecurity.com/contact",
-                        "inLanguage": "en-US",
-                        "actionPlatform": [
-                            "http://schema.org/DesktopWebPlatform",
-                            "http://schema.org/IOSPlatform",
-                            "http://schema.org/AndroidPlatform"
-                        ]
-                    },
-                    "result": {
-                        "@type": "Reservation",
-                        "name": "Security Service Consultation"
-                    }
-                },
-                "memberOf": [
-                    {
-                        "@type": "Organization",
-                        "name": "Private Security Association of California"
-                    },
-                    {
-                        "@type": "Organization",
-                        "name": "Moreno Valley Chamber of Commerce"
-                    },
-                    {
-                        "@type": "Organization",
-                        "name": "Moreno Valley Business Association"
-                    }
-                ],
-                "award": "Top-Rated Security Provider in Moreno Valley - Inland Empire Business Journal 2024"
-            },
-            {
-                "@type": "BreadcrumbList",
-                "@id": "https://shieldwisesecurity.com/moreno-valley#breadcrumb",
-                "itemListElement": [
-                    {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": "Home",
-                        "item": "https://shieldwisesecurity.com/"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": "Moreno Valley",
-                        "item": "https://shieldwisesecurity.com/moreno-valley"
-                    }
-                ]
-            },
-            {
-                "@type": "FAQPage",
-                "@id": "https://shieldwisesecurity.com/moreno-valley#faq",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "What security services do you offer in Moreno Valley?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "We offer a comprehensive range of security services in Moreno Valley, including armed and unarmed security guards, mobile patrol services, event security, loss prevention, warehouse security, executive protection, and emergency response. Our services are customized to meet the specific security needs of businesses, properties, and events throughout Moreno Valley and surrounding areas."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Are your security guards licensed and insured in Moreno Valley?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes, all ShieldWise security guards are fully licensed through the California Bureau of Security and Investigative Services (BSIS). Our company carries comprehensive liability insurance and workers' compensation coverage that exceeds state requirements. Each guard undergoes rigorous background checks, drug testing, and continues their professional development through our advanced training programs."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How quickly can you deploy security personnel in Moreno Valley?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "For standard security services, we can typically deploy guards within 24-48 hours. For emergency situations, we offer rapid response with guards available in as little as 2-4 hours in the Moreno Valley area. We maintain a large team of security professionals based in Moreno Valley to ensure quick response times for all our clients."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What makes ShieldWise Security different from other security companies in Moreno Valley?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "ShieldWise Security stands out through our deep knowledge of Moreno Valley's unique security challenges, our extensively trained security personnel, our use of advanced security technology, and our commitment to exceptional customer service. We offer customized security solutions rather than one-size-fits-all packages, and our management team is available 24/7 to address any concerns immediately."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Need a security guard fast in Moreno Valley?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Call us anytime—we're based right here on Frederick Street! Our rapid response team can deploy security personnel in as little as 2-4 hours to any location in Moreno Valley. Just call (951) 555-7430 for immediate assistance."
-                        }
-                    }
-                ]
+                      "@type": "FAQPage",
+                      "@id": "https://shieldwisesecurity.com/moreno-valley#faq",
+                      "mainEntity": [
+                                {
+                                          "@type": "Question",
+                                          "name": "What security services does ShieldWise offer in Moreno Valley?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "ShieldWise Security offers comprehensive security services in Moreno Valley including armed and unarmed guards, mobile patrol, event security, fire watch, construction site security, executive protection, and 24/7 emergency response. We specialize in logistics hub & warehouse security."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "Are ShieldWise security guards licensed and insured in Moreno Valley, CA?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Yes, all ShieldWise security guards serving Moreno Valley are BSIS-certified and licensed by the State of California. We carry $2 million in liability insurance and perform comprehensive background checks on all personnel."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "How quickly can ShieldWise respond to emergencies in Moreno Valley?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Our emergency response team typically arrives within 15 minutes anywhere in Moreno Valley and Riverside County. We maintain GPS-tracked patrols and real-time incident monitoring for rapid deployment."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "What industries does ShieldWise serve in Moreno Valley?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "In Moreno Valley, we provide security services for Logistics, Retail, Healthcare, and many other sectors. Our guards are trained for logistics hub & warehouse security and understand local business needs."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "Does ShieldWise provide 24/7 security coverage in Moreno Valley?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Yes, ShieldWise provides around-the-clock security services in Moreno Valley including overnight patrols, weekend coverage, holiday security, and emergency response available 24 hours a day, 7 days a week."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "How much does security guard service cost in Moreno Valley?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Security service costs in Moreno Valley vary based on hours, guard type (armed vs unarmed), and specific requirements. Contact ShieldWise for a free, customized quote for your Moreno Valley business or property."
+                                          }
+                                }
+                      ]
             }
         ]
     }
@@ -346,60 +184,77 @@
                   ]
                 }
                 </script>
-            
-    <!-- Enhanced FAQ Schema for AI Search (ChatGPT, Perplexity, Gemini) -->
+
+    <!-- SecurityService Schema with Rating -->
     <script type="application/ld+json">
     {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+    "@type": "SecurityService",
+    "name": "ShieldWise Security - Moreno Valley",
+    "alternateName": "Moreno Valley Security Guards",
+    "description": "Professional security guard services in Moreno Valley, CA. BSIS licensed, $2M insured, 24/7 coverage.",
+    "url": "https://shieldwisesecurity.com/moreno-valley",
+    "telephone": "+1-714-716-7430",
+    "priceRange": "$-$$",
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 33.9425,
+        "longitude": -117.2297
+    },
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Moreno Valley",
+        "addressRegion": "CA",
+        "postalCode": "92553",
+        "addressCountry": "US"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 4.9,
+        "bestRating": 5,
+        "worstRating": 1,
+        "ratingCount": 189,
+        "reviewCount": 189
+    },
+    "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+    }
+}
+    </script>
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
         {
-            "@type": "Question",
-            "name": "What security services does ShieldWise offer in Moreno Valley?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "ShieldWise Security offers comprehensive security services in Moreno Valley including armed and unarmed guards, mobile patrol, event security, fire watch, construction site security, executive protection, and 24/7 emergency response. We specialize in logistics hub & warehouse security."
-            }
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://shieldwisesecurity.com"
         },
         {
-            "@type": "Question",
-            "name": "Are ShieldWise security guards licensed and insured in Moreno Valley, CA?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, all ShieldWise security guards serving Moreno Valley are BSIS-certified and licensed by the State of California. We carry $2 million in liability insurance and perform comprehensive background checks on all personnel."
-            }
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://shieldwisesecurity.com/services"
         },
         {
-            "@type": "Question",
-            "name": "How quickly can ShieldWise respond to emergencies in Moreno Valley?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Our emergency response team typically arrives within 15 minutes anywhere in Moreno Valley and Riverside County. We maintain GPS-tracked patrols and real-time incident monitoring for rapid deployment."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "What industries does ShieldWise serve in Moreno Valley?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "In Moreno Valley, we provide security services for Logistics, Retail, Healthcare, and many other sectors. Our guards are trained for logistics hub & warehouse security and understand local business needs."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Does ShieldWise provide 24/7 security coverage in Moreno Valley?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, ShieldWise provides around-the-clock security services in Moreno Valley including overnight patrols, weekend coverage, holiday security, and emergency response available 24 hours a day, 7 days a week."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "How much does security guard service cost in Moreno Valley?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Security service costs in Moreno Valley vary based on hours, guard type (armed vs unarmed), and specific requirements. Contact ShieldWise for a free, customized quote for your Moreno Valley business or property."
-            }
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Moreno Valley Security",
+            "item": "https://shieldwisesecurity.com/moreno-valley"
         }
     ]
 }

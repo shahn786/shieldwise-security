@@ -105,204 +105,59 @@
         "@context": "https://schema.org",
         "@graph": [
             {
-                "@type": "SecurityService",
-                "@id": "https://shieldwisesecurity.com/fresno#agricultural-security",
-                "name": "Agricultural Security Services Fresno",
-                "description": "Professional agricultural security guards specializing in farm protection, equipment security, and crop monitoring for Fresno's agricultural district.",
-                "serviceType": "Agricultural Security",
-                "areaServed": {
-                    "@type": "City",
-                    "name": "Fresno",
-                    "containedInPlace": {
-                        "@type": "AdministrativeArea",
-                        "name": "California"
-                    }
-                },
-                "offers": {
-                    "@type": "Offer"
-                }
-            },
-            {
-                "@type": "SecurityService",
-                "@id": "https://shieldwisesecurity.com/fresno#warehouse-security",
-                "name": "Warehouse Security Services Fresno",
-                "description": "Specialized warehouse and distribution center security for Fresno's logistics and agricultural processing facilities.",
-                "serviceType": "Warehouse Security",
-                "areaServed": {
-                    "@type": "City",
-                    "name": "Fresno"
-                }
-            },
-            {
-                "@type": "SecurityService",
-                "name": "ShieldWise Security - Fresno",
-                "alternateName": "Fresno Security Guards",
-                "image": "https://shieldwisesecurity.com/img/fresno.webp",
-                "description": "Professional security guard services in Fresno, CA. Specializing in agricultural, commercial, and warehouse security with 24/7 monitoring and rapid emergency response.",
-                "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://shieldwisesecurity.com/img/logo1.webp",
-                    "width": 400,
-                    "height": 400
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "1234 Fresno Street",
-                    "addressLocality": "Fresno",
-                    "addressRegion": "CA",
-                    "postalCode": "93701",
-                    "addressCountry": "US"
-                },
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": 36.7378,
-                    "longitude": -119.7871
-                },
-                "url": "https://shieldwisesecurity.com/fresno",
-                "telephone": "+1-714-716-7430",
-                "email": "fresno@shieldwisesecurity.com",
-                "priceRange": "$$-$$$",
-                "currenciesAccepted": "USD",
-                "paymentAccepted": ["Cash", "Credit Card", "Check", "Invoice", "Bank Transfer"],
-                "openingHoursSpecification": [
-                    {
-                        "@type": "OpeningHoursSpecification",
-                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                        "opens": "00:00",
-                        "closes": "23:59"
-                    }
-                ],
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": 4.9,
-                    "bestRating": 5,
-                    "worstRating": 1,
-                    "ratingCount": 156,
-                    "reviewCount": 156
-                },
-                "review": [
-                    {
-                        "@type": "Review",
-                        "author": {
-                            "@type": "Person",
-                            "name": "Carlos Martinez",
-                            "jobTitle": "Farm Operations Manager"
-                        },
-                        "datePublished": "2024-12-10",
-                        "reviewBody": "ShieldWise Security has provided exceptional security services for our agricultural operation in Fresno for over three years. Their guards understand farming operations and provide reliable protection for our equipment and facilities.",
-                        "reviewRating": {
-                            "@type": "Rating",
-                            "ratingValue": 5,
-                            "bestRating": 5
-                        }
-                    },
-                    {
-                        "@type": "Review",
-                        "author": {
-                            "@type": "Person",
-                            "name": "Maria Rodriguez",
-                            "jobTitle": "Warehouse Manager"
-                        },
-                        "datePublished": "2024-11-28",
-                        "reviewBody": "Outstanding warehouse security services in Fresno. The team is professional, reliable, and provides excellent protection for our distribution center operations.",
-                        "reviewRating": {
-                            "@type": "Rating",
-                            "ratingValue": 5,
-                            "bestRating": 5
-                        }
-                    }
-                ],
-                "foundingDate": "2010",
-                "slogan": "Fresno's Trusted Agricultural Security Partner",
-                "knowsAbout": [
-                    "Agricultural Security",
-                    "Warehouse Security",
-                    "Commercial Security",
-                    "Distribution Center Security",
-                    "Farm Protection"
-                ],
-                "serviceArea": [
-                    {
-                        "@type": "GeoCircle",
-                        "geoMidpoint": {
-                            "@type": "GeoCoordinates",
-                            "latitude": 36.7378,
-                            "longitude": -119.7871
-                        },
-                        "geoRadius": "50000"
-                    }
-                ],
-                "areaServed": [
-                    {
-                        "@type": "City",
-                        "name": "Fresno"
-                    },
-                    {
-                        "@type": "Place",
-                        "name": "Central Valley"
-                    },
-                    {
-                        "@type": "Place",
-                        "name": "Agricultural District"
-                    },
-                    {
-                        "@type": "Place",
-                        "name": "Industrial District"
-                    }
-                ]
+                      "@type": "FAQPage",
+                      "@id": "https://shieldwisesecurity.com/fresno#faq",
+                      "mainEntity": [
+                                {
+                                          "@type": "Question",
+                                          "name": "What security services does ShieldWise offer in Fresno?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "ShieldWise Security offers comprehensive security services in Fresno including armed and unarmed guards, mobile patrol, event security, fire watch, construction site security, executive protection, and 24/7 emergency response. We specialize in agricultural hub & convention security."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "Are ShieldWise security guards licensed and insured in Fresno, CA?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Yes, all ShieldWise security guards serving Fresno are BSIS-certified and licensed by the State of California. We carry $2 million in liability insurance and perform comprehensive background checks on all personnel."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "How quickly can ShieldWise respond to emergencies in Fresno?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Our emergency response team typically arrives within 15 minutes anywhere in Fresno and Fresno County. We maintain GPS-tracked patrols and real-time incident monitoring for rapid deployment."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "What industries does ShieldWise serve in Fresno?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "In Fresno, we provide security services for Agriculture, Healthcare, Education, and many other sectors. Our guards are trained for agricultural hub & convention security and understand local business needs."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "Does ShieldWise provide 24/7 security coverage in Fresno?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Yes, ShieldWise provides around-the-clock security services in Fresno including overnight patrols, weekend coverage, holiday security, and emergency response available 24 hours a day, 7 days a week."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "How much does security guard service cost in Fresno?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Security service costs in Fresno vary based on hours, guard type (armed vs unarmed), and specific requirements. Contact ShieldWise for a free, customized quote for your Fresno business or property."
+                                          }
+                                }
+                      ]
             }
-        ]
-    }
-    </script>
-
-    <!-- ✅ Enhanced FAQ Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "How much does a security guard cost in Fresno?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Regular market prices for licensed security guards in Fresno vary by scope, schedule, and risk level. These are typical industry ranges—not ShieldWise Security quotes. For our pricing (often the lowest in Fresno), request a custom quote."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Do you provide agricultural security for Fresno farms?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, we specialize in agricultural security throughout Fresno County. Our security professionals have specific training for farm environments and understand the unique security challenges agricultural operations face. We work with farms, processing facilities, and agricultural equipment storage throughout the Central Valley."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What certifications do your Fresno security guards hold?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "All ShieldWise guards in Fresno are BSIS-certified, licensed, and trained in emergency response. They undergo rigorous background checks and receive comprehensive training specific to their assignments including agricultural and warehouse security protocols."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How quickly can you deploy security guards in Fresno?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We pride ourselves on quick response times. For standard security needs, we can typically deploy guards within 24-48 hours. For emergency situations in Fresno, we offer expedited service and can often provide security personnel within hours."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Do you offer warehouse security services in Fresno?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, we provide comprehensive warehouse security services including distribution center security, inventory protection, loading dock security, and 24/7 facility monitoring throughout Fresno's industrial districts."
-                }
-            }
-        ]
-    }
     </script>
 
     <!-- ✅ Speakable Schema for Voice Search -->
@@ -441,62 +296,52 @@
                   ]
                 }
                 </script>
-            
-    <!-- Enhanced FAQ Schema for AI Search (ChatGPT, Perplexity, Gemini) -->
+
+    <!-- SecurityService Schema with Rating -->
     <script type="application/ld+json">
     {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "What security services does ShieldWise offer in Fresno?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "ShieldWise Security offers comprehensive security services in Fresno including armed and unarmed guards, mobile patrol, event security, fire watch, construction site security, executive protection, and 24/7 emergency response. We specialize in agricultural hub & convention security."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Are ShieldWise security guards licensed and insured in Fresno, CA?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, all ShieldWise security guards serving Fresno are BSIS-certified and licensed by the State of California. We carry $2 million in liability insurance and perform comprehensive background checks on all personnel."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "How quickly can ShieldWise respond to emergencies in Fresno?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Our emergency response team typically arrives within 15 minutes anywhere in Fresno and Fresno County. We maintain GPS-tracked patrols and real-time incident monitoring for rapid deployment."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "What industries does ShieldWise serve in Fresno?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "In Fresno, we provide security services for Agriculture, Healthcare, Education, and many other sectors. Our guards are trained for agricultural hub & convention security and understand local business needs."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Does ShieldWise provide 24/7 security coverage in Fresno?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, ShieldWise provides around-the-clock security services in Fresno including overnight patrols, weekend coverage, holiday security, and emergency response available 24 hours a day, 7 days a week."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "How much does security guard service cost in Fresno?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Security service costs in Fresno vary based on hours, guard type (armed vs unarmed), and specific requirements. Contact ShieldWise for a free, customized quote for your Fresno business or property."
-            }
-        }
-    ]
+    "@type": "SecurityService",
+    "name": "ShieldWise Security - Fresno",
+    "alternateName": "Fresno Security Guards",
+    "description": "Professional security guard services in Fresno, CA. BSIS licensed, $2M insured, 24/7 coverage.",
+    "url": "https://shieldwisesecurity.com/fresno",
+    "telephone": "+1-714-716-7430",
+    "priceRange": "$-$$",
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 36.7378,
+        "longitude": -119.7871
+    },
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Fresno",
+        "addressRegion": "CA",
+        "postalCode": "93721",
+        "addressCountry": "US"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 4.9,
+        "bestRating": 5,
+        "worstRating": 1,
+        "ratingCount": 189,
+        "reviewCount": 189
+    },
+    "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+    }
 }
     </script>
 </head>

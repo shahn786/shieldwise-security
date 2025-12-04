@@ -110,208 +110,59 @@
         "@context": "https://schema.org",
         "@graph": [
             {
-                "@type": "SecurityService",
-                "@id": "https://shieldwisesecurity.com/ventura-county#agricultural-security",
-                "name": "Agricultural Security Services Ventura County",
-                "description": "Professional agricultural security guards specializing in farm protection, equipment security, and crop monitoring for Ventura County's agricultural industry.",
-                "serviceType": "Agricultural Security",
-                "areaServed": {
-                    "@type": "AdministrativeArea",
-                    "name": "Ventura County",
-                    "containedInPlace": {
-                        "@type": "AdministrativeArea",
-                        "name": "California"
-                    }
-                },
-                "offers": {
-                    "@type": "Offer"
-                }
-            },
-            {
-                "@type": "SecurityService",
-                "@id": "https://shieldwisesecurity.com/ventura-county#coastal-security",
-                "name": "Coastal Security Services Ventura County",
-                "description": "Specialized coastal and marina security for Ventura County's waterfront properties and harbor facilities.",
-                "serviceType": "Coastal Security",
-                "areaServed": {
-                    "@type": "AdministrativeArea",
-                    "name": "Ventura County"
-                }
-            },
-            {
-                "@type": "SecurityService",
-                "name": "ShieldWise Security - Ventura County",
-                "alternateName": "Ventura County Security Guards",
-                "image": "https://shieldwisesecurity.com/img/ventura.webp",
-                "description": "Professional security guard services in Ventura County, CA. Specializing in agricultural, commercial, and coastal security with 24/7 monitoring and rapid emergency response.",
-                "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://shieldwisesecurity.com/img/logo.webp",
-                    "width": 400,
-                    "height": 400
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "456 Main St",
-                    "addressLocality": "Ventura",
-                    "addressRegion": "CA",
-                    "postalCode": "93001",
-                    "addressCountry": "US"
-                },
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": 34.3705,
-                    "longitude": -119.1391
-                },
-                "url": "https://shieldwisesecurity.com/ventura-county",
-                "telephone": "+1-714-716-7430",
-                "email": "ventura@shieldwisesecurity.com",
-                "priceRange": "$$-$$$",
-                "currenciesAccepted": "USD",
-                "paymentAccepted": ["Cash", "Credit Card", "Check", "Invoice", "Bank Transfer"],
-                "openingHoursSpecification": [
-                    {
-                        "@type": "OpeningHoursSpecification",
-                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                        "opens": "00:00",
-                        "closes": "23:59"
-                    }
-                ],
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": 4.9,
-                    "bestRating": 5,
-                    "worstRating": 1,
-                    "ratingCount": 235,
-                    "reviewCount": 235
-                },
-                "review": [
-                    {
-                        "@type": "Review",
-                        "author": {
-                            "@type": "Person",
-                            "name": "Carlos Rodriguez",
-                            "jobTitle": "Farm Manager"
-                        },
-                        "datePublished": "2024-12-15",
-                        "reviewBody": "ShieldWise Security has provided exceptional agricultural security services for our Oxnard farm for over three years. Their guards understand farming operations and provide excellent equipment protection.",
-                        "reviewRating": {
-                            "@type": "Rating",
-                            "ratingValue": 5,
-                            "bestRating": 5
-                        }
-                    },
-                    {
-                        "@type": "Review",
-                        "author": {
-                            "@type": "Person",
-                            "name": "Marina Thompson",
-                            "jobTitle": "Harbor Manager"
-                        },
-                        "datePublished": "2024-11-28",
-                        "reviewBody": "Outstanding coastal security services in Ventura County. The team is professional, reliable, and provides excellent protection for our waterfront facilities.",
-                        "reviewRating": {
-                            "@type": "Rating",
-                            "ratingValue": 5,
-                            "bestRating": 5
-                        }
-                    }
-                ],
-                "foundingDate": "2015",
-                "slogan": "Ventura County's Trusted Security Partner",
-                "knowsAbout": [
-                    "Agricultural Security",
-                    "Commercial Security",
-                    "Coastal Security",
-                    "Event Security",
-                    "Mobile Patrol"
-                ],
-                "serviceArea": [
-                    {
-                        "@type": "GeoCircle",
-                        "geoMidpoint": {
-                            "@type": "GeoCoordinates",
-                            "latitude": 34.3705,
-                            "longitude": -119.1391
-                        },
-                        "geoRadius": "30000"
-                    }
-                ],
-                "areaServed": [
-                    {
-                        "@type": "AdministrativeArea",
-                        "name": "Ventura County"
-                    },
-                    {
-                        "@type": "City",
-                        "name": "Oxnard"
-                    },
-                    {
-                        "@type": "City",
-                        "name": "Thousand Oaks"
-                    },
-                    {
-                        "@type": "City",
-                        "name": "Ventura"
-                    },
-                    {
-                        "@type": "City",
-                        "name": "Simi Valley"
-                    }
-                ]
+                      "@type": "FAQPage",
+                      "@id": "https://shieldwisesecurity.com/ventura#faq",
+                      "mainEntity": [
+                                {
+                                          "@type": "Question",
+                                          "name": "What security services does ShieldWise offer in Ventura?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "ShieldWise Security offers comprehensive security services in Ventura including armed and unarmed guards, mobile patrol, event security, fire watch, construction site security, executive protection, and 24/7 emergency response. We specialize in coastal & county seat security."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "Are ShieldWise security guards licensed and insured in Ventura, CA?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Yes, all ShieldWise security guards serving Ventura are BSIS-certified and licensed by the State of California. We carry $2 million in liability insurance and perform comprehensive background checks on all personnel."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "How quickly can ShieldWise respond to emergencies in Ventura?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Our emergency response team typically arrives within 15 minutes anywhere in Ventura and Ventura County. We maintain GPS-tracked patrols and real-time incident monitoring for rapid deployment."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "What industries does ShieldWise serve in Ventura?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "In Ventura, we provide security services for Tourism, Agriculture, Healthcare, and many other sectors. Our guards are trained for coastal & county seat security and understand local business needs."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "Does ShieldWise provide 24/7 security coverage in Ventura?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Yes, ShieldWise provides around-the-clock security services in Ventura including overnight patrols, weekend coverage, holiday security, and emergency response available 24 hours a day, 7 days a week."
+                                          }
+                                },
+                                {
+                                          "@type": "Question",
+                                          "name": "How much does security guard service cost in Ventura?",
+                                          "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Security service costs in Ventura vary based on hours, guard type (armed vs unarmed), and specific requirements. Contact ShieldWise for a free, customized quote for your Ventura business or property."
+                                          }
+                                }
+                      ]
             }
-        ]
-    }
-    </script>
-
-    <!-- ✅ Enhanced FAQ Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "How much does a security guard cost in Ventura County?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Regular market prices for licensed security guards in Ventura vary by scope, schedule, and risk level. These are typical industry ranges—not ShieldWise Security quotes. For our pricing (often the lowest in Ventura), request a custom quote."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Do you provide agricultural security for Ventura County farms?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, we specialize in agricultural security throughout Ventura County. Our security professionals have specific training for farm environments and understand the unique security challenges agricultural facilities face. We work with farms, processing plants, and agricultural operations throughout Ventura County."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What certifications do your Ventura County security guards hold?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "All ShieldWise guards in Ventura County are BSIS-certified, licensed, and trained in emergency response. They undergo rigorous background checks and receive comprehensive training specific to their assignments."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How quickly can you deploy security guards in Ventura County?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We pride ourselves on quick response times. For standard security needs, we can typically deploy guards within 24-48 hours. For emergency situations in Ventura County, we offer expedited service and can often provide security personnel within hours."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Do you offer coastal security services in Ventura County?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, we provide comprehensive coastal security services including marina security, harbor patrol, waterfront property protection throughout Ventura County's 42 miles of coastline."
-                }
-            }
-        ]
-    }
     </script>
 
     <!-- ✅ Speakable Schema for Voice Search -->
@@ -471,62 +322,52 @@
                   ]
                 }
                 </script>
-            
-    <!-- Enhanced FAQ Schema for AI Search (ChatGPT, Perplexity, Gemini) -->
+
+    <!-- SecurityService Schema with Rating -->
     <script type="application/ld+json">
     {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "What security services does ShieldWise offer in Ventura?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "ShieldWise Security offers comprehensive security services in Ventura including armed and unarmed guards, mobile patrol, event security, fire watch, construction site security, executive protection, and 24/7 emergency response. We specialize in coastal & county seat security."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Are ShieldWise security guards licensed and insured in Ventura, CA?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, all ShieldWise security guards serving Ventura are BSIS-certified and licensed by the State of California. We carry $2 million in liability insurance and perform comprehensive background checks on all personnel."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "How quickly can ShieldWise respond to emergencies in Ventura?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Our emergency response team typically arrives within 15 minutes anywhere in Ventura and Ventura County. We maintain GPS-tracked patrols and real-time incident monitoring for rapid deployment."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "What industries does ShieldWise serve in Ventura?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "In Ventura, we provide security services for Tourism, Agriculture, Healthcare, and many other sectors. Our guards are trained for coastal & county seat security and understand local business needs."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Does ShieldWise provide 24/7 security coverage in Ventura?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, ShieldWise provides around-the-clock security services in Ventura including overnight patrols, weekend coverage, holiday security, and emergency response available 24 hours a day, 7 days a week."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "How much does security guard service cost in Ventura?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Security service costs in Ventura vary based on hours, guard type (armed vs unarmed), and specific requirements. Contact ShieldWise for a free, customized quote for your Ventura business or property."
-            }
-        }
-    ]
+    "@type": "SecurityService",
+    "name": "ShieldWise Security - Ventura",
+    "alternateName": "Ventura Security Guards",
+    "description": "Professional security guard services in Ventura, CA. BSIS licensed, $2M insured, 24/7 coverage.",
+    "url": "https://shieldwisesecurity.com/ventura",
+    "telephone": "+1-714-716-7430",
+    "priceRange": "$-$$",
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 34.2805,
+        "longitude": -119.2945
+    },
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ventura",
+        "addressRegion": "CA",
+        "postalCode": "93001",
+        "addressCountry": "US"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 4.9,
+        "bestRating": 5,
+        "worstRating": 1,
+        "ratingCount": 189,
+        "reviewCount": 189
+    },
+    "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+    }
 }
     </script>
 </head>
