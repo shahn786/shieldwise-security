@@ -269,54 +269,63 @@
     }
     </script>
 
-    <!-- FAQ Schema -->
+    
+    <!-- Enhanced FAQ Schema for AI Search (ChatGPT, Perplexity, Gemini) -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
         {
-          "@type": "Question",
-          "name": "How much do security guards cost in Orange County?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Regular market prices for licensed security guards in Orange County vary by scope, schedule, and risk level. These are typical industry ranges—not ShieldWise Security quotes. For our pricing (often the lowest in Orange County), request a custom quote."
-          }
+            "@type": "Question",
+            "name": "What security services does ShieldWise offer in Orange County?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ShieldWise Security offers comprehensive security services in Orange County including armed and unarmed guards, mobile patrol, event security, fire watch, construction site security, executive protection, and 24/7 emergency response. We specialize in county-wide security services."
+            }
         },
         {
-          "@type": "Question", 
-          "name": "Are your Orange County security guards licensed and insured?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, all ShieldWise Security personnel are fully licensed by the California Bureau of Security and Investigative Services (BSIS), bonded, and insured. Our guards complete ongoing training in emergency response, crowd control, and California security regulations."
-          }
+            "@type": "Question",
+            "name": "Are ShieldWise security guards licensed and insured in Orange County, CA?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, all ShieldWise security guards serving Orange County are BSIS-certified and licensed by the State of California. We carry $2 million in liability insurance and perform comprehensive background checks on all personnel."
+            }
         },
         {
-          "@type": "Question",
-          "name": "What cities in Orange County do you serve?",
-          "acceptedAnswer": {
-            "@type": "Answer", 
-            "text": "We provide security guard services throughout Orange County including Irvine, Anaheim, Newport Beach, Santa Ana, Huntington Beach, Costa Mesa, Fullerton, Garden Grove, Orange, Tustin, Mission Viejo, and all surrounding OC communities."
-          }
+            "@type": "Question",
+            "name": "How quickly can ShieldWise respond to emergencies in Orange County?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our emergency response team typically arrives within 15 minutes anywhere in Orange County and Orange County. We maintain GPS-tracked patrols and real-time incident monitoring for rapid deployment."
+            }
         },
         {
-          "@type": "Question",
-          "name": "Do you provide 24/7 security guard services in Orange County?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, ShieldWise Security offers 24/7 security guard services throughout Orange County. We provide round-the-clock coverage for businesses, events, construction sites, and residential properties with both armed and unarmed security options."
-          }
+            "@type": "Question",
+            "name": "What industries does ShieldWise serve in Orange County?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In Orange County, we provide security services for Technology, Tourism, Healthcare, and many other sectors. Our guards are trained for county-wide security services and understand local business needs."
+            }
         },
         {
-          "@type": "Question",
-          "name": "What types of security services do you offer in Orange County?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We offer comprehensive security services including armed/unarmed guards, mobile patrol, event security, fire watch, executive protection, construction site security, retail security, corporate security, and emergency response services throughout Orange County."
-          }
+            "@type": "Question",
+            "name": "Does ShieldWise provide 24/7 security coverage in Orange County?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, ShieldWise provides around-the-clock security services in Orange County including overnight patrols, weekend coverage, holiday security, and emergency response available 24 hours a day, 7 days a week."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How much does security guard service cost in Orange County?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Security service costs in Orange County vary based on hours, guard type (armed vs unarmed), and specific requirements. Contact ShieldWise for a free, customized quote for your Orange County business or property."
+            }
         }
-      ]
-    }
+    ]
+}
     </script>
 
     <!-- BreadcrumbList Schema -->
@@ -1024,7 +1033,36 @@
             </div>
         </section>
 
-    <%- include('../partials/Footer') %>
+    
+    <!-- Internal Links Section for SEO -->
+    <section class="internal-links-section" style="background: #f8f9fa; padding: 40px 0; margin-top: 30px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 style="color: #1a3c64; margin-bottom: 20px;">Security Services in Nearby Cities</h3>
+                    <ul class="nearby-cities-list" style="list-style: none; padding: 0;">
+                <li><a href="/tustin" title="Security guards in Tustin, CA">Tustin Security Guards</a></li>
+                <li><a href="/irvine" title="Security guards in Irvine, CA">Irvine Security Guards</a></li>
+                <li><a href="/santa-ana" title="Security guards in Santa Ana, CA">Santa Ana Security Guards</a></li>
+                <li><a href="/orange" title="Security guards in Orange, CA">Orange Security Guards</a></li>
+                <li><a href="/fountain-valley" title="Security guards in Fountain Valley, CA">Fountain Valley Security Guards</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3 style="color: #1a3c64; margin-bottom: 20px;">Our Security Services in Orange County</h3>
+                    <ul class="services-list" style="list-style: none; padding: 0;">
+                <li><a href="/services/armed-security" title="Armed Security Guards in Orange County">Armed Security Guards</a></li>
+                <li><a href="/services/unarmed-security" title="Unarmed Security in Orange County">Unarmed Security</a></li>
+                <li><a href="/services/patrol" title="Mobile Patrol in Orange County">Mobile Patrol</a></li>
+                <li><a href="/services/event-security" title="Event Security in Orange County">Event Security</a></li>
+                    </ul>
+                    <p style="margin-top: 15px;"><a href="/services" class="btn btn-primary">View All Services</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<%- include('../partials/Footer') %>
 
     <!-- Back to Top Button -->
     <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">

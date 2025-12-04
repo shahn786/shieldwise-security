@@ -754,7 +754,65 @@
         ]
     }
     </script>
-    </head>
+    
+    <!-- Enhanced FAQ Schema for AI Search (ChatGPT, Perplexity, Gemini) -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What security services does ShieldWise offer in Irvine?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ShieldWise Security offers comprehensive security services in Irvine including armed and unarmed guards, mobile patrol, event security, fire watch, construction site security, executive protection, and 24/7 emergency response. We specialize in corporate campus & university security."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Are ShieldWise security guards licensed and insured in Irvine, CA?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, all ShieldWise security guards serving Irvine are BSIS-certified and licensed by the State of California. We carry $2 million in liability insurance and perform comprehensive background checks on all personnel."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How quickly can ShieldWise respond to emergencies in Irvine?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our emergency response team typically arrives within 15 minutes anywhere in Irvine and Orange County. We maintain GPS-tracked patrols and real-time incident monitoring for rapid deployment."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What industries does ShieldWise serve in Irvine?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In Irvine, we provide security services for Technology, Education, Healthcare, and many other sectors. Our guards are trained for corporate campus & university security and understand local business needs."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Does ShieldWise provide 24/7 security coverage in Irvine?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, ShieldWise provides around-the-clock security services in Irvine including overnight patrols, weekend coverage, holiday security, and emergency response available 24 hours a day, 7 days a week."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How much does security guard service cost in Irvine?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Security service costs in Irvine vary based on hours, guard type (armed vs unarmed), and specific requirements. Contact ShieldWise for a free, customized quote for your Irvine business or property."
+            }
+        }
+    ]
+}
+    </script>
+</head>
 
 <body id="top" class="anaheim-page">
 
@@ -1396,7 +1454,36 @@
   </section>
 
   <!-- Footer (included via server-side template) -->
-  <%- include('../partials/Footer') %>
+  
+    <!-- Internal Links Section for SEO -->
+    <section class="internal-links-section" style="background: #f8f9fa; padding: 40px 0; margin-top: 30px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 style="color: #1a3c64; margin-bottom: 20px;">Security Services in Nearby Cities</h3>
+                    <ul class="nearby-cities-list" style="list-style: none; padding: 0;">
+                <li><a href="/orange-county" title="Security guards in Orange County, CA">Orange County Security Guards</a></li>
+                <li><a href="/tustin" title="Security guards in Tustin, CA">Tustin Security Guards</a></li>
+                <li><a href="/santa-ana" title="Security guards in Santa Ana, CA">Santa Ana Security Guards</a></li>
+                <li><a href="/costa-mesa" title="Security guards in Costa Mesa, CA">Costa Mesa Security Guards</a></li>
+                <li><a href="/orange" title="Security guards in Orange, CA">Orange Security Guards</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3 style="color: #1a3c64; margin-bottom: 20px;">Our Security Services in Irvine</h3>
+                    <ul class="services-list" style="list-style: none; padding: 0;">
+                <li><a href="/services/armed-security" title="Armed Security Guards in Irvine">Armed Security Guards</a></li>
+                <li><a href="/services/unarmed-security" title="Unarmed Security in Irvine">Unarmed Security</a></li>
+                <li><a href="/services/patrol" title="Mobile Patrol in Irvine">Mobile Patrol</a></li>
+                <li><a href="/services/event-security" title="Event Security in Irvine">Event Security</a></li>
+                    </ul>
+                    <p style="margin-top: 15px;"><a href="/services" class="btn btn-primary">View All Services</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<%- include('../partials/Footer') %>
 
   <!-- Back to Top Button -->
   <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">

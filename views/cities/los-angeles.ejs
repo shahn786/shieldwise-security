@@ -112,30 +112,64 @@
 
 
 
-                <!-- FAQ Schema for AI Search Engines -->
-                <script type="application/ld+json">
-                {
-                  "@context": "https://schema.org",
-                  "@type": "FAQPage",
-                  "mainEntity": [
-                    {
-                      "@type": "Question",
-                      "name": "What security services do you offer in Los Angeles?",
-                      "acceptedAnswer": { "@type": "Answer", "text": "We offer armed and unarmed security guards, mobile patrol, event security, fire watch, executive protection, and construction site security throughout Los Angeles County." }
-                    },
-                    {
-                      "@type": "Question",
-                      "name": "Are your security guards licensed in California?",
-                      "acceptedAnswer": { "@type": "Answer", "text": "Yes, all our security guards are BSIS-certified and licensed by the state of California, with comprehensive training and background checks." }
-                    },
-                    {
-                      "@type": "Question",
-                      "name": "Do you provide 24/7 security services in Los Angeles?",
-                      "acceptedAnswer": { "@type": "Answer", "text": "Yes, we offer 24/7 security services including mobile patrols and emergency response throughout Los Angeles and surrounding areas." }
-                    }
-                  ]
-                }
-                </script>
+                
+    <!-- Enhanced FAQ Schema for AI Search (ChatGPT, Perplexity, Gemini) -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What security services does ShieldWise offer in Los Angeles?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ShieldWise Security offers comprehensive security services in Los Angeles including armed and unarmed guards, mobile patrol, event security, fire watch, construction site security, executive protection, and 24/7 emergency response. We specialize in entertainment & metropolitan security."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Are ShieldWise security guards licensed and insured in Los Angeles, CA?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, all ShieldWise security guards serving Los Angeles are BSIS-certified and licensed by the State of California. We carry $2 million in liability insurance and perform comprehensive background checks on all personnel."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How quickly can ShieldWise respond to emergencies in Los Angeles?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our emergency response team typically arrives within 15 minutes anywhere in Los Angeles and Los Angeles County. We maintain GPS-tracked patrols and real-time incident monitoring for rapid deployment."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What industries does ShieldWise serve in Los Angeles?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In Los Angeles, we provide security services for Entertainment, Technology, Fashion, and many other sectors. Our guards are trained for entertainment & metropolitan security and understand local business needs."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Does ShieldWise provide 24/7 security coverage in Los Angeles?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, ShieldWise provides around-the-clock security services in Los Angeles including overnight patrols, weekend coverage, holiday security, and emergency response available 24 hours a day, 7 days a week."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How much does security guard service cost in Los Angeles?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Security service costs in Los Angeles vary based on hours, guard type (armed vs unarmed), and specific requirements. Contact ShieldWise for a free, customized quote for your Los Angeles business or property."
+            }
+        }
+    ]
+}
+    </script>
 
                 <!-- Resource Preconnections for Performance -->
                 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -782,7 +816,36 @@
 
 
 
-    <%- include('../partials/Footer') %>
+    
+    <!-- Internal Links Section for SEO -->
+    <section class="internal-links-section" style="background: #f8f9fa; padding: 40px 0; margin-top: 30px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 style="color: #1a3c64; margin-bottom: 20px;">Security Services in Nearby Cities</h3>
+                    <ul class="nearby-cities-list" style="list-style: none; padding: 0;">
+                <li><a href="/downtown-los-Angeles" title="Security guards in Downtown Los Angeles, CA">Downtown Los Angeles Security Guards</a></li>
+                <li><a href="/huntington-park" title="Security guards in Huntington Park, CA">Huntington Park Security Guards</a></li>
+                <li><a href="/hollywood" title="Security guards in Hollywood, CA">Hollywood Security Guards</a></li>
+                <li><a href="/glendale" title="Security guards in Glendale, CA">Glendale Security Guards</a></li>
+                <li><a href="/south-gate" title="Security guards in South Gate, CA">South Gate Security Guards</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3 style="color: #1a3c64; margin-bottom: 20px;">Our Security Services in Los Angeles</h3>
+                    <ul class="services-list" style="list-style: none; padding: 0;">
+                <li><a href="/services/armed-security" title="Armed Security Guards in Los Angeles">Armed Security Guards</a></li>
+                <li><a href="/services/unarmed-security" title="Unarmed Security in Los Angeles">Unarmed Security</a></li>
+                <li><a href="/services/patrol" title="Mobile Patrol in Los Angeles">Mobile Patrol</a></li>
+                <li><a href="/services/event-security" title="Event Security in Los Angeles">Event Security</a></li>
+                    </ul>
+                    <p style="margin-top: 15px;"><a href="/services" class="btn btn-primary">View All Services</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<%- include('../partials/Footer') %>
 
 
     <!-- Back to Top Button -->
