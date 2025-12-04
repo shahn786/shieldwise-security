@@ -76,3 +76,14 @@ Preferred communication style: Simple, everyday language.
 ### VPS Deployment
 - Created `deploy-seo-changes.sh` and `sync-to-vps.sh` scripts for production deployment
 - After sync: Run `pm2 restart shieldwise` on VPS
+- GitHub repository: https://github.com/shahn786/shieldwise-security
+
+### Internal Linking Optimization (December 2025)
+- **Internal Links to Nearby Cities**: Each city page now links to 5 nearby cities based on geographic proximity (Haversine distance calculation)
+- **Service Page Links**: Each city page links to 4 core services (Armed Security, Unarmed Security, Mobile Patrol, Event Security)
+- **Enhanced FAQ Schema for AI Search**: 6 city-specific FAQs per page optimized for ChatGPT Search, Perplexity, and Google Gemini
+- **Automation Scripts**:
+  - `scripts/enhance-city-internal-links.js` - Adds internal links and enhanced FAQs
+  - `scripts/cleanup-duplicate-faq.js` - Removes duplicate FAQ schemas
+  - `scripts/fix-missing-schemas.js` - Restores any missing schema elements
+- All 182 cities pass SEO validation (100% compliance)
