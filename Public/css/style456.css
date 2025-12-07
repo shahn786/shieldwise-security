@@ -2105,4 +2105,316 @@ body, html {
     box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
 }
 
-/* Add any additional styles here */
+/* ===== COMPREHENSIVE MOBILE RESPONSIVE DESIGN ===== */
+
+/* Tablet & Medium Screens (max-width: 768px) */
+@media (max-width: 768px) {
+    .overlay-sec {
+        padding: 35px 20px;
+        max-width: 90%;
+    }
+
+    .overlay-sec h1 {
+        font-size: 2.2rem;
+    }
+
+    .overlay-sec p {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+    }
+
+    .quote-btn-sec {
+        padding: 14px 30px;
+        font-size: 1rem;
+        letter-spacing: 0.8px;
+    }
+
+    .security-jobs-sec {
+        padding: 60px 15%;
+    }
+
+    .faq-main-title {
+        font-size: 2.5rem;
+    }
+
+    .faq-subtitle {
+        font-size: 1rem;
+    }
+
+    .enhanced-faq-section {
+        padding: 60px 0;
+    }
+
+    .faq-accordion-item {
+        font-size: 0.95rem;
+    }
+}
+
+/* Small Phones (max-width: 576px) */
+@media (max-width: 576px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    .hero-sec {
+        height: 70vh;
+    }
+
+    .overlay-sec {
+        padding: 25px 15px;
+        max-width: 95%;
+        margin: 0 10px;
+    }
+
+    .overlay-sec h1 {
+        font-size: 1.8rem;
+        letter-spacing: 0;
+        margin-bottom: 15px;
+        line-height: 1.3;
+    }
+
+    .overlay-sec p {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+        line-height: 1.4;
+    }
+
+    .overlay-sec p:nth-of-type(2) {
+        font-size: 0.85rem;
+    }
+
+    .quote-btn-sec {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .security-jobs-sec {
+        padding: 40px 10%;
+        text-align: center;
+    }
+
+    .security-jobs-sec h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .security-content-wrapper {
+        max-width: 100%;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .feature-card {
+        padding: 20px;
+    }
+
+    .faq-main-title {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .faq-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 30px;
+    }
+
+    .enhanced-faq-section {
+        padding: 40px 0;
+    }
+
+    .faq-accordion-item {
+        font-size: 0.9rem;
+        padding: 12px 15px;
+    }
+
+    .faq-accordion-item h3 {
+        font-size: 1rem;
+    }
+
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1rem;
+    }
+
+    .nav-link {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .get-quote-btn {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+
+    .stats-container {
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+    }
+
+    section {
+        padding: 30px 15px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Service cards responsive */
+    .service-card {
+        margin-bottom: 15px;
+    }
+
+    /* Internal links section */
+    .internal-links-section {
+        padding: 30px 10px;
+    }
+
+    .internal-links-section h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .link-group-title {
+        font-size: 1rem;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    .link-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .link-list a {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+
+    /* Content sections responsive */
+    .content-section {
+        padding: 20px;
+    }
+
+    .content-section h2 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    .content-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .content-section p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    h4 {
+        font-size: 1rem;
+    }
+}
+
+/* Extra Small Phones (max-width: 370px) */
+@media (max-width: 370px) {
+    .hero-sec {
+        height: 60vh;
+    }
+
+    .overlay-sec {
+        padding: 20px 10px;
+        max-width: 98%;
+    }
+
+    .overlay-sec h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .overlay-sec p {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+    }
+
+    .quote-btn-sec {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+        max-width: 220px;
+    }
+
+    .security-jobs-sec {
+        padding: 30px 5%;
+    }
+
+    .faq-main-title {
+        font-size: 1.6rem;
+    }
+
+    .faq-subtitle {
+        font-size: 0.8rem;
+    }
+}
+
+/* Prevent horizontal scrolling on all mobile devices */
+@media (max-width: 768px) {
+    * {
+        max-width: 100%;
+    }
+
+    body, html {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .container-fluid {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .row {
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+
+    .col, [class*="col-"] {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
