@@ -2109,6 +2109,11 @@ body, html {
 
 /* Tablet & Medium Screens (max-width: 768px) */
 @media (max-width: 768px) {
+    .hero-sec {
+        background-attachment: scroll !important;
+        height: 80vh;
+    }
+
     .overlay-sec {
         padding: 35px 20px;
         max-width: 90%;
@@ -2158,6 +2163,7 @@ body, html {
 
     .hero-sec {
         height: 70vh;
+        background-attachment: scroll !important;
     }
 
     .overlay-sec {
