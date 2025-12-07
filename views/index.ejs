@@ -58,8 +58,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://stackpath.bootstrapcdn.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
     <link rel="dns-prefetch" href="https://maps.googleapis.com">
     <link rel="dns-prefetch" href="https://ajax.googleapis.com">
 
@@ -511,7 +509,8 @@
         .home-page .hero-subtitle {
             font-size: 1.8rem;
             margin-bottom: 2rem;
-            color: #f0f0f0;
+            color: #ffffff;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
         }
         .home-page .hero-buttons {
             display: flex;
@@ -575,8 +574,9 @@
         <!-- Hero Video Section - Video Only -->
         <section class="hero-section" aria-label="ShieldWise Security services showcase">
           <div class="video-container">
-            <video autoplay muted loop playsinline preload="metadata" data-lazy="true" id="hero-video" poster="/img/main2.webp">
-              <source data-src="/img/video1.mp4" type="video/mp4">
+            <video autoplay muted loop playsinline preload="metadata" id="hero-video" poster="/img/main2.webp">
+              <source src="/img/video1.mp4" type="video/mp4">
+              <track kind="captions" src="/img/captions.vtt" srclang="en" label="English" default>
               Your browser does not support the video tag.
             </video>
           </div>
@@ -977,9 +977,9 @@
               <div class="faq-accordion" id="faqAccordion">
                 <!-- FAQ Item 1 -->
                 <div class="faq-card" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                  <div class="faq-header d-flex align-items-center" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" itemprop="name">
+                  <button type="button" class="faq-header d-flex align-items-center" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" itemprop="name" style="width: 100%; text-align: left; background: none; border: none; cursor: pointer;">
                     <span class="faq-icon mr-2">+</span> What types of licensed security guard services do you offer?
-                  </div>
+                  </button>
                   <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                     <div class="faq-body" itemprop="text">
                       ShieldWise Security provides comprehensive security solutions including:<br>
@@ -995,9 +995,9 @@
                 </div>
                 <!-- FAQ Item 2 -->
                 <div class="faq-card" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                  <div class="faq-header d-flex align-items-center" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" itemprop="name">
+                  <button type="button" class="faq-header d-flex align-items-center" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" itemprop="name" style="width: 100%; text-align: left; background: none; border: none; cursor: pointer;">
                     <span class="faq-icon mr-2">+</span> Where do you provide professional security guard services?
-                  </div>
+                  </button>
                   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                     <div class="faq-body" itemprop="text">
                       As a leading <strong>security guard company</strong>, we provide <strong>security services</strong> throughout California, with extensive coverage in:<br>
@@ -1013,9 +1013,9 @@
                 </div>
                 <!-- FAQ Item 3 -->
                 <div class="faq-card" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                  <div class="faq-header d-flex align-items-center" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" itemprop="name">
+                  <button type="button" class="faq-header d-flex align-items-center" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" itemprop="name" style="width: 100%; text-align: left; background: none; border: none; cursor: pointer;">
                     <span class="faq-icon mr-2">+</span> How do you tailor your security guard services to specific industries?
-                  </div>
+                  </button>
                   <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                     <div class="faq-body" itemprop="text">
                       Our approach as the <strong>best security guard company</strong> includes:<br>
@@ -1030,9 +1030,9 @@
                 </div>
                 <!-- FAQ Item 4 -->
                 <div class="faq-card" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                  <div class="faq-header d-flex align-items-center" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" itemprop="name">
+                  <button type="button" class="faq-header d-flex align-items-center" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" itemprop="name" style="width: 100%; text-align: left; background: none; border: none; cursor: pointer;">
                     <span class="faq-icon mr-2">+</span> Are your security guards professionally trained and licensed?
-                  </div>
+                  </button>
                   <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#faqAccordion" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                     <div class="faq-body" itemprop="text">
                       Yes, all ShieldWise <strong>licensed security guards</strong> are:<br>
@@ -1048,9 +1048,9 @@
                 </div>
                 <!-- FAQ Item 5 -->
                 <div class="faq-card" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                  <div class="faq-header d-flex align-items-center" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" itemprop="name">
+                  <button type="button" class="faq-header d-flex align-items-center" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" itemprop="name" style="width: 100%; text-align: left; background: none; border: none; cursor: pointer;">
                     <span class="faq-icon mr-2">+</span> How can I get a quote for your security guard services?
-                  </div>
+                  </button>
                   <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#faqAccordion" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                     <div class="faq-body" itemprop="text">
                       Getting a <strong>security guard cost</strong> quote is easy:<br>
@@ -1099,7 +1099,7 @@
                                         <img src="/img/security-person2_optimized.webp" alt="Michael Thompson" loading="lazy" width="120" height="120">
                                     </div>
                                     <div class="author-info">
-                                        <h4>Michael Thompson</h4>
+                                        <h3 style="font-size: 1.2rem; margin: 0;">Michael Thompson</h3>
                                         <p>Property Manager, Sunset Residences</p>
                                         <span class="author-location">Los Angeles, CA</span>
                                         <div class="star-rating">★★★★★</div>
@@ -1117,7 +1117,7 @@
                                         <img src="/img/chatgpt-image.webp" alt="Robert Martinez" loading="lazy" width="50" height="50" style="width: 100%; height: 100%; object-fit: cover;">
                                     </div>
                                     <div>
-                                        <h5 style="margin: 0; font-size: 1em; color: #333; font-weight: 600;">Robert Martinez</h5>
+                                        <h4 style="margin: 0; font-size: 1em; color: #333; font-weight: 600;">Robert Martinez</h4>
                                         <p style="margin: 2px 0 0; font-size: 0.8em; color: #666;">Construction Manager</p>
                                         <span style="font-size: 0.75em; color: #999;">Bay Area Developers, San Francisco</span>
                                     </div>
@@ -1135,7 +1135,7 @@
                                         <img src="/img/jassica.webp" alt="Samantha Chen" loading="lazy" width="50" height="50" style="width: 100%; height: 100%; object-fit: cover;">
                                     </div>
                                     <div>
-                                        <h5 style="margin: 0; font-size: 1em; color: #333; font-weight: 600;">Samantha Chen</h5>
+                                        <h4 style="margin: 0; font-size: 1em; color: #333; font-weight: 600;">Samantha Chen</h4>
                                         <p style="margin: 2px 0 0; font-size: 0.8em; color: #666;">HOA President</p>
                                         <span style="font-size: 0.75em; color: #999;">Capital City Estates, Sacramento</span>
                                     </div>
@@ -1153,7 +1153,7 @@
                                         <img src="/img/james.webp" alt="James Wilson" loading="lazy" width="50" height="50" style="width: 100%; height: 100%; object-fit: cover;">
                                     </div>
                                     <div>
-                                        <h5 style="margin: 0; font-size: 1em; color: #333; font-weight: 600;">James Wilson</h5>
+                                        <h4 style="margin: 0; font-size: 1em; color: #333; font-weight: 600;">James Wilson</h4>
                                         <p style="margin: 2px 0 0; font-size: 0.8em; color: #666;">General Manager</p>
                                         <span style="font-size: 0.75em; color: #999;">Pacific Coast Mall, San Diego</span>
                                     </div>
@@ -1171,7 +1171,7 @@
                                         <img src="/img/james-2.webp" alt="Jessica Park" loading="lazy" width="50" height="50" style="width: 100%; height: 100%; object-fit: cover;">
                                     </div>
                                     <div>
-                                        <h5 style="margin: 0; font-size: 1em; color: #333; font-weight: 600;">Jessica Park</h5>
+                                        <h4 style="margin: 0; font-size: 1em; color: #333; font-weight: 600;">Jessica Park</h4>
                                         <p style="margin: 2px 0 0; font-size: 0.8em; color: #666;">Event Director</p>
                                         <span style="font-size: 0.75em; color: #999;">Napa Valley Wine Festival</span>
                                     </div>
@@ -1245,7 +1245,7 @@
                 });
             });
 
-            // FAQ accordion animation improvement
+            // FAQ accordion animation improvement with proper ARIA management
             const faqHeaders = document.querySelectorAll('.faq-header');
             faqHeaders.forEach(header => {
                 header.addEventListener('click', function() {
@@ -1253,6 +1253,9 @@
                     if (icon) {
                         icon.textContent = (icon.textContent === '+') ? '-' : '+';
                     }
+                    // Toggle aria-expanded attribute for accessibility
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !isExpanded);
                 });
             });
         });
