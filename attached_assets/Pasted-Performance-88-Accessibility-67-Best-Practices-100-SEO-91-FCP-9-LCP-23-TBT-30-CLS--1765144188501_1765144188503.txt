@@ -1,0 +1,459 @@
+Performance
+88
+Accessibility
+67
+Best Practices
+100
+SEO
+91
+FCP
++9
+LCP
++23
+TBT
++30
+CLS
++25
+SI
++5
+Performance
+Values are estimated and may vary. The performance score is calculated directly from these metrics.See calculator.
+0–49
+50–89
+90–100
+Final Screenshot
+
+Metrics
+Expand view
+First Contentful Paint
+0.9 s
+Largest Contentful Paint
+1.2 s
+Total Blocking Time
+0 ms
+Cumulative Layout Shift
+0.019
+Speed Index
+2.4 s
+View Treemap
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Later this year, insights will replace performance audits. Learn more and provide feedback here.
+Go back to audits
+Show audits relevant to:
+
+All
+
+FCP
+
+LCP
+
+TBT
+
+CLS
+Insights
+Font display Est savings of 260 ms
+Consider setting font-display to swap or optional to ensure text is consistently visible. swap can be further optimized to mitigate layout shifts with font metric overrides.FCP
+URL
+Est Savings
+Cloudflare CDN cdn 
+490 ms
+…webfonts/fa-solid-900.woff2(cdnjs.cloudflare.com)
+260 ms
+…webfonts/fa-brands-400.woff2(cdnjs.cloudflare.com)
+230 ms
+Improve image delivery Est savings of 434 KiB
+Reducing the download time of images can improve the perceived load time of the page and LCP. Learn more about optimizing image sizeFCPLCP
+URL
+Resource Size
+Est Savings
+shieldwisesecurity.com 1st party
+1,117.5 KiB	434.2 KiB
+/img/main2.webp(shieldwisesecurity.com)
+171.0 KiB
+137.0 KiB
+This image file is larger than it needs to be (1176x1628) for its displayed dimensions (822x462). Use responsive images to reduce the image download size.
+137.0 KiB
+/img/fresno.webp(shieldwisesecurity.com)
+186.9 KiB
+71.5 KiB
+Increasing the image compression factor could improve this image's download size.
+71.5 KiB
+/img/alamendsa1.webp(shieldwisesecurity.com)
+242.1 KiB
+71.3 KiB
+Increasing the image compression factor could improve this image's download size.
+71.3 KiB
+/img/sanjose1111.webp(shieldwisesecurity.com)
+225.7 KiB
+57.7 KiB
+Increasing the image compression factor could improve this image's download size.
+57.7 KiB
+/img/santa-clara-county-neighborhood.webp(shieldwisesecurity.com)
+89.3 KiB
+37.2 KiB
+Increasing the image compression factor could improve this image's download size.
+37.2 KiB
+/img/ventura-california-1-2.webp(shieldwisesecurity.com)
+98.9 KiB
+30.0 KiB
+Increasing the image compression factor could improve this image's download size.
+30.0 KiB
+/img/main2-mobile.webp(shieldwisesecurity.com)
+76.8 KiB
+18.4 KiB
+Increasing the image compression factor could improve this image's download size.
+18.4 KiB
+/img/favicon.ico(shieldwisesecurity.com)
+14.7 KiB
+7.0 KiB
+Using a modern image format (WebP, AVIF) or increasing the image compression could improve this image's download size.
+7.0 KiB
+/img/riverside.webp(shieldwisesecurity.com)
+12.3 KiB
+4.0 KiB
+Increasing the image compression factor could improve this image's download size.
+4.0 KiB
+Network dependency tree
+Warnings: More than 4 `preconnect` connections were found. These should be used sparingly and only to the most important origins.
+Avoid chaining critical requests by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.LCP
+Maximum critical path latency: 1,496 ms
+Initial Navigation
+https://shieldwisesecurity.com - 521 ms, 20.99 KiB
+…css/all.min.css(cdnjs.cloudflare.com) - 590 ms, 18.76 KiB
+…webfonts/fa-brands-400.woff2(cdnjs.cloudflare.com) - 1,496 ms, 115.02 KiB
+…webfonts/fa-solid-900.woff2(cdnjs.cloudflare.com) - 1,472 ms, 153.32 KiB
+/css/header-fix.min.css(shieldwisesecurity.com) - 845 ms, 2.97 KiB
+/css/back-to.css(shieldwisesecurity.com) - 769 ms, 1.81 KiB
+/css/style.min.css(shieldwisesecurity.com) - 769 ms, 7.33 KiB
+Preconnected origins
+preconnect hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.
+Origin
+Source
+https://fonts.googleapis.com/
+link
+https://fonts.gstatic.com/
+link
+https://stackpath.bootstrapcdn.com/
+link
+https://cdnjs.cloudflare.com/
+link
+https://www.google-analytics.com/
+link
+Unused preconnect. Only use `preconnect` for origins that the page is likely to request.
+https://www.googletagmanager.com/
+link
+Unused preconnect. Only use `preconnect` for origins that the page is likely to request.
+Preconnect candidates
+Add preconnect hints to your most important origins, but try to use no more than 4.
+No additional origins are good candidates for preconnecting
+Render blocking requests
+Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.FCPLCP
+URL
+Transfer Size
+Duration
+shieldwisesecurity.com 1st party
+9.1 KiB	0 ms
+/css/back-to.css(shieldwisesecurity.com)
+1.8 KiB
+/css/style.min.css(shieldwisesecurity.com)
+7.3 KiB
+Layout shift culprits
+Layout shifts occur when elements move absent any user interaction. Investigate the causes of layout shifts, such as elements being added, removed, or their fonts changing as the page loads.CLS
+Element
+Layout shift score
+Total
+0.019
+div.container
+0.010
+div.container
+0.009
+Optimize DOM size
+A large DOM can increase the duration of style calculations and layout reflows, impacting page responsiveness. A large DOM will also increase memory usage. Learn how to avoid an excessive DOM size.
+Statistic
+Element
+Value
+Total elements
+664
+Most children
+body#top.home-page
+30
+DOM depth
+span
+12
+LCP breakdown
+Each subpart has specific improvement strategies. Ideally, most of the LCP time should be spent on loading the resources, not within delays.LCP
+Subpart
+Duration
+Time to first byte
+180 ms
+Resource load delay
+30 ms
+Resource load duration
+550 ms
+Element render delay
+500 ms
+video#hero-video
+3rd parties
+3rd party code can significantly impact load performance. Reduce and defer loading of 3rd party code to prioritize your page's content.
+3rd party
+Transfer size
+Main thread time
+pphgdbgldlmicfdkhondlafkiomnelnk
+0 KiB	211 ms
+chrome-extension://pphgdbgldlmicfdkhondlafkiomnelnk/libs/processor.js
+0 KiB
+91 ms
+chrome-extension://pphgdbgldlmicfdkhondlafkiomnelnk/ad-blocker/content.js
+0 KiB
+69 ms
+chrome-extension://pphgdbgldlmicfdkhondlafkiomnelnk/content.js
+0 KiB
+44 ms
+chrome-extension://pphgdbgldlmicfdkhondlafkiomnelnk/content/location/location.js
+0 KiB
+3 ms
+chrome-extension://pphgdbgldlmicfdkhondlafkiomnelnk/libs/requests.js
+0 KiB
+3 ms
+chrome-extension://pphgdbgldlmicfdkhondlafkiomnelnk/libs/extend-native-history-api.js
+0 KiB
+1 ms
+chrome-extension://pphgdbgldlmicfdkhondlafkiomnelnk/executors/traffic.js
+0 KiB
+0 ms
+jQuery CDN cdn 
+54 KiB	34 ms
+/jquery-3.5.1.min.js(code.jquery.com)
+30 KiB
+18 ms
+/jquery-3.5.1.slim.min.js(code.jquery.com)
+24 KiB
+16 ms
+Bootstrap CDN cdn 
+46 KiB	10 ms
+…js/bootstrap.bundle.min.js(stackpath.bootstrapcdn.com)
+22 KiB
+10 ms
+…css/bootstrap.min.css(stackpath.bootstrapcdn.com)
+24 KiB
+0 ms
+JSDelivr CDN cdn 
+22 KiB	6 ms
+…js/bootstrap.bundle.min.js(cdn.jsdelivr.net)
+22 KiB
+6 ms
+Google Fonts cdn 
+66 KiB	0 ms
+…v20/UcC73FwrK….woff2(fonts.gstatic.com)
+47 KiB
+0 ms
+…v12/UcCO3FwrK….woff2(fonts.gstatic.com)
+17 KiB
+0 ms
+/css2?family=Inter:wght@400;600;700&display=swap(fonts.googleapis.com)
+1 KiB
+0 ms
+Cloudflare CDN cdn 
+287 KiB	0 ms
+…webfonts/fa-solid-900.woff2(cdnjs.cloudflare.com)
+153 KiB
+0 ms
+…webfonts/fa-brands-400.woff2(cdnjs.cloudflare.com)
+115 KiB
+0 ms
+…css/all.min.css(cdnjs.cloudflare.com)
+19 KiB
+0 ms
+These insights are also available in the Chrome DevTools Performance Panel - record a trace to view more detailed information.
+Diagnostics
+Reduce unused CSS Est savings of 34 KiB
+Page prevented back/forward cache restoration 1 failure reason
+Avoid serving legacy JavaScript to modern browsers Est savings of 0 KiB
+Reduce unused JavaScript Est savings of 140 KiB
+Avoid enormous network payloads Total size was 3,640 KiB
+Avoid long main-thread tasks 3 long tasks found
+More information about the performance of your application. These numbers don't directly affect the Performance score.
+Passed audits (19)
+Show
+88
+Accessibility
+These checks highlight opportunities to improve the accessibility of your web app. Automatic detection can only detect a subset of issues and does not guarantee the accessibility of your web app, so manual testing is also encouraged.
+ARIA
+[aria-*] attributes do not match their roles
+Each ARIA role supports a specific subset of aria-* attributes. Mismatching these invalidates the aria-* attributes. Learn how to match ARIA attributes to their roles.
+Failing Elements
+div#headingOne.faq-header.d-flex.align-items-center
+div#headingTwo.faq-header.d-flex.align-items-center
+div#headingThree.faq-header.d-flex.align-items-center
+div#headingFour.faq-header.d-flex.align-items-center
+div#headingFive.faq-header.d-flex.align-items-center
+These are opportunities to improve the usage of ARIA in your application which may enhance the experience for users of assistive technology, like a screen reader.
+Contrast
+Background and foreground colors do not have a sufficient contrast ratio.
+Low-contrast text is difficult or impossible for many users to read. Learn how to provide sufficient color contrast.
+Failing Elements
+h1.hero-title
+html
+p.hero-subtitle
+html
+span
+a.quote-button
+p
+section.premium-testimonials
+span
+div.premium-card
+span
+div.premium-card
+span
+div.premium-card
+span
+div.premium-card
+a.premium-button
+h3.faq-category-title
+div.faq-category
+h3.faq-category-title
+div.faq-category
+h3.faq-category-title
+div.faq-category
+h3.faq-category-title
+div.faq-category
+h3.faq-category-title
+div.faq-category
+a.btn.btn-primary.faq-btn
+a.btn.btn-outline-primary.faq-btn
+div.faq-cta.text-center
+a
+footer.footer
+a
+footer.footer
+These are opportunities to improve the legibility of your content.
+Navigation
+Heading elements are not in a sequentially-descending order
+Properly ordered headings that do not skip levels convey the semantic structure of the page, making it easier to navigate and understand when using assistive technologies. Learn more about heading order.
+Failing Elements
+h4
+h5.footer-title
+These are opportunities to improve keyboard navigation in your application.
+Audio and video
+<video> elements contain a <track> element with [kind="captions"]
+When a video provides a caption it is easier for deaf and hearing impaired users to access its information. Learn more about video captions.
+Failing Elements
+video#hero-video
+These are opportunities to provide alternative content for audio and video. This may improve the experience for users with hearing or vision impairments.
+Additional items to manually check (10)
+Show
+These items address areas which an automated testing tool cannot cover. Learn more in our guide on conducting an accessibility review.
+Passed audits (20)
+Show
+Not applicable (33)
+Show
+67
+Best Practices
+General
+Uses third-party cookies 2 cookies found
+Third-party cookies may be blocked in some contexts. Learn more about preparing for third-party cookie restrictions.
+Name
+URL
+Cloudflare CDN cdn 
+edgesessions_enabled
+…css/all.min.css(cdnjs.cloudflare.com)
+_cfuvid
+…css/all.min.css(cdnjs.cloudflare.com)
+Browser errors were logged to the console
+Errors logged to the console indicate unresolved problems. They can come from network request failures and other browser concerns. Learn more about this errors in console diagnostic audit
+Source
+Description
+Unattributable
+Connecting to 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css.map' violates the following Content Security Policy directive: "connect-src 'self' https://www.google-analytics.com https://*.hotjar.com https://*.hotjar.io wss://*.hotjar.com https://www.clarity.ms https://www.facebook.com https://connect.facebook.net https://px.ads.linkedin.com". The request has been blocked.
+shieldwisesecurity.com 1st party
+header-fix.min.js:1
+SyntaxError: Unexpected end of input
+Issues were logged in the Issues panel in Chrome Devtools
+Issues logged to the Issues panel in Chrome Devtools indicate unresolved problems. They can come from network request failures, insufficient security controls, and other browser concerns. Open up the Issues panel in Chrome DevTools for more details on each issue.
+Issue type
+Cookie
+…css/all.min.css(cdnjs.cloudflare.com)
+Content security policy
+…css/bootstrap.min.css.map(stackpath.bootstrapcdn.com)
+Detected JavaScript libraries
+All front-end JavaScript libraries detected on the page. Learn more about this JavaScript library detection diagnostic audit.
+Name
+Version
+Bootstrap
+4.5.2
+jQuery
+3.5.1
+User Experience
+Displays images with incorrect aspect ratio
+Image display dimensions should match natural aspect ratio. Learn more about image aspect ratio.
+URL
+Aspect Ratio (Displayed)
+Aspect Ratio (Actual)
+shieldwisesecurity.com 1st party
+img.navbar-logo
+/img/favicon.ico(shieldwisesecurity.com)
+40 x 50 (0.80)
+48 x 48 (1.00)
+Serves images with low resolution
+Image natural dimensions should be proportional to the display size and the pixel ratio to maximize image clarity. Learn how to provide responsive images.
+URL
+Displayed size
+Actual size
+Expected size
+shieldwisesecurity.com 1st party
+img.navbar-logo
+/img/favicon.ico(shieldwisesecurity.com)
+40 x 50
+48 x 48
+40 x 50
+Trust and Safety
+Ensure CSP is effective against XSS attacks
+A strong Content Security Policy (CSP) significantly reduces the risk of cross-site scripting (XSS) attacks. Learn how to use a CSP to prevent XSS
+Description
+Directive
+Severity
+Host allowlists can frequently be bypassed. Consider using CSP nonces or hashes instead, along with `'strict-dynamic'` if necessary.
+script-src
+High
+`'unsafe-inline'` allows the execution of unsafe in-page scripts and event handlers. Consider using CSP nonces or hashes to allow scripts individually.
+script-src
+High
+`'unsafe-inline'` allows the execution of unsafe in-page scripts and event handlers. Consider using CSP nonces or hashes to allow scripts individually.
+script-src-attr
+High
+'unsafe-hashes', while safer than 'unsafe-inline', allows the execution of unsafe in-page scripts and event handlers as long as their hashes appear in the CSP. Please refactor them to no longer use inline scripts if possible.
+script-src-attr
+High
+Mitigate DOM-based XSS with Trusted Types
+The require-trusted-types-for directive in the Content-Security-Policy (CSP) header instructs user agents to control the data passed to DOM XSS sink functions. Learn more about mitigating DOM-based XSS with Trusted Types.
+Description
+Severity
+No `Content-Security-Policy` header with Trusted Types directive found
+High
+Passed audits (9)
+Show
+Not applicable (5)
+Show
+100
+SEO
+These checks ensure that your page is following basic search engine optimization advice. There are many additional factors Lighthouse does not score here that may affect your search ranking, including performance on Core Web Vitals. Learn more about Google Search Essentials.
+Additional items to manually check (1)
+Hide
+Structured data is valid
+Run these additional validators on your site to check additional SEO best practices.
+Passed audits (10)
+Show
+Captured at Dec 7, 2025, 1:47 PM PST
+Emulated Desktop with Lighthouse 12.8.2
+Single page session
+Initial page load
+Custom throttlingNetwork throttling: 40 ms TCP RTT, 10,240 kb/s throughput (Simulated)
+Using Chromium 142.0.0.0 with devtools
+Generated by Lighthouse 12.8.2 | File an issue
