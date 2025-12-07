@@ -97,3 +97,12 @@ Preferred communication style: Simple, everyday language.
 - **Fixed Elements**: Hero section, overlay box, quote button, FAQ titles, navigation, internal links section, content text
 - **Mobile Optimizations**: Prevent horizontal scrolling, responsive grid layouts (1 column on mobile), flexible padding/margins, optimized font sizes (0.85rem to 1.1rem), touch-friendly button sizes
 - **Responsive CSS Location**: All changes in `Public/css/style456.css` (lines 2111-2423)
+
+### Accessibility & Lighthouse Optimization (December 2025)
+- **ARIA Compliance**: Converted all FAQ headers from div to button elements with proper `aria-expanded` attribute toggle
+- **Heading Hierarchy**: Fixed heading order (h4→h3 in testimonials, h5→h4 in footer sections)
+- **Video Captions**: Added `Public/img/captions.vtt` with descriptive captions for hero video
+- **Contrast Improvements**: Enhanced hero subtitle contrast with #ffffff color and stronger text-shadow
+- **Focus Styles**: Added `:focus` and `:focus-visible` styles for FAQ buttons (keyboard navigation)
+- **Performance**: Removed unused preconnect hints (googletagmanager, google-analytics) from index.ejs, partials, and all 182 city pages
+- **ARIA Toggle JavaScript**: Added dynamic aria-expanded toggle in FAQ accordion script
