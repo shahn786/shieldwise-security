@@ -1,0 +1,151 @@
+You have new mail.
+Last login: Mon Dec  8 02:44:08 2025 from 169.254.0.1
+root@srv1109617:~# cd /var/www/shieldwisesecurity.com
+root@srv1109617:/var/www/shieldwisesecurity.com# git pull origin main
+remote: Enumerating objects: 274, done.
+remote: Counting objects: 100% (274/274), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 151 (delta 144), reused 151 (delta 144), pack-reused 0 (from 0)
+Receiving objects: 100% (151/151), 335.52 KiB | 1.52 MiB/s, done.
+Resolving deltas: 100% (144/144), completed with 123 local objects.
+From https://github.com/shahn786/shieldwise-security
+ * branch              main       -> FETCH_HEAD
+   025a6a43..bde1cfae  main       -> origin/main
+Updating 025a6a43..bde1cfae
+Fast-forward
+ Public/css/style.css                                                                                         |    12 +
+ Public/css/style456.css                                                                                      |   320 +-
+ Public/img/captions.vtt                                                                                      |    16 +
+ ...ibility-Best-Practices-SEO-0-49-50-89-90-100-There-were-issues-affecting--1765142895090_1765142895093.txt |   206 +
+ ...hthouseVersion-12-8-2-requestedUrl-https-shieldwisesecurity-com-mainDocum-1765142936282_1765142936284.txt |  6085 +++++++++++++++++++++
+ ...hthouseVersion-12-8-2-requestedUrl-https-shieldwisesecurity-com-mainDocum-1765144207857_1765144207867.txt | 15345 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ ...ce-88-Accessibility-67-Best-Practices-100-SEO-91-FCP-9-LCP-23-TBT-30-CLS--1765144188501_1765144188503.txt |   459 ++
+ ...-Hero-section-Responsive-font-sizes-from-3-5rem-desktop-1-8rem-phones-Quo-1765143087339_1765143087339.txt |   111 +
+ replit.md                                                                                                    |    21 +-
+ views/cities/aliso-viejo.ejs                                                                                 |     4 +-
+ views/cities/anaheim.ejs                                                                                     |     4 +-
+ views/cities/apple-valley.ejs                                                                                |     4 +-
+ views/cities/azusa.ejs                                                                                       |     4 +-
+ views/cities/bakersfield.ejs                                                                                 |     4 +-
+ views/cities/barstow.ejs                                                                                     |     4 +-
+ views/cities/berkeley.ejs                                                                                    |     4 +-
+ views/cities/big-bear-lake.ejs                                                                               |     4 +-
+ views/cities/buena-park.ejs                                                                                  |     4 +-
+ views/cities/calabasas.ejs                                                                                   |     2 +-
+ views/cities/campbell.ejs                                                                                    |     4 +-
+ views/cities/carlsbad.ejs                                                                                    |     4 +-
+ views/cities/carson.ejs                                                                                      |     2 +-
+ views/cities/castro-valley.ejs                                                                               |     4 +-
+ views/cities/chino-hills.ejs                                                                                 |     4 +-
+ views/cities/chino.ejs                                                                                       |     4 +-
+ views/cities/clovis.ejs                                                                                      |     4 +-
+ views/cities/colton.ejs                                                                                      |     4 +-
+ views/cities/coronado.ejs                                                                                    |     4 +-
+ views/cities/costa-mesa.ejs                                                                                  |     4 +-
+ views/cities/culver-city.ejs                                                                                 |     4 +-
+ views/cities/cupertino.ejs                                                                                   |     4 +-
+ views/cities/cypress.ejs                                                                                     |     4 +-
+ views/cities/dana-point.ejs                                                                                  |     4 +-
+ views/cities/davis.ejs                                                                                       |     4 +-
+ views/cities/del-mar.ejs                                                                                     |     4 +-
+ views/cities/delano.ejs                                                                                      |     4 +-
+ views/cities/downey.ejs                                                                                      |     4 +-
+ views/cities/dublin.ejs                                                                                      |     4 +-
+ views/cities/el-cajon.ejs                                                                                    |     4 +-
+ views/cities/emeryville.ejs                                                                                  |     4 +-
+ views/cities/encinitas.ejs                                                                                   |     4 +-
+ views/cities/escondido.ejs                                                                                   |     4 +-
+ views/cities/fontana.ejs                                                                                     |     4 +-
+ views/cities/fountain-valley.ejs                                                                             |     4 +-
+ views/cities/fullerton.ejs                                                                                   |     4 +-
+ views/cities/garden-grove.ejs                                                                                |     4 +-
+ views/cities/gardena.ejs                                                                                     |     4 +-
+ views/cities/gilroy.ejs                                                                                      |     4 +-
+ views/cities/hanford.ejs                                                                                     |     4 +-
+ views/cities/hawthorne.ejs                                                                                   |     2 +-
+ views/cities/hayward.ejs                                                                                     |     4 +-
+ views/cities/hermosa-beach.ejs                                                                               |     4 +-
+ views/cities/hesperia.ejs                                                                                    |     4 +-
+ views/cities/highland.ejs                                                                                    |     4 +-
+ views/cities/huntington-beach.ejs                                                                            |     4 +-
+ views/cities/huntington-park.ejs                                                                             |     4 +-
+ views/cities/imperial-beach.ejs                                                                              |     4 +-
+ views/cities/irvine.ejs                                                                                      |     4 +-
+ views/cities/la-mesa.ejs                                                                                     |     4 +-
+ views/cities/la-mirada.ejs                                                                                   |     4 +-
+ views/cities/laguna-beach.ejs                                                                                |     4 +-
+ views/cities/laguna-niguel.ejs                                                                               |     4 +-
+ views/cities/lake-forest.ejs                                                                                 |     4 +-
+ views/cities/lemon-grove.ejs                                                                                 |     4 +-
+ views/cities/lemoore.ejs                                                                                     |     4 +-
+ views/cities/long-beach.ejs                                                                                  |     4 +-
+ views/cities/los-gatos.ejs                                                                                   |     4 +-
+ views/cities/madera.ejs                                                                                      |     4 +-
+ views/cities/malibu.ejs                                                                                      |     4 +-
+ views/cities/manhattan-beach.ejs                                                                             |     4 +-
+ views/cities/merced.ejs                                                                                      |     4 +-
+ views/cities/milpitas.ejs                                                                                    |     4 +-
+ views/cities/mission-viejo.ejs                                                                               |     4 +-
+ views/cities/montclair.ejs                                                                                   |     4 +-
+ views/cities/morgan-hill.ejs                                                                                 |     4 +-
+ views/cities/mountain-view.ejs                                                                               |     4 +-
+ views/cities/national-city.ejs                                                                               |     4 +-
+ views/cities/newark.ejs                                                                                      |     4 +-
+ views/cities/newport-beach.ejs                                                                               |     4 +-
+ views/cities/norwalk.ejs                                                                                     |     2 +-
+ views/cities/oakland.ejs                                                                                     |     4 +-
+ views/cities/oceanside.ejs                                                                                   |     4 +-
+ views/cities/ontario.ejs                                                                                     |     4 +-
+ views/cities/orange.ejs                                                                                      |     4 +-
+ views/cities/palo-alto.ejs                                                                                   |     4 +-
+ views/cities/pleasanton.ejs                                                                                  |     4 +-
+ views/cities/porterville.ejs                                                                                 |     4 +-
+ views/cities/poway.ejs                                                                                       |     4 +-
+ views/cities/rancho-cucamonga.ejs                                                                            |     4 +-
+ views/cities/redlands.ejs                                                                                    |     4 +-
+ views/cities/rialto.ejs                                                                                      |     4 +-
+ views/cities/san-clemente.ejs                                                                                |     4 +-
+ views/cities/san-fernando.ejs                                                                                |     4 +-
+ views/cities/san-jose.ejs                                                                                    |     4 +-
+ views/cities/san-leandro.ejs                                                                                 |     4 +-
+ views/cities/san-lorenzo.ejs                                                                                 |     4 +-
+ views/cities/san-marcos.ejs                                                                                  |     4 +-
+ views/cities/santa-ana.ejs                                                                                   |     4 +-
+ views/cities/santa-clara.ejs                                                                                 |     4 +-
+ views/cities/santee.ejs                                                                                      |     4 +-
+ views/cities/solana-beach.ejs                                                                                |     4 +-
+ views/cities/south-gate.ejs                                                                                  |     2 +-
+ views/cities/stockton.ejs                                                                                    |     4 +-
+ views/cities/sunnyvale.ejs                                                                                   |     4 +-
+ views/cities/tulare.ejs                                                                                      |     4 +-
+ views/cities/tustin.ejs                                                                                      |     4 +-
+ views/cities/twentynine-palms.ejs                                                                            |     4 +-
+ views/cities/union-city.ejs                                                                                  |     4 +-
+ views/cities/upland.ejs                                                                                      |     4 +-
+ views/cities/victorville.ejs                                                                                 |     4 +-
+ views/cities/visalia.ejs                                                                                     |     4 +-
+ views/cities/vista.ejs                                                                                       |     4 +-
+ views/cities/west-hollywood.ejs                                                                              |     4 +-
+ views/cities/westminster.ejs                                                                                 |     6 +-
+ views/cities/woodland.ejs                                                                                    |     4 +-
+ views/cities/yorba-linda.ejs                                                                                 |     4 +-
+ views/index.ejs                                                                                              |    45 +-
+ views/partials/Footer.ejs                                                                                    |     6 +-
+ views/partials/meta-tags-base.ejs                                                                            |     7 +-
+ views/partials/performance-optimization.ejs                                                                  |     2 -
+ 120 files changed, 22812 insertions(+), 243 deletions(-)
+ create mode 100644 Public/img/captions.vtt
+ create mode 100644 attached_assets/Pasted--Performance-Accessibility-Best-Practices-SEO-0-49-50-89-90-100-There-were-issues-affecting--1765142895090_1765142895093.txt
+ create mode 100644 attached_assets/Pasted--lighthouseVersion-12-8-2-requestedUrl-https-shieldwisesecurity-com-mainDocum-1765142936282_1765142936284.txt
+ create mode 100644 attached_assets/Pasted--lighthouseVersion-12-8-2-requestedUrl-https-shieldwisesecurity-com-mainDocum-1765144207857_1765144207867.txt
+ create mode 100644 attached_assets/Pasted-Performance-88-Accessibility-67-Best-Practices-100-SEO-91-FCP-9-LCP-23-TBT-30-CLS--1765144188501_1765144188503.txt
+ create mode 100644 attached_assets/Pasted-What-s-Fixed-Hero-section-Responsive-font-sizes-from-3-5rem-desktop-1-8rem-phones-Quo-1765143087339_1765143087339.txt
+root@srv1109617:/var/www/shieldwisesecurity.com# pm2 restart shieldwise
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [shieldwise](ids: [ 0 ])
+[PM2] [shieldwise](0) ✓
+┌────┬───────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name          │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├────┼───────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0  │ shieldwise    │ default     │ 1.0.0   │ fork    │ 549524   │ 0s     │ 68   │ online    │ 0%       │ 24.0mb   │ root     │ disabled │
+└────┴───────────────┴─────────────┴─────────┴───────
