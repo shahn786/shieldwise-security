@@ -1,0 +1,87 @@
+67
+Best Practices
+General
+Uses third-party cookies 1 cookie found
+Third-party cookies may be blocked in some contexts. Learn more about preparing for third-party cookie restrictions.
+Name
+URL
+Cloudflare CDN cdn 
+edgesessions_enabled
+…css/all.min.css(cdnjs.cloudflare.com)
+Browser errors were logged to the console
+Errors logged to the console indicate unresolved problems. They can come from network request failures and other browser concerns. Learn more about this errors in console diagnostic audit
+Source
+Description
+Unattributable
+Connecting to 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css.map' violates the following Content Security Policy directive: "connect-src 'self' https://www.google-analytics.com https://*.hotjar.com https://*.hotjar.io wss://*.hotjar.com https://www.clarity.ms https://www.facebook.com https://connect.facebook.net https://px.ads.linkedin.com". The request has been blocked.
+shieldwisesecurity.com 1st party
+/JS/header-fix.min.js:1:2296(shieldwisesecurity.com)
+SyntaxError: Unexpected end of input
+Issues were logged in the Issues panel in Chrome Devtools
+Issues logged to the Issues panel in Chrome Devtools indicate unresolved problems. They can come from network request failures, insufficient security controls, and other browser concerns. Open up the Issues panel in Chrome DevTools for more details on each issue.
+Issue type
+Cookie
+…css/all.min.css(cdnjs.cloudflare.com)
+Content security policy
+…css/bootstrap.min.css.map(stackpath.bootstrapcdn.com)
+Detected JavaScript libraries
+All front-end JavaScript libraries detected on the page. Learn more about this JavaScript library detection diagnostic audit.
+Name
+Version
+Bootstrap
+4.5.2
+jQuery
+3.5.1
+User Experience
+Displays images with incorrect aspect ratio
+Image display dimensions should match natural aspect ratio. Learn more about image aspect ratio.
+URL
+Aspect Ratio (Displayed)
+Aspect Ratio (Actual)
+shieldwisesecurity.com 1st party
+ShieldWise Security Logo
+<img src="/img/favicon.ico" alt="ShieldWise Security Logo" class="navbar-logo" width="40" height="40" loading="eager">
+/img/favicon.ico(shieldwisesecurity.com)
+40 x 50 (0.80)
+48 x 48 (1.00)
+Serves images with low resolution
+Image natural dimensions should be proportional to the display size and the pixel ratio to maximize image clarity. Learn how to provide responsive images.
+URL
+Displayed size
+Actual size
+Expected size
+shieldwisesecurity.com 1st party
+ShieldWise Security Logo
+<img src="/img/favicon.ico" alt="ShieldWise Security Logo" class="navbar-logo" width="40" height="40" loading="eager">
+/img/favicon.ico(shieldwisesecurity.com)
+40 x 50
+48 x 48
+40 x 50
+Trust and Safety
+Ensure CSP is effective against XSS attacks
+A strong Content Security Policy (CSP) significantly reduces the risk of cross-site scripting (XSS) attacks. Learn how to use a CSP to prevent XSS
+Description
+Directive
+Severity
+Host allowlists can frequently be bypassed. Consider using CSP nonces or hashes instead, along with `'strict-dynamic'` if necessary.
+script-src
+High
+`'unsafe-inline'` allows the execution of unsafe in-page scripts and event handlers. Consider using CSP nonces or hashes to allow scripts individually.
+script-src
+High
+`'unsafe-inline'` allows the execution of unsafe in-page scripts and event handlers. Consider using CSP nonces or hashes to allow scripts individually.
+script-src-attr
+High
+'unsafe-hashes', while safer than 'unsafe-inline', allows the execution of unsafe in-page scripts and event handlers as long as their hashes appear in the CSP. Please refactor them to no longer use inline scripts if possible.
+script-src-attr
+High
+Mitigate DOM-based XSS with Trusted Types
+The require-trusted-types-for directive in the Content-Security-Policy (CSP) header instructs user agents to control the data passed to DOM XSS sink functions. Learn more about mitigating DOM-based XSS with Trusted Types.
+Description
+Severity
+No `Content-Security-Policy` header with Trusted Types directive found
+High
+Passed audits (9)
+Show
+Not applicable (5)
+Show

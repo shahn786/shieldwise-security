@@ -48,7 +48,8 @@ const contentSecurityPolicy = {
       "https://www.clarity.ms",
       "https://www.facebook.com",
       "https://connect.facebook.net",
-      "https://px.ads.linkedin.com"
+      "https://px.ads.linkedin.com",
+      "https://stackpath.bootstrapcdn.com"
     ],
     frameSrc: [
       "'self'",
