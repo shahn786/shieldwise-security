@@ -1023,6 +1023,15 @@ app.get('/fresno', (req, res) => {
     });
 });
 
+// Santa Clara County main route
+app.get('/santa-clara', (req, res) => {
+    res.render('cities/santa-clara', { title: 'Santa Clara County', pageUrl: '/santa-clara' });
+});
+
+app.get('/santa-clara-security', (req, res) => {
+    res.render('cities/santa-clara', { title: 'Santa Clara County Security', pageUrl: '/santa-clara-security' });
+});
+
 // ========================================
 // LOS ANGELES COUNTY (35 cities)
 // ========================================
